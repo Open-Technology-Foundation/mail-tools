@@ -25,7 +25,7 @@ sudo apt-get install bash-builtins  # Ubuntu/Debian
 Quick installation without keeping the source:
 
 ```bash
-git clone https://github.com/Open-Technology-Foundation/mailheader.git && cd mailheader && sudo ./install.sh && cd .. && rm -rf mailheader
+git clone https://github.com/Open-Technology-Foundation/mailheader.git && cd mailheader && sudo ./install.sh --builtin && cd .. && rm -rf mailheader
 ```
 
 This will clone, install, and clean up the source in one command.
@@ -66,12 +66,14 @@ The script will:
 **Options:**
 ```bash
 sudo ./install.sh --help              # Show all options
-sudo ./install.sh --builtin           # Force builtin installation
+sudo ./install.sh --builtin           # Force builtin (auto-installs dependencies)
 sudo ./install.sh --no-builtin        # Skip builtin installation
 sudo ./install.sh --uninstall         # Remove installation
 sudo ./install.sh --prefix=/opt       # Custom install location
 sudo ./install.sh --dry-run           # Preview without installing
 ```
+
+**Note:** Using `--builtin` will automatically install the `bash-builtins` package if it's not already present (Debian/Ubuntu).
 
 ### Manual Build and Install
 

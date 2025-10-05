@@ -23,6 +23,7 @@ fi
 # Default values
 declare PREFIX="/usr/local"
 declare -i INSTALL_BUILTIN=0
+declare -i BUILTIN_EXPLICITLY_REQUESTED=0
 declare -i SKIP_BUILTIN=0
 declare -i NON_INTERACTIVE=0
 declare -i UNINSTALL=0
@@ -71,7 +72,7 @@ Usage: ./install.sh [OPTIONS]
 
 Options:
   --help              Show this help message
-  --builtin           Force installation of bash builtin
+  --builtin           Force installation of bash builtin (installs dependencies if needed)
   --no-builtin        Skip bash builtin installation
   --uninstall         Uninstall mailheader
   --prefix DIR        Installation prefix (default: /usr/local)
@@ -133,6 +134,30 @@ check_builtin_support() {
   return $((1 - has_support))
 }
 
+install_bash_builtins() {
+  info "Installing bash-builtins package..."
+
+  # Check if we're on a Debian/Ubuntu system
+  if ! command -v apt-get &> /dev/null; then
+    error "apt-get not found. Please install bash-builtins manually for your distribution."
+    return 1
+  fi
+
+  if ((DRY_RUN)); then
+    info "[DRY-RUN] Would run: apt-get install -y bash-builtins"
+    return 0
+  fi
+
+  # Install bash-builtins
+  if apt-get update && apt-get install -y bash-builtins; then
+    success "bash-builtins package installed"
+    return 0
+  else
+    error "Failed to install bash-builtins package"
+    return 1
+  fi
+}
+
 prompt_builtin_install() {
   if ((NON_INTERACTIVE)); then
     if ((INSTALL_BUILTIN)); then
@@ -172,10 +197,26 @@ build_builtin() {
   info "Building bash loadable builtin..."
 
   if ! check_builtin_support; then
-    error "Bash builtin support not found"
-    error "Please install bash-builtins package:"
-    error "  sudo apt-get install bash-builtins  # Debian/Ubuntu"
-    return 1
+    # If user explicitly requested --builtin, try to install dependencies
+    if ((BUILTIN_EXPLICITLY_REQUESTED)); then
+      warning "bash-builtins package not found, attempting to install..."
+      if ! install_bash_builtins; then
+        error "Failed to install bash-builtins package"
+        error "Please install it manually:"
+        error "  sudo apt-get install bash-builtins  # Debian/Ubuntu"
+        return 1
+      fi
+      # Verify it was installed successfully
+      if ! check_builtin_support; then
+        error "bash-builtins installation did not provide required headers"
+        return 1
+      fi
+    else
+      error "Bash builtin support not found"
+      error "Please install bash-builtins package:"
+      error "  sudo apt-get install bash-builtins  # Debian/Ubuntu"
+      return 1
+    fi
   fi
 
   if ((DRY_RUN)); then
@@ -355,6 +396,7 @@ while (($#)); do
       ;;
     --builtin)
       INSTALL_BUILTIN=1
+      BUILTIN_EXPLICITLY_REQUESTED=1
       ;;
     --no-builtin)
       SKIP_BUILTIN=1
