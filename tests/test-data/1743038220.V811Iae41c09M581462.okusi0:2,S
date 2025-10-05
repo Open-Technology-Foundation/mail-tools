@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 7D6F43340235
+	for <drewjones@testmail.net>; Thu, 27 Mar 2025 08:17:00 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 27 Mar 2025 08:17:00 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id SCKHBNem5GcXDRUAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 27 Mar 2025 08:16:07 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1743038166; bh=8x9Kw3/+Te6r5MFM94PybvpBeOaXleeXGF4x2B1Dpdk=;
+	h=To:Subject:Date:From:From;
+	b=VaP6PnDnDStZohUzEUrUOZ/FUfRrEjKvPq3VyI1fPqFARZ8iQ45c65WO6JkRx+qlu
+	 tEQsBWNoD7JE7HG3NtvM2qHWz1dAihlgtFEa9KGnawXLa8+gyLwm4knQJQI+mwDIiv
+	 X/rzifo0d3Jj05CcVi0z7ta/+A/I2cvsjg1HOZScIW5utwRARW8/p/p0m5p05RH3Bz
+	 HqhQc7az2dmeLeowjeYS259hcAqfAetDXVobCt0cuShbvR4J/el6pX+HEVGbsYnq3w
+	 ynaoccekagOMYskIhvF2lQ6waK8CpkLQMKSq+T+4JIJIFomW7GYj8dBG0zKNk3oupM
+	 EffQQydDJ/VGw==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id D2D86264003B; Thu, 27 Mar 2025 08:16:04 +0700 (WIB)
+To: lee.lee@placeholder.email,taylor.nguyen@placeholder.email
+Subject: ALERT: SHUNSHING: Investment Activity Report report to BKPM LKPM Q1 Tahun 2025 (Periode Jan - Mar 2025)
+Date: Thu, 27 Mar 2025 08:16:04 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <kelly.harris@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT CEMCOA RESOURCES INDONESIA:
+
+Your company's Investment Activity Report (LKPM) to the BKPM must be done before 01 Apr 2025
+
+Please contact Okusi Associates for information concerning renewal.
+

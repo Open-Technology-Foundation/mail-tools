@@ -1,0 +1,333 @@
+Return-Path: <justice.smith@democorp.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 6813E3340204
+	for <drewjones@testmail.net>; Mon, 18 Mar 2024 16:39:04 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 18 Mar 2024 16:39:04 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id b4XBGncL+GXSWR0AeHbnHg
+	(envelope-from <justice.smith@democorp.com>); Mon, 18 Mar 2024 16:37:59 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=dealkapital.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=dealkapital.com
+Received: from APC01-PSA-obe.outbound.protection.outlook.com (mail-psaapc01on2117.outbound.protection.outlook.com [40.107.255.117])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 3AC652640B49;
+	Mon, 18 Mar 2024 16:37:31 +0700 (WIB)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=fI44GLfrZ2bOSt9lYgyyy+lgKPcCLDFsHyW3msVFe4AA2FWOx7/0FvnwiEe6bpoBg8E3+V8D9ELvPDjTZsnDzBgTofGequJTrWhnd4O3HdC+0wbL5EWGD6rI2PKj5ZRQ1B1p8ZR/+TPm8kEXE7W2ePwZ8AIZEVmhW66sz+sBjEgop43UrriHxO+sxVwRWVSAsBRzKkCJx3LJCiCi/nGA6iylrBehS84p1e1XsFMwXU76atFeUt8AtrUawGbUP/rZ/6xr2eAJb1X/H7V31yslckD9wbIbJAHiJooVediQ+PMcGKO4vTQojTNFFOH6FtOu9ATnjRBxpexfRC+pD1vmpg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=bsGxEPd/jsJWN54Q9F5wPKtPDhEID7b3MuV8e+owwt0=;
+ b=e9FDGHqlMaWeVat5CMmYZzkESd+XzLSwI9bJbQf7jjUt1UQmdsdMzk2FbL1ZHfWTR6eCtrDPxprY7aWyaouY9xOJfIfyzkVhGdtulSRAoFd3N6fwnm0VHBDUZgo2GEOy9+tCamnlGeYACFevQQWkbD2DLcYW1rW33lrmpL25QsmsAEjwwkJbi6lR+iQXfGxfQuoXoqLBYlDomUmq5cehJWGwZe4lY7p9JlEXwtQrPzw4bsVIssWkm/4+7Re3XvTmqtL9CNHOUjGy1VqytYAy94zksGrWfI3XjTZuC+6lzqc4Qfs++GKXtwoQSolmtz1eF2LQ2Db46qxJgGOKjlr6jw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=dealkapital.com; dmarc=pass action=none
+ header.from=dealkapital.com; dkim=pass header.d=dealkapital.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=dealkapitalcom.onmicrosoft.com; s=selector1-dealkapitalcom-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bsGxEPd/jsJWN54Q9F5wPKtPDhEID7b3MuV8e+owwt0=;
+ b=r3E7s2hkYWtHcpaUAnHsFWodvdKKRxx0nA/yeX0Ap9pX5E6Lf8nfW/ujGq86r0EGglJfMVldnYdcaxs8Igi5NHdVDXMhrrFHAxvWepHYD8dNm6GHPXqQooi1yCra/WgBkcAKTavRHRB3yZDoGVxFP1ttCNy7OZPhREtzHJDCQL24kvh+pfw8bFYBOjhuzT+8z0H4wpMLNSvOMgs5h9n2U5Dz7ImBu8jg8xA5Nws0U3sfb/8SeUKhBtydKkjGQA/ekU/hmM7jM84h+9iEWZA7R8AbZ/EoF3aPJ9FYtnuU1xUC5JEjtnDVtaILc3bTaKH4Nv3+kia/g88abK2MbjTcEA==
+Received: from JH0PR02MB6731.apcprd02.prod.outlook.com (2603:1096:990:51::7)
+ by SEYPR02MB8149.apcprd02.prod.outlook.com (2603:1096:101:205::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7386.20; Mon, 18 Mar
+ 2024 09:37:24 +0000
+Received: from JH0PR02MB6731.apcprd02.prod.outlook.com
+ ([fe80::b9ab:ca64:f071:334f]) by JH0PR02MB6731.apcprd02.prod.outlook.com
+ ([fe80::b9ab:ca64:f071:334f%4]) with mapi id 15.20.7386.022; Mon, 18 Mar 2024
+ 09:37:24 +0000
+From: Jimy Abadi <justice.smith@democorp.com>
+To: "oakleybrown@testdomain.io" <oakleybrown@testdomain.io>, "harperallen@testcompany.co"
+	<harperallen@testcompany.co>
+CC: "dakotagarcia@testdomain.io" <dakotagarcia@testdomain.io>, "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>, Dicky
+ Parengkuan <river.robinson@democorp.com>
+Subject: Introduction to Okusi Associates >< JurisTax
+Thread-Topic: Introduction to Okusi Associates >< JurisTax
+Thread-Index: AQHaeQivnymxTdWPbEOpnWRFR3DeTQ==
+Date: Mon, 18 Mar 2024 09:37:23 +0000
+Message-ID:
+ <dakotadavis@testmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=dealkapital.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: JH0PR02MB6731:EE_|SEYPR02MB8149:EE_
+x-ms-office365-filtering-correlation-id: 52075b3e-9780-44fc-021f-08dc472f0434
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ iR2HNz1UfeTfin0jdWcO39lrmX6YeNU7yv/Mb9ZsRB7HW81twT/gUuiwJEsJWBxtBhzmWFqg4ZSF/s3Lkk9ITxmm5dqQeBSjTSt01gdivx9wBx2rWc9xX1SNaQf+pmFn/w1e40FifKVaQWk7mZw2Gu/674n635JFdxw8duxkO1RxHtjK3d98aJaryJrcyOF5B4GKkJF2GWixCzm80IDwJNyJcs6HZqulz1Ele/ijdhOhYUg6vFIgpqR+YWqdpVoE2g2S5+Emj7NTgEi457a2b0cPiXTQOjTWlkK6ZkPzPWsX2+L2rONV9eZA4sQGIoW1LGnbDkMZUET5U1PNlfbRa2slejLCJApN7gU1u2AFWuVvNE05PJd3jZlht0FtjLNRkVp1PzPFr0uWqXiFVQGedvxmKPUjfJ2MhP2Yi3DYIqcNrb2zhZKXOYYsXmLPPbc/tfY1J3vAnyPUxs+sOLejWMtUMpABY1Uguaze9dXANKN2FgI6vFUrnAEHHXHYCU+n2DCjKGsY826TWAUI5hOPlu/NU5DTifF4H3U12ihMe0XWbB0rCwoN/S9zB5xri4RJ42YlzovaQ/20udtG6k4Re9WMZx5YbYy4g/VSpaxWrmomUH16WKT2Nwj+XklOmwUQcgb9lsv4CsjlxufhNVTA7ZGlVYHRD8LqBSbr9EDvYYo=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:JH0PR02MB6731.apcprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(1800799015)(366007)(38070700009);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?4dgDFxXc2XIe81WFhPByqskTC4dJBdk0yRpqvUi4EbbABDHhFR40jVr3Eo?=
+ =?iso-8859-1?Q?J1qlWF0LewlWMznsgPhD2dFs0l1pdtmkhIn9z712xYkHpYWUqeicjpxU6a?=
+ =?iso-8859-1?Q?LRO/FjMyZzrywNy4IC2oUMWd/r/02RG5EpfaxhS9KEx25I7/NNAoyaC2O0?=
+ =?iso-8859-1?Q?Vtfu7JK1mGnHDDqBrhaCq7HJ94JVQ0oAfyS417DlUd39LvMBqKVQPQPFrp?=
+ =?iso-8859-1?Q?BKMR4AALMd1yQBgob0HJDyqMu8RH4LNZMzuLQnhXu9JooW/yllP+sd9oBO?=
+ =?iso-8859-1?Q?24Zg+QLqYFb3OEhcRkmGcwyV1PVuuW5G75uuCEvYh/9TbdgexbWpp8r7tU?=
+ =?iso-8859-1?Q?X9WlUGnMxz3hcxN0ki38+v4Ylcz2b8SsCyLjipWkfCVM+PbacP8KnMXFZs?=
+ =?iso-8859-1?Q?hx807UWcAFT6lMdnWOqwlwyO8rJ+1pvFERj27OubjZ3B5im7qWpRStMw1B?=
+ =?iso-8859-1?Q?Tw6/AlU3+IZuBR1Re4nLP6KK3aiR8xpF2f1QcZbI2j7rR5L97uHidH+GgL?=
+ =?iso-8859-1?Q?wV1PCEhD5i8GMF/l/YlJwE+g4p7zUAKzGp5mb5gbZgYLti0PZlzU6kZ5yJ?=
+ =?iso-8859-1?Q?aJsILck0Oqx8zl6xxZNIgwFiyBB+xuBFQ9d8WfiaUaj65J7aDZ+88ZL8I0?=
+ =?iso-8859-1?Q?Kl2yMRgW9iPKQYmm07Zs30M5yZvMR0pW/a+zaYGW38He6xVMjT9e0JtUoT?=
+ =?iso-8859-1?Q?QTiK0MGmuj2Z7AVrV9jZyU0XlV9ZFT7tp78i3+iOp7TtY/PuEdLTh2Dfd/?=
+ =?iso-8859-1?Q?xlRi4+3vxyRkXWeIr92JB0/VjWTKZaNtcHsvLxc33qS5C21r3shR1J9GQ8?=
+ =?iso-8859-1?Q?EUXJf4qZBuSbsIXatyd1OzM1oGfegTjBBXWrTAdHXSRwmp/1F5jRZMHQgX?=
+ =?iso-8859-1?Q?KIkpYdyWqJTpQDIC555SHZ7fb4M8PBWHc1WYCBrrpu7O77YsiX0BlrE1H/?=
+ =?iso-8859-1?Q?pndZp5B4R2MtxmrbSgB2wj+Gyb9YIMyxTd3s2h1twGS7zWaTsQsdQlzGTe?=
+ =?iso-8859-1?Q?ilGOfWD9VjvsZk1hH05wP8moS4lcAQasRpUgGOBphB0bk8BB3ncn/RXWOK?=
+ =?iso-8859-1?Q?W/Ri+XC/vAaEICgDlwnbPixZg95W8WacouLDb6IZJGj7HUiCDz5qc+FdwQ?=
+ =?iso-8859-1?Q?t0uhmUzYo3AncRVYgbNYAV210XNs1FaHj9hK5KF0V1eUdywkSmSEtVYkDc?=
+ =?iso-8859-1?Q?TxMx8IeLlTwdv12IHqPmUTmiiyjn8BZ9jMVMxH3ld4aqEdQILWyDjDkwvb?=
+ =?iso-8859-1?Q?Vg+y4W1zWF+YxLOcYQ3brKR2vdLphGX9YTD9iIhv7Ze6bBsWTGabUIYnfC?=
+ =?iso-8859-1?Q?RZX4RnlU9IfRVmyHuONXLoXhVhnQICdDVAjfrFmWdiCINDmQ7lDhXAAYfe?=
+ =?iso-8859-1?Q?gW+pZcNHE7AJB+qXkN9j5i5UCcNLJhpcadc8sAmK716CvCa2MCyIiHJ/g1?=
+ =?iso-8859-1?Q?5QmRFor4Tfb+J4lJwnmy0PGraxY/KPPPZ/YdlWT9tIDXu84nH+i+phiwEG?=
+ =?iso-8859-1?Q?AlfUQ66jgs9KoSl0bHCx0KpJ7K4rIwn2sNcL0qR5Wbn0Oc/+0KFTPGsv0W?=
+ =?iso-8859-1?Q?wpJ4FrIjXiwsmx6jdyVYeC9313fWYJ4Z5ZdX4SjyEAIC8dxz9wiakdw3yv?=
+ =?iso-8859-1?Q?7xPbhYRz6JauRaXQ0tvXTZjaTXN3VQMa4YrpEddgmzgX6Pc9CTmsC0XA?=
+ =?iso-8859-1?Q?=3D=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_JH0PR02MB67310BFBE1E8E56C8A855B0B852D2JH0PR02MB6731apcp_"
+MIME-Version: 1.0
+X-OriginatorOrg: dealkapital.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: JH0PR02MB6731.apcprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 52075b3e-9780-44fc-021f-08dc472f0434
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Mar 2024 09:37:23.8730
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 04b3382a-5692-4370-8f9d-7973c0bb4012
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: jDleFeexpkJm3AlkcV7anuIGv7ns77nRyuRZ325tFsTPQ57Q1no34OXhbfexsqKpc7eRCmSWsaBBz4QkCv479quR7j7InCk0HRMbeg/xdac=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEYPR02MB8149
+X-Spam-Status: No, score=-0.6 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,HTML_MESSAGE,RCVD_IN_BL_SPAMCOP_NET,RCVD_IN_MSPIKE_H2,
+	SPF_HELO_PASS,SPF_PASS,T_SCC_BODY_TEXT_LINE autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--_000_JH0PR02MB67310BFBE1E8E56C8A855B0B852D2JH0PR02MB6731apcp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Sigit,
+
+Hope this email finds you well,
+
+I want to introduce you to Vanessa from Juris Tax (Home - Juristax<https://=
+www.juristax.com/>). Vanessa is exploring to establish an entity in Indones=
+ia, JurisTax is management service company which provide services like esta=
+blishment of entity, accounting, taxation, etc which cover jurisdictions of=
+ Singapore, Dubai, Mauritius and any others. Vanessa is in Indonesia at thi=
+s moment and I think is good for having a meeting directly with you, becaus=
+e In OKUSI Associates (Okusi Associates | Indonesian Corporate Services<htt=
+ps://okusiassociates.com/>) is providing the same services. Probably it can=
+ be a good opportunity for both to explore.
+
+Feel free to having further discussion.
+
+Best regards,
+
+
+Jimy Abadi
+
+Partner
+
+M : +62 856 4513 8021
+
+T  : +62 21 515 7652
+
+E : jordan.jones@democorp.com
+
+
+
+PT DELTA ALPHA KAPITAL
+
+World Capital Tower 11th floor
+
+Jl. Dr. Ide Anak Agung Gde Agung, Lot D
+
+Lingkar Mega Kuningan
+
+Jakarta Selatan 12950, Indonesia
+
+www.dealkapital.com
+
+
+
+The information on this email and any attachments are confidential and prot=
+ected by legal privilege. If you are not the intended recipient, you must n=
+ot distribute, copy, disclose or use the information or attached files in t=
+his email in any way. Thank you for your cooperation.
+
+
+--_000_JH0PR02MB67310BFBE1E8E56C8A855B0B852D2JH0PR02MB6731apcp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof"><span style=3D"font-family: Aptos, Aptos_Embe=
+ddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 1=
+2pt; color: rgb(0, 0, 0);">Hi Sigit,&nbsp;</span></div>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+background-color: rgb(255, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br=
+>
+</span></div>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+background-color: rgb(255, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">Hop=
+e this email finds you well,</span></div>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+background-color: rgb(255, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br=
+>
+</span></div>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+background-color: rgb(255, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">I w=
+ant to introduce you to Vanessa from Juris Tax (<a href=3D"https://www.juri=
+stax.com/" id=3D"OWA1655f283-6a0c-cefd-4b3b-d477bcd96ac1" class=3D"OWAAutoL=
+ink">Home
+ - Juristax</a>). Vanessa is exploring to establish an entity in Indonesia,=
+ JurisTax is management service company which provide services like establi=
+shment of entity, accounting, taxation, etc which cover jurisdictions of Si=
+ngapore, Dubai, Mauritius and any
+ others. Vanessa is in Indonesia at this moment and I think is good for hav=
+ing a meeting directly with you, because In OKUSI Associates (<a href=3D"ht=
+tps://okusiassociates.com/" id=3D"OWA739a3deb-196b-30e8-c041-2e589a6ec75c" =
+class=3D"OWAAutoLink">Okusi Associates
+ | Indonesian Corporate Services</a>)&nbsp;is providing the same services. =
+Probably it can be a good opportunity for both to explore.</span></div>
+<div style=3D"text-align: left; text-indent: 0px; background-color: rgb(255=
+, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br=
+>
+</span></div>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+background-color: rgb(255, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">Fee=
+l free to having further discussion.</span></div>
+<div class=3D"elementToProof" style=3D"text-align: left; text-indent: 0px; =
+background-color: rgb(255, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br=
+>
+</span></div>
+<div style=3D"text-align: left; text-indent: 0px; background-color: rgb(255=
+, 255, 255); margin: 0px;">
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">Bes=
+t regards,</span></div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: &quot;Times New Roman&quot;, serif; font-size: =
+12pt; color: rgb(153, 121, 80);">Jimy Abadi</span></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);"><i>Partner</i></span></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">M : +62 856 4513 8021</span></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">T&nbsp; : +62 21 515 7652</span></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">E :</span><span style=3D"font-family: Arial, sans-serif; font=
+-size: 10pt; color: rgb(153, 121, 80);">&nbsp;jordan.jones@democorp.com</s=
+pan></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">&nbsp;</span></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 12pt; color: rgb(=
+153, 121, 80);"><b>PT DELTA ALPHA KAPITAL</b></span></p>
+<p style=3D"background-color: white; margin: 0px; font-family: &quot;Times =
+New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">World Capital Tower 11</span><span style=3D"font-family: Aria=
+l, sans-serif; color: rgb(62, 66, 75);"><sup>th</sup></span><span style=3D"=
+font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">&=
+nbsp;floor</span></p>
+<p style=3D"background-color: white; margin: 0px; font-family: &quot;Times =
+New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">Jl. Dr. Ide Anak Agung Gde Agung, Lot D</span></p>
+<p style=3D"background-color: white; margin: 0px; font-family: &quot;Times =
+New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">Lingkar Mega Kuningan</span></p>
+<p style=3D"background-color: white; margin: 0px; font-family: &quot;Times =
+New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">Jakarta Selatan 12950, Indonesia</span></p>
+<p style=3D"background-color: white; margin: 0px; font-family: Calibri, san=
+s-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">www.dealkapital.com</span></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 10pt; color: rgb(=
+62, 66, 75);">&nbsp;</span></p>
+<p style=3D"text-align: left; background-color: rgb(255, 255, 255); margin:=
+ 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31,=
+ 30);">
+<span style=3D"font-family: Arial, sans-serif; font-size: 9pt; color: rgb(6=
+2, 66, 75); background-color: white;"><i>The information on this email and =
+any attachments are confidential and protected by legal privilege. If you a=
+re not the intended recipient, you
+ must not distribute, copy, disclose or use the information or attached fil=
+es in this email in any way. Thank you for your cooperation.</i></span></p>
+<span style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-siz=
+e: 12pt; color: rgb(0, 0, 0);"><br>
+</span>
+</body>
+</html>
+
+--_000_JH0PR02MB67310BFBE1E8E56C8A855B0B852D2JH0PR02MB6731apcp_--

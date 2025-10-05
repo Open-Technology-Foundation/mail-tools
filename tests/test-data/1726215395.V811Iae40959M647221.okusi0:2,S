@@ -1,0 +1,115 @@
+Return-Path: <miles.lee@testmail.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 7D8213340202
+	for <drewjones@testmail.net>; Fri, 13 Sep 2024 15:16:35 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 13 Sep 2024 15:16:35 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id SDIBDLr042ZuqBwAeHbnHg
+	(envelope-from <miles.lee@testmail.com>); Fri, 13 Sep 2024 15:15:54 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-pl1-f180.google.com (mail-pl1-f180.google.com [209.85.214.180])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 79DC32640002
+	for <legmorganhill@testdomain.io>; Fri, 13 Sep 2024 15:15:52 +0700 (WIB)
+Received: by mail-pl1-f180.google.com with SMTP id d9443c01a7336-2068acc8a4fso5770225ad.1
+        for <legmorganhill@testdomain.io>; Fri, 13 Sep 2024 01:15:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1726215351; x=1726820151; darn=okusi.id;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=KoltRBFRXI72z+x/5C4WimtxZnNuKM75TKDgRlyx+ok=;
+        b=KlJpkS4ujXGTFrNdegZhHmbTsBBoWreqjIU2y486CE9Ku0XJhyoI4HLmehhQ2HiQFu
+         nKgd7iIkJV/f5H+QUKMORPFK1BHNPh9TJ3Y/IdCSDiQsovEkg2KCeq3wOensDxr3k1nf
+         oUnwsEm/3VcGQeKnMpTAT86E1t1SDoJIgRC2jsw44W8vCiM6GxQIkT3pM8OiqvcNNbV/
+         Pp94eYzFb9rFrLvmpNM0K0xC9MMpSfm4iz9c7QUd2VcRaQXj/U5Bkqbv3fMC5Umw0HkN
+         Zt4Yj7jsHHVy3+1FrUgNsU8g+uTOJdoHwSvbjgZZ5PKYFhGVkFHv9IOnz3B+1FY2nMpe
+         4AuQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1726215351; x=1726820151;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=KoltRBFRXI72z+x/5C4WimtxZnNuKM75TKDgRlyx+ok=;
+        b=Mq1jw8Mg/Uza8uA1wG6Zgi3EwRfPr6PHaEYucI5vPQXlLPtSVVJ4HX2xXpJFeFV6ya
+         K+VH/kNJJEwqAZTBKm7ozSX+RFFd02nxVidhrj7qFF5hDL/7idtwPgJ+siEJL5erUdph
+         zSYwzC7TTSWDhDwZCdG/OxLklrHqo62MhhO9XdyaZQ49ua948nlWmlR0dajzJ+odJH1l
+         tltCkqgN8pkma973srTQ/4uSAVeQAgrlO3h82QtUlhhvFwiy4NYKQPm1oYfrKF+F6JW5
+         LLjVnKNYa98FsNjjkIqmRQlZa9Ok+kcXZMllVj5FHZ4lpGSftjE7HbVVDOTREQZGnEnE
+         D5kw==
+X-Gm-Message-State: AOJu0YzBz4vvlipPp1pDicuCHdYs5VsFOTcSK6I3DTv3Cy2maus4bC9Z
+	PEJkYUZo6jfAfxpDEq5/0DkgOAR6C3HYXMaaKbvNHw9hzi+Pfqu8QCWfICCY3r/hzQQm2KMM/mk
+	hxKgYpTghcSXguCfWMdY3UEWYz0hf
+X-Google-Smtp-Source: AGHT+IH83k6yhf3Qt8R7EJeJoSyBiGq923hdMPqpoJFDC4Ef31dP5f9bMxS6xjMvxtu+41GMVfI1YtY/DwwBQlmpGAY=
+X-Received: by 2002:a17:90b:3a8f:b0:2c9:9643:98f4 with SMTP id
+ 98e67ed59e1d1-2dbb9dbd708mr2831989a91.5.1726215350616; Fri, 13 Sep 2024
+ 01:15:50 -0700 (PDT)
+MIME-Version: 1.0
+References: <gray.davis@samplebiz.org>
+In-Reply-To: <gray.davis@samplebiz.org>
+From: chadd mclisky <miles.lee@testmail.com>
+Date: Fri, 13 Sep 2024 16:15:40 +0800
+Message-ID: <kelly_wilson@testmail.com>
+Subject: Re: ALERT: MCLISKY: Company Domicile Services
+To: legmorganhill@testdomain.io
+Content-Type: multipart/alternative; boundary="000000000000c78d020621fbd475"
+X-Spam-Status: No, score=-102.1 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM,HTML_MESSAGE,
+	RCVD_IN_MSPIKE_H3,RCVD_IN_MSPIKE_WL,SPF_HELO_NONE,SPF_PASS,
+	USER_IN_WELCOMELIST,USER_IN_WHITELIST autolearn=ham autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--000000000000c78d020621fbd475
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Domicile Renewal McLisky Consult
+
+I would like to proceed with this.
+thanks you
+Chadd McLisky
+
+On Wed, Sep 11, 2024 at 9:16=E2=80=AFAM <legmorganhill@testdomain.io> wrote:
+
+> This is an automated reminder from Okusi Associates.
+>
+> Reminder for PT Mclisky Consult:
+>
+> Your company domicile service is due to expire on 11 Sep 2024
+>
+> Please contact Okusi Associates for information concerning renewal.
+>
+>
+
+--=20
+Chadd McLisky
+
+--000000000000c78d020621fbd475
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Domicile Renewal McLisky Consult<div><br></div><div>I woul=
+d like to proceed with this.</div><div>thanks you<br>Chadd McLisky=C2=A0</d=
+iv></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_att=
+r">On Wed, Sep 11, 2024 at 9:16=E2=80=AFAM &lt;<a href=3D"mailto:legal@okus=
+i.id">legmorganhill@testdomain.io</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quo=
+te" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204=
+);padding-left:1ex">This is an automated reminder from Okusi Associates.<br=
+>
+<br>
+Reminder for PT Mclisky Consult:<br>
+<br>
+Your company domicile service is due to expire on 11 Sep 2024<br>
+<br>
+Please contact Okusi Associates for information concerning renewal.<br>
+<br>
+</blockquote></div><br clear=3D"all"><div><br></div><span class=3D"gmail_si=
+gnature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><d=
+iv dir=3D"ltr"><div><div>Chadd McLisky</div><div>=C2=A0</div></div></div></=
+div>
+
+--000000000000c78d020621fbd475--

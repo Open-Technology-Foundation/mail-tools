@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id A770F3340205
+	for <drewjones@testmail.net>; Mon, 19 Aug 2024 08:16:59 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 19 Aug 2024 08:16:59 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id WjXqJdGcwmbg3AUAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Mon, 19 Aug 2024 08:16:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1724030161; bh=JAer2BMboZlEZR3Gv+/iiWrAmxEUgafM3kX+LIRe/wQ=;
+	h=To:Subject:Date:From:From;
+	b=aU2qPQ0yzFSsm+f4poi4zSPITIlnrbsp+rxpqnhnpHX9JvsgNNinr07XDATZwYLvV
+	 NapcAPezch8VSMWwuGu247Nbth2CqtKR4Dz74ssnD16Al5btn2AuLTdKfoVXzSsuUf
+	 4ZgtXKy257PAcsEsXTIpHl2f8JbNs+Qbzm65FzaOT09PL1uYNAVLeyefQFFDaXQb1V
+	 6Sd8PMdXeV0aDPuFA24OC48jiGGN5pARjGDU3e2zxGXwL/il6vNu9zj4yh7DBDi5JE
+	 saAkFLrTi3hFjBYfQHiRaWwAXZERoaaZrLzGDxfnYB/rgNpwNc8LRgIjd5NLJ58oe7
+	 c7QyRtfW17xaA==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 6A5372640002; Mon, 19 Aug 2024 08:16:01 +0700 (WIB)
+To: blakejones@example.com
+Subject: ALERT: BLVBOOK: Reappointment of Company Officeholders
+Date: Mon, 19 Aug 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <raven.sanchez@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT BLVBook Creative Consultancy:
+
+The tenure of your company's officeholders (director/chairman) has expired or is about to expire. Officeholders need to be reappointed for another 5-year term.
+
+Please contact Okusi Associates for information concerning renewal.
+

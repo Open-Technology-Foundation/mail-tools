@@ -1,0 +1,151 @@
+Return-Path: <>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 2DFCA33401FE
+	for <drewjones@testmail.net>; Tue,  4 Feb 2025 08:17:18 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Tue, 04 Feb 2025 08:17:18 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id IJwQEHtqoWegagoAeHbnHg
+	(envelope-from <>); Tue, 04 Feb 2025 08:16:43 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=none dis=none) header.from=monroeconsulting.com
+Authentication-Results: OpenDMARC; spf=pass smtp.helo=APC01-SG2-obe.outbound.protection.outlook.com
+Received: from APC01-SG2-obe.outbound.protection.outlook.com (mail-sg2apc01hn2207.outbound.protection.outlook.com [52.100.164.207])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id DDCE52640006
+	for <legmorganhill@testdomain.io>; Tue,  4 Feb 2025 08:16:13 +0700 (WIB)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=uuUEZpYx2cWnf4VpKDw7ib8Hzp4eiaxTIgZXVdBFLlLbkl21gYyPuhtx0zUPTJJWsUO9/HJsiwn/yXR25O8Ke6byTQjrwH81MMh0Nco3iRN3/1duzTcUWzB7RhOM1d5b66Xo/CtevZjCYjJMOUuHkTvIH/moL6Ozhsi0KUIuP/Ssmcx1oTTFtGKShAKZ07FjxOXbe0XctRLi43WJNNayFzoj6uEb1wPdeHnr2VEGHrNkadQmd0UXQFbpao0jrYkYxYc3wMrycWuid4DkVQLmJA/1NOsE613BDNn6MtQQPjkaV6CAp6hV5KcVE5EDH3pWy4+rrcSeQBUIdyVzORUyWw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=QglnP5kRbs3eafxEOqRc3FiMCmRh1U6lr55GW40851E=;
+ b=EKCvTcUV3vH+IKGzklo6bPko4lZoLQI+1WnqgK7W5I5DJr2FKmHv5t8f0VbsAHFoKIVZ2xNDDk8OxTfJPO3YWE1fv3RVRtpYXGtX8oO/1im6/HmExxxW7s0BhADfuvu+q4kChe8bK0SSIsiAu0UycR23oaUzbaAEKJG6iK23U2Jc4BpcC5HFQf3Lvdtvj3aTBRde/tuF/GxV4tbmNWmXb5Kxx/AgbnlwpO7jtn3SiMDmHBBCjfotpQd0s194ZA1YAnDA9BSmjzSJy2up8iFstqRkNfGbh0TKk8D3CKMikyEuDWjrTJixSMA7YVXcsVZ+Tc5J9fHKAq/DRz3t8VkMrg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=pass
+ action=none header.from=monroeconsulting.com; dkim=pass
+ header.d=monroeconsulting.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=MonroeConsultingGroup.onmicrosoft.com;
+ s=selector2-MonroeConsultingGroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=QglnP5kRbs3eafxEOqRc3FiMCmRh1U6lr55GW40851E=;
+ b=WFr5SGBqVoJM+Dmsow/qosAIlZN0Uit2yXCGVgUbHoLfFfHMXCL8J8VfBQf44PbxxKmBvADITzD9vt4+WCiVLYkoTrGbd5ss8KvwLtxWzLpmtDUt78eFO9bEL8VV0h2AF4SRXsush7bcAIWJ9CC1an88dw5/PPKxWsyF8hFc+gA=
+Received: from SI2PR04MB4460.apcprd04.prod.outlook.com (2603:1096:4:f7::13) by
+ SEZPR04MB7889.apcprd04.prod.outlook.com (2603:1096:101:22f::6) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8398.26; Tue, 4 Feb 2025 01:16:09 +0000
+Received: from SI2PR04MB4460.apcprd04.prod.outlook.com ([::1]) by
+ SI2PR04MB4460.apcprd04.prod.outlook.com ([fe80::265f:29b2:910e:7b55%4]) with
+ Microsoft SMTP Server id 15.20.8398.025; Tue, 4 Feb 2025 01:16:09 +0000
+From: Sisca Suci Elyana <adriangonzalez@testmail.net>
+To: "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>
+Subject: Automatic reply: ALERT: MONROE: Nominee Shareholder Services
+Thread-Topic: ALERT: MONROE: Nominee Shareholder Services
+Thread-Index: AQHbdqJe4Q1xq+MTOU2kCwGJvZtkDbM2V3m2
+Date: Tue, 4 Feb 2025 01:16:09 +0000
+Message-ID:
+ <5d25f4a42029b6c80a63f2923fb6cd0f@testmail.com>
+References: <francis.lee@samplebiz.org>
+In-Reply-To: <francis.lee@samplebiz.org>
+X-MS-Has-Attach:
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: adriangonzalez@testmail.net
+X-MS-TNEF-Correlator:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=monroeconsulting.com;
+x-ms-exchange-parent-message-id:
+ <francis.lee@samplebiz.org>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SI2PR04MB4460:EE_|SEZPR04MB7889:EE_
+x-ms-office365-filtering-correlation-id: 9989ed0c-852b-4e93-13ca-08dd44b981d0
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|50650200027|376014|10070799003|366016|1800799024|8096899003|80100003;
+x-microsoft-antispam-message-info:
+ =?us-ascii?Q?/EPaA45AJY70xIIpCkdW8Jh9J9gSTMfuGJ6apI2lbBO1YG0ZJvF+mI/hPDXK?=
+ =?us-ascii?Q?siY4Ovfm1dKQvbd5mH2zH8GgVGeNTZHbgJPDKbSzHY5cON2GNG5UIoWF1LLl?=
+ =?us-ascii?Q?60XkSXwh/7TRD+3Ixf7hWgf4Vk53IcYU5NbiPjhjJOU3Ulg2uYUf+8108gkK?=
+ =?us-ascii?Q?JcGYF/kHeIs4dLieJB8lU4nN0PIeQPF1DIwc8AYFyNUXYWy9/+B2fEpO3Zec?=
+ =?us-ascii?Q?ZB/+/6Ca/P6xKV9BpLRK0S5zb3U4Y+UgOYBEHkSlN5YTrftpBdZQ6iQKjYjW?=
+ =?us-ascii?Q?klM/QbI1f6fSiCmelJ8Fs/oPQkE/kU8y1Q2sAcT8W13HE7JTWlJPHm2YGzvn?=
+ =?us-ascii?Q?0qKJfE32sG5H0MQWItktzJc5ddP5SrLRarDTG6SDhuXmGwKqeGaBkkcwTOWj?=
+ =?us-ascii?Q?ROWX9zPluNM7SnbR3Di0zz5NmJ93OIxXqiTdJL6qjdV0N5+cLnIEfHC+iNY0?=
+ =?us-ascii?Q?OgMHkAeTVoOn6rDHhc4QKhDxfpjEaH76VrE8k99oek7OTmsiQ8wb73t/JaJ4?=
+ =?us-ascii?Q?tBVJSd5jxIyBp3Ijn+qd+FZ5uaF68zLVqkwCWbG283zYk+T0DINPUM/Haaw4?=
+ =?us-ascii?Q?AOqKEZnk7/Bu7smeVLg65YntvtAuQ41F18QhvQkZRf6clIeIdXn64RpS/4d/?=
+ =?us-ascii?Q?jooZf8jy0mjBrzlJCUhbqJrrH3vHGJnteBR+ndUl4JMLVtPHWoGNBUA9uOiH?=
+ =?us-ascii?Q?o3Y+oJuKk+Q6zew1F7XFM6fzc5/jvFL3iFg2GafJLz1fLqA7Dk9FsIafyL4D?=
+ =?us-ascii?Q?QcQbIF7ePnFEpGyulfgDAozBtAg96R6KI9W1I1SGO8UdRzmHXOxLcN+oTHv8?=
+ =?us-ascii?Q?lTeFa69sZuhZDLyVj7bLviYnUdt+GYoTrLmEmYYEUKPNzJgcPTTZcOK2yz4r?=
+ =?us-ascii?Q?HbaDD362kuM3Ene7Hj01OmDaH8Uu3RIu138gdwxtAiLMBW7464am6KSzP+GI?=
+ =?us-ascii?Q?6B+Q0JKt7SakR+aIkkK4Ir2g0HU7zfgcELTjBv7F6n/D3EV9h699MfRSmaO8?=
+ =?us-ascii?Q?76GHtlxUO7a4Ts38yEnWbVKO3bOfPmW0aI/nnTPZnvkBuuegPKIYbHwPq2hI?=
+ =?us-ascii?Q?+ZJ5B2XR4dSkUNfv3Oqipld93x3yU6SzWMBwDiEvmqx+kbN1L+P/5C2BopPF?=
+ =?us-ascii?Q?xsYJCq9dlEvECvimPQ6OlKGdWPjC4z8CRBhUqrvOjSBOvSvvSTov56aJdjRJ?=
+ =?us-ascii?Q?Uo7KZ9k7mkHf5RRQSt4yCemaUYHjDy4KhslEOYF7ZTV79TttzMoJKW8wgqMl?=
+ =?us-ascii?Q?YmElcnyW7D4MwCd2USOjrFv7IaUiXxnWKuWlTg7C0grgfW3XAiQ2slfKI9kW?=
+ =?us-ascii?Q?mjghA7cLmMVJwa0aJ85a13VjZKGer1c1IbW/F6eyM4AHvlt746gHOm/V39P2?=
+ =?us-ascii?Q?46hW+/nn2kDnSsquqDFHvQuezCFG?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SI2PR04MB4460.apcprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(50650200027)(376014)(10070799003)(366016)(1800799024)(8096899003)(80100003);DIR:OUT;SFP:1501;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ yVkxeRPWYS7AOim8CVFczs9sKWC0Oo2UIl3xGAp/5x45drotePU1wtrUl9l6IcYwQF2nRLMakmMKA326zb/VWXcXeYaQXUZGgZ01RFETxrr6mLKv+MCLjDt+yNYhbX4jeLkMVWd1ANNSSAvI6gMaw40mgyNg5TcjqrM6oEwS8DYesZl57RVLNy/6Bhpcre9RgXAJjLLaHbskU3zkaIAfm6b1twLXsJz0LGPtgPnXgQlpjnR5pJ1tVuXNwKC4BJimXPj6Q2el8618Xd1Yob4Vfo6j7oOqWL8ktVQDTQeFI3RcRY65ZZty2jGlws1r2Lgi
+Content-Type: multipart/alternative;
+	boundary="_000_10d7058e52184f4eab569175af29068cSI2PR04MB4460apcprd04pr_"
+MIME-Version: 1.0
+X-OriginatorOrg: monroeconsulting.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SI2PR04MB4460.apcprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9989ed0c-852b-4e93-13ca-08dd44b981d0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Feb 2025 01:16:09.3885
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 1c10aa25-aad1-44ae-ab44-2facfb72be92
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR04MB7889
+X-Spam-Status: No, score=2.5 required=5.0 tests=BOUNCE_MSG,DKIM_SIGNED,
+	DKIM_VALID,EMPTY_RETURN_PATH,FORGED_SPF_HELO,HTML_MESSAGE,
+	RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2,RCVD_IN_VALIDITY_RPBL_BLOCKED,
+	RCVD_IN_VALIDITY_SAFE_BLOCKED,SPF_HELO_PASS,URIBL_BLOCKED autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Level: **
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--_000_10d7058e52184f4eab569175af29068cSI2PR04MB4460apcprd04pr_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Thank you for contacting PT. Monroe Consulting Group. We would like to info=
+rm you that Sisca Suci Elyana is no longer employed here. Please direct any=
+ future correspondence to Ayu Widyaningtyas at ayu.widyaningtyas@monroecons=
+ulting.com.
+
+This is an automated reply. For your convenience this email has been automa=
+tically forwarded to Ayu Widyaningtyas
+
+--_000_10d7058e52184f4eab569175af29068cSI2PR04MB4460apcprd04pr_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+</head>
+<body>
+Thank you for contacting PT. Monroe Consulting Group. We would like to info=
+rm you that Sisca Suci Elyana is no longer employed here. Please direct any=
+ future correspondence to Ayu Widyaningtyas at ayu.widyaningtyas@monroecons=
+ulting.com.<br>
+<br>
+This is an automated reply. For your convenience this email has been automa=
+tically forwarded to Ayu Widyaningtyas
+</body>
+</html>
+
+--_000_10d7058e52184f4eab569175af29068cSI2PR04MB4460apcprd04pr_--

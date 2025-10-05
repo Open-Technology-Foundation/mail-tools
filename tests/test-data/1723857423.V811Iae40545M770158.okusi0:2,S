@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id AA2C33340204
+	for <drewjones@testmail.net>; Sat, 17 Aug 2024 08:17:03 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Sat, 17 Aug 2024 08:17:03 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 30wzHdH5v2afbQgAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Sat, 17 Aug 2024 08:16:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1723857361; bh=wYEnVtLQsizERCDulNZjZHY+qmmNMPrcXY2i53VZnCg=;
+	h=To:Subject:Date:From:From;
+	b=E/eoqinfe3o7AkYjWFFm9KQyZNxsnV6QWgRO5eu2VzAbbwXZcCheE75HhuU/1Lxvd
+	 sLngo9lhNNleXBsINTTW+0BmJay5zzxJnOTsHyOe0FIZmJLl8IFRMGsqkFlFMvNZNj
+	 WaTxO071CRaastyah8x6wzmxK9PnjEK8C8sctaWNdzcpZbZDmRAbko8pWAMSXq3qG7
+	 eNEIKaS4ysprNHk8auGI6mcHaxtJ2zVCzuqT02YbqNVbciCJG7BIc3hLkmUGy7+L3p
+	 Gr9juxmRarL9Iryc/LiUKl2UnOHvkqAMCdxJOkzAMnM+FkO2wlGL2kYGyTW6GYhuOE
+	 Yew0k+3fCrNhw==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 4F6A42640004; Sat, 17 Aug 2024 08:16:01 +0700 (WIB)
+To: oakleyflores@testmail.net,lee.johnson@testmail.net
+Subject: ALERT: INDOMAL: Company Domicile Services
+Date: Sat, 17 Aug 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <alex.anderson@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Indomal Nusantara:
+
+Your company domicile service is due to expire on 16 Sep 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

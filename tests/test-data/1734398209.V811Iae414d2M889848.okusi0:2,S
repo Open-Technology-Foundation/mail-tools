@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id C515A3340204
+	for <drewjones@testmail.net>; Tue, 17 Dec 2024 08:16:49 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Tue, 17 Dec 2024 08:16:49 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id gNlYL9LQYGftaB4AeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Tue, 17 Dec 2024 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1734398162; bh=yBnFZZ8iiE3Zg/4D/SuZ4pSFHi1DF5IsEWv3ktCx81U=;
+	h=To:Subject:Date:From:From;
+	b=j/NJ5L3catHtlEUm0AALQlXxyPa5j7xQ7G3Vy2D1khCKhmDXiLpMSgMKugOs5YLjo
+	 UxVOTSePOQo162hjITWHUqAO4aQZ1s2kxyvA9Dv01A9kjaKQw+W2ub2c5euWKVw2Tz
+	 91vNp4QoYMMhvBghQHZDvkyoMvxlgJ1b4ByaJRbEGwoVtD30YvmCjYVtJcRPyUPgS+
+	 fPsrtz1I/GBkJX7yPDvj0BMmHKhHHcVrlY+b/Tpt7PZN6VbKF7xFU0h39bUmmqK8Yt
+	 H59o5OOlIPuw5rPB7ytTelX5mgnWwlLGKrPuB9c+1GT2/TdnlF0Nlu5af8aJHvueBK
+	 3gYTuuppVv+WA==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 25BDE2640035; Tue, 17 Dec 2024 08:16:01 +0700 (WIB)
+To: stormscott@testdomain.io,rowan.thomas@testmail.com,phoenixtaylor@testmail.com,ellisyoung@testdomain.io,caseyramirez@testdomain.io,charlierodriguez@testmail.com
+Subject: ALERT: ABO: Investment Activity Report report to BKPM LKPM Q4 Tahun 2024
+Date: Tue, 17 Dec 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <casey.rodriguez@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Abode Hotels:
+
+Your company's Investment Activity Report (LKPM) to the BKPM must be done before 24 Dec 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

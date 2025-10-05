@@ -1,0 +1,151 @@
+.TH MAILMESSAGE 1 "October 2025" "mailmessage 1.0" "User Commands"
+.SH NAME
+mailmessage \- extract email message body from mail files
+.SH SYNOPSIS
+.B mailmessage
+.I FILE
+.SH DESCRIPTION
+.B mailmessage
+reads an email file and outputs everything after the first blank line (the email message body).
+The header section is skipped.
+.PP
+The utility is available in two forms:
+.IP \(bu 2
+A standalone binary for general use
+.IP \(bu 2
+A bash loadable builtin for high-performance scripting (10-20x faster)
+.PP
+Both implementations provide identical functionality and output.
+.PP
+This utility is complementary to
+.BR mailheader (1),
+which extracts the header section.
+.SH OPTIONS
+.B mailmessage
+takes no options. It requires exactly one argument: the path to an email file.
+.SH EXAMPLES
+Extract message body from an email file:
+.PP
+.RS
+.nf
+$ mailmessage /var/mail/message.eml
+This is the message body content.
+It can span multiple lines.
+
+And include blank lines within the body.
+.fi
+.RE
+.PP
+Using the builtin in a bash script:
+.PP
+.RS
+.nf
+#!/bin/bash
+enable -f mailmessage.so mailmessage 2>/dev/null || true
+
+for email in /var/mail/*.eml; do
+  echo "Processing: $email"
+  mailmessage "$email" | wc -l
+done
+.fi
+.RE
+.PP
+Combining with mailheader to split an email:
+.PP
+.RS
+.nf
+#!/bin/bash
+enable -f mailheader.so mailheader 2>/dev/null || true
+enable -f mailmessage.so mailmessage 2>/dev/null || true
+
+mailheader email.eml > headers.txt
+mailmessage email.eml > body.txt
+.fi
+.RE
+.SH EXIT STATUS
+.TP
+.B 0
+Success
+.TP
+.B 1
+File could not be opened or read, or invalid arguments provided
+.SH BASH BUILTIN
+When installed, the bash loadable builtin is automatically available in interactive shells.
+For non-interactive contexts (scripts, cron jobs), it must be explicitly enabled:
+.PP
+.RS
+.nf
+enable -f mailmessage.so mailmessage 2>/dev/null || true
+.fi
+.RE
+.PP
+The builtin provides significant performance benefits by eliminating fork/exec overhead,
+making it ideal for scripts that process many email files.
+.PP
+To view builtin-specific help:
+.PP
+.RS
+.nf
+help mailmessage
+.fi
+.RE
+.SH PROCESSING DETAILS
+.B mailmessage
+performs the following operations:
+.IP \(bu 2
+Skips all lines up to and including the first blank line (the headers)
+.IP \(bu 2
+Outputs all subsequent lines (the message body)
+.IP \(bu 2
+Removes carriage return characters (\\r)
+.IP \(bu 2
+Converts tab characters to spaces
+.PP
+Unlike
+.BR mailheader (1),
+continuation line joining is not performed on the message body, as RFC 822
+continuation rules only apply to headers.
+.SH FILES
+.TP
+.B /usr/local/bin/mailmessage
+Standalone binary executable
+.TP
+.B /usr/local/lib/bash/loadables/mailmessage.so
+Bash loadable builtin shared object
+.TP
+.B /etc/profile.d/mail-tools.sh
+Profile script that auto-loads the builtin in interactive shells
+.SH PERFORMANCE
+The standalone binary incurs fork/exec overhead (~1-2ms per call).
+The bash builtin runs in-process (~0.1ms per call), providing 10-20x speedup
+for scripts processing multiple emails.
+.PP
+For performance benchmarking:
+.PP
+.RS
+.nf
+/usr/share/doc/mailheader/benchmark.sh
+/usr/share/doc/mailheader/benchmark_detailed.sh
+.fi
+.RE
+.SH SEE ALSO
+.BR mailheader (1),
+.BR formail (1),
+.BR reformail (1),
+.BR bash (1),
+.BR enable (1)
+.PP
+RFC 822 - Standard for ARPA Internet Text Messages
+.SH BUGS
+Report bugs at:
+.UR https://github.com/Open-Technology-Foundation/mailheader/issues
+.UE
+.SH AUTHOR
+Part of the Open Technology Foundation utilities collection.
+.SH COPYRIGHT
+Copyright \(co 2025 Free Software Foundation, Inc.
+.PP
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+.PP
+Licensed under the GNU General Public License v3.0 or later.

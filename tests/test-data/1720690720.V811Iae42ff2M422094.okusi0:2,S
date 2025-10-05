@@ -1,0 +1,337 @@
+Return-Path: <alex.perez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 3B7523340204
+	for <drewjones@testmail.net>; Thu, 11 Jul 2024 16:38:40 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 11 Jul 2024 16:38:40 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id UMwBCvOnj2Y7xh8AeHbnHg
+	(envelope-from <alex.perez@testdomain.io>); Thu, 11 Jul 2024 16:37:55 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=quarantine dis=none) header.from=permatabank.co.id
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com (mail-tyzapc01on2126.outbound.protection.outlook.com [40.107.117.126])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id B9A5A2640006
+	for <legmorganhill@testdomain.io>; Thu, 11 Jul 2024 16:36:49 +0700 (WIB)
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=JiyBXTBnnQSV9nEV3HtfucQrNe5dwH15xWIBwLbJz4ojAsUguVajT28rC3duqJZ3hIliPzuOqr//AxrBbMmjRcoO7M/Kl7BFr1LkfJKz5fxU26lyTaIcpSWWgpawjHBl46kW2iAQaTq72+jSbz3I/Jqo+6aJge+wSnuITC1yL0mYUHv9GyBH93MI3SpcK5CZBRJitC6w2tUrV6pJe3dJMEUBiX+h+q1eeJYGCZIbkF8ArHFKlcxjXtQmiWgh3aMsZ5z6q5j468otEm9cWFuMCuQotao9Cysx33pmTfQiqkbzIfreCbhrDfXqIVj8F7yg42AtJ7Fe07synhg+D6m96g==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=qTHgY01toQVQ3wtXzkb6fOn/uG495SUjbAGZuH4MDcI=;
+ b=aGboflSmpaqTyKljWhH9MkcHL2HtQfWfjmv/GCUgbZoVufDvq/0m1NB8H9Jjpx1986Qn7dVZwSeiii3Yh9rnRaHdkundIM9pbPOQ2m1zpqnH1qVleL29DyEPsjOqNNbtYPhdfy9GgERF2Zt0bYqQaGu0QpLC2HD800nOwVqya4oy5x/8yPLjUmD4j1uKKvBIkEco2YpWhzHF5FuX5Ua3MMz+oExa0vfuNuTKL0myF3JDm62lUqqu36Oqh7R4jDgprxurThDoQd+tMPgbTB66qq1tdSurIQS5Q+j8h8w1B3uUXdr78sU/TvF48VJWp5mrBlQhv1088DPc8uJCgSBEpg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 20.212.15.69) smtp.rcpttodomain=okusi.id smtp.mailfrom=permatabank.co.id;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=permatabank.co.id; dkim=pass (signature was verified)
+ header.d=permatabank.co.id; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=permatabank.co.id]
+ dkim=[1,1,header.d=permatabank.co.id]
+ dmarc=[1,1,header.from=permatabank.co.id])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=permatabank.co.id;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qTHgY01toQVQ3wtXzkb6fOn/uG495SUjbAGZuH4MDcI=;
+ b=QGFWnJHqH+nTN+ta6Ljuo4FTkyUpdha4AyHfRSA4NwiKHk3GrwIOMmyc/J5oR/prvxhcyy44rilqQqPFjo2uhBgFRMb9NEHdJJgd5IQ8sgxIF/SmNF6wjIg2pVdqqnqybVzUCChFoq0VG4jAk37lXDLzYKfj7qocwdLYVKOctCs=
+Received: from SI1PR02CA0027.apcprd02.prod.outlook.com (2603:1096:4:1f4::18)
+ by SEZPR04MB6805.apcprd04.prod.outlook.com (2603:1096:101:e6::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7762.19; Thu, 11 Jul
+ 2024 09:36:43 +0000
+Received: from SG2PEPF000B66CD.apcprd03.prod.outlook.com
+ (2603:1096:4:1f4:cafe::4e) by SI1PR02CA0027.outlook.office365.com
+ (2603:1096:4:1f4::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7762.22 via Frontend
+ Transport; Thu, 11 Jul 2024 09:36:43 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 20.212.15.69)
+ smtp.mailfrom=permatabank.co.id; dkim=pass (signature was verified)
+ header.d=permatabank.co.id;dmarc=pass action=none
+ header.from=permatabank.co.id;
+Received-SPF: Pass (protection.outlook.com: domain of permatabank.co.id
+ designates 20.212.15.69 as permitted sender) receiver=protection.outlook.com;
+ client-ip=20.212.15.69; helo=permatabank.co.id; pr=C
+Received: from permatabank.co.id (20.212.15.69) by
+ SG2PEPF000B66CD.mail.protection.outlook.com (10.167.240.27) with Microsoft
+ SMTP Server id 15.20.7762.17 via Frontend Transport; Thu, 11 Jul 2024
+ 09:36:42 +0000
+Received: from dlpprotector1 (dlpprotector1 [127.0.0.1])
+	by dlpprotector1.localdomain (Service) with ESMTP id 3C00B5AF24
+	for <legmorganhill@testdomain.io>; Thu, 11 Jul 2024 16:36:42 +0700 (+07)
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com (unknown [104.47.110.41])
+	by dlpprotector1.localdomain (Service) with ESMTP id EDF8E1A5F
+	for <legmorganhill@testdomain.io>; Thu, 11 Jul 2024 16:36:41 +0700 (+07)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=SVhx+wft9zMEiL/DKhc/wpkTGhzh/4BH+h5CMWGIpBv+XG6JM711mHO5kX7dIxLDicKu2gQmEc4BZyvdsvUp4UqI+XasGzOgzixhLwyARJlVac00rqHvRCqPHhsZ2Oven8GunBS6Pya97PbwYtzUjt6ugIKS3ez2eB/llsqrNON04kSYg41cxydXHEyJ0i7VEMoOIs5VbYFE+/QsTTMxTaybSZT9gFC9jAGJnHrzyxMrwDKMcDxkSuaI1JjsioD+9uGUqRLS5wCmNEFngRiPasT7tnD/9PdCyj4KQ1724qiq2WiZLRazhVPbqP28ZerIISqMJWkkSpkHYZw7KogYhQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=qTHgY01toQVQ3wtXzkb6fOn/uG495SUjbAGZuH4MDcI=;
+ b=m/iwx9B7vyyxe8jUwlfpef1whL4nDADxQJXl6Nk/umZ5ZQqNeYDGvsCUMKawoHK90CZUYMMChTTrNr13hlgCEVr/r4YKtQQ+7YKAjlmCMlhWQKFNCx3H+m6gvVYo4VEPBWAXRUZ/wlPh2qnjyNWj5cn9wtmB52nThPWiNnBY4GtdAaxrEFHmTutYU/aWOis5WzDQ7juhJcTo0tf8CJ1CR2Mfa0hQUyQlsiDddQl8MiNGEJeyzmWaqZC6/pVuClLUYLHYrS2oXi+dUrEcKGXnHYrM5lXGbykIIyySq2x8WpZNAllrIXKVP8tuKUSBE/KM+JSDF/Z6Fhf1QBnDxtbdaw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=permatabank.co.id; dmarc=pass action=none
+ header.from=permatabank.co.id; dkim=pass header.d=permatabank.co.id; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=permatabank.co.id;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qTHgY01toQVQ3wtXzkb6fOn/uG495SUjbAGZuH4MDcI=;
+ b=QGFWnJHqH+nTN+ta6Ljuo4FTkyUpdha4AyHfRSA4NwiKHk3GrwIOMmyc/J5oR/prvxhcyy44rilqQqPFjo2uhBgFRMb9NEHdJJgd5IQ8sgxIF/SmNF6wjIg2pVdqqnqybVzUCChFoq0VG4jAk37lXDLzYKfj7qocwdLYVKOctCs=
+Received: from SEZPR04MB6430.apcprd04.prod.outlook.com (2603:1096:101:a6::9)
+ by SEZPR04MB7102.apcprd04.prod.outlook.com (2603:1096:101:182::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7741.28; Thu, 11 Jul
+ 2024 09:36:37 +0000
+Received: from SEZPR04MB6430.apcprd04.prod.outlook.com
+ ([fe80::65ed:7b0:54:30fc]) by SEZPR04MB6430.apcprd04.prod.outlook.com
+ ([fe80::65ed:7b0:54:30fc%4]) with mapi id 15.20.7762.016; Thu, 11 Jul 2024
+ 09:36:37 +0000
+From: Tobias Paramartha <alex.perez@testdomain.io>
+To: "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>
+CC: Alsutops <leesmith@testdomain.io>, Muhammad Muzaki
+	<emerson.gonzalez@testdomain.io>
+Subject: Bank Permata: Dokumen Bukti Identitas dari Dean Gary Robert
+Thread-Topic: Bank Permata: Dokumen Bukti Identitas dari Dean Gary Robert
+Thread-Index: AQHa02mGYbM9qNLqSkuwDFbUHCsIurHxRCwo
+Date: Thu, 11 Jul 2024 09:36:37 +0000
+Message-ID:
+ <stormgonzalez@testmail.com>
+References:
+ <caseylee@testmail.com>
+In-Reply-To:
+ <caseylee@testmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=permatabank.co.id;
+x-ms-traffictypediagnostic:
+	SEZPR04MB6430:EE_|SEZPR04MB7102:EE_|SG2PEPF000B66CD:EE_|SEZPR04MB6805:EE_
+X-MS-Office365-Filtering-Correlation-Id: 219cb06a-7452-4604-9f4a-08dca18cf936
+X-MS-Exchange-AtpMessageProperties: SA
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted:
+ BCL:0;ARA:13230040|366016|376014|1800799024|38070700018;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?lfkua9wQcbGeq1diYGfqzv5lK4Dk+26o5Qjhjz9ElCBE2/NxilzHm+AHyiTZ?=
+ =?us-ascii?Q?pH2gmvjlsXoVH+36yvr0A5wogzsZX4k6e4cdH/mMw0QtU6xCCgpI/ayUOjaB?=
+ =?us-ascii?Q?cK72T4l4U148T0JdRcBddIZWpm9mTZ/yiDgDQTiEnVlosjaLNtORvO32VcJD?=
+ =?us-ascii?Q?ZPUWO4a9fdqBFqDLKeU+lghQJRTJ8zc72FPDgQO6vz7teAA17rWZe0cWRiM7?=
+ =?us-ascii?Q?VTW8xqaCxC+KEcNs9In9HjmGMjcJvpcbcB5UtfRiDzR2oVm9I4id3QmmIZIP?=
+ =?us-ascii?Q?Fxe5J2ixL4nrJmGzKAlA0vY7MwfvHZdFrDuU7wnzYvKSR40ZG68wt6CVhCmf?=
+ =?us-ascii?Q?ph2H65MGNn3wWismoAKya5+SKGRbh2GBx3LHkJEmecV5+nunJGR+xgMmytmj?=
+ =?us-ascii?Q?fRHa3LX8oY6bdeyaZva+7yv74QESex3iq781BB3vpuD5Lqa4yZ7raKbe6NVd?=
+ =?us-ascii?Q?77oY6L0DJ2GLhF8lTQ2tstkjuvrMWoG9pvV79LUsazOwtJ+k7kqBi8mofLus?=
+ =?us-ascii?Q?ey4ea9PJeZHF+c/lXGJkBx7K3J7o9nZvDk5I7x7BBHNc3vZGMvigY9R6fyvO?=
+ =?us-ascii?Q?dcM16v5Zsu0CzSZTGnyP7RbNAdFhnvG5HSjouPuv3tfW9tDPoK27aYRn1jhh?=
+ =?us-ascii?Q?UDAdL5cgJ5O89qNY6+7lDc5KrRCM9juMK/c/4s0Vmj3xpUMjyAtqVOucvNB8?=
+ =?us-ascii?Q?zsPh03jZ4XkWTrcWKDghYUpRBVmoWFto8gfvZ3Ih0B4HRese3ohoaSgle4Kr?=
+ =?us-ascii?Q?t0ht81zd4Ni/XryN4Uei9RuIi0MvFAHBLUNsu22yGimC5PgR4akQCrJEskdf?=
+ =?us-ascii?Q?9ynaiLwSY3IT1hgLivmvjxB90yXFik5+ZEq8+PeE1C+5AHTHu3/iRpkwBFCl?=
+ =?us-ascii?Q?evn6LKRcbBLxFhed5pDotQ2T40HCj9DasJBW+191BDRr3BTcNS22vJBGsqPk?=
+ =?us-ascii?Q?asR659KcOfmYB4FMlIP2meTls2A5kVr5PBHRFAkfwTdRJ6PoukDMQOi+66NH?=
+ =?us-ascii?Q?aZe0dZO6Ld1pNRLmSUgZd2UF/g4OxT5MyqsQe0246koRYo4Dusbqhr2xrbF7?=
+ =?us-ascii?Q?YVTV+ZfcZCpBhQOKC8kyljMsEMfK0UW04HSER6A9Tx0x01l7FPbLtaZNLcAz?=
+ =?us-ascii?Q?c3fCxgNycwkjixwKorZuYs5HrA3ESvsVJgHD6AIAFJkEJ3bRQCWhtL1ZXQC6?=
+ =?us-ascii?Q?DJvWKP3PxbVMCekEq6G0mvcjE4kma32fv7WTAYhRqRJaM8n4Lj4N8S1NElvc?=
+ =?us-ascii?Q?sU51vsRheM6ru6p1cUfsozOaIyqA0On1e1kCvddXHQBydAJmT78ybSf/qjPC?=
+ =?us-ascii?Q?yUZVWW1mzOOVNrUHlSDBWcsNmLMuuSctF28rfuWKQUPu0srVuvV2tFX0Vi3e?=
+ =?us-ascii?Q?jGRjsKaBQmZKbyvIDaJdvrySs8YkzHctyUM0Ckia4wJ8HeXT3A=3D=3D?=
+X-Forefront-Antispam-Report-Untrusted:
+ CIP:255.255.255.255;CTRY:;LANG:id;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SEZPR04MB6430.apcprd04.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(38070700018);DIR:OUT;SFP:1102;
+Content-Type: multipart/alternative;
+	boundary="_000_SEZPR04MB6430CCC090ECC804047EE0C6AEA52SEZPR04MB6430apcp_"
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR04MB7102
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ SG2PEPF000B66CD.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+	0f0585bd-a290-4d82-e33e-08dca18cf61a
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|36860700013|35042699022|82310400026|1800799024|376014;
+X-Microsoft-Antispam-Message-Info:
+	=?iso-8859-1?Q?g/FEPU4ahzLObmv61HTxcamHCo7bmO+QPLvMi1d6AyXN/mSE0vIN3szm/7?=
+ =?iso-8859-1?Q?xhw8onn6I7fgjl1FMhsyZN8kRz5unZRP4mi4OrhrWG5V3JBW5KXRwslrV8?=
+ =?iso-8859-1?Q?oW0jRxemnvchRNtwAk/CuF+ADxxuOwfL1qPiHZUzmpllpKZbIuBqsdsux4?=
+ =?iso-8859-1?Q?HkX38NPfrDVssPxgRT1OEQhqWuwcXupkcqC9p3tMeqouiVWbOGM2RBavAT?=
+ =?iso-8859-1?Q?ydfYg03JT6fC2iIO/xXGYmNjfWktM64S7VpXQBH+SfmCLfL3SwdWVka83F?=
+ =?iso-8859-1?Q?0mDCYI6bsFVuNyf8K6YnC12ZrcIn6Sjud41JCyD/bRdam6M8aaFneyHZ0P?=
+ =?iso-8859-1?Q?USmLoRuHg0nT3a3kYv/cfPz1Xdr88zAa6A+bVAM2zlCKXXJ3cR70XjSqat?=
+ =?iso-8859-1?Q?IAGmwRnv1zwQScBywH4PqvRI+Eyh9ur8UPpGQaspfRGBaD4Bqmw7bZtQgb?=
+ =?iso-8859-1?Q?uSdaNV3smlIDdjyUHoT4DGnEDzj30Od1L/Kzzo9o8Spm32L2h/KwbYPd/6?=
+ =?iso-8859-1?Q?pG0zE3AzL5Eqpi2Ui4YWklV4foWOVCLXLWzW8zFv36J2g3+O+Uik4hR7cy?=
+ =?iso-8859-1?Q?zryDWzAlcXfQ6G8YgkCAnnnZ+TmHTPlH9KqGD1rjAwzRkzTOfWUHdM7x8R?=
+ =?iso-8859-1?Q?HFHiyjcX3StwKUkxu9mMQxXIRK3hYrEqnaCTljFdhi0AnSpgGxsQQZQJ56?=
+ =?iso-8859-1?Q?LVeqPz2Vw7PxrMVukaKWiyTsN8GfrVqspRGvGeIsblVYkpudkdnz/pbaPe?=
+ =?iso-8859-1?Q?MoGVmJmI01Z2IxbuQ/Kd3Ab4zPsAXzXIzT0XXwk6HG2DSOvlXnrK6u0nMX?=
+ =?iso-8859-1?Q?vWbmYul737CrZ6Tf/pQ9EGuzC8BKYiIo4gpfK6Q3vRgXnfP+dLu4XZ4uZJ?=
+ =?iso-8859-1?Q?y4fHhxXnBsdYnOTD0TrvgSt5myMM/01yWiXbNOS8zPYHtPDOmFTBWfb2CO?=
+ =?iso-8859-1?Q?4j4E2kOPrJDAL0wgWe0sT/DUwU/41dt2YsY6mjgtvxOTc3psapl9OZP2cc?=
+ =?iso-8859-1?Q?96mQWVZnUlI9XDzmCH9QD//cFPqibXMGT82wPn+7j1BZoAKizrff4PnC1w?=
+ =?iso-8859-1?Q?HY8685g8OdwQrXh7JWF+xU3JgBtZg7pIm7XuQxtO5koCB+kMJjHQ+YRaQ2?=
+ =?iso-8859-1?Q?XGcJSFhalmeE1hNxc6TYsgREN4dCLjoxV42uG5mIs2fxDTH7SyWIW6j9Vh?=
+ =?iso-8859-1?Q?Nd8NFSmt7O9UFiDQG0uWPsy+BACZracGQQIhaix2MlbN6PFB3I7vSrkdr6?=
+ =?iso-8859-1?Q?CSzyH2cK2UyvkzOJy/2x4Aw6hRYi4WHh2s1yWnnbHlRa2SY6N4/P/BL/Ag?=
+ =?iso-8859-1?Q?1WDMV003FL2JfJy81R6JJCSU3G4szYIlZQYtDM9TRRpMGgsrrpFcyeQaeT?=
+ =?iso-8859-1?Q?Kf4pRP2Fe5uevpbI1dNrz8wPRoy7kf/vLDNDMp6sU60hrzWMCnyPnFzrkN?=
+ =?iso-8859-1?Q?mEKjKsVkiFPg/zi/mOPXpu4v+oHSNBqjN2TZ2cDVtX1n76vKEhaDy6/u2D?=
+ =?iso-8859-1?Q?vNk00QDThoA+uq4rh0I3Wu?=
+X-Forefront-Antispam-Report:
+	CIP:20.212.15.69;CTRY:SG;LANG:en;SCL:1;SRV:;IPV:CAL;SFV:NSPM;H:permatabank.co.id;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(36860700013)(35042699022)(82310400026)(1800799024)(376014);DIR:OUT;SFP:1102;
+X-OriginatorOrg: permatabank.co.id
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Jul 2024 09:36:42.8055
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 219cb06a-7452-4604-9f4a-08dca18cf936
+X-MS-Exchange-CrossTenant-Id: 063df591-9295-4c2b-9ce7-f733f7c0afce
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=063df591-9295-4c2b-9ce7-f733f7c0afce;Ip=[20.212.15.69];Helo=[permatabank.co.id]
+X-MS-Exchange-CrossTenant-AuthSource:
+	SG2PEPF000B66CD.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR04MB6805
+X-Spam-Status: No, score=-1.4 required=5.0 tests=BAYES_00,DKIM_INVALID,
+	DKIM_SIGNED,HTML_MESSAGE,KHOP_HELO_FCRDNS,T_SPF_HELO_TEMPERROR,
+	T_SPF_TEMPERROR autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--_000_SEZPR04MB6430CCC090ECC804047EE0C6AEA52SEZPR04MB6430apcp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+Dear Ibu Junie dan Ibu Febrianti,
+
+Sehubungan dengan kebutuhan kelengkapan data pada Bank Permata, maka mohon =
+untuk dilampirkan bukti identitas dari Bp. Dean Gary Robert.
+Diketahui, bahwa Bp. Dean Gary Robert adalah Pengendali akhir dari salah sa=
+tu Nasabah di Bank Permata.
+Demikian, terima kasih.
+
+
+Regards,
+
+Tobias Paramartha
+
+Branch Manager
+
+Alam Sutera
+
+08176645223
+
+
+________________________________
+
+The contents of this e-mail and attachments are confidential and subject to=
+ legal privilege. If you are not the intended recipient, you are strictly p=
+rohibited and may be unlawful to use, copy, store, distribute, disclose or =
+communicate any part of it to others and you are obliged to return it immed=
+iately to sender or notify us and delete the e-mail and any attachments fro=
+m your system. PT BANK PERMATA TBK and subsidiaries do not accept liability=
+ for loss or damage resulting from computer viruses. The integrity of e-mai=
+l across the internet cannot be guaranteed and PT BANK PERMATA TBK will not=
+ accept liability for any claims arising as a result of the use of this med=
+ium for transmissions by or to PT BANK PERMATA TBK.
+
+
+--_000_SEZPR04MB6430CCC090ECC804047EE0C6AEA52SEZPR04MB6430apcp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"></div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<b>Dear Ibu Junie dan Ibu Febrianti,&nbsp;</b></div>
+<div style=3D"direction: ltr; font-family: Aptos, Aptos_EmbeddedFont, Aptos=
+_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb=
+(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof" style=3D"direction: ltr; text-align: left; te=
+xt-indent: 0px; line-height: 24px; white-space: pre-wrap; margin: 0px; font=
+-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica=
+, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Sehubungan dengan kebutuhan kelengkapan data pada Bank Permata, maka mohon =
+untuk dilampirkan bukti identitas dari Bp. Dean Gary Robert.
+</div>
+<div class=3D"elementToProof" style=3D"direction: ltr; text-align: left; te=
+xt-indent: 0px; line-height: 24px; white-space: pre-wrap; margin: 0px; font=
+-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica=
+, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+Diketahui, bahwa Bp. Dean Gary Robert adalah Pengendali akhir dari salah sa=
+tu Nasabah di Bank Permata.
+</div>
+<div style=3D"direction: ltr; text-align: left; text-indent: 0px; line-heig=
+ht: 24px; white-space: pre-wrap; margin: 0px; font-family: Aptos, Aptos_Emb=
+eddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: =
+12pt; color: rgb(0, 0, 0);">
+Demikian, terima kasih. </div>
+<div style=3D"direction: ltr; text-align: left; text-indent: 0px; line-heig=
+ht: 24px; white-space: pre-wrap; margin: 0px; font-family: Aptos, Aptos_Emb=
+eddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: =
+12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"x_Signature">
+<p style=3D"margin: 0in 0in 0.0001pt; font-family: Calibri, &quot;sans-seri=
+f&quot;; font-size: 11pt;">
+<span style=3D"font-family: Calibri, Helvetica, sans-serif; color: rgb(0, 3=
+6, 81);"><b>Regards, &nbsp;</b></span></p>
+<p style=3D"margin: 0in 0in 0.0001pt; font-family: Calibri, &quot;sans-seri=
+f&quot;; font-size: 11pt;">
+<span style=3D"font-family: Calibri, Helvetica, sans-serif; color: rgb(0, 3=
+6, 81);"><b>Tobias Paramartha&nbsp;</b></span></p>
+<p style=3D"margin: 0in 0in 0.0001pt; font-family: Calibri, &quot;sans-seri=
+f&quot;; font-size: 11pt;">
+<span style=3D"font-family: Calibri, Helvetica, sans-serif; color: rgb(0, 3=
+6, 81);"><b>Branch Manager&nbsp;</b></span></p>
+<p style=3D"margin: 0in 0in 0.0001pt; font-family: Calibri, &quot;sans-seri=
+f&quot;; font-size: 11pt;">
+<span style=3D"font-family: Calibri, Helvetica, sans-serif; color: rgb(0, 3=
+6, 81);"><b>Alam Sutera</b></span></p>
+<p style=3D"margin: 0in 0in 0.0001pt; font-family: Calibri, &quot;sans-seri=
+f&quot;; font-size: 11pt;">
+<span style=3D"font-family: Calibri, Helvetica, sans-serif; color: rgb(0, 3=
+6, 81);"><b>08176645223&nbsp;</b></span></p>
+<p style=3D"margin: 0in 0in 0.0001pt; font-family: Calibri, &quot;sans-seri=
+f&quot;; font-size: 11pt;">
+<br>
+</p>
+</div>
+<hr>
+<p style=3D"font-family:Calibri;color:#005984;font-size:12px;">The contents=
+ of this e-mail and attachments are confidential and subject to legal privi=
+lege. If you are not the intended recipient, you are strictly prohibited an=
+d may be unlawful to use, copy, store,
+ distribute, disclose or communicate any part of it to others and you are o=
+bliged to return it immediately to sender or notify us and delete the e-mai=
+l and any attachments from your system. PT BANK PERMATA TBK and subsidiarie=
+s do not accept liability for loss
+ or damage resulting from computer viruses. The integrity of e-mail across =
+the internet cannot be guaranteed and PT BANK PERMATA TBK will not accept l=
+iability for any claims arising as a result of the use of this medium for t=
+ransmissions by or to PT BANK PERMATA
+ TBK. </p>
+<br>
+</body>
+</html>
+
+--_000_SEZPR04MB6430CCC090ECC804047EE0C6AEA52SEZPR04MB6430apcp_--

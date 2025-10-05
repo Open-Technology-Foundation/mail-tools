@@ -1,0 +1,253 @@
+Return-Path: <justiceking@democorp.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 18D9D3340204
+	for <drewjones@testmail.net>; Thu,  9 Jan 2025 09:46:59 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 09 Jan 2025 09:46:59 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id nserMHg4f2f9ERcAeHbnHg
+	(envelope-from <justiceking@democorp.com>); Thu, 09 Jan 2025 09:46:16 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=bluecornerdive.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=bluecornerdive.com
+Received: from dispatch1-us1.ppe-hosted.com (dispatch1-us1.ppe-hosted.com [67.231.154.164])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id B202F2640006
+	for <legmorganhill@testdomain.io>; Thu,  9 Jan 2025 09:46:14 +0700 (WIB)
+X-Virus-Scanned: Proofpoint Essentials engine
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com (mail-tyzapc01lp2042.outbound.protection.outlook.com [104.47.110.42])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mx1-us1.ppe-hosted.com (PPE Hosted ESMTP Server) with ESMTPS id 16C1C3C0067;
+	Thu,  9 Jan 2025 02:46:09 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=DG3+SVdGirz7XxhWmWrtFevbKSWsHS1mRrUoswABefyesdYDn0fuSsUd8/diFfbb22H74yvSRV7cE/nD9L90ZKkd93Oej62d145/2RmnZauFOk5elowt/yqR/z2hLZa8GB6tBaB8PxS6ji4o/72m8mW47ywL1rw2TzzTEXH6H+iPKu+RxqDf1uuOJOmNsL1LloBuFAv4ekUc5JO29A4PqalQFo336UkydCs2kdjcAA63XsTq7YQg7IE1YbUUdLtO5bxda9D5NjeVCt4yU2BYfEJhXMk7WW3n/MCcPQmm4cYO3SXHD1tl1a0GdiRezck/E0rsAm6cBZa3rg4cjPtjLw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=ScuIpfSjQiuGton22YhC8OtI4bQvMLSmWyR2+0uRvhs=;
+ b=WUjUBrRqbxDF7l1lirX2K4Yk4Bq0XKn62MmwLTZ7S+SSxbdoIcw8fzwLrLhpx86gEgU5v9DkLE62NtQgLeWPrS8fUCnakK3Rhj1UFKB46QNanls0ycsaQCTgVC9OWzubDditCai5ZwyodNcz6H32LkSj48SZ3TnAL9q4Iv0DhOIT0ZXA7x5gsR81BvjoH24H6Vddov8cpAchw4MzsikcpGkfgbdDC9Lop4/Ca3BYPsx9VTlPzw6pQDofMN4ZLMY5sLvsMs9Wd0Iw73sF/tn3etO8x3tllgsYbiGduuShjN83ncW1s2KZMwtUv6RKUB9xhRmZHskVKHWGS8N5hJokSA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=bluecornerdive.com; dmarc=pass action=none
+ header.from=bluecornerdive.com; dkim=pass header.d=bluecornerdive.com;
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=NETORG4952938.onmicrosoft.com; s=selector2-NETORG4952938-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=ScuIpfSjQiuGton22YhC8OtI4bQvMLSmWyR2+0uRvhs=;
+ b=ULgbo2UFcsrWBaQbo05QxAqDhFiALEsYVZ/nOSCG9ex4QlhttmniJ7v04EOf4vZmZYZiMPl1zYx4+WBrbzCNoVinBxJprI4mGGB8PbvMD3nytUzdTe3gkfgRpSoAiofRFuuGzECNtmWFHfmQLb2O//EUhrnIUQ0QF5mTHO+dTS0=
+Received: from KL1PR03MB6255.apcprd03.prod.outlook.com (2603:1096:820:a2::6)
+ by SEZPR03MB7874.apcprd03.prod.outlook.com (2603:1096:101:182::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8335.11; Thu, 9 Jan
+ 2025 02:46:03 +0000
+Received: from KL1PR03MB6255.apcprd03.prod.outlook.com
+ ([fe80::bcae:afb5:2085:b082]) by KL1PR03MB6255.apcprd03.prod.outlook.com
+ ([fe80::bcae:afb5:2085:b082%6]) with mapi id 15.20.8335.011; Thu, 9 Jan 2025
+ 02:46:03 +0000
+From: cody bluecornerdive.com <justiceking@democorp.com>
+To: "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>, andrew bluecornerdive.com
+	<jordanmartinez@democorp.com>, Jason <parkersanchez@testmail.com>
+Subject: Re: ALERT: BIRU: Nominee Shareholder Services 2 X (Niaga Bali & Naga
+ Migas)
+Thread-Topic: ALERT: BIRU: Nominee Shareholder Services 2 X (Niaga Bali & Naga
+ Migas)
+Thread-Index: AQHbYjQXQb6SSrnHOk6LK7o3/ks05LMNvKtK
+Date: Thu, 9 Jan 2025 02:46:03 +0000
+Message-ID:
+ <blakeharris@testmail.com>
+References: <74435743649045.554740260776@samplebiz.org>
+In-Reply-To: <74435743649045.554740260776@samplebiz.org>
+Accept-Language: en-SG, en-US
+Content-Language: en-CA
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-reactions: allow
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=bluecornerdive.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: KL1PR03MB6255:EE_|SEZPR03MB7874:EE_
+x-ms-office365-filtering-correlation-id: 9c80a825-f713-4561-f8bc-08dd3057c249
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam:
+ BCL:0;ARA:13230040|366016|1800799024|376014|10070799003|7053199007|8096899003|38070700018;
+x-microsoft-antispam-message-info:
+ =?us-ascii?Q?EXJa7b82pKui+1N/vPWFVWvfgLf/KYmJHQ7F/1P64a1PxReZYbSuNoCechqJ?=
+ =?us-ascii?Q?9xfk0cJ78k2ZGYwXN8JWCTUnUsFbjPYVle3i4JMAN26l1XoAyMxM25vcAmeq?=
+ =?us-ascii?Q?lijuLpKZuA13gljNaPq0/9NcGEhatRlzw47qR5wVIapqakjJ36YR3sSazRAk?=
+ =?us-ascii?Q?zs2UULyd4c/VdIFzMBjlBfm4+i5/tvG0x1O2DiyG9COzPQf8QF+2bgiH2esn?=
+ =?us-ascii?Q?ewY3eW8WboeZ+snuDJJUfMWIpaMVJj1XOp8yvbVYctkjtOYoM87c2iirhcsX?=
+ =?us-ascii?Q?4h6iz35EYSdN8CwhVZgOEHej+azzbXDuSM3COHKNkx+2oDiYqbe7afunak3y?=
+ =?us-ascii?Q?0Uc0zOQPHY8oP9XDmVByus8gHfsxY7AfoTNWc8QxpBjyso4UPCspSp9Y/FKO?=
+ =?us-ascii?Q?d69XQlcL1EBpfXGvJM0sx1/ix41Mb/m9DHIlR+U1AMbEWap7h/X1urSSsFTm?=
+ =?us-ascii?Q?OaYfytBgZ4X6s+NfprQpfSKBRCn6Em4EKKge1oJ1U+gAerLvAb+MO/gOHF+f?=
+ =?us-ascii?Q?dPkTPE1D61CEibMm0ElCtTuUBS/WNgkDOpQmEENaokOY/c4qavT4g56Slp4R?=
+ =?us-ascii?Q?96C9/kkJcTgCPJRr0MwCXnfqvgn8woknpINp9JMYGief5ySa5c4fPt4bC2Lb?=
+ =?us-ascii?Q?SQnulw+dpDtSG2W0kW+eMhql8cw55TptZG16/HFLdee6094A3qUqTFTdULJF?=
+ =?us-ascii?Q?/ortHWE1Bb4vfITEWiTxXv4ypRJ8jVX6f4bg4e3vWb4V21PhlFDXsMrOE6a6?=
+ =?us-ascii?Q?cdUl7Y0b9FwFo8B84el5+J+npk381JIgfVqRUInP/qFnISvZS8wfxIAjdSV1?=
+ =?us-ascii?Q?7N989y5hqMn5LAgwI0gx3OqEzHV/GNiwl1JNypw3kKLoytHH59NKoUJPDTyN?=
+ =?us-ascii?Q?mOwg4T4zyZQCR93T1iQCmePBO5WfqB4IpTTpdJmr1iYsomGfcfqia5n/86HQ?=
+ =?us-ascii?Q?bN7RRN+wZsoCaCY1Xl4MNZz2wJuVxOHVXBav94igYIM2AZiSEc2CQzORb0Y4?=
+ =?us-ascii?Q?uNDmoaXDrbcXgVc83r+eEqZk0B1+NlqmfC+3ul5kKSYKiqQwkgfb1h/ElqMz?=
+ =?us-ascii?Q?YSLruH+SE+gZ773Vlq4MqBebhm63ZD3hplWkwH5RNWw/p2HquTdVINUQq3FA?=
+ =?us-ascii?Q?rCFpJXnW3+bpDHHYg8zg0/mUxRdJwwhYAix17/qBt5cLipUad7ignonClRNZ?=
+ =?us-ascii?Q?AkdplobIRW+STML9HU5UszHgf9t7LCRXse0KAEAIqiC+ZtALNJPctpkgJ+HY?=
+ =?us-ascii?Q?Q3dDMWLPbljxBn4iz8e+do7TQry6vwVOGwIIYV7Yc7EbPRWkLB01DTtWemGa?=
+ =?us-ascii?Q?P9fEjBUzsFZJKExSw5C4OttmoSsap5uEjlnkuzzefTBQeQDR+CtcmYUAJrci?=
+ =?us-ascii?Q?npUv7tSSCU+cx/iep7E3yex3w+CuAVpnAoCgAlOUN9+KLawXO5fZNcQEIwkd?=
+ =?us-ascii?Q?vQPcWTH1iwaQT6uNwfWH0qJvEFnmzNIg?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:KL1PR03MB6255.apcprd03.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(1800799024)(376014)(10070799003)(7053199007)(8096899003)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?tP5WRCJrYAQQlKqGMuEbmsKgrc/tmw6cA2v9DoDGEvMhfjBbZ2lbN6T8iMJ0?=
+ =?us-ascii?Q?+Sr0cHGuGOVh/kNc4CJM40mXBawuTTAGEVOiJ+OXJVsiVN8al09I1Uh+TLOb?=
+ =?us-ascii?Q?Ij6F6xVWS1b+xHejWuB0dSxdBW1N+Oe+1eIllGZprEhw/jrGWD6vSHkkRKBy?=
+ =?us-ascii?Q?GWUMkRr/vHISNB5MmZdtOJD+FUKSlPBIr49FMHKy1WFiKZ6i/fwILgqgcsGg?=
+ =?us-ascii?Q?+G0Y4UAsBt+QzL8SoDi4LgbTZ4LCwOJWccbc9TcpXXT6LKKyjG4PDHUWOy3C?=
+ =?us-ascii?Q?nr8zJIbItoprW1NuYiGKhpILtRTQTekKjcqC8FptqekBVdBioahgCUzt51am?=
+ =?us-ascii?Q?07/GTpd+rRiCTe5mDJZE/+OJ38jF7r8Um9TKuUmROQBDzE/whKsDmdBKBCZh?=
+ =?us-ascii?Q?wO53Wd5r4UPuVeCQwQ+v0+15LAEELu35S2FwOdcK4rWBSbPKVHYtBKzRp9xc?=
+ =?us-ascii?Q?0uKZy/QInxhn9+fg6UWkW3W4MMqVvDEhSH4vmZXwGxkKDAGAfZ74+Z15eoAg?=
+ =?us-ascii?Q?dNsDnY/oB6OKXYHBbGpG6znjLEJffKXvFbqs69QpZlH0q7rzXbJaiwX+VkZK?=
+ =?us-ascii?Q?OVHCyiAar8JWPgpltmtTMo6R2F3XUbaDmYWyMCpdfmo+7awK8HpwuwmZNebt?=
+ =?us-ascii?Q?ucAeqhDtTXM2zsGw26YUEScuheE9N7HFEUD5e3A+puTMMt3QKu+C0d+s3DTF?=
+ =?us-ascii?Q?4n9UTz3nSS+2fgeXkl7x99Ea7e5f3Boe/5gcWOjthNMYXyx3ggssaODI6tJK?=
+ =?us-ascii?Q?32x8PxCtPLGIunYEMQOP/ckQ/Lv/1UzvlooO6HIXfHAlLUjDGd+uajPc2c+1?=
+ =?us-ascii?Q?Mp5sB0+uvroSTt251lDVvM98OiawrGPsgcBLf7wLBbBMTW5McFTkman8sHr1?=
+ =?us-ascii?Q?7DcGX19syniE7MkUmCIrazDPLaOYniN1yT5pGaL3ud43AAPkuCVKjSuQl4cH?=
+ =?us-ascii?Q?yEFmVhSJVgFYoYKYX1rcSfMr+AAE2sWfWpZ3n5fVHyDzE/gYfU2lXqqFMm6O?=
+ =?us-ascii?Q?FyDj8O1t+uUPE+X33iJAmfs0zXe4lZkxeTG0rPoZCDUD7P4rE1lQvqUdw5rM?=
+ =?us-ascii?Q?6xkgvNpv7yLwqux2aKif/EG4CoGNeF/OnN41hHB3ImXFDuUPxs4BMh4yJQ0L?=
+ =?us-ascii?Q?YYXjIRoPhQLfHCtDum9pAGMXkDk71DT4rEG+y0ZKzODEwk4rnMokxRDXK/yl?=
+ =?us-ascii?Q?ZkHue232lZeTyjF6inZjF5BgvsPCgKpjgoAW5Amyozifo2wtJJnbfEsv5DJb?=
+ =?us-ascii?Q?s+rBybSiy6WWtVpH7aS377hjMJuBjPQUHSn5/cWcVpjNyS045NJk3H0hhXFi?=
+ =?us-ascii?Q?e52gJK8pQWc1JTx+a/eDEhf8zkQWfwI4FspN2eD2YYqoJqOEvq/yhdqrkD90?=
+ =?us-ascii?Q?Ak64CA+xJK4EP6ImeeHfKY3jp6FIMsB75+2qgN5D1+fiyG3eJPA8kVIQACuY?=
+ =?us-ascii?Q?eklBwZ/Gjek0fLvBLV1TiUAv5ye2ZfZGtrzpW3RS4WXlTIGB5u38H6zP+wVV?=
+ =?us-ascii?Q?RSDWdOvyCx7KqCcxWUtYYu1zJh259M+TT33oL2iov+pOW8bwqgCZWuBStSNK?=
+ =?us-ascii?Q?b03quJlWBMzlVNoZ6Hz0whWCBFtseGaSr0g2zVKiqndP8G1WQ6YIlf2coZsV?=
+ =?us-ascii?Q?FMzR24Yx1Lic2bar0IbpsSeB7XChsVUbv/kEg80Wvlt2cFW9HfbEFo4TRI/I?=
+ =?us-ascii?Q?r1ia3g=3D=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_KL1PR03MB625543DF9DB4CB1C2F3C2272A3132KL1PR03MB6255apcp_"
+MIME-Version: 1.0
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0:
+	AcuOpVxl4qea5PZKfx0/VqQROS8VIUqtI24L2ELGoVAwiyxJHpVZ978wBrh/yWcn6ZW28qIiJZjCuaG9USdw7ATvrFQE7jjGzGEXTSazFhT2fsBOTJAdT7HgIYfT0vLDYxINBQI241imn4hWdla0hpz4rNeHVjMeOw9uJV/d7CHFSMKMI/VdAyEO6DGXTGWb3IE/LacB3elwUzf/LuU78kRP9DuAS8EGFVKrcWfnmzds+nXjLTNli9rgm/lnb0GvxaC1rliayGm7njDBFQQwGQftyQZ06ujwLA8RKgcIp7b0xVnXJQz2i0m+4TTbk2HwdGvJhBtjVGdnxDEkh4ex6YYtXvUmc5MtAJIYOf6hkZirIT4FULA8dk/AJj9kQI30Zcu8FhPSIjiD5mdzWxVn/9kUZ+1l0CkIXaDytFrmGRK0ys7ItKP0lfaWV74n6JkXGzjpYQ3E4CXDgdmFvA5SRsAfWwBnBM5bjX9SgQ3JHW32PuwZ0XJ44pY2WgWUX8RgU9h6wQuiPw1Ao/4Gr4XQn8Wkzp7YA+nO7kIMSHdkmNeVbrnwHmo3T0UHMKnWkXfxp9Zdo3foAbRsZenfCEebvIgfxUwe2Ay/ykBhCRSad3E=
+X-OriginatorOrg: bluecornerdive.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: KL1PR03MB6255.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9c80a825-f713-4561-f8bc-08dd3057c249
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Jan 2025 02:46:03.5860
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: fe788334-b889-4b23-97b0-068928b2ac91
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: iMwL2vLUkXCPa374GFrG9ZvfeuvFimtuqaKTYgt+u3uoXzraV7G11PbLMhltHMTWYtYFVjlBxuKyARC8cukWeA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR03MB7874
+X-MDID: 1736390771-SM_6LCYorK3M
+X-MDID-O:
+ us4;at1;1736390771;SM_6LCYorK3M;<justiceking@democorp.com>;e9ac16bdbb1ff1e2c9c1209aa96c7eae
+X-PPE-TRUSTED: V=1;DIR=OUT;
+X-Spam-Status: No, score=-100.0 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	HTML_MESSAGE,KAM_SHORT,RCVD_IN_DNSWL_BLOCKED,RCVD_IN_MSPIKE_H2,
+	RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,RCVD_IN_VALIDITY_RPBL_BLOCKED,
+	SPF_HELO_NONE,SPF_PASS,USER_IN_WELCOMELIST,USER_IN_WHITELIST
+	autolearn=unavailable autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--_000_KL1PR03MB625543DF9DB4CB1C2F3C2272A3132KL1PR03MB6255apcp_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Hello
+
+Yes we would like to continue this arrangement.
+
+Thanks
+
+Cody.
+
+
+Get Outlook for iOS<https://aka.ms/o0ukef>
+________________________________
+From: legmorganhill@testdomain.io <legmorganhill@testdomain.io>
+Sent: Wednesday, January 8, 2025 5:16:01 PM
+To: cody bluecornerdive.com <justiceking@democorp.com>; andrew bluecornerdiv=
+e.com <jordanmartinez@democorp.com>
+Subject: ALERT: BIRU: Nominee Shareholder Services 2 X (Niaga Bali & Naga M=
+igas)
+
+This is an automated alert from Okusi Associates.
+
+Reminder for PT Sudut Biru Nusa Penida:
+
+Your Nominee Shareholder Services for this company is due to expire on 08 F=
+eb 2025
+
+Please contact Okusi Associates for information concerning renewal.
+
+
+--_000_KL1PR03MB625543DF9DB4CB1C2F3C2272A3132KL1PR03MB6255apcp_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+</head>
+<body>
+<div dir=3D"ltr">
+<div dir=3D"ltr">Hello&nbsp;</div>
+<div dir=3D"ltr"><br>
+</div>
+<div dir=3D"ltr">Yes we would like to continue this arrangement.</div>
+<div dir=3D"ltr"><br>
+</div>
+<div dir=3D"ltr">Thanks&nbsp;</div>
+<div dir=3D"ltr"><br>
+</div>
+<div dir=3D"ltr">Cody.&nbsp;</div>
+<div dir=3D"ltr"><br>
+</div>
+<div dir=3D"ltr"><br>
+</div>
+<div id=3D"ms-outlook-mobile-signature">Get <a href=3D"https://aka.ms/o0uke=
+f">Outlook for iOS</a></div>
+</div>
+<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
+yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> legmorganhill@testdomain.io &lt;le=
+gmorganhill@testdomain.io&gt;<br>
+<b>Sent:</b> Wednesday, January 8, 2025 5:16:01 PM<br>
+<b>To:</b> cody bluecornerdive.com &lt;justiceking@democorp.com&gt;; andrew =
+bluecornerdive.com &lt;jordanmartinez@democorp.com&gt;<br>
+<b>Subject:</b> ALERT: BIRU: Nominee Shareholder Services 2 X (Niaga Bali &=
+amp; Naga Migas)</font>
+<div>&nbsp;</div>
+</div>
+<div class=3D"BodyFragment"><font size=3D"2"><span style=3D"font-size:11pt;=
+">
+<div class=3D"PlainText">This is an automated alert from Okusi Associates.<=
+br>
+<br>
+Reminder for PT Sudut Biru Nusa Penida:<br>
+<br>
+Your Nominee Shareholder Services for this company is due to expire on 08 F=
+eb 2025<br>
+<br>
+Please contact Okusi Associates for information concerning renewal.<br>
+<br>
+</div>
+</span></font></div>
+</body>
+</html>
+
+--_000_KL1PR03MB625543DF9DB4CB1C2F3C2272A3132KL1PR03MB6255apcp_--

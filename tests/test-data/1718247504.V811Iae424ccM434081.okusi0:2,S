@@ -1,0 +1,109 @@
+Return-Path: <cameron_ramirez@testmail.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 4BFE53340204
+	for <drewjones@testmail.net>; Thu, 13 Jun 2024 09:58:24 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 13 Jun 2024 09:58:24 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id tlJYHjBgamYXJgUAeHbnHg
+	(envelope-from <cameron_ramirez@testmail.com>); Thu, 13 Jun 2024 09:57:52 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=reject dis=none) header.from=rocketmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=rocketmail.com
+Received: from sonic301-30.consmr.mail.ne1.yahoo.com (sonic301-30.consmr.mail.ne1.yahoo.com [66.163.184.199])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id D3A972640B51
+	for <legmorganhill@testdomain.io>; Thu, 13 Jun 2024 09:57:50 +0700 (WIB)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rocketmail.com; s=s2048; t=1718247466; bh=4eJe8rM8ZHKkz4DTV3ULCt8sEKcRSYyHHT3zC2HP5dM=; h=Date:From:To:Cc:In-Reply-To:References:Subject:From:Subject:Reply-To; b=GUBwLUAAz+SLbzi0vjNnijK85OeNN5g9oeOMvqI3m3ubZoVOgnASaHJUn9gbh1CQCigUHdIDaBruPyoCQkqhU8IOU/KClf2WNGDQV/nK/hoABr6D5spjTFV6h05VUa18OZs10+ep1wyJMIGyZdxC0nAMeDG5Fx/3ACe+hMnd/8Pf5+RuIlcLpHx8OOX4GqyEHoHqnUk7X7QwQSYWFi7+eEoO0tLfuqJGsI5uC/nP8JGprmC4Wxi0p0io4779WaJ8mvpDfV4kjNtPuSdEhZmfuZHuJTLTMEGaRlCmbczckSGZrhe1LkXpwONYMT33svK7RcpilSd+BkkeQV4SlKsDZQ==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1718247466; bh=E25a1bI8xa5We0tJJCMkVmECtTJaGSN0H42vj9XMXmJ=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=eSkLByIUHGtI7z/gCeYO2M3WPTe7oIhP3FGJRikxCog+K+Lh2M76zSSknMOHuJAl5d5H60DmusauBqa9FUD3EMa2LrPN61IUrOveupajkrhunuDyCL+H1Gy5t1tfdtd/jGazVJZ8Lcc4S1HPq0CgJHrTPlM4jmjj6K90C05DeRpinWqz9kZPph6k2sCpRgQbB5NyD50uuXuKYkZFlvVBZApg94N4CmamInmsPUeazvhQyrfg8VK1TWORCJ5bP9HBvyBmPEv50m87UJ2iO+T9nX2yKWztFbu5CQakujJD0n5AYYg7z4LaVj7vEUiNnjeSBexB2ugigfCiC+0trB2w5Q==
+X-YMail-OSG: E65bA8kVM1kJFAjrWa7EZDpDpcPXgauABKEZjax.JjDVChF.zMldq22.54aLV0w
+ uXcDtkb1IFSokvC_DR5EOzb1ssylOm_gmlI0Lq5pHof6doi76uTHVBh.JTZbstrbiv63Pep9EhRm
+ 0PutstIPJ5tsRBYIEG.g7wH9TJUjoJsqjPgPMFdsCfQmffucOZuwG9odehYVV3bgagKC1IAWpmXT
+ xlJRS_yVCgVYIgaVUT0EmewXLXG6qo0ahQvZYrxFUhC20itbDyD5kN7PlLU_5GIznDty2D.x9lFs
+ ME.dT.l7Gd5i29ocYzSwT.CMrV7n4hKtyaieNreJLPbNjEN7GjyCQ6olr2CJGWbERYjKn3DXGygH
+ uEteeSRG0rTpJG9KGpB0x4Ro0NGznAzxsaI8UEfv88xDbd.pBnRfh_6C.yBCswZR_dcHqxBWGi1k
+ hb.vPucnvnSFDXkJnoxksQ4zrVv45htigTO.M9OY3ilMXQlM1r4PNBDqhT5g6hfHM9__xUWu.bvW
+ 3QpzGD5ojIOHM0HMVmT1QJ4RW5hwbJL_b01PTb9zHknOc5weSIcr7HeTHXDmWR6jDbpQL1KBwiv8
+ VTV_BaFy4lqJA9rL7bMnPrSHsyGmnXRvgpOL6_m4WCM38zQhuYWRoTur5OKUbSGkesjMY8b7FVgW
+ zXGSJwr_Ji1.Cvh8jRAxi69h1BtlAFvgo8sLxrNimOr_dHytpixXkZ_mbijao8rqYJOXrrCPTQt3
+ qNCxA4v3hTUIfDWFGQP8GcXDQhGCs4LkWGtPcD33K5dbvnJSEHo7fz_EcOhoRwiLkElgOeiLB..J
+ wc2KdH.BD2Yb3ZSs.My8aMKB4TcVA9SmV4jTtcjh.hzpI7Oo.oDEc4a5yNW3Vf9HfLd1BQMbDays
+ Y7gxRHcomq767aIaXnsT1oHZgS5iyPnXoOeIHXOYOqUYMd9cTCoiK74XutM4LryloBI8X8zpgkBz
+ LbN1f3G1sAQnKg0nC1D9JToAiACgFdRqIylbIPXgBvk4ThYRzvlwAHxBMpf8y7YxYVqGhIgSBnM3
+ .SNiR32nnfTKLIukufY2dDlEHVbfnrF7r.rjPRSuwi7GFar9nigxiAQgLGgFcd_VWq56Ariavthp
+ oc5Zuf_DM1gNqZrmQlPybga_hO4piHRGVmLxf0MQxfSyqH7tbPyMeB.UYmMX3vmKeonDy1sTYTdn
+ hBLHwIT2M4S8yZIjvh4q7yqVt4Mid_q1NMVG0eE6qDCEp2wamv989QL6id.9PQU52tIu7USL1mja
+ bEpeWWmWHmuHOfJoYCgTd9BM0vsSrBHuSqUZLHyNBzb5LotKQFLP9fWuzZ6RFNTlG7nx0M8pMbf7
+ 6rvr.C5xWQWz8fPYUf4jBeIeiUf9O.JzOPZw24mYIrg44z3UKNPW0OeMXYHuaP1UJ2FA8m69MIyF
+ 5L9e_4NQy6OhX.MCD8O6QEmL6.Ttgomv1V6aMTUQ6MXypv6fM8uVReaqUOd47VaIJPGmgMud_Qrk
+ t.5NJEVnvWBZSNkBOwiA7NB_5FSozImI5pkqyFhfKFCI4TRnwiazGOODgAQJcFdO8i48VN51nBYl
+ wn6Z6MvbCK0ZnL0grXqHm_7TWJrkUyJJr55oVvOH1VN9YfW1N.V2bR.RzS08RjCK4H39RPB2EPuU
+ MTkY1.6Z03KRQ4dmKIaeSKYK3VE7d23OMia80IW964nZI5ZiW9RYxLIfwOCGvjd5_iwv_XmxJKK1
+ UasegW8f8BAcj.ccj2qRZG5LyHArJZPryH7PGQinMMEyb3xNJOeV28WFjHWZJQPmOuYIJ3dC_KAP
+ 8htY1MoM0Us13vgrxRMs.mPTMYgBOlsRXkpCHozEHrsbuOU.cQGFKlSH4xtFnyrQkwixJWI7vRx_
+ KZAod4p9yQBt5M3pvuL.s98ZhF2Wj.qUNckV.7Vv8WuOLzR1wW9GexY2G3f1aMifuxNHKmDXP7yo
+ pm709.7980sTSl7zt1sPnQhG3o7Nky7922QGUbahsORzx_XcXUqpQxbvUWe1WxuUmvqh3jvK4a42
+ 0XHSojxV5IEz8dY2SbF7Sd8ixuagfwCLJacDhD9vBUL13bdzxqhAUvAcM5XZkmEe.HPh2eLTuiy3
+ h7vwgrPUdjpGedwDXiXvNAyDBvQSJbL8WBeCNPi8NI8ztg3Jhb9CO345JEzsXteCK4lsd4EOxvdm
+ IACQ_9XHRHTsKRtEAB7eJIc7KnMQhq2sJF7DYn_KZ8OtMX0DUpQ2knw7EBX4_269tOxDIdoDX2lY
+ FmKoTUTzIT8xAb9Elobfi53jKHrzTD0bjuf3IMPoB6g8cEiLwWEq5XI9UyZA-
+X-Sonic-MF: <cameron_ramirez@testmail.com>
+X-Sonic-ID: 368c44eb-92ee-4a43-8c6c-0ab61665a78c
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic301.consmr.mail.ne1.yahoo.com with HTTP; Thu, 13 Jun 2024 02:57:46 +0000
+Date: Thu, 13 Jun 2024 02:57:41 +0000 (UTC)
+From: Alistair Brown <cameron_ramirez@testmail.com>
+To: indigo_robinson@testmail.com,  <legmorganhill@testdomain.io>
+Cc: Alistair Brown <devon_wright@example.org>
+Message-ID: <163781140.8832147.4163369579568@testmail.com>
+In-Reply-To: <noel.robinson@samplebiz.org>
+References: <noel.robinson@samplebiz.org>
+Subject: Re: ALERT: PROCON: Company Domicile Services
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_5343923_2019168736.1718247461061"
+X-Spam-Status: No, score=-2.1 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM,HTML_MESSAGE,
+	RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,SPF_PASS,T_SCC_BODY_TEXT_LINE
+	autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+------=_Part_5343923_2019168736.1718247461061
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+ Please send me detail
+Regards,Mr Alistair Brown
+    On Thursday, 13 June 2024 at 04:16:09 GMT+3, <legmorganhill@testdomain.io> wrote:  
+ 
+ This is an automated reminder from Okusi Associates.
+
+Reminder for PT Project Consultancy Services:
+
+Your company domicile service is due to expire on 13 Jul 2024
+
+Please contact Okusi Associates for information concerning renewal.
+
+  
+------=_Part_5343923_2019168736.1718247461061
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html><head></head><body><div class="ydp8fa8bb37yahoo-style-wrap" style="font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:16px;"><div></div>
+        <div>Please send me detail</div><div><br></div><div>Regards,</div><div>Mr Alistair Brown</div><div><br></div>
+        
+        <div id="ydp8fa8bb37yahoo_quoted_8631123308" class="ydp8fa8bb37yahoo_quoted">
+            <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:13px;color:#26282a;">
+                
+                <div>
+                        On Thursday, 13 June 2024 at 04:16:09 GMT+3,  &lt;legmorganhill@testdomain.io&gt; wrote:
+                    </div>
+                    <div><br></div>
+                    <div><br></div>
+                
+                
+                <div><div dir="ltr">This is an automated reminder from Okusi Associates.<br></div><div dir="ltr"><br></div><div dir="ltr">Reminder for PT Project Consultancy Services:<br></div><div dir="ltr"><br></div><div dir="ltr">Your company domicile service is due to expire on 13 Jul 2024<br></div><div dir="ltr"><br></div><div dir="ltr">Please contact Okusi Associates for information concerning renewal.<br></div><div dir="ltr"><br></div></div>
+            </div>
+        </div></div></body></html>
+------=_Part_5343923_2019168736.1718247461061--

@@ -1,0 +1,331 @@
+Return-Path: <quinnjohnson@fakecorp.biz>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id B800A3340204
+	for <drewjones@testmail.net>; Mon,  9 Dec 2024 20:19:39 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 09 Dec 2024 20:19:39 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id FGPOCEvuVmea9zQAeHbnHg
+	(envelope-from <quinnjohnson@fakecorp.biz>)
+	for <contkellylewis@testdomain.io>; Mon, 09 Dec 2024 20:19:07 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=startupbcs.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=startupbcs.com
+Received: from mail-ej1-f50.google.com (mail-ej1-f50.google.com [209.85.218.50])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 7E8FB2640037
+	for <contkellylewis@testdomain.io>; Mon,  9 Dec 2024 20:16:02 +0700 (WIB)
+Received: by mail-ej1-f50.google.com with SMTP id a640c23a62f3a-a9e8522445dso855813966b.1
+        for <contkellylewis@testdomain.io>; Mon, 09 Dec 2024 05:16:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=startupbcs.com; s=google; t=1733750151; x=1734354951; darn=okusi.id;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=3WFdEAsS7PYyRYS5/FHmWxNI3yuVJpF7HHEAV5EOYjY=;
+        b=VvQcAolpBlatUuQyT6L/daFPS3IXYYbCE1DZSrAkTbm1u5KL/HaDZR8oHz/jCFTm9O
+         3kurJLvXIhngacey5OvJEmCLI2ESRG1NYuuQnsaHCfHDN7FtWORE+H7NEABJltAvOmkp
+         7Rh6z3dpSuD4z8LdEsN4rZd0t1a9v7lBZYuxwysVHNCwNFuJ844xBN+qn38Jl7+rIpaW
+         m3eOSy00BmYa7R0FoOh68BB8NUwyjuBgGvDrXd+cCuKmVFAkGBUG6uHmxy1h0k216lPX
+         3ynFz/IxakinkKsDTv6AgVSLau+LHRNFCmWO+BQ/hO45tQYwBtYWxz2kcDMNbjIAFxbA
+         r+cQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1733750151; x=1734354951;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=3WFdEAsS7PYyRYS5/FHmWxNI3yuVJpF7HHEAV5EOYjY=;
+        b=vC0pIAS5XlsTsw3wvuLoXyG5ubs+Sbyt4slbPFsABkXmghshxm5x/pFuhcQcOeL0pN
+         KIw2mPFIWHkGGjsdFX251Sm64ExcZuHUJN7nph+/WmAeaBzxyoSRiC+Tzn7AfMOeBULS
+         dod/KFMbz36w9H09cNDsK1LzR1yzynZHOAD3uGJqJrING/iHXcDl9La2fWim4LVaWylA
+         gqPUyDEOEh+UtbyIAIWm8uxA4f4cgkG+1n4Fuz8rJvFj+tkOyMUFpSl9gF14R16vTjQv
+         0wZYxCOxoZYVgxr1nSeDTrACETL6+D4MxOWt030l1ikt/zpMYo19OWEHPgL/y40Bn43+
+         Ms1w==
+X-Gm-Message-State: AOJu0YwMmOhJX64xVhrLIGboC7mniPlyjq9LmnFovps4s9Vvwrnw65iU
+	LwHjuW0KagpiO3Vwc4uuAPOjGmrUtoUfRH1dzMM4TYC79d0h5ZeSLZPtn0AejqHptR2bWFiyIvk
+	4QRFhNDpoi2jUiK0g1ZspU+/Rrxu/MrK/KMUOABTXok3uDaTcryg=
+X-Gm-Gg: ASbGnctiyDPt3CaPFuR0H1TupKiTeLd8d8CRzWI3081cg9cuUjJBDVeMzDNNz3JfLd4
+	Dh3i5K2b1M+QJTTiR96miXuo4dU7fGLc=
+X-Google-Smtp-Source: AGHT+IFhlrxpUgw1djR3QeoKWDx2AAVcf7du36weMjBmcmsqpFF5NmfqZE7GdLpvTPXkW2xDZ91+vWfOtg+8v5QYHc8=
+X-Received: by 2002:a17:906:1baa:b0:a99:6791:5449 with SMTP id
+ a640c23a62f3a-aa69ce334c0mr29347866b.52.1733750151035; Mon, 09 Dec 2024
+ 05:15:51 -0800 (PST)
+MIME-Version: 1.0
+References: <9c275e21-e6b205a0-6fcdbf88-a9cb5435@testdomain.io>
+In-Reply-To: <9c275e21-e6b205a0-6fcdbf88-a9cb5435@testdomain.io>
+From: Alan Ang <quinnjohnson@fakecorp.biz>
+Date: Mon, 9 Dec 2024 21:15:38 +0800
+Message-ID: <CAHXEHEQXuZ0qY8eeOmXOxLL=phoenix_young@testmail.com>
+Subject: Re: Stock take audit [#:6756af6d9]
+To: Sigit Erdianto Sunarno <contkellylewis@testdomain.io>
+Cc: devonanderson@testdomain.io
+Content-Type: multipart/alternative; boundary="000000000000e1e4e70628d629d2"
+X-Spam-Status: No, score=-0.2 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,RCVD_IN_DNSWL_BLOCKED,
+	RCVD_IN_MSPIKE_H3,RCVD_IN_MSPIKE_WL,SPF_HELO_NONE,SPF_PASS,
+	T_KAM_HTML_FONT_INVALID autolearn=unavailable autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--000000000000e1e4e70628d629d2
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Sigit,
+
+Thank you for your reply.
+We are assisting our client who is a public listed company in HK.
+We are sourcing for audit assistance for a stock take exercise at our
+client's warehouse in Batam.
+We only need to audit the stock take exercise and sign off the product
+check list.
+Our staff will do the physical counting as the auditor oversees the count.
+The stocks are mainly electronic components, small items.
+
+Not a huge load to count, 1 day effort will be sufficient.
+
+Is this something your company can assist with?
+If yes, how can you assist and what form of report do you provided?
+
+Regards
+Alan
+
+On Mon, 9 Dec 2024, 5:19=E2=80=AFpm Sigit Erdianto Sunarno, <contact@okusi.=
+id>
+wrote:
+
+> Dear Alan,
+>
+> Thank you for reaching out to us regarding your need for an independent
+> auditor to review your stock take at your factory in Batam. We appreciate
+> the opportunity to assist you.
+>
+> To provide you with an accurate proposal and understand how we can best
+> meet your needs, could you please share some additional information about
+> your company?
+>
+>    - *Company Profile and Size:* A brief overview of your company and the
+>    scale of your operations.
+>    - *Previous Audits:* Have your financial statements been audited in
+>    prior years?
+>    - *Scope of Audit:* Do you require an audit solely for the stock take,
+>    or are you interested in a general audit of your financial statements?
+>
+> Please note that we offer comprehensive audit services for financial
+> statements, with the stock take being one of key components of our specif=
+ic
+> audit procedures. Our team has extensive experience in auditing inventory=
+,
+> particularly in the electronics sector, and we=E2=80=99re confident we ca=
+n provide
+> valuable insights and assurance for your business.
+>
+> Once we have the above information, we=E2=80=99ll be able to provide you =
+with
+> detailed information on our charges and the scope of services we can offe=
+r.
+>
+> Thank you, and we look forward to the possibility of working with you.
+>
+> Best regards,
+> [image: Photo of Sigit Erdianto Sunarno]
+> <https://okusiassociates.com/id/1259> *Sigit Erdianto Sunarno* CPA
+> Registered Public Accountant, Okusi Associates
+> <https://okusiassociates.com>
+> [image: Okusi Associates website] <https://okusiassociates.com> [image:
+> Send Whatsapp to Sigit Erdianto Sunarno.] [image: Sigit Erdianto Sunarno
+> on LinkedIn] <https://www.linkedin.com/in/sigitsunarno/>
+> +628118162000 | +62213901007 | jamierobinson@testdomain.io | okusiassociates.com
+>
+>
+> On 9/12/24 15:50, quinnjohnson@fakecorp.biz wrote:
+>
+>
+> Phone: +6598568931
+>
+> Hi,
+> We need an independent auditor to review our stock take in our factory in
+> Batam.
+> It will be a one day job where the auditor will verify our stock take for
+> our electronic components and sign off the stock list.
+>
+> I need to understand your charges for the above.
+> Thanks
+> Regards
+> Alan
+>
+>
+
+--000000000000e1e4e70628d629d2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Hi Sigit,<div dir=3D"auto"><br></div><div dir=3D"auto">Th=
+ank you for your reply.</div><div dir=3D"auto">We are assisting our client =
+who is a public listed company in HK.</div><div dir=3D"auto">We are sourcin=
+g for audit assistance for a stock take exercise at our client&#39;s wareho=
+use in Batam.</div><div dir=3D"auto">We only need to audit the stock take e=
+xercise and sign off the product check list.</div><div dir=3D"auto">Our sta=
+ff will do the physical counting as the auditor oversees the count.</div><d=
+iv dir=3D"auto">The stocks are mainly electronic components, small items.</=
+div><div dir=3D"auto"><br></div><div dir=3D"auto">Not a huge load to count,=
+ 1 day effort will be sufficient.</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">Is this something your company can assist with?</div><div dir=3D"=
+auto">If yes, how can you assist and what form of report do you provided?</=
+div><div dir=3D"auto"><br></div><div dir=3D"auto">Regards</div><div dir=3D"=
+auto">Alan</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">On Mon, 9 Dec 2024, 5:19=E2=80=AFpm Sigit Erdianto Sunarno,=
+ &lt;<a href=3D"mailto:contkellylewis@testdomain.io">contkellylewis@testdomain.io</a>&gt; wrote:<br=
+></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-=
+left:1px #ccc solid;padding-left:1ex"><u></u>
+
+ =20
+   =20
+ =20
+  <div>
+    <p><font face=3D"Georgia">Dear Alan,</font></p>
+    <p><font face=3D"Georgia">Thank you for reaching out to us regarding
+        your need for an
+        independent auditor to review your stock take at your factory in
+        Batam.
+        We appreciate the opportunity to assist you.</font></p>
+    <p><font face=3D"Georgia">To provide you with an accurate proposal and
+        understand how we can
+        best meet your needs, could you please share some additional
+        information
+        about your company?</font></p>
+    <ul>
+      <li><font face=3D"Georgia"><strong>Company Profile and Size:</strong>
+          A brief overview of your
+          company and the scale of your operations.</font></li>
+      <li><font face=3D"Georgia"><strong>Previous Audits:</strong> Have
+          your financial statements
+          been audited in prior years?</font></li>
+      <li><font face=3D"Georgia"><strong>Scope of Audit:</strong> Do you
+          require an audit solely for
+          the stock take, or are you interested in a general audit of
+          your
+          financial statements?</font></li>
+    </ul>
+    <p><font face=3D"Georgia">Please note that we offer comprehensive
+        audit services for financial
+        statements, with the stock take being one of key components of
+        our specific
+        audit procedures. Our team has extensive experience in auditing
+        inventory, particularly in the electronics sector, and we=E2=80=99r=
+e
+        confident
+        we can provide valuable insights and assurance for your
+        business.</font></p>
+    <p><font face=3D"Georgia">Once we have the above information, we=E2=80=
+=99ll be
+        able to provide you with
+        detailed information on our charges and the scope of services we
+        can
+        offer.</font></p>
+    <p><font face=3D"Georgia">Thank you, and we look forward to the
+        possibility of working with
+        you.</font></p>
+    <p><font face=3D"Georgia">Best regards,</font></p>
+    <div>
+     =20
+      <table style=3D"font-size:16px;color:rgb(85,85,85);margin:4px 0px 0px=
+;padding:0px;line-height:1.4">
+        <tbody>
+          <tr>
+            <td style=3D"margin:0;padding:0px 6px 0px 6px;vertical-align:to=
+p">
+              <font face=3D"Georgia"><a href=3D"https://okusiassociates.com=
+/id/1259" title=3D"Okusi Associates - Sigit Erdianto Sunarno" target=3D"_bl=
+ank" rel=3D"noreferrer">
+                  <img style=3D"height:111px;border-radius:5%;border:1px so=
+lid #0b295a" alt=3D"Photo of Sigit Erdianto Sunarno" src=3D"https://okusias=
+sociates.com/a/m/photo-erdianto.jpg">
+                </a></font>
+            </td>
+            <td style=3D"padding:0px 6px 0px 4px;vertical-align:top;font-si=
+ze:16px">
+              <font face=3D"Georgia"><strong>Sigit Erdianto Sunarno</strong=
+>
+                <span style=3D"font-size:13px;color:#555!important" title=
+=3D""> CPA</span></font>
+              <div style=3D"font-size:13px;color:#888!important"><font face=
+=3D"Georgia">
+                  Registered Public Accountant, <a href=3D"https://okusiass=
+ociates.com" title=3D"Indonesian Corporate Services" style=3D"color:#888!im=
+portant" target=3D"_blank" rel=3D"noreferrer">Okusi
+                    Associates</a></font>
+              </div>
+              <div style=3D"margin-top:3px;margin-bottom:0px">
+                <font face=3D"Georgia"><a title=3D"Okusi Associates website=
+" href=3D"https://okusiassociates.com" style=3D"color:#888!important" targe=
+t=3D"_blank" rel=3D"noreferrer">
+                    <img style=3D"height:28px" alt=3D"Okusi Associates webs=
+ite" src=3D"https://okusiassociates.com/a/m/oa.png">
+                  </a>
+                  =E2=80=89
+                  <a title=3D"Send Whatsapp to Sigit Erdianto Sunarno." rel=
+=3D"noreferrer">
+                    <img style=3D"height:28px" alt=3D"Send Whatsapp to Sigi=
+t Erdianto Sunarno." src=3D"https://okusiassociates.com/a/m/wa.png">
+                  </a>
+                  =E2=80=89
+                  <a title=3D"Sigit Erdianto Sunarno on LinkedIn." href=3D"=
+https://www.linkedin.com/in/sigitsunarno/" style=3D"color:#888!important" t=
+arget=3D"_blank" rel=3D"noreferrer">
+                    <img style=3D"height:28px" alt=3D"Sigit Erdianto Sunarn=
+o on LinkedIn" src=3D"https://okusiassociates.com/a/m/li.png">
+                  </a></font>
+              </div>
+              <div style=3D"font-size:13px;color:#888!important">
+                <font face=3D"Georgia"><a style=3D"color:#888!important" ti=
+tle=3D"Voice/WhatsApp/SMS" rel=3D"noreferrer">+628118162000</a>
+                  | <a href=3D"tel:+62213901007" style=3D"color:#888!import=
+ant" title=3D"Jakarta Office Landline." target=3D"_blank" rel=3D"noreferrer=
+">+62213901007</a>
+                  |
+                  <a title=3D"Send email to Sigit Erdianto Sunarno." href=
+=3D"mailto:jamierobinson@testdomain.io" style=3D"color:#888!important" target=3D"_blan=
+k" rel=3D"noreferrer">jamierobinson@testdomain.io</a>
+                  |
+                  <a href=3D"https://okusiassociates.com" title=3D"Okusi As=
+sociates - Indonesian Corporate Services" style=3D"color:#888!important" ta=
+rget=3D"_blank" rel=3D"noreferrer">okusiassociates.com</a></font>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <font face=3D"Georgia"><br>
+      </font><br>
+    </div>
+    <div>On 9/12/24 15:50, <a href=3D"mailto:quinnjohnson@fakecorp.biz" target=3D=
+"_blank" rel=3D"noreferrer">quinnjohnson@fakecorp.biz</a>
+      wrote:<br>
+    </div>
+    <blockquote type=3D"cite">
+     =20
+      <div id=3D"m_4487271858642561576message" style=3D"font-family:Arial;b=
+order:1px #eee solid;border-radius:4px;color:#555;width:99%;max-width:40rem=
+;text-align:left;margin:0rem;padding:0rem;font-size:12pt"><br>
+        Phone: +6598568931<br>
+        <br>
+        Hi, <br>
+        We need an independent auditor to review our stock take in our
+        factory in Batam. <br>
+        It will be a one day job where the auditor will verify our stock
+        take for our electronic components and sign off the stock list.
+        <br>
+        <br>
+        I need to understand your charges for the above. <br>
+        Thanks <br>
+        Regards <br>
+        Alan</div>
+    </blockquote>
+  </div>
+
+</blockquote></div>
+
+--000000000000e1e4e70628d629d2--

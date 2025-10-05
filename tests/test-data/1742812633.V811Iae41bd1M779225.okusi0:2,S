@@ -1,0 +1,535 @@
+Return-Path: <justicerobinson@testmail.comm>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 9D70B3340234
+	for <drewjones@testmail.net>; Mon, 24 Mar 2025 17:37:13 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 24 Mar 2025 17:37:13 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id ssIELq814WcpKgkAeHbnHg
+	(envelope-from <justicerobinson@testmail.comm>); Mon, 24 Mar 2025 17:36:31 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-yb1-f170.google.com (mail-yb1-f170.google.com [209.85.219.170])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 42A7E264002C;
+	Mon, 24 Mar 2025 17:36:29 +0700 (WIB)
+Received: by mail-yb1-f170.google.com with SMTP id 3f1490d57ef6-e63c3a53a4cso2985193276.2;
+        Mon, 24 Mar 2025 03:36:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1742812587; x=1743417387; darn=okusi.id;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=NM1c08NAZzYdZG3uxa84+sAL7yxs9g987iqN/gONaTU=;
+        b=WKMjI5Zdt7Hw9OmKBGNAlVQDcLetFkMwEYMWIGAfts3GAcjNNE4JEAAkmC2qzx8j88
+         MFzS5Y3YZWkTYT9sO7tqB1AJDjY6VfvzMY0jK6woRq7eOmCTCXHhJzK2B/Dj/bm6TIAb
+         tm80XvBO8KvVUXbjgeLxD8iB/I/+WrJoCL6w63xhN7qMLYXMwiQ/SS7GN1a8TeTyHB7d
+         wxGqrWlNm0WtIwY0pB45Dfck7CVqygVHBqNCUqK3o6d4F8WcqsTqUGpnFCePMMqCRukX
+         VjkARnJhi1sOKa5jEWKgoWQlhyOGak5oB4CEftjhobbMZ6tWZ2S2YWg0GjBrV7CZEHim
+         YsXA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1742812587; x=1743417387;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=NM1c08NAZzYdZG3uxa84+sAL7yxs9g987iqN/gONaTU=;
+        b=gje/P6pUx0Pja+jB57/3s4ES/D4kCGWJ2UrG0SnNB0Q2o6WqU8Pu30CrjQukPiWVvv
+         vpNbQrt6SnUFtfK2FfxJzvpUj5QgQzyo+MeBoi0z/d7KRQtZ69lSwsh1sz9a/K8ziMu7
+         ljQmgflDMZTRs3HEW/f8MATOWyqWvMgP6TieGBPkDYAPXRlG49mL2S7chx7yjGJm5alu
+         ImYlWHNwwIpzRywNjhWtPLqKHhJuJP4HlgZD0izUS7MmVsienGwtjSt/KMEHLlSMhVfV
+         m5z/lmmGDQz/duJ+of0zOiigVrBXkHCKDkFukJUpNGHpcfj4nP4IdetZrGTt7nM3cd2v
+         24/A==
+X-Forwarded-Encrypted: i=1; AJvYcCVBMf+AoIPjfOrm/CZklmDX4PgbQO3bkV9UEARx5Ks196hBmrkQs/wDL8h1hYvwzFPE/ntom1Y=@okusi.id, AJvYcCW99127wy40Nr4v4Hmv3kwoFNPZ17WkBj+xof+cGE3HnTWkbVV0gAKcpmKjFZ4nkjHwVcsPg8Hs/A==@okusi.id
+X-Gm-Message-State: AOJu0Yy73Kql4jbzQ3CCOYzNDg0aK4m3Ux80Mwdt8aCVfTFaEI+iW+iR
+	gcJoiaUYIelVrCKqbZmu9w0knH7vRD8+PRgNWz3DEMKZUGJWS9HoguEBlTui9Rn8lmeNtMLU6Ut
+	jqlqLCyiINCHYwhyn3Uvmo2KzOnKrwEntUl0=
+X-Gm-Gg: ASbGnctbwygHo8epRf6+W6SQnJbxluSQs8cJq5lgEOtxQR3spb2XWl82rYRKDRXWLQx
+	cmkY1+VtK3/y7jdtpKH5aaouq6GBYJKnCCkxe8YWhu2n9MA6YPJEhpU2jcuo0kcKNHWA4osYYqf
+	mqwKTh63y1Dpn8tkm/ljD8mMGNh4f/YsWiWFuLLKys8Sf1B6Y7W1itETK3Y2fd
+X-Google-Smtp-Source: AGHT+IE2hnc1Q7JHVXuGan16RqvK2vAu+iQVWov/DQQvgOZIlAot4CUJ0QPl4VUty+3f6qpAQoa8MRtfVQVM/7XvruU=
+X-Received: by 2002:a05:6902:2087:b0:e63:ca12:7733 with SMTP id
+ 3f1490d57ef6-e66a4c28af5mr16038625276.10.1742812586770; Mon, 24 Mar 2025
+ 03:36:26 -0700 (PDT)
+MIME-Version: 1.0
+References: <14a4dcce-97f41d21-a31095a0-e37d8c25@testdomain.io>
+ <4e1240e4-d9ce46a2-456add95-be841bee@testdomain.io> <CANrk_HsxxJbLToXSpNzar94Q=yt=alextaylor@testmail.com>
+ <5509c88d-b683c8df-7c408b13-d082a30f@testdomain.io>
+In-Reply-To: <5509c88d-b683c8df-7c408b13-d082a30f@testdomain.io>
+From: firas bawazir <justicerobinson@testmail.comm>
+Date: Mon, 24 Mar 2025 13:36:15 +0300
+X-Gm-Features: AQ5f1JrvHVeiuZxxv_M_xGLMfV2Kf633zxp7UFYhONSdQXTlvyVNZ7FDwRFzZjA
+Message-ID: <CANrk_HuMYeCCyMidPKU8cm96MCpD=charlie_rodriguez@testmail.com>
+Subject: Re: Fwd: Personal Tax Reporting [#:67da93d59]
+To: Rahmat Fadhlillah <faaveryking@testdomain.io>
+Cc: Lina Munir <contkellylewis@testdomain.io>, Lina Munir <devonanderson@testdomain.io>, 
+	sigit Erdianto Sunarno Okusi Associates <oakleybrown@testdomain.io>
+Content-Type: multipart/alternative; boundary="00000000000025080a0631142dec"
+X-Spam-Status: No, score=-0.2 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM,HTML_MESSAGE,
+	RCVD_IN_DNSWL_BLOCKED,RCVD_IN_MSPIKE_H2,
+	RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,RCVD_IN_VALIDITY_RPBL_BLOCKED,
+	SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--00000000000025080a0631142dec
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Rahmat,
+
+Can you quote me to do my taxes yearly.
+
+So this will include 3 properties which i am receiving a monthly rental, to
+be submitted and paid monthly
+This will also include my pbb tax on land which is for 4 properties (3 from
+above and 1 which is only land), per year.
+Any other tax I need to pay or submit per year including my annual personal
+tax return.
+
+Thanks
+
+
+On Mon, 24 Mar 2025 at 13:25, Rahmat Fadhlillah <faaveryking@testdomain.io> wrote:
+
+> Dear Firas Bawazir,
+>
+> Thank you for your information. Based on your situation, you obtained you=
+r *KTP,
+> KK, and NPWP* in 2023.
+>
+> Your main source of income currently comes from the properties registered
+> under your name.
+>
+> In Indonesia, income from renting out a house through *Airbnb* falls
+> under the category of *rental income from property*, which is generally
+> subject to *Final Income Tax (PPh Final)* at a *rate of 10%*.
+>
+> Regarding tax payments, you are required to *pay monthly* if you receive
+> rental income on a monthly basis. However, if there is no rental income i=
+n
+> a given month, you are *not required* to submit or pay the tax for that
+> period. At the end of the fiscal year, you will only need to file your *a=
+nnual
+> personal tax return*, as the tax has already been paid monthly.
+>
+> If you need further clarification, we can arrange an *online consultation=
+*.
+> Our fee for a *1-hour consultation* is *IDR 3.6 million*.
+>
+> Please let us know if you would like to proceed.
+>
+> Thank you for your cooperation.
+>
+> *Best regards,*
+> [image: Photo of Rahmat Fadhlillah] <https://okusiassociates.com/id/1283>=
+ *Rahmat
+> Fadhlillah* BKP
+> Head of Tax, Okusi Associates <https://okusiassociates.com>
+> [image: Okusi Associates website] <https://okusiassociates.com> [image:
+> Send Whatsapp to Rahmat Fadhlillah.]
+> +6282138484167 | +62213901007 | indigobrown@testdomain.io |
+> okusiassociates.com
+>
+>
+> On 21/03/25 16.49, firas bawazir wrote:
+>
+> Hi Rahmat,
+>
+> Thanks for getting back to me
+>
+> I will try to explain my situation as briefly as possible:
+>
+>    - I have lived all my life outside of Indonesia, my father is
+>    indonesian (from jakarta) and my mother is Saudi. I lived/live in Saud=
+i
+>    Arabia all my life
+>    - I only carry an indonesian passport, i do not carry any other
+>    nationalities
+>    - In 2023 i decided to purchase property in bali, to be able to do so
+>    i had to go to jakarta and get 3 things (i did not have this before), =
+my
+>    KTP, my KK and my NPWP
+>    - Once i got those i invested in a few properties in bali and lombok
+>    which are being rented out on Airbnb
+>    - I do not have a job in saudi, my main source of income now are the
+>    properties (which are under my personal name not a company)
+>    - I have spoken to many people previously, and they informed me that i
+>    am only liable to pay a yearly fee on my income from my properties @ 1=
+0%,
+>    which is also what i have read online through many sources.
+>    - Now in 2024 I submitted my tax through a company which initially
+>    informed me that I have to do this yearly but now is telling me that I=
+ have
+>    to do it monthly which i'm not sure is right due to the mixed informat=
+ion
+>    I'm getting from this company. They are saying ''WHT of rental applies=
+ to
+>    both individual entrepreneurs and companies, so i have to report it
+>    monthly. Which i feel defeats the purpose of reporting my personal inc=
+ome
+>    yearly.
+>
+> Let me know if you need any additional information
+>
+> Thanks
+>
+> On Fri, 21 Mar 2025 at 05:09, Rahmat Fadhlillah <faaveryking@testdomain.io> wrote:
+>
+>> Dear Firas Bawazir
+>>
+>> Greetings from all of us at Okusi Associates! Thank you for reaching out
+>> to Okusi Associates.
+>>
+>> Since you are an Indonesian citizen living abroad, your tax obligations
+>> may vary depending on factors such as your residency status, source of
+>> income, and any applicable tax treaties. I understand that receiving mix=
+ed
+>> information can be confusing, and I=E2=80=99d be glad to help clarify yo=
+ur tax
+>> requirements.
+>>
+>> To provide you with the best guidance, could you share more details abou=
+t
+>> your income sources and how long you have been living outside Indonesia?
+>> This will help me determine the specific regulations that apply to your
+>> situation.
+>>
+>> Looking forward to your response.
+>>
+>> Best regards,
+>> [image: Photo of Rahmat Fadhlillah] <https://okusiassociates.com/id/1283=
+> *Rahmat
+>> Fadhlillah* BKP
+>> Head of Tax, Okusi Associates <https://okusiassociates.com>
+>> [image: Okusi Associates website] <https://okusiassociates.com> [image:
+>> Send Whatsapp to Rahmat Fadhlillah.]
+>> +6282138484167 | +62213901007 | indigobrown@testdomain.io |
+>> okusiassociates.com
+>>
+>>
+>> -------- Forwarded Message --------
+>> Subject: Personal Tax Reporting [#:67da93d59]
+>> Date: Wed, 19 Mar 2025 16:52:21 +0700
+>> From: justicerobinson@testmail.comm
+>> Organization: Okusi Associates
+>> To: contkellylewis@testdomain.io <contkellylewis@testdomain.io> <contkellylewis@testdomain.io>
+>>
+>> Hello,
+>>
+>> I want to inquire if you could help me with my personal tax reporting, i
+>> am somewhat of an unusual case, i am an Indonesian that does not live in
+>> Indonesia and i am a bit confused on what is required of me and i am
+>> getting mixed information from different sources.
+>>
+>> Let me know if this is something you have experience in.
+>>
+>> Thanks
+>>
+>>
+
+--00000000000025080a0631142dec
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hi Rahmat,<div><br></div><div>Can you quote me to do my ta=
+xes yearly.</div><div><br></div><div>So this will include 3 properties whic=
+h i am receiving=C2=A0a monthly rental, to be submitted and paid monthly<br=
+>This will also include my pbb tax on land which is for 4 properties (3 fro=
+m above and 1 which is only land), per year.</div><div>Any other tax I need=
+ to pay or submit per year including my annual personal tax return.</div><d=
+iv><br></div><div>Thanks<br><br></div></div><br><div class=3D"gmail_quote g=
+mail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, 24 Mar =
+2025 at 13:25, Rahmat Fadhlillah &lt;<a href=3D"mailto:faaveryking@testdomain.io">fa=
+averyking@testdomain.io</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" st=
+yle=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padd=
+ing-left:1ex"><u></u>
+
+ =20
+   =20
+ =20
+  <div>
+    <p>Dear Firas Bawazir,</p>
+    <p>Thank you for your
+      information. Based on your situation, you obtained your <strong>KTP, =
+KK, and NPWP</strong> in
+      2023.</p>
+    <p>Your main source of
+      income currently comes from the properties registered under your
+      name.</p>
+    <p>In Indonesia, income
+      from renting out a house through <strong>Airbnb</strong> falls under =
+the category of <strong>rental income from property</strong>,
+      which is generally subject to <strong>Final Income Tax (PPh Final)</s=
+trong> at a <strong>rate of 10%</strong>.</p>
+    <p>Regarding tax payments,
+      you are required to <strong>pay
+        monthly</strong> if you receive rental income on a monthly
+      basis. However, if there is no rental income in a given month, you
+      are <strong>not required</strong>
+      to submit or pay the tax for that period. At the end of the fiscal
+      year, you will only need to file your <strong>annual personal tax ret=
+urn</strong>, as the tax
+      has already been paid monthly.</p>
+    <p>If you need further
+      clarification, we can arrange an <strong>online consultation</strong>=
+. Our fee for a <strong>1-hour consultation</strong>
+      is <strong>IDR 3.6 million</strong>.</p>
+    <p>Please let us know if
+      you would like to proceed.</p>
+    <p>Thank you for your
+      cooperation.</p>
+    <p><strong>Best regards,</strong></p>
+    <div>
+     =20
+      <table style=3D"font-size:16px;font-family:&quot;AvantGarde Bk BT&quo=
+t;,Verdana,&quot;sans serif&quot;;color:rgb(85,85,85);margin:4px 0px 0px;pa=
+dding:0px;line-height:1.4">
+        <tbody>
+          <tr>
+            <td style=3D"margin:0px;padding:0px 6px;vertical-align:top">
+              <a href=3D"https://okusiassociates.com/id/1283" title=3D"Okus=
+i Associates - Rahmat Fadhlillah" target=3D"_blank">
+                <img style=3D"height: 111px; border-radius: 5%; border: 1px=
+ solid rgb(11, 41, 90);" alt=3D"Photo of Rahmat Fadhlillah" src=3D"https://=
+okusiassociates.com/a/m/photo-fadhlil.jpg">
+              </a>
+            </td>
+            <td style=3D"padding:0px 6px 0px 4px;vertical-align:top;font-si=
+ze:16px">
+              <strong>Rahmat Fadhlillah</strong> <span style=3D"font-size:1=
+3px;color:rgb(85,85,85)" title=3D"">
+                BKP</span>
+              <div style=3D"font-size:13px;color:rgb(136,136,136)">
+                Head of Tax, <a href=3D"https://okusiassociates.com" title=
+=3D"Indonesian Corporate Services" style=3D"color:rgb(136,136,136)" target=
+=3D"_blank">Okusi Associates</a>
+              </div>
+              <div style=3D"margin-top:3px;margin-bottom:0px">
+                <a title=3D"Okusi Associates website" href=3D"https://okusi=
+associates.com" style=3D"color:rgb(136,136,136)" target=3D"_blank">
+                  <img style=3D"height: 28px;" alt=3D"Okusi Associates webs=
+ite" src=3D"https://okusiassociates.com/a/m/oa.png">
+                </a>
+                =E2=80=89
+                <a title=3D"Send Whatsapp to Rahmat Fadhlillah.">
+                  <img style=3D"height: 28px;" alt=3D"Send Whatsapp to Rahm=
+at Fadhlillah." src=3D"https://okusiassociates.com/a/m/wa.png">
+                </a>
+              </div>
+              <div style=3D"font-size:13px;color:rgb(136,136,136)">
+                <a style=3D"color:rgb(136,136,136)" title=3D"Voice/WhatsApp=
+/SMS">+6282138484167</a>
+                | <a href=3D"tel:+62213901007" style=3D"color:rgb(136,136,1=
+36)" title=3D"Jakarta Office Landline." target=3D"_blank">+62213901007</a>
+                |
+                <a title=3D"Send email to Rahmat Fadhlillah." href=3D"mailt=
+o:indigobrown@testdomain.io" style=3D"color:rgb(136,136,136)" target=3D"_bl=
+ank">indigobrown@testdomain.io</a>
+                |
+                <a href=3D"https://okusiassociates.com" title=3D"Okusi Asso=
+ciates - Indonesian Corporate Services" style=3D"color:rgb(136,136,136)" ta=
+rget=3D"_blank">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div>On 21/03/25 16.49, firas bawazir wrote:<br>
+    </div>
+    <blockquote type=3D"cite">
+     =20
+      <div dir=3D"ltr">Hi Rahmat,
+        <div><br>
+        </div>
+        <div>Thanks for getting back to me</div>
+        <div><br>
+        </div>
+        <div>I will try to explain my situation as briefly as possible:</di=
+v>
+        <div>
+          <ul>
+            <li>I have lived all my life outside of Indonesia, my father
+              is indonesian (from jakarta) and my mother is Saudi. I
+              lived/live in Saudi Arabia all my life</li>
+            <li>I only carry an indonesian passport, i do not carry=C2=A0an=
+y
+              other nationalities=C2=A0</li>
+            <li>In 2023 i decided to purchase property in bali, to be
+              able to do so i had to go to jakarta and get 3 things (i
+              did not have this before), my KTP, my KK and my NPWP</li>
+            <li>Once i got those i invested in a few properties in bali
+              and lombok which are being rented out on Airbnb</li>
+            <li>I do not have a job in saudi, my main source of income
+              now are the properties (which are under my personal name
+              not a company)</li>
+            <li>I have spoken to many people previously, and they
+              informed me that i am only liable to pay a yearly fee on
+              my income from my properties=C2=A0@ 10%, which is also what i
+              have read online through many sources.</li>
+            <li>Now in 2024 I submitted my tax through a company which
+              initially informed me that I have to do this yearly but
+              now is telling me that I have to do it monthly which i&#39;m
+              not sure is right due to the mixed information I&#39;m gettin=
+g
+              from this company. They are saying &#39;&#39;WHT of rental=C2=
+=A0applies
+              to both individual entrepreneurs and companies, so i have
+              to report it monthly. Which i feel defeats the purpose of
+              reporting my personal income yearly.</li>
+          </ul>
+          <div>Let me know if you need any additional information</div>
+        </div>
+        <div><br>
+        </div>
+        <div>Thanks</div>
+      </div>
+      <br>
+      <div class=3D"gmail_quote">
+        <div dir=3D"ltr" class=3D"gmail_attr">On Fri, 21 Mar 2025 at 05:09,
+          Rahmat Fadhlillah &lt;<a href=3D"mailto:faaveryking@testdomain.io" target=
+=3D"_blank">faaveryking@testdomain.io</a>&gt;
+          wrote:<br>
+        </div>
+        <blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex=
+;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+          <div>
+            <p>Dear Firas Bawazir</p>
+            <p>Greetings from all of us at Okusi Associates! Thank you
+              for reaching out to Okusi Associates.</p>
+            <p>Since you are an Indonesian citizen living abroad, your
+              tax obligations may vary depending on factors such as your
+              residency status, source of income, and any applicable tax
+              treaties. I understand that receiving mixed information
+              can be confusing, and I=E2=80=99d be glad to help clarify you=
+r tax
+              requirements.<br>
+              <br>
+              To provide you with the best guidance, could you share
+              more details about your income sources and how long you
+              have been living outside Indonesia? This will help me
+              determine the specific regulations that apply to your
+              situation.<br>
+              <br>
+              Looking forward to your response.<br>
+              <br>
+            </p>
+            <p>Best regards,<br>
+            </p>
+            <div>
+              <table style=3D"font-size:16px;font-family:&quot;AvantGarde B=
+k BT&quot;,Verdana,&quot;sans serif&quot;;color:rgb(85,85,85);margin:4px 0p=
+x 0px;padding:0px;line-height:1.4">
+                <tbody>
+                  <tr>
+                    <td style=3D"margin:0px;padding:0px 6px;vertical-align:=
+top"> <a href=3D"https://okusiassociates.com/id/1283" title=3D"Okusi Associ=
+ates - Rahmat Fadhlillah" target=3D"_blank"> <img style=3D"height: 111px; b=
+order-radius: 5%; border: 1px solid rgb(11, 41, 90);" alt=3D"Photo of Rahma=
+t Fadhlillah" src=3D"https://okusiassociates.com/a/m/photo-fadhlil.jpg"> </=
+a> </td>
+                    <td style=3D"padding:0px 6px 0px 4px;vertical-align:top=
+;font-size:16px"> <strong>Rahmat
+                        Fadhlillah</strong> <span style=3D"font-size:13px;c=
+olor:rgb(85,85,85)" title=3D""> BKP</span>
+                      <div style=3D"font-size:13px;color:rgb(136,136,136)">
+                        Head of Tax, <a href=3D"https://okusiassociates.com=
+" title=3D"Indonesian Corporate Services" style=3D"color:rgb(136,136,136)" =
+target=3D"_blank">Okusi Associates</a> </div>
+                      <div style=3D"margin-top:3px;margin-bottom:0px"> <a t=
+itle=3D"Okusi Associates website" href=3D"https://okusiassociates.com" styl=
+e=3D"color:rgb(136,136,136)" target=3D"_blank"> <img style=3D"height: 28px;=
+" alt=3D"Okusi Associates website" src=3D"https://okusiassociates.com/a/m/o=
+a.png"> </a> =E2=80=89 <a title=3D"Send Whatsapp to Rahmat Fadhlillah."> <i=
+mg style=3D"height: 28px;" alt=3D"Send Whatsapp to Rahmat Fadhlillah." src=
+=3D"https://okusiassociates.com/a/m/wa.png"> </a> </div>
+                      <div style=3D"font-size:13px;color:rgb(136,136,136)">
+                        <a style=3D"color:rgb(136,136,136)" title=3D"Voice/=
+WhatsApp/SMS">+6282138484167</a> | <a href=3D"tel:+62213901007" style=3D"co=
+lor:rgb(136,136,136)" title=3D"Jakarta Office Landline." target=3D"_blank">=
++62213901007</a>
+                        | <a title=3D"Send email to Rahmat Fadhlillah." hre=
+f=3D"mailto:indigobrown@testdomain.io" style=3D"color:rgb(136,136,136)" tar=
+get=3D"_blank">indigobrown@testdomain.io</a>
+                        | <a href=3D"https://okusiassociates.com" title=3D"=
+Okusi Associates - Indonesian Corporate Services" style=3D"color:rgb(136,13=
+6,136)" target=3D"_blank">okusiassociates.com</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <br>
+            </div>
+            <blockquote type=3D"cite">
+              <div>-------- Forwarded Message --------
+                <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                  <tbody>
+                    <tr>
+                      <th valign=3D"BASELINE" align=3D"RIGHT" nowrap>Subjec=
+t: </th>
+                      <td>Personal Tax Reporting [#:67da93d59]</td>
+                    </tr>
+                    <tr>
+                      <th valign=3D"BASELINE" align=3D"RIGHT" nowrap>Date: =
+</th>
+                      <td>Wed, 19 Mar 2025 16:52:21 +0700</td>
+                    </tr>
+                    <tr>
+                      <th valign=3D"BASELINE" align=3D"RIGHT" nowrap>From: =
+</th>
+                      <td><a href=3D"mailto:justicerobinson@testmail.comm" target=
+=3D"_blank">justicerobinson@testmail.comm</a></td>
+                    </tr>
+                    <tr>
+                      <th valign=3D"BASELINE" align=3D"RIGHT" nowrap>Organi=
+zation: </th>
+                      <td>Okusi Associates</td>
+                    </tr>
+                    <tr>
+                      <th valign=3D"BASELINE" align=3D"RIGHT" nowrap>To: </=
+th>
+                      <td><a href=3D"mailto:contkellylewis@testdomain.io" target=3D"_bl=
+ank">contkellylewis@testdomain.io</a>
+                        <a href=3D"mailto:contkellylewis@testdomain.io" target=3D"_blan=
+k">&lt;contkellylewis@testdomain.io&gt;</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                <div id=3D"m_-7535045406034554799m_-8510442897510284621m_-4=
+623487916272547747m_1488865501440850045m_7668774875413649884message" style=
+=3D"font-family:Arial;border:1px solid rgb(238,238,238);border-radius:4px;c=
+olor:rgb(85,85,85);width:99%;max-width:40rem;text-align:left;margin:0rem;pa=
+dding:0rem;font-size:12pt">Hello,
+                  <br>
+                  <br>
+                  I want to inquire if you could help me with my
+                  personal tax reporting, i am somewhat of an unusual
+                  case, i am an Indonesian that does not live in
+                  Indonesia and i am a bit confused on what is required
+                  of me and i am getting mixed information from
+                  different sources. <br>
+                  <br>
+                  Let me know if this is something you have experience
+                  in. <br>
+                  <br>
+                  Thanks</div>
+              </div>
+            </blockquote>
+          </div>
+        </blockquote>
+      </div>
+    </blockquote>
+  </div>
+
+</blockquote></div>
+
+--00000000000025080a0631142dec--

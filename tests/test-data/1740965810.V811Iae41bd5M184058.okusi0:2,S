@@ -1,0 +1,259 @@
+Return-Path: <drewgarcia@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 1516C33401FE
+	for <drewjones@testmail.net>; Mon,  3 Mar 2025 08:36:50 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 03 Mar 2025 08:36:50 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id UENKE5oHxWc2VAgAeHbnHg
+	(envelope-from <drewgarcia@testdomain.io>); Mon, 03 Mar 2025 08:36:26 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1740965785; bh=mLE1DGtkxrNKVMdU+QeH5ThpggIAJRZw9vJvynHi0M0=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=KvnD//2BRnax0yqMUGNnF7UeAiYFYgRaB3kBzETQZ6gEW2gPX//JMFJs9hAY1Ct3V
+	 lLgiUkC0tm9GLn+u4+JvBuSkWm5cM6GUWem3G7llAVSVPZYwuRsf5DMAyANEijjfEf
+	 CvX9hZVh1Bvl7SVRvGIqRixR88/fHT7kUHmN/2TsjFMFiXuh151Lx5Fqx0OuCauADL
+	 43U4x181MANAKCTAb0vJyQllF/0Unji5cvemusuRnj5oiYGvdGXM/7xGCQxohm+dZS
+	 /kh0whEOLaQCkOem67epeZ3tb2FHrqRg8+kWrcFI4Yt2U5moh+xU9BVfajbtTYovpe
+	 65W09w/tLMmPQ==
+Received: from [192.168.6.118] (unknown [110.138.83.249])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 832CC2640006;
+	Mon,  3 Mar 2025 08:36:25 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------VT9qhmTGgah1MiVVGeVsbSDb"
+Message-ID: <49f3aa59-a9289cf2-41d1aa74-744a22a2@testdomain.io>
+Date: Mon, 3 Mar 2025 08:36:22 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: Fwd: Work Permit & Visa - Complete (KITAS, MERP, IMTA)
+ [#:67c1fce47]
+To: Sigit Erdianto Sunarno <contkellylewis@testdomain.io>, Sri Mulyati <devonlewis@testdomain.io>
+References: <67c1fce4.5da.enquiry.okusi.id>
+ <705aff31-588e100e-f5dd279c-15df29a1@testdomain.io>
+Content-Language: en-US
+From: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+Organization: Okusi Associates
+In-Reply-To: <705aff31-588e100e-f5dd279c-15df29a1@testdomain.io>
+X-Spam-Status: No, score=-1.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID autolearn=unavailable autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------VT9qhmTGgah1MiVVGeVsbSDb
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear ibu Lina,
+
+Terima kasih banyak untuk informasinya. Akan kami informasikan segera.
+
+Salam,
+
+Haliza
+
+Photo of Noorhaliza Putri Fadhila <https://okusiassociates.com/id/1321> 
+*Noorhaliza Putri Fadhila* B.A
+Client Compliance for Visas and Work Permit, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Noorhaliza Putri Fadhila. <whatsapp://send?phone=6282128910348>
++6282128910348 <whatsapp://send?phone=6282128910348> | +62213901007 
+<tel:+62213901007> | drewgarcia@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 1/3/25 21:15, Sigit Erdianto Sunarno wrote:
+>
+> Dear Tim Imigrasi,
+>
+> Mohon dibantu difollow up ya, makasih
+>
+>
+>
+> -------- Forwarded Message --------
+> Subject: 	Work Permit & Visa - Complete (KITAS, MERP, IMTA) [#:67c1fce47]
+> Date: 	Sat, 01 Mar 2025 01:13:56 +0700
+> From: 	dakotascott@testmail.com
+> Organization: 	Okusi Associates
+> To: 	contkellylewis@testdomain.io <contkellylewis@testdomain.io>
+>
+>
+>
+>
+> Phone: +252684678380
+>
+> Hello, my name is Zakariya and I would like more information about the 
+> Work Permit & Visa process. I would like to know:
+> 1. The types of visas you offer
+> 2. The requirements for applicants
+> 3. The cost and processing time
+> 4. The application process and next steps
+>
+> Please provide me with more details. Thank you
+--------------VT9qhmTGgah1MiVVGeVsbSDb
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Dear ibu Lina,</p>
+    <p>Terima kasih banyak untuk informasinya. Akan kami informasikan
+      segera.</p>
+    <p>Salam,</p>
+    <p>Haliza<br>
+    </p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1321"
+                target="_blank"
+                title="Okusi Associates - Noorhaliza Putri Fadhila">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Noorhaliza Putri Fadhila"
+                  src="https://okusiassociates.com/a/m/photo-haliza.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Noorhaliza Putri Fadhila</strong> <span
+                style="font-size:13px;color:#555 !important;" title="">
+                B.A</span>
+              <div style="font-size:13px;color:#888 !important;">
+                Client Compliance for Visas and Work Permit, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Noorhaliza Putri Fadhila."
+                  href="whatsapp://send?phone=6282128910348"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Noorhaliza Putri Fadhila."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6282128910348"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6282128910348</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Noorhaliza Putri Fadhila."
+                  href="mailto:drewgarcia@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">drewgarcia@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 1/3/25 21:15, Sigit Erdianto Sunarno
+      wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:705aff31-588e100e-f5dd279c-15df29a1@testdomain.io">
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <p>Dear Tim Imigrasi,</p>
+      <p>Mohon dibantu difollow up ya, makasih<br>
+      </p>
+      <div class="moz-forward-container"><br>
+        <br>
+        -------- Forwarded Message --------
+        <table cellpadding="0" cellspacing="0" border="0"
+          class="moz-email-headers-table">
+          <tbody>
+            <tr>
+              <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Subject:
+              </th>
+              <td>Work Permit &amp; Visa - Complete (KITAS, MERP, IMTA)
+                [#:67c1fce47]</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Date:
+              </th>
+              <td>Sat, 01 Mar 2025 01:13:56 +0700</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" align="RIGHT" nowrap="nowrap">From:
+              </th>
+              <td><a
+                  class="moz-txt-link-abbreviated moz-txt-link-freetext"
+                  href="mailto:dakotascott@testmail.com"
+                  moz-do-not-send="true">dakotascott@testmail.com</a></td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" align="RIGHT" nowrap="nowrap">Organization:
+              </th>
+              <td>Okusi Associates</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" align="RIGHT" nowrap="nowrap">To: </th>
+              <td><a
+                  class="moz-txt-link-abbreviated moz-txt-link-freetext"
+                  href="mailto:contkellylewis@testdomain.io" moz-do-not-send="true">contkellylewis@testdomain.io</a>
+                <a class="moz-txt-link-rfc2396E"
+                  href="mailto:contkellylewis@testdomain.io" moz-do-not-send="true">&lt;contkellylewis@testdomain.io&gt;</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <div id="message"
+style="font-family:Arial;border:1px #eee solid;border-radius:4px;color:#555;width:99%;max-width:40rem;text-align:left;margin:0rem;padding:0rem;font-size:12pt;"><br>
+          Phone: +252684678380<br>
+          <br>
+          Hello, my name is Zakariya and I would like more information
+          about the Work Permit &amp; Visa process. I would like to
+          know: <br>
+          1. The types of visas you offer <br>
+          2. The requirements for applicants <br>
+          3. The cost and processing time <br>
+          4. The application process and next steps <br>
+          <br>
+          Please provide me with more details. Thank you</div>
+      </div>
+    </blockquote>
+  </body>
+</html>
+
+--------------VT9qhmTGgah1MiVVGeVsbSDb--

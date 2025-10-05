@@ -1,0 +1,247 @@
+Return-Path: <drewgarcia@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 1976D3340222
+	for <drewjones@testmail.net>; Mon, 29 Jul 2024 08:09:57 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 29 Jul 2024 08:09:57 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 6K0rAsrrpmZ5gDEAeHbnHg
+	(envelope-from <drewgarcia@testdomain.io>); Mon, 29 Jul 2024 08:09:30 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1722215369; bh=LUZ7gjueHvHKWUMkCoZcplCFylL8i74HPKTXJy/57t8=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=fRLrRLqMECGEICMuaXicR+0rmDpbwDIBes13egrRBrlnBynbh+wklIMw4f1tUY5Ux
+	 kSZ1tZY0e4Zgt8dqPbtuEOilHYRjX66c/48sP9FPoUGa5qovX/VzFbvA9By+kX16yX
+	 MyNbyWpPYUC4dXzVJpm3ghJRTrYPvkczFwAQ49ZA6th+FfDisePHNYliQAusAraUZG
+	 SvfI3N5a7xa7GJ/GsV3vRM1TCgyXVlZR5ioWbYjiIWzNt8kCjd9f8KITzij3woo3sB
+	 onJowoMr8qUaiGVT1XHPdosu5Bsh9bYHAjSXf4+W1KFwuK/JOCiUDRdIf7AAbl0IKf
+	 gsvWucSTfb0gQ==
+Received: from [192.168.1.9] (unknown [36.69.105.60])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id F30A82640002;
+	Mon, 29 Jul 2024 08:09:28 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------05LkpuZOXs0tPkD7BHTZBbB1"
+Message-ID: <b92890c9-803e89eb-0752e256-bbdbad4a@testdomain.io>
+Date: Mon, 29 Jul 2024 08:09:10 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: Fwd: Indonesian KITAS and Work Permit [#:66a661098]
+To: Lina Munir <contkellylewis@testdomain.io>, "devonlewis@testdomain.io" <devonlewis@testdomain.io>
+Cc: "dakotagarcia@testdomain.io" <dakotagarcia@testdomain.io>
+References: <66a66109.f46.enquiry.okusi.id>
+ <9cd5c1f9-86bef521-3f7db25b-344a8a8d@testdomain.io>
+Content-Language: en-US
+From: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+Organization: Okusi Associates
+In-Reply-To: <9cd5c1f9-86bef521-3f7db25b-344a8a8d@testdomain.io>
+X-Spam-Status: No, score=-3.1 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------05LkpuZOXs0tPkD7BHTZBbB1
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear Ibu Linam,
+
+Thank you for your message. We will promptly inform the individual you 
+mentioned about the Work Permit and Visa application process, as per 
+their expressed interest.
+
+We appreciate you providing this information.
+
+Best regards,
+
+Haliza
+
+Photo of Noorhaliza Putri Fadhila <https://okusiassociates.com/id/1321> 
+*Noorhaliza Putri Fadhila* B.A
+Client Compliance for Visas and Work Permit, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Noorhaliza Putri Fadhila. <whatsapp://send?phone=6282128910348>
++6282128910348 <whatsapp://send?phone=6282128910348> | +62213901007 
+<tel:+62213901007> | drewgarcia@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 29/7/24 07:33, Lina Munir wrote:
+>
+>
+> Tetap direspon dengan wise ya
+>
+> salam
+> -------- Forwarded Message --------
+> Subject: 	Indonesian KITAS and Work Permit [#:66a661098]
+> Date: 	Sun, 28 Jul 2024 22:17:29 +0700
+> From: 	samwilson@testmail.com
+> Organization: 	Okusi Associates
+> To: 	contkellylewis@testdomain.io <contkellylewis@testdomain.io>
+>
+>
+>
+>
+> Phone: +2349156386777
+>
+> I am an auto technician,I am interested in work permit and visa 
+> process.i need your assistance to get job.
+--------------05LkpuZOXs0tPkD7BHTZBbB1
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Dear Ibu Linam,</p>
+    <p>Thank you for your message. We will promptly inform the
+      individual you mentioned about the Work Permit and Visa
+      application process, as per their expressed interest.</p>
+    <p>We appreciate you providing this information.</p>
+    <p>Best regards,</p>
+    <p>Haliza</p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1321"
+                target="_blank"
+                title="Okusi Associates - Noorhaliza Putri Fadhila">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Noorhaliza Putri Fadhila"
+                  src="https://okusiassociates.com/a/m/photo-haliza.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Noorhaliza Putri Fadhila</strong> <span
+                style="font-size:13px;color:#555 !important;" title="">
+                B.A</span>
+              <div style="font-size:13px;color:#888 !important;">
+                Client Compliance for Visas and Work Permit, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Noorhaliza Putri Fadhila."
+                  href="whatsapp://send?phone=6282128910348"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Noorhaliza Putri Fadhila."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6282128910348"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6282128910348</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Noorhaliza Putri Fadhila."
+                  href="mailto:drewgarcia@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">drewgarcia@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 29/7/24 07:33, Lina Munir wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:9cd5c1f9-86bef521-3f7db25b-344a8a8d@testdomain.io">
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <p><br>
+      </p>
+      <div class="moz-forward-container">Tetap direspon dengan wise ya</div>
+      <div class="moz-forward-container"><br>
+      </div>
+      <div class="moz-forward-container">salam<br>
+        -------- Forwarded Message --------
+        <table class="moz-email-headers-table" cellspacing="0"
+          cellpadding="0" border="0">
+          <tbody>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Subject:
+              </th>
+              <td>Indonesian KITAS and Work Permit [#:66a661098]</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Date:
+              </th>
+              <td>Sun, 28 Jul 2024 22:17:29 +0700</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">From:
+              </th>
+              <td><a
+                  class="moz-txt-link-abbreviated moz-txt-link-freetext"
+                  href="mailto:samwilson@testmail.com"
+                  moz-do-not-send="true">samwilson@testmail.com</a></td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Organization:
+              </th>
+              <td>Okusi Associates</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">To: </th>
+              <td><a
+                  class="moz-txt-link-abbreviated moz-txt-link-freetext"
+                  href="mailto:contkellylewis@testdomain.io" moz-do-not-send="true">contkellylewis@testdomain.io</a>
+                <a class="moz-txt-link-rfc2396E"
+                  href="mailto:contkellylewis@testdomain.io" moz-do-not-send="true">&lt;contkellylewis@testdomain.io&gt;</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <div id="message"
+style="font-family:Arial;border:1px #eee solid;border-radius:4px;color:#555;width:99%;max-width:40rem;text-align:left;margin:0rem;padding:0rem;font-size:12pt;"><br>
+          Phone: +2349156386777<br>
+          <br>
+          I am an auto technician,I am interested in work permit and
+          visa process.i need your assistance to get job.</div>
+      </div>
+    </blockquote>
+  </body>
+</html>
+
+--------------05LkpuZOXs0tPkD7BHTZBbB1--

@@ -1,0 +1,10 @@
+From: sender@example.com
+To: recipient@example.com
+Subject: Test email with
+ continuation line
+Date: Mon, 1 Jan 2025 12:00:00 +0000
+
+This is the message body.
+It can span multiple lines.
+
+And include blank lines within the body.

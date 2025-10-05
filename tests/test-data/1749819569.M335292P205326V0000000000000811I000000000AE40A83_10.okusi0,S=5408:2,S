@@ -1,0 +1,111 @@
+Return-Path: <ravenrobinson@testcompany.co>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id BF1DE3340223
+	for <drewjones@testmail.net>; Fri, 13 Jun 2025 19:59:28 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.38)
+	for <drewjones@testmail.net> (single-drop); Fri, 13 Jun 2025 19:59:28 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id gy/kL5MgTGjJ6jIAeHbnHg
+	(envelope-from <ravenrobinson@testcompany.co>); Fri, 13 Jun 2025 19:58:59 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=fail smtp.mailfrom=maatextiles.com
+Received: from 15119-1416.dchost.com (unknown [79.110.50.220])
+	by okusi1.okusi.co.id (Postfix) with ESMTP id E3D7E264002B
+	for <legmorganhill@testdomain.io>; Fri, 13 Jun 2025 19:58:57 +0700 (WIB)
+Reply-To: oakleyhernandez@testmail.com
+From: Aladin Ahsan <dakotajohnson@testmail.com>
+To: legmorganhill@testdomain.io
+Subject: [***** SPAM 14.7 *****] Re:Al-kaz Middle East Investment
+Date: 13 Jun 2025 05:58:55 -0700
+Message-ID: <b8a8c1de514e8e9a2bf8bcf3a2afdb6f@testmail.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Flag: YES
+X-Spam-Status: Yes, score=14.7 required=5.0 tests=ADVANCE_FEE_3_NEW,
+	DEAR_SOMETHING,DKIM_ADSP_CUSTOM_MED,FORGED_GMAIL_RCVD,
+	FREEMAIL_FORGED_FROMDOMAIN,FREEMAIL_FROM,FREEMAIL_REPLYTO,
+	FREEMAIL_REPLYTO_END_DIGIT,HEADER_FROM_DIFFERENT_DOMAINS,HTML_MESSAGE,
+	MIME_HTML_ONLY,NML_ADSP_CUSTOM_MED,RCVD_IN_DNSWL_BLOCKED,
+	RCVD_IN_MSPIKE_BL,RCVD_IN_MSPIKE_L5,RCVD_IN_VALIDITY_RPBL_BLOCKED,
+	RCVD_IN_VALIDITY_SAFE_BLOCKED,SPF_FAIL,SPF_HELO_NONE,SPOOFED_FREEMAIL,
+	SPOOFED_FREEM_REPTO,SPOOF_GMAIL_MID,TO_NO_BRKTS_HTML_ONLY autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	*  0.0 RCVD_IN_DNSWL_BLOCKED RBL: ADMINISTRATOR NOTICE: The query to
+	*      DNSWL was blocked.  See
+	*      http://wiki.apache.org/spamassassin/DnsBlocklists#DnsBlocklists-dnsbl-block
+	*       for more information.
+	*      [79.110.50.220 listed in list.dnswl.org]
+	*  1.7 DEAR_SOMETHING BODY: Contains 'Dear (something)'
+	*  0.0 FREEMAIL_FROM Sender email is commonly abused enduser mail
+	*      provider
+	*      [aladinahsan57[at]gmail.com]
+	*  0.9 SPF_FAIL SPF: sender does not match SPF record (fail)
+	*      [SPF failed: Rejected by SPF record]
+	*  0.0 DKIM_ADSP_CUSTOM_MED No valid author signature, adsp_override
+	*      is CUSTOM_MED
+	*  1.0 FORGED_GMAIL_RCVD 'From' gmail.com does not match 'Received'
+	*      headers
+	*  0.1 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+	*      mail domains are different
+	*  0.2 FREEMAIL_REPLYTO_END_DIGIT Reply-To freemail username ends in
+	*      digit
+	*      [aladinahsan570[at]gmail.com]
+	*  0.0 SPF_HELO_NONE SPF: HELO does not publish an SPF Record
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.1 MIME_HTML_ONLY BODY: Message only has text/html MIME parts
+	*  0.0 RCVD_IN_MSPIKE_L5 RBL: Very bad reputation (-5)
+	*      [79.110.50.220 listed in bl.mailspike.net]
+	*  0.0 RCVD_IN_VALIDITY_SAFE_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+	*      query to Validity was blocked.  See
+	*      https://knowledge.validity.com/hc/en-us/articles/20961730681243
+	*       for more information.
+	*      [79.110.50.220 listed in sa-accredit.habeas.com]
+	*  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+	*      query to Validity was blocked.  See
+	*      https://knowledge.validity.com/hc/en-us/articles/20961730681243
+	*       for more information.
+	*      [79.110.50.220 listed in bl.score.senderscore.com]
+	*  0.0 RCVD_IN_MSPIKE_BL Mailspike blocklisted
+	*  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+	*      EnvelopeFrom freemail headers are different
+	*  1.0 FREEMAIL_REPLYTO Reply-To/From or Reply-To/body contain
+	*      different freemails
+	*  1.2 NML_ADSP_CUSTOM_MED ADSP custom_med hit, and not from a mailing
+	*       list
+	*  0.0 SPOOFED_FREEMAIL No description available.
+	*  2.0 TO_NO_BRKTS_HTML_ONLY To: lacks brackets and HTML only
+	*  0.3 SPOOF_GMAIL_MID From Gmail but it doesn't seem to be...
+	*  2.5 SPOOFED_FREEM_REPTO Forged freemail sender with freemail
+	*      reply-to
+	*  3.5 ADVANCE_FEE_3_NEW Appears to be advance fee fraud (Nigerian
+	*      419)
+X-Spam-Level: **************
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+<!DOCTYPE HTML>
+
+<html><head><title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body style=3D"margin: 0.4em;">
+<p>Hello Dear Sir/Madam,</p><p>I represent reputable investors as a financi=
+al consultant. We need good and viable business plans from capable business=
+ses/companies all over the world.</p><p>
+My principal investor can invest in your viable project if you do have any =
+so if you and your company or business associate welcome our business propo=
+sal both parties will meet face-to-face to decide and discuss proceedings a=
+fter which the investor will visit your project site for inspection in your=
+ country before going forward with proper documentation and funding,you can=
+ email us on our email and whatsapp or call us&nbsp; that way we will commu=
+nicate more better as well.</p><p>
+Name:ahsan.aladin<br>Email:oakleyhernandez@testmail.com<br>Phone/whatsapp:+4477=
+41430486</p><p>Regards</p>
+
+
+</body></html>

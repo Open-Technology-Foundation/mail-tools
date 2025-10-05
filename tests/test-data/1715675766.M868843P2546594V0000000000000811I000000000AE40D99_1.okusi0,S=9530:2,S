@@ -1,0 +1,179 @@
+Return-Path: <kellydavis@testmail.com>
+X-Original-To: parkermiller@testmail.net
+Delivered-To: parkermiller@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 08E5E33401F7
+	for <parkermiller@testmail.net>; Tue, 14 May 2024 12:15:02 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <parkermiller@testmail.net> (single-drop); Tue, 14 May 2024 12:15:02 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id ENIcASjzQmaWwy4AeHbnHg
+	(envelope-from <kellydavis@testmail.com>); Tue, 14 May 2024 12:14:16 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-vs1-f53.google.com (mail-vs1-f53.google.com [209.85.217.53])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 1920B2640B4E
+	for <legmorganhill@testdomain.io>; Tue, 14 May 2024 12:13:45 +0700 (WIB)
+Received: by mail-vs1-f53.google.com with SMTP id ada2fe7eead31-47ef9a05d6fso1497150137.2
+        for <legmorganhill@testdomain.io>; Mon, 13 May 2024 22:13:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1715663603; x=1716268403; darn=okusi.id;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=EnjtbPCJatUgLlc8Fhd/Rg2ll+N7BFDUs5t74PpjzMg=;
+        b=m75sJCAkri/Qrq6MYYK+INCvjELpbLJNpAp1yfDOwhBcSAfgR4tphHxW9GMhbt/xK6
+         vPKEOBbz8jovdpWAV+pRiU7XWxYSYhpenfArUXM8bAjbn1CoWJ1HXbfWHed3/EpfyrRM
+         8QFBbdZoIw+wbojJF5karqJSGfpR1HPzrwO1UVIlvUtakGQiiMd1Y+V5HP8yptWCPe08
+         H98aU9aNGERWiSXZxVv1mDxSeGw2EmJucE8Cq2PmK0oAGia+HpaZLOmGvcb916gX7gHf
+         MpMMSunl53XRdYFr0nrZV1RQL1eFXFXGfnMJineY4yvQe6q9J4mbjY0LG8HBzjGkME35
+         CiBQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1715663603; x=1716268403;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=EnjtbPCJatUgLlc8Fhd/Rg2ll+N7BFDUs5t74PpjzMg=;
+        b=amhJ8CgoMk3fV+Iq/QzOP6qhNUq6qHhNk0W++28VxdRD47Z4hd6oWcy4J16WntOLjH
+         trRqeOBN8N/REZbMUI9FGdD+fv2m/x+YkOheNG7tN3AICkWk0o69FXAujQvNlKmu8J1f
+         FaODJNNoHPxp0sRyt+m2bJ740kkr1zAp1axxUv4FYP4PQRZSHX/nMgfM7AfribiWRMGj
+         Se0vb2dKqOWvXbgjTjUtcwLokrYPRuZLMHgIw2Azj9A2r/Ykw6xlTWtAnDjQO5wO2YZF
+         lF/SnNbTnpxeHvcnQYpMRL7+55dpx1SJk9u80qzZsXDlxrlaBBUNCWvLIXp3zZv7ISVH
+         vZlQ==
+X-Gm-Message-State: AOJu0Yw9zSS/YrXoZYLQoUfN6+tCUuZR48BEi3giavRE+r+wVfrbUolm
+	8NHp0HBsB3ENV2PWk6TgnPYZyQCqjhaGAKNR+/vYd+Gclle64WNa9ESZ/KYFH/RAwmqQ+Yh0crS
+	t6P5JgMLyfV45RIBUxRjDJDUdWc7EQdpM
+X-Google-Smtp-Source: AGHT+IFYyIeRcb/pCvSB262JHM4oXWAkr64ecozJ+Kof6s5cezXrGZQJI7c76ciAyn4GLJNBvPCD88smj5KrPh8yx+8=
+X-Received: by 2002:a05:6102:26ca:b0:47f:2d80:b326 with SMTP id
+ ada2fe7eead31-48077ea3789mr12271738137.29.1715663602783; Mon, 13 May 2024
+ 22:13:22 -0700 (PDT)
+MIME-Version: 1.0
+References: <ae7c087c19e584322674726661320958@placeholder.email>
+In-Reply-To: <ae7c087c19e584322674726661320958@placeholder.email>
+From: Marco Cioffi <kellydavis@testmail.com>
+Date: Tue, 14 May 2024 12:12:46 +0700
+Message-ID: <blake_torres@testmail.com>
+Subject: Re: Indonesian PMA Shelf Companies [#:659b3e7f2]
+To: "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>, talya laurensia <noellee@placeholder.email>
+Content-Type: multipart/alternative; boundary="000000000000991ceb0618630f93"
+X-Spam-Status: No, score=-2.1 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM,HTML_MESSAGE,
+	RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,T_REMOTE_IMAGE,
+	T_SPF_TEMPERROR,URIBL_BLOCKED autolearn=ham autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--000000000000991ceb0618630f93
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi , I would like to ask on some inquiry for PMA establishment .
+Can we have a meeting ?
+Thanks .
+Marco
+
+On Mon, Jan 8, 2024 at 7:14=E2=80=AFAM legmorganhill@testdomain.io <legmorganhill@testdomain.io> wrot=
+e:
+
+> <https://okusiassociates.com/>
+>
+> Thank you for contacting Okusi Associates.
+> Someone will be in touch with you shortly.
+> A copy of your message appears below.
+>
+> Phone: 08118256880
+>
+> I am establishing a PMA in Indonesia and I am seeking advises on what are
+> the best way to do it.
+> I work mostly in the IT business consulting and I would like to streamlin=
+e
+> the entities in Indonesia.
+> This is my contact number +628118256880.
+> Thanks a lot.
+> Marco
+>
+> OkusiAssociates.id <https://okusiassociates.com>
+>
+> *Jakarta* +62 21 390 1007 <+62213901007>   +62 21 392 8595 <+62213928595>
+>
+> *Bali* +62 361 769 144 <+62361769144>   *Batam* +62 778 741 5011
+> <+627787415011>
+>
+> *=E2=80=A2* *permanent offices* conveniently located in *Jakarta, Batam, =
+and Bali*
+> .
+>
+> *=E2=80=A2* *comprehensive/integrated*: legal, immigration, accountancy, =
+research.
+>
+> *=E2=80=A2* *in-house*, 70 full-time direct employees across Indonesia; *=
+no
+> outsourcing*.
+>
+> *=E2=80=A2* *over 2,500 foreign companies*, more than any other firm in I=
+ndonesia.
+>
+> *=E2=80=A2* companies set up *anywhere in Indonesia*.
+>
+> *=E2=80=A2* since *1997*.  23 years of service to Indonesia.
+>
+>
+
+--000000000000991ceb0618630f93
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div id=3D"gmail-:6jb" class=3D"gmail-Am gmail-aiL gmail-a=
+O9 gmail-Al editable gmail-LW-avf gmail-tS-tW gmail-tS-tY" aria-label=3D"Me=
+ssage Body" role=3D"textbox" aria-multiline=3D"true" tabindex=3D"1" style=
+=3D"direction:ltr;min-height:85px" aria-controls=3D":6lv" aria-expanded=3D"=
+false"><br><div>Hi , I would like to ask on some inquiry=C2=A0for PMA estab=
+lishment=C2=A0.</div><div>Can we have a meeting ?</div><div>Thanks .</div><=
+div>Marco</div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" =
+class=3D"gmail_attr">On Mon, Jan 8, 2024 at 7:14=E2=80=AFAM <a href=3D"mail=
+to:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a> &lt;<a href=3D"mailto:legmorganhill@testdomain.io"=
+>legmorganhill@testdomain.io</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" s=
+tyle=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);pad=
+ding-left:1ex"><u></u>		<div><div style=3D"font-family:Arial;background:rgb=
+(238,255,255);border:1px solid rgb(238,238,238);border-radius:5px;color:rgb=
+(0,41,88);margin:0rem auto 1rem;text-align:center;width:40rem;padding:1rem =
+3rem">	<div style=3D"width:100%;text-align:center">		<a href=3D"https://oku=
+siassociates.com/" style=3D"color:rgb(0,41,88);text-decoration:none" title=
+=3D"Okusi Associates website." target=3D"_blank">			<img style=3D"height: 3=
+.8rem;">		</a>	</div>	<br>	<div style=3D"font-size:1rem">		Thank you for co=
+ntacting Okusi Associates.<br>		Someone will be in touch with you shortly.<=
+br>		A copy of your message appears below.	</div></div><div style=3D"font-f=
+amily:Arial;background:rgb(238,255,255);border:1px solid rgb(238,238,238);b=
+order-radius:5px;color:rgb(0,41,88);margin:0rem auto 1rem;text-align:center=
+;width:40rem;padding:1rem 3rem">	<div style=3D"color:rgb(34,34,34);font-siz=
+e:1rem;margin-bottom:1rem">	<div id=3D"m_2951374293306639350message" style=
+=3D"font-family:Arial;border:1px solid rgb(238,238,238);border-radius:4px;c=
+olor:rgb(85,85,85);width:99%;max-width:40rem;text-align:left;margin:0rem;pa=
+dding:0rem;font-size:12pt"><br>Phone: 08118256880<br><br>I am establishing =
+a PMA in Indonesia and I am seeking advises on what are the best way to do =
+it. <br>I work mostly in the IT business consulting and I would like to str=
+eamline the entities in Indonesia. <br>This is my contact number +628118256=
+880. <br>Thanks a lot. <br>Marco</div>	</div></div><div style=3D"font-famil=
+y:Arial;background:rgb(238,255,255);border:1px solid rgb(238,238,238);borde=
+r-radius:5px;color:rgb(0,41,88);margin:0rem auto 1rem;text-align:center;wid=
+th:40rem;padding:1rem 3rem">	<div style=3D"color:rgb(51,51,51);font-size:0.=
+9rem;margin-bottom:1rem">		<p><a href=3D"https://okusiassociates.com" style=
+=3D"color:rgb(0,41,88)" target=3D"_blank">OkusiAssociates.id</a></p>		<p><b=
+>Jakarta</b> <a href=3D"tel:+62213901007" style=3D"color:rgb(0,41,88)" targ=
+et=3D"_blank">+62 21 390 1007</a> =C2=A0 <a href=3D"tel:+62213928595" style=
+=3D"color:rgb(0,41,88)" target=3D"_blank">+62 21 392 8595</a></p>		<p><b>Ba=
+li</b> <a href=3D"tel:+62361769144" style=3D"color:rgb(0,41,88)" target=3D"=
+_blank">+62 361 769 144</a> =C2=A0	<b>Batam</b> <a href=3D"tel:+62778741501=
+1" style=3D"color:rgb(0,41,88)" target=3D"_blank">+62 778 741 5011</a></p>	=
+</div>	<div style=3D"width:100%;text-align:center;font-size:0.9rem;color:rg=
+b(68,68,68);line-height:0.7">		<p><b>=E2=80=A2</b> <b>permanent offices</b>=
+ conveniently located in <b>Jakarta, Batam, and Bali</b>.</p>	  <p><b>=E2=
+=80=A2</b> <b>comprehensive/integrated</b>: legal, immigration, accountancy=
+, research.</p>	  <p><b>=E2=80=A2</b> <b>in-house</b>, 70 full-time direct =
+employees across Indonesia; <b>no outsourcing</b>.</p>	  <p><b>=E2=80=A2</b=
+> <b>over 2,500 foreign companies</b>, more than any other firm in Indonesi=
+a.</p>	  <p><b>=E2=80=A2</b> companies set up <b>anywhere in Indonesia</b>.=
+</p>	  <p><b>=E2=80=A2</b> since <b>1997</b>. =C2=A023 years of service to =
+Indonesia.</p>	</div>	<br></div></div></blockquote></div>
+
+--000000000000991ceb0618630f93--

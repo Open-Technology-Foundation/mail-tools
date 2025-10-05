@@ -1,0 +1,39 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 716AF3340222
+	for <drewjones@testmail.net>; Thu, 30 Jan 2025 08:17:11 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 30 Jan 2025 08:17:11 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id aEiAKdLSmmfR6BsAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 30 Jan 2025 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1738199762; bh=efLiX/joZZFiv+IusbwAYcl7L9mthfV+B1SeJE32eR0=;
+	h=To:Subject:Date:From:From;
+	b=DoX2mflafyE/PqHgmNt00iRPFsa8hTXu843jDN1YVcWeGccQBUwbZr6jtFqOqXWDY
+	 dW9NrOLitKuI6OCrxqiFy5oDds5UwBc9/bB50+a/lPCg9Lq8BT0qGBwyNChJYEAmkZ
+	 dUesRWc1wG0Y9mK0t6jUykqW4BVTLLZ8VBQ9vsWb20m0ILmffsQ7J/G8Gnh8iEA4S/
+	 J70G5z5rhJov1C+0WIt+yPO4LlVZZIoWGe802nIOnKb5Z7JKUuUz6Ij79lbDO28ZRF
+	 kKpmtq1TfPUK3Ad8HhhCsxRDtqahRjY2P6AxTg0h7XonqKz7FVgT8jIP8Zx6kJSyC9
+	 AqfM4vcDmFpxA==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 5EB0D2640035; Thu, 30 Jan 2025 08:16:02 +0700 (WIB)
+To: francis.wilson@privatedomain.local,lee.lopez@testdomain.io,stormanderson@testdomain.io,emersonwilson@testdomain.io,justice.harris@testdomain.io,mileslewis@testdomain.io
+Subject: ALERT: EBISNIS: Nominee Director Services
+Date: Thu, 30 Jan 2025 08:16:02 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <parker.lewis@samplebiz.org>
+
+This is an automated alert from Okusi Associates.
+
+Reminder for PT Ebisnis Mandiri Technology:
+
+Nominee Director Services for this company is due to expire on 01 Mar 2025
+
+Please contact Okusi Associates for information concerning renewal.
+
+

@@ -1,0 +1,433 @@
+Return-Path: <122220dfc39807fdf76438d7d4d19162@democorp.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 1F96C3340204
+	for <drewjones@testmail.net>; Thu, 10 Oct 2024 11:44:06 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 10 Oct 2024 11:44:06 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id F/hQGmlbB2fhMzwAeHbnHg
+	(envelope-from <122220dfc39807fdf76438d7d4d19162@democorp.com>)
+	for <contkellylewis@testdomain.io>; Thu, 10 Oct 2024 11:43:21 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=reject dis=none) header.from=google.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=trix.bounces.google.com
+Received: from mail-yw1-f200.google.com (mail-yw1-f200.google.com [209.85.128.200])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id F3B622640004
+	for <contkellylewis@testdomain.io>; Thu, 10 Oct 2024 11:42:53 +0700 (WIB)
+Received: by mail-yw1-f200.google.com with SMTP id 00721157ae682-6e278b2a5c4so10464927b3.2
+        for <contkellylewis@testdomain.io>; Wed, 09 Oct 2024 21:42:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1728535371; x=1729140171; darn=okusi.id;
+        h=to:from:subject:date:message-id:feedback-id:mime-version:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=W3E0VayFgZA/9AlxB6AiX66aURGUwBO9ZJdWi/2L3H4=;
+        b=RAnXlMJHl7fh77dGAehlt+8jzLEA88H6riqtC0DEElKW00zDwINSL+CWAbdzJ3WeXA
+         xSxIE2Tfdiic3/iuSdniNmM0zcH2SDCWcGQqMGG5H9uFK8fCVUPMMSnSSe8vkVIco95I
+         mjBzDYLpa44m2Rmp0RNxxi72LZfWDc2SzkI4bjDwxiRV6sfGGq6cNjjaARgJtN5PhPC9
+         X3x9R8kcuUYQLkzBc6lFX/e0SVKx8oXVcUrz0pYtnFaYGu6pLXeuuoO+f8Ad+60uyy3H
+         yQzmSzIuTa425Wp+xt08dQZXK0uzwwdqomVyBHoZMWy8N3zbGymTHp3/DT1Z/8keELM2
+         ZafQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728535371; x=1729140171;
+        h=to:from:subject:date:message-id:feedback-id:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=W3E0VayFgZA/9AlxB6AiX66aURGUwBO9ZJdWi/2L3H4=;
+        b=ipcqYi++LxvuhuS8J4ASnZBFJ8iLczd+fUSfqDl8DPw4O9Pr35Oouq/3vvIoZiNPvI
+         rTfu7ZXHKe8wOI60InpX0w/z/h/heSR52+6vgPb+KvYPx+eJefbfpyaJ683gkZiq9hi1
+         P9VtC+5fspf8l8z7fkBDY9Vt9CZMeY1xs66ESd93dYwn2IKoeDrZ4WVIsZ/OjXcYnx4t
+         bYLsgEdQ1Q5VhjcIkqlveXQd3dF31ribxryC4DcaadIe2PWLfNhnNRwU5eTstgi8W1NX
+         QFLaigGXM+Nw95KupTock2uJL6pdOWD1h1MidTKvBB04UK/p+2OEm0IgJuI5iBZbqj//
+         PIcw==
+X-Gm-Message-State: AOJu0Ywl66jSNQp68kxe35z5GTi0oDIbTEes0Q17VheWzfLliRhExQOo
+	Ws3ZjGrtW8tFdXGJ2RWqOjWjZ2BPzsSax6rzMqBUYs7vAplIin03/DcqI1nZprOrzmToZ19lgqh
+	ETRsBSHYcfHAMhax3B1Mc3g59AXpqmxuRc1A=
+X-Google-Smtp-Source: AGHT+IEfZiPsmXeHkM6hlUUVJ93Eld0da3yD/5Ea517jA2CcRq4q1FIWgCA0QgyhR7oDGvNlCEhu582svSctEDERUdltJQ==
+MIME-Version: 1.0
+X-Received: by 2002:a05:690c:ed4:b0:65f:dfd9:b672 with SMTP id
+ 00721157ae682-6e32e1fc078mr24682617b3.11.1728535371241; Wed, 09 Oct 2024
+ 21:42:51 -0700 (PDT)
+Feedback-ID: MailTypeResponseReceipt:GoogleForms
+X-GoogleForms-FormId: e/1FAIpQLSd49CxD1YY-e31IZKk1kVOzs3zBgRqywvo94e5wYDvU1dXlTg
+X-GoogleForms-CustomerDisplayName: ACICIS
+Message-ID: <jamielewis@anonymail.test>
+Date: Thu, 10 Oct 2024 04:42:51 +0000
+Subject: Host Organisation Information
+From: Google Forms <franciswhite@anonymail.test>
+To: contkellylewis@testdomain.io
+Content-Type: multipart/alternative; boundary="000000000000c8ece306241800f2"
+X-Spam-Status: No, score=-107.7 required=5.0 tests=DKIMWL_WL_MED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,RCVD_IN_MSPIKE_H2,
+	SPF_HELO_NONE,SPF_PASS,T_FILL_THIS_FORM_SHORT,USER_IN_DEF_DKIM_WL,
+	USER_IN_WELCOMELIST,USER_IN_WHITELIST autolearn=unavailable
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--000000000000c8ece306241800f2
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+Google Forms
+
+
+Thanks for filling out Host Organisation Information
+Here's what was received.
+
+Edit response
+
+
+Host Organisation Information
+
+Many thanks for partnering with ACICIS. This form is used to gather  
+information about organisation profile to be displayed on ACICIS website  
+(https://www.acicis.edu.au). Please contact ACICIS relevant staff if you  
+have any questions in completing the form.
+
+
+Email *
+
+
+contkellylewis@testdomain.io
+
+
+Organisation Name
+
+
+Okusi Associates
+
+
+Office Address
+
+
+Menara Cakrawala (Skyline Building), 12th Floor, Jalan MH Thamrin No. 9,  
+Jakarta 10340
+
+
+About Us (a short description of the organisation 1-2 paragraph)
+
+
+About Us ========= Okusi Associates, founded in 1997, is Indonesia's  
+pre-eminent corporate services firm for foreign company establishment.  
+Having facilitated the entry of thousands of foreign companies into  
+Indonesia, Okusi provides comprehensive services including company  
+incorporation, business licensing, business immigration, background and  
+regulatory research, and corporate accounting and tax reporting. The firm  
+specializes in establishing and operating Indonesian companies for foreign  
+investors, offering sound information for informed investment decisions.  
+With over 3,000 Foreign Direct Investment companies (FDI, or PMA)  
+established, more than any other firm in Indonesia, Okusi operates through  
+four key divisions: Legal and Corporate; Immigration and Work Permits;  
+Accountancy and Taxation; and Research and Management Support. Source Logo  
+===========  
+https://drive.google.com/drive/folders/1pP4vwsiEMA9K6QiZPkpAIeRMdqVax3u3?usp=drive_link
+
+
+Internship placement requirements
+
+
+What are the specific skills and competencies that you expect from the  
+intern?
+
+
+What are the intern's duties?
+
+
+What are the working hours in your establishments? (please note that  
+interns are required to work full-time during placements or equivalent to  
+40 hours/week for 'in-country' format. If it's virtual, interns are  
+required to work part-time or equivalent to 16-18 hours/week)
+
+
+Office attire requirement
+
+
+Semi-formal (eg Business attire, collared shirts/ blouses, trousers/long  
+skirt, long dress covering shoulders and knees, batik shirt/ blouse/ dress,  
+closed toe shoes. No t-shirts, shorts, flip flops)
+
+
+Casual (eg Polo/t-shirt, jeans, cargo shorts, sport shoes or sandals)
+
+
+Leisure (eg T-shirt, shorts, sport shoes)
+
+
+Other:
+
+
+Website and other social media accounts
+
+
+Organisation or company logo (please provide a high resolution format,  
+greater than 300 ppi, layered EPS or PSD (recommended); otherwise PNG)
+
+
+Submitted files
+
+
+
+Image OkusiAssociates_Logo - okusi infotech.png
+
+
+Website
+
+
+https://okusiassociates.com/
+
+
+Social media links (please provide links to your social media accounts eg  
+Facebook, Instagram, Twitter)
+
+
+https://linktr.ee/OkusiAsscoiates
+
+
+Create your own Google Form
+
+Report Abuse
+
+
+
+--000000000000c8ece306241800f2
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><style nonce=3D"wW8rAFWfqr9UPqCdhai4ZA">@import url(https://fon=
+ts.googleapis.com/css?family=3DGoogle+Sans:400,500|Roboto:300,400,400i,500,=
+700&subset=3Dlatin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-e=
+xt);</style><style nonce=3D"wW8rAFWfqr9UPqCdhai4ZA">[class=3D"x_body-conten=
+t-wrapper"] * {white-space: normal !important;}</style></head><body dir=3D"=
+ltr" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif=
+;font-size: 14px; font-weight: 400; line-height: 20px;text-align: start; wo=
+rd-wrap: break-word; margin: 0; padding: 0; height: 100%; width: 100%;"><ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-co=
+lor:rgb(140,163,82);" width=3D"100%" role=3D"presentation"><tbody><tr heigh=
+t=3D"64px"><td style=3D"padding: 0 24px;"><img alt=3D"Google Forms" height=
+=3D"26px" style=3D"display: inline-block; margin: 0; vertical-align: middle=
+;" width=3D"143px" src=3D"https://www.gstatic.com/docs/forms/google_forms_l=
+ogo_lockup_black_2x.png"></td></tr></tbody></table><div class=3D"body-conte=
+nt-wrapper" style=3D"padding: 12px; background-color: rgb(246,246,246);"><d=
+iv style=3D"margin: 0 auto; max-width: 640px; min-width: 154px;"><div style=
+=3D"border: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; b=
+order-radius: 8px; margin-bottom: 12px;padding: 20px;"><h1 style=3D"color: =
+#202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 20px; fon=
+t-weight: 400; line-height: 28px;margin: 0 0 12px;">Thanks for filling out =
+<a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSd49CxD1YY-e31IZKk1kVOz=
+s3zBgRqywvo94e5wYDvU1dXlTg/viewform?usp=3Dmail_form_link" target=3D"_blank"=
+ style=3D"white-space: pre-wrap;">Host Organisation Information</a></h1>Her=
+e's what was received.<div style=3D"margin-top: 16px;"><div style=3D"margin=
+-top: 24px"><a href=3D"https://docs.google.com/forms/d/e/1FAIpQLSd49CxD1YY-=
+e31IZKk1kVOzs3zBgRqywvo94e5wYDvU1dXlTg/viewform?edit2=3D2_ABaOnucQYm1RGTWW_=
+l9xpdk4OTncw12d_36kfwiZ6klht8YNzd6XH8px1Ek1Hg0nHeQvRnI" target=3D"_blank" s=
+tyle=3D"border-radius: 4px;font-family: &#39;Google Sans&#39;,Roboto,Helvet=
+ica,Arial,sans-serif;font-size: 14px; font-weight: 500; padding: 8px 24px; =
+text-align: center; text-decoration: none;background-color: rgb(140,163,82)=
+; color: #fff;">Edit response</a></div><div itemprop=3D"action" itemscope i=
+temtype=3D"http://schema.org/ViewAction"><meta itemprop=3D"url" content=3D"=
+https://docs.google.com/forms/d/e/1FAIpQLSd49CxD1YY-e31IZKk1kVOzs3zBgRqywvo=
+94e5wYDvU1dXlTg/viewform?edit2=3D2_ABaOnucQYm1RGTWW_l9xpdk4OTncw12d_36kfwiZ=
+6klht8YNzd6XH8px1Ek1Hg0nHeQvRnI&amp;usp=3Dmail_goto_form"><meta itemprop=3D=
+"name" content=3D"Edit your response"></div></div></div><div style=3D"borde=
+r-bottom: 1px solid #dadce0; border-left: 1px solid #dadce0; border-right: =
+1px solid #dadce0; border-top: 8px solid rgb(140,163,82); padding: 20px;bac=
+kground-color: #fff; border-radius: 8px; margin-bottom: 12px;"><h1 dir=3D"l=
+tr" style=3D"font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 32px=
+; font-weight: 400; line-height: 42px;white-space: pre-wrap;margin: 0 0 12p=
+x;">Host Organisation Information</h1><div style=3D"white-space: pre-wrap;m=
+argin-bottom: 12px;">Many thanks for partnering with ACICIS. This form is u=
+sed to gather information about organisation profile to be displayed on ACI=
+CIS website (<a href=3D"https://www.acicis.edu.au/">https://www.acicis.edu.=
+au</a>). Please contact ACICIS relevant staff if you have any questions in =
+completing the form.</div></div><div style=3D"border: 1px solid #dadce0; pa=
+dding: 20px 12px;background-color: #fff; border-radius: 8px; margin-bottom:=
+ 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto=
+" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;fo=
+nt-size: 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap;ma=
+rgin: 0 0 16px;">Email<span style=3D"color: #d93025;" aria-label=3D"Require=
+d question"> *</span></h2></div><div style=3D"padding: 0 12px;"><div style=
+=3D"width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-b=
+ottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;dis=
+play: inline-block; max-width: 100%; min-width: 50%;">contkellylewis@testdomain.io</div=
+></div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 1=
+2px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-=
+bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"co=
+lor: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px=
+; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16p=
+x;">Organisation Name</h2></div><div style=3D"padding: 0 12px;"><div style=
+=3D"width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-b=
+ottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;dis=
+play: inline-block; max-width: 100%; min-width: 50%;">Okusi Associates</div=
+></div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20px 1=
+2px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;margin-=
+bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"co=
+lor: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px=
+; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 16p=
+x;">Office Address</h2></div><div style=3D"padding: 0 12px;"><div dir=3D"au=
+to" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.3=
+8);margin: 12px 0 8px; min-height: 20px;width: 100%;">Menara Cakrawala (Sky=
+line Building), 12th Floor,
+Jalan MH Thamrin No. 9, Jakarta 10340</div></div></div><div style=3D"border=
+: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-radi=
+us: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0=
+ 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvet=
+ica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;w=
+hite-space: pre-wrap;margin: 0 0 16px;">About Us (a short description of th=
+e organisation 1-2 paragraph)</h2></div><div style=3D"padding: 0 12px;"><di=
+v dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgb=
+a(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;width: 100%;">About Us
+=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+Okusi Associates, founded in 1997, is Indonesia=E2=80=99s pre-eminent corpo=
+rate services firm for foreign company establishment. Having facilitated th=
+e entry of thousands of foreign companies into Indonesia, Okusi provides co=
+mprehensive services including company incorporation, business licensing, b=
+usiness immigration, background and regulatory research, and corporate acco=
+unting and tax reporting. The firm specializes in establishing and operatin=
+g Indonesian companies for foreign investors, offering sound information fo=
+r informed investment decisions. With over 3,000 Foreign Direct Investment =
+companies (FDI, or PMA) established, more than any other firm in Indonesia,=
+ Okusi operates through four key divisions: Legal and Corporate; Immigratio=
+n and Work Permits; Accountancy and Taxation; and Research and Management S=
+upport.
+
+Source Logo
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+https://drive.google.com/drive/folders/1pP4vwsiEMA9K6QiZPkpAIeRMdqVax3u3?us=
+p=3Ddrive_link
+</div></div></div><div style=3D"border-bottom: 1px solid #dadce0; border-le=
+ft: 1px solid #dadce0; border-right: 1px solid #dadce0; border-top: 8px sol=
+id rgb(140,163,82); padding: 0;background-color: #fff; border-radius: 8px; =
+margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 ;"><h2 d=
+ir=3D"auto" style=3D"color: #fff;font-family: Roboto,Helvetica,Arial,sans-s=
+erif;font-size: 16px; font-weight: 400; line-height: 24px;background-color:=
+ rgb(140,163,82); margin: 0; padding: 4px 24px 12px;border-bottom-left-radi=
+us: 8px; border-bottom-right-radius: 8px;">Internship placement requirement=
+s</h2></div><div style=3D"padding: 0 12px;"></div></div><div style=3D"borde=
+r: 1px solid #dadce0; padding: 20px 12px;background-color: #fff; border-rad=
+ius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: =
+0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helve=
+tica,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;=
+white-space: pre-wrap;margin: 0 0 16px;">What are the specific skills and c=
+ompetencies that you expect from the intern?</h2></div><div style=3D"paddin=
+g: 0 12px;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom:=
+ 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;width: 10=
+0%;"></div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20=
+px 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;mar=
+gin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=
+=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size=
+: 16px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0=
+ 0 16px;">What are the intern&#39;s duties?</h2></div><div style=3D"padding=
+: 0 12px;"><div dir=3D"auto" style=3D"white-space: pre-wrap;border-bottom: =
+1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height: 20px;width: 100=
+%;"></div></div></div><div style=3D"border: 1px solid #dadce0; padding: 20p=
+x 12px;background-color: #fff; border-radius: 8px; margin-bottom: 12px;marg=
+in-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D=
+"color: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 1=
+6px; font-weight: 400; line-height: 24px;white-space: pre-wrap;margin: 0 0 =
+16px;">What are the working hours in your establishments? (please note that=
+ interns are required to work full-time during placements or equivalent to =
+40 hours/week for &#39;in-country&#39; format. If it&#39;s virtual, interns=
+ are required to work part-time or equivalent to 16-18 hours/week)</h2></di=
+v><div style=3D"padding: 0 12px;"><div style=3D"width: 100%;"><div dir=3D"a=
+uto" style=3D"white-space: pre-wrap;border-bottom: 1px dotted rgba(0,0,0,0.=
+38);margin: 12px 0 8px; min-height: 20px;display: inline-block; max-width: =
+100%; min-width: 50%;"></div></div></div></div><div style=3D"border: 1px so=
+lid #dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8px;=
+ margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;">=
+<h2 dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Aria=
+l,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-spa=
+ce: pre-wrap;margin: 0 0 16px;">Office attire requirement</h2></div><div st=
+yle=3D"padding: 0 12px;"><div style=3D"margin-top: 16px;"><table style=3D"c=
+olor: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14p=
+x; font-weight: 400; line-height: 20px;margin-top: 8px; table-layout: fixed=
+;"><tr><td><div role=3D"radio" aria-checked=3D"true" aria-label=3D"Semi-for=
+mal (e.g. Business attire, collared shirts/ blouses, trousers/long skirt, l=
+ong dress covering shoulders and knees, batik shirt/ blouse/ dress, closed =
+toe shoes. No t-shirts, shorts, flip flops)" style=3D"border: solid 2px #5f=
+6368; height: 16px; width: 16px; border-radius: 50%;"><div style=3D"backgro=
+und-color: #5f6368; border: solid 5px #5f6368; border-radius: 50%; margin: =
+3px; height: 0; width: 0;"></div></div></td><td style=3D"min-width: 8px;"><=
+/td><td style=3D"word-break: break-word;">Semi-formal (e.g. Business attire=
+, collared shirts/ blouses, trousers/long skirt, long dress covering should=
+ers and knees, batik shirt/ blouse/ dress, closed toe shoes. No t-shirts, s=
+horts, flip flops)</td></tr></table></div><div style=3D"margin-top: 16px;">=
+<table style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sans-ser=
+if;font-size: 14px; font-weight: 400; line-height: 20px;color: #70757a;marg=
+in-top: 8px; table-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=
+=3D"false" aria-label=3D"Casual (e.g. Polo/t-shirt, jeans, cargo shorts, sp=
+ort shoes or sandals)" style=3D"border: solid 2px #9aa0a6; height: 16px; wi=
+dth: 16px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></=
+td><td style=3D"word-break: break-word;">Casual (e.g. Polo/t-shirt, jeans, =
+cargo shorts, sport shoes or sandals)</td></tr></table></div><div style=3D"=
+margin-top: 16px;"><table style=3D"color: #202124;font-family: Roboto,Helve=
+tica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-height: 20px;=
+color: #70757a;margin-top: 8px; table-layout: fixed;"><tr><td><div role=3D"=
+radio" aria-checked=3D"false" aria-label=3D"Leisure (e.g. T-shirt, shorts, =
+sport shoes)" style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16px=
+; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td st=
+yle=3D"word-break: break-word;">Leisure (e.g. T-shirt, shorts, sport shoes)=
+</td></tr></table></div><div style=3D"margin-top: 16px;"><table style=3D"co=
+lor: #202124;font-family: Roboto,Helvetica,Arial,sans-serif;font-size: 14px=
+; font-weight: 400; line-height: 20px;color: #70757a;margin-top: 8px; table=
+-layout: fixed;"><tr><td><div role=3D"radio" aria-checked=3D"false" aria-la=
+bel=3D"Other: " style=3D"border: solid 2px #9aa0a6; height: 16px; width: 16=
+px; border-radius: 50%;"></div></td><td style=3D"min-width: 8px;"></td><td =
+style=3D"white-space: nowrap;">Other:&nbsp;&nbsp;</td><td style=3D"word-bre=
+ak: break-word;border-bottom: 1px dotted rgba(0,0,0,0.38);width: 99%;"></td=
+></tr></table></div></div></div><div style=3D"border-bottom: 1px solid #dad=
+ce0; border-left: 1px solid #dadce0; border-right: 1px solid #dadce0; borde=
+r-top: 8px solid rgb(140,163,82); padding: 0;background-color: #fff; border=
+-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><div style=3D"paddi=
+ng: 0 ;"><h2 dir=3D"auto" style=3D"color: #fff;font-family: Roboto,Helvetic=
+a,Arial,sans-serif;font-size: 16px; font-weight: 400; line-height: 24px;bac=
+kground-color: rgb(140,163,82); margin: 0; padding: 4px 24px 12px;border-bo=
+ttom-left-radius: 8px; border-bottom-right-radius: 8px;">Website and other =
+social media accounts</h2></div><div style=3D"padding: 0 12px;"></div></div=
+><div style=3D"border: 1px solid #dadce0; padding: 20px 12px;background-col=
+or: #fff; border-radius: 8px; margin-bottom: 12px;margin-bottom: 12px;"><di=
+v style=3D"padding: 0 12px;"><h2 dir=3D"auto" style=3D"color: #202124;font-=
+family: Roboto,Helvetica,Arial,sans-serif;font-size: 16px; font-weight: 400=
+; line-height: 24px;white-space: pre-wrap;margin: 0 0 16px;">Organisation o=
+r company logo (please provide a high resolution format, greater than 300 p=
+pi, layered EPS or PSD (recommended); otherwise PNG)</h2></div><div style=
+=3D"padding: 0 12px;">Submitted files<div role=3D"list" aria-label=3D"Submi=
+tted files"><div dir=3D"auto" style=3D"border: 1px solid #dadce0; border-ra=
+dius: 4px; margin-top: 8px; padding: 8px;"><table role=3D"listitem"><tr><td=
+><img src=3D"https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_i=
+mage_x32.png" alt=3D"Image" style=3D"height: 16px; width: 16px;"></td><td s=
+tyle=3D"min-width: 4px;"></td><td style=3D"color: #202124;font-family: Robo=
+to,Helvetica,Arial,sans-serif;font-size: 14px; font-weight: 400; line-heigh=
+t: 20px;; word-break: break-word;">OkusiAssociates_Logo - okusi infotech.pn=
+g</td></tr></table></div></div></div></div><div style=3D"border: 1px solid =
+#dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; mar=
+gin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2 =
+dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,sa=
+ns-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space: =
+pre-wrap;margin: 0 0 16px;">Website</h2></div><div style=3D"padding: 0 12px=
+;"><div style=3D"width: 100%;"><div dir=3D"auto" style=3D"white-space: pre-=
+wrap;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-hei=
+ght: 20px;display: inline-block; max-width: 100%; min-width: 50%;">https://=
+okusiassociates.com/</div></div></div></div><div style=3D"border: 1px solid=
+ #dadce0; padding: 20px 12px;background-color: #fff; border-radius: 8px; ma=
+rgin-bottom: 12px;margin-bottom: 12px;"><div style=3D"padding: 0 12px;"><h2=
+ dir=3D"auto" style=3D"color: #202124;font-family: Roboto,Helvetica,Arial,s=
+ans-serif;font-size: 16px; font-weight: 400; line-height: 24px;white-space:=
+ pre-wrap;margin: 0 0 16px;">Social media links (please provide links to yo=
+ur social media accounts e.g. Facebook, Instagram, Twitter)</h2></div><div =
+style=3D"padding: 0 12px;"><div dir=3D"auto" style=3D"white-space: pre-wrap=
+;border-bottom: 1px dotted rgba(0,0,0,0.38);margin: 12px 0 8px; min-height:=
+ 20px;width: 100%;">https://linktr.ee/OkusiAsscoiates</div></div></div></di=
+v><table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"max-=
+width: 672px; min-width: 154px; border-collapse: separate; border-spacing: =
+0 0.2em;" width=3D"100%" role=3D"presentation"><tbody><tr height=3D"24px"><=
+td></td></tr><tr><td><a href=3D"https://docs.google.com/forms?usp=3Dmail_fo=
+rm_link" style=3D"color: #424242; font-size: 13px;">Create your own Google =
+Form</a></td></tr><tr><td><a href=3D"https://docs.google.com/forms/u/0/d/e/=
+1FAIpQLSd49CxD1YY-e31IZKk1kVOzs3zBgRqywvo94e5wYDvU1dXlTg/reportabuse?source=
+=3Dhttps://docs.google.com/forms/d/e/1FAIpQLSd49CxD1YY-e31IZKk1kVOzs3zBgRqy=
+wvo94e5wYDvU1dXlTg/viewform&amp;usp=3Dmail_receipt_abuse" target=3D"_blank"=
+ style=3D"color: #424242; font-size: 13px;">Report Abuse</a></td></tr></tbo=
+dy></table></div></body></html>
+--000000000000c8ece306241800f2--

@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id A0CCB3340204
+	for <drewjones@testmail.net>; Thu,  9 Jan 2025 08:16:10 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 09 Jan 2025 08:16:10 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id MaKYLVEjf2eduxYAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 09 Jan 2025 08:16:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1736385361; bh=W6eRHtXXXkHpeDOBC47+FU5AACh+pSNYQBtYtKsJhGI=;
+	h=To:Subject:Date:From:From;
+	b=h90Bx257S+cV6LU30qeyEL+c5U83NfT/QmP/G9Qm7MMZabT6d48613zWSK0QkMCAO
+	 UNipwf7APqmYtHq/Y9GwqndHlNBWwpNQASP7kUzdxJQ2SJk/Ipk4hvy90eKZQyY1w1
+	 dbhSeRep+PgWtVg7TkusNFfZco3AFAN/hsxyquQwbPgRukQKRp6khFfgPIn4T+OEGa
+	 lNTGehfg45FTSRgqV6TzJi5sevr3Znp3v0bb92ZoU8Qtvc13wbxCs9WJuLhGGrJvSB
+	 FXWGYEwmC1hpsc1MePdHoV3kSQcBb0tfl1El+M+ZcrKBQHoMm/4gEHf4tCIIp9tlyX
+	 3rlSjlJ5BauCQ==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 922002640008; Thu,  9 Jan 2025 08:16:01 +0700 (WIB)
+To: justiceking@democorp.com,jordanmartinez@democorp.com
+Subject: ALERT: BIRU: Nominee Shareholder Services 2 X (Niaga Bali & Naga Migas)
+Date: Thu, 09 Jan 2025 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <74435743649045.554740260776@samplebiz.org>
+
+This is an automated alert from Okusi Associates.
+
+Reminder for PT Sudut Biru Nusa Penida:
+
+Your Nominee Shareholder Services for this company is due to expire on 08 Feb 2025
+
+Please contact Okusi Associates for information concerning renewal.
+

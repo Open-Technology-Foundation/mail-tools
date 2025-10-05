@@ -1,0 +1,39 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 26C623340204
+	for <drewjones@testmail.net>; Wed, 16 Oct 2024 08:16:03 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Wed, 16 Oct 2024 08:16:03 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 0EDpD9ITD2cs0RgAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Wed, 16 Oct 2024 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1729041362; bh=xia9fT+RjVjtiExDadLbTMInG243BslBz+PHeFSQJZA=;
+	h=To:Subject:Date:From:From;
+	b=hpZr6UELOuKSRiRcNPCipyR+hvvv6+wsISaT9RldmhYGSiypiqNzwehMURPh25JU0
+	 RtZoCYMRhgM19T7beS7jFZIfJwQUnesGbBzF4C5KZth5aUL6lD2ZH9GM15ksTFgVd5
+	 E5s5oRKqWfQ17BcB85jcLt42qkD6qiu/EPohUYky+LEJhARNrrODAHo2W4lKL53gQ8
+	 1PdpGegX0C/3d7fbG9yoodqnez7yzo1vhhYq1ox8V3qr91EKnmw8HqfY9RKr8gfTrP
+	 baq9XlSKMb342EXOO/S/LZHEm69FUuUPDyVLHs4GioBsMRE/w9adjcyoJWB1smrCCs
+	 xAEwSYAVfscTw==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 1A0052640034; Wed, 16 Oct 2024 08:16:02 +0700 (WIB)
+To: oakleyjackson@fakecorp.biz,hayden.miller@testmail.com,ravenwhite@fakecorp.biz,hayden.miller@testmail.com,grayclark@example.org
+Subject: ALERT: SHINSUNG: Nominee Director Services
+Date: Wed, 16 Oct 2024 08:16:02 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <justice.wilson@samplebiz.org>
+
+This is an automated alert from Okusi Associates.
+
+Reminder for PT Shinsung Enc Indonesia:
+
+Nominee Director Services for this company is due to expire on 14 Aug 2024
+
+Please contact Okusi Associates for information concerning renewal.
+
+

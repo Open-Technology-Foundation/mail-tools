@@ -1,0 +1,287 @@
+Return-Path: <indigoharris@testmail.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 2CF3A3340204
+	for <drewjones@testmail.net>; Mon, 29 Jul 2024 11:44:14 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 29 Jul 2024 11:44:14 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 3O48GhMep2aEZDIAeHbnHg
+	(envelope-from <indigoharris@testmail.com>); Mon, 29 Jul 2024 11:44:03 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-pf1-f169.google.com (mail-pf1-f169.google.com [209.85.210.169])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 798782640002;
+	Mon, 29 Jul 2024 11:43:35 +0700 (WIB)
+Received: by mail-pf1-f169.google.com with SMTP id d2e1a72fcca58-70ede9df528so530023b3a.2;
+        Sun, 28 Jul 2024 21:43:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1722228213; x=1722833013; darn=okusi.id;
+        h=references:to:cc:in-reply-to:date:subject:mime-version:message-id
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ks2jl1/TnaqkYg1l8tYF5634yN3y31PC02kfikz3UU4=;
+        b=jgWmKCpJizpjV0BPsne0Jc/dwXP8LFk7B8xM+6098ag2G+vkBM754MgyM/PBy7bqO8
+         qMhviGN2dIHpA10+JMsLvr1qeJBYSZ683y9GGkZi4n21o5/y+LuPlxZIo72dpb7YLIdp
+         /3HvQ8WJQRWLqlpWxApAYJ8jYfah6eL5BbeKQTBbAQqhWizm3nYwMVB8BqUWnFGNaI1K
+         gn5CW4Iw86hSI3QYhDOZZvPmOQCCgMxZdVInemZHtE/6+P3/Eg1ApUar1/CJRtqVLOQf
+         3qP3Ytm2FQkRQoMlEyMPwJ+WO7Tw/GGCgS5tLUMkrO3feMsGyPggrd/o0lObqjPMnwWt
+         zvsA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1722228213; x=1722833013;
+        h=references:to:cc:in-reply-to:date:subject:mime-version:message-id
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=Ks2jl1/TnaqkYg1l8tYF5634yN3y31PC02kfikz3UU4=;
+        b=P05YVVnWsO5Hq+gD27N114JeK+rwVIfBh+cmX/k1RqIy2naK19ns4ykRtxnVN7ePpM
+         FMAYqlhLbU08FciUeCQSJGtqvwHx/WgQUHmJaAsCSFpP5e3Is0gjCF5x0bIR/wdGbaB5
+         nXfCZvPi7ahuVKQWlS6Q9kik6Iiw9nQoPqNtPbvK1+mJS1epo17/og0CgBAATtpKTK4D
+         P9iTimsBFUb8YsYRddxZzwLcOE3dOX7jCLy7G0H9EA560n3HRYbpj+Xj6tLnOmrHo5GM
+         3qc90z2fTHURGQgIqkj6NdphyphtbJOZVmE3Ak8SQWkbJmArggXq+LAW/O/jpI4cQmtu
+         57YA==
+X-Forwarded-Encrypted: i=1; rileywright@testdomain.io, AJvYcCWapARCrUASHPUP1NV2OJ7+QGCzebchZb7PpoFVdKcFF/ogNK+G2ug+VatiEbJ2z3cXsePnaSFA86GoJg==@okusi.id
+X-Gm-Message-State: AOJu0Yw3DDpmSTdfV9cEYh5a3AoJbAQjFD0dSk+BbApbbrkdhBWiR+/M
+	V8iLp7bRSFbtPYpOZbed0w6UC+ZoW6yF9zdWE7ZyNv5p5HFR7t4XuG2sZVE=
+X-Google-Smtp-Source: AGHT+IEu5JK4puL7x8YmYFKGTz5zAIKzeFe4DqAYwQqKbwwR+efv2jz/gueljGCtYB8197a/ySjORg==
+X-Received: by 2002:a05:6a00:2e0f:b0:70b:1134:95a8 with SMTP id d2e1a72fcca58-70eceda31b5mr3913073b3a.23.1722228212299;
+        Sun, 28 Jul 2024 21:43:32 -0700 (PDT)
+Received: from smtpclient.apple ([139.0.40.133])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-70ead86ed90sm6235072b3a.141.2024.07.28.21.43.30
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 28 Jul 2024 21:43:32 -0700 (PDT)
+From: Sanjay Patni <indigoharris@testmail.com>
+Message-Id: <0b11d1a6-3c959500-f29eedd5-c5086a19@testmail.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_20E38090-E4FB-485A-A6F6-AB1F00B664F6"
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3774.600.62\))
+Subject: Re: Exclusive Golden Visa Opportunity - Your Path to Residency and
+ Investment
+Date: Mon, 29 Jul 2024 11:43:19 +0700
+In-Reply-To: <46f13d91-a29ac3dd-a24423e7-a1867865@testdomain.io>
+Cc: Sri Mulyati <devonlewis@testdomain.io>,
+ Lina Munir <contkellylewis@testdomain.io>,
+ Reni Debora Okusi Associates <milesnguyen@testdomain.io>
+To: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+References: <46f13d91-a29ac3dd-a24423e7-a1867865@testdomain.io>
+X-Spam-Status: No, score=-2.1 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM,HTML_MESSAGE,
+	RCVD_IN_DNSWL_BLOCKED,RCVD_IN_MSPIKE_H3,RCVD_IN_MSPIKE_WL,
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+
+--Apple-Mail=_20E38090-E4FB-485A-A6F6-AB1F00B664F6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Dear Haliza,
+Thanks for your email.=20
+My name is Sanjay. I am an Indian citizen currently residing in =
+Indonesia with my wife on company sponsored work permit (KITAS). My work =
+permit is expiring in November. I am exploring long term visa =
+opportunities in Indonesia through various possibilities like - business =
+establishment, second home visa, remote worker visa, golden visa etc.=20
+Please provide me details of each visa type, it=E2=80=99s features, =
+benefits and requirements. Once I go through the details, I would like =
+to set up a meeting to discuss further.
+
+regards,
+Sanjay
+
+
+> On 26 Jul 2024, at 16:37, Noorhaliza Putri Fadhila Okusi Associates =
+<drewgarcia@testdomain.io> wrote:
+>=20
+> To whom it may concern,
+>=20
+> I hope this email finds you well.=20
+>=20
+> I am Haliza as a representative of Okusi Associates from Visas and =
+Work Permits team, a leading corporate legal firm in Indonesia, I'm =
+reaching out to introduce you to an exceptional opportunity: the =
+Indonesia Golden Visa Program.
+>=20
+> Key benefits of our Golden Visa program include:
+>=20
+> Fast-track residency for you and your family
+> Visa-free travel within Indonesia
+> Path to citizenship after 5years
+> Access to world-class healthcare and education
+> Attractive tax benefits
+> Our team of experts is ready to guide you through the entire process, =
+ensuring a smooth and efficient application.
+>=20
+> Would you like to schedule a consultation to discuss how the Golden =
+Visa can benefit you and your family?
+>=20
+> To learn more about our Golden Visa services and how we can support =
+you and your family, please don't hesitate to contact me. Feel free to =
+contact me at drewgarcia@testdomain.io <mailto:drewgarcia@testdomain.io> or throught my =
+Whatsapp Number +6282128910348. Thanks in advance.
+>=20
+> Best regards,
+>=20
+> Haliza
+>  <https://okusiassociates.com/id/1321>	Noorhaliza Putri Fadhila =
+B.A
+> Client Compliance for Visas and Work Permit, Okusi Associates =
+<https://okusiassociates.com/>
+> =C2=A0 <https://okusiassociates.com/>=E2=80=89  =
+<whatsapp://send?phone=3D6282128910348>
+> +6282128910348 <whatsapp://send?phone=3D6282128910348> | +62213901007 =
+<tel:+62213901007> | drewgarcia@testdomain.io <mailto:drewgarcia@testdomain.io> | =
+okusiassociates.com <https://okusiassociates.com/>
+
+--Apple-Mail=_20E38090-E4FB-485A-A6F6-AB1F00B664F6
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"overflow-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;">Dear =
+Haliza,<div>Thanks for your email.&nbsp;</div><div>My name is Sanjay. I =
+am an Indian citizen currently residing in Indonesia with my wife on =
+company sponsored work permit (KITAS). My work permit is expiring in =
+November. I am exploring long term visa opportunities in Indonesia =
+through various possibilities like - business establishment, second home =
+visa, remote worker visa, golden visa etc.&nbsp;</div><div>Please =
+provide me details of each visa type, it=E2=80=99s features, benefits =
+and requirements. Once I go through the details, I would like to set up =
+a meeting to discuss =
+further.</div><div><br></div><div>regards,</div><div>Sanjay</div><div><br =
+id=3D"lineBreakAtBeginningOfMessage"><div><br><blockquote =
+type=3D"cite"><div>On 26 Jul 2024, at 16:37, Noorhaliza Putri Fadhila =
+Okusi Associates &lt;drewgarcia@testdomain.io&gt; wrote:</div><br =
+class=3D"Apple-interchange-newline"><div><meta charset=3D"UTF-8"><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">To whom it may =
+concern,</p><p style=3D"caret-color: rgb(0, 0, 0); font-family: =
+Helvetica; font-size: 12px; font-style: normal; font-variant-caps: =
+normal; font-weight: 400; letter-spacing: normal; text-align: start; =
+text-indent: 0px; text-transform: none; white-space: normal; =
+word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: =
+none;">I hope this email finds you well.&nbsp;</p><p style=3D"caret-color:=
+ rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">I am Haliza as a representative of Okusi =
+Associates from Visas and Work Permits team, a leading corporate legal =
+firm in Indonesia, I'm reaching out to introduce you to an exceptional =
+opportunity: the Indonesia Golden Visa Program.</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">Key benefits of =
+our Golden Visa program include:</p><ol style=3D"caret-color: rgb(0, 0, =
+0); font-family: Helvetica; font-size: 12px; font-style: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+text-align: start; text-indent: 0px; text-transform: none; white-space: =
+normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;"><li>Fast-track residency for you and your =
+family</li><li>Visa-free travel within Indonesia<br></li><li>Path to =
+citizenship after 5years</li><li>Access to world-class healthcare and =
+education</li><li>Attractive tax benefits</li></ol><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">Our team of =
+experts is ready to guide you through the entire process, ensuring a =
+smooth and efficient application.</p><p style=3D"caret-color: rgb(0, 0, =
+0); font-family: Helvetica; font-size: 12px; font-style: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+text-align: start; text-indent: 0px; text-transform: none; white-space: =
+normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Would you like to schedule a consultation to =
+discuss how the Golden Visa can benefit you and your family?</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">To learn more =
+about our Golden Visa services and how we can support you and your =
+family, please don't hesitate to contact me. Feel free to contact me =
+at<span class=3D"Apple-converted-space">&nbsp;</span><a =
+class=3D"moz-txt-link-abbreviated moz-txt-link-freetext" =
+href=3D"mailto:drewgarcia@testdomain.io" style=3D"text-decoration: none; color: =
+rgb(136, 136, 136) !important;">drewgarcia@testdomain.io</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>or throught my Whatsapp =
+Number +6282128910348. Thanks in advance.</p><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Best regards,</p><span style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none; float: none; display: inline =
+!important;">Haliza</span><div class=3D"moz-signature" =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;"><table =
+style=3D"font-size: 16px; font-family: &quot;AvantGarde Bk BT&quot;, =
+Verdana, &quot;sans serif&quot;; color: rgb(85, 85, 85); margin: 4px 0px =
+0px; padding: 0px; line-height: 1.4;"><tbody><tr><td style=3D"margin: =
+0px; padding: 0px 6px; vertical-align: top;"><a =
+href=3D"https://okusiassociates.com/id/1321" target=3D"_blank" =
+title=3D"Okusi Associates - Noorhaliza Putri Fadhila" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) =
+!important;"><img alt=3D"Photo of Noorhaliza Putri Fadhila" =
+src=3D"https://okusiassociates.com/a/m/photo-haliza.jpg" style=3D"height: =
+111px; border-radius: 5%; border: 1px solid rgb(11, 41, =
+90);"></a></td><td style=3D"padding: 0px 6px 0px 4px; vertical-align: =
+top; font-size: 16px;"><strong>Noorhaliza Putri Fadhila</strong><span =
+class=3D"Apple-converted-space">&nbsp;</span><span title=3D"" =
+style=3D"font-size: 13px; color: rgb(85, 85, 85) =
+!important;">B.A</span><div style=3D"font-size: 13px; color: rgb(136, =
+136, 136) !important;">Client Compliance for Visas and Work Permit,<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"https://okusiassociates.com/" title=3D"Indonesian Corporate =
+Services" target=3D"_blank" style=3D"text-decoration: none; color: =
+rgb(136, 136, 136) !important;">Okusi Associates</a></div><div =
+style=3D"margin-top: 3px; margin-bottom: 0px;"><a title=3D"Okusi =
+Associates website" href=3D"https://okusiassociates.com/" =
+target=3D"_blank" style=3D"text-decoration: none; color: rgb(136, 136, =
+136) !important;"><img alt=3D"Okusi Associates website" =
+src=3D"https://okusiassociates.com/a/m/oa.png" style=3D"height: =
+28px;"><span class=3D"Apple-converted-space">&nbsp;</span></a>=E2=80=89<sp=
+an class=3D"Apple-converted-space">&nbsp;</span><a title=3D"Send =
+Whatsapp to Noorhaliza Putri Fadhila." =
+href=3D"whatsapp://send?phone=3D6282128910348" target=3D"_blank" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) =
+!important;"><img alt=3D"Send Whatsapp to Noorhaliza Putri Fadhila." =
+src=3D"https://okusiassociates.com/a/m/wa.png" style=3D"height: =
+28px;"></a></div><div style=3D"font-size: 13px; color: rgb(136, 136, =
+136) !important;"><a href=3D"whatsapp://send?phone=3D6282128910348" =
+title=3D"Voice/WhatsApp/SMS" style=3D"text-decoration: none; color: =
+rgb(136, 136, 136) !important;">+6282128910348</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a href=3D"tel:+62213901007" =
+title=3D"Jakarta Office Landline." style=3D"text-decoration: none; =
+color: rgb(136, 136, 136) !important;">+62213901007</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a title=3D"Send email to =
+Noorhaliza Putri Fadhila." href=3D"mailto:drewgarcia@testdomain.io" =
+class=3D"moz-txt-link-freetext" style=3D"text-decoration: none; color: =
+rgb(136, 136, 136) !important;">drewgarcia@testdomain.io</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"https://okusiassociates.com/" title=3D"Okusi Associates - =
+Indonesian Corporate Services" target=3D"_blank" style=3D"text-decoration:=
+ none; color: rgb(136, 136, 136) =
+!important;">okusiassociates.com</a></div></td></tr></tbody></table></div>=
+</div></blockquote></div><br></div></body></html>=
+
+--Apple-Mail=_20E38090-E4FB-485A-A6F6-AB1F00B664F6--

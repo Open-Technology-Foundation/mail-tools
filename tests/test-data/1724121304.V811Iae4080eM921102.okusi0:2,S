@@ -1,0 +1,171 @@
+Return-Path: <stormjohnson@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id C5D2F3340204
+	for <drewjones@testmail.net>; Tue, 20 Aug 2024 09:35:04 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Tue, 20 Aug 2024 09:35:04 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id msBJAL8AxGbBDwwAeHbnHg
+	(envelope-from <stormjohnson@samplebiz.org>); Tue, 20 Aug 2024 09:34:39 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=quarantine dis=none) header.from=hoffman.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=hoffman.com
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (mail-mw2nam12on2115.outbound.protection.outlook.com [40.107.244.115])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id DA9A22640002;
+	Tue, 20 Aug 2024 09:34:37 +0700 (WIB)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=scSOF55Z0UQSaEAwFTH77iyyMNuyVAXX2OEb4+0JNgqDcCrW6D2RVna3vO5A9wlIR6bvdzBXZoNkbDdJLh1piXSsLpZKiL6evA6VQJf2g8vC5S3mqOmbXNEYJV73OdyyI7iPLoxyef0bwTNTxTovk+9DmOO2UWaTOidoKFXFPq2oR8RF9S5RMyvSkTF6CfF52Yvjsbx4iFzXJkamG5O5r8cEU99+yi7CqyBGL8gp/1ZzKcnz72OyjS2HK+lAP6fqsDjAmsOsZ6miJ/y79Es96LeusIAB0QIxtQIWqthgVyDUajzXQZ1OQVmPvTVJqpBf9ZXtTR5riVasJ46e6c8+8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=6mQeTnRpxs8+0ibcGVmn255pFO8RZbqRimlUUTHAAxY=;
+ b=o5PGRKyozhDB/AgMOro75jvkA1eqIlMc+8AVv1FTwFaabI2+38AT3swYZ4xX5M+tSeJoLzQgnwl4NCsEDhES1l/84Xps9YH7ou1FkZ5GYpVm/zhbOfp+NL1C163tsLSo7xAkzNJ+o3gT07yRa+o+Qx3W0k3M7eKsW44k+KGU4jVv11CFWDRMsDD2bWkl8byM1/s58UKhnpcbNu894lUGd7pUl0ZsVhD+J7ja2Xx77Rzjb7iCUPcataVhSj6r4SyQYlsp9dkLfHgoglJ8AAcFfaeI35PBRRtD0eqPIaTz7qYZkB/2ZEreJDlLDeYVk32XwlpCwiXIBB27LsIAMSPtWA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=hoffman.com; dmarc=pass action=none header.from=hoffman.com;
+ dkim=pass header.d=hoffman.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hoffman.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6mQeTnRpxs8+0ibcGVmn255pFO8RZbqRimlUUTHAAxY=;
+ b=XtOJsGyB8TbH0o6ASxIVThUyv86O8BVakbKe+ubKzlFF3FjcOYIiyWloQj4qRpE3D+oYjGk0RwAA9ynDtdJTbpu5XHMOM4zPDAUs6H/KzjxmMVv21RdxpTjGMsWWhsOk3DfeuUmm3rf6flOWGIDo0c3FUk9PAZ45At8PhW7p7vKnvaQfF4Yn2DLVJ/udnxDBP8mIfIGXAEpIEFQehZOOLEMuQOSl5EJcpl0azB9og1KgfCxujJR4rr2SdjNdvRoR7lgT67Co2aDr25fnv08VMt1oU88YZkRnNTFTyTywJHYKXrGmr6IK+901iJVQlr6nFs1LokJ8Clb2/7nd9H1RTw==
+Received: from MW3PR16MB3931.namprd16.prod.outlook.com (2603:10b6:303:47::16)
+ by IA1PR16MB5382.namprd16.prod.outlook.com (2603:10b6:208:452::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7875.21; Tue, 20 Aug
+ 2024 02:34:31 +0000
+Received: from MW3PR16MB3931.namprd16.prod.outlook.com
+ ([fe80::724:e4ef:4e0d:b914]) by MW3PR16MB3931.namprd16.prod.outlook.com
+ ([fe80::724:e4ef:4e0d:b914%3]) with mapi id 15.20.7875.019; Tue, 20 Aug 2024
+ 02:34:30 +0000
+From: Janice Wang <stormjohnson@samplebiz.org>
+To: "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>, "Nurlia Hasyim (haydenlopez@testdomain.io)"
+	<haydenlopez@testdomain.io>
+CC: Lydia Lau <adrianmartin@samplebiz.org>, HA-ID-Finance <milesyoung@samplebiz.org>
+Subject: RE: ALERT: HOFFMAN: Company Domicile Services E-Trade Building
+Thread-Topic: ALERT: HOFFMAN: Company Domicile Services E-Trade Building
+Thread-Index: AQHa5tUNFOrP6F7IEkmPL0gAdPR2ZbIvhOow
+Date: Tue, 20 Aug 2024 02:34:30 +0000
+Message-ID:
+ <parkerwright@testmail.com>
+References: <adrian.martin@samplebiz.org>
+In-Reply-To: <adrian.martin@samplebiz.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=hoffman.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: MW3PR16MB3931:EE_|IA1PR16MB5382:EE_
+x-ms-office365-filtering-correlation-id: 1b3b16e3-8e05-42db-2b8d-08dcc0c09eaf
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|376014|1800799024|38070700018;
+x-microsoft-antispam-message-info:
+ =?iso-8859-1?Q?c5TQXfUH/3aJzsu59IXD9z0FiVdTvy9wzJ4eDnkWcYDQ9lAEYTMTmMToxg?=
+ =?iso-8859-1?Q?58NYsmD/yH4tyJRg8gHWa7hnOq/se5hf4kQIxTWqPtU2DMAHatjIo3/dST?=
+ =?iso-8859-1?Q?O/hczF0T+FzCMNro/GFRVkqz9WPcWE/2f1McoqJuVYdKPRYmBr/Ox+Qdvb?=
+ =?iso-8859-1?Q?41b+fk9ZHVFAu5yx6qKpthm/h4dSf/7TXjf0q1xQNhiX6X9fLFYuGPh0/9?=
+ =?iso-8859-1?Q?HAVM9uBoyoJ4voisqsdfo+7GaH9mQPT+5wXe39yD2tX5kSF8GPK8K22my/?=
+ =?iso-8859-1?Q?AXFJCJpZ/EpvnHw1u4JNU/yCS0zv4bjeu6Ru4sTgOvkTnauegjkZ3ZyeD5?=
+ =?iso-8859-1?Q?A77CqjqjWsdpzWiNTisxnaJne8s0XNRzYs5ZD51daQO1PaBA9hrMPbYyot?=
+ =?iso-8859-1?Q?oZij1OYthr1I+FqwmE2D2fuMIXUBd2bfo1tRb/LQu1UigRhSiH6bXRs40V?=
+ =?iso-8859-1?Q?Ufz5UWZ07j6bw5+Ue6VzzhBvWyXuybK7H7eH80Xh8HChvsWPr2qLqSEJD3?=
+ =?iso-8859-1?Q?h5h8O8TEA0oGFe7tbf3+oqMrt7BbFRVYsX2kBbMbc8D7gjStBR53OJU5Wl?=
+ =?iso-8859-1?Q?ZgGQrwAs627J8OOWpc2n+07qB0HbLxSWYfWmRh+5iRTFjqgf6xHLC945h9?=
+ =?iso-8859-1?Q?3eKFyNYkm65nhCG6tM7wxzRvqqH/0GFJ17nA0/kaKBAPzhRJn/+kvx2zMG?=
+ =?iso-8859-1?Q?74daybB1KIyJK/54+dPgaH20/wTWJc8nQX7XbkvPa4lA9FVsuApamtD9oR?=
+ =?iso-8859-1?Q?9TIxyHXwpU0hy2fXW6F9dMZJQxshZBmHCI03VQfiklhd/HyClnZwHSDnpp?=
+ =?iso-8859-1?Q?WgsQZ9minxjjV64hZ6M5ExNsoqQyBz3Cenfb9M9eUOzhYCpiUfzeXYD4AX?=
+ =?iso-8859-1?Q?GPIl4PZe8kwBeLX2c2FdXWad5D0kIxOLI2Bvzg6+KT+ZXgI71V2TxQRbZI?=
+ =?iso-8859-1?Q?UP50HhFv5AwP2BLofkKEhT+00M5nZL7QFYl3Sst4ebEM7MzPhoGTMZQTS6?=
+ =?iso-8859-1?Q?gjvWlSdXJ2RliDTSIecVrPasLAu4zcaxtwadwnDcTRUfktBRJRhPoYVZkw?=
+ =?iso-8859-1?Q?CacanemVOIN0TAcaS5/enGykQMqyTWj4lM5OajZfWHA5oXnlU4y+9QAbqz?=
+ =?iso-8859-1?Q?HXWt7tEf8JPXXDeTDPHxRjuX6v320SCcSYp/16lMeS1+4wsQR8c041G9qt?=
+ =?iso-8859-1?Q?YjTR/8K+KanGzaK2aPOMHi7ZHna9Ye+hgADzo0rei7PHKm0P1ttfKiU6P0?=
+ =?iso-8859-1?Q?F4qwHfLe3yfaQQE6xmAkKWfBngBlPFoAUj1ok5cO0Px6UuhkdZCzxelMg4?=
+ =?iso-8859-1?Q?14nQzJPr+rSTwgZb6h43fibDVzOZvM6jbIGL+i786jY/ol0e7C4r9m/mEr?=
+ =?iso-8859-1?Q?Wg36UCMSZVKWrHi4sXuTcaGSOqLMSC5uxYTTqCzKZbBy2c/3RVnQtaDz+q?=
+ =?iso-8859-1?Q?WXVIrO+0bd60nqgzlY28mUuNKLnNoPSZgtznJw=3D=3D?=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MW3PR16MB3931.namprd16.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(38070700018);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?+BtPOzk/STzRVKtRWuu+LmSawxiU36X0AI5dVtU0OoB0toobWwumdZecgM?=
+ =?iso-8859-1?Q?WnJ8knYTMzOUJ76PAG6GHJOOvG0jf3F3Kt7K+Ca4kYF2HmIH7vgOKmV6yF?=
+ =?iso-8859-1?Q?Ars+y4g6t7isQDHcJ4d5Wq2NiGCvCYeW/RAZ5he9E8TCt0Wax47K2ew2KK?=
+ =?iso-8859-1?Q?bXRp7cZWb5SIDetVa5+JE9Cz+E0rPTxgGg+dBvoROfNkGBubRzAVuRhuWN?=
+ =?iso-8859-1?Q?+/1K+naIz8m51ymw1RZH5hgobGgI8y6fP/suY9cTOaynbsNl9CBX/XEB2B?=
+ =?iso-8859-1?Q?u4Uy9YKSpdCVR3hNQYBI/JbuS8G/3Q1uPOSXjQl1Blgv43jIhMovHNc/b/?=
+ =?iso-8859-1?Q?hQyBNruifep/ZN8w3MLRDKT01uWtVtUIyV9UxbNa/pmneq/dxrNTeq8HBr?=
+ =?iso-8859-1?Q?xrN0u6bvDFXQyHG8FZ00FzpftH4gSTV+wcxr8z3Py9fkQ7rYlr2+bGmpo1?=
+ =?iso-8859-1?Q?razmavqxwcd3LL+DGoQPf0RU6LueSRwhGcKtlIOVZETZrlGTNu2oa0YL7s?=
+ =?iso-8859-1?Q?Ztc/gDVClb+cRbB6kLljFOrkgzI3Cat8p8k+ioysirE6N71g880zbUcRRH?=
+ =?iso-8859-1?Q?8Up7PnwrCQarGQm4wHYYyq0tH5t4BI5sN2xtIZHaPmkuv/sDB3l+rLQEuw?=
+ =?iso-8859-1?Q?/jSSi5074KTgzj8CvudcwSdcjPCVJnyn+VNoEUcvrPSkbKJkcFeacmF19g?=
+ =?iso-8859-1?Q?CMeWYfxY01JUh0zjhAK7uwM6lMl3+j0ybquuDyDj2burAzJbckevAdds1H?=
+ =?iso-8859-1?Q?sQS3rKtoz6QZIxge2LQ+UC6Dy1npc7tDoYEiFuqDrdV8iNLNjx/EB8JdgD?=
+ =?iso-8859-1?Q?R/pSqOzj+mjwo9Xm7oKvBL/pOD42CaCCAW1pN6kSq9QqsydVIBmZru4Rwx?=
+ =?iso-8859-1?Q?gT8JGhMq/5/Ajvya3W+vB/7Ao1Ni/603EbxW+KHcdqxptUB08tLPnfvwC/?=
+ =?iso-8859-1?Q?suZahilt4HqDZP6w9wnXJmjXZoT/Kmga5DbgJwruzPhBh2MJw4UFCWUPD5?=
+ =?iso-8859-1?Q?gINfrFFsU3pfprPP7DYLiDQBRFnBRKC6/fcIjX5vQ9qoh7cmNbHzamsiFG?=
+ =?iso-8859-1?Q?QEPtkfdg1QrISXpwNPyxbZH/OVO5sfM54BM66k/3+s6bSQO1RByuhGesvO?=
+ =?iso-8859-1?Q?n7bwWRRR9GUL1Xz62OHav5MdvdDqLm5QAEe/8XAq9Ks6bDVtmk4Mvi9gB7?=
+ =?iso-8859-1?Q?ySiYgl/Y+p0ZXj3rbMJ7Z23GodLVzN75iPfH2e7i4RkNS3hiN9aFztrB2k?=
+ =?iso-8859-1?Q?Xoncaugvooe31Tol7lvBNWZ1OL7W4y9PXGq4avyVjH8bGMFFBodX9IYMxV?=
+ =?iso-8859-1?Q?GnCvIgypv25IYRasHtJgD2tU79S8fZcYlWk7DJUkhp+oXMZttvSl6ChSLI?=
+ =?iso-8859-1?Q?afiPQvmdoFsLqr53lRqLFLqACa4YQRYixbK0WVnDuPIgogBcsFvXzWPtRF?=
+ =?iso-8859-1?Q?+neW5XWfbYesuV4evOn3nJuGw3UM66FVqQbhRKr3MNUlfUUvKrlzCq4nsE?=
+ =?iso-8859-1?Q?ebY3y+jXk1I4vjIU1r10yMvsajehkm55oB2uskelUkTsqHBiI1tZztGCy0?=
+ =?iso-8859-1?Q?pK8wnlruYDFkCexJw/5AV8KQgW2dAyCzif/5ut8N4rdMc2bkG8jZAVoU9D?=
+ =?iso-8859-1?Q?JJNWywXpYLHsjApGZv+FoLjEcnpbR8SHQO?=
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+X-OriginatorOrg: hoffman.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MW3PR16MB3931.namprd16.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1b3b16e3-8e05-42db-2b8d-08dcc0c09eaf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Aug 2024 02:34:30.7899
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 483be265-d5f8-4bec-8127-a1b8bd8c2ab9
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: VdbV8VK6J2Z6xpoTo6VO/uZAGPETocng0U35Rmuak9ERTZ73wG71dpzGCefzFxfttEnf4mi6jsEFsCZkoUUPEg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: IA1PR16MB5382
+X-Spam-Status: No, score=-102.1 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,RCVD_IN_MSPIKE_H2,SPF_HELO_PASS,
+	SPF_PASS,T_SCC_BODY_TEXT_LINE,USER_IN_WELCOMELIST,USER_IN_WHITELIST
+	autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+Dear Bu Nurlia,
+
+Please help us proceed with the renewal of our company domicile service.
+
+Thank you.
+
+Best,
+Janice
+
+Janice Wang | Operations Manager
+The Hoffman Agency Asia Pacific Pte Ltd
+M:=A0+65=A09873 2232
+
+-----Original Message-----
+From: legmorganhill@testdomain.io <legmorganhill@testdomain.io>=20
+Sent: Monday, August 5, 2024 9:16 AM
+To: Lydia Lau <adrianmartin@samplebiz.org>; Janice Wang <stormjohnson@samplebiz.org>
+Subject: ALERT: HOFFMAN: Company Domicile Services E-Trade Building
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Hoffman Agensi Indonesia:
+
+Your company domicile service is due to expire on 04 Sep 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

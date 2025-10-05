@@ -1,0 +1,328 @@
+Return-Path: <charlieharris@testmail.comm>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id B69DF3340204
+	for <drewjones@testmail.net>; Mon,  7 Oct 2024 12:55:01 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 07 Oct 2024 12:55:01 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id /xAEHXF3A2dJQSwAeHbnHg
+	(envelope-from <charlieharris@testmail.comm>)
+	for <contkellylewis@testdomain.io>; Mon, 07 Oct 2024 12:53:53 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=reject dis=none) header.from=yahoo.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=yahoo.com
+Received: from sonic301-19.consmr.mail.sg3.yahoo.com (sonic301-19.consmr.mail.sg3.yahoo.com [106.10.242.82])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 1DD952640004
+	for <contkellylewis@testdomain.io>; Mon,  7 Oct 2024 12:53:26 +0700 (WIB)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1728280406; bh=rYhIFTXUSfOzdoUTDtksihkJgh5J0KBGU5XmFZ4A9eM=; h=Date:From:To:In-Reply-To:References:Subject:From:Subject:Reply-To; b=llEH/QjLscY9QFL5Smo3tmRxwIzzqokY4I/AHluDyGAX9yqo4xARevnAbCds0twPZ3v9LsbxHVVI9rjvumXd6TpLHi28Je06md14MV8xXTtuCHz0DMnkkZfmw+7lofYt9UMw865bEKsccQkf7IetEihKPg6c1oGCaf6U+VRMdh2IbCxZ4lo/zbPTUIup+QjIYCWkYMbrf9TLOYWFRzysLHns7xmDnLOFrN3l7oWZ2PoS7UWpr7OCJLrASlhP9yWWtfS50fUWSwIbCO+RuDLgYCiywnjP6eVvS2gfqZbCtiZS5S30YKiWG9Uc0s/uHy/TAzvGASNRKi5QDbiOEoc0HQ==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1728280406; bh=sZa1wz64b5jh8lev+ajyPoyj8mmJbPfXAtMGW7TN5Tg=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=nPI9jpWl89RJHMDDYQ3LVT+wz3kyzgM+VLvpRxN08Llxzi38/xaxbM7JLQOOB4sHbHsQJ6XPUweB28LlX4PyiQn2iGWubJTOMmszLmV21iQwZsnbVOkqs6iSOoss/Nm55K5GQ9D3E2KgqOh6ut7QQ02c4mGqLdCyjlyy5ENaXDOlJbu/Pb/k81lTbvt3V6HwdkB7qtPr2vYEqYJunwts1kK707O9pxddE37ClVXTEtcXVXkM0X7/NedO3QB//tOY0BZNi/Ph9RkMckGhyk9/+vPBvl6kufaafdQ1+5WYRFvYDoMzXtl37wZYmGP9/G288BlpAqNMGqZdIRPqerJLmw==
+X-YMail-OSG: zsKtrUYVM1nbOLJ3DcGfmknA11C81gVqGceJSZOiX.mdKe5rrgnNfY1Km6kHH3u
+ kY0olo4AWcHwe2DC3qJ_oJ.491i_Dkm2uFOz34M.qYCYGdRfEj9_gD0YxcBzppjKeFyYIbff8ME1
+ EZ4MyN140WqVQR0GbBdUXv8KXrNyRWMmwxnVqo9iRD20_Yf1REJCEP_g3vGpkR2UW02uivsyCuxj
+ rDlQ1_2CcTj8Pq.6TuTbheoWoz0_aPxdO9X6sjZ5cYgsqU9krxcktLhcN61vCw_9kYVVTaIeNrpM
+ pm3v2AUp4b1Pugt8aCS5tk9KHY4_t7yCyTTRq2yxu.ikPaXz6pjmulvk0WorlarNiZyoRQ6nn2Gq
+ ecN0_nECPvAUnnFX__rJESmjT1peo.BDUQ8yxkSoOaAQFRRzafnP3ZVuF99txIbVQ46BdRMeWOEp
+ .338G8bYdAKQhBM2SNr8e2U8Tw8RS.xfOHzcs9H0bwJSbSgh7PDKxSIORye6jyRUTX2yA88Abj0X
+ umocTxrCxBhuq6OtU2x3RvnBQxZXoB28UrAjRDtpdjGm_7PFca_cKo6qAKLEZvYJw4CVl3sAhpZN
+ EJ7TMkWUKZiaVkF4SgW70JZqYSQTUafSNmuiRRTdaVXmT.M1tGGJEo0KK2hrqxW9tyl_ubEIlB0q
+ c94TApTyDZeGzELYx9P0pYOra1fDNJJu04vtY6S5iinimn4GxxN6dEzVR8Y28l8h81h6_1mY25FP
+ 897_slQmVtQ6fHjBLjM9gYuPoLQ1zhKkPK6Q14fVayYcLtWDObSg.NcPrJ9KwwIyAUi7D9aFgwbQ
+ B3xRWGYBbB.l8_5fms7kxd3EMvBdF4IgrKIAPHqpRUnoUxgKbirP5.sjRKTxKlfOOfPfso_.b0Qw
+ SZxqyk5OO0W_MR1KTOLQcA2gOzdewGhKRA.Okyu28C5btpf4h_CcUqOB6NO0V3WjuneVOq4NmuZE
+ zTskj1Hur.PFv5FwEedMrRZtIG9CiPGwa.5FFzGmAaZ85oGbBS_n8ynqSofMNjmxhMFtzDGqnYgA
+ cHMzJSKfOencbDogz37aidM.xIVAs9e12_zRCL9mETKJ300JCpUj0AXghM9YpfA252j_iudzjcsn
+ p9R8vezUhyw0JBe51Tr8HQcd7E0nAjTeSG9eAvnce3L3_nnQKVtP1HJUDrLkESMk5zAW1IEqcuta
+ 1tgF.U_YKKhkSrF1DHV4VDBk9G16EBwU.YAjODKLJTE0.rkAp8MkjqAndBQY3EkK8vwICMP6wG4_
+ zlNRkWG5GCtGYv.Y8V9_K8e3HE4sEGvjWt16KLfv8k08Ul0xOH6aoegoW72yxh9QjKcSzgdPicXu
+ K3Yi2Jxk3E6tbQnsu2ktzdUark8J6Z3MaiIHRfwTxGIZpRKedQ96SUcLslSiYhyBCTj36999tV_h
+ e9roYKQZj0NxoytkmyPn6EiVUcExNQB98JTnZAPKHRDGzkxpLfBU1JrGxAT75SzQx679yoH0JkBK
+ B4S0pfJHwcuZJ9gyzZwtFvAO1Cpl7dvqpAXK.YOaUIrf8K6_R_xU5.I67OL3izGz40LB4OdmWxMY
+ CEXhFeNCMWhLQIMU_FEOR7SZJEMnNTrCFli.7cSh2Y4iAAGK0578.Z10ZLBdKNfn2J5.er1OhrGw
+ EJ_NdeG0o7Ool4NJuQy650EDyL19vLOk7s4aG1VYI5vno94FOMj8mfSXmyeN20il7eA8b90GFMLr
+ EyedssVSvk8u1jS5y9lolsooB5yrXciIalLsAQD4.5STe9BEb2ntxib1pWTL0gFANLXMOgCdDBeL
+ BhlQJSHYDdvPzhwqWn0d1GRJdTq66FDGbYR2SHHUn1ncB3D8xrRPLIxKE7YoCq_1rhJ3WyvSiL1I
+ VQHMnpeJXAKPILEBTn_KYrlB9E7Wsvnl4hzyf0dQSvUm0wMjZmuWo9ZcgOYax4IqOIkYLL30PiRF
+ ElmegZaeG2jRN3gWTCNDXzyKPYj.LbOmcCzYLKxICsEoJnZ0fuauOBLcxyhi_THEZ4vDAphFjGrD
+ 6QUB3JIe8Z9gMjCjxHbvRBidzuJgN1rWQkmoDvLGcsoYvELvDAP9EcuHNyGuvcOU_UbVmokZDdSs
+ 8aldonPpvu4Y.SdGNJBqEf9O1rmctuzAB.VoKVCB0o39yMl8Huvcys2otOWvPh26JTbDaLjdLHoQ
+ Dj9khmMEFjnkc5NonlwnsTJ91_5WSzlA8KnFeO8Xl9s11z.AEQGBGZFREA2MhS.YyxRE10x3DicK
+ yW49I4g4EFuA0yHl3JynNWbu_QPWuy.Ee2o.lIJJDlOBgPzyQVVl9VeDwBCFjpHb8mbt.kBOhEIA
+ SeYRBbtGWuqfkuOewB7h67M8.APJLzh06vlUA
+X-Sonic-MF: <charlieharris@testmail.comm>
+X-Sonic-ID: 8df22d61-48c3-4ec6-a37e-0cf7d965c431
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic301.consmr.mail.sg3.yahoo.com with HTTP; Mon, 7 Oct 2024 05:53:26 +0000
+Date: Mon, 7 Oct 2024 05:53:24 +0000 (UTC)
+From: Agus Sidik <charlieharris@testmail.comm>
+To: "contkellylewis@testdomain.io" <contkellylewis@testdomain.io>
+Message-ID: <904876897.19702580.6685297047400@testmail.com>
+In-Reply-To: <67024cfa.8a1.enquiry.okusi.id>
+References: <67024cfa.8a1.enquiry.okusi.id>
+Subject: Re: permohonan Lamaran kerja [#:67024cf90]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_10610692_82976614.1728280404057"
+X-Spam-Status: No, score=0.1 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_ENVFROM_END_DIGIT,FREEMAIL_FROM,
+	HTML_MESSAGE,RCVD_IN_DNSWL_BLOCKED,SPF_HELO_NONE,SPF_PASS,
+	URI_TRUNCATED autolearn=unavailable autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+------=_Part_10610692_82976614.1728280404057
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ met siang bapak /ibugimana perihal permohonan saya untuk bisa bergabung di=
+ perusahaan OKUSItks=C2=A0agus
+    Pada Minggu, 6 Oktober 2024 pukul 15.40.31 GMT+7, contkellylewis@testdomain.io <con=
+tkellylewis@testdomain.io> menulis: =20
+=20
+  Okusi Associates - Indonesian Corporate Support Services#yiv6360033074 a:=
+link {color:#002958;}     =20
+  Thank you for contacting Okusi Associates.
+ Someone will be in touch with you shortly.
+ A copy of your message appears below.  =20
+Phone: 082112007471
+
+selamat sore, bapak /ibu=20
+saya agus di jakarta, saya ingin bertanya apakah di perusahaan ini masih bu=
+tuh tenaga laki2 /posisi=20
+untuk Masengger /pengurusan kitas dan visa si instansi2 terkait,saya pengal=
+aman di bidang ini pak/ibu, saya lagi butuh pekerjaan. jika bapak ibu perlu=
+ teanaga laki2 saya bersedia kapanpun saya kerja di luar kota gpp. mohon ba=
+pak /ibu bisa bantu saya.=20
+terima kasih  =20
+OkusiAssociates.com
+=20
+Jakarta +62 21 390 1007 =C2=A0 +62 21 392 8595
+=20
+Bali +62 361 769 144 =C2=A0 Batam +62 778 741 5011
+  =20
+=E2=80=A2 permanent offices conveniently located in Jakarta, Batam, and Bal=
+i.
+=20
+=E2=80=A2 comprehensive/integrated: legal, immigration, accountancy, resear=
+ch.
+=20
+=E2=80=A2 in-house, over 60 full-time direct employees across Indonesia; no=
+ outsourcing.
+=20
+=E2=80=A2 over 3,000 foreign companies, more than any other firm in Indones=
+ia.
+=20
+=E2=80=A2 companies set up anywhere in Indonesia.
+=20
+=E2=80=A2 since 1997. =C2=A027 years of service to Indonesia.
+ =20
+ =20
+------=_Part_10610692_82976614.1728280404057
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div class=3D"ydp75f8ab52yahoo-style-wrap" style=
+=3D"font-family:times new roman, new york, times, serif;font-size:16px;"><d=
+iv></div>
+        <div dir=3D"ltr" data-setdir=3D"false">met siang bapak /ibu</div><d=
+iv dir=3D"ltr" data-setdir=3D"false">gimana perihal permohonan saya untuk b=
+isa bergabung di perusahaan OKUSI</div><div dir=3D"ltr" data-setdir=3D"fals=
+e">tks&nbsp;</div><div dir=3D"ltr" data-setdir=3D"false">agus</div><div><br=
+></div>
+       =20
+        </div><div id=3D"yahoo_quoted_8388740336" class=3D"yahoo_quoted">
+            <div style=3D"font-family:'Helvetica Neue', Helvetica, Arial, s=
+ans-serif;font-size:13px;color:#26282a;">
+               =20
+                <div>
+                        Pada Minggu, 6 Oktober 2024 pukul 15.40.31 GMT+7, c=
+ontkellylewis@testdomain.io &lt;contkellylewis@testdomain.io&gt; menulis:
+                    </div>
+                    <div><br></div>
+                    <div><br></div>
+               =20
+               =20
+                <div><div id=3D"yiv6360033074">=09<title>Okusi Associates -=
+ Indonesian Corporate Support Services</title>=09<style>#yiv6360033074 a:li=
+nk {color:#002958;}</style><div><div style=3D"font-family:Arial;background:=
+#eff;border:1px #eee solid;border-radius:5px;color:#002958;margin:auto auto=
+;text-align:center;">=09<div style=3D"width:100%;text-align:center;">=09=09=
+<a rel=3D"nofollow noopener noreferrer" target=3D"_blank" href=3D"https://o=
+kusiassociates.com/" style=3D"color:#002958;text-decoration:none;" title=3D=
+"Okusi Associates website.">=09=09=09<img style=3D"" src=3D"data:image/png;=
+base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAABvCAMAAAAt3sKMAAABWVBMVEUAAAALKVoJKFcJ=
+J1UKKFkLKVoKKFkKKFkKKFkKKFkKJ1gLKVkLKVoLKVoKKVoKKFkKKFkKKFkLKVoLKVoLKVoKKFk=
+KKFkLKVoKKFkLKVoLKVoKKFkLKVoLKVoLKVoLKVoKKFkKKFkKKVoKKVoLKVoKKFkKKFkKKFkLKV=
+oKKFkKKFkKKFkLKVoLKVoKKVoKKVoKKVoKKFoKKFoKKFkLKVoKKFkLKVoLKVoKKVoKKVoKKFkKK=
+FkKKFkLKFoLKFoLKVoKKFoKKFkLKFkKKFkLKVoLKVr///8HJlj8/P0DIlX09fi5wdCJl6/v8fTq=
+7PEAHlISL1/4+ft6iqUeOmest8fl6O2XpLng5Ovc4OfDytfS2OGQnbRJYISjr8GyvMvX3OTN091=
+0haFleJdfc5NBWH86UnoZNWRugJ0lQGzIztpRZokyS3SnssSCkapYbI6fq74rRXC+xtMAGU5P3J=
+cmAAAARXRSTlMA/AYDEvYPJTcfCabdmcwWDCms+eBOHPAz7ekYwPPY1Es+trF6PDBxyCNYgObDv=
+Ix1bJBVomDQlJ2JQi1GfWPiW1KEZ5e29wO7AAAciklEQVR42uzY+1fSYBzH8e+aUIEKioEiaCoB=
+hVLY8ZIXjlmfZ1wcuVOoYKld1Syr//+XBuQaYzKsDcY5e/0wbodn5/A+z3ieEf5RYGIq4k0tzQT=
+J0Xfw31Y3fOToKzBDIOYhR/+ASeYT5OgXME3A+5AcfQFmmo2Tow/AXBFnUdcHYLY5nhw2B9NFX5=
+DD3mCBZeeOjb3BEs5ktzVYY8FPDtuCVZxNu33BMhly2BSss0I3dGt97f7aCE96Mt4ImeDOJtne8=
+6ekYY/ogiDk83lBQFte6tztTJpDQ3QuO0lagIv+nz+ELBkbeUK9E+SwQc16Hl3A67NPl6c7ez9+=
+HJ6+vTjbbZN+gafOjE+jWVq7JOBMiR4GcJsMReGnXvFANkCWws3sXlaYTBLFcrlcEsXa873PHK6=
+xTJ1wh1HHNaAu6bEgehKYIkPjwCb1Ch8GRslQsEvRX10URZYT9wu5Gjm3fJQksXpcYKUdCP9cPV=
+XPPLHl8/NExPsnMy7IuC3zo9PCGBlzAeCpV/hwkgwNj3UjuoCdMisUpBxrVSgdlFnl0yvoGCYjs=
+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3D=3D">=09=09</=
+a>=09</div>=09<br>=09<div style=3D"">=09=09Thank you for contacting Okusi A=
+ssociates.<br>=09=09Someone will be in touch with you shortly.<br>=09=09A c=
+opy of your message appears below.=09</div></div><div style=3D"font-family:=
+Arial;background:#eff;border:1px #eee solid;border-radius:5px;color:#002958=
+;margin:auto auto;text-align:center;">=09<div style=3D"color:#222;">=09<div=
+ id=3D"yiv6360033074message" style=3D"font-family:Arial;border:1px #eee sol=
+id;border-radius:4px;color:#555;width:99%;text-align:left;font-size:12pt;">=
+<br>Phone: 082112007471<br><br>selamat sore, bapak /ibu  <br>saya agus  di =
+jakarta, saya ingin bertanya apakah di perusahaan ini masih butuh tenaga la=
+ki2 /posisi <br>untuk Masengger /pengurusan kitas dan visa si instansi2 ter=
+kait,saya pengalaman di bidang ini pak/ibu, saya lagi butuh pekerjaan. jika=
+ bapak ibu perlu teanaga laki2 saya bersedia kapanpun saya kerja di luar ko=
+ta gpp. mohon bapak /ibu bisa  bantu saya. <br>terima kasih</div>=09</div><=
+/div><div style=3D"font-family:Arial;background:#eff;border:1px #eee solid;=
+border-radius:5px;color:#002958;margin:auto auto;text-align:center;">=09<di=
+v style=3D"color:#333;">=09=09<p><a rel=3D"nofollow noopener noreferrer" ta=
+rget=3D"_blank" href=3D"https://okusiassociates.com" style=3D"color:#002958=
+;">OkusiAssociates.com</a></p>=09=09<p><b>Jakarta</b> <a rel=3D"nofollow no=
+opener noreferrer" style=3D"color:#002958;">+62 21 390 1007</a> &nbsp; <a r=
+el=3D"nofollow noopener noreferrer" style=3D"color:#002958;">+62 21 392 859=
+5</a></p>=09=09<p><b>Bali</b> <a rel=3D"nofollow noopener noreferrer" style=
+=3D"color:#002958;">+62 361 769 144</a> &nbsp;=09<b>Batam</b> <a rel=3D"nof=
+ollow noopener noreferrer" style=3D"color:#002958;">+62 778 741 5011</a></p=
+>=09</div>=09<div style=3D"width:100%;text-align:center;color:#444;line-hei=
+ght:0.7;">=09=09<p><b>=E2=80=A2</b> <b>permanent offices</b> conveniently l=
+ocated in <b>Jakarta, Batam, and Bali</b>.</p>=09  <p><b>=E2=80=A2</b> <b>c=
+omprehensive/integrated</b>: legal, immigration, accountancy, research.</p>=
+=09  <p><b>=E2=80=A2</b> <b>in-house</b>, over 60 full-time direct employee=
+s across Indonesia; <b>no outsourcing</b>.</p>=09  <p><b>=E2=80=A2</b> <b>o=
+ver 3,000 foreign companies</b>, more than any other firm in Indonesia.</p>=
+=09  <p><b>=E2=80=A2</b> companies set up <b>anywhere in Indonesia</b>.</p>=
+=09  <p><b>=E2=80=A2</b> since <b>1997</b>. &nbsp;27 years of service to In=
+donesia.</p>=09</div>=09<br></div></div></div>
+            </div>
+        </div></div></body></html>
+------=_Part_10610692_82976614.1728280404057--

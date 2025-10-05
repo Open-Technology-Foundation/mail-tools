@@ -1,0 +1,193 @@
+Return-Path: <jesse.martin@democorp.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 8957F3340204
+	for <drewjones@testmail.net>; Mon, 10 Jun 2024 19:39:23 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 10 Jun 2024 19:39:23 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id iAn/N8TzZmY0IzAAeHbnHg
+	(envelope-from <jesse.martin@democorp.com>); Mon, 10 Jun 2024 19:38:28 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=reject dis=none) header.from=geekfam.asia
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=geekfam.asia
+Received: from mail-ej1-f43.google.com (mail-ej1-f43.google.com [209.85.218.43])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 958F92640B54
+	for <legmorganhill@testdomain.io>; Mon, 10 Jun 2024 19:38:01 +0700 (WIB)
+Received: by mail-ej1-f43.google.com with SMTP id a640c23a62f3a-a6f21ff4e6dso73594366b.3
+        for <legmorganhill@testdomain.io>; Mon, 10 Jun 2024 05:38:01 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=geekfam.asia; s=google; t=1718023078; x=1718627878; darn=okusi.id;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=iRwfSL9oEnBrd6rOnBcSSLjvS2WFZUMqF6gZydZIzD0=;
+        b=ippnRGf8xDuxcBsYa2/U8u6t8RQ7Mur2ddZiuJEt76nd+GDlfeqIU14RySFd+PG4KO
+         VFrpmNVFRP3FW/7BQbbeIEHZd3Hydma+Z/AwAxRX5UuD9ix1ttalkIy1Ls2KXR+22nfz
+         UD93IgZw/0sx9uAG6USu1KqqhrH+useS8UbLaEsw9Ec9dm+/uiOhq293M6w7GHjMxTok
+         dxb6Yl7yN4Lpv+D4NyoOC9FGvoAfCl4kWXqE68JBsJrid9ZqKid+OTNeezUrajAySz8d
+         MHZ9nTTTUI3oaicBazPnL//Nd+CqhNyEUYQE3QzrhShjbqHVH9JlYv6H30M6sKbIfKM7
+         IhhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1718023078; x=1718627878;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=iRwfSL9oEnBrd6rOnBcSSLjvS2WFZUMqF6gZydZIzD0=;
+        b=Prl9t8VUY5juFwonlYbybU4+BRkLXRV4tWmHz/Kphq5/2OmzVAHvpt8uBQVscmdZLt
+         Leup584mS2r/j+CsXGKaU/yOBkjSbenAt49DyOv2NqJd1eOqaE7aZRd0jmuj5pQi1Llt
+         hEwP59mpIsHVrwtBXHiHka+ipElvXRZV2iV1fCKzBI1JSDKW/kS2BCyzTIAX1v2IzGBk
+         bdXaKA0VIC0kCJ9HfJzKPpFUFITiECFKk4mvKqNcT5IcsY5mJFWNVkz93AtuLEJJ+njA
+         bPyHLpYayAUm5P3LeyC1KUxfqG1PJXUQRAqqTItj9WW0LrwWbLyHbeBOlfnWHQI8OwAL
+         aCqg==
+X-Gm-Message-State: AOJu0YzRnZYiAv5ZVLlqIyhLpNFf++swg/ndTwZgcLKkjB71rnP+DbuO
+	k8LGEEWccuolfRVDssZVfZum9lYD+IkZLCSjo+koo5VeJZ3vAiCoiIJb1yHO4mb4fXEzOJZbzHW
+	DR1DoPE1FnzijSeLGoW4K9/uFaFM8toDJkcsq7N2To+CQeKr5CDo=
+X-Google-Smtp-Source: AGHT+IF/BeyJmGD0WeRiuUOd/HHtC6lBIHUW4lKpaWe9mGj/uZkOWsJu2pkZmw8aG8LCD/WIIqOf/FR2LR7ULKg1VnA=
+X-Received: by 2002:a17:906:4546:b0:a6f:ce5:286e with SMTP id
+ a640c23a62f3a-a6f0ce52ae1mr303299266b.58.1718023077501; Mon, 10 Jun 2024
+ 05:37:57 -0700 (PDT)
+MIME-Version: 1.0
+References: <hayden.garcia@samplebiz.org>
+In-Reply-To: <hayden.garcia@samplebiz.org>
+From: Jasmine Khor <jesse.martin@democorp.com>
+Date: Mon, 10 Jun 2024 20:37:39 +0800
+Message-ID: <CAF6D6tKZft3UFR7=haydenbrown@testmail.com>
+Subject: Re: ALERT: GEEK: Reappointment of Company Officeholders
+To: legmorganhill@testdomain.io
+Content-Type: multipart/alternative; boundary="0000000000004035b9061a886b98"
+X-Spam-Status: No, score=-1.9 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,KAM_HUGEIMGSRC,
+	RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2,SPF_HELO_NONE,SPF_PASS,
+	T_KAM_HTML_FONT_INVALID,T_REMOTE_IMAGE,T_SCC_BODY_TEXT_LINE
+	autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--0000000000004035b9061a886b98
+Content-Type: text/plain; charset="UTF-8"
+
+Hello, may I know how do I reappoint the director and chairman for another
+5 year term?
+Also do we need to reappoint both of them or just 1 of them?
+
+On Sun, 9 Jun 2024 at 09:16, <legmorganhill@testdomain.io> wrote:
+
+> This is an automated reminder from Okusi Associates.
+>
+> Reminder for PT Geek Fam Indonesia:
+>
+> The tenure of your company's officeholders (director/chairman) has expired
+> or is about to expire. Officeholders need to be reappointed for another
+> 5-year term.
+>
+> Please contact Okusi Associates for information concerning renewal.
+>
+>
+
+-- 
+
+JASMINE KHOR
+
+General Manager W: geekfam.asia
+
+<https://www.facebook.com/GeekFamDota2.MY/>
+<https://www.facebook.com/GeekFamMLBB.MY/>
+<https://www.facebook.com/GeekFamPUBGM.MY/>
+<https://www.instagram.com/geekfammy/> <https://twitter.com/TeamGeekFam>
+<https://www.linkedin.com/company/k-k-revolution/>
+
+--0000000000004035b9061a886b98
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Hello, may I know how do I reappoint the director and chai=
+rman for another 5 year term?=C2=A0<div>Also do we need to reappoint both o=
+f them or just 1 of them?</div></div><br><div class=3D"gmail_quote"><div di=
+r=3D"ltr" class=3D"gmail_attr">On Sun, 9 Jun 2024 at 09:16, &lt;<a href=3D"=
+mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a>&gt; wrote:<br></div><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px soli=
+d rgb(204,204,204);padding-left:1ex">This is an automated reminder from Oku=
+si Associates.<br>
+<br>
+Reminder for PT Geek Fam Indonesia:<br>
+<br>
+The tenure of your company&#39;s officeholders (director/chairman) has expi=
+red or is about to expire. Officeholders need to be reappointed for another=
+ 5-year term.<br>
+<br>
+Please contact Okusi Associates for information concerning renewal.<br>
+<br>
+</blockquote></div><br clear=3D"all"><div><br></div><span class=3D"gmail_si=
+gnature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gmail_signature"><d=
+iv dir=3D"ltr"><span><br><div dir=3D"ltr" style=3D"margin-left:0pt" align=
+=3D"left"><table style=3D"border:none;border-collapse:collapse"><colgroup><=
+col width=3D"173"><col width=3D"300"><col width=3D"128"></colgroup><tbody><=
+tr style=3D"height:0pt"><td style=3D"vertical-align:top;padding:5pt;overflo=
+w:hidden"><p dir=3D"ltr" style=3D"line-height:1.44;margin-top:0pt;margin-bo=
+ttom:0pt"><span style=3D"font-size:18pt;font-family:Arial;color:rgb(0,0,0);=
+background-color:transparent;font-weight:700;vertical-align:baseline;white-=
+space:pre-wrap"><span style=3D"border:none;display:inline-block;overflow:hi=
+dden;width:158px;height:158px"><img src=3D"https://lh6.googleusercontent.co=
+m/JCi-uIQFq7Ptz-uU4Hgw0S8vca8026Ikm_2xaMVa6NEga7_kfnKsXRpglLpGaEre5hDmq13JH=
+s-qVO5SmRPTqB0MEyncZynSJ_fyosJpZz7h7lB6l41l1FRm3b8z1z95gGUENowy" width=3D"9=
+6" height=3D"96" style=3D"margin-left: 0px; margin-top: 0px;"></span></span=
+></p></td><td style=3D"vertical-align:top;padding:5pt;overflow:hidden"><p d=
+ir=3D"ltr" style=3D"line-height:1.44;margin-top:0pt;margin-bottom:0pt"><spa=
+n style=3D"font-size:12pt;font-family:Verdana;color:rgb(223,0,0);background=
+-color:transparent;font-weight:700;vertical-align:baseline;white-space:pre-=
+wrap">JASMINE KHOR</span></p><p dir=3D"ltr" style=3D"line-height:1.44;margi=
+n-top:0pt;margin-bottom:0pt"><span style=3D"background-color:transparent;fo=
+nt-size:12pt;font-family:Lato,sans-serif;color:rgb(0,0,0);font-weight:700;v=
+ertical-align:baseline;white-space:pre-wrap">General Manager
+W: </span><a href=3D"https://geekfam.asia/" target=3D"_blank"><span style=
+=3D"font-size:12pt;font-family:Lato,sans-serif;color:rgb(17,85,204);backgro=
+und-color:transparent;vertical-align:baseline;white-space:pre-wrap">geekfam=
+.asia</span></a></p><p dir=3D"ltr" style=3D"line-height:1.44;margin-top:0pt=
+;margin-bottom:0pt"><a href=3D"https://www.facebook.com/GeekFamDota2.MY/" t=
+arget=3D"_blank"><span style=3D"font-size:12pt;font-family:Lato,sans-serif;=
+color:rgb(17,85,204);background-color:transparent;vertical-align:baseline;w=
+hite-space:pre-wrap"><span style=3D"border:none;display:inline-block;overfl=
+ow:hidden;width:37px;height:47px"><img src=3D"https://lh3.googleusercontent=
+.com/STCSdVnC7fwmIWr7dl4bakCQ6X4uBXKy_5XyV6nkBlAkTJRqf1tPi8G-W6KyBBUG4BJcum=
+1x2BO5inVTLWn_I3gbGmYI1Cl0mfgHz31AFo-SZa23v9n3wx05WNBabTHtebj8gqaE" width=
+=3D"37" height=3D"47" style=3D"margin-left: 0px; margin-top: 0px;"></span><=
+/span></a><a href=3D"https://www.facebook.com/GeekFamMLBB.MY/" target=3D"_b=
+lank"><span style=3D"font-size:12pt;font-family:Lato,sans-serif;color:rgb(1=
+7,85,204);background-color:transparent;vertical-align:baseline;white-space:=
+pre-wrap"><span style=3D"border:none;display:inline-block;overflow:hidden;w=
+idth:49px;height:43px"><img src=3D"https://lh5.googleusercontent.com/gypVX-=
+geawHRd-mJ_UCHbwO3WBHXo4WmLRHESzJPxWNohAX2-weqLRxUXgyTiclYUWzJZG9qx6mM-cHUK=
+Xz-dGoW_N_o4IS6msjyXJxI5qNnK1lH7VnqPDZdooHo09oMTi4v5tWY" width=3D"49" heigh=
+t=3D"43" style=3D"margin-left: 0px; margin-top: 0px;"></span></span></a><a =
+href=3D"https://www.facebook.com/GeekFamPUBGM.MY/" target=3D"_blank"><span =
+style=3D"font-size:12pt;font-family:Lato,sans-serif;color:rgb(17,85,204);ba=
+ckground-color:transparent;vertical-align:baseline;white-space:pre-wrap"><s=
+pan style=3D"border:none;display:inline-block;overflow:hidden;width:37px;he=
+ight:43px"><img src=3D"https://lh3.googleusercontent.com/FxuibXwq6-o9u1Xao6=
+cilbvOU7tx6l5sr9o-6K6Gp8jyLO0jBXNlAA02BLlgGZ7yOwml9S7ysr40zCsFa60NjWfhyNHMr=
+AVyXsF4z9kpLXjhRZGF6WByKR4OCd6emXRCt7ltubEu" width=3D"37" height=3D"43" sty=
+le=3D"margin-left: 0px; margin-top: 0px;"></span></span></a><a href=3D"http=
+s://www.instagram.com/geekfammy/" target=3D"_blank"><span style=3D"font-siz=
+e:12pt;font-family:Lato,sans-serif;color:rgb(17,85,204);background-color:tr=
+ansparent;vertical-align:baseline;white-space:pre-wrap"><span style=3D"bord=
+er:none;display:inline-block;overflow:hidden;width:32px;height:45px"><img s=
+rc=3D"https://lh4.googleusercontent.com/SAZan1QnoOaAI9Iq7t8dg83S0d5IccIx5b3=
+jHXx8162VlQORINoTZW6HJ5UY3s6Vbe-PxGQyblUo0xMSuaqLKQKGvyxFi6DVAVgALcwIy1PEYN=
+xLyAf7k_FdB3OEV6z2cETMB4Pu" width=3D"32" height=3D"45" style=3D"margin-left=
+: 0px; margin-top: 0px;"></span></span></a><a href=3D"https://twitter.com/T=
+eamGeekFam" target=3D"_blank"><span style=3D"font-size:12pt;font-family:Lat=
+o,sans-serif;color:rgb(17,85,204);background-color:transparent;vertical-ali=
+gn:baseline;white-space:pre-wrap"><span style=3D"border:none;display:inline=
+-block;overflow:hidden;width:33px;height:47px"><img src=3D"https://lh4.goog=
+leusercontent.com/DuDFqYznMwhfsvx8rRUUAmAmidQ652dmQpyoZWy1RAY7WH5kp5644t2iY=
+2V0r6TMrSZ2c_dj1UVRa48EYKC7gAfRR0DkB4J4e-792-cd3idI9fPAABsFhMuDzIG7rdI_RJTi=
+5XAS" width=3D"33" height=3D"47" style=3D"margin-left: 0px; margin-top: 0px=
+;"></span></span></a><a href=3D"https://www.linkedin.com/company/k-k-revolu=
+tion/" target=3D"_blank"><span style=3D"font-size:12pt;font-family:Lato,san=
+s-serif;color:rgb(17,85,204);background-color:transparent;vertical-align:ba=
+seline;white-space:pre-wrap"><span style=3D"border:none;display:inline-bloc=
+k;overflow:hidden;width:44px;height:49px"></span></span></a></p></td><td st=
+yle=3D"vertical-align:top;padding:5pt;overflow:hidden"><br></td></tr></tbod=
+y></table></div></span></div></div>
+
+--0000000000004035b9061a886b98--

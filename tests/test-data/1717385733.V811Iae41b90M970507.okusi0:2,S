@@ -1,0 +1,239 @@
+Return-Path: <drewgarcia@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id D181233401F8
+	for <drewjones@testmail.net>; Mon,  3 Jun 2024 10:35:33 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 03 Jun 2024 10:35:33 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id iKkCOsw5XWZQFQkAeHbnHg
+	(envelope-from <drewgarcia@testdomain.io>); Mon, 03 Jun 2024 10:34:36 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1717385675; bh=FZ4DeL0kB5KJIoQYsJ6g0Zs6vDyBf3PNqL8HZKGXgI4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=UfmReN8YOyppUpbjX0WFBTxO0itUGPVjFcPRldNKi6mgAT3TETU9vTbEUoRXJxbP9
+	 uWe+GRHkUKL9gx7K1wvV0dEk5SIDShSfqQFVHQMFagyrWjgC3dRobNtSt3qmh6FBEp
+	 YF5Paa+4lKbiOWhcQvt+pv+OPdsiaAATqvqFjRoE20e+66n+8EptzAS1inMGv9hxLD
+	 WbCTKe63U9KNYAnhNrJ+BUMJtg1H9uu7BxbnUCIsm7/zGBVsQerZH0NbiIV327X42T
+	 4zkcZGBc8IonH47XTfdZr0Xomk+6egdjHDA5MUXmJKpEGIHFflYgZI+KntcUzCVQ8C
+	 kys4pEyMG+SXw==
+Received: from [192.168.1.6] (unknown [36.69.105.60])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 45D8D2640B49;
+	Mon,  3 Jun 2024 10:34:35 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------gOsDwmcOx6YMbZHMRxuvZdBm"
+Message-ID: <df9b0551-aad0f61c-a982e89a-4194a885@testdomain.io>
+Date: Mon, 3 Jun 2024 10:34:16 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: Fwd: Inestor kitas [#:665aab070]
+To: Lina Munir <contkellylewis@testdomain.io>, "devonlewis@testdomain.io" <devonlewis@testdomain.io>
+Cc: "dakotagarcia@testdomain.io" <dakotagarcia@testdomain.io>
+References: <665aab07.8e4.enquiry.okusi.id>
+ <83d1788d-350bf02e-c6351077-050a636a@testdomain.io>
+Content-Language: en-US
+From: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+Organization: Okusi Associates
+In-Reply-To: <83d1788d-350bf02e-c6351077-050a636a@testdomain.io>
+X-Spam-Status: No, score=-3.1 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID,T_SCC_BODY_TEXT_LINE autolearn=ham
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------gOsDwmcOx6YMbZHMRxuvZdBm
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Selamat pagi bu Linam,
+
+Baik bu, akan kami infokan segera. Terima kasih banyak.
+
+Salam,
+
+Haliza
+
+Photo of Noorhaliza Putri Fadhila <https://okusiassociates.com/id/1321> 
+*Noorhaliza Putri Fadhila* B.A
+Client Compliance for Visas and Work Permit, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Noorhaliza Putri Fadhila. <whatsapp://send?phone=6282128910348>
++6282128910348 <whatsapp://send?phone=6282128910348> | +62213901007 
+<tel:+62213901007> | drewgarcia@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 3/6/24 10:30, Lina Munir wrote:
+>
+>
+> FYI
+>
+> -------- Forwarded Message --------
+> Subject: 	Inestor kitas [#:665aab070]
+> Date: 	Sat, 01 Jun 2024 12:00:55 +0700
+> From: 	alexflores@testmail.com
+> Organization: 	Okusi Associates
+> To: 	contkellylewis@testdomain.io <contkellylewis@testdomain.io>
+>
+>
+>
+>
+> Phone: +6282195738180
+>
+> Actually am looking for investor kitas for my friend if you can let me 
+> know the requirements
+--------------gOsDwmcOx6YMbZHMRxuvZdBm
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Selamat pagi bu Linam,</p>
+    <p>Baik bu, akan kami infokan segera. Terima kasih banyak.</p>
+    <p>Salam,</p>
+    Haliza
+    <p></p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1321"
+                target="_blank"
+                title="Okusi Associates - Noorhaliza Putri Fadhila">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Noorhaliza Putri Fadhila"
+                  src="https://okusiassociates.com/a/m/photo-haliza.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Noorhaliza Putri Fadhila</strong> <span
+                style="font-size:13px;color:#555 !important;" title="">
+                B.A</span>
+              <div style="font-size:13px;color:#888 !important;">
+                Client Compliance for Visas and Work Permit, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Noorhaliza Putri Fadhila."
+                  href="whatsapp://send?phone=6282128910348"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Noorhaliza Putri Fadhila."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6282128910348"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6282128910348</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Noorhaliza Putri Fadhila."
+                  href="mailto:drewgarcia@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">drewgarcia@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 3/6/24 10:30, Lina Munir wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:83d1788d-350bf02e-c6351077-050a636a@testdomain.io">
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <p><br>
+      </p>
+      <div class="moz-forward-container">FYI<br>
+        <br>
+        -------- Forwarded Message --------
+        <table class="moz-email-headers-table" cellspacing="0"
+          cellpadding="0" border="0">
+          <tbody>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Subject:
+              </th>
+              <td>Inestor kitas [#:665aab070]</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Date:
+              </th>
+              <td>Sat, 01 Jun 2024 12:00:55 +0700</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">From:
+              </th>
+              <td><a
+                  class="moz-txt-link-abbreviated moz-txt-link-freetext"
+                  href="mailto:alexflores@testmail.com"
+                  moz-do-not-send="true">alexflores@testmail.com</a></td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Organization:
+              </th>
+              <td>Okusi Associates</td>
+            </tr>
+            <tr>
+              <th valign="BASELINE" nowrap="nowrap" align="RIGHT">To: </th>
+              <td><a
+                  class="moz-txt-link-abbreviated moz-txt-link-freetext"
+                  href="mailto:contkellylewis@testdomain.io" moz-do-not-send="true">contkellylewis@testdomain.io</a>
+                <a class="moz-txt-link-rfc2396E"
+                  href="mailto:contkellylewis@testdomain.io" moz-do-not-send="true">&lt;contkellylewis@testdomain.io&gt;</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <div id="message"
+style="font-family:Arial;border:1px #eee solid;border-radius:4px;color:#555;width:99%;max-width:40rem;text-align:left;margin:0rem;padding:0rem;font-size:12pt;"><br>
+          Phone: +6282195738180<br>
+          <br>
+          Actually am looking for investor kitas for my friend if you
+          can let me know the requirements</div>
+      </div>
+    </blockquote>
+  </body>
+</html>
+
+--------------gOsDwmcOx6YMbZHMRxuvZdBm--

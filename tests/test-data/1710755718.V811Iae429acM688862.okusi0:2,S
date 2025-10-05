@@ -1,0 +1,413 @@
+Return-Path: <oakleybrown@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 8F0CF3340204
+	for <drewjones@testmail.net>; Mon, 18 Mar 2024 16:55:18 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 18 Mar 2024 16:55:18 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id WEV0KlUP+GWidB4AeHbnHg
+	(envelope-from <oakleybrown@testdomain.io>); Mon, 18 Mar 2024 16:54:29 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1710755668; bh=sOs8hWDZmtFC4zQ6qmqeIiOHa8Jhfoz0xi+XLNhZc+U=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=o7jbHxSSQzRCDdo1yr9otrRxeYrKLIv4JaJpoS/fb/0RawPlK3j3W4kjgKTRTG9GI
+	 U54lyfZ4e44KhAxJJo0YMRUFCKNDykvrbAobd8TussKLSzI5wv1tAwTiUEEwL6eih8
+	 g/znWxnu0wB9a2ExmXdz4RfUUKwZODuAJ187LTsJjo4jLIcROR5josruGiXRpYr+IW
+	 MS8ZEVXAIl49rWUtaAS1gP/6+aKnIAUPKvnBP1gA2A2NYgOoByQ/RyrI0yanzrLRBb
+	 DexqBFKl95dt5KiTxu13SpHNmEL2VIkCcMK5Bu19lvrs5w/gVYYji0hcge1IycA8MR
+	 lE1VFNN1yb9DA==
+Received: from [192.168.1.81] (unknown [192.168.1.81])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 2B6392640B49;
+	Mon, 18 Mar 2024 16:54:28 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------qn1KQ55BkIf6kvmQZSRSRU9V"
+Message-ID: <0339a79b-a9ea4421-fac74798-c92816a7@testdomain.io>
+Date: Mon, 18 Mar 2024 16:54:27 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: Introduction to Okusi Associates >< JurisTax
+Content-Language: en-US
+To: Jimy Abadi <justice.smith@democorp.com>,
+ "harperallen@testcompany.co" <harperallen@testcompany.co>
+Cc: "dakotagarcia@testdomain.io" <dakotagarcia@testdomain.io>, "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>,
+ Dicky Parengkuan <river.robinson@democorp.com>
+References: <dakotadavis@testmail.com>
+From: Sigit Erdianto Sunarno <oakleybrown@testdomain.io>
+Organization: Okusi Associates
+Disposition-Notification-To: Sigit Erdianto Sunarno <oakleybrown@testdomain.io>
+In-Reply-To: <dakotadavis@testmail.com>
+X-Spam-Status: No, score=-103.1 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID,T_SCC_BODY_TEXT_LINE,USER_IN_WELCOMELIST,
+	USER_IN_WHITELIST autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------qn1KQ55BkIf6kvmQZSRSRU9V
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear Jimy,
+
+
+I would like to extend my sincere gratitude to you for facilitating the 
+introduction.
+
+
+Dear Vanessa,
+
+
+I hope this message finds you well.
+
+Building upon Jimy's initial introduction, I am pleased to inform you 
+that we specialize in company establishment services, with over 25 years 
+of successful operation in Indonesia. In particular, Ibu Reni, our Head 
+of Compliance, is eager to engage with you and discuss how we can best 
+support your endeavors in this area.
+
+To facilitate a detailed discussion, we are open to arranging a meeting 
+at your convenience, either virtually or in person at our office located 
+in the Skyline Building, Thamrin Jakarta. Kindly share your availability 
+so we can schedule a time that works best for you.
+
+We look forward to your response and are excited about the prospect of 
+working together.
+
+Warm regards,
+Photo of Sigit Erdianto Sunarno <https://okusiassociates.com/id/1259> 
+*Sigit Erdianto Sunarno* CPA
+Registered Public Accountant, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Sigit Erdianto Sunarno. <whatsapp://send?phone=628118162000>   Sigit 
+Erdianto Sunarno on LinkedIn <https://www.linkedin.com/in/sigitsunarno/>
++628118162000 <whatsapp://send?phone=628118162000> | +62213901007 
+<tel:+62213901007> | jamierobinson@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 18/3/24 16:37, Jimy Abadi wrote:
+> Hi Sigit,
+>
+> Hope this email finds you well,
+>
+> I want to introduce you to Vanessa from Juris Tax (Home - Juristax 
+> <https://www.juristax.com/>). Vanessa is exploring to establish an 
+> entity in Indonesia, JurisTax is management service company which 
+> provide services like establishment of entity, accounting, taxation, 
+> etc which cover jurisdictions of Singapore, Dubai, Mauritius and any 
+> others. Vanessa is in Indonesia at this moment and I think is good for 
+> having a meeting directly with you, because In OKUSI Associates (Okusi 
+> Associates | Indonesian Corporate Services 
+> <https://okusiassociates.com/>) is providing the same services. 
+> Probably it can be a good opportunity for both to explore.
+>
+> Feel free to having further discussion.
+>
+> Best regards,
+>
+> Jimy Abadi
+>
+> /Partner/
+>
+> M : +62 856 4513 8021
+>
+> T : +62 21 515 7652
+>
+> E :jordan.jones@democorp.com
+>
+> *PT DELTA ALPHA KAPITAL*
+>
+> World Capital Tower 11^th  floor
+>
+> Jl. Dr. Ide Anak Agung Gde Agung, Lot D
+>
+> Lingkar Mega Kuningan
+>
+> Jakarta Selatan 12950, Indonesia
+>
+> www.dealkapital.com
+>
+> /The information on this email and any attachments are confidential 
+> and protected by legal privilege. If you are not the intended 
+> recipient, you must not distribute, copy, disclose or use the 
+> information or attached files in this email in any way. Thank you for 
+> your cooperation./
+>
+>
+--------------qn1KQ55BkIf6kvmQZSRSRU9V
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p><font face="Georgia">Dear Jimy, </font></p>
+    <p><font face="Georgia"><br>
+      </font></p>
+    <p><font face="Georgia">I would like to extend my sincere gratitude
+        to you for facilitating the introduction.</font></p>
+    <p><font face="Georgia"><br>
+      </font></p>
+    <p><font face="Georgia">Dear Vanessa,</font></p>
+    <font face="Georgia"><br>
+      I hope this message finds you well. <br>
+      <br>
+      Building upon Jimy's initial introduction, I am pleased to inform
+      you that we specialize in company establishment services, with
+      over 25 years of successful operation in Indonesia. In particular,
+      Ibu Reni, our Head of Compliance, is eager to engage with you and
+      discuss how we can best support your endeavors in this area.<br>
+      <br>
+      To facilitate a detailed discussion, we are open to arranging a
+      meeting at your convenience, either virtually or in person at our
+      office located in the Skyline Building, Thamrin Jakarta. Kindly
+      share your availability so we can schedule a time that works best
+      for you.<br>
+      <br>
+      We look forward to your response and are excited about the
+      prospect of working together.<br>
+      <br>
+      Warm regards,</font>
+    <div class="moz-signature">
+      <style><font face="Georgia">
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</font></style>
+      <table
+style="font-size: 16px; color: rgb(85, 85, 85); margin: 4px 0px 0px; padding: 0px; line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <font face="Georgia"><a
+                  href="https://okusiassociates.com/id/1259"
+                  target="_blank"
+                  title="Okusi Associates - Sigit Erdianto Sunarno">
+                  <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                    alt="Photo of Sigit Erdianto Sunarno"
+src="https://okusiassociates.com/a/m/photo-erdianto.jpg">
+                </a></font>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <font face="Georgia"><strong>Sigit Erdianto Sunarno</strong>
+                <span style="font-size:13px;color:#555 !important;"
+                  title=""> CPA</span></font>
+              <div style="font-size:13px;color:#888 !important;"><font
+                  face="Georgia">
+                  Registered Public Accountant, <a
+                    href="https://okusiassociates.com"
+                    title="Indonesian Corporate Services"
+                    target="_blank" style="color:#888 !important;">Okusi
+                    Associates</a></font>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <font face="Georgia"><a title="Okusi Associates website"
+                    href="https://okusiassociates.com"
+                    style="color:#888 !important;" target="_blank">
+                    <img style="height:28px;"
+                      alt="Okusi Associates website"
+                      src="https://okusiassociates.com/a/m/oa.png">
+                  </a>
+                   
+                  <a title="Send Whatsapp to Sigit Erdianto Sunarno."
+                    href="whatsapp://send?phone=628118162000"
+                    target="_blank">
+                    <img style="height:28px;"
+                      alt="Send Whatsapp to Sigit Erdianto Sunarno."
+                      src="https://okusiassociates.com/a/m/wa.png">
+                  </a>
+                   
+                  <a title="Sigit Erdianto Sunarno on LinkedIn."
+                    href="https://www.linkedin.com/in/sigitsunarno/"
+                    style="color:#888 !important;" target="_blank">
+                    <img style="height:28px;"
+                      alt="Sigit Erdianto Sunarno on LinkedIn"
+                      src="https://okusiassociates.com/a/m/li.png">
+                  </a></font>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <font face="Georgia"><a
+                    href="whatsapp://send?phone=628118162000"
+                    style="color:#888 !important;"
+                    title="Voice/WhatsApp/SMS">+628118162000</a>
+                  | <a href="tel:+62213901007"
+                    style="color:#888 !important;"
+                    title="Jakarta Office Landline.">+62213901007</a>
+                  |
+                  <a title="Send email to Sigit Erdianto Sunarno."
+                    href="mailto:jamierobinson@testdomain.io"
+                    style="color:#888 !important;"
+                    class="moz-txt-link-freetext">jamierobinson@testdomain.io</a>
+                  |
+                  <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                    style="color:#888 !important;">okusiassociates.com</a></font>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <font face="Georgia"><br>
+      </font><br>
+    </div>
+    <div class="moz-cite-prefix">On 18/3/24 16:37, Jimy Abadi wrote:<br>
+    </div>
+    <blockquote type="cite"
+cite="mid:dakotadavis@testmail.com">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <style type="text/css" style="display:none;">P {margin-top:0;margin-bottom:0;}</style>
+      <div class="elementToProof"><span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">Hi
+          Sigit, </span></div>
+      <div class="elementToProof"
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br>
+        </span></div>
+      <div class="elementToProof"
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">Hope
+          this email finds you well,</span></div>
+      <div class="elementToProof"
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br>
+        </span></div>
+      <div class="elementToProof"
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">I
+          want to introduce you to Vanessa from Juris Tax (<a
+            href="https://www.juristax.com/"
+            id="OWA1655f283-6a0c-cefd-4b3b-d477bcd96ac1"
+            class="OWAAutoLink" moz-do-not-send="true">Home - Juristax</a>).
+          Vanessa is exploring to establish an entity in Indonesia,
+          JurisTax is management service company which provide services
+          like establishment of entity, accounting, taxation, etc which
+          cover jurisdictions of Singapore, Dubai, Mauritius and any
+          others. Vanessa is in Indonesia at this moment and I think is
+          good for having a meeting directly with you, because In OKUSI
+          Associates (<a href="https://okusiassociates.com/"
+            id="OWA739a3deb-196b-30e8-c041-2e589a6ec75c"
+            class="OWAAutoLink" moz-do-not-send="true">Okusi Associates
+            | Indonesian Corporate Services</a>) is providing the same
+          services. Probably it can be a good opportunity for both to
+          explore.</span></div>
+      <div
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br>
+        </span></div>
+      <div class="elementToProof"
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">Feel
+          free to having further discussion.</span></div>
+      <div class="elementToProof"
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br>
+        </span></div>
+      <div
+style="text-align: left; text-indent: 0px; background-color: rgb(255, 255, 255); margin: 0px;">
+        <span
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">Best
+          regards,</span></div>
+      <div class="elementToProof"
+style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        <br>
+      </div>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt; color: rgb(153, 121, 80);">Jimy
+          Abadi</span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);"><i>Partner</i></span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">M
+          : +62 856 4513 8021</span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">T 
+          : +62 21 515 7652</span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">E
+          :</span><span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(153, 121, 80);"> <a class="moz-txt-link-abbreviated" href="mailto:jordan.jones@democorp.com">jordan.jones@democorp.com</a></span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);"> </span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 12pt; color: rgb(153, 121, 80);"><b>PT
+            DELTA ALPHA KAPITAL</b></span></p>
+      <p
+style="background-color: white; margin: 0px; font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">World
+          Capital Tower 11</span><span
+style="font-family: Arial, sans-serif; color: rgb(62, 66, 75);"><sup>th</sup></span><span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);"> floor</span></p>
+      <p
+style="background-color: white; margin: 0px; font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">Jl.
+          Dr. Ide Anak Agung Gde Agung, Lot D</span></p>
+      <p
+style="background-color: white; margin: 0px; font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">Lingkar
+          Mega Kuningan</span></p>
+      <p
+style="background-color: white; margin: 0px; font-family: &quot;Times New Roman&quot;, serif; font-size: 12pt; color: rgb(36, 36, 36);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);">Jakarta
+          Selatan 12950, Indonesia</span></p>
+      <p
+style="background-color: white; margin: 0px; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);"><a class="moz-txt-link-abbreviated" href="http://www.dealkapital.com">www.dealkapital.com</a></span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 10pt; color: rgb(62, 66, 75);"> </span></p>
+      <p
+style="text-align: left; background-color: rgb(255, 255, 255); margin: 0cm; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(32, 31, 30);">
+        <span
+style="font-family: Arial, sans-serif; font-size: 9pt; color: rgb(62, 66, 75); background-color: white;"><i>The
+            information on this email and any attachments are
+            confidential and protected by legal privilege. If you are
+            not the intended recipient, you must not distribute, copy,
+            disclose or use the information or attached files in this
+            email in any way. Thank you for your cooperation.</i></span></p>
+      <span
+style="font-family: Calibri, Arial, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);"><br>
+      </span>
+    </blockquote>
+  </body>
+</html>
+
+--------------qn1KQ55BkIf6kvmQZSRSRU9V--

@@ -1,0 +1,214 @@
+Return-Path: <>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 812053340204
+	for <drewjones@testmail.net>; Sun, 28 Jul 2024 08:17:54 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Sun, 28 Jul 2024 08:17:54 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id PQGtGiicpWYxxiwAeHbnHg
+	(envelope-from <>); Sun, 28 Jul 2024 08:17:28 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=quarantine dis=none) header.from=sentosakimia.com
+Authentication-Results: OpenDMARC; spf=none smtp.helo=mfox-use2.prod.hydra.sophos.com
+Received: from mfox-use2.prod.hydra.sophos.com (mfox-use2.prod.hydra.sophos.com [103.246.251.227])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 9B2AD2640002
+	for <legmorganhill@testdomain.io>; Sun, 28 Jul 2024 08:16:37 +0700 (WIB)
+Received: from mfod-use2.prod.hydra.sophos.com (ip-172-21-0-71.us-east-2.compute.internal [172.21.0.71])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by mfox-use2.prod.hydra.sophos.com (Postfix) with ESMTPS id 4WWk8y2MCBz93V
+	for <legmorganhill@testdomain.io>; Sun, 28 Jul 2024 01:16:34 +0000 (UTC)
+Received: from ip-172-21-0-57.us-east-2.compute.internal (ip-172-21-0-57.us-east-2.compute.internal [127.0.0.1])
+	by mfod-use2.prod.hydra.sophos.com (Postfix) with ESMTP id 4WWk8r59vLzsS7p
+	for <legmorganhill@testdomain.io>; Sun, 28 Jul 2024 01:16:28 +0000 (UTC)
+X-Sophos-Product-Type: Mailflow
+X-Sophos-Email-ID: 666d9272a3864b749081694f1c7e7a5a
+Received: from HK2PR02CU002.outbound.protection.outlook.com
+ (mail-eastasiaazlp17010005.outbound.protection.outlook.com [40.93.128.5])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mf-outbound-us-east-2.prod.hydra.sophos.com (Postfix) with ESMTPS id
+ 4WWk8q096Bz7t89
+ for <legmorganhill@testdomain.io>; Sun, 28 Jul 2024 01:16:27 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=J0w7P/udeXgkJZ7TEkSUu2VBrnRMBl4/HcvU72MoRFNYE9V4g8zFPED9fp3DSm2neSEXLUbzmww90x0ZdWG08gtjRZM5q+mkzeQJCgYP/DQW6u2y6m5YaRBQ5Mz993qVphWiLv2f0aUbRhV/hSIAwvXDqwrmlLBOIE9Uf2orNL3063WE8FT9ucHUl/TtLiNXkfWePcfSAijojvx7st0Z6NGkmJIG/agEDJrbXobSGuL/dB0ADXBkLPeAyRH5ctR5biBcGoaM3hyKpql6xgG+AZczc8CoS42cgfZVbq7GuX8FUnX6xwKwcYaEr7mVQRZgSyCHH+SriipJ3qpH5kSigA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=MUNdFdE/aT9WicqKBkPd42RXDHvEhPFx6hBmKhP35i8=;
+ b=c47XaDguPiaWfaIWdZrBmo8DvD3GBzc9sjdjSxeUEo76PIeB1ynksWqAI1jUWz6ydXpdW031HPoMpp6JDxcI3CXc/KYpCmT+8I7tKNilRnYHzmEmZLaDzPGZdoc3EsRkbXIua8yz0UytKMTkalCSk941C5+omeOCGjcGp1vAaSO3j6Xiw8LGLpYvOZ9xqzay3NWos/SpzGcGX8D33dxVWfsFI7J4BbZFtdEM/BHs49g3poTdavVdywOW+d3H1GyamISxVXcVnhG4Lik2nWqi3MnfmBtyx8p6LabAMWAEXKLtLIAGlnTV+HNFua6H3QbemotqFjHoEgHLmqK83t+6Sg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=pass
+ action=none header.from=sentosakimia.com; dkim=pass
+ header.d=sentosakimia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sentosakimia.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=MUNdFdE/aT9WicqKBkPd42RXDHvEhPFx6hBmKhP35i8=;
+ b=rpOtqpjTtcSdMVunKvA9A0Cfu0jT8+Hr0jrBlw0voMfEkbGgvvnoBiqsJOG3qPPdW6vBbbUdyPg7qh74E2P/3yzWleW5mqTkEYvE9TmoY46SMjG72gVV+mN0xXVIgxzRRyFnUFfIIHiTvN638zAkyo7QFCFZhBK5EI3OLY7Wr68dPIY+/RkhtL9JuQqsXI0VcNHLfZKmkMmDWhF8a6vhP0Y0PpWzUA0YWR+E5fmhB4P0W8BUe07zS/ZjQ+f1pKXP8YRCNRL7X8/BDJhAMaUH4aSL+dgNJNh/opBKOX7jwHz4SM/JTOt1597tT59W5jYp7kPWNZK7FkTP2f4yQ5ikFw==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1722129382; 
+ s=v1; d=mail-dkim-us-east-2.prod.hydra.sophos.com;
+ h=Content-Type:Date:Subject:To:From;
+ bh=MUNdFdE/aT9WicqKBkPd42RXDHvEhPFx6hBmKhP35i8=;
+ b=yjmGvvkkdBgtg4M8DBJthurM2q6TAZLn5LymZ42bqhWPdLbuMGIFehu2sGXCRQKw
+ n7vAYAVLUtNHA0x3vDUHaIWyX2MPLgUg7c8OoQy/UwCTYsd6/hGB+mZ9B4zAvHQQwrp
+ jctkrFicp1VleO2eDro4NevuvY7tWUSxcPHjtp9otyIWNNgmOIvAdDmW712X83Km2KL
+ jaqE92PjhsP3hs2yvafPEI368r4A7sVEH6Qzu9zoFXc+GpPWcR5DATeFUa3AQSzRp74
+ 3GpCxZhWIMB8gIPE3kIXkeCSaROFZgRjIbxQ7F/0tv9c/fLk2z7sQ7QxU3wXlWAnDdr
+ A+lsHMrJzg==
+Received: from TYZPR02MB6333.apcprd02.prod.outlook.com (2603:1096:400:418::9)
+ by OSQPR02MB7904.apcprd02.prod.outlook.com (2603:1096:604:297::13)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7784.29; Sun, 28 Jul
+ 2024 01:16:22 +0000
+Received: from TYZPR02MB6333.apcprd02.prod.outlook.com ([::1]) by
+ TYZPR02MB6333.apcprd02.prod.outlook.com ([fe80::b831:a1fb:895d:12e8%2]) with
+ Microsoft SMTP Server id 15.20.7807.023; Sun, 28 Jul 2024 01:16:22 +0000
+From: Fernanda <fernanda.i0@samplemail.org>
+To: "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>
+Subject: Automatic reply: ALERT: SKA: Nominee Director Services
+Thread-Topic: ALERT: SKA: Nominee Director Services
+Thread-Index: AQHa4IvBGGvjeqIZfUiYL4A1a8SXq7ILVm0C
+Date: Sun, 28 Jul 2024 01:16:22 +0000
+Message-ID: <41de0dce04282de84ceec666889e4388@testmail.com>
+References: <rowan.perez@samplebiz.org>
+In-Reply-To: <rowan.perez@samplebiz.org>
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: All
+X-MS-Exchange-Inbox-Rules-Loop: fernanda.i0@samplemail.org
+X-MS-TNEF-Correlator: 
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sentosakimia.com;
+x-ms-exchange-parent-message-id: <rowan.perez@samplebiz.org>
+auto-submitted: auto-generated
+x-ms-exchange-generated-message-source: Mailbox Rules Agent
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: TYZPR02MB6333:EE_|OSQPR02MB7904:EE_
+x-ms-office365-filtering-correlation-id: 77d4e902-b037-4ef1-59c6-08dcaea2e4f5
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+ ARA:13230040|50650200027|366016|1800799024|376014|80100003; 
+x-microsoft-antispam-message-info: =?us-ascii?Q?NjUCS7zvPR6fMLz/ZqFm4rDzPn6jzwDy3BvyMRP9SPdeoVbKxZ2CmxcJRGdC?=
+ =?us-ascii?Q?2RFmDVit0crIO26LzbAWR0NZKIrifpiNvmIQeD1Mt01kIEdmnPzCpUtAvOFg?=
+ =?us-ascii?Q?THeSHk3dccO/uT2bKn3qXdq4thXF5UIFqEzPGY7rjhZ1tAZoi3v2rpeB63Xj?=
+ =?us-ascii?Q?nnLu1w0CCm91KS2Lb2cuMnh+INH0kwDXgX2FXOKIW9np5n68aRrhxwW/HuQF?=
+ =?us-ascii?Q?H7+ipbQwpx/o2dd3XrtJw1eav1eUX3vvNbnPrjolHxJx7o1SRNNkVcUlOcJz?=
+ =?us-ascii?Q?tYODyChdhRg2OwmhXnDD1eSDLTb//FBA9WZmxo51cgdf9X5Dtr6Qu2+0NwqH?=
+ =?us-ascii?Q?hFThfPkSbBegT8BNsqNpKr0FsYMJY9lc47tdnKHy9ar3qQQrP6wR7PwqqGmU?=
+ =?us-ascii?Q?ExICK2q1PnZQOTcCnrrAJH311Lq63XRVWe3MXD5SxgDt/KuWuTm3ZFg3urrt?=
+ =?us-ascii?Q?93kpJ/MfX0m6CNBl1OLS3I/C60mm4tEWhuEJN5GAcMyIag6Ssl5TMC3XF0E/?=
+ =?us-ascii?Q?zjbHxg0vTtwsLTaB+EGPhc4jQkb10/btdyEeitwqsln3kb4oMFz6SCWoa5Bk?=
+ =?us-ascii?Q?7J2wvWYZDx4Gl8eooyeopKh3jV4P5KUhwUQyVvz7EeM4pdldO8qJnAud19zd?=
+ =?us-ascii?Q?HCtluMeCsLWheAZvMAb0H5GzB+ww76TzSZHS9YoSzGZBZsaWk/32Rp/zLNrH?=
+ =?us-ascii?Q?wAyP7ohoaj8YBqqDEnbUzr3Oxh2QMpYvJRH6p98K2rQP7qsS6iWUG83nGhnK?=
+ =?us-ascii?Q?H+p4OFEhEllrc+3ZlAmVta7RdZBXEjW35+IYrRAwWrA+qxz4kVFAkmDlW9Ve?=
+ =?us-ascii?Q?7fVsrZ/77MLjczzmBZCuYvio6iCf9mCsupoJ0sLXoUN5EA6FZl+SdUDem0xo?=
+ =?us-ascii?Q?YIQ9Pa/5WUh1uUCnrnCiflcyIhzwoZKJ8IayVTs08VkzPHq1HBGWPLm/+qAE?=
+ =?us-ascii?Q?Q1+363SUTXXC9+xN3247XBrcSkxdDFnzSguglXDMIcSWkDEGhJRJGl/OZxyR?=
+ =?us-ascii?Q?Ku3nbfl9HtGhFMI0v4FPJidcwwQSrLHJCCRsQl3LOzV0+2QNDXMcZ8mGEyRx?=
+ =?us-ascii?Q?LNfkM5zZKSrfMGSOt1lFj6qjTiPSyr5DSnph8Wls+jcVpbyU52yFEgLmwHLb?=
+ =?us-ascii?Q?OGnkU7dx7OzRxy8e/pehbRoppgyIQCVZWRwxH4LmLB5VMjxseLraSHaKnw8U?=
+ =?us-ascii?Q?hNEplj0e751ZRIyZONZCx+m4PHZA4b/IFWYgTVf9ViDP5Gi4Uf2/zvF9zRrS?=
+ =?us-ascii?Q?AjYccTA52oPLijmd7YtjNTGquQN+uSk18aV6pkM3W5qOv8f5g7SkdDjcRMFc?=
+ =?us-ascii?Q?ZKBia4bX0lETLWIsmd01IFwR86dZu1wFNrIWRZD5EG0tRw=3D=3D?=
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:TYZPR02MB6333.apcprd02.prod.outlook.com; PTR:; CAT:NONE;
+ SFS:(13230040)(50650200027)(366016)(1800799024)(376014)(80100003); DIR:OUT;
+ SFP:1501; 
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0: q4kAbLgjD/0vWSrioKfLiV0SYi4Lt6yU+Rh7oXp6rvQS27YfaCTsU8Gi8oPdakfPlT4LuXvnN0I9h8X06KpRF4xEHNwz+HrafJIb3TDK8kyA5BMdFkJCsiWoFZ2PoLH390WRqLopCrodbExmMA8xXZTFepocvhd8XqFR9NM8XPlp2T5F6yJ0vOS/G0hQsluxEcZ/dLrKiGNs49ApquxJjNU9bz141mvIJ8DaZaH3opL4d26JVlGs8Z9vG3lgWoyxRuwbQajLmtLFInzlu8o0Spr58+P2eB0dAvKEVAk3d+c4JvnWqQ3BnA/tU3psVhoO
+Content-Type: multipart/alternative;
+ boundary="_000_15b5059a0ee64f2d913c5f3c388dc2e7TYZPR02MB6333apcprd02pr_"
+MIME-Version: 1.0
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-ExternalHop-MessageData-0: 2zLkgL2RYUs6FTFIWo5n/jhM6Ug+kBC50aMG3um7VU/n+65ykOObod5BmhHK6JP7bH9MbmXHL9Y58kND6UBT6jVovyXCllr8dff8x4ar6dPivKsJRmP9mP2jK0TJVyck2Z4AYEmBr3RowGqEDL8BsUd+gviY4bddTLsos1+mlsFVZIqhN/xhrhBuiAODh5n9s92pWi7aaogu0W2iuq7ZkHJp+niIBXi/ay2GeWppa2jr7G6sQQ9YVPcCivP75Z/RorGTqC1OkfbOamHeLLuP90/eCJMz3VCIeBYvwIBScwjU1yekMUH0u31hypWv4Zih9QnlGJp2LbiVX9J43Quvhfm4ApdtUEvMxqSihm1dlOF10xPq/YW86Xy4JdBxQpGzvpMfl6dNxCQ8l0dJiwrs3OuPlOAPAGzbWndh456d/oKajdi7vKOTGrTsDHUW8KTju1w7l205/xjvEYOeHk85ac/oUyvQlzznYNb2m2SXuMdqOpVCQCPPiIqwgfttZ0O4SpcVvroqA3pOwlFAtN8HCR5UG7zN07qSEHHyiYUb4IZlYoNpKttBXcWTNJkfa/1ZRgpV+h7C5A6xUY0WL0PvURwwZceqStPU/H3uC0gQQ/YAwxpKCA1L50L2npgwVx+pDpBHHcJD+cOtayPxAMKTGhPO2T7qLSyTempzXogDNKhAIUoLbzUmMSyfdS9ryz7V34OrA88KLYyXH+mGLX5TfQsd+LYBMde+3ouD+FjyoBg=
+X-OriginatorOrg: sentosakimia.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: TYZPR02MB6333.apcprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 77d4e902-b037-4ef1-59c6-08dcaea2e4f5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jul 2024 01:16:22.8839 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 361fdf2f-7145-4563-947d-83e1d40b0a47
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSQPR02MB7904
+X-LASED-MailType: BOUNCE
+X-Sophos-Email: [us-east-2] Antispam-Engine: 6.0.0,
+ AntispamData: 2024.7.28.5416
+X-LASED-From-ReplyTo-Diff: From:<sentosakimia.com>:0
+X-LASED-SpamProbability: 0.102018
+X-LASED-Hits: BODYTEXTH_SIZE_10000_LESS 0.000000,
+ BODYTEXTP_SIZE_3000_LESS 0.000000, BODYTEXTP_SIZE_400_LESS 0.000000,
+ BODY_SIZE_1000_LESS 0.000000, BODY_SIZE_2000_LESS 0.000000,
+ BODY_SIZE_5000_LESS 0.000000, BODY_SIZE_7000_LESS 0.000000,
+ BODY_SIZE_800_899 0.000000, BOUNCE_AUTORESP 0.000000, BOUNCE_GENERIC 0.000000,
+ DKIM_ALIGNS 0.000000, DKIM_SIGNATURE 0.000000, FROM_NAME_ONE_WORD 0.050000,
+ HTML_NO_HTTP 0.100000, IMP_FROM_NOTSELF 0.000000, IN_REP_TO 0.000000,
+ NO_CTA_URI_FOUND 0.000000, NO_FUR_HEADER 0.000000, NO_URI_HTTPS 0.000000,
+ OUTBOUND 0.000000, OUTBOUND_SOPHOS 0.000000, REFERENCES 0.000000,
+ SMALL_BODY 0.000000, TO_NAME_IS_ADDY 0.000000, TRANSACTIONAL 0.000000,
+ URI_SNOWNS_NS_NAME 0.500000, __ANY_URI 0.000000,
+ __ARCAUTH_DKIM_PASSED 0.000000, __ARCAUTH_DMARC_PASSED 0.000000,
+ __ARCAUTH_NONE 0.000000, __ARC_SEAL_MICROSOFT 0.000000,
+ __ARC_SIGNATURE_MICROSOFT 0.000000, __ATTACH_CTE_QUOTED_PRINTABLE 0.000000,
+ __BEC_SUBJ_KEYWORD 0.000000, __BODY_NO_MAILTO 0.000000,
+ __BOUNCE_HDR_AUTORESPONSE_SUP 0.000000, __BOUNCE_HDR_AUTOSUBMITTED 0.000000,
+ __BULK_NEGATE 0.000000, __CT 0.000000, __CTYPE_HAS_BOUNDARY 0.000000,
+ __CTYPE_MULTIPART 0.000000, __CTYPE_MULTIPART_ALT 0.000000,
+ __DKIM_ALIGNS_1 0.000000, __DKIM_ALIGNS_2 0.000000, __DQ_NEG_DOMAIN 0.000000,
+ __DQ_NEG_HEUR 0.000000, __DQ_NEG_IP 0.000000, __FUR_RDNS_SOPHOS 0.000000,
+ __HAS_FROM 0.000000, __HAS_HTML 0.000000, __HAS_MSGID 0.000000,
+ __HAS_REFERENCES 0.000000, __HAS_X_FF_ASR 0.000000,
+ __HAS_X_FF_ASR_CAT 0.000000, __HAS_X_FF_ASR_SFV 0.000000,
+ __IMP_FROM_NOTSELF 0.000000, __IN_REP_TO 0.000000,
+ __JSON_HAS_SCHEMA_VERSION 0.000000, __JSON_HAS_TENANT_DOMAINS 0.000000,
+ __JSON_HAS_TENANT_ID 0.000000, __JSON_HAS_TENANT_SCHEMA_VERSION 0.000000,
+ __JSON_HAS_TENANT_VIPS 0.000000, __JSON_HAS_TRACKING_ID 0.000000,
+ __MIME_HTML 0.000000, __MIME_TEXT_H 0.000000, __MIME_TEXT_H1 0.000000,
+ __MIME_TEXT_H2 0.000000, __MIME_TEXT_P 0.000000, __MIME_TEXT_P1 0.000000,
+ __MIME_TEXT_P2 0.000000, __MIME_VERSION 0.000000, __MSGID_32HEX 0.000000,
+ __OUTBOUND_SOPHOS_FUR 0.000000, __OUTBOUND_SOPHOS_FUR_IP 0.000000,
+ __OUTBOUND_SOPHOS_FUR_RDNS 0.000000, __PHISH_SPEAR_SUBJ_ALERT 0.000000,
+ __REFERENCES 0.000000, __SANE_MSGID 0.000000, __SUBJ_ALPHA_END 0.000000,
+ __SUBJ_TRANSACTIONAL 0.000000, __SUBJ_TR_GEN 0.000000,
+ __TAG_EXISTS_BODY 0.000000, __TAG_EXISTS_HEAD 0.000000,
+ __TAG_EXISTS_HTML 0.000000, __TAG_EXISTS_META 0.000000,
+ __TO_MALFORMED_2 0.000000, __TO_NAME 0.000000, __TO_NO_NAME 0.000000,
+ __URI_MAILTO 0.000000, __URI_NO_WWW 0.000000, __URI_NS 0.000000,
+ __X_FF_ASR_SCL_NSP 0.000000, __X_FF_ASR_SFV_NSPM 0.000000
+X-LASED-Impersonation: False
+X-LASED-Spam: NonSpam
+X-Sophos-Mf-Email-Transport-Route: f753b11a-d153-4583-83fb-03d4dc6f1ea4:sentosakimia-com.mail.protection.outlook.com
+X-Sophos-Mailflow-Processing-Id: c4677ead0a874fe0b88c2ef57ed995af
+X-Sophos-MH-Mail-Info-Key: NFdXazh5Mk1DQno5M1YtMTcyLjIxLjIuMTc1
+X-Spam-Status: No, score=-0.5 required=5.0 tests=BAYES_00,BOUNCE_MSG,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,EMPTY_RETURN_PATH,HTML_MESSAGE,
+	SPF_HELO_NONE autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--_000_15b5059a0ee64f2d913c5f3c388dc2e7TYZPR02MB6333apcprd02pr_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Sender, Fernanda has already left SKA, please resend mail to michael.i=
+0@samplemail.org and skyler.martin@example.net or morgan.hill@example.net,=
+ Thanks.
+
+--_000_15b5059a0ee64f2d913c5f3c388dc2e7TYZPR02MB6333apcprd02pr_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+</head>
+<body>
+Dear Sender, Fernanda has already left SKA, please resend mail to michael.i=
+0@samplemail.org and skyler.martin@example.net or morgan.hill@example.net,=
+ Thanks.
+</body>
+</html>
+
+--_000_15b5059a0ee64f2d913c5f3c388dc2e7TYZPR02MB6333apcprd02pr_--

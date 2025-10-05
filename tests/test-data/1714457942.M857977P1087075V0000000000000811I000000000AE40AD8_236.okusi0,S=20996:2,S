@@ -1,0 +1,315 @@
+Return-Path: <rowanperez@testmail.com>
+X-Original-To: parkermiller@testmail.net
+Delivered-To: parkermiller@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 194783340205
+	for <parkermiller@testmail.net>; Tue, 30 Apr 2024 12:18:26 +0700 (WIB)
+Delivered-To: jordanperez@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <parkermiller@testmail.net> (single-drop); Tue, 30 Apr 2024 12:18:26 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 2AmCMgt/MGbYRwkAeHbnHg
+	(envelope-from <rowanperez@testmail.com>)
+	for <jordanperez@testdomain.io>; Tue, 30 Apr 2024 12:18:03 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=reject dis=none) header.from=yahoo.com.sg
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=yahoo.com.sg
+Received: from sonic303-20.consmr.mail.sg3.yahoo.com (sonic303-20.consmr.mail.sg3.yahoo.com [106.10.242.37])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 037262640B49
+	for <contkellylewis@testdomain.io>; Tue, 30 Apr 2024 12:17:36 +0700 (WIB)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com.sg; s=s2048; t=1714454255; bh=Uvho46lo3QRUgJ/4VfNjTSdFef3xyoBkWwvH6CZeRn8=; h=Date:From:To:In-Reply-To:References:Subject:From:Subject:Reply-To; b=oHIg2JH096yhkIHiz0+6vh7zIvIUQi/T4nWrDiZg6R1TTGn3rWkf6trqTJnepeEgTzLiWVr3GAGWomBnl1/AXzZihANs4d8WW7R4A15VlqEAaM5JYPXACvPf3BrU2cgeA7UMFnqiLYVIMQOuamezeYhV+Q1d53cc0oc5+afhDBAdKg2oLx/rYceBXQu21IKGJ/b80LyKoczPccb3SKdSlY7/zgg8EucO0N9ARXxCYkHtr6WfPi8tOsD7x2MEQkTFviVImVf5eeF4yC2mh91NwRJSXB0cc0lZfJCmNBHGCkui2J1Qc166HIVVVNy+u5TDOE5zKB+i5zohPt4Nm2dE6w==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1714454255; bh=SuEJwrQVM1Tt/Rt+CwbiTtKIIqJ1e3RCICaYhrkTLPF=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=Dr17zguc8ju+RW99RIrzxvSC/dRsuDBhs5ryrGnU6yMdP/qaUdg5ohjoEYvm7qMlphbxl8HV+vt+nhYswydRuSDZlHHxoUFGad2EvUuA0CKmIXm0BreS4IiBGh0jptREgW7rjbiC9kY0NGhwsOHVE6nmCE1t25EHXGlHMKKBriWO2RitUyWcN+tTFwMy8iOusmjPGE15dHIzBaIP1OwseUAVXeGNd2a2OqfTBbiSa39293knUOtxsdMRvL3eY3FsnAx+eSwzsRKN2fPvsF2gN0yqkn7S6mdVueoo+IAdbSSWp5+/Y5vZSX4iLLjQ65n5kzztYDGrtPdky9HoCsC0jA==
+X-YMail-OSG: SLNRdVEVM1lk.e4LS.n3xzOcGCp9rg3YB.LvolxZElnfivMPpk3KACBRvvZXQQo
+ gVq9_zD6Pb_idYqooAoXpbs4cs9JBz.rwuE10jWzTThjV6Fuha4XgipMxSok3_d6vpE8rcs7LkNM
+ FfLay_k1lSLS_4DxEwhJS8SmU7.8Lffv9qzXPCOf0rTvlZ3GWHH1p0BEZcef2Jli9y_6SQAu28hy
+ sMm_5sOgp16ZQ2jxz0vSoKfDbQsHr42Hm03T6lShrkexTRVYGvR6453KSJ8LiP23S.PN3NUzrr1P
+ c9KTiE9qU0vXNu8BeZad6W8xQgfFm6nXYJuZQ9ovDTl4uyqWskpNq06BPeDmbpT1GDhAprS__XVy
+ L4o_48dh06RP8ysAYwdhUL9yWuuuAdfQih0JiSgVXoU9BkwAuAG_jTfDhyhthcuw7ltUSRwd7ChB
+ dvGjlEVoyv0m5LHM6poQrutC5IZakzX5XfrybyVHlnK2JUbyHK81oz6VKRyMk5XjL_PvEx0ZPKjY
+ O9xctXD5FbhgSArbYRGrccveJWYad1lz1zwt5VP7kdrD8LIHXDCr53s5JyR6Zltm5LGwYmwAFy3R
+ .v4lfHcgHu3iyVDexCZU8y0GRrSp22i47uOaUqXuqdrStz3oi3pxD9dvoQXj8rPVlOgikTcUjZZT
+ IMVZXH5Ua9FQj4tJym1shmotF1eMc9r_HM9XpO0nBQDyL.TKlp3kkIM6pOE8.jz2o807IUb4C2Bg
+ mr1IRXMAEND0tENEAkE2aI7GaCwqqHsn.3AlR_cNvJOSxu_oRTGozZDKFK9cT8pmPHIXNEPfkBZX
+ leO8eAJcwuUYT4RNr4NVMdue.oDYs8nHoWZiVfTYMnMRimM92AFEziDzJr7aWfxByWJRcPK7a1lD
+ xhZQ4BRS72JXGCzrk6ocXU4gYHjSfaM8wYj2qbScjq_oiyuuUZlqnYhDsughhM5AMWtVKQzxgIsH
+ HtOZHeVS0rwyU8EMoncihnHATRUPg7ltnUZ8UVV3bhzwDayZlDhObXMvs08TGfYZrNBduzd_ASb5
+ Y5onOBs01iSb9KelAyDVG.QrZMvRL9Gfr_jGkm1m5qBmcVZQi5mWHpk89RIkheuyWZ6wFDgc.03i
+ CUap1IKkhkVdEbmR3xOUZUbBkziXKYDyNcWg7BLyqTfJ1eM8d6_Z6RQzwUbu3iwB3g70VTiwB450
+ B7jq_pnjZPrztcwEyTmLgprEoq2WczR1NnnyuBALXYcGbp5J3jog835X6A7YUQpU80EER4zYXIhb
+ B5bYHEOKL9s2lt8WwkR5ed_B.b7vfCcNRFvY48U57BKxuomBU1pNSo9.J6gFv9m_OsZFfpqFzjAe
+ yIzxhK9wpx4TlCh8hhia13zi8PqWNBsAJoFffi92V_aRMJJrB6AgvEIWYAaufPmEpXQ0VmcYEThS
+ 2MHBzngpwHIFntZzCLxwINxCi3Fi.sXpA56uHxBsFFcocS9tHZ_rK2r8VoU.erdDL3fUl2QzrB2O
+ rPe43NF1LOy2t.XU2ad610fTCshMft0nZhKZACg7r.rVHsgvhEuU0E8SWbNKbR4rJoLL0mEsfCfu
+ NwjAuwP9.Rj1o3R5Ri2.wOCHPI66APPFJXiZjElrja_KOb3hqf7s12mtKkMD28XucNMj46UCm6jS
+ IZ.hTp8Z7EileiNj_Wzv86Qm8ZVBAYVgy9lSYwH_cqF4Jmm5vdWO.uD0ysZfhMFV7WAzb7ZrbU6n
+ 0ScnZ7UvHNbnAst.WtEsRKVa8eRLw7imh2FeBSfZecPWJu_QZUU7inhdZmneRVSKEGY1DAWknbtf
+ WCe4aqfXGQkEzAAcDs0LBygMxFjba5bvCDzjBl7cvVlUj0H4ira8u2V0ykyqXKdZV56aQ8WHR2qu
+ r3agKLhnhorvPjtHitjE2rHaO5CoJAjIskpOwra4pXnchVUt.Jndfyk83fRNbjiKquR6w_j6tMbc
+ umoJE.el2PVXxqN3.DG1Bt2.AbJIkEwCXwwVwy8BVEK2INUsYV6mkmlQGhKKz8flQfw8C68_gIiD
+ yWj.g_ZvLCur3VC.ysthwZmNbOpOAhqvpdtW4Vb6cel1QG_8BmkjpLywjaEafSN_V5EVgiUyOnGH
+ Dy5Eay1R8.a6.fHmQJ6zejLIwRqzrir.1RWfwuZnduJZskMLlDfIF3DfbYP1nF5gkf3fX_52pMmi
+ bSmUWNBXsQV6wr9bQER2YRiqnfTRnwuVPdxbmRMl373S2JUTCqgtwiGf_jChzwjQxPEheT_Bbrp2
+ COtltdvy0vCmLavqjHyX9noCMfLbDL9k77pp6ww--
+X-Sonic-MF: <rowanperez@testmail.com>
+X-Sonic-ID: 7c15848e-133e-493d-8a46-84ea898b1f27
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic303.consmr.mail.sg3.yahoo.com with HTTP; Tue, 30 Apr 2024 05:17:35 +0000
+Date: Tue, 30 Apr 2024 05:17:33 +0000 (UTC)
+From: aNDY TEO <rowanperez@testmail.com>
+To: "contkellylewis@testdomain.io" <contkellylewis@testdomain.io>
+Message-ID: <380252525.6798860.408317478248@testmail.com>
+In-Reply-To: <662f25f2.fd0.enquiry.okusi.id>
+References: <662f25f2.fd0.enquiry.okusi.id>
+Subject: Re: Working in Batam [#:662f25f24]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3308887_1061748049.1714454253425"
+X-Spam-Status: No, score=-1.8 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_ENVFROM_END_DIGIT,
+	FREEMAIL_FROM,HTML_MESSAGE,SPF_HELO_NONE,SPF_PASS,URIBL_BLOCKED,
+	URI_TRUNCATED autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+------=_Part_3308887_1061748049.1714454253425
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+ Hello,=C2=A0
+Any update which visa we need to apply to work in Batam?
+Visa Fee?
+Andy
+    On Monday, 29 April 2024 at 12:45:39 pm SGT, contkellylewis@testdomain.io <contact@=
+okusi.id> wrote: =20
+=20
+       =20
+  Thank you for contacting Okusi Associates.
+ Someone will be in touch with you shortly.
+ A copy of your message appears below.   Hello,=20
+=20
+what is the visa fee for working in Batam for 3 days?=20
+I am Singapore passport holder.=20
+=20
+From=20
+Andy  =20
+OkusiAssociates.com
+=20
+Jakarta +62 21 390 1007 =C2=A0 +62 21 392 8595
+=20
+Bali +62 361 769 144 =C2=A0 Batam +62 778 741 5011
+  =20
+=E2=80=A2 permanent offices conveniently located in Jakarta, Batam, and Bal=
+i.
+=20
+=E2=80=A2 comprehensive/integrated: legal, immigration, accountancy, resear=
+ch.
+=20
+=E2=80=A2 in-house, over 60 full-time direct employees across Indonesia; no=
+ outsourcing.
+=20
+=E2=80=A2 over 3,000 foreign companies, more than any other firm in Indones=
+ia.
+=20
+=E2=80=A2 companies set up anywhere in Indonesia.
+=20
+=E2=80=A2 since 1997. =C2=A027 years of service to Indonesia.
+ =20
+ =20
+------=_Part_3308887_1061748049.1714454253425
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><div class=3D"ydpe6a68c0cyahoo-style-wrap" style=
+=3D"font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-size:16px=
+;"><div></div>
+        <div>Hello,&nbsp;</div><div><br></div><div>Any update which visa we=
+ need to apply to work in Batam?</div><div><br></div><div>Visa Fee?</div><d=
+iv><br></div><div>Andy</div><div><br></div>
+       =20
+        <div id=3D"ydpe6a68c0cyahoo_quoted_4530464214" class=3D"ydpe6a68c0c=
+yahoo_quoted">
+            <div style=3D"font-family:'Helvetica Neue', Helvetica, Arial, s=
+ans-serif;font-size:13px;color:#26282a;">
+               =20
+                <div>
+                        On Monday, 29 April 2024 at 12:45:39 pm SGT, contac=
+ellisscott@testdomain.io &lt;contkellylewis@testdomain.io&gt; wrote:
+                    </div>
+                    <div><br></div>
+                    <div><br></div>
+               =20
+               =20
+                <div><div id=3D"ydpe6a68c0cyiv9378099723">=09=09<div><div s=
+tyle=3D"font-family:Arial;background:#eff;border:1px #eee solid;border-radi=
+us:5px;color:#002958;margin:auto auto;text-align:center;">=09<div style=3D"=
+width:100%;text-align:center;">=09=09<a href=3D"https://okusiassociates.com=
+/" style=3D"color:#002958;text-decoration:none;" title=3D"Okusi Associates =
+website." rel=3D"nofollow" target=3D"_blank">=09=09=09<img src=3D"data:imag=
+e/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAABvCAMAAAAt3sKMAAABWVBMVEUAAAALKV=
+oJKFcJJ1UKKFkLKVoKKFkKKFkKKFkKKFkKJ1gLKVkLKVoLKVoKKVoKKFkKKFkKKFkLKVoLKVoLK=
+VoKKFkKKFkLKVoKKFkLKVoLKVoKKFkLKVoLKVoLKVoLKVoKKFkKKFkKKVoKKVoLKVoKKFkKKFkK=
+KFkLKVoKKFkKKFkKKFkLKVoLKVoKKVoKKVoKKVoKKFoKKFoKKFkLKVoKKFkLKVoLKVoKKVoKKVo=
+KKFkKKFkKKFkLKFoLKFoLKVoKKFoKKFkLKFkKKFkLKVoLKVr///8HJlj8/P0DIlX09fi5wdCJl6=
+/v8fTq7PEAHlISL1/4+ft6iqUeOmest8fl6O2XpLng5Ovc4OfDytfS2OGQnbRJYISjr8GyvMvX3=
+OTN0910haFleJdfc5NBWH86UnoZNWRugJ0lQGzIztpRZokyS3SnssSCkapYbI6fq74rRXC+xtMA=
+GU5P3JcmAAAARXRSTlMA/AYDEvYPJTcfCabdmcwWDCms+eBOHPAz7ekYwPPY1Es+trF6PDBxyCN=
+YgObDvIx1bJBVomDQlJ2JQi1GfWPiW1KEZ5e29wO7AAAciklEQVR42uzY+1fSYBzH8e+aUIEKio=
+EiaCoBhVLY8ZIXjlmfZ1wcuVOoYKld1Syr//+XBuQaYzKsDcY5e/0wbodn5/A+z3ieEf5RYGIq4=
+k0tzQTJ0Xfw31Y3fOToKzBDIOYhR/+ASeYT5OgXME3A+5AcfQFmmo2Tow/AXBFnUdcHYLY5nhw2=
+B9NFX5DD3mCBZeeOjb3BEs5ktzVYY8FPDtuCVZxNu33BMhly2BSss0I3dGt97f7aCE96Mt4ImeD=
+OJtne86ekYY/ogiDk83lBQFte6tztTJpDQ3QuO0lagIv+nz+ELBkbeUK9E+SwQc16Hl3A67NPl6=
+c7ez9+HJ6+vTjbbZN+gafOjE+jWVq7JOBMiR4GcJsMReGnXvFANkCWws3sXlaYTBLFcrlcEsXa8=
+73PHK6xTJ1wh1HHNaAu6bEgehKYIkPjwCb1Ch8GRslQsEvRX10URZYT9wu5Gjm3fJQksXpcYKUd=
+CP9cPVXPPLHl8/NExPsnMy7IuC3zo9PCGBlzAeCpV/hwkgwNj3UjuoCdMisUpBxrVSgdlFnl0yv=
+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3D=3D">=
+=09=09</a>=09</div>=09<br>=09<div>=09=09Thank you for contacting Okusi Asso=
+ciates.<br>=09=09Someone will be in touch with you shortly.<br>=09=09A copy=
+ of your message appears below.=09</div></div><div style=3D"font-family:Ari=
+al;background:#eff;border:1px #eee solid;border-radius:5px;color:#002958;ma=
+rgin:auto auto;text-align:center;">=09<div style=3D"color:#222;">=09<div id=
+=3D"ydpe6a68c0cyiv9378099723message" style=3D"font-family:Arial;border:1px =
+#eee solid;border-radius:4px;color:#555;width:99%;text-align:left;font-size=
+:12pt;">Hello, <br> <br>what is the visa fee for working in Batam for 3 day=
+s? <br>I am Singapore passport holder. <br> <br>From <br>Andy</div>=09</div=
+></div><div style=3D"font-family:Arial;background:#eff;border:1px #eee soli=
+d;border-radius:5px;color:#002958;margin:auto auto;text-align:center;">=09<=
+div style=3D"color:#333;">=09=09<p><a href=3D"https://okusiassociates.com" =
+style=3D"color:#002958;" rel=3D"nofollow" target=3D"_blank">OkusiAssociates=
+.com</a></p>=09=09<p><b>Jakarta</b> <a style=3D"color:#002958;">+62 21 390 =
+1007</a> &nbsp; <a style=3D"color:#002958;">+62 21 392 8595</a></p>=09=09<p=
+><b>Bali</b> <a style=3D"color:#002958;">+62 361 769 144</a> &nbsp;=09<b>Ba=
+tam</b> <a style=3D"color:#002958;">+62 778 741 5011</a></p>=09</div>=09<di=
+v style=3D"width:100%;text-align:center;color:#444;line-height:0.7;">=09=09=
+<p><b>=E2=80=A2</b> <b>permanent offices</b> conveniently located in <b>Jak=
+arta, Batam, and Bali</b>.</p>=09  <p><b>=E2=80=A2</b> <b>comprehensive/int=
+egrated</b>: legal, immigration, accountancy, research.</p>=09  <p><b>=E2=
+=80=A2</b> <b>in-house</b>, over 60 full-time direct employees across Indon=
+esia; <b>no outsourcing</b>.</p>=09  <p><b>=E2=80=A2</b> <b>over 3,000 fore=
+ign companies</b>, more than any other firm in Indonesia.</p>=09  <p><b>=E2=
+=80=A2</b> companies set up <b>anywhere in Indonesia</b>.</p>=09  <p><b>=E2=
+=80=A2</b> since <b>1997</b>. &nbsp;27 years of service to Indonesia.</p>=
+=09</div>=09<br></div></div></div>
+            </div>
+        </div></div></div></body></html>
+------=_Part_3308887_1061748049.1714454253425--

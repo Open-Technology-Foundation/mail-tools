@@ -1,0 +1,246 @@
+Return-Path: <drewgarcia@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 7B20433401F8
+	for <drewjones@testmail.net>; Mon,  3 Jun 2024 10:38:03 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 03 Jun 2024 10:38:03 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 9G5ZLFI6XWYSGQkAeHbnHg
+	(envelope-from <drewgarcia@testdomain.io>); Mon, 03 Jun 2024 10:36:50 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1717385809; bh=p7xd41h66jZDgWLgf4/t8NL8Htn15XVFuDVhZMBHZd0=;
+	h=Date:To:Cc:From:Subject:From;
+	b=GSh/mOpDJOxlaLHU/5u191W8HjCA3AiZt9XYsGFVXw2+5y6lsKA2AN93cRWBM+6d4
+	 z8JMBGXQrsHiphnPaJrHsUbIpauo7AYAjehNSkkS/m2rJqW6HJr06ju/jRV2xqG1gI
+	 c82SlDZlXon1pp7wPPI241Yu/KjDlkFQ+/btDJbUWZ6J1WQn1vf1lC7Ij83WNb1XmY
+	 XGGEvtZEhJfDWKrsVt7Tufmn0S5SvuKB36ozo6ZEs+fLy+0SCo8Ncagp63HHZtKN3E
+	 atxN8x212DSSL6LD2Dk95zGLihExN/CsayINzeRSJAI4HV1WVdk3dtNusfyXyko7Kw
+	 fdEtybNPR9woA==
+Received: from [192.168.1.6] (unknown [36.69.105.60])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 2C8A32640B49;
+	Mon,  3 Jun 2024 10:36:48 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------GbIFPyVzBGu7lty0ihjtZGks"
+Message-ID: <e57ecc61-78bb0f6e-b1435ad2-fe76d247@testdomain.io>
+Date: Mon, 3 Jun 2024 10:36:28 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: alexflores@testmail.com
+Cc: Sri Mulyati <devonlewis@testdomain.io>, Lina Munir <contkellylewis@testdomain.io>,
+ Reni Debora Okusi Associates <milesnguyen@testdomain.io>
+From: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+Subject: Assistance with Investor KITAS (Temporary Stay Permit) in Indonesia
+ from Okusi Associates
+Organization: Okusi Associates
+X-Spam-Status: No, score=-3.1 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	LOTS_OF_MONEY,T_KAM_HTML_FONT_INVALID,T_SCC_BODY_TEXT_LINE
+	autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------GbIFPyVzBGu7lty0ihjtZGks
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+To whom it may concern,
+
+I hope this email finds you well. I am Haliza As a representative of 
+Okusi Associates from Client Compliance for Visas and Work Permits team, 
+a leading corporate legal firm in Indonesia, I wanted to reach out and 
+offer our assistance with obtaining an Investor KITAS (Temporary Stay 
+Permit) for your colleague.
+
+An Investor KITAS allows foreign investors and directors to legally live 
+and work in Indonesia for *up to 2 years* (renewal applicable). It is an 
+essential permit for those looking to establish or manage a business in 
+the country.
+
+At Okusi Associates, we have over 25 years of experience helping foreign 
+investors navigate the complex process of obtaining an Investor KITAS. 
+Our comprehensive services include:
+
+  * Assessing eligibility based on investment value and business structure
+  * Preparing and submitting all required documents
+  * Liaising with the Ministry of Law and Human Rights to monitor
+    application progress
+  * Assisting with biometric data collection and KITAS card issuance
+  * Providing guidance on KITAS extensions and renewals
+
+Our experienced team of paralegals and lawyers will handle the entire 
+process from start to finish, ensuring your application is complete and 
+compliant to minimize any delays or rejections.
+
+To be eligible for an Investor KITAS, the foreign investor must:
+
+  * *Invest a minimum of IDR 10 billion (approx. USD 625,000) personal
+    shares in the company*
+  * *Permitted to serve as a director or commissioner in the company*
+  * *Company's legal documents
+    *
+  * *Hold a valid passport and meet health and character requirements*
+
+If you are considering investing in Indonesia and require assistance 
+with obtaining an Investor KITAS, please don't hesitate to contact me. I 
+would be happy to provide more information on our services and fees. 
+Feel free to contact me at drewgarcia@testdomain.io or throught my Whatsapp 
+Number +6282128910348. Thanks in advance.
+
+Best regards,
+
+Haliza
+
+-- 
+Photo of Noorhaliza Putri Fadhila <https://okusiassociates.com/id/1321> 
+*Noorhaliza Putri Fadhila* B.A
+Client Compliance for Visas and Work Permit, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Noorhaliza Putri Fadhila. <whatsapp://send?phone=6282128910348>
++6282128910348 <whatsapp://send?phone=6282128910348> | +62213901007 
+<tel:+62213901007> | drewgarcia@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+--------------GbIFPyVzBGu7lty0ihjtZGks
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>To whom it may concern,</p>
+    <p>I hope this email finds you well. I am Haliza As a representative
+      of Okusi Associates from Client Compliance for Visas and Work
+      Permits team, a leading corporate legal firm in Indonesia, I
+      wanted to reach out and offer our assistance with obtaining an
+      Investor KITAS (Temporary Stay Permit) for your colleague.</p>
+    <p>An Investor KITAS allows foreign investors and directors to
+      legally live and work in Indonesia for <b>up to 2 years</b>
+      (renewal applicable). It is an essential permit for those looking
+      to establish or manage a business in the country.</p>
+    <p>At Okusi Associates, we have over 25 years of experience helping
+      foreign investors navigate the complex process of obtaining an
+      Investor KITAS. Our comprehensive services include:</p>
+    <ul>
+      <li>Assessing eligibility based on investment value and business
+        structure</li>
+      <li>Preparing and submitting all required documents</li>
+      <li>Liaising with the Ministry of Law and Human Rights to monitor
+        application progress</li>
+      <li>Assisting with biometric data collection and KITAS card
+        issuance</li>
+      <li>Providing guidance on KITAS extensions and renewals</li>
+    </ul>
+    <p>Our experienced team of paralegals and lawyers will handle the
+      entire process from start to finish, ensuring your application is
+      complete and compliant to minimize any delays or rejections.</p>
+    <p>To be eligible for an Investor KITAS, the foreign investor must:</p>
+    <ul>
+      <li><b>Invest a minimum of IDR 10 billion (approx. USD 625,000)
+          personal shares in the company</b></li>
+      <li><b>Permitted to serve as a director or commissioner in the
+          company</b></li>
+      <li><b>Company's legal documents<br>
+        </b></li>
+      <li><b>Hold a valid passport and meet health and character
+          requirements</b></li>
+    </ul>
+    <p>If you are considering investing in Indonesia and require
+      assistance with obtaining an Investor KITAS, please don't hesitate
+      to contact me. I would be happy to provide more information on our
+      services and fees. Feel free to contact me at <a
+        class="moz-txt-link-abbreviated moz-txt-link-freetext"
+        href="mailto:drewgarcia@testdomain.io">drewgarcia@testdomain.io</a> or throught my
+      Whatsapp Number +6282128910348. Thanks in advance.</p>
+    <p>Best regards,</p>
+    Haliza
+    <p></p>
+    <div class="moz-signature">-- <br>
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1321"
+                target="_blank"
+                title="Okusi Associates - Noorhaliza Putri Fadhila">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Noorhaliza Putri Fadhila"
+                  src="https://okusiassociates.com/a/m/photo-haliza.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Noorhaliza Putri Fadhila</strong> <span
+                style="font-size:13px;color:#555 !important;" title="">
+                B.A</span>
+              <div style="font-size:13px;color:#888 !important;">
+                Client Compliance for Visas and Work Permit, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Noorhaliza Putri Fadhila."
+                  href="whatsapp://send?phone=6282128910348"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Noorhaliza Putri Fadhila."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6282128910348"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6282128910348</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Noorhaliza Putri Fadhila."
+                  href="mailto:drewgarcia@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">drewgarcia@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+  </body>
+</html>
+
+--------------GbIFPyVzBGu7lty0ihjtZGks--

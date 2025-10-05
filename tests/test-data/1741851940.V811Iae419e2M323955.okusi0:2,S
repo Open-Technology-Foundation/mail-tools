@@ -1,0 +1,603 @@
+Return-Path: <haydenlopez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 3B42B334022B
+	for <drewjones@testmail.net>; Thu, 13 Mar 2025 14:45:40 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 13 Mar 2025 14:45:40 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id wPEKFvSM0mdnsxQAeHbnHg
+	(envelope-from <haydenlopez@testdomain.io>); Thu, 13 Mar 2025 14:44:52 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1741851891; bh=lidPp5AUus0U+vriTnTdmTMHEqH5sI30WMLUgaIQY/Q=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=XsLF9inl4Wbedlf6TbVllFZKCvd+t+rflKUQDFIPa+Jl5KZLQxpsebwjx/A7mhRcN
+	 xONnm4T/IOz81YP0FJYH8oakmmuTh8Yx4Kb+JgWtwwxaK/1K2CLXdLFTwLfu1u8NdQ
+	 QlK9WNusHxg1VOiTCKYFw7/an1pUqp9FXmJIa+gixaKfBFPSKNXSSKazoyFsbzeHwr
+	 GZvOTFX1mbYC4PJMrQDBdHnZ+G+/JZfoqMEjQoY3TY5mc+aa1ER7+RFeSNY9LMWVsL
+	 +LPojF7TVedV4X32SYluiHNu4FlthumMakUkyaFsjhDmReIK1xQ/l57ZNHOgIiTW+5
+	 a+I91x3Dc6smA==
+Received: from [192.168.6.18] (unknown [180.244.155.97])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 0A5F0264002E;
+	Thu, 13 Mar 2025 14:44:51 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------QI0xbJbAnJXlUPIoVhgTDJ2e"
+Message-ID: <57d0d065-c0d97a30-579f9db9-b8d5cf9f@testdomain.io>
+Date: Thu, 13 Mar 2025 14:44:50 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ALERT: AFLEX: Nominee Shareholder Services
+To: SG - David Ling <kellydavis@testcompany.co>, "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>,
+ SG - Jane Kim <blakelopez@testcompany.co>, Accounts ID <caseylee@mockmail.dev>
+References: <francis.sanchez@samplebiz.org>
+ <c6319405-42762b98-98c5dda0-130616af@testdomain.io>
+ <adriantorres@testmail.com>
+Content-Language: en-US
+From: Nurlia Hasyim <haydenlopez@testdomain.io>
+In-Reply-To: <adriantorres@testmail.com>
+X-Spam-Status: No, score=-1.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID,T_REMOTE_IMAGE autolearn=unavailable
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------QI0xbJbAnJXlUPIoVhgTDJ2e
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear David,
+
+Thank you for your email.
+
+To convert PT Aflex Pompa Dan Peralatan from a PT Lokal to a PMA 
+company, the following key criteria must be met:
+
+ 1. Foreign Shareholding Structure – The company must have at least two
+    shareholders, both of whom can be foreign individuals or foreign
+    entities.
+ 2. Minimum Investment Requirement – A PMA company must have a minimum
+    investment plan/paid-up capital of IDR 10 billion (excluding land
+    and buildings). However, for capital compliance, a declaration can
+    be made stating that shareholders' liability is limited to the
+    nominal paid-up capital, meaning no actual transfer of funds into
+    Indonesia is required.
+ 3. Business Classification (KBLI) – The company’s business activities
+    must align with Indonesia’s Positive Investment List to qualify for
+    full foreign ownership. In this case, PT Aflex's business activities
+    (distribution/trading) already permit 100% foreign ownership.
+ 4. Corporate Structure – The company must have at least:
+      * One Director (can be a foreigner)
+      * One Commissioner (can be a foreigner)
+      * At least two shareholders (foreign individuals or entities are
+        allowed)
+ 5. Regulatory Approvals – The conversion requires updates to company
+    documents, including the Articles of Association, as well as
+    registration with BKPM (Investment Coordinating Board) and other
+    relevant authorities.
+
+The cost of the conversion process is IDR 26,640,000 (including VAT).
+
+Please let us know if you would like a detailed consultation or 
+assistance with the process. We would be happy to guide you through the 
+necessary steps.
+
+
+Best regards,
+
+Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162> 	*Nurlia 
+Hasyim*
+Senior client compliance, Okusi Associates <https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Nurlia Hasyim. <whatsapp://send?phone=6285890220665>   Nurlia Hasyim 
+on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
++6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+<tel:+62213901007> | haydenlopez@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 13/3/25 13:15, SG - David Ling wrote:
+>
+> Hi Nurlia,
+>
+> Thanks. Referring to this “we suggest converting the company’s status 
+> from PT Lokal to a PMA company”
+>
+> Please advice the criteria.
+>
+> */Thanks & Rgds,/*
+>
+> */David Ling/*
+>
+> */Mobile +65 9649 2795 (SG) / +971 050 429 8100 (UAE)/*
+>
+> */Aflex Ships Equipment Pte Ltd/*
+>
+> *From:*Nurlia Hasyim <haydenlopez@testdomain.io>
+> *Sent:* Thursday, 13 March 2025 12:08 PM
+> *To:* legmorganhill@testdomain.io; SG - David Ling <kellydavis@testcompany.co>; SG - Jane 
+> Kim <blakelopez@testcompany.co>; Accounts ID <caseylee@mockmail.dev>
+> *Subject:* Re: ALERT: AFLEX: Nominee Shareholder Services
+>
+> Dear Jane,
+>
+> Greetings from Okusi Associates.
+>
+> We would like to inform you that the nominee services for PT Aflex 
+> Pompa Dan Peralatan expired on 4 March 2024, as previously reminded by 
+> our system. Kindly let us know if you wish to renew this service or 
+> make any changes so that we can proceed accordingly.
+>
+> Additionally, we would like to remind you that PT Aflex Pompa Dan 
+> Peralatan has been utilizing our nominee shareholder, director, and 
+> commissioner services for over five years since its establishment. 
+> Given this, we strongly recommend appointing directors and 
+> commissioners within the company to enhance operational effectiveness.
+>
+> Furthermore, we suggest converting the company’s status from PT Lokal 
+> to a PMA company, as its business activities (distribution/trading) 
+> allow for 100% foreign ownership. This transition would eliminate the 
+> need for nominee shareholder services and the associated annual fees.
+>
+> We appreciate your cooperation and trust in our services. Please let 
+> us know how you would like to proceed.
+>
+>
+>
+> Best regards,
+>
+> Nurlia Hasyim
+>
+> Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162>
+>
+> 	
+>
+> *Nurlia Hasyim*S.Hum
+>
+> Senior client compliance, Okusi Associates <https://okusiassociates.com>
+>
+> Okusi Associates website <https://okusiassociates.com/> Send Whatsapp 
+> to Nurlia Hasyim. <whatsapp://send/?phone=6285890220665> Nurlia Hasyim 
+> on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
+>
+> +6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+> <tel:+62213901007> | haydenlopez@testdomain.io | okusiassociates.com 
+> <https://okusiassociates.com>
+>
+> On 2/2/25 08:16, legmorganhill@testdomain.io wrote:
+>
+>     This is an automated alert from Okusi Associates.
+>
+>     Reminder for PT Aflex Pompa Dan Peralatan:
+>
+>     Your Nominee Shareholder Services for this company is due to expire on 04 Mar 2025
+>
+>     Please contact Okusi Associates for information concerning renewal.
+>
+--------------QI0xbJbAnJXlUPIoVhgTDJ2e
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p data-start="70" data-end="83"><font face="Trebuchet MS">Dear
+        David,</font></p>
+    <p data-start="85" data-end="112"><font face="Trebuchet MS">Thank
+        you for your email.</font></p>
+    <p data-start="114" data-end="241"><font face="Trebuchet MS">To
+        convert <span data-start="125" data-end="157">PT Aflex Pompa
+          Dan Peralatan</span> from a <span data-start="165"
+          data-end="177">PT Lokal</span> to a <span data-start="183"
+          data-end="198">PMA company</span>, the following key criteria
+        must be met:</font></p>
+    <ol data-start="243" data-end="1517">
+      <li data-start="243" data-end="398"><font face="Trebuchet MS"><span
+            data-start="246" data-end="280">Foreign Shareholding
+            Structure</span> – The company must have at least <span
+            data-start="314" data-end="334">two shareholders</span>,
+          both of whom can be foreign individuals or foreign entities.</font></li>
+      <li data-start="399" data-end="763"><font face="Trebuchet MS"><span
+            data-start="402" data-end="436">Minimum Investment
+            Requirement</span> – A PMA company must have a <span
+            data-start="465" data-end="526">minimum investment
+            plan/paid-up capital of IDR 10 billion</span> (excluding
+          land and buildings). However, for capital compliance, a
+          declaration can be made stating that shareholders' liability
+          is limited to the nominal paid-up capital, meaning no actual
+          transfer of funds into Indonesia is required.</font></li>
+      <li data-start="764" data-end="1046"><font face="Trebuchet MS"><span
+            data-start="767" data-end="801">Business Classification
+            (KBLI)</span> – The company’s business activities must align
+          with Indonesia’s <span data-start="866" data-end="894">Positive
+            Investment List</span> to qualify for full foreign
+          ownership. In this case, <span data-start="948"
+            data-end="1043">PT Aflex's business activities
+            (distribution/trading) already permit 100% foreign ownership</span>.</font></li>
+      <li data-start="1047" data-end="1286"><font face="Trebuchet MS"><span
+            data-start="1050" data-end="1073">Corporate Structure</span>
+          – The company must have at least:
+        </font>
+        <ul data-start="1113" data-end="1286">
+          <li data-start="1113" data-end="1154"><font
+              face="Trebuchet MS"><span data-start="1115"
+                data-end="1131">One Director</span> (can be a foreigner)</font></li>
+          <li data-start="1158" data-end="1203"><font
+              face="Trebuchet MS"><span data-start="1160"
+                data-end="1180">One Commissioner</span> (can be a
+              foreigner)</font></li>
+          <li data-start="1207" data-end="1286"><font
+              face="Trebuchet MS"><span data-start="1209"
+                data-end="1238">At least two shareholders</span>
+              (foreign individuals or entities are allowed)</font></li>
+        </ul>
+      </li>
+      <li data-start="1287" data-end="1517"><font face="Trebuchet MS"><span
+            data-start="1290" data-end="1314">Regulatory Approvals</span>
+          – The conversion requires updates to company documents,
+          including the <span data-start="1385" data-end="1412">Articles
+            of Association</span>, as well as registration with <span
+            data-start="1443" data-end="1483">BKPM (Investment
+            Coordinating Board)</span> and other relevant authorities.</font></li>
+    </ol>
+    <p data-start="1519" data-end="1594"><font face="Trebuchet MS">The
+        cost of the conversion process is <span data-start="1557"
+          data-end="1575">IDR 26,640,000</span> (including VAT).</font></p>
+    <p data-start="1596" data-end="1750"><font face="Trebuchet MS">Please
+        let us know if you would like a detailed consultation or
+        assistance with the process. We would be happy to guide you
+        through the necessary steps.</font></p>
+    <p data-start="1752" data-end="1785"><font face="Trebuchet MS"><span
+          data-start="1752" data-end="1769"><br>
+        </span></font></p>
+    <p data-start="1752" data-end="1785"><font face="Trebuchet MS"><span
+          data-start="1752" data-end="1769">Best regards,</span></font></p>
+    <p></p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1162"
+                target="_blank" title="Okusi Associates - Nurlia Hasyim">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Nurlia Hasyim"
+                  src="https://okusiassociates.com/a/m/photo-nurlia.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Nurlia Hasyim</strong> 
+              <div style="font-size:13px;color:#888 !important;">
+                Senior client compliance, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Nurlia Hasyim."
+                  href="whatsapp://send?phone=6285890220665"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Nurlia Hasyim."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+                 
+                <a title="Nurlia Hasyim on LinkedIn."
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Nurlia Hasyim on LinkedIn"
+                    src="https://okusiassociates.com/a/m/li.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6285890220665"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6285890220665</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Nurlia Hasyim."
+                  href="mailto:haydenlopez@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">haydenlopez@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 13/3/25 13:15, SG - David Ling
+      wrote:<br>
+    </div>
+    <blockquote type="cite"
+cite="mid:adriantorres@testmail.com">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator"
+        content="Microsoft Word 15 (filtered medium)">
+      <!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]-->
+      <style>@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}@font-face
+	{font-family:DengXian;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}@font-face
+	{font-family:Aptos;}@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;}@font-face
+	{font-family:"\@DengXian";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#888888;
+	text-decoration:none none;}pre
+	{mso-style-priority:99;
+	mso-style-link:"HTML Preformatted Char";
+	margin:0cm;
+	font-size:10.0pt;
+	font-family:"Courier New";}span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-priority:99;
+	mso-style-link:"HTML Preformatted";
+	font-family:Consolas;}span.EmailStyle22
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}div.WordSection1
+	{page:WordSection1;}</style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]-->
+      <div class="WordSection1">
+        <p class="MsoNormal"><span style="font-size:11.0pt">Hi Nurlia,<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:11.0pt"><o:p> </o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:11.0pt">Thanks.
+            Referring to this “</span><span
+            style="font-family:&quot;Trebuchet MS&quot;,sans-serif">we
+            suggest converting the company’s status from PT Lokal to a
+            PMA company”<o:p></o:p></span></p>
+        <p class="MsoNormal"><span
+            style="font-family:&quot;Trebuchet MS&quot;,sans-serif"><o:p> </o:p></span></p>
+        <p class="MsoNormal"><span
+            style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Please
+            advice the criteria.<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:11.0pt"><o:p> </o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:11.0pt"><o:p> </o:p></span></p>
+        <div>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Thanks
+                  &amp; Rgds,<o:p></o:p></span></i></b></p>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">David
+                  Ling<o:p></o:p></span></i></b></p>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Mobile
+                  +65 9649 2795 (SG) / +971 050 429 8100 (UAE)<o:p></o:p></span></i></b></p>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Aflex
+                  Ships Equipment Pte Ltd<o:p></o:p></span></i></b></p>
+        </div>
+        <p class="MsoNormal"><span style="font-size:11.0pt"><o:p> </o:p></span></p>
+        <div>
+          <div
+style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+            <p class="MsoNormal"><b><span lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">From:</span></b><span
+                lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">
+                Nurlia Hasyim <a class="moz-txt-link-rfc2396E" href="mailto:haydenlopez@testdomain.io">&lt;haydenlopez@testdomain.io&gt;</a>
+                <br>
+                <b>Sent:</b> Thursday, 13 March 2025 12:08 PM<br>
+                <b>To:</b> <a class="moz-txt-link-abbreviated" href="mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a>; SG - David Ling
+                <a class="moz-txt-link-rfc2396E" href="mailto:kellydavis@testcompany.co">&lt;kellydavis@testcompany.co&gt;</a>; SG - Jane Kim
+                <a class="moz-txt-link-rfc2396E" href="mailto:blakelopez@testcompany.co">&lt;blakelopez@testcompany.co&gt;</a>; Accounts ID
+                <a class="moz-txt-link-rfc2396E" href="mailto:caseylee@mockmail.dev">&lt;caseylee@mockmail.dev&gt;</a><br>
+                <b>Subject:</b> Re: ALERT: AFLEX: Nominee Shareholder
+                Services<o:p></o:p></span></p>
+          </div>
+        </div>
+        <p class="MsoNormal"><o:p> </o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Dear
+            Jane,</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Greetings
+            from Okusi Associates.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">We
+            would like to inform you that the nominee services for PT
+            Aflex Pompa Dan Peralatan expired on 4 March 2024, as
+            previously reminded by our system. Kindly let us know if you
+            wish to renew this service or make any changes so that we
+            can proceed accordingly.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Additionally,
+            we would like to remind you that PT Aflex Pompa Dan
+            Peralatan has been utilizing our nominee shareholder,
+            director, and commissioner services for over five years
+            since its establishment. Given this, we strongly recommend
+            appointing directors and commissioners within the company to
+            enhance operational effectiveness.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Furthermore,
+            we suggest converting the company’s status from PT Lokal to
+            a PMA company, as its business activities
+            (distribution/trading) allow for 100% foreign ownership.
+            This transition would eliminate the need for nominee
+            shareholder services and the associated annual fees.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">We
+            appreciate your cooperation and trust in our services.
+            Please let us know how you would like to proceed.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif"><br>
+            <br>
+          </span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Best
+            regards,<br>
+            <br>
+            Nurlia Hasyim</span><o:p></o:p></p>
+        <div>
+          <table class="MsoNormalTable" border="0" cellspacing="3"
+            cellpadding="0">
+            <tbody>
+              <tr>
+                <td valign="top" style="padding:0cm 4.5pt 0cm 4.5pt">
+                  <p class="MsoNormal"><a
+                      href="https://okusiassociates.com/id/1162"
+title="&quot;Okusi Associates - Nurlia Hasyim&quot; t "
+                      moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                          width="111" height="111"
+                          style="width:1.1597in;height:1.1597in"
+                          id="_x0000_i1028"
+src="https://okusiassociates.com/a/m/photo-nurlia.jpg"
+                          alt="Photo of Nurlia Hasyim"
+                          moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555"><o:p></o:p></span></p>
+                </td>
+                <td valign="top" style="padding:0cm 4.5pt 0cm 3.0pt">
+                  <p class="MsoNormal"><strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">Nurlia
+                        Hasyim</span></strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                    </span><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#555555">S.Hum</span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                      <o:p></o:p></span></p>
+                  <div>
+                    <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888">Senior
+                        client compliance,
+                        <a href="https://okusiassociates.com"
+                          target="_blank"
+                          title="Indonesian Corporate Services"
+                          moz-do-not-send="true">
+                          Okusi Associates</a> <o:p></o:p></span></p>
+                  </div>
+                  <div style="margin-top:2.25pt">
+                    <p class="MsoNormal"><a
+                        href="https://okusiassociates.com/"
+                        title="&quot;Okusi Associates website&quot; t "
+                        moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                            width="400" height="400"
+                            style="width:4.1666in;height:4.1666in"
+                            id="_x0000_i1027"
+                            src="https://okusiassociates.com/a/m/oa.png"
+                            alt="Okusi Associates website"
+                            moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                      </span><a
+                        href="whatsapp://send/?phone=6285890220665"
+title="&quot;Send Whatsapp to Nurlia Hasyim.&quot; t "
+                        moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                            width="72" height="72"
+                            style="width:.75in;height:.75in"
+                            id="_x0000_i1026"
+                            src="https://okusiassociates.com/a/m/wa.png"
+                            alt="Send Whatsapp to Nurlia Hasyim."
+                            moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                      </span><a
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+title="&quot;Nurlia Hasyim on LinkedIn.&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                            width="72" height="72"
+                            style="width:.75in;height:.75in"
+                            id="_x0000_i1025"
+                            src="https://okusiassociates.com/a/m/li.png"
+                            alt="Nurlia Hasyim on LinkedIn"
+                            moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555"><o:p></o:p></span></p>
+                  </div>
+                  <div>
+                    <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888"><a
+                          href="whatsapp://send?phone=6285890220665"
+                          title="Voice/WhatsApp/SMS"
+                          moz-do-not-send="true">+6285890220665</a> |
+                        <a href="tel:+62213901007"
+                          title="Jakarta Office Landline."
+                          moz-do-not-send="true">+62213901007</a> | <a
+                          href="mailto:haydenlopez@testdomain.io"
+                          title="Send email to Nurlia Hasyim."
+                          moz-do-not-send="true"
+                          class="moz-txt-link-freetext">
+                          haydenlopez@testdomain.io</a> | <a
+                          href="https://okusiassociates.com"
+                          target="_blank"
+title="Okusi Associates - Indonesian Corporate Services"
+                          moz-do-not-send="true">
+                          okusiassociates.com</a> <o:p></o:p></span></p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="MsoNormal" style="margin-bottom:12.0pt"><o:p> </o:p></p>
+        </div>
+        <div>
+          <p class="MsoNormal">On 2/2/25 08:16, <a
+              href="mailto:legmorganhill@testdomain.io" moz-do-not-send="true"
+              class="moz-txt-link-freetext">legmorganhill@testdomain.io</a> wrote:<o:p></o:p></p>
+        </div>
+        <blockquote style="margin-top:5.0pt;margin-bottom:5.0pt">
+          <pre>This is an automated alert from Okusi Associates.<o:p></o:p></pre>
+          <pre><o:p> </o:p></pre>
+          <pre>Reminder for PT Aflex Pompa Dan Peralatan:<o:p></o:p></pre>
+          <pre><o:p> </o:p></pre>
+          <pre>Your Nominee Shareholder Services for this company is due to expire on 04 Mar 2025<o:p></o:p></pre>
+          <pre><o:p> </o:p></pre>
+          <pre>Please contact Okusi Associates for information concerning renewal.<o:p></o:p></pre>
+          <pre><o:p> </o:p></pre>
+        </blockquote>
+      </div>
+    </blockquote>
+  </body>
+</html>
+
+--------------QI0xbJbAnJXlUPIoVhgTDJ2e--

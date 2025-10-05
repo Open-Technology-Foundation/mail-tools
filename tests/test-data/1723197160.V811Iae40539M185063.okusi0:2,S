@@ -1,0 +1,296 @@
+Return-Path: <michael.i0@samplemail.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 10FD933401F6
+	for <drewjones@testmail.net>; Fri,  9 Aug 2024 16:52:40 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 09 Aug 2024 16:52:40 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id cDKlA9jmtWZziR8AeHbnHg
+	(envelope-from <michael.i0@samplemail.org>); Fri, 09 Aug 2024 16:52:24 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=quarantine dis=none) header.from=sentosakimia.com
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com (mail-tyzapc01on2118.outbound.protection.outlook.com [40.107.117.118])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 9F6162640002
+	for <legmorganhill@testdomain.io>; Fri,  9 Aug 2024 16:52:22 +0700 (WIB)
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=BHcGbVNIVVrrF7Qn2iFz4IXqZBlYlXbjeiCBbF930zH17yDvQm01xAazbBLTvlJkybx+IOrCnSh2RXjnh3WZDZnNbYP8Qchnl4ybHg9b135mRVboFshphRgae2noiD1LdBCs7LDwY8J5egzjlFxrlHXF7fmXwv6MUM3tGmy+alIco3QGHcinh0E3hEtayeGGMjnRlBV91qW4Dfi1yt5iAB5qsLMJ8iINKl9prsvfi1zJ2ivmSxSw7oXmkNV5BaIt0gI2+PuALUu/zFOXQ6oKnlMPNGxHvOk0MMl8oS3xAvFOGnPD93Y6YiotAm1KRYvVuhiYtQEJdtPZrKDdMlp+KQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=rp5Op1jjdBoMtXJrL67QmlbimGXOwe9FDchf2xwqx+U=;
+ b=ivcsColdAXlo80MPr5xSRHU1UEStnsZi4L67+5Ws/MaGMhzH1PjcIqVJqZbLZ8EzeO0GwimtT6PQ4xhy2zLRwyDwqgrRSEYK2Mp4P0cYLjZioXGM6O/mxRofsrCVfYNS2VZLW3BbuRbvJtp8V9OUdInL4fulP7rYiZo7+mFTlEsvHELUWhFfOoAprXcUWryYILdRxx1xk/J1VOklGerAu8MJNQLtjsGrhg5Hd7tg2g76GvhY1c3RN3LuLlWhVbhPPmHNRCoHfrrkZDPN01/kuQvjUxFmaqtOEgXLwOZLE1sGwwayIsCqHioXCdwhBb427LzIlTDO15884KCftPyzQg==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=fail (sender ip is
+ 103.246.251.226) smtp.rcpttodomain=okusi.id smtp.mailfrom=sentosakimia.com;
+ dmarc=pass (p=quarantine sp=quarantine pct=100) action=none
+ header.from=sentosakimia.com; dkim=pass (signature was verified)
+ header.d=sentosakimia.com; dkim=pass (signature was verified)
+ header.d=mail-dkim-us-east-2.prod.hydra.sophos.com; arc=pass (0 oda=1 ltdi=1
+ spf=[1,1,smtp.mailfrom=sentosakimia.com] dkim=[1,1,header.d=sentosakimia.com]
+ dmarc=[1,1,header.from=sentosakimia.com])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sentosakimia.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rp5Op1jjdBoMtXJrL67QmlbimGXOwe9FDchf2xwqx+U=;
+ b=aCjp0j0oT3UjeVd9StL42UgdSrulSfWnvtu+fP+CMLTeSQvNEW0feHaGOUMX7YyagYsLj3at2wdpG2meENbvA24Qa0oF7DkSKrgQrsqw2A7190CiWtYtv7koKuIxSuYjsU8XLpHnoEELodgxOIcw81RA5jFblsp32HmBRnw6RpRGBTVQbPoJJzSNoWjuA58GqwhvBuV/l93bpgh+mYNzfd30gk8RSTVBN7hy8pU2v4hMSFMD9ZrZhxgO8Uxr3HVee9Q6KLWEcXj7+Q+RkzN4MU8imxydrpzK+6xnJ+Ob4iwBICLi6GfmFWodmaa0kbG5ikLGPMeAcoAgXDDj9qBo2g==
+Received: from SG2PR04CA0216.apcprd04.prod.outlook.com (2603:1096:4:187::18)
+ by OSQPR02MB7881.apcprd02.prod.outlook.com (2603:1096:604:276::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7849.13; Fri, 9 Aug
+ 2024 09:52:18 +0000
+Received: from HK3PEPF00000220.apcprd03.prod.outlook.com
+ (2603:1096:4:187:cafe::c7) by SG2PR04CA0216.outlook.office365.com
+ (2603:1096:4:187::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7849.14 via Frontend
+ Transport; Fri, 9 Aug 2024 09:52:18 +0000
+X-MS-Exchange-Authentication-Results: spf=fail (sender IP is 103.246.251.226)
+ smtp.mailfrom=sentosakimia.com; dkim=pass (signature was verified)
+ header.d=sentosakimia.com;dkim=pass (signature was verified)
+ header.d=mail-dkim-us-east-2.prod.hydra.sophos.com;dmarc=pass action=none
+ header.from=sentosakimia.com;
+Received-SPF: Fail (protection.outlook.com: domain of sentosakimia.com does
+ not designate 103.246.251.226 as permitted sender)
+ receiver=protection.outlook.com; client-ip=103.246.251.226;
+ helo=mfod-use2.prod.hydra.sophos.com;
+Received: from mfod-use2.prod.hydra.sophos.com (103.246.251.226) by
+ HK3PEPF00000220.mail.protection.outlook.com (10.167.8.42) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7849.8 via Frontend Transport; Fri, 9 Aug 2024 09:52:16 +0000
+Received: from ip-172-21-1-67.us-east-2.compute.internal (ip-172-21-1-67.us-east-2.compute.internal [127.0.0.1])
+	by mfod-use2.prod.hydra.sophos.com (Postfix) with ESMTP id 4WgK2Q0SXJzbcdM
+	for <legmorganhill@testdomain.io>; Fri,  9 Aug 2024 09:52:14 +0000 (UTC)
+X-Sophos-Product-Type: Mailflow
+X-Sophos-Email-ID: 107175e87f574adebfbfa3365ace515a
+Received: from APC01-PSA-obe.outbound.protection.outlook.com
+ (mail-psaapc01lp2041.outbound.protection.outlook.com [104.47.26.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mf-outbound-us-east-2.prod.hydra.sophos.com (Postfix) with ESMTPS id
+ 4WgK2N3jKWz7t89
+ for <legmorganhill@testdomain.io>; Fri,  9 Aug 2024 09:52:12 +0000 (UTC)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=PnNkYRgE7jY1qVIfSFx59mA2jThIvNDILXfPbtkxlNSQkZsnoEGSXP1d7fStjGNltj/LRDdPSB69wukADd7wRozQfDbrBil6qrGUBqrmzYBxHaNKsVkI9ez5tvBJNwHGY2ljihjn+YzPSavafmkGBb/i0yZhvGOGyXOkMFj0TNsST1KO85BX22pVSpI5KtEdALjfc2HRaQqXPNC/s3Ae3b0HXv+zxUGLSVd8Q+WX+/Q0Is3NqlFddWNUMP1j7yik31eqJYhA9znbCBwWN5ULRWUK5O+bGaSg9uMbupLQVEUxpo49z9VsJ39XFPvYS+yD8mBw6+ApVycwmoBf0qDDNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=rp5Op1jjdBoMtXJrL67QmlbimGXOwe9FDchf2xwqx+U=;
+ b=Rl4xw+kf3FchtA1XbQmiNSzfI9y9DgV0nEGqGHySUJpml4IMlZRgX8N8L7UV6qcmK1T+0sPQLzk2Q8/FQcOf3ECyiiy/U9flwjCsQREznfSOL7z5O0PHxUqQ+YfknXYkMAHQSWdY+WlWa6a3A2+Tiqp+fK/e/bSCe9+/eIouHy//zhYChLWozZn1P+bRRYUbmIw8Ywje2noYIxMOrQjZLpcm9M9U85G4NuNLxrFdkE4gkgeUYJVjiYdrmcH4IHu/huq+rkWmOoJed0ogMhNE2x4149RxiwCemN03Yjig8yTcg+BOSMMVM/Nwaoaho4hj+zzDE2M7ifTYtAifU0iOAg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=sentosakimia.com; dmarc=pass action=none
+ header.from=sentosakimia.com; dkim=pass header.d=sentosakimia.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sentosakimia.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=rp5Op1jjdBoMtXJrL67QmlbimGXOwe9FDchf2xwqx+U=;
+ b=aCjp0j0oT3UjeVd9StL42UgdSrulSfWnvtu+fP+CMLTeSQvNEW0feHaGOUMX7YyagYsLj3at2wdpG2meENbvA24Qa0oF7DkSKrgQrsqw2A7190CiWtYtv7koKuIxSuYjsU8XLpHnoEELodgxOIcw81RA5jFblsp32HmBRnw6RpRGBTVQbPoJJzSNoWjuA58GqwhvBuV/l93bpgh+mYNzfd30gk8RSTVBN7hy8pU2v4hMSFMD9ZrZhxgO8Uxr3HVee9Q6KLWEcXj7+Q+RkzN4MU8imxydrpzK+6xnJ+Ob4iwBICLi6GfmFWodmaa0kbG5ikLGPMeAcoAgXDDj9qBo2g==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1723197126; 
+ s=v1; d=mail-dkim-us-east-2.prod.hydra.sophos.com;
+ h=Content-Type:Date:Subject:CC:To:From;
+ bh=rp5Op1jjdBoMtXJrL67QmlbimGXOwe9FDchf2xwqx+U=;
+ b=WcKzqwmJAw0M6iHJTauUCXvSvVsE5rnJkTOtC0bJULzJHL5Wix+E81oxJjdx4WgT
+ qaPAyrxITsHPYIma4izWeN176oaAOsC0+vjV6npwuNLWYWw3mNfYImoP0vCIFUyZHx7
+ cpzq4544gGU7plp+8NjPAeVFgXRQZ/P/45gpXcwOipPsqoQEQiYSI6geapsYHWjO2tU
+ hedIweHisb3xVeM+q1GWl5Vy5Zl8D+xugKW4YDUeis5SoO0Fz7p3j+CIf8NwTQlacXp
+ +XWUZsmNrBJvhF6QtYcq/a/FCk43BOk4RIwQgBNOV7SMOtD2lbFLJZy0YCvGpVyAD5e
+ W6UvDvNPkw==
+Received: from SEZPR02MB5734.apcprd02.prod.outlook.com (2603:1096:101:45::5)
+ by TY0PR02MB6739.apcprd02.prod.outlook.com (2603:1096:405:1b::5) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7849.14; Fri, 9 Aug
+ 2024 09:52:07 +0000
+Received: from SEZPR02MB5734.apcprd02.prod.outlook.com
+ ([fe80::67dc:840a:e15e:2f23]) by SEZPR02MB5734.apcprd02.prod.outlook.com
+ ([fe80::67dc:840a:e15e:2f23%3]) with mapi id 15.20.7849.013; Fri, 9 Aug 2024
+ 09:52:06 +0000
+From: Michael <michael.i0@samplemail.org>
+To: "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>, Mark Tan Yeow Teck
+ <morgan.hill@example.net>
+CC: Monica Priscilia <monica.i0@samplemail.org>
+Subject: RE: ALERT: SKA: Nominee Director Services
+Thread-Topic: ALERT: SKA: Nominee Director Services
+Thread-Index: AQHa4IvBGuEafpWSoUSfQhcP0ixO+bIewY3A
+Date: Fri, 9 Aug 2024 09:52:06 +0000
+Message-ID: <sagethomas@testmail.com>
+References: <rowan.perez@samplebiz.org>
+In-Reply-To: <rowan.perez@samplebiz.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+Authentication-Results-Original: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=sentosakimia.com;
+x-ms-traffictypediagnostic:
+	SEZPR02MB5734:EE_|TY0PR02MB6739:EE_|HK3PEPF00000220:EE_|OSQPR02MB7881:EE_
+X-MS-Office365-Filtering-Correlation-Id: b52b10dc-ed92-4c17-abad-08dcb858f3ea
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam-Untrusted: BCL:0;
+ ARA:13230040|366016|1800799024|376014|38070700018;
+X-Microsoft-Antispam-Message-Info-Original:
+ =?us-ascii?Q?sGN7CqWw7o9wWaGWHpJInG7ZkqoIyU4d2bNEyZZBS0rKCinZVZYmWco5qqOG?=
+ =?us-ascii?Q?3B9w1uVYpN5EeEjpXCDhMuIQKPm+McBxB94xFuoQZ2K3E8vznfcc9vGHgh7k?=
+ =?us-ascii?Q?X6HuqxKPvqncIjN5pb5aBxRimziytEeo0ZJVDh9RaxrOOHPYipYgEhs+AB4i?=
+ =?us-ascii?Q?0OHna9SNKbRqaJRigD1X2xAetQtXO9rE4Q4DDQkpbo9u7yckOON9SMvSWyzY?=
+ =?us-ascii?Q?qX1Y9KzBb97lRoQM1/MeUARfYNdu9rvtom1TPKfBD9zDCAp3Yf6UWPp38yNx?=
+ =?us-ascii?Q?ItQYYbHJHsPO7Kqjs7vZVjmlakQIWpd496X1jAsf07CmFVChIBes/AvR+YGv?=
+ =?us-ascii?Q?r7CduLzhE/jAgSeDMiu7InCBsSR/Ys2ucWVZhfbixmb+AZ2INwPJo24E/9Qs?=
+ =?us-ascii?Q?5W0TvS5UdYza+AODkyljbrtX+Ky8jBg6JsWCZ1IQyoq66dAGLAaueHDXmRys?=
+ =?us-ascii?Q?oL1Nt7r2tanZuNaUTaVbToCo1R/+fWIH7TFWR6QsywpjUlxVTe38eBk09kKj?=
+ =?us-ascii?Q?gp9jGotr2WVaLcCE4u3gq8iQ6EVMN0J4YGF7I8PQJ27XS0PmTVOFA12xsDBj?=
+ =?us-ascii?Q?+VynbF3faie8r/zcBnP4R4OFjulb57yXSvHvUXJ7JZ/07MyVr7a+jUF+hGWg?=
+ =?us-ascii?Q?Mc13MEcZSPngQn/QAs6kKOpO7O2dH61KqjvN89tFZIScsNSsYJV4MYmGBN0i?=
+ =?us-ascii?Q?DghoM9G+ZRM3gFKISoVXdWig67gTcTfea90BoZTf2bHmlzrsDoPjazzBdIU5?=
+ =?us-ascii?Q?l74V6hY4pWZlEF1fH2hGrzdsi9VHS1CcKpLdJuYU0bxasw+hMVFu5LNOnx92?=
+ =?us-ascii?Q?N3z9L5cHBTuqeXD+2rHYb28ri49f9G55g8Vv1ltHfDJz21JKdlIC7IZZ0pg7?=
+ =?us-ascii?Q?Pc9W126g5XVFufBgUnSuInlNH29pv42DNR68wrGO+sf9ccVz9A9TeJ6vieul?=
+ =?us-ascii?Q?BD9YShGEVUuOrVk2H4bHDcLY+7u+/W3bv8ZHA1auYi3DTvb4GG3a78D+2q8F?=
+ =?us-ascii?Q?0fysDT4Ll0Xh87k8JcGwYeAhdakrYIM7+KVyRHOa8k6UfFlis1T5v7LYuw1h?=
+ =?us-ascii?Q?XpRBZYLEf6NrrhZy+5XoD04D88miMbWca7E6w1hQGZZQanH+4evY9BxKbPPK?=
+ =?us-ascii?Q?JbBCqBL3sM53BPEuP5+0iAvbXfffPvsk17qTp/6RA1Fk8q/LPBL+WXkokPC4?=
+ =?us-ascii?Q?kYo2DwQmnVOqfYzZaq3rjtBLm5Gk9d2rT26wXHpGYUq1G2ERFsuHOaL3Fdwq?=
+ =?us-ascii?Q?bX3AbM35xqcy0tEoe/MkGlpac6uMoyBXl0GkxGMupcsL0iyjG8vF2N62nW7x?=
+ =?us-ascii?Q?rPVrN2256IauKDfZKpOevGWi976ZXzYTI/C4NO+LeWY1cjpk44s/TqJvtwMu?=
+ =?us-ascii?Q?I0ctHWrGbqbDYggMFnxI6sV4Sy4lr9OyWgfSmOD2lzrD2Zlu2g=3D=3D?=
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255; CTRY:; LANG:en;
+ SCL:1; SRV:; IPV:NLI; SFV:NSPM; H:SEZPR02MB5734.apcprd02.prod.outlook.com;
+ PTR:; CAT:NONE; SFS:(13230040)(366016)(1800799024)(376014)(38070700018);
+ DIR:OUT; SFP:1102; 
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY0PR02MB6739
+X-Sophos-Email: [us-east-2] Antispam-Engine: 6.0.0,
+ AntispamData: 2024.8.9.93616
+X-LASED-From-ReplyTo-Diff: From:<sentosakimia.com>:0
+X-LASED-SpamProbability: 0.102018
+X-LASED-Hits: ARCAUTH_PASSED 0.000000, BODYTEXTP_SIZE_3000_LESS 0.000000,
+ BODY_SIZE_1000_LESS 0.000000, BODY_SIZE_2000_LESS 0.000000,
+ BODY_SIZE_5000_LESS 0.000000, BODY_SIZE_600_699 0.000000,
+ BODY_SIZE_7000_LESS 0.000000, CTE_QUOTED_PRINTABLE 0.000000,
+ DKIM_ALIGNS 0.000000, DKIM_SIGNATURE 0.000000, FROM_NAME_ONE_WORD 0.050000,
+ HTML_00_01 0.050000, HTML_00_10 0.050000, IMP_FROM_NOTSELF 0.000000,
+ IN_REP_TO 0.000000, LEGITIMATE_SIGNS 0.000000, MSG_THREAD 0.000000,
+ MULTIPLE_REAL_RCPTS 0.000000, NO_CTA_URI_FOUND 0.000000,
+ NO_FUR_HEADER 0.000000, NO_URI_HTTPS 0.000000, OUTBOUND 0.000000,
+ OUTBOUND_SOPHOS 0.000000, REFERENCES 0.000000, SUSP_DH_NEG 0.000000,
+ TO_NAME_IS_ADDY 0.000000, TRANSACTIONAL 0.000000, URI_SNOWNS_NS_NAME 0.500000,
+ __ANY_URI 0.000000, __ARCAUTH_DKIM_PASSED 0.000000,
+ __ARCAUTH_DMARC_PASSED 0.000000, __ARCAUTH_PASSED 0.000000,
+ __ARC_SEAL_MICROSOFT 0.000000, __ARC_SIGNATURE_MICROSOFT 0.000000,
+ __BEC_SUBJ_KEYWORD 0.000000, __BODY_NO_MAILTO 0.000000,
+ __BOUNCE_CHALLENGE_SUBJ 0.000000, __BOUNCE_NDR_SUBJ_EXEMPT 0.000000,
+ __BULK_NEGATE 0.000000, __CC_NAME 0.000000, __CC_NAME_DIFF_FROM_ACC 0.000000,
+ __CC_REAL_NAMES 0.000000, __CP_NOT_1 0.000000, __CT 0.000000, __CTE 0.000000,
+ __CTYPE_CHARSET_QUOTED 0.000000, __CT_TEXT_PLAIN 0.000000,
+ __DC_PHRASE 0.000000, __DKIM_ALIGNS_1 0.000000, __DKIM_ALIGNS_2 0.000000,
+ __DQ_NEG_DOMAIN 0.000000, __DQ_NEG_HEUR 0.000000, __DQ_NEG_IP 0.000000,
+ __FORWARDED_MSG 0.000000, __FROM_DOMAIN_IN_ANY_CC1 0.000000,
+ __FROM_DOMAIN_IN_RCPT 0.000000, __FUR_RDNS_SOPHOS 0.000000,
+ __HAS_CC_HDR 0.000000, __HAS_FROM 0.000000, __HAS_MSGID 0.000000,
+ __HAS_REFERENCES 0.000000, __HAS_X_FF_ASR 0.000000,
+ __HAS_X_FF_ASR_CAT 0.000000, __HAS_X_FF_ASR_SFV 0.000000,
+ __IMP_FROM_MY_ORG 0.000000, __IMP_FROM_NOTSELF 0.000000,
+ __INVOICE_MULTILINGUAL 0.000000, __IN_REP_TO 0.000000,
+ __JSON_HAS_SCHEMA_VERSION 0.000000, __JSON_HAS_TENANT_DOMAINS 0.000000,
+ __JSON_HAS_TENANT_ID 0.000000, __JSON_HAS_TENANT_SCHEMA_VERSION 0.000000,
+ __JSON_HAS_TENANT_VIPS 0.000000, __JSON_HAS_TRACKING_ID 0.000000,
+ __MAIL_CHAIN 0.000000, __MIME_BOUND_CHARSET 0.000000,
+ __MIME_TEXT_ONLY 0.000000, __MIME_TEXT_P 0.000000, __MIME_TEXT_P1 0.000000,
+ __MIME_VERSION 0.000000, __MSGID_32_64_CAPS 0.000000,
+ __MULTIPLE_RCPTS_TO_X2 0.000000, __NO_HTML_TAG_RAW 0.000000,
+ __OUTBOUND_SOPHOS_FUR 0.000000, __OUTBOUND_SOPHOS_FUR_IP 0.000000,
+ __OUTBOUND_SOPHOS_FUR_RDNS 0.000000, __PHISH_PHRASE2 0.000000,
+ __PHISH_SPEAR_SUBJ_ALERT 0.000000, __RCPT_DOMAIN_NOT_TO 0.000000,
+ __REFERENCES 0.000000, __SANE_MSGID 0.000000, __SCAN_D_NEG 0.000000,
+ __SCAN_D_NEG2 0.000000, __SCAN_D_NEG_HEUR 0.000000,
+ __SCAN_D_NEG_HEUR2 0.000000, __SUBJ_ALPHA_END 0.000000,
+ __SUBJ_ALPHA_NEGATE 0.000000, __SUBJ_REPLY 0.000000,
+ __SUBJ_TRANSACTIONAL 0.000000, __SUBJ_TR_GEN 0.000000,
+ __TO_MALFORMED_2 0.000000, __TO_NAME 0.000000,
+ __TO_NAME_DIFF_FROM_ACC 0.000000, __TO_NO_NAME 0.000000,
+ __TO_REAL_NAMES 0.000000, __URI_MAILTO 0.000000, __URI_NO_WWW 0.000000,
+ __URI_NS 0.000000, __X_FF_ASR_SCL_NSP 0.000000, __X_FF_ASR_SFV_NSPM 0.000000
+X-LASED-Impersonation: False
+X-LASED-Spam: NonSpam
+X-Sophos-Mailflow-Processing-Id: b74ebb478df3476bb7f8c9780a8a15c4
+X-Sophos-MH-Mail-Info-Key: NFdnSzJRMFNYSnpiY2RNLTE3Mi4yMS4xLjY3
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped:
+ HK3PEPF00000220.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs:
+	90810bf9-582b-4054-c08e-08dcb858ede3
+X-Microsoft-Antispam:
+	BCL:0;ARA:13230040|82310400026|35042699022|36860700013|376014|1800799024;
+X-Microsoft-Antispam-Message-Info:
+	=?us-ascii?Q?HxhFI+yIx+udwZ7TJAqglhbDEqTePBznw14qUqkrq4U+hHWNj7SfyG9hqB9b?=
+ =?us-ascii?Q?9lMonwq6IB/Ode5pPxwQ7dql6ZUFu5KMMo9JX6zCWoNmv5KU41MP4/t1HtYL?=
+ =?us-ascii?Q?DqEvuoG2kbZsqlNCXQAeB+9Omb2LukLQOV2+xGCjLDBYj8EP9kSQksY9Bv4D?=
+ =?us-ascii?Q?5gV4UxBghBW5wyH51AB2YBcyar5AfRsHBgaESM35YYuJtz+fyqIcxgDE3z6E?=
+ =?us-ascii?Q?VbpjgGd8xX4Suaf+qISt/jpTIB0iJcpuJ7qdZmDYxvh2Ry83ifziyWbo2r/R?=
+ =?us-ascii?Q?TjzWhWi1U6oolRAC1UDikIBxbc4Zeyh1kuU2xOYaIY6c8n3tCO3w49p4p9yf?=
+ =?us-ascii?Q?Pvq/QQC2zXYVt+eCNXcYMVfNXVzc7TRiH7OuUpSkPnhLoEY5+cgWcBIe9tbu?=
+ =?us-ascii?Q?cxiTTwyGO/3VjO6FbILvmvlHjw63geeBqNlTM/xeo+BMFUyQWF23gwPvePyy?=
+ =?us-ascii?Q?Ahj4YNWXlC8JMAaLKj3C4lIw/gIleqJhc1J39Ye9ry8Pu/ig0goKnFrOh5hl?=
+ =?us-ascii?Q?R/YLE0NwIvahvL73LyEXEVIl2aA3da9GRe8Shp+lmV8GhlNBZp4TW4okkATJ?=
+ =?us-ascii?Q?/+elwo5E3XcJYTF3hxuJsYyYpR/ZKkmQDj2FBD2g02n8ymjJh32nnJ4rA5Tg?=
+ =?us-ascii?Q?U769hGEcrj6JhH90ve9Zcfh+b8sb5XcYyF4DzYQaDUPTUuPyBaafbd8fGVN1?=
+ =?us-ascii?Q?NM2tsSpqCEVVd0623wN8ZV6aytYh114RglYI0Y/9n/eegPhs7UbPTboOsa/A?=
+ =?us-ascii?Q?S6h5L+UGIGCaG1WMTEIKb764yMir+8H23RR66sq9pY1cyLFtsKdbvpbEAV7B?=
+ =?us-ascii?Q?lKlvCyH+5JEQX9eM/yl2TLk2eiSVnZn/Lbihfi74SDvvxCNuoKDQwsEWSxpI?=
+ =?us-ascii?Q?MvPUTtUhm4CGg3VsKb0KCLk1ZC/F+YtytOxzbZHannl7B4frjwZS3a2ZsADa?=
+ =?us-ascii?Q?onc/rAe+IcIgs1ZC9oBf/zQqpR3NkAo4NDXqa5V32DYbX9b+84NlmyvVxh8Q?=
+ =?us-ascii?Q?lZpUFCOTr+PDEdayNyhGObJy439Zj6zKQH0VVmE4R4PxSjrLaDjYOTpJClvK?=
+ =?us-ascii?Q?4oKGP4rgMHkjtNZ4ywDc/TxBiOrLXF6WY+t4g/cYgke50KA3c5l3rFj4zInv?=
+ =?us-ascii?Q?TnNW8Mp5xmb9dRUoRb12LiE752UcH7pP0R2do2rIGJAs3KzquREWz/SkKmfm?=
+ =?us-ascii?Q?Gmf0FlFfx9dR5FGm2JaMh7Q9Hi6gfIvHroxtRNuZWL7rdF2subR6if2oMxkB?=
+ =?us-ascii?Q?HPLtGVpTcddS3LWyKGj6hN+BjYg7SLGMDktGJCVdjp2HYBx3qvzzbHDX/zIF?=
+ =?us-ascii?Q?GxHIZdsHSTgACRrGtkO8PVbyxoZiFgjxl/mZcOZPWl5OsPb8kLxhPOkMNNWj?=
+ =?us-ascii?Q?93PRQ9HvfD3kpM+NGVjZsj/8F73tSjfx3KjAM9tkUg46BrmpsZZK5IR43N9q?=
+ =?us-ascii?Q?iWhoEDUbBV1kQzRUWKVbu9+N2Rslhi+Z?=
+X-Forefront-Antispam-Report:
+	CIP:103.246.251.226;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mfod-use2.prod.hydra.sophos.com;PTR:mfod-use2.prod.hydra.sophos.com;CAT:NONE;SFS:(13230040)(82310400026)(35042699022)(36860700013)(376014)(1800799024);DIR:OUT;SFP:1102;
+X-OriginatorOrg: sentosakimia.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 Aug 2024 09:52:16.1924
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b52b10dc-ed92-4c17-abad-08dcb858f3ea
+X-MS-Exchange-CrossTenant-Id: 361fdf2f-7145-4563-947d-83e1d40b0a47
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=361fdf2f-7145-4563-947d-83e1d40b0a47;Ip=[103.246.251.226];Helo=[mfod-use2.prod.hydra.sophos.com]
+X-MS-Exchange-CrossTenant-AuthSource:
+	HK3PEPF00000220.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: OSQPR02MB7881
+X-Spam-Status: No, score=-2.1 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,RCVD_IN_MSPIKE_H2,SPF_HELO_PASS,
+	SPF_PASS,URIBL_BLOCKED autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+Dear Okusi Legal Team,
+
+Kindly help to sent us the quotation for the extension charges.
+Thank you.
+
+Regards,
+Michael
+
+-----Original Message-----
+From: legmorganhill@testdomain.io <legmorganhill@testdomain.io>=20
+Sent: Sunday, July 28, 2024 8:16 AM
+To: Mark Tan Yeow Teck <morgan.hill@example.net>; Fernanda <fernanda.id@sent=
+osakimia.com>
+Subject: ALERT: SKA: Nominee Director Services
+
+This sender is in system whitelist and trusted.
+
+This is an automated alert from Okusi Associates.
+
+Reminder for PT Sentosa Kimia:
+
+Nominee Director Services for this company is due to expire on 27 Aug 2024
+
+Please contact Okusi Associates for information concerning renewal.
+
+

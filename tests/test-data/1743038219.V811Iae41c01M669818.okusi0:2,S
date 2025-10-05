@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 8DA2E3340235
+	for <drewjones@testmail.net>; Thu, 27 Mar 2025 08:16:59 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 27 Mar 2025 08:16:59 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id uGQ7DNWm5GcXDRUAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 27 Mar 2025 08:16:05 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1743038165; bh=VhNqkGDEPogWO6rM0Ul/PNyQEi7cU0mNGtyesELGRCo=;
+	h=To:Subject:Date:From:From;
+	b=ou78cj7zyHUTo6egFTci3vESfepIYWlc4sYZ8aURN/k/f8eAMxswsIwP6D6lvF0nr
+	 zcpRTLhxZLEuxwVvqb4LzNy7pQrr0R0+l0NWHdQM0JGPI1B/7LZwmToN0LP64iAAp6
+	 PjNvN20GXjXA4MYpGAd3ekpksE57luB53pAh89QhuUqvY2iCBfo/L36YPt1rNpJqlc
+	 NyNKhRY/n9WcBF3WAQXXVrp7NmN7NkVGzggp0c0KrwQoUUXJnNABgJTT0B/pj3eiD7
+	 Nkvvbs2u5qu/5RA7zhfoxKBPURfzdlM+LvRBaTU1ZaAO9qX2Q4xHFTTHcp/xWrEyPn
+	 i/xIKsLQnFAOA==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id E8A382640036; Thu, 27 Mar 2025 08:16:04 +0700 (WIB)
+To: miles.flores@example.org
+Subject: ALERT: KYOEIDENK: Investment Activity Report report to BKPM LKPM Q1/2025 (periode Jan - Maret 2025)
+Date: Thu, 27 Mar 2025 08:16:04 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <jamie.thompson@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT KYOEI DENKI TRADING INDONESIA:
+
+Your company's Investment Activity Report (LKPM) to the BKPM must be done before 01 Apr 2025
+
+Please contact Okusi Associates for information concerning renewal.
+

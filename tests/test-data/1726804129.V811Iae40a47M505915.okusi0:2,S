@@ -1,0 +1,1062 @@
+Return-Path: <indigoharris@testmail.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 6018C3340204
+	for <drewjones@testmail.net>; Fri, 20 Sep 2024 10:48:49 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 20 Sep 2024 10:48:49 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id HgvTLWzw7GYI2D8AeHbnHg
+	(envelope-from <indigoharris@testmail.com>); Fri, 20 Sep 2024 10:47:56 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-pl1-f172.google.com (mail-pl1-f172.google.com [209.85.214.172])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 8196C2640004;
+	Fri, 20 Sep 2024 10:47:29 +0700 (WIB)
+Received: by mail-pl1-f172.google.com with SMTP id d9443c01a7336-2053525bd90so16162585ad.0;
+        Thu, 19 Sep 2024 20:47:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1726804047; x=1727408847; darn=okusi.id;
+        h=references:to:cc:in-reply-to:date:subject:mime-version:message-id
+         :from:from:to:cc:subject:date:message-id:reply-to;
+        bh=heiwzAh/jvTZL7YP4ZspKjokcCHNq7/+hJ5orMcXvzg=;
+        b=kNTrco89FM0lx447pAqGzMXMlkV9/hV2DUkm8I3bJOZr246Uch0sv91ZNcEmehPStF
+         3yc8+yUMjlkGIOhp4och+retcuu41GlbnTqZeGXwWGgi2EPXo2wdZX6e0oS/NWlO6j/c
+         jvDRPe0B2paHjdpFIriOrl+FHvNpIL64P1ZtyNuho1bwINkioYNjsAxhHXbsKPS3u0je
+         BosJ4/C3gGYJLkwmJ8g+Vh1uw/WrxbqNh4gBx5LjsT3Y38OUCUuwK7FYgo7mlVIW9G8n
+         4imInwEOdmFP8H5batqrySK7E+DipWOwsvTLdn6IMNzQBmoLS5yRcugb0at/ho/PCm6O
+         Ho8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1726804047; x=1727408847;
+        h=references:to:cc:in-reply-to:date:subject:mime-version:message-id
+         :from:x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=heiwzAh/jvTZL7YP4ZspKjokcCHNq7/+hJ5orMcXvzg=;
+        b=aZ3oT+TXV+704WSPXNCTCSudy2zantVAk4RQhwDOhbrbkh5ukxQlpCv3XGSISGt2bc
+         HgOO1bOnzms7TTf+QlSwHj1BNAJzRd66pVJmU7Ijs5V5GdGk4zZwNNDT1Xt8HwXfNtq+
+         WiR+z9T2YYD4zRwsAbtHz9Zj8lGM6txeLZNbta0s63K790w/qt+UopwqR68UomkVu4fn
+         D9TJ7ul8gjxtxtM+ry0sTx6o8QYYws2iHaSrb+ysfe8/yNqTzbbF/DGQut0RdNQrIABx
+         kcCxwkbxTc4tyEUx9j293mjbFjyU58BaPLPb5wZJ2gLQzqBaIZjlSAH0v0pHyp3bUEQu
+         cSPQ==
+X-Forwarded-Encrypted: i=1; AJvYcCUFI/+k8aQXm1aB48Jlw1+1Ln1+loMn+eXyDzu7kjmpN+bG79rlL+zhJWSH8fwPzW8ebXAyQGwqlQ/FZg==@okusi.id, AJvYcCUsXOJL1Ex5f0IRajcY3eg7zt/PlND8crSRIVDy6sx8AiF8vr/quinnlewis@testdomain.io
+X-Gm-Message-State: AOJu0YxX+6ZFF4coQLdUNILh4Yy8Dva7HLJLCLrCw9ECBskI+2q6WUwz
+	V63HtEDeD45hw21HCYI1EUQwmPf/PmRrEzGTDHKJVZtPzS/mMkQFiIy+uAg=
+X-Google-Smtp-Source: AGHT+IENPI1ck75Ffk1oSuYJQyYGkmnoZrPyy8hiBEKfazCqzrq1GSTFcAwmnjfIV9OU37tQ7w1cSg==
+X-Received: by 2002:a17:903:11c4:b0:203:a14d:ed0 with SMTP id d9443c01a7336-208d8370f6bmr21595825ad.11.1726804046990;
+        Thu, 19 Sep 2024 20:47:26 -0700 (PDT)
+Received: from smtpclient.apple ([139.194.150.100])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2079470f41bsm86985915ad.234.2024.09.19.20.47.25
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 19 Sep 2024 20:47:26 -0700 (PDT)
+From: Sanjay Patni <indigoharris@testmail.com>
+Message-Id: <43b94b40-6a33c121-15604f00-c02989d6@testmail.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_78747503-EA2D-497D-BCA6-8B8C9F9DE326"
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3776.700.51\))
+Subject: Re: Exclusive Golden Visa Opportunity - Your Path to Residency and
+ Investment
+Date: Fri, 20 Sep 2024 10:47:13 +0700
+In-Reply-To: <4eb1bda6-42c43358-570a8608-c06aeb0d@testdomain.io>
+Cc: Sri Mulyati <devonlewis@testdomain.io>,
+ Lina Munir <contkellylewis@testdomain.io>,
+ Reni Debora Okusi Associates <milesnguyen@testdomain.io>
+To: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+References: <c6a66940-a17008ce-f787b726-bd32f438@testmail.com>
+ <acc76054-3f3df6e6-d7d039c5-0f59cf60@testmail.com>
+ <39dcf1f7-1a37f843-cdcf5956-c4a4a125@testdomain.io>
+ <0615b45a-2d073dd4-04308da3-39fe023d@testmail.com>
+ <4eb1bda6-42c43358-570a8608-c06aeb0d@testdomain.io>
+X-Spam-Status: No, score=-3.1 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM,HTML_MESSAGE,
+	LOTS_OF_MONEY,RCVD_IN_DNSWL_BLOCKED,RCVD_IN_MSPIKE_H2,
+	RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,RCVD_IN_VALIDITY_RPBL_BLOCKED,
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+
+--Apple-Mail=_78747503-EA2D-497D-BCA6-8B8C9F9DE326
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+Dear Haliza,
+Many thanks for your quotation.=20
+I would love to collaborate with Okusi for Visa and other corporate =
+services. But the price quoted by you are a barrier. Considering the =
+quotes I have received from other reputed sources, I would like to =
+negotiate the price as follows:
+1. Second Home Visa for primary holder - IDR 23.5 million
+2. Second Home Visa for dependent - IDR 21.5 million
+Total - IDR 45 Million.
+
+The documents acquired and timelines - as per your offer sheet.
+
+Please confirm your acceptance to proceed further.
+
+Regards,
+Sanjay Patni
+
+
+> On 19 Sep 2024, at 13:51, Noorhaliza Putri Fadhila Okusi Associates =
+<drewgarcia@testdomain.io> wrote:
+>=20
+> Dear Pak Sanjay,
+>=20
+> thank you very much for your gentle reminder. Hereby I attached the =
+final quotation from my end for your perusal. If you need further =
+assistance, do not hesitate to contact me. Thank you beforehand.
+>=20
+> Regards,
+>=20
+> Haliza
+>=20
+> On 19/9/24 11:02, Sanjay Patni wrote:
+>> Hi Haliza,
+>> I refer to your WA message regarding investment in government bonds.=20=
+
+>> As per my email of 11th September, please send your final =
+(discounted) quotation providing scope of work, documents acquired, =
+documents required, and process timeline for second home visa for self =
+and my wife.=20
+>> Regards,
+>> Sanjay Patni
+>>=20
+>>=20
+>>> On 19 Sep 2024, at 09:21, Noorhaliza Putri Fadhila Okusi Associates =
+<drewgarcia@testdomain.io> <mailto:drewgarcia@testdomain.io> wrote:
+>>>=20
+>>> Dear Mr. Sanjay,
+>>>=20
+>>> Thank you very much for your reminder. Sincerely apologize that we =
+are still finding information regarding your investment in government. =
+Since, for Second Home visa, the investment should be deposits placed in =
+the national state owned bank. I will ensure everything by the end of =
+the day, sir. I would appreciated your time to wait the details =
+requirements and send the quotation soon. Thank you in advance.
+>>>=20
+>>> Regards,
+>>>=20
+>>> Haliza
+>>>=20
+>>> On 19/9/24 09:15, Sanjay Patni wrote:
+>>>> Hi,
+>>>> I am still awaiting your response to my email dated 11th September =
+as appended below. Are you interested?
+>>>> Regards,
+>>>> Sanjay Patni
+>>>>=20
+>>>>=20
+>>>>=20
+>>>>> Begin forwarded message:
+>>>>>=20
+>>>>> From: Sanjay Patni <indigoharris@testmail.com> <mailto:indigoharris@testmail.com>
+>>>>> Subject: Re: Exclusive Golden Visa Opportunity - Your Path to =
+Residency and Investment
+>>>>> Date: 11 September 2024 at 14:39:39 GMT+7
+>>>>> To: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io> =
+<mailto:drewgarcia@testdomain.io>
+>>>>> Cc: Sri Mulyati <devonlewis@testdomain.io> <mailto:devonlewis@testdomain.io>, Lina Munir =
+<contkellylewis@testdomain.io> <mailto:contkellylewis@testdomain.io>, Reni Debora Okusi =
+Associates <milesnguyen@testdomain.io> <mailto:milesnguyen@testdomain.io>
+>>>>>=20
+>>>>> Dear Haliza,
+>>>>> I am deciding on the second home visa for me & my wife. Can you =
+please send your final (discounted) quotation providing scope of work, =
+documents acquired, documents required and process timeline. Since I =
+already have very competitive offers available from other service =
+providers, I request you to quote your lowest possible price.=20
+>>>>> I already have bank account with Bank Mandiri. As discussed during =
+our last meeting, please check & confirm acceptance of investment in =
+government bonds as per attached information. I have investment in =
+government bond series INDOIS-25.
+>>>>> Regards,
+>>>>> Sanjay Patni
+>>>>=20
+>>>>=20
+>>>>>=20
+>>>>>> On 30 Jul 2024, at 10:10, Noorhaliza Putri Fadhila Okusi =
+Associates <drewgarcia@testdomain.io> <mailto:drewgarcia@testdomain.io> wrote:
+>>>>>>=20
+>>>>>> Dear Mr. Sanjay,
+>>>>>> Thank you for your prompt response. I sincerely apologize for the =
+delay in my reply.
+>>>>>>=20
+>>>>>> Please find attached the quotations for the Investor KITAS, =
+Golden Visa Second Home, and Golden Visa Silver Hair (Retirement) =
+programs. Should you have any further questions or require additional =
+information, please do not hesitate to contact me.
+>>>>>>=20
+>>>>>> Thank you for your interest in our services.
+>>>>>>=20
+>>>>>> Best regards,
+>>>>>>=20
+>>>>>> Haliza
+>>>>>>=20
+>>>>>>  <https://okusiassociates.com/id/1321>	Noorhaliza Putri Fadhila =
+B.A
+>>>>>> Client Compliance for Visas and Work Permit, Okusi Associates =
+<https://okusiassociates.com/>
+>>>>>> =C2=A0 <https://okusiassociates.com/>=E2=80=89  =
+<whatsapp://send?phone=3D6282128910348>
+>>>>>> +6282128910348 <whatsapp://send?phone=3D6282128910348> | =
++62213901007 <tel:+62213901007> | drewgarcia@testdomain.io =
+<mailto:drewgarcia@testdomain.io> | okusiassociates.com =
+<https://okusiassociates.com/>
+>>>>>>=20
+>>>>>> On 29/7/24 12:22, Sanjay Patni wrote:
+>>>>>>> Dear Haliza,
+>>>>>>> Thanks for your quick response.=20
+>>>>>>> Can you also confirm the cost and processing time for processing =
+each of these Visa for self and spouse?
+>>>>>>> I would also like to explore a possibility of establishing a =
+Indonesian company (with Indonesian citizens) and obtaining work permit =
+(KITAS) for my legal stay in Indonesia through it. Can you advise the =
+requirements, time frame and costs for the same also?
+>>>>>>>=20
+>>>>>>> Regards,
+>>>>>>> Sanjay
+>>>>>>>=20
+>>>>>>>=20
+>>>>>>>=20
+>>>>>>>> On 29 Jul 2024, at 12:03, Noorhaliza Putri Fadhila Okusi =
+Associates <drewgarcia@testdomain.io> <mailto:drewgarcia@testdomain.io> wrote:
+>>>>>>>>=20
+>>>>>>>> Dear Mr. Sanjay,
+>>>>>>>>=20
+>>>>>>>> Thank you for your prompt response. We are delighted to assist =
+you in pursuing your interests.
+>>>>>>>>=20
+>>>>>>>> At Okusi Associates, we specialize in facilitating visa =
+applications for discerning individuals like yourself. We're pleased to =
+offer our expert services for the following visa options:
+>>>>>>>>=20
+>>>>>>>> Investor KITAS:
+>>>>>>>>=20
+>>>>>>>> Requires personal shares in a company of minimum Rp =
+10,000,000,000
+>>>>>>>> Valid for 2 years
+>>>>>>>> Allows dependents application for your wife
+>>>>>>>> Provides access to a wide range of services in Indonesia
+>>>>>>>> Second Home Visa:
+>>>>>>>>=20
+>>>>>>>> Long-term stay option for those seeking a second residence
+>>>>>>>> Not in working order in Indonesia
+>>>>>>>> Valid for 5 years
+>>>>>>>> Requires proof of funds: a) Statement of commitment to deposit =
+at least US$130,000 in a state-owned bank account in your name, or b) =
+Statement of commitment to purchase property (flat or apartment) in =
+Indonesia worth at least US$1,000,000, to be fulfilled within 90 days of =
+Limited Stay Permit issuance. The property must be in your name.
+>>>>>>>> Allows dependents application for your wife
+>>>>>>>> Remote Worker Visa:
+>>>>>>>>=20
+>>>>>>>> Designed for digital nomads and remote workers legally employed =
+outside Indonesia
+>>>>>>>> Valid for 6 months, extendable up to 2 years
+>>>>>>>> Requires proof of employment or freelance work with a foreign =
+company or client
+>>>>>>>> Requires evidence of sufficient financial means to support stay =
+in Indonesia
+>>>>>>>> Requires proof of monthly income of at least $60,000/year
+>>>>>>>> Key benefits of these visas include:
+>>>>>>>>=20
+>>>>>>>> Extended stay in Indonesia's beautiful and diverse landscapes
+>>>>>>>> Access to world-class healthcare and education
+>>>>>>>> Potential tax benefits
+>>>>>>>> Opportunity to explore business ventures in Southeast Asia's =
+largest economy
+>>>>>>>> Okusi Associates offers:
+>>>>>>>>=20
+>>>>>>>> End-to-end application support
+>>>>>>>> Expert guidance on visa requirements and investment options
+>>>>>>>> Assistance with document preparation and submission
+>>>>>>>> Regular updates on your application status
+>>>>>>>> Regarding business establishment, Okusi Associates can also =
+assist with our experienced legal team. If you're interested in =
+establishing a company, we can arrange a meeting with our legal experts.
+>>>>>>>>=20
+>>>>>>>> To learn more about our visa services and how we can support =
+you and your family, please don't hesitate to contact me at =
+drewgarcia@testdomain.io <mailto:drewgarcia@testdomain.io> or through my WhatsApp number =
++6282128910348.
+>>>>>>>>=20
+>>>>>>>> We look forward to assisting you further.
+>>>>>>>>=20
+>>>>>>>> Best regards,=20
+>>>>>>>>=20
+>>>>>>>> Haliza
+>>>>>>>>=20
+>>>>>>>>=20
+>>>>>>>>  <https://okusiassociates.com/id/1321>	Noorhaliza Putri Fadhila =
+B.A
+>>>>>>>> Client Compliance for Visas and Work Permit, Okusi Associates =
+<https://okusiassociates.com/>
+>>>>>>>> =C2=A0 <https://okusiassociates.com/>=E2=80=89  =
+<whatsapp://send?phone=3D6282128910348>
+>>>>>>>> +6282128910348 <whatsapp://send?phone=3D6282128910348> | =
++62213901007 <tel:+62213901007> | drewgarcia@testdomain.io =
+<mailto:drewgarcia@testdomain.io> | okusiassociates.com =
+<https://okusiassociates.com/>
+>>>>>>>>=20
+>>>>>>>> On 29/7/24 11:43, Sanjay Patni wrote:
+>>>>>>>>> second home visa, remote worker visa, golden visa
+>>>>>>>=20
+>>>>>> =
+<Quotation_for_Mr_Sanjay_InvestorKITAS.pdf><Quotation_for_Mr_Sanjay_Second=
+Home.pdf><Quotation_for_Mr_Sanjay_SilverHair.pdf>
+>>>>>=20
+>>>>=20
+>>=20
+> <Quotation_for_Mr_Sanjay_SecondHome.pdf>
+
+
+--Apple-Mail=_78747503-EA2D-497D-BCA6-8B8C9F9DE326
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"overflow-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;">Dear =
+Haliza,<div>Many thanks for your quotation.&nbsp;</div><div>I would love =
+to collaborate with Okusi for Visa and other corporate services. But the =
+price quoted by you are a barrier. Considering the quotes I have =
+received from other reputed sources, I would like to negotiate the price =
+as follows:</div><div>1. Second Home Visa for primary holder - IDR 23.5 =
+million</div><div>2. Second Home Visa for dependent - IDR 21.5 =
+million</div><div>Total - IDR 45 Million.</div><div><br></div><div>The =
+documents acquired and timelines - as per your offer =
+sheet.</div><div><br></div><div>Please confirm your acceptance to =
+proceed further.</div><div><br></div><div>Regards,</div><div>Sanjay =
+Patni</div><div><br =
+id=3D"lineBreakAtBeginningOfMessage"><div><br><blockquote =
+type=3D"cite"><div>On 19 Sep 2024, at 13:51, Noorhaliza Putri Fadhila =
+Okusi Associates &lt;drewgarcia@testdomain.io&gt; wrote:</div><br =
+class=3D"Apple-interchange-newline"><div>
+
+ =20
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3DUTF-8">
+ =20
+  <div><p>Dear Pak Sanjay,<br>
+      <br>
+      thank you very much for your gentle reminder. Hereby I attached
+      the final quotation from my end for your perusal. If you need
+      further assistance, do not hesitate to contact me. Thank you
+      beforehand.</p><p>Regards,</p><p>Haliza<br>
+    </p>
+    <div class=3D"moz-cite-prefix">On 19/9/24 11:02, Sanjay Patni =
+wrote:<br>
+    </div>
+    <blockquote type=3D"cite" =
+cite=3D"mid:0615b45a-2d073dd4-04308da3-39fe023d@testmail.com">
+      <meta http-equiv=3D"content-type" content=3D"text/html; =
+charset=3DUTF-8">
+      Hi Haliza,
+      <div>I refer to your WA message regarding investment in government
+        bonds.&nbsp;</div>
+      <div>As per my email of 11th September, please send your final
+        (discounted) quotation providing scope of work, documents
+        acquired, documents required, and process timeline for second
+        home visa for self and my wife.&nbsp;</div>
+      <div>Regards,</div>
+      <div>Sanjay Patni</div>
+      <div><br id=3D"lineBreakAtBeginningOfMessage">
+        <div><br>
+          <blockquote type=3D"cite">
+            <div>On 19 Sep 2024, at 09:21, Noorhaliza Putri Fadhila
+              Okusi Associates <a class=3D"moz-txt-link-rfc2396E" =
+href=3D"mailto:drewgarcia@testdomain.io">&lt;drewgarcia@testdomain.io&gt;</a> wrote:</div>
+            <br class=3D"Apple-interchange-newline">
+            <div>
+              <meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3DUTF-8">
+              <div><p>Dear Mr. Sanjay,<br>
+                  <br>
+                  Thank you very much for your reminder. Sincerely
+                  apologize that we are still finding information
+                  regarding your investment in government. Since, for
+                  Second Home visa, the investment should be deposits
+                  placed in the national state owned bank. I will ensure
+                  everything by the end of the day, sir. I would
+                  appreciated your time to wait the details requirements
+                  and send the quotation soon. Thank you in =
+advance.</p><p>Regards,</p><p>Haliza<br>
+                </p>
+                <div class=3D"moz-cite-prefix">On 19/9/24 09:15, Sanjay
+                  Patni wrote:<br>
+                </div>
+                <blockquote type=3D"cite" =
+cite=3D"mid:acc76054-3f3df6e6-d7d039c5-0f59cf60@testmail.com">
+                  <meta http-equiv=3D"content-type" content=3D"text/html; =
+charset=3DUTF-8">
+                  Hi,
+                  <div>I am still awaiting your response to my email
+                    dated 11th September as appended below. Are you
+                    interested?</div>
+                  <div>Regards,</div>
+                  <div>Sanjay Patni</div>
+                  <div><br>
+                  </div>
+                  <div><br id=3D"lineBreakAtBeginningOfMessage">
+                    <div><br>
+                      <blockquote type=3D"cite">
+                        <div>Begin forwarded message:</div>
+                        <br class=3D"Apple-interchange-newline">
+                        <div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span style=3D"font-family: =
+-webkit-system-font, &quot;Helvetica Neue&quot;, Helvetica, =
+sans-serif;"><b>From:
+                            </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif;">Sanjay
+                            Patni <a class=3D"moz-txt-link-rfc2396E" =
+href=3D"mailto:indigoharris@testmail.com" =
+moz-do-not-send=3D"true">&lt;indigoharris@testmail.com&gt;</a><br>
+                          </span></div>
+                        <div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span style=3D"font-family: =
+-webkit-system-font, &quot;Helvetica Neue&quot;, Helvetica, =
+sans-serif;"><b>Subject:
+                            </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif;"><b>Re:
+                              Exclusive Golden Visa Opportunity - Your
+                              Path to Residency and Investment</b><br>
+                          </span></div>
+                        <div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span style=3D"font-family: =
+-webkit-system-font, &quot;Helvetica Neue&quot;, Helvetica, =
+sans-serif;"><b>Date:
+                            </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif;">11
+                            September 2024 at 14:39:39 GMT+7<br>
+                          </span></div>
+                        <div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span style=3D"font-family: =
+-webkit-system-font, &quot;Helvetica Neue&quot;, Helvetica, =
+sans-serif;"><b>To:
+                            </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif;">Noorhaliza
+                            Putri Fadhila Okusi Associates <a =
+class=3D"moz-txt-link-rfc2396E" href=3D"mailto:drewgarcia@testdomain.io" =
+moz-do-not-send=3D"true">&lt;drewgarcia@testdomain.io&gt;</a><br>
+                          </span></div>
+                        <div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;"><span style=3D"font-family: =
+-webkit-system-font, &quot;Helvetica Neue&quot;, Helvetica, =
+sans-serif;"><b>Cc:
+                            </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif;">Sri
+                            Mulyati <a class=3D"moz-txt-link-rfc2396E" =
+href=3D"mailto:devonlewis@testdomain.io" =
+moz-do-not-send=3D"true">&lt;devonlewis@testdomain.io&gt;</a>,
+                            Lina Munir <a class=3D"moz-txt-link-rfc2396E" =
+href=3D"mailto:contkellylewis@testdomain.io" =
+moz-do-not-send=3D"true">&lt;contkellylewis@testdomain.io&gt;</a>,
+                            Reni Debora Okusi Associates <a =
+class=3D"moz-txt-link-rfc2396E" href=3D"mailto:milesnguyen@testdomain.io" =
+moz-do-not-send=3D"true">&lt;milesnguyen@testdomain.io&gt;</a><br>
+                          </span></div>
+                        <br>
+                        <div>
+                          <meta http-equiv=3D"content-type" =
+content=3D"text/html; charset=3DUTF-8">
+                          <div style=3D"overflow-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;">
+                            <div>Dear Haliza,</div>
+                            <div>I am deciding on the second home visa
+                              for me &amp; my wife. Can you please send
+                              your final (discounted) quotation
+                              providing scope of work, documents
+                              acquired, documents required and process
+                              timeline. Since I already have very
+                              competitive offers available from other
+                              service providers, I request you to quote
+                              your lowest possible price.&nbsp;</div>
+                            <div>I already have bank account with Bank
+                              Mandiri. As discussed during our last
+                              meeting, please check &amp; confirm
+                              acceptance of investment in government
+                              bonds as per attached information. I have
+                              investment in government bond series
+                              INDOIS-25.</div>
+                            <div>Regards,</div>
+                            <div>Sanjay Patni</div>
+                          </div>
+                        </div>
+                      </blockquote>
+                    </div>
+                  </div>
+                  <br>
+                  <fieldset =
+class=3D"moz-mime-attachment-header"></fieldset>
+                  <meta http-equiv=3D"content-type" content=3D"text/html; =
+charset=3DUTF-8">
+                  <div>
+                    <div>
+                      <blockquote type=3D"cite">
+                        <div>
+                          <meta http-equiv=3D"content-type" =
+content=3D"text/html; charset=3DUTF-8">
+                          <div style=3D"overflow-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;">
+                            <div><br>
+                            </div>
+                            <div>
+                              <blockquote type=3D"cite">
+                                <div>On 30 Jul 2024, at 10:10,
+                                  Noorhaliza Putri Fadhila Okusi
+                                  Associates <a =
+class=3D"moz-txt-link-rfc2396E" href=3D"mailto:drewgarcia@testdomain.io" =
+moz-do-not-send=3D"true">&lt;drewgarcia@testdomain.io&gt;</a>
+                                  wrote:</div>
+                                <br class=3D"Apple-interchange-newline">
+                                <div>
+                                  <meta charset=3D"UTF-8">
+                                  <span style=3D"caret-color: rgb(0, 0, =
+0); font-family: Helvetica; font-size: 12px; font-style: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+text-align: start; text-indent: 0px; text-transform: none; white-space: =
+normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none; float: none; display: inline !important;">Dear
+                                    Mr. Sanjay,</span><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">Thank
+                                    you for your prompt response. I
+                                    sincerely apologize for the delay in
+                                    my reply.</p><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Please
+                                    find attached the quotations for the
+                                    Investor KITAS, Golden Visa Second
+                                    Home, and Golden Visa Silver Hair
+                                    (Retirement) programs. Should you
+                                    have any further questions or
+                                    require additional information,
+                                    please do not hesitate to contact
+                                    me.</p><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Thank
+                                    you for your interest in our
+                                    services.</p><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Best
+                                    regards,</p><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Haliza</p>
+                                  <div class=3D"moz-signature" =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">
+                                    <table style=3D"font-size: 16px; =
+font-family: &quot;AvantGarde Bk BT&quot;, Verdana, &quot;sans =
+serif&quot;; color: rgb(85, 85, 85); margin: 4px 0px 0px; padding: 0px; =
+line-height: 1.4;">
+                                      <tbody>
+                                        <tr>
+                                          <td style=3D"margin: 0px; =
+padding: 0px 6px; vertical-align: top;"><a =
+href=3D"https://okusiassociates.com/id/1321" target=3D"_blank" =
+title=3D"Okusi Associates - Noorhaliza Putri Fadhila" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) !important;" =
+moz-do-not-send=3D"true"><img alt=3D"Photo of Noorhaliza Putri Fadhila" =
+src=3D"https://okusiassociates.com/a/m/photo-haliza.jpg" style=3D"height: =
+111px; border-radius: 5%; border: 1px solid rgb(11, 41, 90);" =
+moz-do-not-send=3D"true"></a></td>
+                                          <td style=3D"padding: 0px 6px =
+0px 4px; vertical-align: top; font-size: 16px;"><strong>Noorhaliza
+                                              Putri =
+Fadhila</strong><span class=3D"Apple-converted-space">&nbsp;</span><span =
+title=3D"" style=3D"font-size: 13px; color: rgb(85, 85, 85) =
+!important;">B.A</span>
+                                            <div style=3D"font-size: =
+13px; color: rgb(136, 136, 136) !important;">Client
+                                              Compliance for Visas and
+                                              Work Permit,<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"https://okusiassociates.com/" title=3D"Indonesian Corporate =
+Services" target=3D"_blank" style=3D"text-decoration: none; color: =
+rgb(136, 136, 136) !important;" moz-do-not-send=3D"true">Okusi
+                                                Associates</a></div>
+                                            <div style=3D"margin-top: =
+3px; margin-bottom: 0px;"><a title=3D"Okusi Associates website" =
+href=3D"https://okusiassociates.com/" target=3D"_blank" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) !important;" =
+moz-do-not-send=3D"true"><img alt=3D"Okusi Associates website" =
+src=3D"https://okusiassociates.com/a/m/oa.png" style=3D"height: 28px;" =
+moz-do-not-send=3D"true"><span =
+class=3D"Apple-converted-space">&nbsp;</span></a>=E2=80=89<span =
+class=3D"Apple-converted-space">&nbsp;</span><a title=3D"Send Whatsapp =
+to Noorhaliza Putri Fadhila." href=3D"whatsapp://send?phone=3D628212891034=
+8" target=3D"_blank" style=3D"text-decoration: none; color: rgb(136, =
+136, 136) !important;" moz-do-not-send=3D"true"><img alt=3D"Send =
+Whatsapp to Noorhaliza Putri Fadhila." =
+src=3D"https://okusiassociates.com/a/m/wa.png" style=3D"height: 28px;" =
+moz-do-not-send=3D"true"></a></div>
+                                            <div style=3D"font-size: =
+13px; color: rgb(136, 136, 136) !important;"><a =
+href=3D"whatsapp://send?phone=3D6282128910348" =
+title=3D"Voice/WhatsApp/SMS" style=3D"text-decoration: none; color: =
+rgb(136, 136, 136) !important;" =
+moz-do-not-send=3D"true">+6282128910348</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a href=3D"tel:+62213901007" =
+title=3D"Jakarta Office Landline." style=3D"text-decoration: none; =
+color: rgb(136, 136, 136) !important;" =
+moz-do-not-send=3D"true">+62213901007</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a title=3D"Send email to =
+Noorhaliza Putri Fadhila." href=3D"mailto:drewgarcia@testdomain.io" =
+class=3D"moz-txt-link-freetext" style=3D"text-decoration: none; color: =
+rgb(136, 136, 136) !important;" =
+moz-do-not-send=3D"true">drewgarcia@testdomain.io</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"https://okusiassociates.com/" title=3D"Okusi Associates - =
+Indonesian Corporate Services" target=3D"_blank" style=3D"text-decoration:=
+ none; color: rgb(136, 136, 136) !important;" =
+moz-do-not-send=3D"true">okusiassociates.com</a></div>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <br>
+                                    <br>
+                                  </div>
+                                  <div class=3D"moz-cite-prefix" =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">On
+                                    29/7/24 12:22, Sanjay Patni =
+wrote:<br>
+                                  </div>
+                                  <blockquote type=3D"cite" =
+cite=3D"mid:c3758f84-4598cec0-32840543-d29f3508@testmail.com" =
+style=3D"font-family: Helvetica; font-size: 12px; font-style: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+orphans: auto; text-align: start; text-indent: 0px; text-transform: =
+none; white-space: normal; widows: auto; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">Dear
+                                    Haliza,
+                                    <div>Thanks for your quick
+                                      response.&nbsp;</div>
+                                    <div>Can you also confirm the cost
+                                      and processing time for processing
+                                      each of these Visa for self and
+                                      spouse?</div>
+                                    <div>I would also like to explore a
+                                      possibility of establishing a
+                                      Indonesian company (with
+                                      Indonesian citizens) and obtaining
+                                      work permit (KITAS) for my legal
+                                      stay in Indonesia through it. Can
+                                      you advise the requirements, time
+                                      frame and costs for the same =
+also?</div>
+                                    <div><br>
+                                    </div>
+                                    <div>Regards,</div>
+                                    <div>Sanjay</div>
+                                    <div><br>
+                                    </div>
+                                    <div><br =
+id=3D"lineBreakAtBeginningOfMessage">
+                                      <div><br>
+                                        <blockquote type=3D"cite">
+                                          <div>On 29 Jul 2024, at 12:03,
+                                            Noorhaliza Putri Fadhila
+                                            Okusi Associates<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+class=3D"moz-txt-link-rfc2396E" href=3D"mailto:drewgarcia@testdomain.io" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) !important;" =
+moz-do-not-send=3D"true">&lt;drewgarcia@testdomain.io&gt;</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>wrote:</div>
+                                          <br =
+class=3D"Apple-interchange-newline">
+                                          <div><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Dear
+                                              Mr. Sanjay,</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">Thank
+                                              you for your prompt
+                                              response. We are delighted
+                                              to assist you in pursuing
+                                              your interests.</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">At
+                                              Okusi Associates, we
+                                              specialize in facilitating
+                                              visa applications for
+                                              discerning individuals
+                                              like yourself. We're
+                                              pleased to offer our
+                                              expert services for the
+                                              following visa =
+options:</p>
+                                            <ol style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">
+                                              <li><p>Investor KITAS:</p>
+                                                <ul>
+                                                  <li>Requires personal
+                                                    shares in a company
+                                                    of minimum Rp
+                                                    10,000,000,000</li>
+                                                  <li>Valid for 2 =
+years</li>
+                                                  <li>Allows dependents
+                                                    application for your
+                                                    wife</li>
+                                                  <li>Provides access to
+                                                    a wide range of
+                                                    services in
+                                                    Indonesia</li>
+                                                </ul>
+                                              </li>
+                                              <li><p>Second Home =
+Visa:</p>
+                                                <ul>
+                                                  <li>Long-term stay
+                                                    option for those
+                                                    seeking a second
+                                                    residence</li>
+                                                  <li>Not in working
+                                                    order in =
+Indonesia</li>
+                                                  <li>Valid for 5 =
+years</li>
+                                                  <li>Requires proof of
+                                                    funds: a) Statement
+                                                    of commitment to
+                                                    deposit at least
+                                                    US$130,000 in a
+                                                    state-owned bank
+                                                    account in your
+                                                    name, or b)
+                                                    Statement of
+                                                    commitment to
+                                                    purchase property
+                                                    (flat or apartment)
+                                                    in Indonesia worth
+                                                    at least
+                                                    US$1,000,000, to be
+                                                    fulfilled within 90
+                                                    days of Limited Stay
+                                                    Permit issuance. The
+                                                    property must be in
+                                                    your name.</li>
+                                                  <li>Allows dependents
+                                                    application for your
+                                                    wife</li>
+                                                </ul>
+                                              </li>
+                                              <li><p>Remote Worker =
+Visa:</p>
+                                                <ul>
+                                                  <li>Designed for
+                                                    digital nomads and
+                                                    remote workers
+                                                    legally employed
+                                                    outside =
+Indonesia</li>
+                                                  <li>Valid for 6
+                                                    months, extendable
+                                                    up to 2 years</li>
+                                                  <li>Requires proof of
+                                                    employment or
+                                                    freelance work with
+                                                    a foreign company or
+                                                    client</li>
+                                                  <li>Requires evidence
+                                                    of sufficient
+                                                    financial means to
+                                                    support stay in
+                                                    Indonesia</li>
+                                                  <li>Requires proof of
+                                                    monthly income of at
+                                                    least =
+$60,000/year</li>
+                                                </ul>
+                                              </li>
+                                            </ol><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Key
+                                              benefits of these visas
+                                              include:</p>
+                                            <ul style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">
+                                              <li>Extended stay in
+                                                Indonesia's beautiful
+                                                and diverse =
+landscapes</li>
+                                              <li>Access to world-class
+                                                healthcare and =
+education</li>
+                                              <li>Potential tax =
+benefits</li>
+                                              <li>Opportunity to explore
+                                                business ventures in
+                                                Southeast Asia's largest
+                                                economy</li>
+                                            </ul><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Okusi
+                                              Associates offers:</p>
+                                            <ul style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">
+                                              <li>End-to-end application
+                                                support</li>
+                                              <li>Expert guidance on
+                                                visa requirements and
+                                                investment options</li>
+                                              <li>Assistance with
+                                                document preparation and
+                                                submission</li>
+                                              <li>Regular updates on
+                                                your application =
+status</li>
+                                            </ul><p style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">Regarding
+                                              business establishment,
+                                              Okusi Associates can also
+                                              assist with our
+                                              experienced legal team. If
+                                              you're interested in
+                                              establishing a company, we
+                                              can arrange a meeting with
+                                              our legal experts.</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">To
+                                              learn more about our visa
+                                              services and how we can
+                                              support you and your
+                                              family, please don't
+                                              hesitate to contact me =
+at<span class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"mailto:drewgarcia@testdomain.io" class=3D"moz-txt-link-freetext" =
+moz-do-not-send=3D"true" style=3D"text-decoration: none; color: rgb(136, =
+136, 136) !important;">drewgarcia@testdomain.io</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>or through my WhatsApp =
+number
+                                              +6282128910348.</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">We
+                                              look forward to assisting
+                                              you further.</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">Best
+                                              regards,&nbsp;</p><p =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">Haliza</p>
+                                            <div style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;"><br class=3D"webkit-block-placeholder">
+                                            </div>
+                                            <div class=3D"moz-signature" =
+style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">
+                                              <table style=3D"font-size: =
+16px; font-family: &quot;AvantGarde Bk BT&quot;, Verdana, &quot;sans =
+serif&quot;; color: rgb(85, 85, 85); margin: 4px 0px 0px; padding: 0px; =
+line-height: 1.4;">
+                                                <tbody>
+                                                  <tr>
+                                                    <td style=3D"margin: =
+0px; padding: 0px 6px; vertical-align: top;"><a =
+href=3D"https://okusiassociates.com/id/1321" target=3D"_blank" =
+title=3D"Okusi Associates - Noorhaliza Putri Fadhila" =
+moz-do-not-send=3D"true" style=3D"text-decoration: none; color: rgb(136, =
+136, 136) !important;"><img alt=3D"Photo of Noorhaliza Putri Fadhila" =
+src=3D"https://okusiassociates.com/a/m/photo-haliza.jpg" =
+moz-do-not-send=3D"true" style=3D"height: 111px; border-radius: 5%; =
+border: 1px solid rgb(11, 41, 90);"></a></td>
+                                                    <td style=3D"padding: =
+0px 6px 0px 4px; vertical-align: top; font-size: =
+16px;"><strong>Noorhaliza
+                                                        Putri =
+Fadhila</strong><span class=3D"Apple-converted-space">&nbsp;</span><span =
+title=3D"" style=3D"font-size: 13px; color: rgb(85, 85, 85) =
+!important;">B.A</span>
+                                                      <div =
+style=3D"font-size: 13px; color: rgb(136, 136, 136) !important;">Client
+                                                        Compliance for
+                                                        Visas and Work
+                                                        Permit,<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"https://okusiassociates.com/" title=3D"Indonesian Corporate =
+Services" target=3D"_blank" moz-do-not-send=3D"true" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) =
+!important;">Okusi
+                                                          =
+Associates</a></div>
+                                                      <div =
+style=3D"margin-top: 3px; margin-bottom: 0px;"><a title=3D"Okusi =
+Associates website" href=3D"https://okusiassociates.com/" =
+target=3D"_blank" moz-do-not-send=3D"true" style=3D"text-decoration: =
+none; color: rgb(136, 136, 136) !important;"><img alt=3D"Okusi =
+Associates website" src=3D"https://okusiassociates.com/a/m/oa.png" =
+moz-do-not-send=3D"true" style=3D"height: 28px;"><span =
+class=3D"Apple-converted-space">&nbsp;</span></a>=E2=80=89<span =
+class=3D"Apple-converted-space">&nbsp;</span><a title=3D"Send Whatsapp =
+to Noorhaliza Putri Fadhila." href=3D"whatsapp://send?phone=3D628212891034=
+8" target=3D"_blank" moz-do-not-send=3D"true" style=3D"text-decoration: =
+none; color: rgb(136, 136, 136) !important;"><img alt=3D"Send Whatsapp =
+to Noorhaliza Putri Fadhila." =
+src=3D"https://okusiassociates.com/a/m/wa.png" moz-do-not-send=3D"true" =
+style=3D"height: 28px;"></a></div>
+                                                      <div =
+style=3D"font-size: 13px; color: rgb(136, 136, 136) !important;"><a =
+href=3D"whatsapp://send?phone=3D6282128910348" =
+title=3D"Voice/WhatsApp/SMS" moz-do-not-send=3D"true" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) =
+!important;">+6282128910348</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a href=3D"tel:+62213901007" =
+title=3D"Jakarta Office Landline." moz-do-not-send=3D"true" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) =
+!important;">+62213901007</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a title=3D"Send email to =
+Noorhaliza Putri Fadhila." href=3D"mailto:drewgarcia@testdomain.io" =
+class=3D"moz-txt-link-freetext" moz-do-not-send=3D"true" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) =
+!important;">drewgarcia@testdomain.io</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>|<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"https://okusiassociates.com/" title=3D"Okusi Associates - =
+Indonesian Corporate Services" target=3D"_blank" moz-do-not-send=3D"true" =
+style=3D"text-decoration: none; color: rgb(136, 136, 136) =
+!important;">okusiassociates.com</a></div>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                              <br>
+                                              <br>
+                                            </div>
+                                            <div class=3D"moz-cite-prefix"=
+ style=3D"caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: =
+12px; font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none;">On
+                                              29/7/24 11:43, Sanjay
+                                              Patni wrote:<br>
+                                            </div>
+                                            <blockquote type=3D"cite" =
+cite=3D"mid:0b11d1a6-3c959500-f29eedd5-c5086a19@testmail.com" =
+style=3D"font-family: Helvetica; font-size: 12px; font-style: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+text-align: start; text-indent: 0px; text-transform: none; white-space: =
+normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">second
+                                              home visa, remote worker
+                                              visa, golden =
+visa</blockquote>
+                                          </div>
+                                        </blockquote>
+                                      </div>
+                                      <br>
+                                    </div>
+                                  </blockquote>
+                                  <span =
+id=3D"cid:BE1A2781-3525-4183-83A4-0419ECAC3922">&lt;Quotation_for_Mr_Sanja=
+y_InvestorKITAS.pdf&gt;</span><span =
+id=3D"cid:1A575075-ACA1-4E6B-B63D-BC2A321F5DB4">&lt;Quotation_for_Mr_Sanja=
+y_SecondHome.pdf&gt;</span><span =
+id=3D"cid:015D6D7F-690D-41E5-B2BD-709EC16D7649">&lt;Quotation_for_Mr_Sanja=
+y_SilverHair.pdf&gt;</span></div>
+                              </blockquote>
+                            </div>
+                            <br>
+                          </div>
+                        </div>
+                      </blockquote>
+                    </div>
+                    <br>
+                  </div>
+                </blockquote>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+        <br>
+      </div>
+    </blockquote>
+  </div>
+
+<span =
+id=3D"cid:2E6EC0FB-8776-463B-AF69-0B913FDEBD9E">&lt;Quotation_for_Mr_Sanja=
+y_SecondHome.pdf&gt;</span></div></blockquote></div><br></div></body></htm=
+l>=
+
+--Apple-Mail=_78747503-EA2D-497D-BCA6-8B8C9F9DE326--

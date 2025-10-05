@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 881D83340204
+	for <drewjones@testmail.net>; Mon, 19 Aug 2024 08:16:59 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 19 Aug 2024 08:16:59 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id UepdHNGcwmaj3AUAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Mon, 19 Aug 2024 08:16:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1724030161; bh=0A1vZoIePlvDTNszeHIrFLEKfo9FxDk6/FiE9bWFHIg=;
+	h=To:Subject:Date:From:From;
+	b=RRpiRmL6jvvX/Vib1o1dR8C8ftFpqnDG7YdWPvSiHIAfZLUkuqL5hYltiCwIgtwkK
+	 V4/FpOZeC63HwF/q/4zNWG6PTkeKMym8h+pZ3DDppoT2hrMN0IVZoGBkgRWx5RwbYK
+	 1u34XeWgw333Nyu7xb1MqyaRI9AQfHuvA7LqdaN6UuJxLsTybZMd9EHz8At3TwhpbH
+	 D2fRGA7E3/kW6J8Hj9DHcSCjcHZZfzBq9ZMcCfsR6hmaGyigsp7oL/XrmW5LODZ/lT
+	 DyrGVlv0JYvBQsSk+ZMhK6+PuxlVmm6vZbaBmq4/7RbUgOTiuH0em4/rB9LK4e3QJ2
+	 iotHcXlNcYW0g==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 4744B2640004; Mon, 19 Aug 2024 08:16:01 +0700 (WIB)
+To: stormclark@testmail.com,devonlee@testmail.com
+Subject: ALERT: PILLARS: Company Domicile Services
+Date: Mon, 19 Aug 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <taylor.flores@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Four Pillars Management:
+
+Your company domicile service is due to expire on 18 Sep 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

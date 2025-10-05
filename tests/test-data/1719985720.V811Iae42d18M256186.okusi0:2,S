@@ -1,0 +1,363 @@
+Return-Path: <prvs=0907db01ed=jamietaylor@anonymail.test>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 25E6D3340204
+	for <drewjones@testmail.net>; Wed,  3 Jul 2024 12:48:40 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Wed, 03 Jul 2024 12:48:40 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id QyisIO3lhGY0VQcAeHbnHg
+	(envelope-from <prvs=0907db01ed=jamietaylor@anonymail.test>)
+	for <contkellylewis@testdomain.io>; Wed, 03 Jul 2024 12:47:25 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=quarantine dis=none) header.from=ranhill.com.my
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=ranhill.com.my
+Received: from mx-relay11-hz2.antispameurope.com (mx-relay11-hz2.antispameurope.com [83.246.65.97])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 5BFEA2640004
+	for <contkellylewis@testdomain.io>; Wed,  3 Jul 2024 12:46:57 +0700 (WIB)
+ARC-Authentication-Results: i=1; mx-gate11-hz2.hornetsecurity.com 1; spf=fail
+ reason=mailfrom (ip=203.106.93.5, headerfrom=ranhill.com.my)
+ smtp.mailfrom=ranhill.com.my smtp.helo=hedwig.zmail.ranhill.com.my;
+ dmarc=fail header.from=ranhill.com.my orig.disposition=quarantine
+ARC-Message-Signature: a=rsa-sha256;
+ b=VWW+dB027vi3SVnA6MFgQ3cU5oSDMQn5MzAZy826bKj2Je8YrLf7nQn7ToA2vktJGSJlGkEcybG
+ 1R1pKm9EbaiyyUUiGgoItFaz3k3I8t1i5VLs5siw4zTky4iwhBfWoJbf60myjc3h7fRQBQuB3Dz
+ 4ANtBLWdKdb2graTNfcHDbiTn+cJgLZzAz/85l+wvUwoc2fHw/AcwV/CO+ovzbH3fBnjAiltVLF
+ 2q54Z06lFVXQr0lFoAhWsxVqYhK39sRZRZK/ckytKrqLO9MjOyGBcmNlKD5H0B3bIbgmRb7KCJK
+ 0S4uF6rAld6dSzLOSPMm5HbO0olgqXMdbLbSi7JDag== ;
+ bh=AaNG1CIr49MS4sjRvrRJUcVZZZN5N81wWRZsFZZfpQ4=; c=relaxed/relaxed;
+ d=hornetsecurity.com; h=from:to:date:subject:mime-version:; i=1; s=hse1;
+ t=1719985614
+ARC-Seal: a=rsa-sha256;
+ b=a5XGsuJfHkggkYOVBo0zB+Rf5E5sji/OCvqgjnfsFGES9aGqYCHSXws5OWlf1hpUfQ5GX5gK3Ve
+ 489z16mIGSaJhWy1ItQZ+PlYrVUN7LQcK1ZngGDMszN6wb782uly6gykU5Fkkz2Fpj9t89cZEiV
+ ZvzdnHETT/qTCA1ZqrYKcaOzobv1AEgAx9JO/6kN+DB01Z6YMynR6G1XpHeqRk638XfsKy1FCUq
+ kSvO9peZvperLRGwCPU43BGdgbuaisaiTOPkqlmBN55cFe7/HBoBrqgRMFJ5PiIy9JJhbJooipp
+ dsaFJbaRBfHsFBois+8N8WjQSJbacG6WoSxpl4+7ug== ; cv=none; d=hornetsecurity.com;
+ i=1; s=hse1; t=1719985614
+Received: from zmail.ranhill.com.my ([203.106.93.5]) by mx-relay11-hz2.antispameurope.com;
+ Wed, 03 Jul 2024 07:46:54 +0200
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by hedwig.zmail.ranhill.com.my (Postfix) with ESMTP id ED93BB9181A7;
+	Wed,  3 Jul 2024 13:46:47 +0800 (+08)
+X-Amavis-Modified: Mail body modified (using disclaimer) -
+ hedwig.zmail.ranhill.com.my
+Received: from hedwig.zmail.ranhill.com.my ([127.0.0.1])
+ by localhost (hedwig.zmail.ranhill.com.my [127.0.0.1]) (amavis, port 10026)
+ with ESMTP id nrneWv_mQlK2; Wed,  3 Jul 2024 13:46:47 +0800 (+08)
+Received: from hedwig.zmail.ranhill.com.my (hedwig.zmail.ranhill.com.my [10.1.1.4])
+	by hedwig.zmail.ranhill.com.my (Postfix) with ESMTP id E828FB918174;
+	Wed,  3 Jul 2024 13:46:47 +0800 (+08)
+Date: Wed, 3 Jul 2024 13:46:47 +0800 (MYT)
+From: Zulkiflee Mohamed Ibrahim <jamietaylor@anonymail.test>
+To: Sigit Erdianto Sunarno <contkellylewis@testdomain.io>
+Cc: Rahmat Fadhlillah <faaveryking@testdomain.io>
+Message-ID: <e00b84f1e3c3a08127a936ca242b985b@anonymail.test>
+In-Reply-To: <bb609164-ef09b039-9dd7bc90-859bab7d@testdomain.io>
+References: <6684b4d7.533.enquiry.okusi.id> <bb609164-ef09b039-9dd7bc90-859bab7d@testdomain.io>
+Subject: Re: Indonesian Accountancy and Tax Reporting [#:6684b4d75]
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="=_e6a29494-fc07-42b2-b4c9-f4c2ebbd5922"
+X-Originating-IP: [10.1.1.4]
+Thread-Topic: Indonesian Accountancy and Tax Reporting [#:6684b4d75]
+Thread-Index: pkcrQnmhlLcl5/SeneHnmQCIy6CxMw==
+X-cloud-security-sender:jamietaylor@anonymail.test
+X-cloud-security-recipient:contkellylewis@testdomain.io
+X-cloud-security-Virusscan:CLEAN
+X-cloud-security-disclaimer: This E-Mail was scanned by E-Mailservice on mx-relay11-hz2.antispameurope.com with 870051A2CE50
+X-cloud-security-connect: zmail.ranhill.com.my[203.106.93.5], TLS=1, IP=203.106.93.5
+X-cloud-security-Digest:e28f3cdf53c27f2c9f86d70de8659442
+X-cloud-security:scantime:1.804
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=ranhill.com.my; h=date
+	:from:to:cc:message-id:in-reply-to:references:subject
+	:mime-version:content-type; s=hse1; bh=TUlQ0BL5tbeWJM4jfFwcsKJ/d
+	q9qQ3kJTsrlPRiKPzM=; b=tHc62J78G/b+uUODT9M7nYXSXj7WurC7J2kBteUfL
+	2GVm3VoLqwcewOkr/I8aMp001rVL5v7bp4NV+mvktaK4ymC+7UcTNl65P1specAN
+	eefrdyWqQmPW7XOEkPd49SEiCUnRwhd/0XBGtbQ9ThK8ZrsIUylEGdz9J0qVShhR
+	3k9YGotAREzZhe2UGCPLBK0g4mxOB2+Y0gsHaxmPB6FJl4Z5u2auGJWh/4RBSP3Y
+	mhyjLM08AhpzHfjZPSK7s4HZqMlT+upOWJlApWUDeMfOZRtqiXI0Okksc/llgBu+
+	R6RYigfWQuOhQj3H8Ldi2q/rw2yU+pn82zexFvbaCYFUQ==
+X-Spam-Status: No, score=-0.1 required=5.0 tests=BAYES_00,DEAR_SOMETHING,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	MIME_QP_LONG_LINE,RCVD_IN_MSPIKE_H4,RCVD_IN_MSPIKE_WL,SPF_HELO_NONE,
+	SPF_PASS,T_KAM_HTML_FONT_INVALID,URIBL_BLOCKED autolearn=no
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--=_e6a29494-fc07-42b2-b4c9-f4c2ebbd5922
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+Dear Pak Sgit, 
+
+With reference to our telcon this morning, I will be at your good office at 9.30am tomorrow, 4 July 2024. 
+
+Kind regards, 
+zulkiflee 
+
+
+From: "Sigit Erdianto Sunarno" <contkellylewis@testdomain.io> 
+To: "Zulkiflee Mohamed Ibrahim" <jamietaylor@anonymail.test> 
+Cc: "Rahmat Fadhlillah" <faaveryking@testdomain.io> 
+Sent: Wednesday, 3 July, 2024 10:20:32 
+Subject: Re: Indonesian Accountancy and Tax Reporting [#:6684b4d75] 
+
+
+
+Dear Pak Zulkiflee, 
+
+
+Thank you for reaching out to Okusi Associates. 
+
+To ensure we can provide the most appropriate services tailored to your specific needs, could you kindly share your company profile with us? This information will enable us to better understand your requirements, especially concerning your tax consultant needs. 
+
+For further communication, please feel free to contact me directly at +628118162000. 
+
+Thank you for your cooperation. 
+
+Best regards, 
+
+	[ https://okusiassociates.com/id/1259 | 
+                  
+                 ] 	Sigit Erdianto Sunarno CPA 
+Registered Public Accountant, [ https://okusiassociates.com/ | Okusi
+                    Associates ] 
+[ https://okusiassociates.com/ | 
+                    
+                   ] [ whatsapp://send?phone=628118162000 | 
+                    
+                   ] [ https://www.linkedin.com/in/sigitsunarno/ | 
+                    
+                   ] 
+[ whatsapp://send?phone=628118162000 | +628118162000 ] | [ tel:+62213901007 | +62213901007 ] | [ mailto:jamierobinson@testdomain.io | jamierobinson@testdomain.io ] | [ https://okusiassociates.com/ | okusiassociates.com ] 
+
+
+On 3/7/24 09:17, [ mailto:jamietaylor@anonymail.test | jamietaylor@anonymail.test ] wrote: 
+
+
+
+
+Phone: 081210562690 
+
+Dear Sir, 
+
+We are a Malaysia base company with Representative Office established in Indonesia recently. We are sourcing for reliable tax consultant for submission of tax returns. 
+
+Appreciate if you could contact me at the email or mobile number given. 
+
+Regards. 
+Zulkiflee 
+
+
+
+
+NOTICE: This communication (including any attachments) is intended for the addressee(s) only and may contain information, materials or statements that are legally privileged and confidential. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon this information by persons or entities other than the intended recipient(s) is prohibited. If you are not the intended recipient, please notify the sender immediately by replying to this e-mail and delete this communication (including any attachments) immediately thereafter.
+--=_e6a29494-fc07-42b2-b4c9-f4c2ebbd5922
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><body><div style=3D"font-family: arial, helvetica, sans-serif; font-s=
+ize: 10pt; color: #000000"><div>Dear Pak Sgit,</div><div><br data-mce-bogus=
+=3D"1"></div><div>With reference to our telcon this morning, I will be at y=
+our good office at 9.30am tomorrow, 4 July 2024.</div><div><br data-mce-bog=
+us=3D"1"></div><div>Kind regards,</div><div>zulkiflee</div><div><br></div><=
+hr id=3D"zwchr" data-marker=3D"__DIVIDER__"><div data-marker=3D"__HEADERS__=
+"><b>From: </b>"Sigit Erdianto Sunarno" &lt;contkellylewis@testdomain.io&gt;<br><b>To: =
+</b>"Zulkiflee Mohamed Ibrahim" &lt;jamietaylor@anonymail.test&gt;<br><b>Cc: =
+</b>"Rahmat Fadhlillah" &lt;faaveryking@testdomain.io&gt;<br><b>Sent: </b>Wednesday,=
+ 3 July, 2024 10:20:32<br><b>Subject: </b>Re: Indonesian Accountancy and Ta=
+x Reporting [#:6684b4d75]<br></div><div><br><style><font face=3D"Georgia">
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</font></style></div><div data-marker=3D"__QUOTED_TEXT__"><p><font face=3D"=
+Georgia">Dear Pak Zulkiflee,<br>
+      </font></p>
+    <p><font face=3D"Georgia">Thank you for reaching out to Okusi
+        Associates.</font></p>
+    <p><font face=3D"Georgia">To ensure we can provide the most
+        appropriate services tailored to your specific needs, could you
+        kindly share your company profile with us? This information will
+        enable us to better understand your requirements, especially
+        concerning your tax consultant needs.</font></p>
+    <p><font face=3D"Georgia">For further communication, please feel free
+        to contact me directly at +628118162000.</font></p>
+    <p><font face=3D"Georgia">Thank you for your cooperation.</font></p>
+    <p><font face=3D"Georgia">Best regards,</font></p>
+    <div class=3D"moz-signature">
+     =20
+      <table style=3D"font-size: 16px; color: rgb(85, 85, 85); margin: 4px =
+0px 0px; padding: 0px; line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td style=3D"margin:0;padding:0px 6px 0px 6px;vertical-align:to=
+p;">
+              <font face=3D"Georgia"><a href=3D"https://okusiassociates.com=
+/id/1259" target=3D"_blank" title=3D"Okusi Associates - Sigit Erdianto Suna=
+rno">
+                  <img style=3D"height:111px;border-radius:5%;border:1px so=
+lid #0b295a;" alt=3D"Photo of Sigit Erdianto Sunarno" src=3D"https://okusia=
+ssociates.com/a/m/photo-erdianto.jpg">
+                </a></font>
+            </td>
+            <td style=3D"padding:0px 6px 0px 4px;vertical-align:top;font-si=
+ze:16px;">
+              <font face=3D"Georgia"><strong>Sigit Erdianto Sunarno</strong=
+>
+                <span style=3D"font-size:13px;color:#555 !important;" title=
+=3D""> CPA</span></font>
+              <div style=3D"font-size:13px;color:#888 !important;"><font fa=
+ce=3D"Georgia">
+                  Registered Public Accountant, <a href=3D"https://okusiass=
+ociates.com" title=3D"Indonesian Corporate Services" target=3D"_blank" styl=
+e=3D"color:#888 !important;">Okusi
+                    Associates</a></font>
+              </div>
+              <div style=3D"margin-top:3px;margin-bottom:0px;">
+                <font face=3D"Georgia"><a title=3D"Okusi Associates website=
+" href=3D"https://okusiassociates.com" style=3D"color:#888 !important;" tar=
+get=3D"_blank">
+                    <img style=3D"height:28px;" alt=3D"Okusi Associates web=
+site" src=3D"https://okusiassociates.com/a/m/oa.png">
+                  </a>
+                  =E2=80=89
+                  <a title=3D"Send Whatsapp to Sigit Erdianto Sunarno." hre=
+f=3D"whatsapp://send?phone=3D628118162000" target=3D"_blank">
+                    <img style=3D"height:28px;" alt=3D"Send Whatsapp to Sig=
+it Erdianto Sunarno." src=3D"https://okusiassociates.com/a/m/wa.png">
+                  </a>
+                  =E2=80=89
+                  <a title=3D"Sigit Erdianto Sunarno on LinkedIn." href=3D"=
+https://www.linkedin.com/in/sigitsunarno/" style=3D"color:#888 !important;"=
+ target=3D"_blank">
+                    <img style=3D"height:28px;" alt=3D"Sigit Erdianto Sunar=
+no on LinkedIn" src=3D"https://okusiassociates.com/a/m/li.png">
+                  </a></font>
+              </div>
+              <div style=3D"font-size:13px;color:#888 !important;">
+                <font face=3D"Georgia"><a href=3D"whatsapp://send?phone=3D6=
+28118162000" style=3D"color:#888 !important;" title=3D"Voice/WhatsApp/SMS" =
+target=3D"_blank">+628118162000</a>
+                  | <a href=3D"tel:+62213901007" style=3D"color:#888 !impor=
+tant;" title=3D"Jakarta Office Landline." target=3D"_blank">+62213901007</a=
+>
+                  |
+                  <a title=3D"Send email to Sigit Erdianto Sunarno." href=
+=3D"mailto:jamierobinson@testdomain.io" style=3D"color:#888 !important;" class=3D"moz-=
+txt-link-freetext" target=3D"_blank">jamierobinson@testdomain.io</a>
+                  |
+                  <a href=3D"https://okusiassociates.com" title=3D"Okusi As=
+sociates - Indonesian Corporate Services" target=3D"_blank" style=3D"color:=
+#888 !important;">okusiassociates.com</a></font>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class=3D"moz-cite-prefix">On 3/7/24 09:17,
+      <a class=3D"moz-txt-link-abbreviated" href=3D"mailto:zulkiflee@ranhil=
+l.com.my" target=3D"_blank">jamietaylor@anonymail.test</a> wrote:<br>
+    </div>
+    <blockquote cite=3D"mid:6684b4d7.533.enquiry.okusi.id">
+     =20
+      <div id=3D"message" style=3D"font-family:Arial;border:1px #eee solid;=
+border-radius:4px;color:#555;width:99%;max-width:40rem;text-align:left;marg=
+in:0rem;padding:0rem;font-size:12pt;"><br>
+        Phone: 081210562690<br>
+        <br>
+        Dear Sir, <br>
+        <br>
+        We are a Malaysia base company with Representative Office
+        established in Indonesia recently. We are sourcing for reliable
+        tax consultant for submission of tax returns. <br>
+        <br>
+        Appreciate if you could contact me at the email or mobile number
+        given. <br>
+        <br>
+        Regards. <br>
+        Zulkiflee</div>
+    </blockquote><br></div></div>
+<br>=
+=0A
+<html>=0A
+=0A
+<head>=0A
+<meta http-equiv=3DContent-Type content=3D'text/html; charset=3Dwindows-1252'>=0A
+<meta name=3DGenerator content=3D'Microsoft Word 15 (filtered)'>=0A
+<style>=0A
+ /* Font Definitions */=0A
+ @font-face=0A
+        {font-family:'Cambria Math';=0A
+        panose-1:2 4 5 3 5 4 6 3 2 4;}=0A
+@font-face=0A
+        {font-family:Calibri;=0A
+        panose-1:2 15 5 2 2 2 4 3 2 4;}=0A
+@font-face=0A
+        {font-family:'Century Gothic';=0A
+        panose-1:2 11 5 2 2 2 2 2 2 4;}=0A
+ /* Style Definitions */=0A
+ p.MsoNormal, li.MsoNormal, div.MsoNormal=0A
+        {margin:0in;=0A
+        margin-bottom:.0001pt;=0A
+        font-size:11.0pt;=0A
+        font-family:'Calibri',sans-serif;}=0A
+.MsoChpDefault=0A
+        {font-family:'Calibri',sans-serif;}=0A
+.MsoPapDefault=0A
+        {margin-bottom:8.0pt;=0A
+        line-height:107%;}=0A
+@page WordSection1=0A
+        {size:8.5in 11.0in;=0A
+        margin:1.0in 1.0in 1.0in 1.0in;}=0A
+div.WordSection1=0A
+        {page:WordSection1;}=0A
+-->=0A
+</style>=0A
+=0A
+</head>=0A
+=0A
+<body lang=3DEN-US>=0A
+=0A
+<div class=3DWordSection1>=0A
+=0A
+<p class=3DMsoNormal><span style=3D'font-size:10.0pt;font-family:'Century Gothic',sans-serif'><img=0A
+width=3D297 height=3D33 src=3D'https://zmail.ranhill.com.my/skins/_base/logos/image001.jpg'></span></p>=0A
+=0A
+<p class=3DMsoNormal><span style=3D'font-size:10.0pt;font-family:'Century Gothic',sans-serif'>&nbsp;</span></p>=0A
+=0A
+<p class=3DMsoNormal><span style=3D'font-size:9.0pt'>NOTICE: This communication=0A
+(including any attachments) is intended for the addressee(s) only and may=0A
+contain information, materials or statements that are legally privileged and=0A
+confidential. Any review, retransmission, dissemination or other use of, or=0A
+taking of any action in reliance upon this information by persons or entities=0A
+other than the intended recipient(s) is prohibited. If you are not the intended=0A
+recipient, please notify the sender immediately by replying to this e-mail and=0A
+delete this communication (including any attachments) immediately thereafter.</span></p>=0A
+=0A
+<p class=3DMsoNormal><span style=3D'font-size:9.0pt'>&nbsp;</span></p>=0A
+=0A
+<p class=3DMsoNormal><span style=3D'font-size:9.0pt'>This communication is subject=0A
+to the usual hazards of Internet communication. No guarantee can be made that=0A
+there has been no unauthorised interception or modification of this=0A
+communication whilst in transit. Whilst every effort has been made to ensure=0A
+that this communication is free from computer viruses and other malicious code,=0A
+we are unable to accept responsibility for any loss or damage caused by any=0A
+malicious code infecting this communication.</span></p>=0A
+=0A
+<p class=3DMsoNormal>&nbsp;</p>=0A
+=0A
+</div>=0A
+=0A
+</body>=0A
+=0A
+</html>=0A
+<br>=
+</body></html>
+--=_e6a29494-fc07-42b2-b4c9-f4c2ebbd5922--

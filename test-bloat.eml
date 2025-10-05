@@ -1,0 +1,16 @@
+From: sender@example.com
+To: recipient@example.com
+Subject: Test email with bloat headers
+Date: Mon, 1 Jan 2025 12:00:00 +0000
+Message-ID: <12345@example.com>
+X-MS-Exchange-CrossTenant-id: bloat-header-1
+X-Mailer: Microsoft Outlook
+X-Priority: 1
+DKIM-Signature: bloat-signature-data
+Received: from server1.example.com by server2.example.com
+X-Spam-Status: No
+Received: from server3.example.com by server4.example.com
+Content-Type: text/plain; charset=UTF-8
+
+This is the message body.
+It should remain unchanged.

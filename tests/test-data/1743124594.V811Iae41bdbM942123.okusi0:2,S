@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id CECC7334023A
+	for <drewjones@testmail.net>; Fri, 28 Mar 2025 08:16:34 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 28 Mar 2025 08:16:34 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id Bh7hKFH45WfNGRoAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Fri, 28 Mar 2025 08:16:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1743124561; bh=kaKS7K1MCPEfVpE0OsAeCkn7DwAvoS4qY5fAjx5XXDo=;
+	h=To:Subject:Date:From:From;
+	b=Zwi0ttcmMcA+jS7qxMSaDb07JmAqIvx5oZC8MiGYPfwHldU4TNIMwO5yYJuACbjRi
+	 dGiYsah+fryv3UtKjF63ff0dgi/cC8k4l0/W4cT3WygSEofeMQl1sTI2iGtu3s735H
+	 bXAIJdi76vT94vHnbskN8hjC7l4+G5PfK2fNUilfAlPlaQvrByT4hRTdGucMmiPpth
+	 oHM4NYiSYX4BdpTVAVCoS2DoA2DRKbAcLieIalEXoYimOcYyV3STokbKk3u25dh/aB
+	 /FkWSdDA1EY/2Zfb9iMxApXJcfVXBSF4iHGPuiBfE13cV1KpirBsij8jmZZj95czg5
+	 upAu2VztgPivg==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 6C4D2264002C; Fri, 28 Mar 2025 08:16:01 +0700 (WIB)
+To: morganlee@fakecorp.biz,adrian_wilson@testmail.com
+Subject: ALERT: PMA: Reappointment of Company Officeholders
+Date: Fri, 28 Mar 2025 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <oakley.williams@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Project Management Academy:
+
+The tenure of your company's officeholders (director/chairman) has expired or is about to expire. Officeholders need to be reappointed for another 5-year term.
+
+Please contact Okusi Associates for information concerning renewal.
+

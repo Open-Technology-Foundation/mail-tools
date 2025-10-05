@@ -1,0 +1,267 @@
+Return-Path: <sagewright@testmail.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 89DA23340204
+	for <drewjones@testmail.net>; Fri, 26 Jul 2024 13:37:36 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 26 Jul 2024 13:37:36 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 02KNOBVEo2bSBCQAeHbnHg
+	(envelope-from <sagewright@testmail.com>); Fri, 26 Jul 2024 13:37:09 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=treu.kz
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=treu.kz
+Received: from pkz53.hoster.kz (pkz53.hoster.kz [185.98.5.205])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 5B1082640002
+	for <legmorganhill@testdomain.io>; Fri, 26 Jul 2024 13:37:05 +0700 (WIB)
+Received: from webmail.treu.kz (pkz53.hoster.kz [127.0.0.1])
+	by pkz53.hoster.kz (Postfix) with ESMTPSA id 8A4CE1D243CE;
+	Fri, 26 Jul 2024 11:36:41 +0500 (+05)
+MIME-Version: 1.0
+Date: Fri, 26 Jul 2024 07:36:41 +0100
+From: CaixaBank <sagewright@testmail.com>
+To: undisclosed-recipients:;
+Subject: Invoices Payment Advice Confirmation (Ref: 1907023)
+Reply-To: HSBC Singapore <parkerharris@samplemail.org>, CaixaBank
+ <skylergonzalez@anonymail.test>
+User-Agent: Roundcube Webmail/1.4.15
+Message-ID: <5ee9be7ebce54cab55b39922a8db0fdc@testmail.com>
+X-Sender: sagewright@testmail.com
+Content-Type: multipart/mixed;
+ boundary="=_e8f2a25896019fc9a637e46193fc88f9"
+X-PPP-Message-ID: <34169291174.9403710.52825796394902450910@testmail.net>
+X-PPP-Vhost: treu.kz
+X-Spam-Status: No, score=1.6 required=5.0 tests=BAYES_00,HTML_MESSAGE,
+	MALW_ATTACH,SPF_HELO_NONE,SPF_PASS autolearn=no autolearn_force=no
+	version=3.4.6
+X-Spam-Level: *
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--=_e8f2a25896019fc9a637e46193fc88f9
+Content-Type: multipart/alternative;
+ boundary="=_42b53a61de96b6592d06091d24f4ff30"
+
+--=_42b53a61de96b6592d06091d24f4ff30
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+
+For Your Information!
+Please find in the attached Payment confirmation notice details as 
+requested by our customer and  processed to your corporate banking 
+account information.
+
+*This is an automatically generated notification. Please do not reply to 
+this email*
+
+Regards
+
+HSBC Singapore
+68 Orchard Road. #01-60. Plaza Singapura. Singapore 238839
++65 1800 472 2669
+www.hsbc.com.sg
+
+(c) HSBC Singapore2024
+This email is for informational purposes only and is not ready to 
+receive replies. Therefore, we appreciate that you do not reply to this 
+address. Confidentiality Statement This message and accompanying 
+documents are confidential and are for the exclusive use of either the 
+person or entity to which they are addressed, so that  is not 
+responsible for knowledge of its contents on the part of third parties. 
+If you are not the recipient of this message, you will be notified that 
+you are in error and any use, distribution, forwarding or other 
+disclosure, printing or reproduction of this message received is 
+expressly prohibited and you must immediately delete it from you and all 
+attachments. Destroy it and notify the situation: Customers, if you live 
+abroad, please call 21 780 73 64 or +44 21 780 73 64. Available 24 hours 
+a day, 7 days a week. For customers call 217 807 130. Attention 
+Personalized, Monday to Friday from 08:00 am to 08:00 pm.
+--=_42b53a61de96b6592d06091d24f4ff30
+Content-Type: multipart/related;
+ boundary="=_80a5fcde95013f71505e8bf37340d0ba"
+
+--=_80a5fcde95013f71505e8bf37340d0ba
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif'>
+<div id=3D"editbody1">
+<div style=3D"font-size: 10pt; font-family: Verdana,Geneva,sans-serif;">
+<div id=3D"v1editbody1">
+<div style=3D"font-size: 10pt; font-family: Verdana,Geneva,sans-serif;">
+<div id=3D"v1v1editbody1">
+<div style=3D"font-size: 10pt; font-family: Verdana,Geneva,sans-serif;">
+<div id=3D"v1v1v1editbody1">
+<div style=3D"font-size: 10pt; font-family: Verdana,Geneva,sans-serif;">
+<div id=3D"v1v1v1v1editbody1">
+<div style=3D"font-size: 10pt; font-family: Verdana,Geneva,sans-serif;">
+<div><span style=3D"font-family: 'times new roman', times, serif;">For Your=
+ Information!&nbsp;</span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">Please f=
+ind in the attached Payment confirmation notice details as requested by our=
+ customer and&nbsp; processed to your corporate banking account information=
+=2E</span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">&nbsp;</=
+span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">*This is=
+ an automatically generated notification. Please do not reply to this email=
+*</span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">&nbsp;</=
+span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">Regards<=
+/span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">&nbsp;</=
+span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">HSBC Sin=
+gapore</span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">68 Orcha=
+rd Road. #01-60. Plaza Singapura. Singapore 238839</span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">+65 1800=
+ 472 2669</span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">www.hsbc=
+=2Ecom.sg</span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">&nbsp;</=
+span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;"><img src=
+=3D"cid:5bc76b1d7995e1da620ec2f6aa65159a@testmail.com" /><br /></span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">&nbsp;</=
+span></div>
+<div><span style=3D"font-family: 'times new roman', times, serif;">&nbsp;</=
+span></div>
+<div><span style=3D"font-family: 'courier new', courier, monospace; font-si=
+ze: 8pt;">&copy; HSBC Singapore2024</span></div>
+<div><span style=3D"font-family: 'courier new', courier, monospace; font-si=
+ze: 8pt;">This email is for informational purposes only and is not ready to=
+ receive replies. Therefore, we appreciate that you do not reply to this ad=
+dress. Confidentiality Statement This message and accompanying documents ar=
+e confidential and are for the exclusive use of either the person or entity=
+ to which they are addressed, so that&nbsp; is not responsible for knowledg=
+e of its contents on the part of third parties. If you are not the recipien=
+t of this message, you will be notified that you are in error and any use, =
+distribution, forwarding or other disclosure, printing or reproduction of t=
+his message received is expressly prohibited and you must immediately delet=
+e it from you and all attachments. Destroy it and notify the situation: Cus=
+tomers, if you live abroad, please call 21 780 73 64 or +44 21 780 73 64. A=
+vailable 24 hours a day, 7 days a week. For customers call 217 807 130. Att=
+ention Personalized, Monday to Friday from 08:00 am to 08:00 pm.</span></di=
+v>
+<div><span style=3D"font-family: 'courier new', courier, monospace; font-si=
+ze: 8pt;">&nbsp;</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
+
+--=_80a5fcde95013f71505e8bf37340d0ba
+Content-Transfer-Encoding: base64
+Content-ID: <5bc76b1d7995e1da620ec2f6aa65159a@testmail.com>
+Content-Type: image/png;
+ name=hsbc.png
+Content-Disposition: inline;
+ filename=hsbc.png;
+ size=3251
+
+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
+YII=
+--=_80a5fcde95013f71505e8bf37340d0ba--
+
+--=_42b53a61de96b6592d06091d24f4ff30--
+
+--=_e8f2a25896019fc9a637e46193fc88f9
+Content-Transfer-Encoding: base64
+Content-Type: application/zip;
+ name="Payment Advice__HSBC Banking.pdf.zip"
+Content-Disposition: attachment;
+ filename="Payment Advice__HSBC Banking.pdf.zip";
+ size=1218
+
+UEsDBBQAAAAIAHwv+lhwB4zR9AMAAGsKAAAkAAAAUGF5bWVudCBBZHZpY2VfX0hTQkMgQmFua2lu
+Zy5wZGYubG5r7VZbaBxVGP42aTQlKIkN1UqlW2Gtt253s5srCJlskt2VNNnN5jIJK5jujJO1O9nQ
+jd20oAg+WS+gIgRRqFKMIl4KhTy0SPRJREofJaBWQUT70AdBNAj6nX8mJ90kIj4qnuGc81/O//2X
+c+bMDAEItNZBtVUZMXitFwiSaEp//dvB1bXA58v70rd/sxaYfO+q8Fitx23U34za1h5oxYHM1ZEr
+wZ96is1vfdmIByKRN/bhSKInj+1tAlGZr5nmXDMmi3NWuVpBL3ZjF65/vDz24P3r5nMHw1yRblTr
+AlvsP1reg0kUMQcLZVRRoWwvpn3UX8wn483Inaos2G6sDeirwU3frXCfvnUn3F/LBeRwingLsOEi
+BprjDkyomalfMTOvBVFwrbC9aOt4lXTdfD2kcJ0fGzTuLg3/7mc3oUA8C2HiLsKWeIGH2ff769V8
+2F+fZm9hr2e/5e3OxmYlZCn9SuU3cstvhIJDRA4j/5djbbXy27LMb4nvi0ABR9HPw3CEmiAyYjmA
+E7RKUV/iE2T+hykzSR0j3jwMaiu+fA4jmPfpKudZRmDxsakJUmYjwTlNG4N1MIhznOMYHO5XG6kk
+ujjmaNuHQVIJRDhamk+K7bisL5FKEcHgTmV9fQpHhVf4jrb39DmxV/42/fdR72DGp5R9lmNB+NMc
++1kBA0P0b+Ck6JXttOAtaLyCxDer7Yckvsd1PsdE+oToxznayGq8suSn/M1LvGq9F8/JLXhevo7v
+X1mlud4QfVavH/fz70NSxzcmfEnwDRk37bM6HxXfIKY4joi/WeENXY/jgjeg4/X0VdkPxUd1vJ6+
+XfSb+Ke1flisYlLfgs6vquOdhlOTn7dfnTXxe/UaQFxWOn7+SZ5EA6PiZXN/JnT+SUR22H+P8s7X
+Bp6BDp2vl39W/KlxSvxHhFd6U+u9+ls3nKda/975tGDU5O/Vwzsfhuy/wnd1fEE+CfTs8EZXtr3R
+RVIztLH51trUhWHJe9taLxf42ZB3jYyWywuhfGXjSim6M459wq6ErVIJ//kWqrkJR1nNMunQP6rn
+/+3f39QXtkG9E5y/8r/GTeSrw5/c+UPdI8Mr/eHzH2SXVpTuUe/LfNb0bd2ZQmfcjmustf0Xmj51
+7kt8aLy6cu/SautTbz7z/c/J6y0vX3ixZeqlbxv+Tn+ZGLuJ/yznaC6T++6MOXhpqCtx8fc9r9yz
+5F521b+FcnSAXf105Pg5jbK3s7cJFeUcI9/NqzLG6ytGWYwXWoR0hNI45R3olpVxPlFyndR0iV5J
+I/J4rdsP5Pxet//9F+ZTy6ne8LmHFp+/i/JZtSClfiEvrkc6xh5LnanLtL1z6Y9DN1b3T1BLAQIf
+ABQAAAAIAHwv+lhwB4zR9AMAAGsKAAAkACQAAAAAAAAAIAAAAAAAAABQYXltZW50IEFkdmljZV9f
+SFNCQyBCYW5raW5nLnBkZi5sbmsKACAAAAAAAAEAGAA028+oGN/aAaz+/LwY39oBA4Mauxjf2gFQ
+SwUGAAAAAAEAAQB2AAAANgQAAAAA
+--=_e8f2a25896019fc9a637e46193fc88f9--

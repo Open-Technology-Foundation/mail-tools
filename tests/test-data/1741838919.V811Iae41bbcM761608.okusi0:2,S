@@ -1,0 +1,243 @@
+Return-Path: <haydenlopez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 9ABE13340235
+	for <drewjones@testmail.net>; Thu, 13 Mar 2025 11:08:39 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 13 Mar 2025 11:08:39 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 0SuPDDRa0mfAERQAeHbnHg
+	(envelope-from <haydenlopez@testdomain.io>); Thu, 13 Mar 2025 11:08:20 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1741838899; bh=B1exzIgZ9D63xnXOrrMXLWHUfigwSD3SjWAEFx4maro=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=Po6MMHCgYzHyEDYf8OECAYMe4/ikjf/KGyfl7hYKLplqb5t5Oym20ALVHu2+jUrhe
+	 R5Yi3cFpwFUJOcY0TGiNhC2JOzeJLjQTWjnYyHxXJ0XbGQ81C2nMpdJcRYOrGXt6OO
+	 +kzB7p442Mxxfdfliy7YUr8Xk97xL4X9t9vTdBdJiPQwJ3DWpv+0E/KKckYFclE/tc
+	 LSlWFhjWPmNMX9g5yuXls6NJpJx8WGD5A8T1WvDH5b8GfAxTy5MsbX/PPyReMq1h3H
+	 RfcT52b+N4DYFdoNwhyVfEnr9iLYonD+K1ohtVSE8VqS0DLDNKkCkfDL0Rtp25bSXj
+	 nHoxWzAjo+3GA==
+Received: from [192.168.6.18] (unknown [180.244.155.97])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 2DA61264002C;
+	Thu, 13 Mar 2025 11:08:19 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------3xrggB0RrRhposELGd0N6jae"
+Message-ID: <c6319405-42762b98-98c5dda0-130616af@testdomain.io>
+Date: Thu, 13 Mar 2025 11:08:18 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ALERT: AFLEX: Nominee Shareholder Services
+To: legmorganhill@testdomain.io, kellydavis@testcompany.co, blakelopez@testcompany.co,
+ emersondavis@mockmail.dev
+References: <francis.sanchez@samplebiz.org>
+Content-Language: en-US
+From: Nurlia Hasyim <haydenlopez@testdomain.io>
+In-Reply-To: <francis.sanchez@samplebiz.org>
+X-Spam-Status: No, score=-1.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID,T_REMOTE_IMAGE autolearn=unavailable
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------3xrggB0RrRhposELGd0N6jae
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear Jane,
+
+Greetings from Okusi Associates.
+
+We would like to inform you that the nominee services for PT Aflex Pompa 
+Dan Peralatan expired on 4 March 2024, as previously reminded by our 
+system. Kindly let us know if you wish to renew this service or make any 
+changes so that we can proceed accordingly.
+
+Additionally, we would like to remind you that PT Aflex Pompa Dan 
+Peralatan has been utilizing our nominee shareholder, director, and 
+commissioner services for over five years since its establishment. Given 
+this, we strongly recommend appointing directors and commissioners 
+within the company to enhance operational effectiveness.
+
+Furthermore, we suggest converting the company’s status from PT Lokal to 
+a PMA company, as its business activities (distribution/trading) allow 
+for 100% foreign ownership. This transition would eliminate the need for 
+nominee shareholder services and the associated annual fees.
+
+We appreciate your cooperation and trust in our services. Please let us 
+know how you would like to proceed.
+
+
+Best regards,
+
+Nurlia Hasyim
+
+Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162> 	*Nurlia 
+Hasyim* S.Hum
+Senior client compliance, Okusi Associates <https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Nurlia Hasyim. <whatsapp://send?phone=6285890220665>   Nurlia Hasyim 
+on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
++6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+<tel:+62213901007> | haydenlopez@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 2/2/25 08:16, legmorganhill@testdomain.io wrote:
+> This is an automated alert from Okusi Associates.
+>
+> Reminder for PT Aflex Pompa Dan Peralatan:
+>
+> Your Nominee Shareholder Services for this company is due to expire on 04 Mar 2025
+>
+> Please contact Okusi Associates for information concerning renewal.
+>
+--------------3xrggB0RrRhposELGd0N6jae
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p data-start="162" data-end="174"><font face="Trebuchet MS">Dear
+        Jane,</font></p>
+    <p data-start="176" data-end="210"><font face="Trebuchet MS">Greetings
+        from Okusi Associates.</font></p>
+    <p data-start="212" data-end="476"><font face="Trebuchet MS">We
+        would like to inform you that the nominee services for PT Aflex
+        Pompa Dan Peralatan expired on <span data-start="310"
+          data-end="326">4 March 2024</span>, as previously reminded by
+        our system. Kindly let us know if you wish to renew this service
+        or make any changes so that we can proceed accordingly.</font></p>
+    <p data-start="478" data-end="810"><font face="Trebuchet MS">Additionally,
+        we would like to remind you that PT Aflex Pompa Dan Peralatan
+        has been utilizing our nominee shareholder, director, and
+        commissioner services for over five years since its
+        establishment. Given this, we strongly recommend appointing
+        directors and commissioners within the company to enhance
+        operational effectiveness.</font></p>
+    <p data-start="812" data-end="1103"><font face="Trebuchet MS">Furthermore,
+        we suggest converting the company’s status from <span
+          data-start="873" data-end="885">PT Lokal</span> to a <span
+          data-start="891" data-end="906">PMA company</span>, as its
+        business activities (distribution/trading) allow for <span
+          data-start="968" data-end="994">100% foreign ownership</span>.
+        This transition would eliminate the need for nominee shareholder
+        services and the associated annual fees.</font></p>
+    <p data-start="1105" data-end="1214"><font face="Trebuchet MS">We
+        appreciate your cooperation and trust in our services. Please
+        let us know how you would like to proceed.</font></p>
+    <p data-start="1216" data-end="1251"><font face="Trebuchet MS"><span
+          data-start="1216" data-end="1233"><br>
+        </span></font></p>
+    <p data-start="1216" data-end="1251"><font face="Trebuchet MS"><span
+          data-start="1216" data-end="1233">Best regards,<br>
+        </span><br data-start="1233" data-end="1236">
+        Nurlia Hasyim</font></p>
+    <p></p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1162"
+                target="_blank" title="Okusi Associates - Nurlia Hasyim">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Nurlia Hasyim"
+                  src="https://okusiassociates.com/a/m/photo-nurlia.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Nurlia Hasyim</strong> <span
+                style="font-size:13px;color:#555 !important;" title="">
+                S.Hum</span>
+              <div style="font-size:13px;color:#888 !important;">
+                Senior client compliance, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Nurlia Hasyim."
+                  href="whatsapp://send?phone=6285890220665"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Nurlia Hasyim."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+                 
+                <a title="Nurlia Hasyim on LinkedIn."
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Nurlia Hasyim on LinkedIn"
+                    src="https://okusiassociates.com/a/m/li.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6285890220665"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6285890220665</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Nurlia Hasyim."
+                  href="mailto:haydenlopez@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">haydenlopez@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 2/2/25 08:16, <a class="moz-txt-link-abbreviated" href="mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a> wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:francis.sanchez@samplebiz.org">
+      <pre wrap="" class="moz-quote-pre">This is an automated alert from Okusi Associates.
+
+Reminder for PT Aflex Pompa Dan Peralatan:
+
+Your Nominee Shareholder Services for this company is due to expire on 04 Mar 2025
+
+Please contact Okusi Associates for information concerning renewal.
+
+</pre>
+    </blockquote>
+  </body>
+</html>
+
+--------------3xrggB0RrRhposELGd0N6jae--

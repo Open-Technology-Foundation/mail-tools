@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 2575F3340204
+	for <drewjones@testmail.net>; Mon, 16 Sep 2024 08:16:16 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 16 Sep 2024 08:16:16 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id Z7aTO9GG52ZViCkAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Mon, 16 Sep 2024 08:16:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1726449361; bh=g876NiUetdmqWJx3PJHIe6snpWZR+GRns61pTssvHRc=;
+	h=To:Subject:Date:From:From;
+	b=UHSHRAGYce7HuQzr24FakiMxc0JIRZrGzdR/qQWv33A7ssDwQLCjRvCq1n0Ej7Q7K
+	 YoYi38Ir2zAQDg23tUwxqrWz4oau+BB2XG4dcqWyj3l/I1sVM/dbnaXtCCEwVRCgx4
+	 O0Jtcy4qqeBFEUYD9rcbNbji7H7WdrmkyqRCTVvtDErzjqhvTZh/3wFINjEPaH2pEc
+	 3IuPkv2Q7Up7Wy8/MjUfOBi0XgoTGvlAlpVLopUo4RW01NNmHKYy7fiGt36kc9QPcU
+	 oFIUJRTVKZ6iHxf1ymk8np9xE75aAKen8Ih80XRexYU/rGVO43ETO9uPpieaLJ3NWH
+	 ogQCo79yTqW/g==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 700612640004; Mon, 16 Sep 2024 08:16:01 +0700 (WIB)
+To: dakota.clark@fakecorp.biz,stormclark@anonymail.test,jesserobinson@fakecorp.biz
+Subject: ALERT: IMBUE: Investment Activity Report report to BKPM LKPM Q3 2024
+Date: Mon, 16 Sep 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <95339105588286.220278307341@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Imbue Business Services:
+
+Your company's Investment Activity Report (LKPM) to the BKPM must be done before 01 Oct 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

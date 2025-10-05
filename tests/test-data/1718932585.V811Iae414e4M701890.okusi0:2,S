@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 96A823340204
+	for <drewjones@testmail.net>; Fri, 21 Jun 2024 08:16:25 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 21 Jun 2024 08:16:25 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id n69QE1PUdGZl4DIAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Fri, 21 Jun 2024 08:16:03 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1718932563; bh=MkZkxXUFK5Lh0kSc7SZsBHqfGFuVnmsbiWyIjeWj3qY=;
+	h=To:Subject:From:Date:From;
+	b=X5r/kvQw0nqu3Ncw9D0u8Aj6nidJLXpuTKM7A3Sx1/4qP/bTnkaalsDW/9yKxJh5y
+	 qe2Tz9Ygg5yxAoFunoiu408SPOLZIWB/+qpbLACgJSebpYdOJL17MeOKK2pVkxAvX1
+	 SIRpY/rqXGHSkq7DVql/dMac33WTmMYKN4VY7PFa/C2OVocNHR4tIK6EmAyW05gCcE
+	 Ea7f8/3WVbFUifjo/q4By0m5L/qtMV87ot14d9wci6p2JsC9WNo69pHY3hJIzR99Kh
+	 2wt/gnosEcqC4HimEK9h0FF6HdvOGj7L7bufWAiMun9ZUekrCtftT5EO53iuqiXcIA
+	 sBMfgPWciOPUw==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id EF0292640B50; Fri, 21 Jun 2024 08:16:02 +0700 (WIB)
+To: dakota_white@testmail.net,jordanbrown@example.org,morgandavis@example.org,adrianlee@testmail.com
+Subject: ALERT: TRIMAX: Investment Activity Report report to BKPM LKPM Q2 (April - Juni) 2024
+From: legmorganhill@testdomain.io
+Message-Id: <jordan.allen@samplebiz.org>
+Date: Fri, 21 Jun 2024 08:16:02 +0700 (WIB)
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Trimax Machinery:
+
+Your company's Investment Activity Report (LKPM) to the BKPM must be done before 01 Jul 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

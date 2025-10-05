@@ -1,0 +1,208 @@
+Return-Path: <drewgarcia@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id A2C2E3340204
+	for <drewjones@testmail.net>; Fri, 26 Jul 2024 16:38:31 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 26 Jul 2024 16:38:31 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id EP4CElxuo2baxCQAeHbnHg
+	(envelope-from <drewgarcia@testdomain.io>); Fri, 26 Jul 2024 16:37:32 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1721986650; bh=Za8a3MBeZilu1VKQnilbZVd6Urtu5LIF6XN5mfVZ8Jc=;
+	h=Date:To:Cc:From:Subject:From;
+	b=Mw78ejLZx8hNvXOf3e3ImTc3VGZfU1Pk2fhU3hx4Kt68u9XSKYwuGRONU9XraQGnV
+	 UzahPdCzbk8oyeEDpUW4J1VbeCKeaIwB7PkaIyk34u5ylB73QFHCaEY4o/TJssl80k
+	 WiYdIfLIKMXQAY1N5GtuINUldT7VBH70eiHmElR1/iMbnGnUtt84QnIxNy3X3NxgUn
+	 RZmAgEjbfLdqRe820O1fTFjvE1cKuqO3MLBZVRX6g/T4udm1FvYsxUfbyFc6mexL56
+	 8xqot984DcE1U5HoxuKoyss3hbss2vZRUrf5TQNVF2WhqqWTqmj7+L4C9BAWkLqrRl
+	 OKOxdysnK0Fdg==
+Received: from [192.168.1.9] (unknown [36.69.105.60])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 2402B2640035;
+	Fri, 26 Jul 2024 16:37:30 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------8wMOZpF8oU12i70M0D8NUbIS"
+Message-ID: <46f13d91-a29ac3dd-a24423e7-a1867865@testdomain.io>
+Date: Fri, 26 Jul 2024 16:37:10 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: indigoharris@testmail.com
+Cc: Sri Mulyati <devonlewis@testdomain.io>, Lina Munir <contkellylewis@testdomain.io>,
+ Reni Debora Okusi Associates <milesnguyen@testdomain.io>
+From: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+Subject: Exclusive Golden Visa Opportunity - Your Path to Residency and
+ Investment
+Organization: Okusi Associates
+X-Spam-Status: No, score=-3.1 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------8wMOZpF8oU12i70M0D8NUbIS
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+To whom it may concern,
+
+I hope this email finds you well.
+
+I am Haliza as a representative of Okusi Associates from Visas and Work 
+Permits team, a leading corporate legal firm in Indonesia, I'm reaching 
+out to introduce you to an exceptional opportunity: the Indonesia Golden 
+Visa Program.
+
+Key benefits of our Golden Visa program include:
+
+ 1. Fast-track residency for you and your family
+ 2. Visa-free travel within Indonesia
+ 3. Path to citizenship after 5years
+ 4. Access to world-class healthcare and education
+ 5. Attractive tax benefits
+
+Our team of experts is ready to guide you through the entire process, 
+ensuring a smooth and efficient application.
+
+Would you like to schedule a consultation to discuss how the Golden Visa 
+can benefit you and your family?
+
+To learn more about our Golden Visa services and how we can support you 
+and your family, please don't hesitate to contact me. Feel free to 
+contact me at drewgarcia@testdomain.io or throught my Whatsapp Number 
++6282128910348. Thanks in advance.
+
+Best regards,
+
+Haliza
+Photo of Noorhaliza Putri Fadhila <https://okusiassociates.com/id/1321> 
+*Noorhaliza Putri Fadhila* B.A
+Client Compliance for Visas and Work Permit, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Noorhaliza Putri Fadhila. <whatsapp://send?phone=6282128910348>
++6282128910348 <whatsapp://send?phone=6282128910348> | +62213901007 
+<tel:+62213901007> | drewgarcia@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+--------------8wMOZpF8oU12i70M0D8NUbIS
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>To whom it may concern,</p>
+    <p>I hope this email finds you well. </p>
+    <p>I am Haliza as a representative of Okusi Associates from Visas
+      and Work Permits team, a leading corporate legal firm in
+      Indonesia, I'm reaching out to introduce you to an exceptional
+      opportunity: the Indonesia Golden Visa Program.</p>
+    <p>Key benefits of our Golden Visa program include:</p>
+    <ol>
+      <li>Fast-track residency for you and your family</li>
+      <li>Visa-free travel within Indonesia<br>
+      </li>
+      <li>Path to citizenship after 5years</li>
+      <li>Access to world-class healthcare and education</li>
+      <li>Attractive tax benefits</li>
+    </ol>
+    <p>Our team of experts is ready to guide you through the entire
+      process, ensuring a smooth and efficient application.</p>
+    <p>Would you like to schedule a consultation to discuss how the
+      Golden Visa can benefit you and your family?</p>
+    <p>To learn more about our Golden Visa services and how we can
+      support you and your family, please don't hesitate to contact me.
+      Feel free to contact me at <a
+        class="moz-txt-link-abbreviated moz-txt-link-freetext"
+        href="mailto:drewgarcia@testdomain.io">drewgarcia@testdomain.io</a> or throught my
+      Whatsapp Number +6282128910348. Thanks in advance.</p>
+    <p>Best regards,</p>
+    Haliza
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1321"
+                target="_blank"
+                title="Okusi Associates - Noorhaliza Putri Fadhila">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Noorhaliza Putri Fadhila"
+                  src="https://okusiassociates.com/a/m/photo-haliza.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Noorhaliza Putri Fadhila</strong> <span
+                style="font-size:13px;color:#555 !important;" title="">
+                B.A</span>
+              <div style="font-size:13px;color:#888 !important;">
+                Client Compliance for Visas and Work Permit, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Noorhaliza Putri Fadhila."
+                  href="whatsapp://send?phone=6282128910348"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Noorhaliza Putri Fadhila."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6282128910348"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6282128910348</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Noorhaliza Putri Fadhila."
+                  href="mailto:drewgarcia@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">drewgarcia@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+  </body>
+</html>
+
+--------------8wMOZpF8oU12i70M0D8NUbIS--

@@ -1,0 +1,174 @@
+Return-Path: <parkermoore@example.net>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 740FE33401FE
+	for <drewjones@testmail.net>; Wed, 19 Feb 2025 20:31:12 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Wed, 19 Feb 2025 20:31:12 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id qG+2BBfdtWf2iRIAeHbnHg
+	(envelope-from <parkermoore@example.net>); Wed, 19 Feb 2025 20:31:03 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=lotarchitects.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=lotarchitects.com
+Received: from hm129.hosting-mail1.com (hm129.hosting-mail1.com [182.239.53.201])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id BC5E12640006;
+	Wed, 19 Feb 2025 20:30:56 +0700 (WIB)
+Received: from [::1] (port=49570 helo=hm129.hosting-mail1.com)
+	by hm129.hosting-mail1.com with esmtpa (Exim 4.96.2)
+	(envelope-from <parkermoore@example.net>)
+	id 1tkkAB-00Exqa-1u;
+	Wed, 19 Feb 2025 21:30:55 +0800
+MIME-Version: 1.0
+Date: Wed, 19 Feb 2025 21:30:52 +0800
+From: PR <parkermoore@example.net>
+To: caseytorres@testdomain.io, contkellylewis@testdomain.io
+Subject: =?UTF-8?Q?Request_for_Quotation_=E2=80=93_Accounting_=26_Tax_Com?=
+ =?UTF-8?Q?pliance_Services?=
+User-Agent: Roundcube Webmail/1.6.9
+Message-ID: <ce0cd4b4c7ac5b018d3e534c89574103@example.net>
+X-Sender: parkermoore@example.net
+Organization: Lot Architects
+Content-Type: multipart/alternative;
+ boundary="=_a60b10652055a8b0ef2c669bc64cba85"
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - hm129.hosting-mail1.com
+X-AntiAbuse: Original Domain - okusi.id
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - lotarchitects.com
+X-Get-Message-Sender-Via: hm129.hosting-mail1.com: authenticated_id: parkermoore@example.net
+X-Authenticated-Sender: hm129.hosting-mail1.com: parkermoore@example.net
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Spam-Status: No, score=0.0 required=5.0 tests=HTML_MESSAGE,
+	RCVD_IN_DNSWL_BLOCKED,RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,
+	RCVD_IN_VALIDITY_RPBL_BLOCKED,SPF_HELO_NONE,SPF_PASS
+	autolearn=unavailable autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--=_a60b10652055a8b0ef2c669bc64cba85
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+
+To Whom It May Concern,
+
+I hope this email finds you well.
+
+I represent Lot Architecture, an interior design company based in Hong 
+Kong. We are currently planning to expand our presence in Jakarta, 
+Indonesia, and are seeking professional accounting and tax compliance 
+support. Specifically, we require:
+
+  	* Ongoing accounting and bookkeeping services for one year.
+  	* Tax filing and advisory services to ensure compliance with 
+Indonesian regulations.
+
+Could you please provide the following details:
+
+  	* A detailed quotation for each of the above services.
+  	* An estimated timeline for setting up accounting and tax compliance 
+processes.
+  	* Any additional services or recommendations that may be relevant for 
+a foreign business operating in Jakarta.
+
+Please let us know if you require any further information to prepare the 
+quotation. We look forward to your response.
+
+Best regards,
+
+Jermaine Guaves
+Personal Assistant- Nikki Ho
+
+LOT ARCHITECTS
+
+Room 1101, 11/F Shiu Fung Hong Building,
+239-241 Wing Lok Street, Sheung Wan
+
+T: +852 37097590 | M: +852 96273105 | F: +852 81485979
+
+E: parkermoore@example.net | W: www.lotarchitects.com [1]
+
+Disclaimer:
+
+This email (including every file transmitted with it) may contain 
+confidential and privileged information and is solely for the use of the 
+intended recipient(s). Any unauthorised dissemination, distribution or 
+copying of this email is strictly prohibited. Please notify the sender 
+and delete this email immediately if you have received this by mistake. 
+We do not accept liability arising from email transmitted by mistake.
+
+Links:
+------
+[1] http://www.lotarchitects.com/
+--=_a60b10652055a8b0ef2c669bc64cba85
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8" /></head><body style=3D'font-size: 10pt; font-family: Verdana,Gen=
+eva,sans-serif'>
+<p>To Whom It May Concern,</p>
+<p>I hope this email finds you well.</p>
+<p>I represent Lot Architecture, an interior design company based in Hong K=
+ong. We are currently planning to expand our presence in Jakarta, Indonesia=
+, and are seeking professional accounting and tax compliance support. Speci=
+fically, we require:</p>
+<ul>
+<li>Ongoing accounting and bookkeeping services for one year.</li>
+<li>Tax filing and advisory services to ensure compliance with Indonesian r=
+egulations.</li>
+</ul>
+<p>Could you please provide the following details:</p>
+<ul>
+<li>A detailed quotation for each of the above services.</li>
+<li>An estimated timeline for setting up accounting and tax compliance proc=
+esses.</li>
+<li>Any additional services or recommendations that may be relevant for a f=
+oreign business operating in Jakarta.</li>
+</ul>
+<p>Please let us know if you require any further information to prepare the=
+ quotation. We look forward to your response.</p>
+<p>Best regards,<br /><br />Jermaine Guaves<br />Personal Assistant- Nikki =
+Ho<span style=3D"font-family: Verdana, sans-serif;"></span></p>
+<div id=3D"signature">
+<p><span style=3D"font-size: 9.0pt; font-family: 'Verdana','sans-serif'; co=
+lor: black;">LOT ARCHITECTS</span></p>
+<p style=3D"margin: 0in; margin-bottom: .0001pt;"><span style=3D"font-famil=
+y: verdana, geneva, sans-serif; font-size: 8pt;">Room 1101, 11/F Shiu Fung =
+Hong Building,<br />239-241&nbsp;Wing Lok Street, Sheung Wan</span></p>
+<p style=3D"margin: 0in; margin-bottom: .0001pt;"><span style=3D"font-size:=
+ 8.0pt; font-family: 'Verdana','sans-serif'; color: black;">T: +852 3709759=
+0 | M: +852 96273105&nbsp;| F: +852 81485979</span><span style=3D"font-size=
+: 9.0pt; font-family: 'Verdana','sans-serif'; color: black;"></span></p>
+<p style=3D"margin: 0in; margin-bottom: .0001pt;"><span style=3D"font-size:=
+ 8.0pt; font-family: 'Verdana','sans-serif'; color: black;">E: pr</span><a =
+href=3D"mailto:cf@example.net"><span style=3D"font-size: 8.0pt; font-=
+family: 'Verdana','sans-serif';">@lotarchitects.com</span></a><span style=
+=3D"font-size: 8.0pt; font-family: 'Verdana','sans-serif'; color: black;">&=
+nbsp;| W:&nbsp;</span><a href=3D"http://www.lotarchitects.com/"><span style=
+=3D"font-size: 8.0pt; font-family: 'Verdana','sans-serif';">www.lotarchitec=
+ts.com</span></a><span style=3D"font-size: 8.0pt; font-family: 'Verdana','s=
+ans-serif'; color: black;"></span></p>
+<p style=3D"margin: 0in; margin-bottom: .0001pt;"><span style=3D"font-size:=
+ 9.0pt; font-family: 'Verdana','sans-serif'; color: black;">&nbsp;</span></=
+p>
+<p style=3D"margin: 0in; margin-bottom: .0001pt;"><strong><span style=3D"fo=
+nt-size: 8.0pt; font-family: 'Verdana','sans-serif'; color: gray;">Disclaim=
+er:</span></strong></p>
+<p style=3D"margin: 0in; margin-bottom: .0001pt;"><span style=3D"font-size:=
+ 8.0pt; font-family: 'Verdana','sans-serif'; color: gray;">This email (incl=
+uding every file transmitted with it) may contain confidential and privileg=
+ed information and is solely for the use of the intended recipient(s). Any =
+unauthorised dissemination, distribution or copying of this email is strict=
+ly prohibited. Please notify the sender and delete this email immediately i=
+f you have received this by mistake. We do not accept liability arising fro=
+m email transmitted by mistake.</span><span style=3D"font-size: 9.0pt; font=
+-family: 'Verdana','sans-serif'; color: black;"></span></p>
+</div>
+</body></html>
+
+--=_a60b10652055a8b0ef2c669bc64cba85--

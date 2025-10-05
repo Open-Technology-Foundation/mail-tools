@@ -1,0 +1,1162 @@
+Return-Path: <haydenlopez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id A77E833401FE
+	for <drewjones@testmail.net>; Fri, 14 Mar 2025 15:07:34 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 14 Mar 2025 15:07:34 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id wGYRMYHj02fTtBkAeHbnHg
+	(envelope-from <haydenlopez@testdomain.io>); Fri, 14 Mar 2025 15:06:25 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1741939583; bh=cZhrToCL3eyFA406o0n1YPhD8P6gnKlblQX93vL8T1c=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=djmWymQS4ZUAm8G1pV76PxJrD/sqnRhDUyZDiYGHJId/Fra9t+SCT+8eAu2yCl3/l
+	 cHABLX2Ylffvj/+G6JspP8iU523cwOHc31AyX3J1kwosmqSS6CdWhRQtVQtM3Dfpao
+	 H/cCWTxy5/0GBw5QzFYk9kjx4dk4LM8T1jJkoh6u3PYu66jGg/xS7bDaXurxczYopC
+	 xPkjUJi9Yv9qksuG8izBgWLV6vJiMBabwqHBbsK9zZ5W3Yp99GCz0EYplwQYf0z1MC
+	 BWU3kjc18djvYCNhaXzxKKDqzLoNfBLjjE5g40xKOdJrf0kQ3aBz8H8X/jCnVJH5f4
+	 OpwHg7ckT4IeQ==
+Received: from [192.168.6.36] (unknown [180.244.155.97])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id BFA91264002C;
+	Fri, 14 Mar 2025 15:06:23 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------7lN8ZWqBNPheYpJ2rtdM0bHA"
+Message-ID: <bfb83ae3-a4a5b9dc-c4c85fc0-d4f72d3b@testdomain.io>
+Date: Fri, 14 Mar 2025 15:06:23 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ALERT: AFLEX: Nominee Shareholder Services
+To: SG - David Ling <kellydavis@testcompany.co>, "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>,
+ SG - Jane Kim <blakelopez@testcompany.co>, Accounts ID <caseylee@mockmail.dev>
+References: <francis.sanchez@samplebiz.org>
+ <c6319405-42762b98-98c5dda0-130616af@testdomain.io>
+ <adriantorres@testmail.com>
+ <57d0d065-c0d97a30-579f9db9-b8d5cf9f@testdomain.io>
+ <harperking@testmail.com>
+ <c950f797-e2ae9699-c2b38e4b-e543fc8a@testdomain.io>
+ <taylorflores@testmail.com>
+ <282faf46-36197c99-cdfba2db-fdc6c065@testdomain.io>
+ <blakenguyen@testmail.com>
+ <6229258f-331999e4-59cda19f-e6f20d53@testdomain.io>
+ <leethompson@testmail.com>
+Content-Language: en-US
+From: Nurlia Hasyim <haydenlopez@testdomain.io>
+Organization: Okusi Associates
+In-Reply-To: <leethompson@testmail.com>
+X-Spam-Status: No, score=-1.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_FILL_THIS_FORM_SHORT,T_KAM_HTML_FONT_INVALID,T_REMOTE_IMAGE
+	autolearn=unavailable autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------7lN8ZWqBNPheYpJ2rtdM0bHA
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear David,
+
+If you wish to proceed with the conversion now, we will waive the 
+nominee services renewal fee for the upcoming year and only charge for 
+the conversion process.
+
+Please let us know how you would like to proceed.
+
+Thank you.
+
+
+Best regards,
+
+Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162> 	*Nurlia 
+Hasyim*
+Senior Legal & Licencing Consultant, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Nurlia Hasyim. <whatsapp://send?phone=6285890220665>   Nurlia Hasyim 
+on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
++6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+<tel:+62213901007> | haydenlopez@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 14/3/25 11:42, SG - David Ling wrote:
+>
+> Hi Nurlia,
+>
+> If we proceed with the conversion, and due to PT renewal is expired, 
+> do we need to pay on both side?
+>
+> */Thanks & Rgds,/*
+>
+> */David Ling/*
+>
+> */Mobile +65 9649 2795 (SG) / +971 050 429 8100 (UAE)/*
+>
+> */Aflex Ships Equipment Pte Ltd/*
+>
+> *From:*Nurlia Hasyim <haydenlopez@testdomain.io>
+> *Sent:* Friday, 14 March 2025 11:43 AM
+> *To:* SG - David Ling <kellydavis@testcompany.co>; legmorganhill@testdomain.io; SG - Jane 
+> Kim <blakelopez@testcompany.co>; Accounts ID <caseylee@mockmail.dev>
+> *Subject:* Re: ALERT: AFLEX: Nominee Shareholder Services
+>
+> Dear David,
+>
+> Thank you for your email.
+>
+> For company renewal, after the first year and in subsequent years, a 
+> PMA (Foreign Investment Company) generally does not require a specific 
+> renewal process, but it must comply with annual reporting obligations, 
+> such as LKPM (Investment Activity Report) submission to BKPM and 
+> corporate tax reporting to the tax office. Additionally, licenses such 
+> as NIB and business permits should be kept updated if required.
+>
+> In terms of taxation, both PMA and local PT are subject to the same 
+> corporate income tax rates. Employee monthly tax submissions (PPh 21) 
+> follow the same regulations for both PMA and local PT, based on the 
+> progressive tax rates.
+>
+> Let me know if you need further clarification. Thank you.
+>
+> Best regards,
+>
+> Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162>
+>
+> 	
+>
+> *Nurlia Hasyim*
+>
+> Senior Legal & Licencing Consultant, Okusi Associates 
+> <https://okusiassociates.com>
+>
+> Okusi Associates website <https://okusiassociates.com/> Send Whatsapp 
+> to Nurlia Hasyim. <whatsapp://send/?phone=6285890220665> Nurlia Hasyim 
+> on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
+>
+> +6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+> <tel:+62213901007> | haydenlopez@testdomain.io | okusiassociates.com 
+> <https://okusiassociates.com>
+>
+> On 13/3/25 19:06, SG - David Ling wrote:
+>
+>     Hi Nurlia,
+>
+>     Thanks. Further questions are after the first year or subsequent
+>     years, is there any specific renewal process required?
+>
+>     Will company with PMA had disadvantages against those with PT? Is
+>     there any differences in taxation, and employee monthly submission
+>     on tax?
+>
+>     */Thanks & Rgds,/*
+>
+>     */David Ling/*
+>
+>     */Mobile +65 9649 2795 (SG) / +971 050 429 8100 (UAE)/*
+>
+>     */Aflex Ships Equipment Pte Ltd/*
+>
+>     *From:*Nurlia Hasyim <haydenlopez@testdomain.io>
+>     <mailto:haydenlopez@testdomain.io>
+>     *Sent:* Thursday, 13 March 2025 5:54 PM
+>     *To:* SG - David Ling <kellydavis@testcompany.co>
+>     <mailto:kellydavis@testcompany.co>; legmorganhill@testdomain.io; SG - Jane Kim
+>     <blakelopez@testcompany.co> <mailto:blakelopez@testcompany.co>; Accounts ID
+>     <caseylee@mockmail.dev> <mailto:caseylee@mockmail.dev>
+>     *Subject:* Re: ALERT: AFLEX: Nominee Shareholder Services
+>
+>     Dear David,
+>
+>     The conversion process typically takes approximately six weeks,
+>     depending on the completeness of the required documents and
+>     approval timelines from the relevant authorities.
+>
+>     The company must have at least one Director, one Commissioner, and
+>     two Shareholders. The shareholders can be either individuals or
+>     entities. If the shareholders are individuals, they may also serve
+>     as the Director or Commissioner; however, the Director and
+>     Commissioner cannot be the same person.
+>
+>     Legally, a foreign Director is not required to be physically
+>     present in Indonesia for the conversion process. However, certain
+>     procedures, such as bank account setup or specific regulatory
+>     requirements, may require their presence at a later stage.
+>
+>     For the process, we will need copies of the identity documents for
+>     the new Shareholder, Director, and Commissioner:
+>
+>      1. For Indonesian individuals: A copy of their ID Card (KTP) and
+>         Tax Identification Number (NPWP).
+>      2. For foreign individuals: A copy of their passport.
+>      3. For foreign companies: A copy of the company’s Articles of
+>         Association (AoA) and the Director’s passport.
+>      4. For Indonesian PT companies: Copies of company documents,
+>         including the Akta, SK Menteri, NIB, and the Director’s ID
+>         Card (KTP).
+>
+>     Additionally, we require detailed information about the new
+>     Shareholder, Director, and Commissioner, including their address,
+>     email address, and phone number.
+>
+>     Attached is the quotation for the conversion/amendment process for
+>     your review.
+>
+>     Please let me know if you need further clarification or assistance.
+>
+>
+>
+>
+>     Best regards,
+>
+>     Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162>
+>
+>     	
+>
+>     *Nurlia Hasyim*
+>
+>     Senior client compliance, Okusi Associates
+>     <https://okusiassociates.com>
+>
+>     Okusi Associates website <https://okusiassociates.com/> Send
+>     Whatsapp to Nurlia Hasyim.
+>     <whatsapp://send/?phone=6285890220665> Nurlia Hasyim on LinkedIn
+>     <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
+>
+>     +6285890220665 <whatsapp://send?phone=6285890220665> |
+>     +62213901007 <tel:+62213901007> | haydenlopez@testdomain.io |
+>     okusiassociates.com <https://okusiassociates.com>
+>
+>     On 13/3/25 16:15, SG - David Ling wrote:
+>
+>         Hi Nurlia,
+>
+>         How long will be the process? Legal wise, do the foreign
+>         director need to be present in Indonesia?
+>
+>         Is there any notarised document required?
+>
+>         Can the director, commissioner, shareholder of same person?
+>
+>         */Thanks & Rgds,/*
+>
+>         */David Ling/*
+>
+>         */Mobile +65 9649 2795 (SG) / +971 050 429 8100 (UAE)/*
+>
+>         */Aflex Ships Equipment Pte Ltd/*
+>
+>         *From:*Nurlia Hasyim <haydenlopez@testdomain.io>
+>         <mailto:haydenlopez@testdomain.io>
+>         *Sent:* Thursday, 13 March 2025 5:04 PM
+>         *To:* SG - David Ling <kellydavis@testcompany.co>
+>         <mailto:kellydavis@testcompany.co>; legmorganhill@testdomain.io; SG - Jane Kim
+>         <blakelopez@testcompany.co> <mailto:blakelopez@testcompany.co>; Accounts ID
+>         <caseylee@mockmail.dev> <mailto:caseylee@mockmail.dev>
+>         *Subject:* Re: ALERT: AFLEX: Nominee Shareholder Services
+>
+>         Dear David,
+>
+>         A PMA company must have a minimum investment plan of IDR 10
+>         billion (excluding land and buildings). However, this does not
+>         mean that the company must physically inject this amount into
+>         Indonesia. Alternatively, shareholders can sign a capital
+>         declaration, stating that their liability is limited to the
+>         nominal paid-up capital recorded in the company’s documents.
+>         If the paid-up capital has not been fully settled, it will be
+>         recorded as shareholders' receivables in the financial statements.
+>
+>         The conversion to a PMA company will not directly affect the
+>         company’s existing bank accounts. However, some banks may
+>         require updates to company records, including changes to the
+>         Articles of Association and business license status.
+>
+>         A PMA company can hire both local and foreign employees.
+>         However, hiring foreign employees requires obtaining:
+>
+>          1. RPTKA (Foreign Worker Utilization Plan)
+>          2. Work permit (IMTA/Notifikasi)
+>
+>         Certain positions, particularly in HR, legal, and some
+>         administrative roles, may be restricted to Indonesian
+>         nationals under labor regulations. While there are no major
+>         operational restrictions for distribution/trading activities
+>         under a PMA structure, compliance with tax regulations and the
+>         Investment Activity Report (LKPM) is required.
+>
+>         Please let me know if you need further clarification or if
+>         you’d like to schedule a discussion to go over these points in
+>         more detail.
+>
+>         Thank you.
+>
+>
+>
+>
+>
+>         Best regards,
+>
+>         Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162>
+>
+>         	
+>
+>         *Nurlia Hasyim*
+>
+>         Senior client compliance, Okusi Associates
+>         <https://okusiassociates.com>
+>
+>         Okusi Associates website <https://okusiassociates.com/> Send
+>         Whatsapp to Nurlia Hasyim.
+>         <whatsapp://send/?phone=6285890220665> Nurlia Hasyim on
+>         LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
+>
+>         +6285890220665 <whatsapp://send?phone=6285890220665> |
+>         +62213901007 <tel:+62213901007> | haydenlopez@testdomain.io |
+>         okusiassociates.com <https://okusiassociates.com>
+>
+>         On 13/3/25 15:15, SG - David Ling wrote:
+>
+>             Hi Nurlia,
+>
+>             Thanks for the clarification.
+>
+>              1. Minimum Investment Requirement – A PMA company must
+>                 have a minimum investment plan/paid-up capital of IDR
+>                 10 billion (excluding land and buildings). However,
+>                 for capital compliance, a declaration can be made
+>                 stating that shareholders' liability is limited to the
+>                 nominal paid-up capital, meaning no actual transfer of
+>                 funds into Indonesia is required.
+>
+>             I don’t quite understand this clause, please elaborate
+>             further.
+>
+>             Would this affect our current bank accounts?
+>
+>             Is there any restriction in hiring of manpower? Or any
+>             restriction we did not foreseen?
+>
+--------------7lN8ZWqBNPheYpJ2rtdM0bHA
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p data-start="152" data-end="165"><font face="Trebuchet MS">Dear
+        David,</font></p>
+    <p data-start="167" data-end="329"><font face="Trebuchet MS">If you
+        wish to proceed with the conversion now, we will waive the
+        nominee services renewal fee for the upcoming year and only
+        charge for the conversion process.</font></p>
+    <p data-start="331" data-end="382"><font face="Trebuchet MS">Please
+        let us know how you would like to proceed.</font></p>
+    <p data-start="384" data-end="396"><font face="Trebuchet MS">Thank
+        you.</font></p>
+    <p data-start="398" data-end="427"><font face="Trebuchet MS"><br>
+      </font></p>
+    <p data-start="398" data-end="427"><font face="Trebuchet MS">Best
+        regards,</font></p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1162"
+                target="_blank" title="Okusi Associates - Nurlia Hasyim">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Nurlia Hasyim"
+                  src="https://okusiassociates.com/a/m/photo-nurlia.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Nurlia Hasyim</strong>
+              <div style="font-size:13px;color:#888 !important;">
+                Senior Legal &amp; Licencing Consultant, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Nurlia Hasyim."
+                  href="whatsapp://send?phone=6285890220665"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Nurlia Hasyim."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+                 
+                <a title="Nurlia Hasyim on LinkedIn."
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Nurlia Hasyim on LinkedIn"
+                    src="https://okusiassociates.com/a/m/li.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6285890220665"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6285890220665</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Nurlia Hasyim."
+                  href="mailto:haydenlopez@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">haydenlopez@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 14/3/25 11:42, SG - David Ling
+      wrote:<br>
+    </div>
+    <blockquote type="cite"
+cite="mid:leethompson@testmail.com">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator"
+        content="Microsoft Word 15 (filtered medium)">
+      <!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]-->
+      <style>@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}@font-face
+	{font-family:DengXian;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}@font-face
+	{font-family:Aptos;}@font-face
+	{font-family:"\@DengXian";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;}p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#888888;
+	text-decoration:none none;}span.EmailStyle21
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}div.WordSection1
+	{page:WordSection1;}ol
+	{margin-bottom:0cm;}ul
+	{margin-bottom:0cm;}</style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]-->
+      <div class="WordSection1">
+        <p class="MsoNormal"><span style="font-size:11.0pt">Hi Nurlia,<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:11.0pt"><o:p> </o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:11.0pt">If we
+            proceed with the conversion, and due to PT renewal is
+            expired, do we need to pay on both side?<o:p></o:p></span></p>
+        <p class="MsoNormal"><span style="font-size:11.0pt"><o:p> </o:p></span></p>
+        <div>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Thanks
+                  &amp; Rgds,<o:p></o:p></span></i></b></p>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">David
+                  Ling<o:p></o:p></span></i></b></p>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Mobile
+                  +65 9649 2795 (SG) / +971 050 429 8100 (UAE)<o:p></o:p></span></i></b></p>
+          <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Aflex
+                  Ships Equipment Pte Ltd<o:p></o:p></span></i></b></p>
+        </div>
+        <p class="MsoNormal"><span style="font-size:11.0pt"><o:p> </o:p></span></p>
+        <div>
+          <div
+style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+            <p class="MsoNormal"><b><span lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">From:</span></b><span
+                lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">
+                Nurlia Hasyim <a class="moz-txt-link-rfc2396E" href="mailto:haydenlopez@testdomain.io">&lt;haydenlopez@testdomain.io&gt;</a>
+                <br>
+                <b>Sent:</b> Friday, 14 March 2025 11:43 AM<br>
+                <b>To:</b> SG - David Ling <a class="moz-txt-link-rfc2396E" href="mailto:kellydavis@testcompany.co">&lt;kellydavis@testcompany.co&gt;</a>;
+                <a class="moz-txt-link-abbreviated" href="mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a>; SG - Jane Kim <a class="moz-txt-link-rfc2396E" href="mailto:blakelopez@testcompany.co">&lt;blakelopez@testcompany.co&gt;</a>;
+                Accounts ID <a class="moz-txt-link-rfc2396E" href="mailto:caseylee@mockmail.dev">&lt;caseylee@mockmail.dev&gt;</a><br>
+                <b>Subject:</b> Re: ALERT: AFLEX: Nominee Shareholder
+                Services<o:p></o:p></span></p>
+          </div>
+        </div>
+        <p class="MsoNormal"><o:p> </o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Dear
+            David,</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Thank
+            you for your email.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">For
+            company renewal, after the first year and in subsequent
+            years, a PMA (Foreign Investment Company) generally does not
+            require a specific renewal process, but it must comply with
+            annual reporting obligations, such as LKPM (Investment
+            Activity Report) submission to BKPM and corporate tax
+            reporting to the tax office. Additionally, licenses such as
+            NIB and business permits should be kept updated if required.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">In
+            terms of taxation, both PMA and local PT are subject to the
+            same corporate income tax rates. Employee monthly tax
+            submissions (PPh 21) follow the same regulations for both
+            PMA and local PT, based on the progressive tax rates.</span><o:p></o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Let
+            me know if you need further clarification. Thank you.</span><o:p></o:p></p>
+        <p><o:p> </o:p></p>
+        <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Best
+            regards,</span><o:p></o:p></p>
+        <div>
+          <table class="MsoNormalTable" border="0" cellspacing="3"
+            cellpadding="0">
+            <tbody>
+              <tr>
+                <td valign="top" style="padding:0cm 4.5pt 0cm 4.5pt">
+                  <p class="MsoNormal"><a
+                      href="https://okusiassociates.com/id/1162"
+title="&quot;Okusi Associates - Nurlia Hasyim&quot; t "
+                      moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                          width="111" height="111"
+                          style="width:1.1597in;height:1.1597in"
+                          id="_x0000_i1036"
+src="https://okusiassociates.com/a/m/photo-nurlia.jpg"
+                          alt="Photo of Nurlia Hasyim"
+                          moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555"><o:p></o:p></span></p>
+                </td>
+                <td valign="top" style="padding:0cm 4.5pt 0cm 3.0pt">
+                  <p class="MsoNormal"><strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">Nurlia
+                        Hasyim</span></strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                      <o:p></o:p></span></p>
+                  <div>
+                    <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888">Senior
+                        Legal &amp; Licencing Consultant,
+                        <a href="https://okusiassociates.com"
+                          target="_blank"
+                          title="Indonesian Corporate Services"
+                          moz-do-not-send="true">
+                          Okusi Associates</a> <o:p></o:p></span></p>
+                  </div>
+                  <div style="margin-top:2.25pt">
+                    <p class="MsoNormal"><a
+                        href="https://okusiassociates.com/"
+                        title="&quot;Okusi Associates website&quot; t "
+                        moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                            width="400" height="400"
+                            style="width:4.1666in;height:4.1666in"
+                            id="_x0000_i1035"
+                            src="https://okusiassociates.com/a/m/oa.png"
+                            alt="Okusi Associates website"
+                            moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                      </span><a
+                        href="whatsapp://send/?phone=6285890220665"
+title="&quot;Send Whatsapp to Nurlia Hasyim.&quot; t "
+                        moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                            width="72" height="72"
+                            style="width:.75in;height:.75in"
+                            id="_x0000_i1034"
+                            src="https://okusiassociates.com/a/m/wa.png"
+                            alt="Send Whatsapp to Nurlia Hasyim."
+                            moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                      </span><a
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+title="&quot;Nurlia Hasyim on LinkedIn.&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                            width="72" height="72"
+                            style="width:.75in;height:.75in"
+                            id="_x0000_i1033"
+                            src="https://okusiassociates.com/a/m/li.png"
+                            alt="Nurlia Hasyim on LinkedIn"
+                            moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555"><o:p></o:p></span></p>
+                  </div>
+                  <div>
+                    <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888"><a
+                          href="whatsapp://send?phone=6285890220665"
+                          title="Voice/WhatsApp/SMS"
+                          moz-do-not-send="true">+6285890220665</a> |
+                        <a href="tel:+62213901007"
+                          title="Jakarta Office Landline."
+                          moz-do-not-send="true">+62213901007</a> | <a
+                          href="mailto:haydenlopez@testdomain.io"
+                          title="Send email to Nurlia Hasyim."
+                          moz-do-not-send="true"
+                          class="moz-txt-link-freetext">
+                          haydenlopez@testdomain.io</a> | <a
+                          href="https://okusiassociates.com"
+                          target="_blank"
+title="Okusi Associates - Indonesian Corporate Services"
+                          moz-do-not-send="true">
+                          okusiassociates.com</a> <o:p></o:p></span></p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="MsoNormal" style="margin-bottom:12.0pt"><o:p> </o:p></p>
+        </div>
+        <div>
+          <p class="MsoNormal">On 13/3/25 19:06, SG - David Ling wrote:<o:p></o:p></p>
+        </div>
+        <blockquote style="margin-top:5.0pt;margin-bottom:5.0pt">
+          <p class="MsoNormal"><span style="font-size:11.0pt">Hi Nurlia,</span><o:p></o:p></p>
+          <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+          <p class="MsoNormal"><span style="font-size:11.0pt">Thanks.
+              Further questions are after the first year or subsequent
+              years, is there any specific renewal process required?</span><o:p></o:p></p>
+          <p class="MsoNormal"><span style="font-size:11.0pt">Will
+              company with PMA had disadvantages against those with PT?
+              Is there any differences in taxation, and employee monthly
+              submission on tax?</span><o:p></o:p></p>
+          <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+          <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+          <div>
+            <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Thanks
+                    &amp; Rgds,</span></i></b><o:p></o:p></p>
+            <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">David
+                    Ling</span></i></b><o:p></o:p></p>
+            <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Mobile
+                    +65 9649 2795 (SG) / +971 050 429 8100 (UAE)</span></i></b><o:p></o:p></p>
+            <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Aflex
+                    Ships Equipment Pte Ltd</span></i></b><o:p></o:p></p>
+          </div>
+          <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+          <div>
+            <div
+style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+              <p class="MsoNormal"><b><span lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">From:</span></b><span
+                  lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">
+                  Nurlia Hasyim
+                  <a href="mailto:haydenlopez@testdomain.io"
+                    moz-do-not-send="true">&lt;haydenlopez@testdomain.io&gt;</a>
+                  <br>
+                  <b>Sent:</b> Thursday, 13 March 2025 5:54 PM<br>
+                  <b>To:</b> SG - David Ling <a
+                    href="mailto:kellydavis@testcompany.co"
+                    moz-do-not-send="true">&lt;kellydavis@testcompany.co&gt;</a>;
+                  <a href="mailto:legmorganhill@testdomain.io" moz-do-not-send="true"
+                    class="moz-txt-link-freetext">legmorganhill@testdomain.io</a>; SG
+                  - Jane Kim <a href="mailto:blakelopez@testcompany.co"
+                    moz-do-not-send="true">
+                    &lt;blakelopez@testcompany.co&gt;</a>; Accounts ID <a
+                    href="mailto:caseylee@mockmail.dev"
+                    moz-do-not-send="true">&lt;caseylee@mockmail.dev&gt;</a><br>
+                  <b>Subject:</b> Re: ALERT: AFLEX: Nominee Shareholder
+                  Services</span><o:p></o:p></p>
+            </div>
+          </div>
+          <p class="MsoNormal"> <o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Dear
+              David,</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">The
+              conversion process typically takes approximately six
+              weeks, depending on the completeness of the required
+              documents and approval timelines from the relevant
+              authorities.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">The
+              company must have at least one Director, one Commissioner,
+              and two Shareholders. The shareholders can be either
+              individuals or entities. If the shareholders are
+              individuals, they may also serve as the Director or
+              Commissioner; however, the Director and Commissioner
+              cannot be the same person.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Legally,
+              a foreign Director is not required to be physically
+              present in Indonesia for the conversion process. However,
+              certain procedures, such as bank account setup or specific
+              regulatory requirements, may require their presence at a
+              later stage.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">For
+              the process, we will need copies of the identity documents
+              for the new Shareholder, Director, and Commissioner:</span><o:p></o:p></p>
+          <ol start="1" type="1">
+            <li class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l2 level1 lfo3">
+              <span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">For
+                Indonesian individuals: A copy of their ID Card (KTP)
+                and Tax Identification Number (NPWP).</span><o:p></o:p></li>
+            <li class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l2 level1 lfo3">
+              <span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">For
+                foreign individuals: A copy of their passport.</span><o:p></o:p></li>
+            <li class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l2 level1 lfo3">
+              <span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">For
+                foreign companies: A copy of the company’s Articles of
+                Association (AoA) and the Director’s passport.</span><o:p></o:p></li>
+            <li class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l2 level1 lfo3">
+              <span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">For
+                Indonesian PT companies: Copies of company documents,
+                including the Akta, SK Menteri, NIB, and the Director’s
+                ID Card (KTP).</span><o:p></o:p></li>
+          </ol>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Additionally,
+              we require detailed information about the new Shareholder,
+              Director, and Commissioner, including their address, email
+              address, and phone number.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Attached
+              is the quotation for the conversion/amendment process for
+              your review.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Please
+              let me know if you need further clarification or
+              assistance.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif"><br>
+              <br>
+              <br>
+            </span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Best
+              regards,</span><o:p></o:p></p>
+          <div>
+            <table class="MsoNormalTable" border="0" cellspacing="3"
+              cellpadding="0">
+              <tbody>
+                <tr>
+                  <td valign="top" style="padding:0cm 4.5pt 0cm 4.5pt">
+                    <p class="MsoNormal"><a
+                        href="https://okusiassociates.com/id/1162"
+title="&quot;Okusi Associates - Nurlia Hasyim&quot; t "
+                        moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                            width="111" height="111"
+                            style="width:1.1527in;height:1.1527in"
+                            id="_x0000_i1032"
+src="https://okusiassociates.com/a/m/photo-nurlia.jpg"
+                            alt="Photo of Nurlia Hasyim"
+                            moz-do-not-send="true"></span></a><o:p></o:p></p>
+                  </td>
+                  <td valign="top" style="padding:0cm 4.5pt 0cm 3.0pt">
+                    <p class="MsoNormal"><strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">Nurlia
+                          Hasyim</span></strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                      </span><o:p></o:p></p>
+                    <div>
+                      <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888">Senior
+                          client compliance,
+                          <a href="https://okusiassociates.com"
+                            target="_blank"
+                            title="Indonesian Corporate Services"
+                            moz-do-not-send="true">
+                            Okusi Associates</a> </span><o:p></o:p></p>
+                    </div>
+                    <div style="margin-top:2.25pt">
+                      <p class="MsoNormal"><a
+                          href="https://okusiassociates.com/"
+title="&quot;Okusi Associates website&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                              width="400" height="400"
+                              style="width:4.1666in;height:4.1666in"
+                              id="_x0000_i1031"
+src="https://okusiassociates.com/a/m/oa.png"
+                              alt="Okusi Associates website"
+                              moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                        </span><a
+                          href="whatsapp://send/?phone=6285890220665"
+title="&quot;Send Whatsapp to Nurlia Hasyim.&quot; t "
+                          moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                              width="72" height="72"
+                              style="width:.75in;height:.75in"
+                              id="_x0000_i1030"
+src="https://okusiassociates.com/a/m/wa.png"
+                              alt="Send Whatsapp to Nurlia Hasyim."
+                              moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                        </span><a
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+title="&quot;Nurlia Hasyim on LinkedIn.&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                              width="72" height="72"
+                              style="width:.75in;height:.75in"
+                              id="_x0000_i1029"
+src="https://okusiassociates.com/a/m/li.png"
+                              alt="Nurlia Hasyim on LinkedIn"
+                              moz-do-not-send="true"></span></a><o:p></o:p></p>
+                    </div>
+                    <div>
+                      <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888"><a
+                            href="whatsapp://send?phone=6285890220665"
+                            title="Voice/WhatsApp/SMS"
+                            moz-do-not-send="true">+6285890220665</a> |
+                          <a href="tel:+62213901007"
+                            title="Jakarta Office Landline."
+                            moz-do-not-send="true">+62213901007</a> | <a
+                            href="mailto:haydenlopez@testdomain.io"
+                            title="Send email to Nurlia Hasyim."
+                            moz-do-not-send="true"
+                            class="moz-txt-link-freetext">
+                            haydenlopez@testdomain.io</a> | <a
+                            href="https://okusiassociates.com"
+                            target="_blank"
+title="Okusi Associates - Indonesian Corporate Services"
+                            moz-do-not-send="true">
+                            okusiassociates.com</a> </span><o:p></o:p></p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="MsoNormal" style="margin-bottom:12.0pt"> <o:p></o:p></p>
+          </div>
+          <div>
+            <p class="MsoNormal">On 13/3/25 16:15, SG - David Ling
+              wrote:<o:p></o:p></p>
+          </div>
+          <blockquote style="margin-top:5.0pt;margin-bottom:5.0pt">
+            <p class="MsoNormal"><span style="font-size:11.0pt">Hi
+                Nurlia,</span><o:p></o:p></p>
+            <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+            <p class="MsoNormal"><span style="font-size:11.0pt">How long
+                will be the process? Legal wise, do the foreign director
+                need to be present in Indonesia?</span><o:p></o:p></p>
+            <p class="MsoNormal"><span style="font-size:11.0pt">Is there
+                any notarised document required?</span><o:p></o:p></p>
+            <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+            <p class="MsoNormal"><span style="font-size:11.0pt">Can the
+                director, commissioner, shareholder of same person?
+              </span><o:p></o:p></p>
+            <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+            <div>
+              <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Thanks
+                      &amp; Rgds,</span></i></b><o:p></o:p></p>
+              <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">David
+                      Ling</span></i></b><o:p></o:p></p>
+              <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Mobile
+                      +65 9649 2795 (SG) / +971 050 429 8100 (UAE)</span></i></b><o:p></o:p></p>
+              <p class="MsoNormal"><b><i><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Aflex
+                      Ships Equipment Pte Ltd</span></i></b><o:p></o:p></p>
+            </div>
+            <p class="MsoNormal"><span style="font-size:11.0pt"> </span><o:p></o:p></p>
+            <div>
+              <div
+style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                <p class="MsoNormal"><b><span lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">From:</span></b><span
+                    lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">
+                    Nurlia Hasyim
+                    <a href="mailto:haydenlopez@testdomain.io"
+                      moz-do-not-send="true">&lt;haydenlopez@testdomain.io&gt;</a>
+                    <br>
+                    <b>Sent:</b> Thursday, 13 March 2025 5:04 PM<br>
+                    <b>To:</b> SG - David Ling <a
+                      href="mailto:kellydavis@testcompany.co"
+                      moz-do-not-send="true">&lt;kellydavis@testcompany.co&gt;</a>;
+                    <a href="mailto:legmorganhill@testdomain.io"
+                      moz-do-not-send="true"
+                      class="moz-txt-link-freetext">legmorganhill@testdomain.io</a>;
+                    SG - Jane Kim <a href="mailto:blakelopez@testcompany.co"
+                      moz-do-not-send="true">
+                      &lt;blakelopez@testcompany.co&gt;</a>; Accounts ID <a
+                      href="mailto:caseylee@mockmail.dev"
+                      moz-do-not-send="true">&lt;caseylee@mockmail.dev&gt;</a><br>
+                    <b>Subject:</b> Re: ALERT: AFLEX: Nominee
+                    Shareholder Services</span><o:p></o:p></p>
+              </div>
+            </div>
+            <p class="MsoNormal"> <o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Dear
+                David,</span><o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">A
+                PMA company must have a minimum investment plan of IDR
+                10 billion (excluding land and buildings). However, this
+                does not mean that the company must physically inject
+                this amount into Indonesia. Alternatively, shareholders
+                can sign a capital declaration, stating that their
+                liability is limited to the nominal paid-up capital
+                recorded in the company’s documents. If the paid-up
+                capital has not been fully settled, it will be recorded
+                as shareholders' receivables in the financial
+                statements.</span><o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">The
+                conversion to a PMA company will not directly affect the
+                company’s existing bank accounts. However, some banks
+                may require updates to company records, including
+                changes to the Articles of Association and business
+                license status.</span><o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">A
+                PMA company can hire both local and foreign employees.
+                However, hiring foreign employees requires obtaining:</span><o:p></o:p></p>
+            <ol start="1" type="1">
+              <li class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l5 level1 lfo6">
+                <span
+style="font-family:&quot;Trebuchet MS&quot;,sans-serif">RPTKA (Foreign
+                  Worker Utilization Plan)</span><o:p></o:p></li>
+              <li class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l5 level1 lfo6">
+                <span
+style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Work permit
+                  (IMTA/Notifikasi)</span><o:p></o:p></li>
+            </ol>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Certain
+                positions, particularly in HR, legal, and some
+                administrative roles, may be restricted to Indonesian
+                nationals under labor regulations. While there are no
+                major operational restrictions for distribution/trading
+                activities under a PMA structure, compliance with tax
+                regulations and the Investment Activity Report (LKPM) is
+                required.</span><o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Please
+                let me know if you need further clarification or if
+                you’d like to schedule a discussion to go over these
+                points in more detail.</span><o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Thank
+                you.</span><o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif"><br>
+                <br>
+                <br>
+                <br>
+              </span><o:p></o:p></p>
+            <p><span
+                style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Best
+                regards,</span><o:p></o:p></p>
+            <div>
+              <table class="MsoNormalTable" border="0" cellspacing="3"
+                cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td valign="top" style="padding:0cm 4.5pt 0cm 4.5pt">
+                      <p class="MsoNormal"><a
+                          href="https://okusiassociates.com/id/1162"
+title="&quot;Okusi Associates - Nurlia Hasyim&quot; t "
+                          moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                              width="111" height="111"
+                              style="width:1.1527in;height:1.1527in"
+                              id="_x0000_i1028"
+src="https://okusiassociates.com/a/m/photo-nurlia.jpg"
+                              alt="Photo of Nurlia Hasyim"
+                              moz-do-not-send="true"></span></a><o:p></o:p></p>
+                    </td>
+                    <td valign="top" style="padding:0cm 4.5pt 0cm 3.0pt">
+                      <p class="MsoNormal"><strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">Nurlia
+                            Hasyim</span></strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                        </span><o:p></o:p></p>
+                      <div>
+                        <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888">Senior
+                            client compliance,
+                            <a href="https://okusiassociates.com"
+                              target="_blank"
+                              title="Indonesian Corporate Services"
+                              moz-do-not-send="true">
+                              Okusi Associates</a> </span><o:p></o:p></p>
+                      </div>
+                      <div style="margin-top:2.25pt">
+                        <p class="MsoNormal"><a
+                            href="https://okusiassociates.com/"
+title="&quot;Okusi Associates website&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                                width="400" height="400"
+                                style="width:4.1666in;height:4.1666in"
+                                id="_x0000_i1027"
+src="https://okusiassociates.com/a/m/oa.png"
+                                alt="Okusi Associates website"
+                                moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                          </span><a
+                            href="whatsapp://send/?phone=6285890220665"
+title="&quot;Send Whatsapp to Nurlia Hasyim.&quot; t "
+                            moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                                width="72" height="72"
+                                style="width:.75in;height:.75in"
+                                id="_x0000_i1026"
+src="https://okusiassociates.com/a/m/wa.png"
+                                alt="Send Whatsapp to Nurlia Hasyim."
+                                moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                          </span><a
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+title="&quot;Nurlia Hasyim on LinkedIn.&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif"><img border="0"
+                                width="72" height="72"
+                                style="width:.75in;height:.75in"
+                                id="_x0000_i1025"
+src="https://okusiassociates.com/a/m/li.png"
+                                alt="Nurlia Hasyim on LinkedIn"
+                                moz-do-not-send="true"></span></a><o:p></o:p></p>
+                      </div>
+                      <div>
+                        <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888"><a
+                              href="whatsapp://send?phone=6285890220665"
+                              title="Voice/WhatsApp/SMS"
+                              moz-do-not-send="true">+6285890220665</a>
+                            |
+                            <a href="tel:+62213901007"
+                              title="Jakarta Office Landline."
+                              moz-do-not-send="true">+62213901007</a> |
+                            <a href="mailto:haydenlopez@testdomain.io"
+                              title="Send email to Nurlia Hasyim."
+                              moz-do-not-send="true"
+                              class="moz-txt-link-freetext">
+                              haydenlopez@testdomain.io</a> | <a
+                              href="https://okusiassociates.com"
+                              target="_blank"
+title="Okusi Associates - Indonesian Corporate Services"
+                              moz-do-not-send="true">
+                              okusiassociates.com</a> </span><o:p></o:p></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="MsoNormal" style="margin-bottom:12.0pt"> <o:p></o:p></p>
+            </div>
+            <div>
+              <p class="MsoNormal">On 13/3/25 15:15, SG - David Ling
+                wrote:<o:p></o:p></p>
+            </div>
+            <blockquote style="margin-top:5.0pt;margin-bottom:5.0pt">
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt">Hi Nurlia,</span><o:p></o:p></p>
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt"> </span><o:p></o:p></p>
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt">Thanks for the clarification.</span><o:p></o:p></p>
+              <ol start="1" type="1">
+                <li class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l3 level1 lfo9">
+                  <span
+style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Minimum
+                    Investment Requirement – A PMA company must have a
+                    minimum investment plan/paid-up capital of IDR 10
+                    billion (excluding land and buildings). However, for
+                    capital compliance, a declaration can be made
+                    stating that shareholders' liability is limited to
+                    the nominal paid-up capital, meaning no actual
+                    transfer of funds into Indonesia is required.</span><o:p></o:p></li>
+              </ol>
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt">I don’t quite understand this
+                  clause, please elaborate further.</span><o:p></o:p></p>
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt"> </span><o:p></o:p></p>
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt">Would this affect our current
+                  bank accounts?
+                </span><o:p></o:p></p>
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt"> </span><o:p></o:p></p>
+              <p class="MsoNormal"
+style="mso-margin-top-alt:auto;mso-margin-bottom-alt:auto"><span
+                  style="font-size:11.0pt">Is there any restriction in
+                  hiring of manpower? Or any restriction we did not
+                  foreseen?</span><o:p></o:p></p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </div>
+    </blockquote>
+  </body>
+</html>
+
+--------------7lN8ZWqBNPheYpJ2rtdM0bHA--

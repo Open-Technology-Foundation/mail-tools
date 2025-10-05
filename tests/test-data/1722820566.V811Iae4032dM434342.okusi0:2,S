@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 5491C33401F6
+	for <drewjones@testmail.net>; Mon,  5 Aug 2024 08:16:06 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 05 Aug 2024 08:16:06 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id qA8qHtInsGaXaQUAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Mon, 05 Aug 2024 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1722820561; bh=aADJa24fgGRRfYaBKEisqgvUeWS2oUvQzO8VTAPgZyY=;
+	h=To:Subject:Date:From:From;
+	b=jPW4Fol8nYt+76msboI03DG9s2cHDryP9CbjiIT7nZJLF8GzANfnVhTTuD9il7PSB
+	 G+3A1gP4CyLOeKWA3V/cu95Mcj2S0Usy7ghPPFp1E+unGMYiJov/Y+WTRkTFDNEjin
+	 S8r1fBlZ3NBgm1maUq57u7OcomRfSht/qEydOVJbecDK9X2hHYXMFXNcYrI2IXBZ2/
+	 cQxYNg3eH4kgZtx/WJvxOiPSPWTD1bxnkstXKkNMcYVwfh0AuUa94W3+21O4G1d2IJ
+	 NS8+wq+DWSWJMF6sVQ7+xLxBPa2fCZbtrNNdAU4QmxKLRUpi/Z8DaNu/gegrrX7GwD
+	 Rdn9r7Eg8eYsw==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id D0BB02640004; Mon,  5 Aug 2024 08:16:01 +0700 (WIB)
+To: raven.young@samplebiz.org,parker.allen@testmail.com,parker.jackson@samplebiz.org,francis.garcia@samplebiz.org
+Subject: ALERT: SDM: Company Domicile Services
+Date: Mon, 05 Aug 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <indigo.miller@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT SDM Konsultan Indonesia:
+
+Your company domicile service is due to expire on 04 Sep 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

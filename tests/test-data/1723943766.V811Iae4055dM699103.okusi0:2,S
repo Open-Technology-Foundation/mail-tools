@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 6FBCE3340204
+	for <drewjones@testmail.net>; Sun, 18 Aug 2024 08:16:06 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Sun, 18 Aug 2024 08:16:06 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id YL1qCVJLwWbd6AAAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Sun, 18 Aug 2024 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1723943762; bh=aV0QaACzkosykMx25wzd1obPi6j8AekP1o1yECv9ehE=;
+	h=To:Subject:Date:From:From;
+	b=PTOPgTOWeIOiXy2/AvaR5KpW8yuZCa0e0xru/bbbVWnfzCZiwDpViaNG0YaaxiO75
+	 irMU8tM3crQsKUupIrQDlIhptNZ6ZFPB1RGyJO+fuJjizYpkE5O+qzhD7DzLAX4sv7
+	 umW7AR6bqJ+PFdlz93eotMdo6+bnjZNs/4ugLAJrbqLVkVWUwACkXVATURJmkzIUNg
+	 b+8iCPtpHkjR12ZMxkjNhxcp7+PLLwPRdR+ChEvBBLSZJQkdckIMqS6AQgLmfocjhR
+	 oq3aqgLtA1c3QhhTUI9JVKNzVFrFrOAJ1BibXwR393pUaFTiXU47weyAnaj5WcDGzz
+	 KqbgSJEsu8MHQ==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 020DC2640004; Sun, 18 Aug 2024 08:16:01 +0700 (WIB)
+To: jesse.harris@privatedomain.local,milesjones@privatedomain.local,milesjones@privatedomain.local
+Subject: ALERT: FINANSYS: Company Domicile Services
+Date: Sun, 18 Aug 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <jamie.wright@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT FinanSys Solutions Asia:
+
+Your company domicile service is due to expire on 17 Sep 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id A4A353340222
+	for <drewjones@testmail.net>; Thu, 19 Dec 2024 08:16:33 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 19 Dec 2024 08:16:33 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id +eVeINJzY2cXXykAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 19 Dec 2024 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1734570962; bh=0ZLChkcljDavomvaOHWX8F2llJDg7rpLAfYe7oFk3dw=;
+	h=To:Subject:Date:From:From;
+	b=f4pt9agAdOBlLziRxvZEX4NPiVDSu20cJxV9wTUBVRXji/F9VjLVpDnez7qRoPRQG
+	 AFSsCWzU81f3PuvHyTs+lNF7ld10AFX64UDnL+0YAOrYl1HhN71d7GWYsSZu/LsqvB
+	 1yyV+AqmbHww1CEHFonmP3XCOfFLyncUfQ7oR1AGd3pSB5jtDi/C4NAQqinrl0vQt8
+	 GldSIhj4fFS0a6MwFFyEYfrYThgo4lNaXHQ/sAj3fIIjQ8fMkiWVRoJNucJGReWRzl
+	 HUSa5ArhlsMaYKX9SsFY+WowOmQsio8cMdapDumYSbV+otHMuRaPyf1B3AkieLekiP
+	 UC1VXfqnLpc5g==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 365402640034; Thu, 19 Dec 2024 08:16:01 +0700 (WIB)
+To: lee.lee@placeholder.email,taylor.nguyen@placeholder.email
+Subject: ALERT: SHUNSHING: Investment Activity Report report to BKPM LKPM Q4 Tahun 2024
+Date: Thu, 19 Dec 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <7208155640780.721048017575@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT CEMCOA RESOURCES INDONESIA:
+
+Your company's Investment Activity Report (LKPM) to the BKPM must be done before 24 Dec 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

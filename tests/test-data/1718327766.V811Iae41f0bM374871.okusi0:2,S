@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 45B563340204
+	for <drewjones@testmail.net>; Fri, 14 Jun 2024 08:16:06 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Fri, 14 Jun 2024 08:16:06 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id Iu0ZEtOZa2Y5awoAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Fri, 14 Jun 2024 08:16:03 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1718327763; bh=qt1rtKJIANhurCq9oE96OHw4hkseS5ZbCf35fJNF+x8=;
+	h=To:Subject:From:Date:From;
+	b=j9JQuuAP9WmaKklM5WEYAFz79/FzWnEDcD5rVYkNcYzEZYkWHi8fZ9l3WFt2bFJR3
+	 8d4k9wqdz9rrsmz3QlDEIQSUGAVq6WLOe5n7ASsXgxdUcIDZhcjF+dX124wwdbSUtE
+	 M2kxR6xs0A/NSRWBP3vCEvVTwbO9PmwIBzYpmJcg0ym6z9hdGVsBSJJZ+4RKa6BbNK
+	 eCraKRM+zcbx30pcMSNszVC+mxjx7vgKaTTl0zV4QCFCoFYOPy8qRaRSlOsYCYhh5o
+	 z6CvmbQ2SkQxhGzKizV3ElsRBMezlvA+p2P2M9PcXPZyTLyfSdCKznlkZk2Fwz8KKQ
+	 rC9uYESeb9wUw==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 123A62640B4E; Fri, 14 Jun 2024 08:16:03 +0700 (WIB)
+To: harperyoung@privatedomain.local,cameron.allen@privatedomain.local,casey.hill@testcompany.co,stormgonzalez@testcompany.co,francis.sanchez@testcompany.co
+Subject: ALERT: BANYANLO: Company Domicile Services
+From: legmorganhill@testdomain.io
+Message-Id: <oakley.jackson@samplebiz.org>
+Date: Fri, 14 Jun 2024 08:16:03 +0700 (WIB)
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Banyan Logistik Global:
+
+Your company domicile service is due to expire on 14 Jul 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

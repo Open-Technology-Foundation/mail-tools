@@ -1,0 +1,178 @@
+Return-Path: <raven.flores@testmail.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id A92FD334021C
+	for <drewjones@testmail.net>; Mon, 28 Apr 2025 13:18:31 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 28 Apr 2025 13:18:31 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id GLJQOrUdD2hnDCUAeHbnHg
+	(envelope-from <raven.flores@testmail.com>)
+	for <contkellylewis@testdomain.io>; Mon, 28 Apr 2025 13:18:29 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-ed1-f41.google.com (mail-ed1-f41.google.com [209.85.208.41])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 9DA27264002C
+	for <contkellylewis@testdomain.io>; Mon, 28 Apr 2025 13:18:28 +0700 (WIB)
+Received: by mail-ed1-f41.google.com with SMTP id 4fb4d7f45d1cf-5f728aeedacso3952117a12.2
+        for <contkellylewis@testdomain.io>; Sun, 27 Apr 2025 23:18:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1745821099; x=1746425899; darn=okusi.id;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=kl2pojK766oCBqzV6I4qvvLnrvJf6eQEVXH6NclEENw=;
+        b=AVHYqD48YCD9F4hqmF2vmUTpGhPmHN/QdIwnys3Y/MZ+efyP4vUAosxw1CnIt34tbI
+         Mf4WzHdVtypehC9zvPkutGpfdcOSHV4OdMhnp1so5RVUEvevoODapb8sS0AusoLa4Phw
+         vgsY69TCbmdUSVwPQIK/WRiDY0bqnya5anfhKi9DeSm99iIiHoTTJ6AkofuXApZbGjOC
+         yRhu5Xp3wPL2vzg126mMlkwLZ1dSVDBi9I2lbEmzi2nSNf49+gH5ndze5GXhjOsNWHqP
+         6cXIW3cqrsOJMP/4FEizgJw/G224qjsxeaAtXmxC819juDRYR5TIyS1rJdMYIyL2/0zJ
+         BOrg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1745821099; x=1746425899;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=kl2pojK766oCBqzV6I4qvvLnrvJf6eQEVXH6NclEENw=;
+        b=gXancNX2dCU2bpwOMZ4FofbqeECQsa1kfZ9QA6G4fD/NUEexkVchsyIPYrf/n4N3mm
+         yTmPArtxDui8JuKxzme6JCynGqlQ9B2NgFuXcmbdU5AOs50v2O2gF/SSCpY559z4fqBt
+         8pSI8s8DyrAO7sQ9OK6dhDGSCdFmyj+cVJgaz/V2UVLTppW67O6GlUfuBPPAcGo5tbl2
+         /cV6xb7TaISySCnmi9JvEZjN7Uy8zHihllUdbw0Tl4+Np141vT7q+1hCxODqL9rqU0ER
+         K0xdhyP3rV9W/TxGpBxuK62RRQgqzUrO91V2jZ7VCg6Dx+eQTh4hPPn0F9lvZSg5lE4E
+         be6A==
+X-Gm-Message-State: AOJu0YznxsyDZr4UfENuBQEJOdzk783VSQ//vVEfp/Otx+D8bepIASXZ
+	6yRdro4RnsKeEGGUsw292yr78+v9w4084Kl2OX6YYFcn7jp7cwdzXcKhWUFzgKu+DyGuFqbeiEJ
+	LhuyeiQLQ4/LcS0xHNO+9W2HIlWuv1qXW8Iw=
+X-Gm-Gg: ASbGncuGel/mie4Q/5JURwroddf6FYwRh710YuBui4CZFyYheDZ1+sUP7DLed0Lwu7Z
+	L4XoTIbw/yWDxARwRzVA1xaJMX+ZT2DCA4+HD9LVVYCQfp2engzEuDmo6bige3TFpH5LcP3RlNs
+	5xU98jJFRzb4qavvzzaiRMlbCZ6rwrIMq14xugRQ==
+X-Google-Smtp-Source: AGHT+IHEtk3J0ErYJ90kj6ynVgaSyehSTLSD19QlVfqO4psRtaprZdcyKKy6rpbc0U/wrm56f0lQeaAGAg3KreOm9Ho=
+X-Received: by 2002:a05:6402:40c8:b0:5ec:da2e:6f4d with SMTP id
+ 4fb4d7f45d1cf-5f72297c218mr9489573a12.18.1745821099057; Sun, 27 Apr 2025
+ 23:18:19 -0700 (PDT)
+MIME-Version: 1.0
+References: <49e6fe6f6d15fbfacff106da245bdc9b@placeholder.email>
+In-Reply-To: <49e6fe6f6d15fbfacff106da245bdc9b@placeholder.email>
+From: Hirofumi Ide <raven.flores@testmail.com>
+Date: Mon, 28 Apr 2025 14:18:07 +0800
+X-Gm-Features: ATxdqUGtBPy_COmoXVNTDOllukZGoeKk1WRD7ooWhiiC9It9APrjbrw51tPup5Y
+Message-ID: <river_rodriguez@testmail.com>
+Subject: Re: Digital Nomad Visa (E33G) [#:680450ec6]
+To: "contkellylewis@testdomain.io" <contkellylewis@testdomain.io>
+Content-Type: multipart/alternative; boundary="0000000000007366a60633d0a636"
+X-Spam-Status: No, score=-0.2 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_FROM,HTML_MESSAGE,
+	RCVD_IN_DNSWL_BLOCKED,RCVD_IN_MSPIKE_H2,
+	RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,RCVD_IN_VALIDITY_RPBL_BLOCKED,
+	SPF_HELO_NONE,SPF_PASS autolearn=unavailable autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--0000000000007366a60633d0a636
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+hi can you response my email ?
+
+On Sun, 20 Apr 2025 at 09:42, contkellylewis@testdomain.io <contkellylewis@testdomain.io> wrote:
+
+> <https://okusiassociates.com/>
+>
+> Thank you for contacting Okusi Associates.
+> Someone will be in touch with you shortly.
+> A copy of your message appears below.
+>
+> Phone: +818039690233
+>
+> Hi,
+>
+> I am a Japanese living in singapore working as EP folder. Wonder how much
+> cost and how long it takes roughly to obtain E33G.
+>
+>
+> OkusiAssociates.com <https://okusiassociates.com>
+>
+> *Jakarta* +62 21 390 1007 <+62213901007>   +62 21 392 8595 <+62213928595>
+>
+> *Bali* +62 361 769 144 <+62361769144>   *Batam* +62 778 741 5011
+> <+627787415011>
+>
+> *=E2=80=A2* *permanent offices* conveniently located in *Jakarta, Batam, =
+and Bali*
+> .
+>
+> *=E2=80=A2* *comprehensive/integrated*: legal, immigration, accountancy, =
+research.
+>
+> *=E2=80=A2* *in-house*, over 60 full-time direct employees across Indones=
+ia; *no
+> outsourcing*.
+>
+> *=E2=80=A2* *over 3,000 foreign companies*, more than any other firm in I=
+ndonesia.
+>
+> *=E2=80=A2* companies set up *anywhere in Indonesia*.
+>
+> *=E2=80=A2* since *1997*.  28 years of service to Indonesia.
+>
+>
+
+--=20
+Hirofumi ide
+
+--0000000000007366a60633d0a636
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">hi can you response my email ?</div><br><div class=3D"gmai=
+l_quote gmail_quote_container"><div dir=3D"ltr" class=3D"gmail_attr">On Sun=
+, 20 Apr 2025 at 09:42, <a href=3D"mailto:contkellylewis@testdomain.io">contact@okusi.i=
+d</a> &lt;<a href=3D"mailto:contkellylewis@testdomain.io">contkellylewis@testdomain.io</a>&gt; wrot=
+e:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0=
+.8ex;border-left-width:1px;border-left-style:solid;border-left-color:rgb(20=
+4,204,204);padding-left:1ex"><u></u>		<div><div style=3D"font-family:Arial;=
+background:repeat rgb(238,255,255);border:1px solid rgb(238,238,238);border=
+-radius:5px;color:rgb(0,41,88);margin:0rem auto 1rem;text-align:center;widt=
+h:40rem;padding:1rem 3rem">	<div style=3D"width:100%;text-align:center">		<=
+a href=3D"https://okusiassociates.com/" style=3D"color:rgb(0,41,88);text-de=
+coration:none" title=3D"Okusi Associates website." target=3D"_blank">			<im=
+g style=3D"height: 3.8rem;">		</a>	</div>	<br>	<div style=3D"font-size:1rem=
+">		Thank you for contacting Okusi Associates.<br>		Someone will be in touc=
+h with you shortly.<br>		A copy of your message appears below.	</div></div>=
+<div style=3D"font-family:Arial;background:repeat rgb(238,255,255);border:1=
+px solid rgb(238,238,238);border-radius:5px;color:rgb(0,41,88);margin:0rem =
+auto 1rem;text-align:center;width:40rem;padding:1rem 3rem">	<div style=3D"c=
+olor:rgb(34,34,34);font-size:1rem;margin-bottom:1rem">	<div id=3D"m_-469436=
+948847141963message" style=3D"font-family:Arial;border:1px solid rgb(238,23=
+8,238);border-radius:4px;color:rgb(85,85,85);width:99%;max-width:40rem;text=
+-align:left;margin:0rem;padding:0rem;font-size:12pt"><br>Phone: +8180396902=
+33<br><br>Hi, <br> <br>I am a Japanese living in singapore working as EP fo=
+lder. Wonder how much cost and how long it takes roughly to obtain E33G. <b=
+r> <br> <br></div>	</div></div><div style=3D"font-family:Arial;background:r=
+epeat rgb(238,255,255);border:1px solid rgb(238,238,238);border-radius:5px;=
+color:rgb(0,41,88);margin:0rem auto 1rem;text-align:center;width:40rem;padd=
+ing:1rem 3rem">	<div style=3D"color:rgb(51,51,51);font-size:0.9rem;margin-b=
+ottom:1rem">		<p><a href=3D"https://okusiassociates.com" style=3D"color:rgb=
+(0,41,88)" target=3D"_blank">OkusiAssociates.com</a></p>		<p><b>Jakarta</b>=
+ <a href=3D"tel:+62213901007" style=3D"color:rgb(0,41,88)" target=3D"_blank=
+">+62 21 390 1007</a> =C2=A0 <a href=3D"tel:+62213928595" style=3D"color:rg=
+b(0,41,88)" target=3D"_blank">+62 21 392 8595</a></p>		<p><b>Bali</b> <a hr=
+ef=3D"tel:+62361769144" style=3D"color:rgb(0,41,88)" target=3D"_blank">+62 =
+361 769 144</a> =C2=A0	<b>Batam</b> <a href=3D"tel:+627787415011" style=3D"=
+color:rgb(0,41,88)" target=3D"_blank">+62 778 741 5011</a></p>	</div>	<div =
+style=3D"width:100%;text-align:center;font-size:0.9rem;color:rgb(68,68,68);=
+line-height:0.7">		<p><b>=E2=80=A2</b> <b>permanent offices</b> convenientl=
+y located in <b>Jakarta, Batam, and Bali</b>.</p>	  <p><b>=E2=80=A2</b> <b>=
+comprehensive/integrated</b>: legal, immigration, accountancy, research.</p=
+>	  <p><b>=E2=80=A2</b> <b>in-house</b>, over 60 full-time direct employees=
+ across Indonesia; <b>no outsourcing</b>.</p>	  <p><b>=E2=80=A2</b> <b>over=
+ 3,000 foreign companies</b>, more than any other firm in Indonesia.</p>	  =
+<p><b>=E2=80=A2</b> companies set up <b>anywhere in Indonesia</b>.</p>	  <p=
+><b>=E2=80=A2</b> since <b>1997</b>. =C2=A028 years of service to Indonesia=
+.</p>	</div>	<br></div></div></blockquote></div><div><br clear=3D"all"></di=
+v><div><br></div><span class=3D"gmail_signature_prefix">-- </span><br><div =
+dir=3D"ltr" class=3D"gmail_signature">Hirofumi ide</div>
+
+--0000000000007366a60633d0a636--

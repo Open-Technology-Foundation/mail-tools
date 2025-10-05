@@ -1,0 +1,515 @@
+Return-Path: <haydenlopez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 9C0C733401FE
+	for <drewjones@testmail.net>; Mon, 10 Mar 2025 15:52:14 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 10 Mar 2025 15:52:14 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id YOH+Cv2nzmcX0wYAeHbnHg
+	(envelope-from <haydenlopez@testdomain.io>); Mon, 10 Mar 2025 15:51:09 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1741596668; bh=eEN4UqUtxhKz/SJej3KdnWKHzT/BxaiY9h/1u9xan0E=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=hYugEs/zldPe4yXfU2zzEqzfDzkQEmWcRobg0N1xcvwdO+11VMKdFA2YsWPZui03H
+	 WfPjkT1w4eIY7n9bMMhixls22H4SACTDS1ZEfbU+ooJL6Bou/O+TZ24NBtBbJtoGr4
+	 6byljyTsmw1vg7kP4PAhOR7AWjswSNtdIG+lWpRNaJJtsMB0nyD/Y2AywN13BjQ0ne
+	 dVVrKAE0Zot6kwluc9Mm0HuGsAhP69H9uZWJ3fqy9FmyX197XS1fE1SoKfUD67hrLF
+	 0lvirUCUrNMr6O7P1qaRf/rbKdo4q+fsA3njyFwhigAxTXrPYtqJg62iqxtMc9Yjx/
+	 hnuXsgFNm+P+Q==
+Received: from [192.168.6.18] (unknown [110.138.88.130])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 22D7D264000C;
+	Mon, 10 Mar 2025 15:51:08 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------xv2dflxo1cFku0zRYRRmM1eG"
+Message-ID: <5adaa35d-fac1778e-76eec536-7e424c5f@testdomain.io>
+Date: Mon, 10 Mar 2025 15:51:07 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ALERT: EBISNIS: Nominee Director Services
+To: Weida <mileslewis@testdomain.io>, "legmorganhill@testdomain.io" <legmorganhill@testdomain.io>,
+ "francis.wilson@privatedomain.local" <francis.wilson@privatedomain.local>
+Cc: Sudha Goli <skylermiller@testdomain.io>
+References: <parker.lewis@samplebiz.org>
+ <a5d5f8bb-bfe862d2-15bb5db0-8a55e47e@testdomain.io>
+ <emersonrobinson@testmail.com>
+Content-Language: en-US
+From: Nurlia Hasyim <haydenlopez@testdomain.io>
+In-Reply-To: <emersonrobinson@testmail.com>
+X-Spam-Status: No, score=-1.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID,T_REMOTE_IMAGE autolearn=unavailable
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------xv2dflxo1cFku0zRYRRmM1eG
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear Weida,
+
+Thank you for your confirmation.
+
+Our finance division will send the invoice for the renewal in a separate 
+email.
+
+Please let us know if you need any further assistance.
+
+
+Best regards,
+
+Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162> 	*Nurlia 
+Hasyim*
+Senior client compliance, Okusi Associates <https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Nurlia Hasyim. <whatsapp://send?phone=6285890220665>   Nurlia Hasyim 
+on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
++6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+<tel:+62213901007> | haydenlopez@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 10/3/25 15:47, Weida wrote:
+>
+> Hi Nurlia,
+>
+> Please proceed with the renewal of nominee director service.
+>
+> Thanks and regards
+>
+> Wei Da
+>
+> *From:*Nurlia Hasyim <haydenlopez@testdomain.io>
+> *Sent:* Monday, 10 March 2025 4:46 pm
+> *To:* legmorganhill@testdomain.io; francis.wilson@privatedomain.local; 
+> lee.lopez@testdomain.io; stormanderson@testdomain.io; Sudha 
+> Goli <skylermiller@testdomain.io>; justice.harris@testdomain.io; 
+> Weida <mileslewis@testdomain.io>
+> *Subject:* Re: ALERT: EBISNIS: Nominee Director Services
+>
+> CAUTION:This email originated from outside of the organization. Do not 
+> click on links or open attachments unless you recognize the sender and 
+> know the content is safe.
+>
+> Dear Mr. Wei Da,
+>
+> Greetings from Okusi Associates.
+>
+> We would like to inform you that the nominee director service for PT 
+> Ebisnis Mandiri Technology expired on March 1, 2025, as previously 
+> reminded by our system.
+>
+> Kindly let us know if you wish to renew this service or appoint a new 
+> director so we can proceed accordingly.
+>
+> Should you require any assistance, please feel free to reach out.
+>
+> Thank you.
+>
+>
+>
+> Best regards,
+>
+> Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162>
+>
+> 	
+>
+> *Nurlia Hasyim*
+>
+> Senior client compliance, Okusi Associates <https://okusiassociates.com>
+>
+> Okusi Associates website <https://okusiassociates.com/> Send Whatsapp 
+> to Nurlia Hasyim. <whatsapp://send/?phone=6285890220665> Nurlia Hasyim 
+> on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
+>
+> +6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+> <tel:+62213901007> | haydenlopez@testdomain.io 
+> <mailto:haydenlopez@testdomain.io> | okusiassociates.com 
+> <https://okusiassociates.com>
+>
+> On 30/1/25 08:16, legmorganhill@testdomain.io wrote:
+>
+>     This is an automated alert from Okusi Associates.
+>
+>     Reminder for PT Ebisnis Mandiri Technology:
+>
+>     Nominee Director Services for this company is due to expire on 01 Mar 2025
+>
+>     Please contact Okusi Associates for information concerning renewal.
+>
+--------------xv2dflxo1cFku0zRYRRmM1eG
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p data-start="36" data-end="49"><font face="Trebuchet MS">Dear
+        Weida,</font></p>
+    <p data-start="51" data-end="85"><font face="Trebuchet MS">Thank you
+        for your confirmation.</font></p>
+    <p data-start="87" data-end="168"><font face="Trebuchet MS">Our
+        finance division will send the invoice for the renewal in a
+        separate email.</font></p>
+    <p data-start="170" data-end="226"><font face="Trebuchet MS">Please
+        let us know if you need any further assistance.</font></p>
+    <p data-start="228" data-end="259" data-is-last-node=""
+      data-is-only-node=""><font face="Trebuchet MS"><span
+          data-start="228" data-end="245"><br>
+        </span></font></p>
+    <p data-start="228" data-end="259" data-is-last-node=""
+      data-is-only-node=""><font face="Trebuchet MS"><span
+          data-start="228" data-end="245">Best regards,</span></font></p>
+    <p></p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1162"
+                target="_blank" title="Okusi Associates - Nurlia Hasyim">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Nurlia Hasyim"
+                  src="https://okusiassociates.com/a/m/photo-nurlia.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Nurlia Hasyim</strong>
+              <div style="font-size:13px;color:#888 !important;">
+                Senior client compliance, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Nurlia Hasyim."
+                  href="whatsapp://send?phone=6285890220665"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Nurlia Hasyim."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+                 
+                <a title="Nurlia Hasyim on LinkedIn."
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Nurlia Hasyim on LinkedIn"
+                    src="https://okusiassociates.com/a/m/li.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6285890220665"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6285890220665</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Nurlia Hasyim."
+                  href="mailto:haydenlopez@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">haydenlopez@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 10/3/25 15:47, Weida wrote:<br>
+    </div>
+    <blockquote type="cite"
+cite="mid:emersonrobinson@testmail.com">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="Generator"
+        content="Microsoft Word 15 (filtered medium)">
+      <!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]-->
+      <style>@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}@font-face
+	{font-family:DengXian;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}@font-face
+	{font-family:Aptos;}@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}@font-face
+	{font-family:"\@DengXian";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}@font-face
+	{font-family:"Trebuchet MS";
+	panose-1:2 11 6 3 2 2 2 2 2 4;}p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}pre
+	{mso-style-priority:99;
+	mso-style-link:"HTML Preformatted Char";
+	margin:0cm;
+	font-size:10.0pt;
+	font-family:"Courier New";}span.HTMLPreformattedChar
+	{mso-style-name:"HTML Preformatted Char";
+	mso-style-priority:99;
+	mso-style-link:"HTML Preformatted";
+	font-family:Consolas;}span.EmailStyle22
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}div.WordSection1
+	{page:WordSection1;}</style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]-->
+      <div class="WordSection1">
+        <p class="MsoNormal"><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Hi
+            Nurlia,<o:p></o:p></span></p>
+        <p class="MsoNormal"><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p> </o:p></span></p>
+        <p class="MsoNormal"><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Please
+            proceed with the renewal of nominee director service.<o:p></o:p></span></p>
+        <p class="MsoNormal"><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p> </o:p></span></p>
+        <p class="MsoNormal"><span lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Thanks
+            and regards<o:p></o:p></span></p>
+        <p class="MsoNormal"><span lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">Wei
+            Da<o:p></o:p></span></p>
+        <p class="MsoNormal"><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p> </o:p></span></p>
+        <p class="MsoNormal"><span
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"><o:p> </o:p></span></p>
+        <div>
+          <div
+style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+            <p class="MsoNormal"><b><span lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">From:</span></b><span
+                lang="EN-US"
+style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">
+                Nurlia Hasyim <a class="moz-txt-link-rfc2396E" href="mailto:haydenlopez@testdomain.io">&lt;haydenlopez@testdomain.io&gt;</a>
+                <br>
+                <b>Sent:</b> Monday, 10 March 2025 4:46 pm<br>
+                <b>To:</b> <a class="moz-txt-link-abbreviated" href="mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a>; <a class="moz-txt-link-abbreviated" href="mailto:francis.wilson@privatedomain.local">francis.wilson@privatedomain.local</a>;
+                <a class="moz-txt-link-abbreviated" href="mailto:lee.lopez@testdomain.io">lee.lopez@testdomain.io</a>;
+                <a class="moz-txt-link-abbreviated" href="mailto:stormanderson@testdomain.io">stormanderson@testdomain.io</a>; Sudha Goli
+                <a class="moz-txt-link-rfc2396E" href="mailto:skylermiller@testdomain.io">&lt;skylermiller@testdomain.io&gt;</a>;
+                <a class="moz-txt-link-abbreviated" href="mailto:justice.harris@testdomain.io">justice.harris@testdomain.io</a>; Weida
+                <a class="moz-txt-link-rfc2396E" href="mailto:mileslewis@testdomain.io">&lt;mileslewis@testdomain.io&gt;</a><br>
+                <b>Subject:</b> Re: ALERT: EBISNIS: Nominee Director
+                Services<o:p></o:p></span></p>
+          </div>
+        </div>
+        <p class="MsoNormal"><o:p> </o:p></p>
+        <div
+style="border:solid #9C6500 1.0pt;padding:2.0pt 2.0pt 2.0pt 2.0pt">
+          <p class="MsoNormal"
+            style="line-height:12.0pt;background:#FFEB9C"><span
+style="font-size:10.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:#9C6500">CAUTION:</span><span
+style="font-size:10.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:black">
+              This email originated from outside of the organization. Do
+              not click on links or open attachments unless you
+              recognize the sender and know the content is safe.<o:p></o:p></span></p>
+        </div>
+        <p class="MsoNormal"><o:p> </o:p></p>
+        <div>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Dear
+              Mr. Wei Da,</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Greetings
+              from Okusi Associates.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">We
+              would like to inform you that the nominee director service
+              for PT Ebisnis Mandiri Technology expired on March 1,
+              2025, as previously reminded by our system.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Kindly
+              let us know if you wish to renew this service or appoint a
+              new director so we can proceed accordingly.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Should
+              you require any assistance, please feel free to reach out.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Thank
+              you.</span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif"><br>
+              <br>
+            </span><o:p></o:p></p>
+          <p><span
+              style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Best
+              regards,</span><o:p></o:p></p>
+          <div>
+            <table class="MsoNormalTable" border="0" cellspacing="3"
+              cellpadding="0">
+              <tbody>
+                <tr>
+                  <td valign="top" style="padding:0cm 4.5pt 0cm 4.5pt">
+                    <p class="MsoNormal"><a
+                        href="https://okusiassociates.com/id/1162"
+title="&quot;Okusi Associates - Nurlia Hasyim&quot; t "
+                        moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif;text-decoration:none"><img
+                            border="0" width="111" height="111"
+                            style="width:1.1583in;height:1.1583in"
+                            id="_x0000_i1028"
+src="https://okusiassociates.com/a/m/photo-nurlia.jpg"
+                            alt="Photo of Nurlia Hasyim"
+                            moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555"><o:p></o:p></span></p>
+                  </td>
+                  <td valign="top" style="padding:0cm 4.5pt 0cm 3.0pt">
+                    <p class="MsoNormal"><strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">Nurlia
+                          Hasyim</span></strong><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                        <o:p></o:p></span></p>
+                    <div>
+                      <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888">Senior
+                          client compliance,
+                          <a href="https://okusiassociates.com"
+                            target="_blank"
+                            title="Indonesian Corporate Services"
+                            moz-do-not-send="true">
+                            <span style="color:#888888">Okusi Associates</span></a>
+                          <o:p></o:p></span></p>
+                    </div>
+                    <div style="margin-top:2.25pt">
+                      <p class="MsoNormal"><a
+                          href="https://okusiassociates.com/"
+title="&quot;Okusi Associates website&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#888888;text-decoration:none"><img
+                              border="0" width="400" height="400"
+                              style="width:4.1666in;height:4.1666in"
+                              id="_x0000_i1027"
+src="https://okusiassociates.com/a/m/oa.png"
+                              alt="Okusi Associates website"
+                              moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                        </span><a
+                          href="whatsapp://send/?phone=6285890220665"
+title="&quot;Send Whatsapp to Nurlia Hasyim.&quot; t "
+                          moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif;text-decoration:none"><img
+                              border="0" width="72" height="72"
+                              style="width:.75in;height:.75in"
+                              id="_x0000_i1026"
+src="https://okusiassociates.com/a/m/wa.png"
+                              alt="Send Whatsapp to Nurlia Hasyim."
+                              moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Arial&quot;,sans-serif;color:#555555"> </span><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555">
+                        </span><a
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+title="&quot;Nurlia Hasyim on LinkedIn.&quot; t " moz-do-not-send="true"><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#888888;text-decoration:none"><img
+                              border="0" width="72" height="72"
+                              style="width:.75in;height:.75in"
+                              id="_x0000_i1025"
+src="https://okusiassociates.com/a/m/li.png"
+                              alt="Nurlia Hasyim on LinkedIn"
+                              moz-do-not-send="true"></span></a><span
+style="font-family:&quot;Verdana&quot;,sans-serif;color:#555555"><o:p></o:p></span></p>
+                    </div>
+                    <div>
+                      <p class="MsoNormal"><span
+style="font-size:10.0pt;font-family:&quot;Verdana&quot;,sans-serif;color:#888888"><a
+                            href="whatsapp://send?phone=6285890220665"
+                            title="Voice/WhatsApp/SMS"
+                            moz-do-not-send="true"><span
+                              style="color:#888888">+6285890220665</span></a>
+                          |
+                          <a href="tel:+62213901007"
+                            title="Jakarta Office Landline."
+                            moz-do-not-send="true"><span
+                              style="color:#888888">+62213901007</span></a>
+                          |
+                          <a href="mailto:haydenlopez@testdomain.io"
+                            title="Send email to Nurlia Hasyim."
+                            moz-do-not-send="true"><span
+                              style="color:#888888">haydenlopez@testdomain.io</span></a>
+                          |
+                          <a href="https://okusiassociates.com"
+                            target="_blank"
+title="Okusi Associates - Indonesian Corporate Services"
+                            moz-do-not-send="true">
+                            <span style="color:#888888">okusiassociates.com</span></a>
+                          <o:p></o:p></span></p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="MsoNormal" style="margin-bottom:12.0pt"><o:p> </o:p></p>
+          </div>
+          <div>
+            <p class="MsoNormal">On 30/1/25 08:16, <a
+                href="mailto:legmorganhill@testdomain.io" moz-do-not-send="true"
+                class="moz-txt-link-freetext">legmorganhill@testdomain.io</a> wrote:<o:p></o:p></p>
+          </div>
+          <blockquote style="margin-top:5.0pt;margin-bottom:5.0pt">
+            <pre>This is an automated alert from Okusi Associates.<o:p></o:p></pre>
+            <pre><o:p> </o:p></pre>
+            <pre>Reminder for PT Ebisnis Mandiri Technology:<o:p></o:p></pre>
+            <pre><o:p> </o:p></pre>
+            <pre>Nominee Director Services for this company is due to expire on 01 Mar 2025<o:p></o:p></pre>
+            <pre><o:p> </o:p></pre>
+            <pre>Please contact Okusi Associates for information concerning renewal.<o:p></o:p></pre>
+            <pre><o:p> </o:p></pre>
+            <pre><o:p> </o:p></pre>
+          </blockquote>
+        </div>
+      </div>
+    </blockquote>
+  </body>
+</html>
+
+--------------xv2dflxo1cFku0zRYRRmM1eG--

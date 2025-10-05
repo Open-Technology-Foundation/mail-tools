@@ -1,0 +1,56 @@
+Return-Path: <riverbrown@testmail.net>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 4C19D33401FE
+	for <drewjones@testmail.net>; Thu, 27 Jun 2024 11:44:40 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 27 Jun 2024 11:44:40 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id mH3GLfbtfGbacB8AeHbnHg
+	(envelope-from <riverbrown@testmail.net>); Thu, 27 Jun 2024 11:43:34 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=mms.rcs.chinamobile.com
+Authentication-Results: OpenDMARC; spf=none smtp.mailfrom=mmsc-gz12-rsv.rcs.chinamobile.com
+Received: from mmsc-gz12-rsv.rcs.chinamobile.com (unknown [120.198.247.46])
+	by okusi1.okusi.co.id (Postfix) with SMTP id 63B892640B32
+	for <legmorganhill@testdomain.io>; Thu, 27 Jun 2024 11:43:29 +0700 (WIB)
+Date:Thu, 27 Jun 2024 12:42:56 +0800
+From:<+05c967c234da0@example.net>
+To: legmorganhill@testdomain.io
+Message-ID:<miles.allen@testmail.net>
+X-Priority: 3
+Mime-Version:1.0
+Content-Type:multipart/mixed;boundary="--------------------------------------------=_NextPart_0_24856"
+X-Spam-Status: No, score=4.5 required=5.0 tests=BAYES_40,DKIM_ADSP_NXDOMAIN,
+	FROM_LOCAL_DIGITS,FROM_LOCAL_HEX,KAM_LAZY_DOMAIN_SECURITY,
+	MISSING_SUBJECT,RCVD_IN_DNSWL_BLOCKED,RDNS_NONE,SPF_HELO_NONE,SPF_NONE
+	autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Level: ****
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+this is a multi-part message in MIME format.
+
+----------------------------------------------=_NextPart_0_24856
+Content-Type:application/smil
+Content-Transfer-Encoding:base64
+Content-ID:0.smil
+
+PHNtaWw+CjxoZWFkPgo8bGF5b3V0PgogPHJvb3QtbGF5b3V0Lz4KPHJlZ2lvbiBpZD0iVGV4dCIg
+dG9wPSI3MCUiIGxlZnQ9IjAlIiBoZWlnaHQ9IjMwJSIgd2lkdGg9IjEwMCUiIGZpdD0ic2Nyb2xs
+Ii8+CjxyZWdpb24gaWQ9IkltYWdlIiB0b3A9IjAlIiBsZWZ0PSIwJSIgaGVpZ2h0PSI3MCUiIHdp
+ZHRoPSIxMDAlIiBmaXQ9Im1lZXQiLz4KPC9sYXlvdXQ+CjwvaGVhZD4KPGJvZHk+CjxwYXIgZHVy
+PSIxMHMiPgo8dGV4dCBzcmM9InRleHRfMC50eHQiIHJlZ2lvbj0iVGV4dCIvPgo8L3Bhcj4KPC9i
+b2R5Pgo8L3NtaWw+Cg==
+
+----------------------------------------------=_NextPart_0_24856
+Content-Type:text/plain;charset=gb2312; name=text_0.txt
+Content-Transfer-Encoding:base64
+Content-Location:text_0.txt
+Content-ID:0
+
+SGksIGFyZSB5b3Ugb24gV2hhdHNBcHA/IEkgbmVlZCB5b3VyIHNlcnZpY2VzLg==
+
+----------------------------------------------=_NextPart_0_24856--
+

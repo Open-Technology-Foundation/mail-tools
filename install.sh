@@ -65,31 +65,31 @@ die() {
 
 show_help() {
   cat << 'EOF'
-Mailheader Installation Script
-==============================
+Mail Tools Installation Script
+===============================
 
 Usage: ./install.sh [OPTIONS]
 
 Options:
   --help              Show this help message
-  --builtin           Force installation of bash builtin (installs dependencies if needed)
+  --builtin           Force installation of bash builtins (installs dependencies if needed)
   --no-builtin        Skip bash builtin installation
-  --uninstall         Uninstall mailheader
+  --uninstall         Uninstall mail tools
   --prefix DIR        Installation prefix (default: /usr/local)
   --non-interactive   Don't prompt for user input
   --dry-run           Show what would be done without making changes
 
 Installation Locations (with default prefix):
-  Standalone binary:  /usr/local/bin/mailheader
-  Manpage:            /usr/local/share/man/man1/mailheader.1
-  Documentation:      /usr/local/share/doc/mailheader/
-  Builtin (optional): /usr/local/lib/bash/loadables/mailheader.so
-  Profile script:     /etc/profile.d/mailheader.sh
+  Standalone binaries: /usr/local/bin/mailheader, mailmessage, mailheaderclean
+  Manpages:            /usr/local/share/man/man1/mailheader.1, mailmessage.1, mailheaderclean.1
+  Documentation:       /usr/local/share/doc/mailheader/
+  Builtins (optional): /usr/local/lib/bash/loadables/mailheader.so, mailmessage.so, mailheaderclean.so
+  Profile script:      /etc/profile.d/mail-tools.sh
 
 Examples:
   ./install.sh                    # Interactive installation
-  ./install.sh --builtin          # Install with builtin
-  ./install.sh --no-builtin       # Install without builtin
+  ./install.sh --builtin          # Install with builtins
+  ./install.sh --no-builtin       # Install without builtins
   ./install.sh --uninstall        # Remove installation
   ./install.sh --prefix=/opt      # Install to /opt
 
@@ -168,10 +168,10 @@ prompt_builtin_install() {
   fi
 
   echo ""
-  echo "The bash loadable builtin provides 10-20x performance improvement"
+  echo "The bash loadable builtins provide 10-20x performance improvement"
   echo "for scripts that process multiple email files."
   echo ""
-  read -p "Install bash loadable builtin? [Y/n] " -n 1 -r
+  read -p "Install bash loadable builtins? [Y/n] " -n 1 -r
   echo ""
 
   if [[ $REPLY =~ ^[Nn]$ ]]; then
@@ -181,7 +181,7 @@ prompt_builtin_install() {
 }
 
 build_standalone() {
-  info "Building standalone binary..."
+  info "Building standalone binaries..."
 
   if ((DRY_RUN)); then
     info "[DRY-RUN] Would build: make standalone"
@@ -189,12 +189,12 @@ build_standalone() {
   fi
 
   cd "$SCRIPT_DIR"
-  make standalone || die "Failed to build standalone binary"
-  success "Standalone binary built"
+  make standalone || die "Failed to build standalone binaries"
+  success "Standalone binaries built (mailheader, mailmessage, mailheaderclean)"
 }
 
 build_builtin() {
-  info "Building bash loadable builtin..."
+  info "Building bash loadable builtins..."
 
   if ! check_builtin_support; then
     # If user explicitly requested --builtin, try to install dependencies
@@ -226,34 +226,46 @@ build_builtin() {
 
   cd "$SCRIPT_DIR"
   make loadable || {
-    error "Failed to build bash builtin"
+    error "Failed to build bash builtins"
     return 1
   }
-  success "Bash builtin built"
+  success "Bash builtins built (mailheader.so, mailmessage.so, mailheaderclean.so)"
   return 0
 }
 
 install_standalone() {
-  info "Installing standalone binary and documentation..."
+  info "Installing standalone binaries and documentation..."
 
   if ((DRY_RUN)); then
     info "[DRY-RUN] Would install:"
     info "  ${BINDIR}/mailheader"
+    info "  ${BINDIR}/mailmessage"
+    info "  ${BINDIR}/mailheaderclean"
     info "  ${MAN_DIR}/mailheader.1"
+    info "  ${MAN_DIR}/mailmessage.1"
+    info "  ${MAN_DIR}/mailheaderclean.1"
     info "  ${DOC_DIR}/README.md"
     info "  ${DOC_DIR}/benchmark.sh"
     info "  ${DOC_DIR}/benchmark_detailed.sh"
     return 0
   fi
 
-  # Install binary
+  # Install binaries
   install -d "${BINDIR}"
-  install -m 755 "${SCRIPT_DIR}/mailheader" "${BINDIR}/" || die "Failed to install binary"
+  install -m 755 "${SCRIPT_DIR}/mailheader" "${BINDIR}/" || die "Failed to install mailheader binary"
+  install -m 755 "${SCRIPT_DIR}/mailmessage" "${BINDIR}/" || die "Failed to install mailmessage binary"
+  install -m 755 "${SCRIPT_DIR}/mailheaderclean" "${BINDIR}/" || die "Failed to install mailheaderclean binary"
 
-  # Install manpage
+  # Install manpages
+  install -d "${MAN_DIR}"
   if [[ -f "${SCRIPT_DIR}/mailheader.1" ]]; then
-    install -d "${MAN_DIR}"
-    install -m 644 "${SCRIPT_DIR}/mailheader.1" "${MAN_DIR}/" || warning "Failed to install manpage"
+    install -m 644 "${SCRIPT_DIR}/mailheader.1" "${MAN_DIR}/" || warning "Failed to install mailheader manpage"
+  fi
+  if [[ -f "${SCRIPT_DIR}/mailmessage.1" ]]; then
+    install -m 644 "${SCRIPT_DIR}/mailmessage.1" "${MAN_DIR}/" || warning "Failed to install mailmessage manpage"
+  fi
+  if [[ -f "${SCRIPT_DIR}/mailheaderclean.1" ]]; then
+    install -m 644 "${SCRIPT_DIR}/mailheaderclean.1" "${MAN_DIR}/" || warning "Failed to install mailheaderclean manpage"
   fi
 
   # Install documentation
@@ -274,24 +286,34 @@ install_standalone() {
 }
 
 install_builtin() {
-  info "Installing bash loadable builtin..."
+  info "Installing bash loadable builtins..."
 
   if ((DRY_RUN)); then
     info "[DRY-RUN] Would install:"
     info "  ${LOADABLE_DIR}/mailheader.so"
-    info "  ${PROFILE_DIR}/mailheader.sh"
+    info "  ${LOADABLE_DIR}/mailmessage.so"
+    info "  ${LOADABLE_DIR}/mailheaderclean.so"
+    info "  ${PROFILE_DIR}/mail-tools.sh"
     return 0
   fi
 
-  # Install builtin
+  # Install builtins
   install -d "${LOADABLE_DIR}"
-  install -m 755 "${SCRIPT_DIR}/mailheader.so" "${LOADABLE_DIR}/" || die "Failed to install builtin"
+  install -m 755 "${SCRIPT_DIR}/mailheader.so" "${LOADABLE_DIR}/" || die "Failed to install mailheader builtin"
+  install -m 755 "${SCRIPT_DIR}/mailmessage.so" "${LOADABLE_DIR}/" || die "Failed to install mailmessage builtin"
+  install -m 755 "${SCRIPT_DIR}/mailheaderclean.so" "${LOADABLE_DIR}/" || die "Failed to install mailheaderclean builtin"
 
   # Install profile script
   install -d "${PROFILE_DIR}"
-  install -m 644 "${SCRIPT_DIR}/mailheader.sh" "${PROFILE_DIR}/" || die "Failed to install profile script"
+  install -m 644 "${SCRIPT_DIR}/mail-tools.sh" "${PROFILE_DIR}/" || die "Failed to install profile script"
 
-  success "Bash builtin installation complete"
+  # Remove legacy mailheader.sh if it exists
+  if [[ -f "${PROFILE_DIR}/mailheader.sh" ]]; then
+    rm -f "${PROFILE_DIR}/mailheader.sh" || warning "Failed to remove legacy mailheader.sh"
+    info "Removed legacy mailheader.sh profile script"
+  fi
+
+  success "Bash builtins installation complete"
 }
 
 update_man_database() {
@@ -312,62 +334,96 @@ show_completion_message() {
   success "Installation complete!"
   echo ""
   echo "Installed files:"
-  echo "  • Standalone binary: ${BINDIR}/mailheader"
-  echo "  • Manpage:           ${MAN_DIR}/mailheader.1"
-  echo "  • Documentation:     ${DOC_DIR}/"
+  echo "  • Standalone binaries: ${BINDIR}/mailheader, ${BINDIR}/mailmessage, ${BINDIR}/mailheaderclean"
+  echo "  • Manpages:            ${MAN_DIR}/mailheader.1, ${MAN_DIR}/mailmessage.1, ${MAN_DIR}/mailheaderclean.1"
+  echo "  • Documentation:       ${DOC_DIR}/"
 
   if ((INSTALL_BUILTIN)); then
-    echo "  • Bash builtin:      ${LOADABLE_DIR}/mailheader.so"
-    echo "  • Profile script:    ${PROFILE_DIR}/mailheader.sh"
+    echo "  • Bash builtins:       ${LOADABLE_DIR}/mailheader.so, ${LOADABLE_DIR}/mailmessage.so, ${LOADABLE_DIR}/mailheaderclean.so"
+    echo "  • Profile script:      ${PROFILE_DIR}/mail-tools.sh"
     echo ""
-    echo "The bash builtin will be available in new bash sessions."
+    echo "The bash builtins will be available in new bash sessions."
     echo "To use in your current session, run:"
-    echo "  source ${PROFILE_DIR}/mailheader.sh"
+    echo "  source ${PROFILE_DIR}/mail-tools.sh"
   fi
 
   echo ""
   echo "Verify installation:"
-  echo "  which mailheader       # Check binary"
-  echo "  man mailheader         # View manpage"
+  echo "  which mailheader       # Check binaries"
+  echo "  which mailmessage"
+  echo "  which mailheaderclean"
+  echo "  man mailheader         # View manpages"
+  echo "  man mailmessage"
+  echo "  man mailheaderclean"
 
   if ((INSTALL_BUILTIN)); then
     echo "  help mailheader        # View builtin help (after sourcing profile)"
+    echo "  help mailmessage"
+    echo "  help mailheaderclean"
   fi
 
   echo ""
 }
 
 uninstall_files() {
-  info "Uninstalling mailheader..."
+  info "Uninstalling mail tools..."
 
   local -i files_removed=0
 
   if ((DRY_RUN)); then
     info "[DRY-RUN] Would remove:"
     [[ -f "${BINDIR}/mailheader" ]] && info "  ${BINDIR}/mailheader"
+    [[ -f "${BINDIR}/mailmessage" ]] && info "  ${BINDIR}/mailmessage"
+    [[ -f "${BINDIR}/mailheaderclean" ]] && info "  ${BINDIR}/mailheaderclean"
     [[ -f "${MAN_DIR}/mailheader.1" ]] && info "  ${MAN_DIR}/mailheader.1"
+    [[ -f "${MAN_DIR}/mailmessage.1" ]] && info "  ${MAN_DIR}/mailmessage.1"
+    [[ -f "${MAN_DIR}/mailheaderclean.1" ]] && info "  ${MAN_DIR}/mailheaderclean.1"
     [[ -f "${LOADABLE_DIR}/mailheader.so" ]] && info "  ${LOADABLE_DIR}/mailheader.so"
-    [[ -f "${PROFILE_DIR}/mailheader.sh" ]] && info "  ${PROFILE_DIR}/mailheader.sh"
+    [[ -f "${LOADABLE_DIR}/mailmessage.so" ]] && info "  ${LOADABLE_DIR}/mailmessage.so"
+    [[ -f "${LOADABLE_DIR}/mailheaderclean.so" ]] && info "  ${LOADABLE_DIR}/mailheaderclean.so"
+    [[ -f "${PROFILE_DIR}/mail-tools.sh" ]] && info "  ${PROFILE_DIR}/mail-tools.sh"
+    [[ -f "${PROFILE_DIR}/mailheader.sh" ]] && info "  ${PROFILE_DIR}/mailheader.sh (legacy)"
     [[ -d "${DOC_DIR}" ]] && info "  ${DOC_DIR}/"
     return 0
   fi
 
-  # Remove binary
+  # Remove binaries
   if [[ -f "${BINDIR}/mailheader" ]]; then
     rm -f "${BINDIR}/mailheader" && ((files_removed+=1))
   fi
+  if [[ -f "${BINDIR}/mailmessage" ]]; then
+    rm -f "${BINDIR}/mailmessage" && ((files_removed+=1))
+  fi
+  if [[ -f "${BINDIR}/mailheaderclean" ]]; then
+    rm -f "${BINDIR}/mailheaderclean" && ((files_removed+=1))
+  fi
 
-  # Remove manpage
+  # Remove manpages
   if [[ -f "${MAN_DIR}/mailheader.1" ]]; then
     rm -f "${MAN_DIR}/mailheader.1" && ((files_removed+=1))
   fi
+  if [[ -f "${MAN_DIR}/mailmessage.1" ]]; then
+    rm -f "${MAN_DIR}/mailmessage.1" && ((files_removed+=1))
+  fi
+  if [[ -f "${MAN_DIR}/mailheaderclean.1" ]]; then
+    rm -f "${MAN_DIR}/mailheaderclean.1" && ((files_removed+=1))
+  fi
 
-  # Remove builtin
+  # Remove builtins
   if [[ -f "${LOADABLE_DIR}/mailheader.so" ]]; then
     rm -f "${LOADABLE_DIR}/mailheader.so" && ((files_removed+=1))
   fi
+  if [[ -f "${LOADABLE_DIR}/mailmessage.so" ]]; then
+    rm -f "${LOADABLE_DIR}/mailmessage.so" && ((files_removed+=1))
+  fi
+  if [[ -f "${LOADABLE_DIR}/mailheaderclean.so" ]]; then
+    rm -f "${LOADABLE_DIR}/mailheaderclean.so" && ((files_removed+=1))
+  fi
 
-  # Remove profile script
+  # Remove profile scripts (both new and legacy)
+  if [[ -f "${PROFILE_DIR}/mail-tools.sh" ]]; then
+    rm -f "${PROFILE_DIR}/mail-tools.sh" && ((files_removed+=1))
+  fi
   if [[ -f "${PROFILE_DIR}/mailheader.sh" ]]; then
     rm -f "${PROFILE_DIR}/mailheader.sh" && ((files_removed+=1))
   fi
@@ -383,7 +439,7 @@ uninstall_files() {
     echo ""
     echo "You may need to restart bash sessions for changes to take effect."
   else
-    warning "No mailheader installation found"
+    warning "No mail tools installation found"
   fi
 }
 
@@ -430,7 +486,7 @@ done
 
 # Main execution
 main() {
-  echo "Mailheader Installation Script"
+  echo "Mail Tools Installation Script"
   echo "=============================="
   echo ""
 
@@ -443,10 +499,10 @@ main() {
   fi
 
   # Check if binaries are already built
-  if [[ ! -f "${SCRIPT_DIR}/mailheader" ]]; then
+  if [[ ! -f "${SCRIPT_DIR}/mailheader" ]] || [[ ! -f "${SCRIPT_DIR}/mailmessage" ]] || [[ ! -f "${SCRIPT_DIR}/mailheaderclean" ]]; then
     build_standalone
   else
-    info "Standalone binary already built"
+    info "Standalone binaries already built"
   fi
 
   # Determine if we should install builtin
@@ -460,13 +516,13 @@ main() {
 
   # Build builtin if needed
   if ((INSTALL_BUILTIN)); then
-    if [[ ! -f "${SCRIPT_DIR}/mailheader.so" ]]; then
+    if [[ ! -f "${SCRIPT_DIR}/mailheader.so" ]] || [[ ! -f "${SCRIPT_DIR}/mailmessage.so" ]] || [[ ! -f "${SCRIPT_DIR}/mailheaderclean.so" ]]; then
       if ! build_builtin; then
         warning "Skipping builtin installation due to build failure"
         INSTALL_BUILTIN=0
       fi
     else
-      info "Bash builtin already built"
+      info "Bash builtins already built"
     fi
   fi
 

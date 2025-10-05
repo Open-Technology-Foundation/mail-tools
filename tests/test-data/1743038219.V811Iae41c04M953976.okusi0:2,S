@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id D692C3340235
+	for <drewjones@testmail.net>; Thu, 27 Mar 2025 08:16:59 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 27 Mar 2025 08:16:59 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id WH80OtWm5GcXDRUAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 27 Mar 2025 08:16:05 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1743038165; bh=Nt03tBOvSue1nBa4Hzn4Wl7sdi4gn/JgFttDXvyjNOs=;
+	h=To:Subject:Date:From:From;
+	b=dOJGoVloCYLg6BoCjzcakbWbKJ9hd/vRQ9nxFzOah/U77Yr3h8aqvbLFC3CETiNNr
+	 saNoTn+NFYhhN29YQew43S4SlzTf7VWKcaR9esNGOYsNyC0ny1SMMLkjCumJstM6Ok
+	 NBEkMlL7qrWYbqzB1eb8/NnR7MSPNrMLAzJp/Rl0C73OlcPkUV0+CNQBUXoJkAn7UA
+	 ZQYk4H5DC4n+oIUnwdJgiRWYkESuZOlXVY8NB4Smw8zp3AMjBTQc1TpDKwNR1iZwEL
+	 cSg8Bd4ULaOb48C/ckJS092P7IR/7G+ZxOZX7dyFs9csJT1ylA6LB6B6ywyrClMwM9
+	 nZi8TUL9sK3cw==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 8547D264003F; Thu, 27 Mar 2025 08:16:04 +0700 (WIB)
+To: stormscott@testdomain.io,rowan.thomas@testmail.com,phoenixtaylor@testmail.com,ellisyoung@testdomain.io,caseyramirez@testdomain.io,charlierodriguez@testmail.com
+Subject: ALERT: ABO: Investment Activity Report report to BKPM LKPM Q1 Tahun 2025 (Periode Jan- Maret 2025)
+Date: Thu, 27 Mar 2025 08:16:04 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <indigo.martinez@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Abode Hotels:
+
+Your company's Investment Activity Report (LKPM) to the BKPM must be done before 01 Apr 2025
+
+Please contact Okusi Associates for information concerning renewal.
+

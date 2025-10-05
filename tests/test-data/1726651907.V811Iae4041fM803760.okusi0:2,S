@@ -1,0 +1,157 @@
+Return-Path: <drewgarcia@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id ACD2A3340204
+	for <drewjones@testmail.net>; Wed, 18 Sep 2024 16:31:47 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Wed, 18 Sep 2024 16:31:47 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id AAKZIu6d6mZWNjYAeHbnHg
+	(envelope-from <drewgarcia@testdomain.io>); Wed, 18 Sep 2024 16:31:26 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1726651884; bh=+YX5gyTS8mIcjWfm4mJ5esEk5Kqnxfq6IjKI1M931p8=;
+	h=Date:To:Cc:From:Subject:From;
+	b=HEWEkVwlfQaDuxqMoZpX0sryymaMOO1od8dUi67YX1MFxH6ssJpYcW9bo1jdGRXke
+	 Dm1X9V3KGWTD56W3AxDKBBP9GM/QRSawukB4ByruqoMxBiDQLxGQOnam6qOcg5C0QE
+	 thPfyxt/Qz65rE9AUIIo3r2+d1mYtPTjq5hznN5RCJz5Fd3amstXk6uL8ynfD2W/8x
+	 Y1H9D3eAbvcidoU+RbeOtxxWWqjJgy9tWcrCKd2c3hY7qOuqdrX1v6SPZ2FIXzBbgm
+	 i+qlV4PEtOF8GsLVldBRdWf58j99ZN3PLiYr+ie+pvbR6BKCpkfgxhZ1Z7NPfqc5BD
+	 d0plHfo2CInIg==
+Received: from [192.168.6.118] (unknown [36.69.218.84])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id E504B2640004;
+	Wed, 18 Sep 2024 16:31:24 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------HtHJGOguO2WO8lkmhi2OVRTM"
+Message-ID: <e232e9fb-ed2e09eb-c894e21b-c7153443@testdomain.io>
+Date: Wed, 18 Sep 2024 16:31:06 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: kellyhernandez@testmail.com
+Cc: Sri Mulyati <devonlewis@testdomain.io>, Lina Munir <contkellylewis@testdomain.io>
+From: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+Subject: Assistance with Indonesia Business KITAS and Work Permits - Okusi
+ Associates
+Organization: Okusi Associates
+X-Spam-Status: No, score=-3.1 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+	DKIM_SIGNED,DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE
+	autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------HtHJGOguO2WO8lkmhi2OVRTM
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+To whom it may concern,
+
+I hope this email finds you well.
+
+I am Haliza as a representative of Okusi Associates from Visas and Work 
+Permits team, a leading corporate legal firm in Indonesia, I wanted to 
+reach out and offer our assistance with obtaining business visas and 
+work permits.
+
+Okusi Associates was established in 1997 and has over 25 years of 
+experience helping foreign companies navigate the complex regulations 
+around visas, work permits, and business incorporation in Indonesia. 
+With permanent offices in Jakarta, Batam and Bali, we provide 
+comprehensive services nationwide.
+
+Our comprehensive work permit services include:
+
+  * Assessing the eligibility of your foreign employees based on their
+    qualifications and proposed roles
+  * Preparing and submitting the Foreign Workers Utilization Plan
+    (RPTKA) to the Ministry of Manpower
+  * Applying for the Notification Letter from the Ministry of Manpower
+  * Compiling and submitting all required documents for the work permit
+    application
+  * Liaising with government authorities to monitor the progress of the
+    application
+  * Assisting with the KITAS (Temporary Stay Permit) and MERP (Multiple
+    Exit Re-Entry Permit) applications
+  * Providing guidance on work permit extensions and renewals
+
+By entrusting Okusi Associates with your work permit needs, you can have 
+peace of mind knowing that your applications are being handled by 
+experts who prioritize compliance, efficiency, and client satisfaction. 
+We will work diligently to ensure that your foreign employees obtain 
+their work permits as quickly as possible, minimizing any delays or 
+disruptions to your business operations.
+
+To learn more about our work permit services and how we can support your 
+company, please don't hesitate to contact me. Feel free to contact me at 
+drewgarcia@testdomain.io or throught my Whatsapp Number +6282128910348. Thanks in 
+advance.
+
+Best regards,
+Haliza
+
+--------------HtHJGOguO2WO8lkmhi2OVRTM
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>To whom it may concern, <br>
+      <br>
+      I hope this email finds you well. <br>
+      <br>
+      I am Haliza as a representative of Okusi Associates from Visas and
+      Work Permits team, a leading corporate legal firm in Indonesia, I
+      wanted to reach out and offer our assistance with obtaining
+      business visas and work permits.<br>
+      <br>
+      Okusi Associates was established in 1997 and has over 25 years of
+      experience helping foreign companies navigate the complex
+      regulations around visas, work permits, and business incorporation
+      in Indonesia. With permanent offices in Jakarta, Batam and Bali,
+      we provide comprehensive services nationwide.<br>
+      <br>
+      Our comprehensive work permit services include:<br>
+    </p>
+    <ul>
+      <li>Assessing the eligibility of your foreign employees based on
+        their qualifications and proposed roles</li>
+      <li>Preparing and submitting the Foreign Workers Utilization Plan
+        (RPTKA) to the Ministry of Manpower</li>
+      <li>Applying for the Notification Letter from the Ministry of
+        Manpower</li>
+      <li>Compiling and submitting all required documents for the work
+        permit application</li>
+      <li>Liaising with government authorities to monitor the progress
+        of the application</li>
+      <li>Assisting with the KITAS (Temporary Stay Permit) and MERP
+        (Multiple Exit Re-Entry Permit) applications</li>
+      <li>Providing guidance on work permit extensions and renewals</li>
+    </ul>
+    By entrusting Okusi Associates with your work permit needs, you can
+    have peace of mind knowing that your applications are being handled
+    by experts who prioritize compliance, efficiency, and client
+    satisfaction. We will work diligently to ensure that your foreign
+    employees obtain their work permits as quickly as possible,
+    minimizing any delays or disruptions to your business operations.<br>
+    <br>
+    To learn more about our work permit services and how we can support
+    your company, please don't hesitate to contact me. Feel free to
+    contact me at <a
+      class="moz-txt-link-abbreviated moz-txt-link-freetext"
+      href="mailto:drewgarcia@testdomain.io">drewgarcia@testdomain.io</a> or throught my
+    Whatsapp Number +6282128910348. Thanks in advance.<br>
+    <br>
+    Best regards,<br>
+    Haliza
+    <p></p>
+  </body>
+</html>
+
+--------------HtHJGOguO2WO8lkmhi2OVRTM--

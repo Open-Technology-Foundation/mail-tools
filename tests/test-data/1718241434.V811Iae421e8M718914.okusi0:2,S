@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 9B4D73340204
+	for <drewjones@testmail.net>; Thu, 13 Jun 2024 08:17:14 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 13 Jun 2024 08:17:14 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 8FQrJlJIamZKngQAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 13 Jun 2024 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1718241362; bh=OAwq5FFmbDKY3JMZcgWfpld9QOfKdjHOLCcrq2H2fJ0=;
+	h=To:Subject:From:Date:From;
+	b=Io5t7fKp6IRISKvG7+RmmI7yjP9PujwUvaVTNwNOuaUMwTybEa8XZcI6czhyLu1Sq
+	 F49fPAfFG1DHemqXUC9Bhrc1zuyRKvFwUf8apvrfRI0VZK7j9bTpwPw31gW7q/y9yB
+	 orMGgSOf1LnnQ2C1d/L5013CRax0MlKFZL8bcbtZN4pw+yKwX1VtATTatPMwqTxLn0
+	 CuYvAZWwpNOUlmjjE2bEovAK0xeReh22IFT+eaEMG9GOlxUvq68ya6J7xwH0KnoSrg
+	 QemchWQhK1Tv/xApzG3nUNC0exF+jb2t64iRhSl1yFYDIFP2Xb7bFJ488lN2MEgxKL
+	 qfmw92x7LNlHA==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 7D11A2640B4E; Thu, 13 Jun 2024 08:16:02 +0700 (WIB)
+To: cameron_ramirez@testmail.com,indigo_robinson@testmail.com
+Subject: ALERT: PROCON: Company Domicile Services
+From: legmorganhill@testdomain.io
+Message-Id: <noel.robinson@samplebiz.org>
+Date: Thu, 13 Jun 2024 08:16:02 +0700 (WIB)
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Project Consultancy Services:
+
+Your company domicile service is due to expire on 13 Jul 2024
+
+Please contact Okusi Associates for information concerning renewal.
+

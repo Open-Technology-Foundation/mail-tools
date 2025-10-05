@@ -1,0 +1,157 @@
+Return-Path: <harperlee@testmail.com>
+X-Original-To: parkermiller@testmail.net
+Delivered-To: parkermiller@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 6910333401F7
+	for <parkermiller@testmail.net>; Fri, 17 May 2024 15:23:20 +0700 (WIB)
+Delivered-To: jordanperez@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <parkermiller@testmail.net> (single-drop); Fri, 17 May 2024 15:23:20 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id t2XoL/YTR2ZABAIAeHbnHg
+	(envelope-from <harperlee@testmail.com>)
+	for <jordanperez@testdomain.io>; Fri, 17 May 2024 15:23:18 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-lj1-f169.google.com (mail-lj1-f169.google.com [209.85.208.169])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 08E192640B49
+	for <rileyramirez@democorp.com>; Fri, 17 May 2024 15:22:52 +0700 (WIB)
+Received: by mail-lj1-f169.google.com with SMTP id 38308e7fff4ca-2e538a264e0so22173091fa.1
+        for <rileyramirez@democorp.com>; Fri, 17 May 2024 01:22:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1715934169; x=1716538969; darn=okusi.net;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=MIxoy2yvxd/ar6GJVkNQaRjbc1oDerL+qRFksWt71eM=;
+        b=TzWJ3rQVv2qVAKrTKl+8kD2tbG6maVt+XtLxEOYjNOtm0bex4TnQMF/lxd0iyVQS0L
+         Bd+a+xBNZORjI4VeGLecbWOVDAB69OdV5m/hMgahnwm1hOb1ROJjX5XoCrQHhyoh+Cys
+         01jJzImD9LCV+jdUaMMn3i5b6fK0Nn/OrqWhtMMxng3jVS/e0jJcwMO3IW4lt0nwZBQW
+         bZa51vT31H0KH0qAiNytOR7TlrTvEswoIaIFRc0W7s+HYXuMJ2Ln7fpKCy/LI5ghjOfh
+         OU7iUArQurS53/GkOdxRk1ODNjyvqM/VBy+7y3HQ4N10O4YGQPForDwK4z+q2YHGegqP
+         1iQw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1715934169; x=1716538969;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=MIxoy2yvxd/ar6GJVkNQaRjbc1oDerL+qRFksWt71eM=;
+        b=arDGU5PNiyv7jSuNY0Loj2yFvsygYc5lyGqEOEnDeNfl1WoKGRDR8JdIfwx744r/6r
+         1dQkjycW4Lfd9O01UDYgSZtkEf3yO+QMSsiZMZ2oOBPsgXAmk8RsyhVP2Yu56Rvc6q2E
+         02wd6w19NuPEM9sqr4fV115QtsFNCvsOYrYlIkVnGG6qQFAGIH1yVGuP0jqFbOPcGwhs
+         uTILAII6y86phGod0Z3sXSekg95+pydPsCh55eMUZhLBArNdGe5tluHCLPGueQlvPQRa
+         P8zBYZ+NJAzaCsWNCLZvDfOmD5qSRwwEINLXBbtQbMsE1XDZxwLmzgqVUR+iRYka907j
+         u+vA==
+X-Gm-Message-State: AOJu0YyP8XI0TxL7MS8VHqNwC2Yn5NFduIr7MyqEY85mGPiEtghcOanW
+	rAPCcrXtGrk5naGllnNtxqfdCoLQL2H8av8l1nlheFYf6NdRa9RUIUPgyyNqFDm4mql5uXbpjlX
+	OATjqaq+z7wsZRciOt76zPLC9Ny42mP9G
+X-Google-Smtp-Source: AGHT+IFvrWEUVf6OS94z7zs2FwcJkWLdZYYymIKfj76PvuFt+NSKCv4MDyVe+GI7/xuEa0XVyQDgmX4viReJiKdGJYE=
+X-Received: by 2002:a2e:905a:0:b0:2e0:4216:6fa8 with SMTP id
+ 38308e7fff4ca-2e5203b421emr196295361fa.39.1715934168481; Fri, 17 May 2024
+ 01:22:48 -0700 (PDT)
+MIME-Version: 1.0
+From: martina catania <harperlee@testmail.com>
+Date: Fri, 17 May 2024 10:22:37 +0200
+Message-ID: <harper_wilson@testmail.com>
+Subject: First Contact
+To: rileyramirez@democorp.com
+Content-Type: multipart/alternative; boundary="0000000000009208790618a20e4f"
+X-Spam-Status: No, score=0.9 required=5.0 tests=BAYES_50,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_ENVFROM_END_DIGIT,
+	FREEMAIL_FROM,HTML_MESSAGE,RCVD_IN_DNSWL_NONE,RCVD_IN_MSPIKE_H2,
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--0000000000009208790618a20e4f
+Content-Type: text/plain; charset="UTF-8"
+
+Good morning,
+
+We are two Italian citizens currently residing in Italy and we are
+considering the possibility of acquiring land in Indonesia with the
+intention of building a small accommodation business.
+
+The land we are interested in is located on the island of Sumba (East Nusa
+Tenggara) and is currently zoned for agricultural use.
+
+We are aware that it is not permitted for individuals of non-Indonesian
+nationality to directly own land, and that it will therefore be necessary
+to establish a PMA (Foreign Investment Company). The PMA we would like to
+establish would be 100% owned by non-Indonesian partners.
+
+We would therefore like to ask if your firm provides services to conduct
+due diligence regarding the change of land use (from agricultural to
+building) and if you provide legal assistance for everything necessary for
+the acquisition and transformation of the area, in addition to the
+establishment of the company.
+
+We look forward to your kind response.
+
+Best regards,
+
+Martina Catania and Davide Rota
+
+--0000000000009208790618a20e4f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><p style=3D"border:0px solid rgb(227,227,227);box-sizing:b=
+order-box;margin:1.25em 0px;color:rgb(13,13,13);font-family:S=C3=B6hne,ui-s=
+ans-serif,system-ui,-apple-system,&quot;Segoe UI&quot;,Roboto,Ubuntu,Cantar=
+ell,&quot;Noto Sans&quot;,sans-serif,&quot;Helvetica Neue&quot;,Arial,&quot=
+;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&q=
+uot;,&quot;Noto Color Emoji&quot;;font-size:16px">Good morning,</p><p style=
+=3D"border:0px solid rgb(227,227,227);box-sizing:border-box;margin:1.25em 0=
+px;color:rgb(13,13,13);font-family:S=C3=B6hne,ui-sans-serif,system-ui,-appl=
+e-system,&quot;Segoe UI&quot;,Roboto,Ubuntu,Cantarell,&quot;Noto Sans&quot;=
+,sans-serif,&quot;Helvetica Neue&quot;,Arial,&quot;Apple Color Emoji&quot;,=
+&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emo=
+ji&quot;;font-size:16px">We are two Italian citizens currently residing in =
+Italy and we are considering the possibility of acquiring land in Indonesia=
+ with the intention of building a small accommodation business.</p><p style=
+=3D"border:0px solid rgb(227,227,227);box-sizing:border-box;margin:1.25em 0=
+px;color:rgb(13,13,13);font-family:S=C3=B6hne,ui-sans-serif,system-ui,-appl=
+e-system,&quot;Segoe UI&quot;,Roboto,Ubuntu,Cantarell,&quot;Noto Sans&quot;=
+,sans-serif,&quot;Helvetica Neue&quot;,Arial,&quot;Apple Color Emoji&quot;,=
+&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emo=
+ji&quot;;font-size:16px">The land we are interested in is located on the is=
+land of Sumba (East Nusa Tenggara) and is currently zoned for agricultural =
+use.</p><p style=3D"border:0px solid rgb(227,227,227);box-sizing:border-box=
+;margin:1.25em 0px;color:rgb(13,13,13);font-family:S=C3=B6hne,ui-sans-serif=
+,system-ui,-apple-system,&quot;Segoe UI&quot;,Roboto,Ubuntu,Cantarell,&quot=
+;Noto Sans&quot;,sans-serif,&quot;Helvetica Neue&quot;,Arial,&quot;Apple Co=
+lor Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quo=
+t;Noto Color Emoji&quot;;font-size:16px">We are aware that it is not permit=
+ted for individuals of non-Indonesian nationality to directly own land, and=
+ that it will therefore be necessary to establish a PMA (Foreign Investment=
+ Company). The PMA we would like to establish would be 100% owned by non-In=
+donesian partners.</p><p style=3D"border:0px solid rgb(227,227,227);box-siz=
+ing:border-box;margin:1.25em 0px;color:rgb(13,13,13);font-family:S=C3=B6hne=
+,ui-sans-serif,system-ui,-apple-system,&quot;Segoe UI&quot;,Roboto,Ubuntu,C=
+antarell,&quot;Noto Sans&quot;,sans-serif,&quot;Helvetica Neue&quot;,Arial,=
+&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Sym=
+bol&quot;,&quot;Noto Color Emoji&quot;;font-size:16px">We would therefore l=
+ike to ask if your firm provides services to conduct due diligence regardin=
+g the change of land use (from agricultural to building) and if you provide=
+ legal assistance for everything necessary for the acquisition and transfor=
+mation of the area, in addition to the establishment of the company.</p><p =
+style=3D"border:0px solid rgb(227,227,227);box-sizing:border-box;margin:1.2=
+5em 0px;color:rgb(13,13,13);font-family:S=C3=B6hne,ui-sans-serif,system-ui,=
+-apple-system,&quot;Segoe UI&quot;,Roboto,Ubuntu,Cantarell,&quot;Noto Sans&=
+quot;,sans-serif,&quot;Helvetica Neue&quot;,Arial,&quot;Apple Color Emoji&q=
+uot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Colo=
+r Emoji&quot;;font-size:16px">We look forward to your kind response.</p><p =
+style=3D"border:0px solid rgb(227,227,227);box-sizing:border-box;margin:1.2=
+5em 0px;color:rgb(13,13,13);font-family:S=C3=B6hne,ui-sans-serif,system-ui,=
+-apple-system,&quot;Segoe UI&quot;,Roboto,Ubuntu,Cantarell,&quot;Noto Sans&=
+quot;,sans-serif,&quot;Helvetica Neue&quot;,Arial,&quot;Apple Color Emoji&q=
+uot;,&quot;Segoe UI Emoji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Colo=
+r Emoji&quot;;font-size:16px">Best regards,</p><p style=3D"border:0px solid=
+ rgb(227,227,227);box-sizing:border-box;margin:1.25em 0px 0px;color:rgb(13,=
+13,13);font-family:S=C3=B6hne,ui-sans-serif,system-ui,-apple-system,&quot;S=
+egoe UI&quot;,Roboto,Ubuntu,Cantarell,&quot;Noto Sans&quot;,sans-serif,&quo=
+t;Helvetica Neue&quot;,Arial,&quot;Apple Color Emoji&quot;,&quot;Segoe UI E=
+moji&quot;,&quot;Segoe UI Symbol&quot;,&quot;Noto Color Emoji&quot;;font-si=
+ze:16px">Martina Catania and Davide Rota</p></div>
+
+--0000000000009208790618a20e4f--

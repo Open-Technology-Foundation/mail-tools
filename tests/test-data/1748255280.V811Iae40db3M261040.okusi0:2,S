@@ -1,0 +1,344 @@
+Return-Path: <haydenlopez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 1F65D33401FE
+	for <drewjones@testmail.net>; Mon, 26 May 2025 17:28:00 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 26 May 2025 17:28:00 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id a+y8FANCNGhgMgsAeHbnHg
+	(envelope-from <haydenlopez@testdomain.io>); Mon, 26 May 2025 17:27:15 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1748255234; bh=h3Hz0twMGn96d4kqXg3A6bBADZa4skbchQ00uivFdy4=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=GOHwNEo7Ggb6k1gR9Xme0F+cmYCV84rvJaYg/j750ahZY0ILQr5tr7/J5m+zIHqhL
+	 ZfEm5W4dyOWbG2dgBEJaTaBGpJ8R3U0ZAMU4fk3AvMwSdYU99YooeJZm8Ip16rDvWO
+	 c+d96QwX4GOo8NReJTqQjpr+o3Z+3D7ZyWOnTm+Ns2aSn3plS+NHppOgKGwYGHZkMQ
+	 FTZkXNS7AdKPfkcda9Ml0kXNbUzwOSs87+XlrJn/fUakGsmh5TcgWeV4ojWK3exn8g
+	 eEAfn5R7IKza6/x3P4sUuEU2nlIov3wi5zbJZGzINn8XNC8vol5+zq+1jn5XM7MCeq
+	 iObGVuAie9d/Q==
+Received: from [192.168.6.9] (unknown [110.138.91.151])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 16256264002E;
+	Mon, 26 May 2025 17:27:14 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------M68ZRh1eo1UgCtmsyITaEdLV"
+Message-ID: <bafc6062-c87b976d-d934dea1-3ad9b2aa@testdomain.io>
+Date: Mon, 26 May 2025 17:27:19 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ALERT: LRH: Company Domicile Services E-Trade Building
+To: Lars Hansen <phoenixrodriguez@testmail.com>,
+ Nurlia Hasyim Okusi Associates <jordanrodriguez@testdomain.io>
+Cc: legmorganhill@testdomain.io, "jan.albeck" <river.harris@testmail.com>
+References: <emerson.harris@samplebiz.org>
+ <266684f3-a6d14529-81cf9a31-5e80f399@testdomain.io>
+ <CAFn0ajGHRsm5mBZBFcNBsaiDtmp23h3UySmEe=milesthompson@testmail.com>
+Content-Language: en-US
+From: Nurlia Hasyim <haydenlopez@testdomain.io>
+In-Reply-To: <CAFn0ajGHRsm5mBZBFcNBsaiDtmp23h3UySmEe=milesthompson@testmail.com>
+X-Spam-Status: No, score=-1.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	T_KAM_HTML_FONT_INVALID,T_REMOTE_IMAGE,URIBL_BLOCKED
+	autolearn=unavailable autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------M68ZRh1eo1UgCtmsyITaEdLV
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear Pak Lars,
+
+Thank you for your confirmation.
+
+Our finance division will send the invoice for the renewal in a separate 
+email.
+
+
+Best regards,
+
+Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162> 	*Nurlia 
+Hasyim*
+Senior Compliances & Permits, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Nurlia Hasyim. <whatsapp://send?phone=6285890220665>   Nurlia Hasyim 
+on LinkedIn <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
++6285890220665 <whatsapp://send?phone=6285890220665> | +62213901007 
+<tel:+62213901007> | haydenlopez@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+On 5/23/25 20:35, Lars Hansen wrote:
+> Hi B'Nurlia, we are interested.
+> Thank You
+> BR Lars
+>
+> On Thu, May 22, 2025, 21:10 Nurlia Hasyim <contkellylewis@testdomain.io> wrote:
+>
+>     Dear Pak Lars and Pak Jan,
+>
+>     Greetings from Okusi Associates.
+>
+>     We would like to inform you that the domicile service for *PT LRH
+>     International* expired on *21 May 2025*, as previously notified by
+>     our system. Kindly advise whether you would like to renew this
+>     service or update the company address, so we may proceed accordingly.
+>
+>     Thank you for your attention.
+>
+>
+>     Best regards,
+>
+>     Photo of Nurlia Hasyim <https://okusiassociates.com/id/1162>
+>     *Nurlia Hasyim*
+>     Senior Compliances & Permits, Okusi Associates
+>     <https://okusiassociates.com>
+>     Okusi Associates website <https://okusiassociates.com>   Send
+>     Whatsapp to Nurlia Hasyim.   Nurlia Hasyim on LinkedIn
+>     <https://www.linkedin.com/in/nurlia-hasyim-32b762114/>
+>     +6285890220665 | +62213901007 <tel:+62213901007> |
+>     haydenlopez@testdomain.io | okusiassociates.com
+>     <https://okusiassociates.com>
+>
+>
+>
+>     On 5/17/25 08:16, legmorganhill@testdomain.io wrote:
+>>     This is an automated reminder from Okusi Associates.
+>>
+>>     Reminder for PT LRH International:
+>>
+>>     Your company domicile service is due to expire on 21 May 2025
+>>
+>>     Please contact Okusi Associates for information concerning renewal.
+>>
+--------------M68ZRh1eo1UgCtmsyITaEdLV
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p><font face="Trebuchet MS">Dear Pak Lars,<br>
+      </font></p>
+    <p><font face="Trebuchet MS">Thank you for your confirmation.</font></p>
+    <p><font face="Trebuchet MS">Our finance division will send the
+        invoice for the renewal in a separate email.</font></p>
+    <p><font face="Trebuchet MS"><br>
+      </font> </p>
+    <p><font face="Trebuchet MS">Best regards,</font></p>
+    <div class="moz-signature">
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1162"
+                target="_blank" title="Okusi Associates - Nurlia Hasyim">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Nurlia Hasyim"
+                  src="https://okusiassociates.com/a/m/photo-nurlia.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Nurlia Hasyim</strong>
+              <div style="font-size:13px;color:#888 !important;">
+                Senior Compliances &amp; Permits, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Nurlia Hasyim."
+                  href="whatsapp://send?phone=6285890220665"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Nurlia Hasyim."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+                 
+                <a title="Nurlia Hasyim on LinkedIn."
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Nurlia Hasyim on LinkedIn"
+                    src="https://okusiassociates.com/a/m/li.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6285890220665"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6285890220665</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Nurlia Hasyim."
+                  href="mailto:haydenlopez@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">haydenlopez@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+    <div class="moz-cite-prefix">On 5/23/25 20:35, Lars Hansen wrote:<br>
+    </div>
+    <blockquote type="cite"
+cite="mid:CAFn0ajGHRsm5mBZBFcNBsaiDtmp23h3UySmEe=milesthompson@testmail.com">
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <div dir="auto">Hi B'Nurlia, we are interested.
+        <div dir="auto">Thank You</div>
+        <div dir="auto">BR Lars</div>
+      </div>
+      <br>
+      <div class="gmail_quote gmail_quote_container">
+        <div dir="ltr" class="gmail_attr">On Thu, May 22, 2025, 21:10
+          Nurlia Hasyim &lt;<a href="mailto:contkellylewis@testdomain.io"
+            moz-do-not-send="true" class="moz-txt-link-freetext">contkellylewis@testdomain.io</a>&gt;
+          wrote:<br>
+        </div>
+        <blockquote class="gmail_quote"
+style="margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-left:1ex">
+          <div>
+            <p><font face="Trebuchet MS">Dear Pak Lars and Pak Jan,</font></p>
+            <p><font face="Trebuchet MS">Greetings from Okusi
+                Associates.</font></p>
+            <p><font face="Trebuchet MS">We would like to inform you
+                that the domicile service for <strong>PT LRH
+                  International</strong> expired on <strong>21 May 2025</strong>,
+                as previously notified by our system. Kindly advise
+                whether you would like to renew this service or update
+                the company address, so we may proceed accordingly.</font></p>
+            <p><font face="Trebuchet MS">Thank you for your attention.</font></p>
+            <p><font face="Trebuchet MS"><br>
+              </font></p>
+            <p><font face="Trebuchet MS">Best regards,</font></p>
+            <div>
+              <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,'sans serif';color:#555;margin:4px 0 0 0;padding:0;line-height:1.4">
+                <tbody>
+                  <tr>
+                    <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top"> <a
+                        href="https://okusiassociates.com/id/1162"
+                        title="Okusi Associates - Nurlia Hasyim"
+                        target="_blank" rel="noreferrer"
+                        moz-do-not-send="true"> <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a"
+                          alt="Photo of Nurlia Hasyim"
+src="https://okusiassociates.com/a/m/photo-nurlia.jpg"
+                          moz-do-not-send="true"> </a> </td>
+                    <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px"> <strong>Nurlia
+                        Hasyim</strong>
+                      <div style="font-size:13px;color:#888!important">
+                        Senior Compliances &amp; Permits, <a
+                          href="https://okusiassociates.com"
+                          title="Indonesian Corporate Services"
+                          style="color:#888!important" target="_blank"
+                          rel="noreferrer" moz-do-not-send="true">Okusi
+                          Associates</a> </div>
+                      <div style="margin-top:3px;margin-bottom:0px"> <a
+                          title="Okusi Associates website"
+                          href="https://okusiassociates.com"
+                          style="color:#888!important" target="_blank"
+                          rel="noreferrer" moz-do-not-send="true"> <img
+                            style="height:28px"
+                            alt="Okusi Associates website"
+                            src="https://okusiassociates.com/a/m/oa.png"
+                            moz-do-not-send="true"> </a>   <a
+                          title="Send Whatsapp to Nurlia Hasyim."
+                          rel="noreferrer" moz-do-not-send="true"> <img
+                            style="height:28px"
+                            alt="Send Whatsapp to Nurlia Hasyim."
+                            src="https://okusiassociates.com/a/m/wa.png"
+                            moz-do-not-send="true"> </a>   <a
+                          title="Nurlia Hasyim on LinkedIn."
+href="https://www.linkedin.com/in/nurlia-hasyim-32b762114/"
+                          style="color:#888!important" target="_blank"
+                          rel="noreferrer" moz-do-not-send="true"> <img
+                            style="height:28px"
+                            alt="Nurlia Hasyim on LinkedIn"
+                            src="https://okusiassociates.com/a/m/li.png"
+                            moz-do-not-send="true"> </a> </div>
+                      <div style="font-size:13px;color:#888!important">
+                        <a style="color:#888!important"
+                          title="Voice/WhatsApp/SMS" rel="noreferrer"
+                          moz-do-not-send="true">+6285890220665</a> | <a
+                          href="tel:+62213901007"
+                          style="color:#888!important"
+                          title="Jakarta Office Landline."
+                          target="_blank" rel="noreferrer"
+                          moz-do-not-send="true">+62213901007</a> | <a
+                          title="Send email to Nurlia Hasyim."
+                          href="mailto:haydenlopez@testdomain.io"
+                          style="color:#888!important" target="_blank"
+                          rel="noreferrer" moz-do-not-send="true"
+                          class="moz-txt-link-freetext">haydenlopez@testdomain.io</a>
+                        | <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services"
+                          style="color:#888!important" target="_blank"
+                          rel="noreferrer" moz-do-not-send="true">okusiassociates.com</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <br>
+              <br>
+            </div>
+            <div>On 5/17/25 08:16, <a href="mailto:legmorganhill@testdomain.io"
+                target="_blank" rel="noreferrer" moz-do-not-send="true"
+                class="moz-txt-link-freetext">legmorganhill@testdomain.io</a> wrote:<br>
+            </div>
+            <blockquote type="cite">
+              <pre>This is an automated reminder from Okusi Associates.
+
+Reminder for PT LRH International:
+
+Your company domicile service is due to expire on 21 May 2025
+
+Please contact Okusi Associates for information concerning renewal.
+
+</pre>
+            </blockquote>
+          </div>
+        </blockquote>
+      </div>
+    </blockquote>
+  </body>
+</html>
+
+--------------M68ZRh1eo1UgCtmsyITaEdLV--

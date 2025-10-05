@@ -1,0 +1,62 @@
+Return-Path: <contkellylewis@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 849B53340223
+	for <drewjones@testmail.net>; Fri, 13 Jun 2025 07:06:49 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.38)
+	for <drewjones@testmail.net> (single-drop); Fri, 13 Jun 2025 07:06:49 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id eAk5DlBrS2jr5jAAeHbnHg
+	(envelope-from <contkellylewis@testdomain.io>)
+	for <contkellylewis@testdomain.io>; Fri, 13 Jun 2025 07:05:36 +0700
+Received: from wah.id (wah.id [127.0.0.1])
+Received: by wah.id (Postfix, from userid 33)
+	id 073765B005E; Fri, 13 Jun 2025 07:05:34 +0700 (WIB)
+To: contkellylewis@testdomain.io <contkellylewis@testdomain.io>
+Subject: Hello    write about your   price for reseller [#:684b6b4e2]
+Date: Fri, 13 Jun 2025 07:05:34 +0700
+From: <harpermiller@testmail.com>
+Message-ID: <684b6b4e.88a.enquiry.okusi.id>
+X-Country: ee
+X-IP: 195.82.146.214
+Importance: High
+X-Priority: 1 (Highest)
+Organization: Okusi Associates
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary=97aef2ec78a2f98e22c8a7c17e0c07d7
+X-Spam-Status: No, score=2.5 required=5.0 tests=ALL_TRUSTED,
+	DKIM_ADSP_CUSTOM_MED,FORGED_GMAIL_RCVD,FREEMAIL_FORGED_FROMDOMAIN,
+	FREEMAIL_FROM,HEADER_FROM_DIFFERENT_DOMAINS,HTML_MESSAGE,INVALID_MSGID,
+	NML_ADSP_CUSTOM_MED,X_IP autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Level: **
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--97aef2ec78a2f98e22c8a7c17e0c07d7
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+Phone: GeorgiaHej, jeg ønskede at kende din pris.
+
+--97aef2ec78a2f98e22c8a7c17e0c07d7
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<div id=3Dmessage style=3D'font-family:Arial;=
+border:1px #eee solid;=
+border-radius:4px;=
+color:#555;=
+width:99%;=
+max-width:40rem;=
+text-align:left;=
+margin:0rem;=
+padding:0rem;=
+font-size:12pt;'>=
+<br>Phone: Georgia<br><br>Hej, jeg =C3=B8nskede at kende din pris.</div>=
+
+--97aef2ec78a2f98e22c8a7c17e0c07d7--
+
+

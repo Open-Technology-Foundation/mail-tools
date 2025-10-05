@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 68D5C3340241
+	for <drewjones@testmail.net>; Sun, 23 Mar 2025 08:16:13 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Sun, 23 Mar 2025 08:16:13 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id TcKHEtJg32cuXwMAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Sun, 23 Mar 2025 08:16:02 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1742692562; bh=JMIklVKgf9JQvCZswqB7ZutNiqcdjcaC6WBBv57jzGI=;
+	h=To:Subject:Date:From:From;
+	b=ic+MEaBM8Jq/6D8MDW/K8GlIXYE8mUkbPVabdJQJ62m381kCnsZg9dVZDNJ1Xj9FM
+	 TIVrVTTr9zT+lTK6wYrAYM/rrSPaI4icaZvAMhlIUfAZlusamxJiykwXKRjWRItkpv
+	 hNR4V5QNWEGaCYmgtcVw9xd21IkbTL4KeaOrloEwVwP6hfydGNzzYkuf4/pD9yAFvm
+	 rvR3MHZhM7ahCrIhWG2Lw+Hs4f9zcvdv6XfeWKjr03C0LRGu0imMbRahWiq854a1Jb
+	 Z44urqdgONMJQgbipQEDfAI4/VGDw5a7dfBp/DiY8qy8r+bjPEVLweG7hCqcs4zBIu
+	 f8GjeW1r0urvQ==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 0AD3C264002C; Sun, 23 Mar 2025 08:16:02 +0700 (WIB)
+To: cameronwright@anonymail.test,adrian.nguyen@testmail.com
+Subject: ALERT: ANDRZEJ: Company Domicile Services
+Date: Sun, 23 Mar 2025 08:16:02 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <jordan.thomas@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT Anambas Experiences Developments:
+
+Your company domicile service is due to expire on 22 Apr 2025
+
+Please contact Okusi Associates for information concerning renewal.
+

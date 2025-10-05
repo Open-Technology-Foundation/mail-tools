@@ -1,0 +1,197 @@
+.TH MAILHEADERCLEAN 1 "October 2025" "mailheaderclean 1.0" "User Commands"
+.SH NAME
+mailheaderclean \- filter non-essential email headers from mail files
+.SH SYNOPSIS
+.B mailheaderclean
+.I FILE
+.SH DESCRIPTION
+.B mailheaderclean
+reads an email file and outputs the entire email with non-essential headers removed.
+Preserves essential routing headers and the complete message body unchanged.
+.PP
+The utility filters out bloat headers including:
+.IP \(bu 2
+Microsoft Exchange and Office365 tracking headers
+.IP \(bu 2
+Security vendor headers (Proofpoint, Mimecast, Barracuda, IronPort, etc.)
+.IP \(bu 2
+Email client identification headers
+.IP \(bu 2
+Marketing and tracking headers
+.IP \(bu 2
+Mailing list headers
+.IP \(bu 2
+Authentication metadata (DKIM, ARC)
+.IP \(bu 2
+Multiple Received headers (keeps only the first)
+.PP
+The utility is available in two forms:
+.IP \(bu 2
+A standalone binary for general use
+.IP \(bu 2
+A bash loadable builtin for high-performance scripting
+.PP
+Both implementations provide identical functionality and output.
+.SH OPTIONS
+.B mailheaderclean
+takes no options. It requires exactly one argument: the path to an email file.
+.SH ENVIRONMENT
+.TP
+.B MAILHEADERCLEAN
+Comma-separated list of header names to remove. When set, this completely replaces
+the built-in removal list. Header names are case-insensitive.
+.PP
+.TP
+.B MAILHEADERCLEAN_PRESERVE
+Comma-separated list of header names to preserve (exclude from removal).
+These headers will NOT be removed even if they appear in the built-in list or
+in MAILHEADERCLEAN/MAILHEADERCLEAN_EXTRA. Header names are case-insensitive.
+.PP
+.TP
+.B MAILHEADERCLEAN_EXTRA
+Comma-separated list of additional header names to remove beyond the built-in list
+(or beyond MAILHEADERCLEAN if set). Header names are case-insensitive.
+.PP
+.B Precedence:
+The final removal list is built as follows:
+.PP
+.RS
+1. Base list = MAILHEADERCLEAN (if set) OR built-in hardcoded list
+.br
+2. Remove headers listed in MAILHEADERCLEAN_PRESERVE from base list
+.br
+3. Add headers listed in MAILHEADERCLEAN_EXTRA to base list
+.RE
+.PP
+.B Examples:
+.PP
+Use custom removal list only:
+.RS
+.nf
+MAILHEADERCLEAN="X-Spam-Status,X-Spam-Score,Delivered-To" mailheaderclean email.eml
+.fi
+.RE
+.PP
+Preserve priority headers in Thunderbird:
+.RS
+.nf
+MAILHEADERCLEAN_PRESERVE="List-Unsubscribe,X-Priority,Importance" mailheaderclean email.eml
+.fi
+.RE
+.PP
+Add custom headers to built-in list:
+.RS
+.nf
+MAILHEADERCLEAN_EXTRA="X-Custom-Header,X-Internal-ID" mailheaderclean email.eml
+.fi
+.RE
+.PP
+Complex combination:
+.RS
+.nf
+MAILHEADERCLEAN="X-Spam-Status,List-Unsubscribe,DKIM-Signature" \\
+MAILHEADERCLEAN_PRESERVE="List-Unsubscribe" \\
+MAILHEADERCLEAN_EXTRA="X-Custom" mailheaderclean email.eml
+# Result: Removes X-Spam-Status, DKIM-Signature, and X-Custom
+# Preserves List-Unsubscribe
+.fi
+.RE
+.SH EXAMPLES
+Clean an email file:
+.PP
+.RS
+.nf
+$ mailheaderclean /var/mail/message.eml > cleaned.eml
+.fi
+.RE
+.PP
+Using the builtin in a bash script:
+.PP
+.RS
+.nf
+#!/bin/bash
+enable -f mailheaderclean.so mailheaderclean 2>/dev/null || true
+
+for email in /var/mail/*.eml; do
+  mailheaderclean "$email" > "clean/${email##*/}"
+done
+.fi
+.RE
+.SH EXIT STATUS
+.TP
+.B 0
+Success
+.TP
+.B 1
+File could not be opened or read, or invalid arguments provided
+.SH BASH BUILTIN
+When installed, the bash loadable builtin is automatically available in interactive shells.
+For non-interactive contexts (scripts, cron jobs), it must be explicitly enabled:
+.PP
+.RS
+.nf
+enable -f mailheaderclean.so mailheaderclean 2>/dev/null || true
+.fi
+.RE
+.PP
+The builtin provides significant performance benefits by eliminating fork/exec overhead,
+making it ideal for scripts that process many email files.
+.PP
+To view builtin-specific help:
+.PP
+.RS
+.nf
+help mailheaderclean
+.fi
+.RE
+.SH FILTERING DETAILS
+.B mailheaderclean
+performs the following operations:
+.IP \(bu 2
+Removes ~207 hardcoded non-essential headers (see description)
+.IP \(bu 2
+Keeps only the first "Received" header, removes all subsequent ones
+.IP \(bu 2
+Properly handles RFC 822 continuation lines
+.IP \(bu 2
+Preserves all essential routing headers (From, To, Subject, Date, Message-ID, etc.)
+.IP \(bu 2
+Outputs the complete message body unchanged
+.IP \(bu 2
+Case-insensitive header matching
+.SH FILES
+.TP
+.B /usr/local/bin/mailheaderclean
+Standalone binary executable
+.TP
+.B /usr/local/lib/bash/loadables/mailheaderclean.so
+Bash loadable builtin shared object
+.TP
+.B /etc/profile.d/mail-tools.sh
+Profile script that auto-loads the builtin in interactive shells
+.SH PERFORMANCE
+The standalone binary incurs fork/exec overhead (~1-2ms per call).
+The bash builtin runs in-process (~0.1ms per call), providing 10-20x speedup
+for scripts processing multiple emails.
+.SH SEE ALSO
+.BR mailheader (1),
+.BR mailmessage (1),
+.BR formail (1),
+.BR reformail (1),
+.BR bash (1),
+.BR enable (1)
+.PP
+RFC 822 - Standard for ARPA Internet Text Messages
+.SH BUGS
+Report bugs at:
+.UR https://github.com/Open-Technology-Foundation/mailheader/issues
+.UE
+.SH AUTHOR
+Part of the Open Technology Foundation utilities collection.
+.SH COPYRIGHT
+Copyright \(co 2025 Free Software Foundation, Inc.
+.PP
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+.PP
+Licensed under the GNU General Public License v3.0 or later.

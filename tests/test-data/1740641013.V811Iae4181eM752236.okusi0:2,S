@@ -1,0 +1,268 @@
+Return-Path: <drewgarcia@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 9D1E633401FE
+	for <drewjones@testmail.net>; Thu, 27 Feb 2025 14:23:33 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 27 Feb 2025 14:23:33 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id sFMPFdESwGeMwTYAeHbnHg
+	(envelope-from <drewgarcia@testdomain.io>); Thu, 27 Feb 2025 14:22:57 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1740640976; bh=pn/BqTITYgp36L1EC0QxomWeiteycbHZItAa2knGVwo=;
+	h=Date:To:Cc:From:Subject:From;
+	b=lKWcMNPd8xZFEtW8HDO7sKtQBKlwA1eHDiyYiDtF098NVQyayJzitaWkvJ7GcQIR0
+	 20eZy4wzdKD+f6pXnLEyEegp4V17hTQ5cLwR0Z2DUeHUdipCrQr29AoLFi6cGBNnJP
+	 7Ish8oHYaL9J8MwhHzRG5QYlkEPXrxlBiAnXVrj0qzu8rzJ3v+987g2ZEqbbtrMPvc
+	 T7660YL1G5VTuKs5wML/2xiPwgtFc6pTDqnJ84e7cmBCGy82Q2BoEUZoOhP4CRpi/D
+	 8mZv+Bw0AJ+VTSUjYShEXiVsGlOSCjc3yZ13JQDye8jD1T/6ysH8SEH7NkqyGKpWYK
+	 NpraewaDLKjKA==
+Received: from [192.168.6.118] (unknown [36.83.198.71])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id E1C3D2640006;
+	Thu, 27 Feb 2025 14:22:55 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------TsXqUvtA8pOxRCqALpbLllYU"
+Message-ID: <e2fc5ec9-f5179b83-8e808f7f-06eef722@testdomain.io>
+Date: Thu, 27 Feb 2025 14:22:54 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: reesemoore@fakecorp.biz
+Cc: Reni Debora Okusi Associates <milesnguyen@testdomain.io>,
+ Sri Mulyati <devonlewis@testdomain.io>, Lina Munir <contkellylewis@testdomain.io>
+From: Noorhaliza Putri Fadhila Okusi Associates <drewgarcia@testdomain.io>
+Subject: Embrace Remote Work in Indonesia with the E33G Remote Worker Visa -
+ Okusi Associates
+Organization: Okusi Associates
+X-Spam-Status: No, score=-1.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,LOTS_OF_MONEY,
+	T_KAM_HTML_FONT_INVALID autolearn=unavailable autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------TsXqUvtA8pOxRCqALpbLllYU
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dear Mr. Majid,
+
+I am Haliza as a representative of Okusi Associates from Visas and Work 
+Permits team, a leading corporate legal firm in Indonesia, I wanted to 
+reach out and introduce you to the exciting opportunity of obtaining an 
+E33G Remote Worker Visa or known well as Digital Nomad Visa.
+
+The E33G Remote Worker Visa is a game-changer for remote workers and 
+digital nomads looking to experience the beauty and cultural richness of 
+Indonesia while continuing their professional pursuits. This visa allows 
+foreign nationals to stay in Indonesia for up to 180 days, providing 
+ample time to explore the country and immerse themselves in its vibrant 
+communities.
+
+At Okusi Associates, we understand the unique needs of digital nomads 
+and remote workers. Our team of experienced paralegals and lawyers is 
+well-versed in the E33G Remote Worker Visa application process and can 
+provide comprehensive support every step of the way. Our services include:
+
+ 1. Eligibility assessment based on your nationality, profession, and
+    financial stability
+ 2. Guidance on the required documents, such as proof of employment,
+    income, and health insurance
+ 3. Preparation and submission of your visa application to the relevant
+    Indonesian authorities
+ 4. Monitoring the progress of your application and addressing any
+    queries or concerns
+ 5. Assistance with visa extensions and other related matters during
+    your stay in Indonesia
+
+By choosing Okusi Associates for your E33G Remote Worker Visa needs, you 
+can have peace of mind knowing that your application is in expert hands. 
+We pride ourselves on our attention to detail, professionalism, and 
+commitment to client satisfaction.
+
+To be eligible for an E33G Remote Worker Visa, applicants must:
+
+  * Hold a valid passport with at least 12 months remaining validity
+  * Demonstrate proof of employment or freelance work with a foreign
+    company or client
+  * Show evidence of sufficient financial means to support their stay in
+    Indonesia
+  * Have valid health insurance coverage for the duration of their stay
+  * Demonstrate proof of monthly income at least $60.000/year
+
+If you're ready to embark on a unique remote work experience in 
+Indonesia, we invite you to contact us to learn more about the E33G 
+Remote Worker Visa and how Okusi Associates can assist you. Please feel 
+free to reach out to me directly at drewgarcia@testdomain.io or +6282128910348 
+(Haliza) on WhatsApp anytime for further information or to discuss how 
+we can support your business needs.
+
+Best regards,
+Haliza
+
+-- 
+Photo of Noorhaliza Putri Fadhila <https://okusiassociates.com/id/1321> 
+*Noorhaliza Putri Fadhila* B.A
+Client Compliance for Visas and Work Permit, Okusi Associates 
+<https://okusiassociates.com>
+Okusi Associates website <https://okusiassociates.com>   Send Whatsapp 
+to Noorhaliza Putri Fadhila. <whatsapp://send?phone=6282128910348>
++6282128910348 <whatsapp://send?phone=6282128910348> | +62213901007 
+<tel:+62213901007> | drewgarcia@testdomain.io | okusiassociates.com 
+<https://okusiassociates.com>
+
+
+
+--------------TsXqUvtA8pOxRCqALpbLllYU
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Dear Mr. Majid,<br>
+    </p>
+    <p> I am Haliza as a representative of Okusi Associates from Visas
+      and Work Permits team, a leading corporate legal firm in
+      Indonesia, I wanted to reach out and introduce you to the exciting
+      opportunity of obtaining an E33G Remote Worker Visa or known well
+      as Digital Nomad Visa.<br>
+      <br>
+      The E33G Remote Worker Visa is a game-changer for remote workers
+      and digital nomads looking to experience the beauty and cultural
+      richness of Indonesia while continuing their professional
+      pursuits. This visa allows foreign nationals to stay in Indonesia
+      for up to 180 days, providing ample time to explore the country
+      and immerse themselves in its vibrant communities.<br>
+      <br>
+      At Okusi Associates, we understand the unique needs of digital
+      nomads and remote workers. Our team of experienced paralegals and
+      lawyers is well-versed in the E33G Remote Worker Visa application
+      process and can provide comprehensive support every step of the
+      way. Our services include:<br>
+    </p>
+    <ol>
+      <li>Eligibility assessment based on your nationality, profession,
+        and financial stability</li>
+      <li>Guidance on the required documents, such as proof of
+        employment, income, and health insurance</li>
+      <li>Preparation and submission of your visa application to the
+        relevant Indonesian authorities</li>
+      <li>Monitoring the progress of your application and addressing any
+        queries or concerns</li>
+      <li>Assistance with visa extensions and other related matters
+        during your stay in Indonesia</li>
+    </ol>
+    By choosing Okusi Associates for your E33G Remote Worker Visa needs,
+    you can have peace of mind knowing that your application is in
+    expert hands. We pride ourselves on our attention to detail,
+    professionalism, and commitment to client satisfaction.<br>
+    <br>
+    To be eligible for an E33G Remote Worker Visa, applicants must:<br>
+    <ul>
+      <li>Hold a valid passport with at least 12 months remaining
+        validity</li>
+      <li>Demonstrate proof of employment or freelance work with a
+        foreign company or client</li>
+      <li>Show evidence of sufficient financial means to support their
+        stay in Indonesia</li>
+      <li>Have valid health insurance coverage for the duration of their
+        stay</li>
+      <li>Demonstrate proof of monthly income at least $60.000/year</li>
+    </ul>
+    If you're ready to embark on a unique remote work experience in
+    Indonesia, we invite you to contact us to learn more about the E33G
+    Remote Worker Visa and how Okusi Associates can assist you. Please
+    feel free to reach out to me directly at <a
+      href="mailto:drewgarcia@testdomain.io" class="moz-txt-link-freetext">drewgarcia@testdomain.io</a>
+    or +6282128910348 (Haliza) on WhatsApp anytime for further
+    information or to discuss how we can support your business needs.<br>
+    <br>
+    Best regards,<br>
+    Haliza
+    <p></p>
+    <div class="moz-signature">-- <br>
+      <style>
+a:link, a:visited {color:#888 !important;text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:none;}
+</style>
+      <table
+style="font-size:16px;font-family:'AvantGarde Bk BT',Verdana,
+'sans serif';color:#555;margin:4px 0 0 0;padding: 0;line-height: 1.4;">
+        <tbody>
+          <tr>
+            <td
+style="margin:0;padding:0px 6px 0px 6px;vertical-align:top;">
+              <a href="https://okusiassociates.com/id/1321"
+                target="_blank"
+                title="Okusi Associates - Noorhaliza Putri Fadhila">
+                <img
+style="height:111px;border-radius:5%;border:1px solid #0b295a;"
+                  alt="Photo of Noorhaliza Putri Fadhila"
+                  src="https://okusiassociates.com/a/m/photo-haliza.jpg">
+              </a>
+            </td>
+            <td
+style="padding:0px 6px 0px 4px;vertical-align:top;font-size:16px;">
+              <strong>Noorhaliza Putri Fadhila</strong> <span
+                style="font-size:13px;color:#555 !important;" title="">
+                B.A</span>
+              <div style="font-size:13px;color:#888 !important;">
+                Client Compliance for Visas and Work Permit, <a
+                  href="https://okusiassociates.com"
+                  title="Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">Okusi Associates</a>
+              </div>
+              <div style="margin-top:3px;margin-bottom:0px;">
+                <a title="Okusi Associates website"
+                  href="https://okusiassociates.com"
+                  style="color:#888 !important;" target="_blank">
+                  <img style="height:28px;"
+                    alt="Okusi Associates website"
+                    src="https://okusiassociates.com/a/m/oa.png">
+                </a>
+                 
+                <a title="Send Whatsapp to Noorhaliza Putri Fadhila."
+                  href="whatsapp://send?phone=6282128910348"
+                  target="_blank">
+                  <img style="height:28px;"
+                    alt="Send Whatsapp to Noorhaliza Putri Fadhila."
+                    src="https://okusiassociates.com/a/m/wa.png">
+                </a>
+              </div>
+              <div style="font-size:13px;color:#888 !important;">
+                <a href="whatsapp://send?phone=6282128910348"
+                  style="color:#888 !important;"
+                  title="Voice/WhatsApp/SMS">+6282128910348</a>
+                | <a href="tel:+62213901007"
+                  style="color:#888 !important;"
+                  title="Jakarta Office Landline.">+62213901007</a>
+                |
+                <a title="Send email to Noorhaliza Putri Fadhila."
+                  href="mailto:drewgarcia@testdomain.io"
+                  style="color:#888 !important;"
+                  class="moz-txt-link-freetext">drewgarcia@testdomain.io</a>
+                |
+                <a href="https://okusiassociates.com"
+title="Okusi Associates - Indonesian Corporate Services" target="_blank"
+                  style="color:#888 !important;">okusiassociates.com</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+  </body>
+</html>
+
+--------------TsXqUvtA8pOxRCqALpbLllYU--

@@ -1,0 +1,92 @@
+Return-Path: <jamielopez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 9E8F733401FE
+	for <drewjones@testmail.net>; Mon,  3 Feb 2025 10:05:16 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Mon, 03 Feb 2025 10:05:16 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id aFd7HycyoGdj8wUAeHbnHg
+	(envelope-from <jamielopez@testdomain.io>); Mon, 03 Feb 2025 10:04:07 +0700
+Authentication-Results: OpenDMARC; dmarc=none (p=none dis=none) header.from=peo-asia.net
+Authentication-Results: OpenDMARC; spf=fail smtp.mailfrom=peo-asia.net
+Received: from sg2nlsmtp04.shr.prod.sin2.secureserver.net (sg2nlsmtp04.shr.prod.sin2.secureserver.net [182.50.132.195])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id A0A942640006
+	for <legmorganhill@testdomain.io>; Mon,  3 Feb 2025 10:03:33 +0700 (WIB)
+Received: from sg2plzcpnl479122.prod.sin2.secureserver.net ([184.168.116.210])
+	by : HOSTING RELAY : with ESMTPS
+	id emjHtUU4U36ERemjHtePDm; Mon, 03 Feb 2025 03:02:31 +0000
+X-CMAE-Analysis: v=2.4 cv=B5lD0PtM c=1 sm=1 tr=0 ts=67a031c8
+ a=2CtvktdddAbqLEUMTB4H/w==:117 a=2CtvktdddAbqLEUMTB4H/w==:17
+ a=kj9zAlcOel0A:10 a=T2h4t0Lz3GQA:10 a=NAOacF_lAAAA:8 a=WAlsNDBJtx_AOfEizkAA:9
+ a=CjuIK1q_8ugA:10 a=EsnD6LZKcqnq6PMmmLqd:22 a=AzBI1gUlFP3r4mzDO6ex:22
+X-SECURESERVER-ACCT: jamielopez@testdomain.io
+Received: from [60.49.69.144] (port=60920 helo=DESKTOPG9FO97N)
+	by sg2plzcpnl479122.prod.sin2.secureserver.net with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <jamielopez@testdomain.io>)
+	id 1temj9-00BBaq-1f;
+	Sun, 02 Feb 2025 20:02:31 -0700
+From: <jamielopez@testdomain.io>
+To: "'Reni Debora Okusi Associates'" <milesnguyen@testdomain.io>
+Cc: "'PhoebePEO'" <emersontaylor@testdomain.io>,
+	<legmorganhill@testdomain.io>
+References: <noel.clark@samplebiz.org>
+In-Reply-To: <noel.clark@samplebiz.org>
+Subject: RE: ALERT: PAYROL: Nominee Director Services
+Date: Mon, 3 Feb 2025 11:02:22 +0800
+Message-ID: <004b01db75e8$0c2ba150$2482e3f0$@peo-asia.net>
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Thread-Index: AQIYvvE1174Ei5VE2jeDsm4S46RaVLK6Ugpw
+Content-Language: en-my
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - sg2plzcpnl479122.prod.sin2.secureserver.net
+X-AntiAbuse: Original Domain - okusi.id
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - peo-asia.net
+X-Get-Message-Sender-Via: sg2plzcpnl479122.prod.sin2.secureserver.net: authenticated_id: jamielopez@testdomain.io
+X-Authenticated-Sender: sg2plzcpnl479122.prod.sin2.secureserver.net: jamielopez@testdomain.io
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-CMAE-Envelope: MS4xfFYS7S64ka1ti/clhnjM1f5rE/EKAf+lTJnCbfl3/bV8DPfFFfDw3yg8L+5h0yPNhLltIwsuM4YbQCfOJnO1PNLwNjG5ZuaOuwuOKvTZh+eMjAisi4le
+ Rhi8oUiv6vYzAY81YIduJ9Hhqg2fVT4RO8OMPpZAluc/LvYgu9oKTLqtSMtv2Es1eeS9aBsnAoIkg0lqWjL9h7SXVLR9P7FpyvQM3x/Nfi1PI4HeJYWh+gx8
+ Q2XSYgf1bfxCJm85Cq6THg==
+X-Spam-Status: No, score=0.0 required=5.0 tests=RCVD_IN_DNSWL_NONE,
+	T_SPF_HELO_TEMPERROR,T_SPF_TEMPERROR autolearn=unavailable
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+Hi Reni, 
+
+Please email invoice.
+
+Thank you and have a nice day!
+
+Best regards,
+Cazz
+Head of Finance
+
+www.peo-asia.net
+
+-----Original Message-----
+From: legmorganhill@testdomain.io <legmorganhill@testdomain.io> 
+Sent: Tuesday, 28 January, 2025 9:16 AM
+To: jamielopez@testdomain.io; emersontaylor@testdomain.io; morganwright@testdomain.io
+Subject: ALERT: PAYROL: Nominee Director Services
+
+This is an automated alert from Okusi Associates.
+
+Reminder for PT Asia Payroll And Services:
+
+Nominee Director Services for this company is due to expire on 27 Feb 2025
+
+Please contact Okusi Associates for information concerning renewal.
+
+

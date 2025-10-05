@@ -1,0 +1,36 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 70BF133401FE
+	for <drewjones@testmail.net>; Thu, 14 Nov 2024 10:14:52 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 14 Nov 2024 10:14:52 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id PVe6JPlqNWdoCBcAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Thu, 14 Nov 2024 10:14:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1731554041; bh=JdhuZpdv9sXm9c444hQvmt3D1fVB2L+AwsQY96erCD0=;
+	h=To:Subject:Date:From:From;
+	b=jH+26NkN2xShCXAEaecKyCbTiDHLhMpQjlwV4FDhwO8IOLcgtzZ5o0ajUMuPZV3aY
+	 L4R/XN/2DIK7Urrob8bcT63PGPPiDmC1/Jooe7yx90EvwtQLqDynk/QYqminCB+vl2
+	 J5f1h/JJPZkFscU053k+GZhREWvTOcv24tjob3NuZStZzwMsGwR+pPaBoLJLOdJN54
+	 cZ7LoduIp1A/e7rcvfY/z+hFd5g3D0KvjvOjqXRcuFiO8qP14JTOSnuG3r54LsY4FF
+	 L5lgMsdP8HKlUbrOnxDmRROnmingZ+hZqGow0W4vMAyPuejFKdb/8hkquTTT48tp/O
+	 1f1VxeeN8NrQQ==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 6F1392640034; Thu, 14 Nov 2024 10:14:01 +0700 (WIB)
+To: quinnmoore@testdomain.io
+Subject: SP: Tugas Selesai: SOMIAA: PT Local - Jakarta
+Date: Thu, 14 Nov 2024 10:14:01 +0700
+From: samsanchez@testdomain.io
+Message-Id: <devon.hill@samplebiz.org>
+
+Klien: SOMIAA
+Tugas: Kirim Dokumen Asli ke klien kalau
+Sudah diselesaikan oleh syifa.
+
+https://okusi0.okusi.co.id/ProyekOkusi/list-bs.php?klienfilter=SOMIAA
+

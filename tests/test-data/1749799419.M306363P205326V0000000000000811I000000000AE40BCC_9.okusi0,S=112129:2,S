@@ -1,0 +1,2404 @@
+Return-Path: <jesserodriguez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id CC8623340223
+	for <drewjones@testmail.net>; Fri, 13 Jun 2025 14:23:38 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.38)
+	for <drewjones@testmail.net> (single-drop); Fri, 13 Jun 2025 14:23:38 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id EAV6ObzRS2hr+jEAeHbnHg
+	(envelope-from <jesserodriguez@testdomain.io>); Fri, 13 Jun 2025 14:22:36 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=reject dis=none) header.from=pharmaceutical-era.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=psrp.pharmaceutical-era.com
+Received: from epost.hissm.com (epost.hissm.com [161.97.141.148])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 14A4D264002B
+	for <legmorganhill@testdomain.io>; Fri, 13 Jun 2025 14:21:58 +0700 (WIB)
+Resent-Sender: jesserodriguez@testdomain.io
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=pharmaceutical-era.com;
+	s=epost-i43KBM; t=1749799315;
+	bh=vqgDMRfx129uVzLVxAnDeO/y8AbzDpqARCeznlsYuFY=;
+	h=date:to:from:reply-to:subject:message-id:list-unsubscribe:mime-version:content-type:content-transfer-encoding;
+	b=o/9ySsmSL8jgg2ZkcKKuaU24nlos4qbqepkxByl0jI9c7ve52W6ul8B899dwaNrAHLB7hM+h
+	znbpa4rxP9CqAF9cHyni1ZTLIrkumcU11MKCz02P+8e+9fN7USActIaOwi69NpzBFiFLGeDu
+	UK11YGire5tH103cDqKvDzHic/8=
+X-Postal-MsgID: w96gZ4xqJMzRyOgP
+Received: from www.pharmaceutical-era.com (server.hissm.com [66.179.250.235]) by epost.hissm.com with SMTP; Fri, 13 Jun 2025 07:21:53 -0000
+Date: Fri, 13 Jun 2025 07:21:51 +0000
+To: legmorganhill@testdomain.io
+From: Pharmaceutical Era <quinnking@example.com>
+Reply-To: Matt Garrie <quinn.jackson@example.com>
+Subject: [***** SPAM 5.7 *****] =?utf-8?Q?Pharmaceutical_Leaders_Digest_=E2=80=93_June_2025?=
+Message-ID: <ellishill@testdomain.iol-era.com>
+X-RSMIdSession: 94
+List-Unsubscribe: <https://www.pharmaceutical-era.com/component/rsmail/?hash=104c2856d36eccc95fc51b373be66a79&IdSession=94&Itemid=273>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="b1=_TUy2UnfUHXyA4wtozbvr2weTOpQviJJitcWV9Hs2m6g"
+Content-Transfer-Encoding: 8bit
+DKIM-Signature: v=1; d=pharmaceutical-era.com; s=mailer;
+ a=rsa-sha256; q=dns/txt; t=1749799311; c=relaxed/simple;
+ h=Date:To:From:Reply-To:Subject:Message-ID:MIME-Version:Content-Type;
+ i=milesmoore@example.com;
+ z=Date:Fri,=2013=20Jun=202025=2007:21:51=20+0000
+ |To:legmorganhill@testdomain.io
+ |From:Pharmaceutical=20Era=20<quinnking@example.com>
+ |Reply-To:Matt=20Garrie=20<quinn.jackson@example.com>
+ |Subject:=3D?utf-8?Q?Pharmaceutical_Leaders_Digest_=3DE2=3D80=3D93_June_20
+ 25?=3D
+ |Message-ID:<ellishill@testdomain.io
+ l-era.com>
+ |MIME-Version:1.0
+ |Content-Type:multipart/alternative=3B=20boundary=3D"b1=3D_TUy2UnfUHXyA4wt
+ ozbvr2weTOpQviJJitcWV9Hs2m6g";
+ bh=uyL0a1v/0vnp5INhTURYEE8irchGaVIVqUgWp2P4xGo=;
+ b=M8ZucpIFMzKaEPACoUArzGqPtpR83brakNdhpIBP9HCR8Nwp8LT9gNvJqyGOrtVQZ1G6dkSY4
+ PQVxHUKbqajrbgRHM9bUdD+l9j86oRmuN8YDY4rtTy8mO9/tyHlBd+d
+X-Spam-Flag: YES
+X-Spam-Status: Yes, score=5.7 required=5.0 tests=DKIM_INVALID,DKIM_SIGNED,
+	HTML_FONT_LOW_CONTRAST,HTML_MESSAGE,KAM_NUMSUBJECT,LIST_UNSUBSCRIBE,
+	SPF_PASS,SUBSCRIPTION_SPAM,T_KAM_HTML_FONT_INVALID,
+	T_SPF_HELO_TEMPERROR,URIBL_BLOCKED autolearn=no autolearn_force=no
+	version=3.4.6
+X-Spam-Report: 
+	*  0.0 URIBL_BLOCKED ADMINISTRATOR NOTICE: The query to URIBL was
+	*      blocked.  See
+	*      http://wiki.apache.org/spamassassin/DnsBlocklists#dnsbl-block
+	*      for more information.
+	*      [URIs: amazonaws.com]
+	*  3.0 SUBSCRIPTION_SPAM BODY: I didn't subscribe to your spam.
+	*  0.5 KAM_NUMSUBJECT Subject ends in numbers
+	*  2.0 LIST_UNSUBSCRIBE I didn't join your mailing list.
+	* -0.0 SPF_PASS SPF: sender matches SPF record
+	*  0.0 T_SPF_HELO_TEMPERROR SPF: test of HELO record failed
+	*      (temperror)
+	*  0.0 HTML_MESSAGE BODY: HTML included in message
+	*  0.0 HTML_FONT_LOW_CONTRAST BODY: HTML font color similar or
+	*      identical to background
+	*  0.1 DKIM_SIGNED Message has a DKIM or DK signature, not necessarily
+	*       valid
+	*  0.0 T_KAM_HTML_FONT_INVALID Test for Invalidly Named or Formatted
+	*      Colors in HTML
+	*  0.1 DKIM_INVALID DKIM or DK signature exists, but is not valid
+X-Spam-Level: *****
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+Resent-Message-Id: <drew.king@testmail.net>
+Resent-Date: Fri, 13 Jun 2025 14:23:38 +0700 (WIB)
+Resent-From: jesserodriguez@testdomain.io
+
+--b1=_TUy2UnfUHXyA4wtozbvr2weTOpQviJJitcWV9Hs2m6g
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+#outlook a {
+=09padding:0;
+}
+.ExternalClass {
+=09https://www.pharmaceutical-era.com/width:100%;
+}
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+=09https://www.pharmaceutical-era.com/line-height:100%;
+}
+.es-button {
+=09https://www.pharmaceutical-era.com/mso-style-priority:100!important;
+=09https://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/te=
+xt-decoration:none!important;
+}
+a[x-apple-data-detectors] {
+=09https://www.pharmaceutical-era.com/color:inherit!important;
+=09https://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/te=
+xt-decoration:none!important;
+=09https://www.pharmaceutical-era.com/font-size:inherit!important;
+=09https://www.pharmaceutical-era.com/font-family:inherit!important;
+=09https://www.pharmaceutical-era.com/font-weight:inherit!important;
+=09https://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/li=
+ne-height:inherit!important;
+}
+.es-desk-hidden {
+=09https://www.pharmaceutical-era.com/display:none;
+=09https://www.pharmaceutical-era.com/float:left;
+=09https://www.pharmaceutical-era.com/overflow:hidden;
+=09width:0;
+=09max-height:0;
+=09line-height:0;
+=09https://www.pharmaceutical-era.com/mso-hide:all;
+}
+
+
+@media only screen and (https://www.pharmaceutical-era.com/max-width:600px)=
+ {
+=09
+
+=09.es-content-body
+=09  {
+=09=09  max-width: 600px;
+=09  }
+=09p, ul li, ol li, a { https://www.pharmaceutical-era.com/line-height:150%=
+!important } h1, h2, h3, h1 a, h2 a, h3 a { https://www.pharmaceutical-era.=
+com/line-height:120%!important } h1 { https://www.pharmaceutical-era.com/ht=
+tps://www.pharmaceutical-era.com/font-size:30px!important; https://www.phar=
+maceutical-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceu=
+tical-era.com/https://www.pharmaceutical-era.com/text-align:center } h2 { h=
+ttps://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/font-s=
+ize:26px!important; https://www.pharmaceutical-era.com/https://www.pharmace=
+utical-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceutica=
+l-era.com/text-align:center } h3 { https://www.pharmaceutical-era.com/https=
+://www.pharmaceutical-era.com/font-size:20px!important; https://www.pharmac=
+eutical-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceutic=
+al-era.com/https://www.pharmaceutical-era.com/text-align:center } .es-heade=
+r-body h1 a, .es-content-body h1 a, .es-footer-body h1 a { https://www.phar=
+maceutical-era.com/https://www.pharmaceutical-era.com/font-size:30px!import=
+ant } .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a { h=
+ttps://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/font-s=
+ize:26px!important } .es-header-body h3 a, .es-content-body h3 a, .es-foote=
+r-body h3 a { https://www.pharmaceutical-era.com/https://www.pharmaceutical=
+-era.com/font-size:20px!important } .es-menu td a { https://www.pharmaceuti=
+cal-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceutical-e=
+ra.com/https://www.pharmaceutical-era.com/font-size:16px!important } .es-he=
+ader-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body =
+a { https://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/h=
+ttps://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/font-s=
+ize:16px!important } .es-content-body p, .es-content-body ul li, .es-conten=
+t-body ol li, .es-content-body a { https://www.pharmaceutical-era.com/https=
+://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://ww=
+w.pharmaceutical-era.com/font-size:16px!important } .es-footer-body p, .es-=
+footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size:16 =
+px!important } .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .=
+es-infoblock a { https://www.pharmaceutical-era.com/font-size:12px!importan=
+t } *[class=3D"gmail-fix"] { https://www.pharmaceutical-era.com/https://www=
+.pharmaceutical-era.com/https://www.pharmaceutical-era.com/display:none!imp=
+ortant } .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c h3 { http=
+s://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://w=
+ww.pharmaceutical-era.com/https://www.pharmaceutical-era.com/text-align:cen=
+ter !important } .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h=
+3 { https://www.pharmaceutical-era.com/text-align:right!important } .es-m-t=
+xt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { https://www.pharmace=
+utical-era.com/text-align:left!important } .es-m-txt-r img, .es-m-txt-c img=
+, .es-m-txt-l img { https://www.pharmaceutical-era.com/display:inline!impor=
+tant } .es-button-border { https://www.pharmaceutical-era.com/https://www.p=
+harmaceutical-era.com/https://www.pharmaceutical-era.com/display:block!impo=
+rtant; https://www.pharmaceutical-era.com/margin:0px 15px; } a.es-button, b=
+utton.es-button { https://www.pharmaceutical-era.com/https://www.pharmaceut=
+ical-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceutical-=
+era.com/font-size:16px!important; https://www.pharmaceutical-era.com/https:=
+//www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/display:blo=
+ck!important; https://www.pharmaceutical-era.com/padding:5px 15px 5px 15px!=
+important; } .es-btn-fw { https://www.pharmaceutical-era.com/border-width:1=
+0px 0px!important; https://www.pharmaceutical-era.com/https://www.pharmaceu=
+tical-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceutical=
+-era.com/https://www.pharmaceutical-era.com/text-align:center!important } .=
+es-adaptive table, .es-btn-fw, .es-btn-fw-brdr, .es-left, .es-right { https=
+://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://ww=
+w.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://www.pha=
+rmaceutical-era.com/width:100%!important } .es-content table, .es-header ta=
+ble, .es-footer table, .es-content, .es-footer, .es-header { https://www.ph=
+armaceutical-era.com/https://www.pharmaceutical-era.com/https://www.pharmac=
+eutical-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceutic=
+al-era.com/width:100%!important; https://www.pharmaceutical-era.com/https:/=
+/www.pharmaceutical-era.com/max-width:600px!important } .es-adapt-td { http=
+s://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://w=
+ww.pharmaceutical-era.com/display:block!important; https://www.pharmaceutic=
+al-era.com/https://www.pharmaceutical-era.com/https://www.pharmaceutical-er=
+a.com/https://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com=
+/width:100%!important } .adapt-img { https://www.pharmaceutical-era.com/htt=
+ps://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://=
+www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/width:100%!im=
+portant; https://www.pharmaceutical-era.com/height:auto!important; } .es-m-=
+p0 { https://www.pharmaceutical-era.com/padding:0px!important } .es-m-p0r {=
+ https://www.pharmaceutical-era.com/padding-right:0px!important } .es-m-p0l=
+ { https://www.pharmaceutical-era.com/padding-left:0px!important } .es-m-p0=
+t { https://www.pharmaceutical-era.com/padding-top:0px!important } .es-m-p0=
+b { https://www.pharmaceutical-era.com/padding-bottom:0!important } .es-m-p=
+20b { https://www.pharmaceutical-era.com/padding-bottom:20px!important } .e=
+s-mobile-hidden, .es-hidden { https://www.pharmaceutical-era.com/https://ww=
+w.pharmaceutical-era.com/https://www.pharmaceutical-era.com/display:none!im=
+portant } tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden { http=
+s://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://w=
+ww.pharmaceutical-era.com/width:auto!important; https://www.pharmaceutical-=
+era.com/https://www.pharmaceutical-era.com/overflow:visible!important; http=
+s://www.pharmaceutical-era.com/float:none!important; https://www.pharmaceut=
+ical-era.com/https://www.pharmaceutical-era.com/max-height:inherit!importan=
+t; https://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/li=
+ne-height:inherit!important } tr.es-desk-hidden { https://www.pharmaceutica=
+l-era.com/https://www.pharmaceutical-era.com/display:table-row!important } =
+table.es-desk-hidden { https://www.pharmaceutical-era.com/display:table!imp=
+ortant } td.es-desk-menu-hidden { https://www.pharmaceutical-era.com/displa=
+y:table-cell!important } .es-menu td { https://www.pharmaceutical-era.com/w=
+idth:1%!important } table.es-table-not-adapt, .esd-block-html table { https=
+://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/https://ww=
+w.pharmaceutical-era.com/width:auto!important } table.es-social { https://w=
+ww.pharmaceutical-era.com/https://www.pharmaceutical-era.com/display:inline=
+-block!important } table.es-social td { https://www.pharmaceutical-era.com/=
+https://www.pharmaceutical-era.com/display:inline-block!important } .es-des=
+k-hidden { https://www.pharmaceutical-era.com/https://www.pharmaceutical-er=
+a.com/display:table-row!important; https://www.pharmaceutical-era.com/https=
+://www.pharmaceutical-era.com/https://www.pharmaceutical-era.com/width:auto=
+!important; https://www.pharmaceutical-era.com/https://www.pharmaceutical-e=
+ra.com/overflow:visible!important; https://www.pharmaceutical-era.com/https=
+://www.pharmaceutical-era.com/max-height:inherit!important }=20
+=09}
+@media screen and (https://www.pharmaceutical-era.com/max-width:384px) {.ma=
+il-message-content { https://www.pharmaceutical-era.com/width:414px!importa=
+nt } }
+
+ *{scrollbar-width: thin;scrollbar-color: #888 #f6f6f6;}/* Chrome, Edge, Sa=
+fari */::-webkit-scrollbar {width: 10px;height: 10px;}::-webkit-scrollbar-t=
+rack {background: #f6f6f6;}::-webkit-scrollbar-thumb {background: #888;bord=
+er-radius: 6px;border: 2px solid #f6f6f6;}::-https://www.pharmaceutical-era=
+.com/webkit-scrollbar-thumb:hover {box-shadow: inset 0 0 6px rgba(0,0,0,0.3=
+);}textarea::-webkit-scrollbar-track {margin: 15px;}
+
+=20
+  Pharmaceutical Leaders Digest =E2=80=94 explore key updates in the pharma=
+ceutical industry.
+=09=20
+=09=09=20
+=09
+        =20
+         =20
+          =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+=09=09=09=09=09=09 =20
+                        =20
+                         =20
+=09=09=09=09=09=09  View in browser (https://www.pharmaceutical-era.com/mai=
+ler?message=3D6883966fd8f918a4aa29be29d2c386fb&hash=3D104c2856d36eccc95fc51=
+b373be66a79)=20
+=09=09=09=09=09=09=09=20
+=09=09=09=09=09=09
+                        =20
+                           (https://www.linkedin.com/company/pharmaceutical=
+-era)=20
+                           (https://twitter.com/pharma_era)=20
+                           (https://www.facebook.com/EraOfPharmaceutical)=
+=20
+                        =20
+                       =20
+=09=09=09=09=09 =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+          =20
+        =20
+      =20
+
+
+        =20
+         =20
+          =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://www.pharmaceutical-era.com)=20
+=09=09=09=09=09=09=20
+=09=09=09=09=09 =20
+                    =20
+                  =20
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+                      =20
+                        =20
+                          NEWS (https://www.pharmaceutical-era.com/press-re=
+leases)=20
+                          EVENTS (https://www.pharmaceutical-era.com/events=
+)=20
+                          ADVERT (https://www.pharmaceutical-era.com/promot=
+e-brand)=20
+                        =20
+                      =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+          =20
+        =20
+      =20
+
+
+        =20
+         =20
+          =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+                      =20
+                        =20
+                         =20
+                        =20
+                      =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://ct.hissm.com/submit-news)=20
+                    =20
+                    =20
+                     =20
+                      =20
+                        =20
+                         =20
+                        =20
+                      =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+          =20
+        =20
+      =20
+=09=09=20
+
+        =20
+         =20
+          =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      Webinar: Leverage AI for Operational Excellence and S=
+trategic Cost Management
+                    =20
+                  =20
+                =20
+              =20
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://ct.hissm.com/webinar-hackett-group)=20
+                    =20
+                  =20
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+=09=09=09=09=09=09 Join The Hackett Group and leaders from Merck, AstraZene=
+ca and Sanofi to supercharge business change and performance, while leverag=
+ing AI for maximum impact.
+=09=09=09=09=09   =20
+                    =20
+
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      When:
+                    =20
+                    =20
+                      &#128467; 26th Jun 2025&#128344; 9am ET / 3pm CET
+                    =20
+                  =20
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      Where:
+                    =20
+                    =20
+                      &#128187; Virtual &#127760; Online (https://ct.hissm.=
+com/webinar-hackett-group)=20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+                  =20
+=09=09=09=09 =20
+                =20
+=09=09=09=09  =20
+              =20
+            =20
+
+            =20
+             =20
+              =20
+            =20
+
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+                      =20
+                        =20
+                         =20
+                        =20
+                      =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+          =20
+        =20
+
+=09=09=20
+
+        =20
+         =20
+          =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      Trending Press Releases
+                    =20
+                  =20
+                =20
+              =20
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://www.pharmaceutical-era.com/press-releases/l=
+ubrizol-reveals-a-significant-milestone-for-its-innovative-patented-apisole=
+x-tm-polymer-excipient)=20
+                    =20
+                  =20
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      Lubrizol reveals a significant milestone for its inno=
+vative (https://www.pharmaceutical-era.com/press-releases/lubrizol-reveals-=
+a-significant-milestone-for-its-innovative-patented-apisolex-tm-polymer-exc=
+ipient)=20
+                    =20
+                    =20
+                      Lubrizol announces that an Apisolex=E2=84=A2 polymer =
+excipient-enabled drug formulation is in Phase 1 clinical trials.=20
+                    =20
+                  =20
+                =20
+=09=09=09=09  =20
+              =20
+            =20
+=09=09=09=20
+                    =20
+                     =20
+                      =20
+                        =20
+                         =20
+                        =20
+                      =20
+                    =20
+                  =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://www.pharmaceutical-era.com/press-releases/e=
+mulate-introduces-the-ava-tm-emulation-system-a-groundbreaking-high-through=
+put-organ-chip-platform-designed-to-accelerate-drug-development)=20
+                    =20
+                  =20
+=09=09=09=09  =20
+=09=09=09=09  =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      Emulate introduces the AVA=E2=84=A2 Emulation System =
+(https://www.pharmaceutical-era.com/press-releases/emulate-introduces-the-a=
+va-tm-emulation-system-a-groundbreaking-high-throughput-organ-chip-platform=
+-designed-to-accelerate-drug-development)=20
+                    =20
+                    =20
+                      Emulate, Inc., the world leader in Organ-on-a-Chip te=
+chnology, today announced the commercial launch of the AVA=E2=84=A2 Emulati=
+on System..
+                    =20
+                  =20
+                =20
+              =20
+            =20
+=09=09=09=20
+                    =20
+                     =20
+                      =20
+                        =20
+                         =20
+                        =20
+                      =20
+                    =20
+                  =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://www.pharmaceutical-era.com/press-releases/a=
+venacy-enters-u-s-market-with-launch-of-doxycycline-for-injection-usp)=20
+                    =20
+                  =20
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      Avenacy Enters U.S. Market with Launch of Doxycycline=
+ for Injection, USP (https://www.pharmaceutical-era.com/press-releases/aven=
+acy-enters-u-s-market-with-launch-of-doxycycline-for-injection-usp)=20
+                    =20
+                    =20
+                     =20
+Avenacy, a specialty pharmaceutical company focused on supplying critical i=
+njectable medications, announced it has launched Doxycycline for Injection.=
+.
+                    =20
+                  =20
+                =20
+              =20
+            =20
+
+                    =20
+                     =20
+                      =20
+                        =20
+                         =20
+                        =20
+                      =20
+                    =20
+                  =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://www.pharmaceutical-era.com/press-releases/a=
+-new-production-line-dedicated-to-sterile-hyaluronic-acid-has-been-inaugura=
+ted-by-htl-biotechnology)=20
+                    =20
+                  =20
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      A New Production Line Dedicated to Sterile Hyaluronic=
+ Acid Has Been Inaugurated by HTL Biotechnology (https://www.pharmaceutical=
+-era.com/press-releases/a-new-production-line-dedicated-to-sterile-hyaluron=
+ic-acid-has-been-inaugurated-by-htl-biotechnology)=20
+                    =20
+                    =20
+                      On the occasion of National Bioproduction and Biomedi=
+cines Day (JNBB), which enjoys the high patronage of the President of the F=
+rench Republic..
+                    =20
+                  =20
+                =20
+              =20
+            =20
+            =20
+             =20
+              =20
+            =20
+
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+                      =20
+                        =20
+                         =20
+                        =20
+                      =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+          =20
+        =20
+    =20
+
+=09=09=20
+        =20
+         =20
+          =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                      Upcoming Industry Events
+                    =20
+                  =20
+                =20
+              =20
+            =20
+            =20
+             =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                     =20
+                    =20
+                  =20
+                =20
+              =20
+            =20
+             =09=09=20
+            =20
+             =20
+            =20
+
+
+    =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://www.pharmaceutical-era.com/events/australia=
+-regulatory-device-summit-2025)=20
+                    =20
+                    =20
+                     =20
+=09=09=09=09=09  =20
+=09=09=09=09=09=09Australia
+=09=09=09=09=09 =20
+                    =20
+                    =20
+                      Australia Regulatory Device Summit 2025
+                    =20
+                    =20
+                      Jul 17th to 18th, 2025
+                    =20
+                    =20
+                     =20
+=09=09=09=09=09=09
+=09=09=09=09=09=09  Details (https://www.pharmaceutical-era.com/events/aust=
+ralia-regulatory-device-summit-2025)=20
+=20
+=09=09=09=09=09 =20
+                    =20
+                  =20
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+                    =20
+                       (https://www.pharmaceutical-era.com/events/precision=
+-in-clinical-trials-summit-zurich-europe-2025)=20
+                    =20
+                    =20
+                     =20
+=09=09=09=09=09 =20
+=09=09=09=09=09=09Switzerland
+=09=09=09=09=09 =20
+                    =20
+                    =20
+                      Precision In Clinical Trials Summit
+                    =20
+                    =20
+                      Jul 1st to 2nd, 2025
+                    =20
+                    =20
+                     =20
+=09=09=09=09=09=09
+=09=09=09=09=09=09  Details (https://www.pharmaceutical-era.com/events/prec=
+ision-in-clinical-trials-summit-zurich-europe-2025)=20
+=20
+=09=09=09=09=09 =20
+                    =20
+                  =20
+                =20
+                   =20
+
+
+
+             =20
+              =20
+                =20
+                 =20
+                  =20
+   =20
+       =20
+           =20
+           =20
+           =20
+               =20
+                    Post a Press Release
+                 (https://www.pharmaceutical-era.com/post-press-release)=20
+           =20
+           =20
+       =20
+   =20
+
+
+                =20
+              =20
+              =20
+                =20
+                 =20
+                  =20
+   =20
+       =20
+           =20
+           =20
+           =20
+               =20
+                    Want to list your event?
+                 (https://www.pharmaceutical-era.com/list-your-event)=20
+           =20
+           =20
+       =20
+   =20
+
+                =20
+              =20
+            =20
+
+        =20
+    =20
+
+        =20
+         =20
+          =20
+            =20
+             =20
+=09=09=09=09
+                        =20
+                           (https://www.linkedin.com/company/pharmaceutical=
+-era)=20
+                           (https://twitter.com/pharma_era)=20
+                           (https://www.facebook.com/EraOfPharmaceutical)=
+=20
+                        =20
+                      =20
+
+
+  You are receiving this email because you have visited our site or asked u=
+s about the regular newsletter. To make sure our messages get to your Inbox=
+ (and not your bulk or SPAM or junk folders), please add=20
+    milesmoore@example.com (mailto:milesmoore@example.com)  to yo=
+ur contacts!
+
+
+
+Unsubscribe (https://www.pharmaceutical-era.com/mailer?hash=3D104c2856d36ec=
+cc95fc51b373be66a79&IdSession=3D94)  |     Privacy Policy (https://www.phar=
+maceutical-era.com/privacy-policy)=20
+
+
+
+
+Issue 6 :: Vol 13 | &copy; 2025 Pharmaceutical-Era.com
+
+
+
+  Pharmaceutical Era is a proud production of=20
+    HISS MEDIA PVT LTD (http://www.hissm.com/)=20
+    #W126, Anna Nagar, Chennai =E2=80=93 600 040, T.N., INDIA
+
+=20
+=09=09=09 =20
+            =20
+          =20
+   =20
+     =09=20
+=20
+=20
+
+--b1=_TUy2UnfUHXyA4wtozbvr2weTOpQviJJitcWV9Hs2m6g
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html dir=3D"ltr" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office" lang=3D"und" style=3D"padding:0;Margin:0"=
+>
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html charset=3DUTF-8" /=
+>
+  <meta content=3D"width=3Ddevice-width, initial-scale=3D1" name=3D"viewpor=
+t">
+  <meta name=3D"x-apple-disable-message-reformatting">
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+  <meta content=3D"telephone=3Dno" name=3D"format-detection">
+  <style type=3D"text/css">
+#outlook a {
+=09padding:0;
+}
+.ExternalClass {
+=09width:100%;
+}
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+=09line-height:100%;
+}
+.es-button {
+=09mso-style-priority:100!important;
+=09text-decoration:none!important;
+}
+a[x-apple-data-detectors] {
+=09color:inherit!important;
+=09text-decoration:none!important;
+=09font-size:inherit!important;
+=09font-family:inherit!important;
+=09font-weight:inherit!important;
+=09line-height:inherit!important;
+}
+.es-desk-hidden {
+=09display:none;
+=09float:left;
+=09overflow:hidden;
+=09width:0;
+=09max-height:0;
+=09line-height:0;
+=09mso-hide:all;
+}
+
+
+@media only screen and (max-width:600px) {
+=09
+
+=09.es-content-body
+=09  {
+=09=09  max-width: 600px;
+=09  }
+=09p, ul li, ol li, a { line-height:150%!important } h1, h2, h3, h1 a, h2 a=
+, h3 a { line-height:120%!important } h1 { font-size:30px!important; text-a=
+lign:center } h2 { font-size:26px!important; text-align:center } h3 { font-=
+size:20px!important; text-align:center } .es-header-body h1 a, .es-content-=
+body h1 a, .es-footer-body h1 a { font-size:30px!important } .es-header-bod=
+y h2 a, .es-content-body h2 a, .es-footer-body h2 a { font-size:26px!import=
+ant } .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a { f=
+ont-size:20px!important } .es-menu td a { font-size:16px!important } .es-he=
+ader-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body =
+a { font-size:16px!important } .es-content-body p, .es-content-body ul li, =
+.es-content-body ol li, .es-content-body a { font-size:16px!important } .es=
+-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-bo=
+dy a { font-size:16 px!important } .es-infoblock p, .es-infoblock ul li, .e=
+s-infoblock ol li, .es-infoblock a { font-size:12px!important } *[class=3D"=
+gmail-fix"] { display:none!important } .es-m-txt-c, .es-m-txt-c h1, .es-m-t=
+xt-c h2, .es-m-txt-c h3 { text-align:center !important } .es-m-txt-r, .es-m=
+-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h3 { text-align:right!important } .e=
+s-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align:left=
+!important } .es-m-txt-r img, .es-m-txt-c img, .es-m-txt-l img { display:in=
+line!important } .es-button-border { display:block!important; margin:0px 15=
+px; } a.es-button, button.es-button { font-size:16px!important; display:blo=
+ck!important; padding:5px 15px 5px 15px!important; } .es-btn-fw { border-wi=
+dth:10px 0px!important; text-align:center!important } .es-adaptive table, .=
+es-btn-fw, .es-btn-fw-brdr, .es-left, .es-right { width:100%!important } .e=
+s-content table, .es-header table, .es-footer table, .es-content, .es-foote=
+r, .es-header { width:100%!important; max-width:600px!important } .es-adapt=
+-td { display:block!important; width:100%!important } .adapt-img { width:10=
+0%!important; height:auto!important; } .es-m-p0 { padding:0px!important } .=
+es-m-p0r { padding-right:0px!important } .es-m-p0l { padding-left:0px!impor=
+tant } .es-m-p0t { padding-top:0px!important } .es-m-p0b { padding-bottom:0=
+!important } .es-m-p20b { padding-bottom:20px!important } .es-mobile-hidden=
+, .es-hidden { display:none!important } tr.es-desk-hidden, td.es-desk-hidde=
+n, table.es-desk-hidden { width:auto!important; overflow:visible!important;=
+ float:none!important; max-height:inherit!important; line-height:inherit!im=
+portant } tr.es-desk-hidden { display:table-row!important } table.es-desk-h=
+idden { display:table!important } td.es-desk-menu-hidden { display:table-ce=
+ll!important } .es-menu td { width:1%!important } table.es-table-not-adapt,=
+ .esd-block-html table { width:auto!important } table.es-social { display:i=
+nline-block!important } table.es-social td { display:inline-block!important=
+ } .es-desk-hidden { display:table-row!important; width:auto!important; ove=
+rflow:visible!important; max-height:inherit!important }=20
+=09}
+@media screen and (max-width:384px) {.mail-message-content { width:414px!im=
+portant } }
+</style>
+ <style>*{scrollbar-width: thin;scrollbar-color: #888 #f6f6f6;}/* Chrome, E=
+dge, Safari */::-webkit-scrollbar {width: 10px;height: 10px;}::-webkit-scro=
+llbar-track {background: #f6f6f6;}::-webkit-scrollbar-thumb {background: #8=
+88;border-radius: 6px;border: 2px solid #f6f6f6;}::-webkit-scrollbar-thumb:=
+hover {box-shadow: inset 0 0 6px rgba(0,0,0,0.3);}textarea::-webkit-scrollb=
+ar-track {margin: 15px;}</style>
+</head>
+ <body style=3D"width:100%;font-family:arial, 'helvetica neue', helvetica, =
+sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:=
+0;Margin:0">
+  <div style=3D"display: none; font-size: 1px; color: #fefefe; line-height:=
+ 1px; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; max-height: 0=
+px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide:all">Pharmaceuti=
+cal Leaders Digest =E2=80=94 explore key updates in the pharmaceutical indu=
+stry.</div>
+=09 <div dir=3D"ltr" class=3D"es-wrapper-color" lang=3D"und" style=3D"backg=
+round-color:#F6F6F6"><!--[if gte mso 9]>
+=09=09=09<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t"=
+>
+=09=09=09=09<v:fill type=3D"tile" color=3D"#f6f6f6"></v:fill>
+=09=09=09</v:background>
+=09=09<![endif]-->
+=09=09=20
+=09<table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-content" align=3D=
+"center" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;b=
+order-collapse:collapse;border-spacing:0px;table-layout:fixed !important;wi=
+dth:100%">
+         <tr style=3D"border-collapse:collapse">
+          <td class=3D"es-adaptive" align=3D"center" style=3D"padding:0;Mar=
+gin:0">
+           <table class=3D"es-content-body" style=3D"mso-table-lspace:0pt;m=
+so-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-=
+color:transparent;width:600px" cellspacing=3D"0" cellpadding=3D"0" align=3D=
+"center" role=3D"none">
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"Margin:0;padding-top:10px;padding=
+-left:10px;padding-right:10px;padding-bottom:15px">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:580px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" class=3D"es-infoblock" style=3D"=
+padding:0;Margin:0;font-size:12px;color:#CCCCCC; text-align: left;">
+=09=09=09=09=09=09  <table cellspacing=3D"0" align=3D"left" cellpadding=3D"=
+0" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt=
+;border-collapse:collapse;border-spacing:0px; margin: 0 auto; max-width: 12=
+0px !important;">
+                         <tr style=3D"border-collapse:collapse">
+                          <td valign=3D"top" align=3D"center" style=3D"padd=
+ing-top: 15px; line-height: 30px;">
+=09=09=09=09=09=09  <a target=3D"_blank" href=3D"https://www.pharmaceutical=
+-era.com/mailer?message=3D6883966fd8f918a4aa29be29d2c386fb&hash=3D104c2856d=
+36eccc95fc51b373be66a79" class=3D"view" style=3D"-webkit-text-size-adjust:n=
+one;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:=
+none;color:#868EB7;font-size:12px;">View in browser</a>
+=09=09=09=09=09=09=09 </td></tr></table>
+=09=09=09=09=09=09<table cellspacing=3D"0" align=3D"right" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px; margin: 0 auto; max-width: 120=
+px !important;">
+                         <tr style=3D"border-collapse:collapse">
+                          <td valign=3D"top" align=3D"center" style=3D"padd=
+ing:0;Margin:0;padding-right:10px; padding-top: 15px;"><a href=3D"https://w=
+ww.linkedin.com/company/pharmaceutical-era" target=3D"_blank"><img title=3D=
+"LinkedIn =E2=80=94 Pharmaceutical Era" src=3D"https://tlr.stripocdn.email/=
+content/assets/img/social-icons/logo-black/linkedin-logo-black.png" alt=3D"=
+Fb" width=3D"32" style=3D"display:block;border:0;outline:none;text-decorati=
+on:none;-ms-interpolation-mode:bicubic;"></a></td>
+                          <td valign=3D"top" align=3D"center" style=3D"padd=
+ing:0;Margin:0;padding-right:10px; padding-top: 15px;"><a href=3D"https://t=
+witter.com/pharma_era" target=3D"_blank"><img title=3D"=D0=A5(Twitter) =
+=E2=80=94 Pharmaceutical Era" src=3D"https://tlr.stripocdn.email/content/as=
+sets/img/social-icons/logo-black/x-logo-black.png" alt=3D"=D0=A5" width=3D"=
+32" style=3D"display:block;border:0;outline:none;text-decoration:none;-ms-i=
+nterpolation-mode:bicubic;"></a></td>
+                          <td valign=3D"top" align=3D"center" style=3D"padd=
+ing:0;Margin:0;padding-right:10px; padding-top: 15px;"><a href=3D"https://w=
+ww.facebook.com/EraOfPharmaceutical" target=3D"_blank"><img title=3D"Facebo=
+ok =E2=80=94 Pharmaceutical Era" src=3D"https://tlr.stripocdn.email/content=
+/assets/img/social-icons/logo-black/facebook-logo-black.png" alt=3D"Fb" wid=
+th=3D"32" style=3D"display:block;border:0;outline:none;text-decoration:none=
+;-ms-interpolation-mode:bicubic;"></a></td>
+                         </tr>
+                       </table>=20
+=09=09=09=09=09  </td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+           </table></td>
+         </tr>
+       </table>
+
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-header" align=3D"cen=
+ter" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;borde=
+r-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:=
+100%;background-color:transparent;background-repeat:repeat;background-posit=
+ion:center top">
+         <tr style=3D"border-collapse:collapse">
+          <td class=3D"es-adaptive" align=3D"center" style=3D"padding:0;Mar=
+gin:0">
+           <table class=3D"es-header-body" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-=
+rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FF=
+F; width:600px">
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"Margin:0;padding-bottom:10px;padd=
+ing-top:10px;padding-right:15px;padding-left:20px"><!--[if mso]><table styl=
+e=3D"width:565px" cellpadding=3D"0"=20
+                        cellspacing=3D"0"><tr><td style=3D"width:271px;" va=
+lign=3D"top"><![endif]-->
+               <table class=3D"es-left" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr style=3D"border-collapse:collapse">
+                  <td align=3D"left" style=3D"padding:0;Margin:0; width:271=
+px;">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing-top: 10px;Margin:0;font-size:0"><a target=3D"_blank" href=3D"https://ww=
+w.pharmaceutical-era.com" style=3D"-webkit-text-size-adjust:none;-ms-text-s=
+ize-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#FF=
+FFFF;font-size:14px"><img src=3D"https://hissmedia.s3.ap-southeast-1.amazon=
+aws.com/pharma-era_logo_medium.png" alt=3D"Pharmaceutical Era" title=3D"Pha=
+rmaceutical Era" width=3D"230" style=3D"display:block; border:0; outline:no=
+ne; text-decoration:none; -ms-interpolation-mode:bicubic;"></a>
+=09=09=09=09=09=09=20
+=09=09=09=09=09  </td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td><td style=3D"width:20px"></td><td =
+style=3D"width:274px;" valign=3D"top"><![endif]-->
+               <table class=3D"es-right" cellspacing=3D"0" cellpadding=3D"0=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr style=3D"border-collapse:collapse">
+                  <td align=3D"left" style=3D"padding:0; padding-top: 10px;=
+ Margin:0; width:274px;">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td style=3D"padding:0;Margin:0">
+                       <table class=3D"es-menu" width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0p=
+t;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                         <tr class=3D"links" style=3D"border-collapse:colla=
+pse">
+                          <td style=3D"Margin:0;padding-left:5px;padding-ri=
+ght:5px;padding-top:15px;padding-bottom:15px;border:0" width=3D"33.33%" bgc=
+olor=3D"transparent" align=3D"center"><a target=3D"_blank" style=3D"-webkit=
+-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exact=
+ly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', =
+helvetica, sans-serif;color:#A7B0DE;font-size:17px; font-weight: bold;" hre=
+f=3D"https://www.pharmaceutical-era.com/press-releases">NEWS</a></td>
+                          <td style=3D"Margin:0;padding-left:5px;padding-ri=
+ght:5px;padding-top:15px;padding-bottom:15px;border:0" width=3D"33.33%" bgc=
+olor=3D"transparent" align=3D"center"><a target=3D"_blank" style=3D"-webkit=
+-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exact=
+ly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', =
+helvetica, sans-serif;color:#A7B0DE;font-size:17px; font-weight: bold;" hre=
+f=3D"https://www.pharmaceutical-era.com/events">EVENTS</a></td>
+                          <td style=3D"Margin:0;padding-left:5px;padding-ri=
+ght:5px;padding-top:15px;padding-bottom:15px;border:0" width=3D"33.33%" bgc=
+olor=3D"transparent" align=3D"center"><a target=3D"_blank" style=3D"-webkit=
+-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exact=
+ly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', =
+helvetica, sans-serif;color:#A7B0DE;font-size:17px; font-weight: bold;" hre=
+f=3D"https://www.pharmaceutical-era.com/promote-brand">ADVERT</a></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td></tr></table><![endif]--></td>
+             </tr>
+           </table></td>
+         </tr>
+       </table>
+
+<table class=3D"es-content" cellspacing=3D"0" cellpadding=3D"0" align=3D"ce=
+nter" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bord=
+er-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width=
+:100%">
+         <tr style=3D"border-collapse:collapse">
+          <td align=3D"center" style=3D"padding:0;Margin:0">
+           <table class=3D"es-content-body" cellspacing=3D"0" cellpadding=
+=3D"0" bgcolor=3D"#ffffff" align=3D"center" role=3D"none" style=3D"mso-tabl=
+e-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0=
+px;background-color:#FFFFFF;width:600px;">
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:600px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td bgcolor=3D"#f6f6f6" align=3D"center" style=3D"Mar=
+gin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:=
+20px;font-size:0">
+                       <table width=3D"100%" height=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x">
+                         <tr style=3D"border-collapse:collapse">
+                          <td style=3D"padding:0;Margin:0;border-bottom:1px=
+ solid #f6f6f6;background:#00000000 none repeat scroll 0% 0%;height:1px;wid=
+th:100%;margin:0px"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:600px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td style=3D"padding:0;Margin:0;position:relative" al=
+ign=3D"center"><a target=3D"_blank" href=3D"https://ct.hissm.com/submit-new=
+s" style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-lin=
+e-height-rule:exactly;text-decoration:none;color:#FD8701;font-size:14px"><i=
+mg class=3D"adapt-img" src=3D"https://hmedia-cdn.s3.eu-west-3.amazonaws.com=
+/pr-ad-2025_845x250.jpg" alt=3D"Pharmaceutical Era Press Release Publicatio=
+n" title=3D"Pharmaceutical Era's PR Distibution" width=3D"100%" style=3D"di=
+splay:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mo=
+de:bicubic"></a></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td bgcolor=3D"#f6f6f6" align=3D"center" style=3D"Mar=
+gin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:=
+20px;font-size:0">
+                       <table width=3D"100%" height=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x">
+                         <tr style=3D"border-collapse:collapse">
+                          <td style=3D"padding:0;Margin:0;border-bottom:1px=
+ solid #f6f6f6;background:#00000000 none repeat scroll 0% 0%;height:1px;wid=
+th:100%;margin:0px"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+           </table></td>
+         </tr>
+       </table>
+=09=09=20
+<table class=3D"es-content" cellspacing=3D"0" cellpadding=3D"0" align=3D"ce=
+nter" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bord=
+er-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width=
+:100%">
+         <tr style=3D"border-collapse:collapse">
+          <td align=3D"center" style=3D"padding:0;Margin:0">
+           <table class=3D"es-content-body" style=3D"mso-table-lspace:0pt;m=
+so-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-=
+color:#fff;width:600px" cellspacing=3D"0" cellpadding=3D"0" bgcolor=3D"#fff=
+" align=3D"center" role=3D"none">
+             <tr style=3D"border-collapse:collapse">
+              <td style=3D"Margin:0;padding-top:15px;padding-bottom:15px;pa=
+dding-left:20px;padding-right:20px;background-color:#ECEFF1; max-height: 60=
+px;" bgcolor=3D"#ECEFF1" align=3D"left" height=3D"60">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:560px;">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px;">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0"><h2=
+ style=3D"Margin:0;line-height:28.8px;mso-line-height-rule:exactly;font-fam=
+ily:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-styl=
+e:normal;font-weight:normal;color:#d33e01;"><b style=3D"color: #787A78;">We=
+binar:</b> Leverage AI for Operational Excellence and Strategic Cost Manage=
+ment</h2></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:600px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0"><img src=3D"https://tlr.stripocdn.email/content/guids/CABINET_3dae=
+efbdf622b7d87abe9f2ce37a8cf4/images/85021517931052540.png" alt=3D"" width=
+=3D"24" style=3D"display:block;border:0;outline:none;text-decoration:none;-=
+ms-interpolation-mode:bicubic"></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0;padding-top:20=
+px;padding-left:20px;padding-right:20px"><!--[if mso]><table style=3D"width=
+:560px" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"width:180px" v=
+align=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-left"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p0r es-m-p20b" valign=3D"top" align=3D"=
+center" style=3D"padding:0;Margin:0;width:180px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0;"><a target=3D"_blank" href=3D"https://ct.hissm.com/webinar-hackett=
+-group" title=3D"Webinar=E2=80=93Leverage AI for Operational Excellence and=
+ Strategic Cost Management" style=3D"-webkit-text-size-adjust:none;-ms-text=
+-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#=
+FD8701;font-size:14px"><img class=3D"adapt-img" src=3D"https://hmedia-cdn.s=
+3.eu-west-3.amazonaws.com/webinar-hackett-group.jpg" alt=3D"Webinar:Leverag=
+e AI for Operational Excellence and Strategic Cost Management" width=3D"180=
+" style=3D"display:block;border:0;outline:none;text-decoration:none;-ms-int=
+erpolation-mode:bicubic; border-radius: 7px;"></a></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td><td style=3D"width:20px"></td><td =
+style=3D"width:360px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-right=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right;">
+                 <tr style=3D"border-collapse:collapse">
+                  <td align=3D"left" style=3D"padding:0;Margin:0;width:360p=
+x;">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0;padding-bottom:10px; font-size: 15px; line-height: 20px; fon=
+t-weight: normal;">
+=09=09=09=09=09=09 Join The Hackett Group and leaders from Merck, AstraZene=
+ca and Sanofi to supercharge business change and performance, while leverag=
+ing AI for maximum impact.
+=09=09=09=09=09    </td>
+                     </tr>
+<tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"Margin:0;padding-top:15px;padding=
+-bottom:20px;padding-left:10px;padding-right:10px">
+               <table cellspacing=3D"0" cellpadding=3D"0" align=3D"left" ro=
+le=3D"none" style=3D"border-collapse:collapse;border-spacing:0px;float:left=
+;">
+                 <tbody><tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p20b" align=3D"left" style=3D"padding:0=
+;Margin:0;width:155px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0p=
+x;">
+                     <tbody><tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0;padding-bottom:5px"><p style=3D"Margin:0;font-family:arial,'=
+helvetica neue',helvetica,sans-serif;line-height:27px;color:#004d9f;font-si=
+ze:18px">When:</p></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0"><p style=3D"Margin:0;font-family:arial,'helvetica neue',hel=
+vetica,sans-serif;line-height:21px;color:#666666;font-size:14px;">&#128467;=
+ 26<sup>th</sup> Jun 2025<br>&#128344; 9am ET / 3pm CET</p></td>
+                     </tr>
+                   </tbody></table></td>
+                 </tr>
+               </tbody></table>
+               <table cellspacing=3D"0" cellpadding=3D"0" align=3D"right" r=
+ole=3D"none" style=3D"border-collapse:collapse;border-spacing:0px;float:rig=
+ht;">
+                 <tbody><tr style=3D"border-collapse:collapse">
+                  <td align=3D"left" style=3D"padding:0;Margin:0;width:155p=
+x">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"border-collapse:collapse;border-spacing:0p=
+x;">
+                     <tbody><tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0;padding-bottom:5px"><p style=3D"Margin:0;font-family:arial,'=
+helvetica neue',helvetica,sans-serif;line-height:27px;color:#004d9f;font-si=
+ze:18px">Where:</p></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0"><p style=3D"Margin:0;font-family:arial,'helvetica neue',hel=
+vetica,sans-serif;line-height:21px;color:#666666;font-size:14px">&#128187; =
+Virtual <br><a href=3D"https://ct.hissm.com/webinar-hackett-group" style=3D=
+"text-decoration: none; color: #d33e01;" target=3D"_blank">&#127760; Online=
+</a></p></td>
+                     </tr>
+                   </tbody></table></td>
+                 </tr>
+               </tbody></table></td>
+             </tr>
+                   </table>
+=09=09=09=09  </td>
+                 </tr>
+=09=09=09=09  =20
+               </table><!--[if mso]></td></tr></table><![endif]--></td>
+             </tr>
+
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"Margin:0;padding-bottom:10px;padd=
+ing-left:20px;padding-right:20px;padding-top:25px">
+               </td>
+             </tr>
+
+            =20
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:600px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td bgcolor=3D"#f6f6f6" align=3D"center" style=3D"Mar=
+gin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:=
+20px;font-size:0">
+                       <table width=3D"100%" height=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x">
+                         <tr style=3D"border-collapse:collapse">
+                          <td style=3D"padding:0; Margin:0; border-bottom:1=
+px solid #f6f6f6; background:##f6f6f6 none repeat scroll 0% 0%;height:1px;w=
+idth:100%;margin:0px"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+           </table></td>
+         </tr>
+</table>
+=09=09=20
+<table class=3D"es-content" cellspacing=3D"0" cellpadding=3D"0" align=3D"ce=
+nter" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bord=
+er-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width=
+:100%; max-width: 600px !important;">
+         <tr style=3D"border-collapse:collapse">
+          <td align=3D"center" style=3D"padding:0;Margin:0">
+           <table class=3D"es-content-body" style=3D"mso-table-lspace:0pt;m=
+so-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-=
+color:#eceff1; max-width:600px;" cellspacing=3D"0" cellpadding=3D"0" bgcolo=
+r=3D"#eceff1" align=3D"center" role=3D"none">
+             <tr style=3D"border-collapse:collapse">
+              <td style=3D"Margin:0;padding-top:15px;padding-bottom:15px;pa=
+dding-left:20px;padding-right:20px;background-color:#ffffff" bgcolor=3D"#ff=
+ffff" align=3D"left">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:560px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0"><h2=
+ style=3D"Margin:0;line-height:28.8px;mso-line-height-rule:exactly;font-fam=
+ily:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-styl=
+e:normal;font-weight:normal;color:#004d9f">Trending Press Releases<br></h2>=
+</td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:600px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0"><img src=3D"https://tlr.stripocdn.email/content/guids/CABINET_3dae=
+efbdf622b7d87abe9f2ce37a8cf4/images/57051517930570281.png" alt=3D"pointer" =
+width=3D"24" style=3D"display:block;border:0;outline:none;text-decoration:n=
+one;-ms-interpolation-mode:bicubic"></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0;padding-top:20=
+px;padding-left:20px;padding-right:20px"><!--[if mso]><table style=3D"width=
+:560px" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"width:180px" v=
+align=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-left"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p0r es-m-p20b" valign=3D"top" align=3D"=
+center" style=3D"padding:0;Margin:0;width:180px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0"><a target=3D"_blank" href=3D"https://www.pharmaceutical-era.com/pr=
+ess-releases/lubrizol-reveals-a-significant-milestone-for-its-innovative-pa=
+tented-apisolex-tm-polymer-excipient" style=3D"-webkit-text-size-adjust:non=
+e;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:no=
+ne;color:#FD8701;font-size:14px"><img class=3D"adapt-img" src=3D"https://ww=
+w.pharmaceutical-era.com/images/pr-img/2025/Apisolex_11062025.jpg" alt=3D"L=
+ubrizol reveals a significant milestone for its innovative, patented Apisol=
+ex=E2=84=A2 polymer excipient" width=3D"180" style=3D"display:block;border:=
+0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; border-=
+radius: 7px;"></a></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td><td style=3D"width:20px"></td><td =
+style=3D"width:360px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-right=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr style=3D"border-collapse:collapse">
+                  <td align=3D"left" style=3D"padding:0;Margin:0;width:360p=
+x">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0;padding-bottom:10px;"><h4 style=3D"Margin:0;line-height:120%=
+;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetic=
+a, sans-serif;color:#333333; font-size: 16px;"><a target=3D"_blank" href=3D=
+"https://www.pharmaceutical-era.com/press-releases/lubrizol-reveals-a-signi=
+ficant-milestone-for-its-innovative-patented-apisolex-tm-polymer-excipient"=
+ style=3D"text-decoration:none;color:#333333; font-size: 17px; font-family:=
+ Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';">=
+Lubrizol reveals a significant milestone for its innovative</a><br></h4></t=
+d>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text=
+-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetic=
+a neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14p=
+x">Lubrizol announces that an Apisolex=E2=84=A2 polymer excipient-enabled d=
+rug formulation is in Phase 1 clinical trials. </p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+=09=09=09=09  =20
+               </table><!--[if mso]></td></tr></table><![endif]--></td>
+             </tr>
+=09=09=09 <tr style=3D"border-collapse:collapse"><td><table width=3D"100%" =
+cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0=
+px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td bgcolor=3D"#eceff1" align=3D"center" style=3D"Mar=
+gin:0;padding-top:10px;padding-bottom:5px;padding-left:20px;padding-right:2=
+0px;font-size:0">
+                       <table width=3D"100%" height=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x">
+                         <tr style=3D"border-collapse:collapse">
+                          <td style=3D"padding:0; Margin:0; border-bottom:1=
+px solid #ccc; background:#00000000 none repeat scroll 0% 0%;height:1px;wid=
+th:100%;margin:0px"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td></tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0;padding-top:20=
+px;padding-left:20px;padding-right:20px;"><!--[if mso]><table dir=3D"ltr" c=
+ellpadding=3D"0" cellspacing=3D"0"><tr><td><table dir=3D"rtl" style=3D"widt=
+h:560px" cellpadding=3D"0" cellspacing=3D"0"><tr><td dir=3D"ltr" style=3D"w=
+idth:180px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-right=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p20b" align=3D"left" style=3D"padding:0=
+;Margin:0;width:180px;">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0"><a target=3D"_blank" href=3D"https://www.pharmaceutical-era.com/pr=
+ess-releases/emulate-introduces-the-ava-tm-emulation-system-a-groundbreakin=
+g-high-throughput-organ-chip-platform-designed-to-accelerate-drug-developme=
+nt" style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-li=
+ne-height-rule:exactly;text-decoration:none;color:#FD8701;font-size:14px"><=
+img class=3D"adapt-img" src=3D"https://www.pharmaceutical-era.com/images/pr=
+-img/2025/Emulate_10062025.jpg" alt=3D"Emulate introduces the AVA=E2=84=
+=A2 Emulation System, a groundbreaking high-throughput organ-chip platform =
+designed to accelerate drug development" width=3D"180" style=3D"display:blo=
+ck;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubi=
+c; border-radius: 7px;"></a></td>
+                     </tr>
+                   </table></td>
+=09=09=09=09   </tr>
+=09=09=09=09  =20
+               </table><!--[if mso]></td><td dir=3D"ltr" style=3D"width:20p=
+x"></td><td dir=3D"ltr" style=3D"width:360px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-left"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p0r" valign=3D"top" align=3D"center" st=
+yle=3D"padding:0;Margin:0;width:360px;">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0;padding-bottom:10px"><h4 style=3D"Margin:0;line-height:120%;=
+mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica=
+, sans-serif;color:#333333; font-size: 16px;"><a target=3D"_blank" href=3D"=
+https://www.pharmaceutical-era.com/press-releases/emulate-introduces-the-av=
+a-tm-emulation-system-a-groundbreaking-high-throughput-organ-chip-platform-=
+designed-to-accelerate-drug-development" style=3D"text-decoration:none;colo=
+r:#333333; font-size: 17px; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', =
+'Trebuchet MS', Verdana, 'sans-serif';">Emulate introduces the AVA=E2=84=
+=A2 Emulation System</a><br></h4></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text=
+-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetic=
+a neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14p=
+x">Emulate, Inc., the world leader in Organ-on-a-Chip technology, today ann=
+ounced the commercial launch of the AVA=E2=84=A2 Emulation System..</p></td=
+>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td></tr></table></td></tr></table><![=
+endif]--></td>
+             </tr>
+=09=09=09 <tr style=3D"border-collapse:collapse"><td><table width=3D"100%" =
+cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation" style=3D"mso-tabl=
+e-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0=
+px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td bgcolor=3D"#eceff1" align=3D"center" style=3D"Mar=
+gin:0;padding-top:10px;padding-bottom:5px;padding-left:20px;padding-right:2=
+0px;font-size:0">
+                       <table width=3D"100%" height=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x">
+                         <tr style=3D"border-collapse:collapse">
+                          <td style=3D"padding:0; Margin:0; border-bottom:1=
+px solid #ccc; background:#00000000 none repeat scroll 0% 0%;height:1px;wid=
+th:100%;margin:0px"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td></tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0;padding-top:20=
+px;padding-left:20px;padding-right:20px"><!--[if mso]><table style=3D"width=
+:560px" cellpadding=3D"0" cellspacing=3D"0"><tr><td style=3D"width:180px" v=
+align=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-left"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p0r es-m-p20b" valign=3D"top" align=3D"=
+center" style=3D"padding:0;Margin:0;width:180px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0"><a target=3D"_blank" href=3D"https://www.pharmaceutical-era.com/pr=
+ess-releases/avenacy-enters-u-s-market-with-launch-of-doxycycline-for-injec=
+tion-usp" style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;=
+mso-line-height-rule:exactly;text-decoration:none;color:#FD8701;font-size:1=
+4px"><img class=3D"adapt-img" src=3D"https://www.pharmaceutical-era.com/ima=
+ges/pr-img/2025/Doxycycline_27052025.jpg" alt=3D"Avenacy Enters U.S. Market=
+ with Launch of Doxycycline for Injection, USP" style=3D"display:block;bord=
+er:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic; bord=
+er-radius: 7px;" width=3D"180"></a></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td><td style=3D"width:20px"></td><td =
+style=3D"width:360px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-right=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr style=3D"border-collapse:collapse">
+                  <td align=3D"left" style=3D"padding:0;Margin:0;width:360p=
+x">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0;padding-bottom:10px;"><h4 style=3D"Margin:0;line-height:120%=
+;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetic=
+a, sans-serif;color:#333333; font-size: 16px;"><a target=3D"_blank" href=3D=
+"https://www.pharmaceutical-era.com/press-releases/avenacy-enters-u-s-marke=
+t-with-launch-of-doxycycline-for-injection-usp" style=3D"text-decoration:no=
+ne;color:#333333; font-size: 17px; font-family: Segoe, 'Segoe UI', 'DejaVu =
+Sans', 'Trebuchet MS', Verdana, 'sans-serif';">Avenacy Enters U.S. Market w=
+ith Launch of Doxycycline for Injection, USP</a><br></h4></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text=
+-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetic=
+a neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14p=
+x">
+Avenacy, a specialty pharmaceutical company focused on supplying critical i=
+njectable medications, announced it has launched Doxycycline for Injection.=
+.<br></p></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td></tr></table><![endif]--></td>
+             </tr>
+<tr style=3D"border-collapse:collapse"><td><table width=3D"100%" cellspacin=
+g=3D"0" cellpadding=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td bgcolor=3D"#eceff1" align=3D"center" style=3D"Mar=
+gin:0;padding-top:10px;padding-bottom:5px;padding-left:20px;padding-right:2=
+0px;font-size:0">
+                       <table width=3D"100%" height=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x">
+                         <tr style=3D"border-collapse:collapse">
+                          <td style=3D"padding:0; Margin:0; border-bottom:1=
+px solid #ccc; background:#00000000 none repeat scroll 0% 0%;height:1px;wid=
+th:100%;margin:0px"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td></tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0;padding-top:20=
+px;padding-left:20px;padding-right:20px"><!--[if mso]><table dir=3D"ltr" ce=
+llpadding=3D"0" cellspacing=3D"0"><tr><td><table dir=3D"rtl" style=3D"width=
+:560px" cellpadding=3D"0" cellspacing=3D"0"><tr><td dir=3D"ltr" style=3D"wi=
+dth:180px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-right=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p20b" align=3D"left" style=3D"padding:0=
+;Margin:0;width:180px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0"><a target=3D"_blank" href=3D"https://www.pharmaceutical-era.com/pr=
+ess-releases/a-new-production-line-dedicated-to-sterile-hyaluronic-acid-has=
+-been-inaugurated-by-htl-biotechnology" style=3D"-webkit-text-size-adjust:n=
+one;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:=
+none;color:#FD8701;font-size:14px"><img class=3D"adapt-img" src=3D"https://=
+www.pharmaceutical-era.com/images/pr-img/c-logos/HTL_Logo.jpg" alt=3D"A New=
+ Production Line Dedicated to Sterile Hyaluronic Acid Has Been Inaugurated =
+by HTL Biotechnology" width=3D"180" style=3D"display:block;border:0;outline=
+:none;text-decoration:none;-ms-interpolation-mode:bicubic; border-radius: 7=
+px;"></a></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td><td dir=3D"ltr" style=3D"width:20p=
+x"></td><td dir=3D"ltr" style=3D"width:360px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-left"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p0r" valign=3D"top" align=3D"center" st=
+yle=3D"padding:0;Margin:0;width:360px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0;padding-bottom:10px"><h4 style=3D"Margin:0;line-height:120%;=
+mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica=
+, sans-serif;color:#333333; font-size: 16px;"><a target=3D"_blank" href=3D"=
+https://www.pharmaceutical-era.com/press-releases/a-new-production-line-ded=
+icated-to-sterile-hyaluronic-acid-has-been-inaugurated-by-htl-biotechnology=
+" style=3D"text-decoration:none;color:#333333; font-size: 17px; font-family=
+: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';"=
+>A New Production Line Dedicated to Sterile Hyaluronic Acid Has Been Inaugu=
+rated by HTL Biotechnology</a></h4></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td class=3D"es-m-txt-c" align=3D"left" style=3D"padd=
+ing:0;Margin:0"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text=
+-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetic=
+a neue', helvetica, sans-serif;line-height:21px;color:#666666;font-size:14p=
+x">On the occasion of National Bioproduction and Biomedicines Day (JNBB), w=
+hich enjoys the high patronage of the President of the French Republic..</p=
+></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table><!--[if mso]></td></tr></table></td></tr></table><![=
+endif]--></td>
+             </tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"Margin:0;padding-bottom:10px;padd=
+ing-left:20px;padding-right:20px;padding-top:25px">
+               </td>
+             </tr>
+
+            =20
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:600px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td bgcolor=3D"#f6f6f6" align=3D"center" style=3D"Mar=
+gin:0;padding-top:10px;padding-bottom:10px;padding-left:20px;padding-right:=
+20px;font-size:0">
+                       <table width=3D"100%" height=3D"100%" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0p=
+x">
+                         <tr style=3D"border-collapse:collapse">
+                          <td style=3D"padding:0; Margin:0; border-bottom:1=
+px solid #f6f6f6; background:##f6f6f6 none repeat scroll 0% 0%;height:1px;w=
+idth:100%;margin:0px"></td>
+                         </tr>
+                       </table></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+           </table></td>
+         </tr>
+     </table>
+
+=09=09 <table class=3D"es-content" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0=
+pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !importan=
+t;width:100%; max-width: 600px !important;">
+         <tr style=3D"border-collapse:collapse">
+          <td align=3D"center" style=3D"padding:0;Margin:0">
+           <table class=3D"es-content-body" style=3D"mso-table-lspace:0pt;m=
+so-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-=
+color:#fff; max-width:600px;" cellspacing=3D"0" cellpadding=3D"0" bgcolor=
+=3D"#eceff1" align=3D"center" role=3D"none">
+             <tr style=3D"border-collapse:collapse">
+              <td width=3D"600" align=3D"left" bgcolor=3D"#ECEFF1" style=3D=
+"Margin:0;padding-top:15px;padding-bottom:15px;padding-left:20px;padding-ri=
+ght:20px;background-color:#ECEFF1;">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:560px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0"><h2=
+ style=3D"Margin:0;line-height:28.8px;mso-line-height-rule:exactly;font-fam=
+ily:arial, 'helvetica neue', helvetica, sans-serif;font-size:24px;font-styl=
+e:normal;font-weight:normal;color:#004d9f">Upcoming Industry Events<br></h2=
+></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             <tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"padding:0;Margin:0">
+               <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" ro=
+le=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;border-colla=
+pse:collapse;border-spacing:0px">
+                 <tr style=3D"border-collapse:collapse">
+                  <td valign=3D"top" align=3D"center" style=3D"padding:0;Ma=
+rgin:0;width:600px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px">
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;font=
+-size:0"><img src=3D"https://tlr.stripocdn.email/content/guids/CABINET_3dae=
+efbdf622b7d87abe9f2ce37a8cf4/images/85021517931052540.png" alt=3D"pointer" =
+width=3D"24" style=3D"display:block;border:0;outline:none;text-decoration:n=
+one;-ms-interpolation-mode:bicubic"></td>
+                     </tr>
+                   </table></td>
+                 </tr>
+               </table></td>
+             </tr>
+             =09=09=20
+             <tr style=3D"border-collapse:collapse">
+             =20
+             </tr>
+
+<tr style=3D"border-collapse:collapse">
+     <td align=3D"left" style=3D"padding:20px 15px 0px 15px;Margin:0;"><!--=
+[if mso]><table style=3D"width:570px" cellpadding=3D"0" cellspacing=3D"0"><=
+tr><td style=3D"width:270px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-left"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left;">
+                 <tbody><tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p0r es-m-p20b" align=3D"center" style=
+=3D"padding:0;Margin:0;width:270px">
+                   <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" bgcolor=3D"#efefef" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bo=
+rder-collapse:collapse;border-spacing:0px;background-color:#efefef" role=3D=
+"presentation">
+                     <tbody><tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-top:0px;font-size:0px"><a target=3D"_blank" href=3D"https://www.pharmac=
+eutical-era.com/events/australia-regulatory-device-summit-2025" style=3D"-w=
+ebkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:=
+exactly;text-decoration:underline;color:#333333;font-size:14px"><img class=
+=3D"adapt-img b_image" src=3D"https://hiss-eml-img.s3.us-west-1.amazonaws.c=
+om/ard-2025.jpg" alt=3D"Australia Regulatory Device Summit 2025" style=3D"d=
+isplay:block;border:0;outline:none;text-decoration:none;-ms-interpolation-m=
+ode:bicubic; border-top-left-radius: 7px; border-top-right-radius: 7px;" wi=
+dth=3D"275" title=3D"Australia Regulatory Device Summit 2025" border=3D"0">=
+</a></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-top:10px">
+=09=09=09=09=09   <div style=3D"max-width: 120px; margin: 0px auto;"><img s=
+rc=3D"https://cdn-icons-png.flaticon.com/512/9800/9800512.png" width=3D"20"=
+ style=3D"float: left;" alt=3D"location">
+=09=09=09=09=09=09<p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-te=
+xt-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvet=
+ica neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:1=
+4px;" class=3D"b_description">Australia</p></div>
+=09=09=09=09=09  </td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-bottom:10px"><h1 style=3D"Margin:0;line-height:36px;mso-line-height-rul=
+e:exactly;font-family:Oswald, sans-serif;font-size:25px;font-style:normal;f=
+ont-weight:bold;color:#333333" class=3D"b_title">Australia Regulatory Devic=
+e Summit 2025</h1></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-bottom:10px"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-tex=
+t-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helveti=
+ca neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:14=
+px" class=3D"b_date">Jul 17<sup>th</sup> to 18<sup>th</sup>, 2025</p></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-bottom:15px">
+=09=09=09=09=09=09
+=09=09=09=09=09=09  <!--[if mso]><a href=3D"https://www.pharmaceutical-era.=
+com/events/australia-regulatory-device-summit-2025" target=3D"_blank">
+=09<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" esdevVmlButton href=3D"https://www.pharmac=
+eutical-era.com/events/australia-regulatory-device-summit-2025"=20
+                style=3D"height:40px;v-text-anchor:middle;width:160px;" arc=
+size=3D"25%" strokecolor=3D"#868e92" strokeweight=3D"1px" fillcolor=3D"#dfe=
+df5">
+=09=09<w:anchorlock></w:anchorlock>
+=09=09<center style=3D'color:#333333;font-family:arial, "helvetica neue", h=
+elvetica, sans-serif;font-size:16px;font-weight:400;'>Details</center>
+=09</v:roundrect></a>
+<![endif]--><!--[if !mso]><!-- --><span class=3D"msohide es-button-border" =
+style=3D"border-style:solid;border-color:#868e92; background:#dfedf5; borde=
+r-width:1px;display:inline-block;border-radius:10px;width:auto;mso-hide:all=
+"><a href=3D"https://www.pharmaceutical-era.com/events/australia-regulatory=
+-device-summit-2025" class=3D"es-button es-button-1607073780900" target=3D"=
+_blank" style=3D"mso-style-priority:100 !important;text-decoration:none;-we=
+bkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:e=
+xactly;color:#333333;font-size:16px;padding:10px 20px 10px 20px;display:inl=
+ine-block; background:#dfedf5; border-radius:15px;font-family:arial, 'helve=
+tica neue', helvetica, sans-serif;font-weight:normal;font-style:normal;line=
+-height:20px; width:auto; text-align:center; mso-padding-alt:0; mso-border-=
+alt:15px solid #868e92; width: 160px;">Details</a></span><!--<![endif]-->
+=20
+=09=09=09=09=09  </td>
+                     </tr>
+                   </tbody></table></td>
+                 </tr>
+               </tbody></table><!--[if mso]></td><td style=3D"width:20px"><=
+/td><td style=3D"width:270px" valign=3D"top"><![endif]-->
+               <table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-right=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right;">
+                 <tbody><tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p0r es-m-p20b" align=3D"center" style=
+=3D"padding:0;Margin:0;width:270px">
+                   <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" bgcolor=3D"#efefef" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;bo=
+rder-collapse:collapse;border-spacing:0px;background-color:#efefef" role=3D=
+"presentation">
+                     <tbody><tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-top:0px;font-size:0px"><a target=3D"_blank" href=3D"https://www.pharmac=
+eutical-era.com/events/precision-in-clinical-trials-summit-zurich-europe-20=
+25" style=3D"-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-li=
+ne-height-rule:exactly;text-decoration:underline;color:#333333;font-size:14=
+px"><img class=3D"adapt-img b_image" src=3D"https://hiss-eml-img.s3.us-west=
+-1.amazonaws.com/pct-2025.jpg" alt=3D"AHA Precision In Clinical Trials Summ=
+it 2025" style=3D"display:block;border:0;outline:none;text-decoration:none;=
+-ms-interpolation-mode:bicubic; border-top-left-radius: 7px; border-top-rig=
+ht-radius: 7px;" width=3D"275" border=3D"0" title=3D"AHA Precision In Clini=
+cal Trials Summit 2025"></a></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-top:10px">
+=09=09=09=09=09  <div style=3D"max-width: 120px; margin: 0px auto;"><img sr=
+c=3D"https://cdn-icons-png.flaticon.com/512/9800/9800512.png" width=3D"20" =
+style=3D"float: left;" alt=3D"location">
+=09=09=09=09=09=09<p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-te=
+xt-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvet=
+ica neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:1=
+4px;" class=3D"b_description">Switzerland</p></div>
+=09=09=09=09=09  </td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-bottom:10px"><h1 style=3D"Margin:0;line-height:36px;mso-line-height-rul=
+e:exactly;font-family:Oswald, sans-serif;font-size:25px;font-style:normal;f=
+ont-weight:bold;color:#333333" class=3D"b_title">Precision In Clinical Tria=
+ls Summit</h1></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-bottom:10px"><p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-tex=
+t-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helveti=
+ca neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:14=
+px" class=3D"b_date">Jul 1<sup>st</sup> to 2<sup>nd</sup>, 2025</p></td>
+                     </tr>
+                     <tr style=3D"border-collapse:collapse">
+                      <td align=3D"center" style=3D"padding:0;Margin:0;padd=
+ing-bottom:15px">
+=09=09=09=09=09=09
+=09=09=09=09=09=09  <!--[if mso]><a href=3D"https://www.pharmaceutical-era.=
+com/events/precision-in-clinical-trials-summit-zurich-europe-2025" target=
+=3D"_blank">
+=09<v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" esdevVmlButton href=3D"https://www.pharmac=
+eutical-era.com/events/precision-in-clinical-trials-summit-zurich-europe-20=
+25"=20
+                style=3D"height:40px;v-text-anchor:middle;width:160px;" arc=
+size=3D"25%" strokecolor=3D"#868e92" strokeweight=3D"1px" fillcolor=3D"#dfe=
+df5">
+=09=09<w:anchorlock></w:anchorlock>
+=09=09<center style=3D'color:#333333;font-family:arial, "helvetica neue", h=
+elvetica, sans-serif;font-size:16px;font-weight:400;'>Details</center>
+=09</v:roundrect></a>
+<![endif]--><!--[if !mso]><!-- --><span class=3D"msohide es-button-border" =
+style=3D"border-style:solid;border-color:#868e92; background:#dfedf5; borde=
+r-width:1px;display:inline-block;border-radius:10px;width:auto;mso-hide:all=
+"><a href=3D"https://www.pharmaceutical-era.com/events/precision-in-clinica=
+l-trials-summit-zurich-europe-2025" class=3D"es-button es-button-1607073780=
+900" target=3D"_blank" style=3D"mso-style-priority:100 !important;text-deco=
+ration:none;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-lin=
+e-height-rule:exactly;color:#333333;font-size:16px;padding:10px 20px 10px 2=
+0px;display:inline-block; background:#dfedf5; border-radius:15px;font-famil=
+y:arial, 'helvetica neue', helvetica, sans-serif;font-weight:normal;font-st=
+yle:normal;line-height:20px; width:auto; text-align:center; mso-padding-alt=
+:0; mso-border-alt:15px solid #868e92; width: 160px;">Details</a></span><!-=
+-<![endif]-->
+=20
+=09=09=09=09=09  </td>
+                     </tr>
+                   </tbody></table></td>
+                 </tr>
+               </tbody></table><!--[if mso]></td></tr></table><![endif]--><=
+/td>    =20
+</tr>
+
+<tr style=3D"border-collapse:collapse">
+              <td align=3D"left" style=3D"Margin:0;padding-top:20px;padding=
+-left:20px;padding-right:20px;padding-bottom:30px"><!--[if mso]><table styl=
+e=3D"width:560px" cellpadding=3D"0"=20
+                        cellspacing=3D"0"><tr><td style=3D"width:275px" val=
+ign=3D"top"><![endif]-->
+               <table class=3D"es-left" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"left" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspac=
+e:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                 <tr style=3D"border-collapse:collapse">
+                  <td class=3D"es-m-p20b" align=3D"left" style=3D"padding:0=
+;Margin:0;width:250px">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px;">
+    <tr style=3D"border-collapse:collapse;">
+        <td class=3D"es-m-txt-c" align=3D"right" style=3D"padding:0;Margin:=
+0;">
+            <!--[if mso]>
+            <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word"=20
+                href=3D"https://www.pharmaceutical-era.com/post-press-relea=
+se"=20
+                style=3D"height:40px;v-text-anchor:middle;width:220px;" arc=
+size=3D"50%"=20
+                strokecolor=3D"#A7B0DE" fillcolor=3D"#ffffff">
+                <w:anchorlock/>
+                <center style=3D"color:#004d9f;font-family:arial, 'helvetic=
+a neue', helvetica, sans-serif;font-size:14px;font-weight:normal;">
+                    Post a Press Release
+                </center>
+            </v:roundrect>
+            <![endif]-->
+            <!--[if !mso]><!-->
+            <span class=3D"es-button-border"=20
+                style=3D"border-style:solid;border-color:#A7B0DE;background=
+:#ffffff;
+                border-width:1px;display:inline-block;border-radius:30px;wi=
+dth:auto;">
+                <a href=3D"https://www.pharmaceutical-era.com/post-press-re=
+lease" class=3D"es-button" target=3D"_blank"=20
+                    style=3D"mso-style-priority:100 !important;text-decorat=
+ion:none;
+                    -webkit-text-size-adjust:none;-ms-text-size-adjust:none=
+;
+                    mso-line-height-rule:exactly;color:#004d9f;font-size:14=
+px;
+                    display:inline-block;background:#ffffff;border-radius:3=
+0px;
+                    font-family:arial, 'helvetica neue', helvetica, sans-se=
+rif;
+                    font-weight:normal;font-style:normal;line-height:16.8px=
+;
+                    width:auto;text-align:center;padding:10px 30px;
+                    mso-padding-alt:0;mso-border-alt:10px solid #FFFFFF;
+                    border-color:#ffffff;">
+                    Post a Press Release
+                </a>
+            </span>
+            <!--<![endif]-->
+        </td>
+    </tr>
+</table>
+</td>
+                 </tr>
+               </table><!--[if mso]></td><td style=3D"width:20px"></td><td =
+style=3D"width:275px" valign=3D"top"><![endif]-->
+               <table class=3D"es-right" cellspacing=3D"0" cellpadding=3D"0=
+" align=3D"right" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                 <tr style=3D"border-collapse:collapse">
+                  <td align=3D"left" style=3D"padding:0;Margin:0;width:250p=
+x">
+                   <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;=
+border-collapse:collapse;border-spacing:0px;">
+    <tr style=3D"border-collapse:collapse;">
+        <td class=3D"es-m-txt-c" align=3D"left" style=3D"padding:0;Margin:0=
+;">
+            <!--[if mso]>
+            <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=
+=3D"urn:schemas-microsoft-com:office:word"=20
+                href=3D"https://www.pharmaceutical-era.com/list-your-event"=
+=20
+                style=3D"height:40px;v-text-anchor:middle;width:220px;" arc=
+size=3D"50%"=20
+                strokecolor=3D"#A7B0DE" fillcolor=3D"#ffffff">
+                <w:anchorlock/>
+                <center style=3D"color:#004d9f;font-family:arial, 'helvetic=
+a neue', helvetica, sans-serif;font-size:14px;font-weight:normal;">
+                    Want to list your event?
+                </center>
+            </v:roundrect>
+            <![endif]-->
+            <!--[if !mso]><!-->
+            <span class=3D"es-button-border"=20
+                style=3D"border-style:solid;border-color:#A7B0DE;background=
+:#ffffff;
+                border-width:1px;display:inline-block;border-radius:30px;wi=
+dth:auto;">
+                <a href=3D"https://www.pharmaceutical-era.com/list-your-eve=
+nt" class=3D"es-button" target=3D"_blank"=20
+                    style=3D"mso-style-priority:100 !important;text-decorat=
+ion:none;
+                    -webkit-text-size-adjust:none;-ms-text-size-adjust:none=
+;
+                    mso-line-height-rule:exactly;color:#004d9f;font-size:14=
+px;
+                    display:inline-block;background:#ffffff;border-radius:3=
+0px;
+                    font-family:arial, 'helvetica neue', helvetica, sans-se=
+rif;
+                    font-weight:normal;font-style:normal;line-height:16.8px=
+;
+                    width:auto;text-align:center;padding:10px 30px;
+                    mso-padding-alt:0;mso-border-alt:10px solid #FFFFFF;
+                    border-color:#ffffff;">
+                    Want to list your event?
+                </a>
+            </span>
+            <!--<![endif]-->
+        </td>
+    </tr>
+</table></td>
+                 </tr>
+               </table><!--[if mso]></td></tr></table><![endif]--></td>
+             </tr>
+</table></td>
+         </tr>
+     </table>
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"es-footer" align=3D"cen=
+ter" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;borde=
+r-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:=
+100%;background-color:transparent;background-repeat:repeat;background-posit=
+ion:center top">
+         <tr style=3D"border-collapse:collapse">
+          <td align=3D"center" style=3D"padding:0;Margin:0; padding-bottom:=
+ 10px;">
+           <table class=3D"es-footer-body" cellspacing=3D"0" cellpadding=3D=
+"0" align=3D"center" role=3D"none" style=3D"mso-table-lspace:0pt;mso-table-=
+rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#66=
+6666;width:600px;">
+             <tr style=3D"border-collapse:collapse;">
+              <td align=3D"left" style=3D"Margin:0;padding-top:20px;padding=
+-bottom:20px;padding-left:40px;padding-right:40px; background: #666666;">
+=09=09=09=09<div style=3D"text-align: center; padding-bottom: 15px;"><table=
+ class=3D"es-table-not-adapt es-social" cellspacing=3D"0" cellpadding=3D"0"=
+ role=3D"presentation" style=3D"mso-table-lspace:0pt;mso-table-rspace:0pt;b=
+order-collapse:collapse;border-spacing:0px; margin: 0 auto;">
+                         <tr style=3D"border-collapse:collapse">
+                          <td valign=3D"top" align=3D"center" style=3D"padd=
+ing:0;Margin:0;padding-right:10px"><a href=3D"https://www.linkedin.com/comp=
+any/pharmaceutical-era" target=3D"_blank"><img title=3D"LinkedIn" src=3D"ht=
+tps://tlr.stripocdn.email/content/assets/img/social-icons/circle-white/link=
+edin-circle-white.png" alt=3D"Fb" width=3D"32" style=3D"display:block;borde=
+r:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a><=
+/td>
+                          <td valign=3D"top" align=3D"center" style=3D"padd=
+ing:0;Margin:0;padding-right:10px"><a href=3D"https://twitter.com/pharma_er=
+a" target=3D"_blank"><img title=3D"=D0=A5" src=3D"https://tlr.stripocdn.ema=
+il/content/assets/img/social-icons/circle-white/x-circle-white.png" alt=3D"=
+=D0=A5" width=3D"32" style=3D"display:block;border:0;outline:none;text-deco=
+ration:none;-ms-interpolation-mode:bicubic"></a></td>
+                          <td valign=3D"top" align=3D"center" style=3D"padd=
+ing:0;Margin:0;padding-right:10px"><a href=3D"https://www.facebook.com/EraO=
+fPharmaceutical" target=3D"_blank"><img title=3D"Facebook" src=3D"https://t=
+lr.stripocdn.email/content/assets/img/social-icons/circle-white/facebook-ci=
+rcle-white.png" alt=3D"Fb" width=3D"32" style=3D"display:block;border:0;out=
+line:none;text-decoration:none;-ms-interpolation-mode:bicubic"></a></td>
+                         </tr>
+                       </table></div>
+
+<div style=3D"text-align: center; color: #FFFFFF; font-family: Arial, sans-=
+serif; font-size: 14px; line-height: 21px;">
+  <p>You are receiving this email because you have visited our site or aske=
+d us about the regular newsletter. To make sure our messages get to your In=
+box (and not your bulk or SPAM or junk folders), please add=20
+    <a target=3D"_blank" href=3D"mailto:milesmoore@example.com" style=
+=3D"color: #F7F991; text-decoration: none;">milesmoore@example.com</a>=
+ to your contacts!</p>
+</div>
+
+<div style=3D"text-align: center; padding-top: 10px; color: #FFFFFF; font-f=
+amily: Arial, sans-serif; font-size: 14px; line-height: 21px;">
+<a href=3D"https://www.pharmaceutical-era.com/mailer?hash=3D104c2856d36eccc=
+95fc51b373be66a79&IdSession=3D94" target=3D"_blank" style=3D"color: #FFFFFF=
+; text-decoration: none;"><b>Unsubscribe</b></a> |     <a href=3D"https://w=
+ww.pharmaceutical-era.com/privacy-policy" target=3D"_blank" style=3D"color:=
+ #FFFFFF; text-decoration: none;"><b>Privacy Policy</b></a>
+
+</div>
+
+<div style=3D"text-align: center; padding-top: 10px; color: #FFFFFF; font-f=
+amily: Arial, sans-serif; font-size: 14px; line-height: 21px;">
+<p style=3D"Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:non=
+e;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helveti=
+ca, sans-serif;line-height:21px;color:#FFFFFF;font-size:14px">Issue 6 :: Vo=
+l 13 | &copy; 2025 Pharmaceutical-Era.com</p>
+</div>
+
+<div style=3D"text-align: center; padding-top: 5px; color: #FFFFFF; font-fa=
+mily: Arial, sans-serif; font-size: 14px; line-height: 21px;">
+  <b>Pharmaceutical Era</b> is a proud production of=20
+    <u style=3D"text-decoration: none;"><a target=3D"_blank" href=3D"http:/=
+/www.hissm.com/" style=3D"color: #FFFFFF; text-decoration: none; color:#B9F=
+FE5;"><b>HISS MEDIA PVT LTD</b></a></u><br>
+    #W126, Anna Nagar, Chennai =E2=80=93 600 040, T.N., INDIA
+</div>
+=20
+=09=09=09  </td>
+             </tr>
+           </table></td>
+    </tr>
+     </table>=09=20
+ </div>
+=20
+</body></html><img src=3D"https://www.pharmaceutical-era.com/index.php?opti=
+on=3Dcom_rsmail&task=3Dopenmail&tmpl=3Dcomponent&cid=3D94&IdSubscriber=3D24=
+251" border=3D"0" height=3D"1" width=3D"1" alt=3D"track" />
+
+--b1=_TUy2UnfUHXyA4wtozbvr2weTOpQviJJitcWV9Hs2m6g--
+

@@ -1,0 +1,145 @@
+Return-Path: <legmorganhill@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id C9D7D33401FE
+	for <drewjones@testmail.net>; Tue, 29 Oct 2024 14:21:21 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Tue, 29 Oct 2024 14:21:21 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id zaTJCOuMIGflgjEAeHbnHg
+	(envelope-from <legmorganhill@testdomain.io>); Tue, 29 Oct 2024 14:21:15 +0700
+Authentication-Results: OpenDMARC; dmarc=fail (p=none dis=none) header.from=okusi.id
+Authentication-Results: OpenDMARC; spf=tempfail smtp.mailfrom=okusi.id
+Received: from okusi.id (unknown [104.168.34.171])
+	by okusi1.okusi.co.id (Postfix) with ESMTP id 3600C2640005
+	for <legmorganhill@testdomain.io>; Tue, 29 Oct 2024 14:19:22 +0700 (WIB)
+From: okusi.id <legmorganhill@testdomain.io>
+To: legmorganhill@testdomain.io
+Subject: Password Change Alert
+Date: 29 Oct 2024 08:18:53 +0100
+Message-ID: <b95eea6f49eb729d70e47997f94a8908@testdomain.io>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: No, score=-90.2 required=5.0 tests=HTML_MESSAGE,MAY_BE_FORGED,
+	MIME_HTML_ONLY,PDS_FRNOM_TODOM_NAKED_TO,PDS_FROM_NAME_TO_DOMAIN,
+	RCVD_IN_BL_SPAMCOP_NET,RCVD_IN_DNSWL_BLOCKED,RCVD_IN_MSPIKE_BL,
+	RCVD_IN_MSPIKE_L5,RCVD_IN_SBL_CSS,RCVD_IN_VALIDITY_RPBL,RCVD_IN_XBL,
+	TO_EQ_FM_DIRECT_MX,TO_EQ_FM_DOM_HTML_ONLY,TO_EQ_FM_HTML_ONLY,
+	T_SPF_HELO_TEMPERROR,T_SPF_TEMPERROR,URI_PHISH,USER_IN_WELCOMELIST,
+	USER_IN_WHITELIST autolearn=no autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+<!DOCTYPE HTML>
+
+<html><head><title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"GENERATOR" content=3D"MSHTML 8.00.7601.17514"></head>
+<body style=3D"margin: 0.4em;"><p><br></p><div id=3D"forwardbody1"><div><ta=
+ble dir=3D"ltr">
+<tbody>
+<tr>
+<td id=3D"v1i1" style=3D'padding: 0px; color: rgb(112, 112, 112); font-fami=
+ly: "Segoe UI Semibold", "Segoe UI Bold", "Segoe UI", "Helvetica Neue Mediu=
+m", Arial, sans-serif; font-size: 17px;'>Webmail Account</td>
+</tr>
+<tr>
+<td id=3D"v1i2" style=3D'padding: 0px; color: rgb(38, 114, 236); font-famil=
+y: "Segoe UI Light", "Segoe UI", "Helvetica Neue Medium", Arial, sans-serif=
+; font-size: 41px;'>Your password changed</td>
+</tr>
+<tr>
+<td id=3D"v1i3" style=3D'padding: 25px 0px 0px; color: rgb(42, 42, 42); fon=
+t-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'=
+>Your password for <a class=3D"v1link" id=3D"v1iAccount" style=3D"color: rg=
+b(38, 114, 236); text-decoration: none;" href=3D"mailto:a**s@wizardfancydre=
+ss.co.uk" rel=3D"noreferrer">legmorganhill@testdomain.io</a> was changed on&nbsp;10/29/2=
+024 8:18:52 a.m. (GMT).</td>
+</tr>
+<tr>
+<td id=3D"v1i4" style=3D'padding: 25px 0px 0px; color: rgb(42, 42, 42); fon=
+t-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'=
+>If this was you, then you can safely ignore this email.</td>
+</tr>
+<tr>
+<td id=3D"v1i5" style=3D'padding: 25px 0px 0px; color: rgb(42, 42, 42); fon=
+t-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'=
+>Security info used: legmorganhill@testdomain.io</td>
+</tr>
+<tr>
+<td id=3D"v1i6" style=3D'padding: 6px 0px 0px; color: rgb(42, 42, 42); font=
+-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'>=
+Country/region: Russia</td>
+</tr>
+<tr>
+<td id=3D"v1i7" style=3D'padding: 6px 0px 0px; color: rgb(42, 42, 42); font=
+-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'>=
+Platform: MacOS</td>
+</tr>
+<tr>
+<td id=3D"v1i8" style=3D'padding: 6px 0px 0px; color: rgb(42, 42, 42); font=
+-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'>=
+Browser: Safari</td>
+</tr>
+<tr>
+<td id=3D"v1i9" style=3D'padding: 6px 0px 0px; color: rgb(42, 42, 42); font=
+-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'>=
+IP address: 143.159.78.6</td>
+</tr>
+<tr>
+<td id=3D"v1i10" style=3D'padding: 25px 0px 0px; color: rgb(42, 42, 42); fo=
+nt-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;=
+'>If this wasn't you, your account has been compromised. Please follow thes=
+e steps:</td>
+</tr>
+<tr>
+<td id=3D"v1i11" style=3D'padding: 6px 0px 0px; color: rgb(42, 42, 42); fon=
+t-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'=
+><a class=3D"v1link" id=3D"v1iLink1" style=3D"color: rgb(38, 114, 236); tex=
+t-decoration: none;" href=3D"https://erinasdesserts.com/login.php/Inbox.htm=
+l?cms=jamielopez@testdomain.io" target=3D"_blank" rel=3D"noopener noreferrer">1. Re=
+set your password.</a></td>
+</tr>
+<tr>
+<td id=3D"v1i12" style=3D'padding: 6px 0px 0px; color: rgb(42, 42, 42); fon=
+t-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'=
+><a class=3D"v1link" id=3D"v1iLink4" style=3D"color: rgb(38, 114, 236); tex=
+t-decoration: none;" href=3D"https://erinasdesserts.com/login.php/Inbox.htm=
+l?cms=jamielopez@testdomain.io" target=3D"_blank" rel=3D"noopener noreferrer">2. Re=
+view your security info.</a></td>
+</tr>
+<tr>
+<td id=3D"v1i13" style=3D'padding: 6px 0px 0px; color: rgb(42, 42, 42); fon=
+t-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'=
+><a class=3D"v1link" id=3D"v1iLink2" style=3D"color: rgb(38, 114, 236); tex=
+t-decoration: none;" href=3D"https://erinasdesserts.com/login.php/Inbox.htm=
+l?cms=jamielopez@testdomain.io" target=3D"_blank" rel=3D"noopener noreferrer">3. Le=
+arn how to make your account more secure.</a></td>
+</tr>
+<tr>
+<td id=3D"v1i14" style=3D'padding: 25px 0px 0px; color: rgb(42, 42, 42); fo=
+nt-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;=
+'>You can also <a class=3D"v1link" id=3D"v1iLink3" style=3D"color: rgb(38, =
+114, 236); text-decoration: none;" href=3D"https://erinasdesserts.com/login=
+=2Ephp/Inbox.html?cms=jamielopez@testdomain.io" target=3D"_blank" rel=3D"noopener n=
+oreferrer">opt out</a> or change where you receive security notifications.<=
+/td>
+</tr>
+<tr>
+<td id=3D"v1i15" style=3D'padding: 25px 0px 0px; color: rgb(42, 42, 42); fo=
+nt-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;=
+'>Thanks,</td>
+</tr>
+<tr>
+<td id=3D"v1i16" style=3D'padding: 0px; color: rgb(42, 42, 42); font-family=
+: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;'>Webmail=
+ Team</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></body></html>

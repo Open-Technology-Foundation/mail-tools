@@ -1,0 +1,85 @@
+Return-Path: <charlieharris@testmail.comm>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id DD94733401FE
+	for <drewjones@testmail.net>; Thu,  5 Dec 2024 15:46:34 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Thu, 05 Dec 2024 15:46:34 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 6OMULmRoUWfgfhcAeHbnHg
+	(envelope-from <charlieharris@testmail.comm>)
+	for <contkellylewis@testdomain.io>; Thu, 05 Dec 2024 15:46:28 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=reject dis=none) header.from=yahoo.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=yahoo.com
+Received: from sonic310-19.consmr.mail.sg3.yahoo.com (sonic310-19.consmr.mail.sg3.yahoo.com [106.10.244.139])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id AB0442640006
+	for <contkellylewis@testdomain.io>; Thu,  5 Dec 2024 15:46:09 +0700 (WIB)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1733388364; bh=rJ/tgSPgWACPqgh/v3RPoveMOd2TyOmvhy0IdhA6bOA=; h=Date:From:To:Subject:References:From:Subject:Reply-To; b=epUMom5XNhpn27Nku7XKemBbcvJuvOdGXNi0uAYV7GiLmoSjVrfoNtOsh/fjRFnezjvUlkJID4k3Lbwkrjmp0naH85LwH3/5nqIIxbyJqyHTuEXb0yZWrUbN3h/Ub6aIJnypWQ0Oqr3ywbeg7FtmH0uc4+S/Xo+P1QEG56DJfeg+AGAstk/tsV+yFDuAt5Ow1q/hHYURuUT8j/soiG0X8bdLX2GWhfH1YEBFXFulDy/pc5eOnawrOhynzrV2zmZeAFyQniCA50PHjof8+J6M5IA8kIsZzXRuYO/Vb45LwvVA2271blqNUUSs6G70iC7u2cxJ70lrdqj/3jy27lMN7g==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1733388364; bh=VWPFRDb4o1VEn/fPDB4tbcjF0zUflWs1Xf9THukDY9d=; h=X-Sonic-MF:Date:From:To:Subject:From:Subject; b=ZMCZ8g4ad9GBEVEPqXeungW3EYp1p3tYmezLFOfUCiNfdYVxTkKXplZaOsKMhDqjppVsp4m3UzuCoLojfhhddmcgU8JwvgpXOEJFvyrD1B8bcu19sxo2v+5tHW4WSOI0fQlQymtkvTL9cr8s/P5xutQ4GSA9yJF+FkPeqxwUIPO2pAkIDPF5UuYMOiP4cKKuq1gU0qm9agVDewReOdkfciy1YyF7HmWhABq0c1pKRa1m/1HeM0mVhGylEyUbM/N2PxNjm6btvT29PYUN2aPk5jL9M+z5PB+NnF4xIwfSi/mmyCNWzHahpy+rfypv67nUvmWbu8OvD7k2Bgb/uIhMsA==
+X-YMail-OSG: P5CpwFQVM1mFQhzo2B9EubHdALFcMfx62nAt8ePytp0g0g0dymJoQd4002qMA0G
+ 13fwrYaqvfit8FBUFsZobCSzixH.YU.PfYxok7q62zTtedEH.Og8dr3hzrs.NdsIx65p27tfjdE1
+ fo.23LzUPeeYetOnonwCHDK93NbtGBOq9GKTt4eXn2fTGuRHvaOBxEN5S7gG1nA3KPVgtFrcM8.J
+ Pu0yVL36AhUptbGnYNmjRzhw0YIivyTLrw6jsefiCdgpeA0Srrz3ZNunFQiFZuUaBdDWOPL1hTjj
+ nnndeH5vBW81dRBQWEJn7BK1Tr9FFGQ6a9AGFsPej1CKpv4JMiqbGLNZXMOSog_uaZGER5wX4d.0
+ hpNEctDrs9WyZExvG6t5SZgmAh5lVkiZHvp52uBhXir.P03Uc6oDDd1A5PwJ6mnxGSEIjpvBICaM
+ 6H0uTNAHmzGdZIyb5K0tQoM7_CB0DKvZOvET5ZSvx.MDTCwtQcQ7bDtdxOwyDhbjiVoT7hvxX2ot
+ HromUICSRQ.QGWoJEo3Yj7RE4_C4PORK6wCPJVrIvyvndBPAORi_j3gAqHDYkHUG25wKQAEWIMLX
+ z0v5fFWi0R9xPF8ydxa7nSPZElyAUTQy5UuPJkx8GcpLPPcHRrepH9UPHqqF__G1vdF8iZt3wnUU
+ 9TByIJoefa5ZytPa6kpJThY2h3xU_hnF_EgZ0CFyDbe2YN5x9aPYhKUt_nX9_pzfvX73ekECQBcr
+ nsegXGN42rlVAZfpsko3wpKAZFWHlJmRtyOoamJwnxKt9JMyvKzaYCYNpDQ1VN.IrIAlmhqG2a4o
+ uVg4E8LZrIs2r8JDdtDnJj4XMVXbxJUhyHMMBxS30IW.lAQDySVqe0d0Zw6p7zlhnbRatbr44kpn
+ 1tji4yPTr9cs.YBl1vVHjD628cG1Hsr0HOsVlv3wCHowW_4jNMaYC9a37PskLRroWJPn_2N9e382
+ hGHJ16CxJpD9lHl8AQNKs6GJ7XTp2IcBlFsSBBWhGyMJgKeNOfcIED5.AQBNashPQeKiTRdoIqcU
+ OW31LPg7.NYzZXqrfVE.Jgb6ZR2FlEa2a8L.9pRNCHKX4W12FNCceeGag0wa4HDO1_3rpJsIL7Ie
+ 6tzCnJvVnGBCMqItjQ8fcew8EqQ.CC_z3RPFm.5DXGCrkhW065oNxtuNI9Cd_LO_WsAYuWLRIjKA
+ qvGyGmJUpHC69cM9SMDo7yjzPVXBifBmNv0rAdGAJSyziXHjhzTolye7VPGf27MyGqJOpOeYYR7n
+ GHrfid0Ik5fpDErpCVWIetDaXWRYIjY0Wu1lbgcA8UJOj4trOqwJh1fi3meENk0sxfegps65tN0U
+ PPs3lohARcaVSUAm_ntiQL4HhlsqVf9F1OKFBfXUlpoo_HuQ_OpiOFd7qDJje5ooV4G2PdYlUNn6
+ UTMpETb7PyRN_.57cgIbiS9z1L6kDaOJI7PGQrDnBnWvuwHyRZcAr5ipGAMHpxvuP6K9au8z4rro
+ 4P.uH61inNnwTnB7RikNuH8u9IZBZ4HR1HDvZtweGxt7gBMK1KQvWU8s_ML6wzxJ9npdcop_N5VQ
+ gN3ONebti6USaEhPrnLNSOL1huzuCN7ln4lgmWfc9A31J2n.jPu4Poj8CltID0cnDL4i.zIgoHz0
+ XPSp3wOqryDwQhjAmxqUsdXHM.mcJ65ZH.fX8L7b7qTUsnRcO_Ef0o74zlA_Q1dQJk6F10HhIFp2
+ 3QwafAI4XpLx27WrvaHMNmGHI2vVFInCB6UrvHe5vCBFBO2ulPDspBzJX2Cqk.sZv3w7hhuwxy.1
+ OIk97wLj4Ql7DBL5vms17TRz8f6DhAERQVmzJ8V7uSA08bMPLxKs2yRjmtlwY7gCco3.LPfAxMbV
+ uyU4FnOoIMMGbfLrpY16F7tRtbIiJtoKXEOY923QEcfh6zC2an4sIuaKbZtDFMwWbHzZj1kkjtvD
+ 0SNFd88u8J4E.LPUoeTPILFAr5woz3ip5bfcXAbE2MhQVXz_TKIXLridQTT_BOzjlawgkUD_ORSB
+ VAqhjwYZaTXE8rOrZJufq88okjP_J8E2HTe7ByyCbBB.lIVDlaAkUxLYf8fhUrLTh1H0PEE6_x1B
+ 20H1q5YWw1kSxHSda_RlxhQmvmWIXO2J1d1DpNfgd7I5gxQZJ2.bpYF3oy6F2tU48xjb7nIjSmL2
+ LERXUAnG5FrbVC3pkhImfueKcVFPrQR2ZqIGpyD0oEKSZqnp3iZCE_gw4v5RdcHK9fSltZnSxo8.
+ pajwlIGmGnefIbHoMn4LCGsR6wivmLNuLDCPYb656epzoHZiqpocL5n4iJvNVOLeH16I-
+X-Sonic-MF: <charlieharris@testmail.comm>
+X-Sonic-ID: 0201d13a-6e45-44a9-ab7b-eec8b18e58fd
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic310.consmr.mail.sg3.yahoo.com with HTTP; Thu, 5 Dec 2024 08:46:04 +0000
+Date: Thu, 5 Dec 2024 08:46:02 +0000 (UTC)
+From: Agus Sidik <charlieharris@testmail.comm>
+To: "contkellylewis@testdomain.io" <contkellylewis@testdomain.io>
+Message-ID: <639621266.745268.7278572844453@testmail.com>
+Subject: Permohonan Kerja
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_173315_1612459836.1733388362885"
+References: <c562191e5948afc5c704299d78d7cfa8@testmail.com>
+X-Spam-Status: No, score=0.2 required=5.0 tests=DKIM_SIGNED,DKIM_VALID,
+	DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_ENVFROM_END_DIGIT,FREEMAIL_FROM,
+	HTML_MESSAGE,MIME_HTML_MOSTLY,RCVD_IN_DNSWL_NONE,
+	RCVD_IN_VALIDITY_CERTIFIED_BLOCKED,RCVD_IN_VALIDITY_RPBL_BLOCKED,
+	SPF_HELO_NONE,SPF_PASS,TVD_SPACE_RATIO autolearn=no autolearn_force=no
+	version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+------=_Part_173315_1612459836.1733388362885
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+.
+
+------=_Part_173315_1612459836.1733388362885
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html><head></head><body><div class="yahoo-style-wrap" style="font-family:times new roman, new york, times, serif;font-size:16px;"><div dir="ltr" data-setdir="false">.</div><div dir="ltr" data-setdir="false"><br></div></div></body></html>
+------=_Part_173315_1612459836.1733388362885--

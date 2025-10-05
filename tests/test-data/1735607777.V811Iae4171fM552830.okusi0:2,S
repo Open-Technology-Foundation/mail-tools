@@ -1,0 +1,38 @@
+Return-Path: <haydensanchez@samplebiz.org>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 424E63340205
+	for <drewjones@testmail.net>; Tue, 31 Dec 2024 08:16:17 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Tue, 31 Dec 2024 08:16:17 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 4Im8LtFFc2essSoAeHbnHg
+	(envelope-from <haydensanchez@samplebiz.org>); Tue, 31 Dec 2024 08:16:01 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1735607761; bh=R2ie9CcJgKbMF4Eu8ZzAT6HDB4oBOmTLQjHATf+FYy0=;
+	h=To:Subject:Date:From:From;
+	b=j3Img7XoXvHZeZgF+8fdow1l7CcAwYLVjPdzPapWcP6ad1p5Y89qQrf6AFELMMkng
+	 2ByNuyujKZVyJsselhAfSMV5TVgGguKLMmn6Dl2k9djs2BbPQw6SJjyQo3lhA0pmQO
+	 iaDP+DT2kZvMJwBAGewt1xrPBpMXfPSyeON+PfHKSrIIVSCAyVEIjWxkhVWh52LGmg
+	 OHJPRWup+JhimUhN5g6NkQUOAkXpdNNFAq+0xVX9kZroNdl7Oeuig0nR4t8Do81YDm
+	 UGz2oo8qomOC4IxYKeA6wX1BFHhettooT2RReLaDuj8qw5I8TvuInjbRh2bxora1vp
+	 ujtEnkdgMPqKA==
+Received: by okusi1.okusi.co.id (Postfix, from userid 0)
+	id 8FA352640036; Tue, 31 Dec 2024 08:16:01 +0700 (WIB)
+To: noel.smith@testmail.com,caseynguyen@democorp.com
+Subject: ALERT: LUXURY: Company Domicile Services E-Trade Building
+Date: Tue, 31 Dec 2024 08:16:01 +0700
+From: legmorganhill@testdomain.io
+Message-Id: <sage.robinson@samplebiz.org>
+
+This is an automated reminder from Okusi Associates.
+
+Reminder for PT South East Asia Exotic Cruise:
+
+Your company domicile service is due to expire on 30 Jan 2025
+
+Please contact Okusi Associates for information concerning renewal.
+

@@ -1,0 +1,160 @@
+Return-Path: <indigojackson@testmail.com>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 1480E33401FE
+	for <drewjones@testmail.net>; Tue, 25 Jun 2024 00:27:13 +0700 (WIB)
+Delivered-To: contkellylewis@testdomain.io
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Tue, 25 Jun 2024 00:27:13 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id JYLrNS6seWZRAAwAeHbnHg
+	(envelope-from <indigojackson@testmail.com>)
+	for <contkellylewis@testdomain.io>; Tue, 25 Jun 2024 00:26:06 +0700
+Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=gmail.com
+Authentication-Results: OpenDMARC; spf=pass smtp.mailfrom=gmail.com
+Received: from mail-qv1-f65.google.com (mail-qv1-f65.google.com [209.85.219.65])
+	by okusi1.okusi.co.id (Postfix) with ESMTPS id 5BCB42640B32
+	for <contkellylewis@testdomain.io>; Tue, 25 Jun 2024 00:25:36 +0700 (WIB)
+Received: by mail-qv1-f65.google.com with SMTP id 6a1803df08f44-6b54683f65fso6458286d6.1
+        for <contkellylewis@testdomain.io>; Mon, 24 Jun 2024 10:25:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1719249934; x=1719854734; darn=okusi.id;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=SMWU+sCpmqhDpv6uX9zzUS1bwUmM/jk4+ODug8YCIOs=;
+        b=Qd9lj3L9COMYsYRhDfEHBHOAu2TMVBrJMlPs2UHBRPVY8gdaVt786iku17EUJ3ZGHf
+         N7h6Rco7Y3/AXAjWB6GkwgYp9+fM2FXJjkfvFKLuNqvsfynlLIPqgFOoJwqUuXC+d/GB
+         9TL0YGVC5iUv7lHPusKgWAegkXgeyJoYkGaIuyAUmmDz7lCrpsQCZ7jJg+jh9Z+NgNSi
+         M3vW3OitOUDeSgRXXtz3xavRRAMoljU+btrbfEPZYa2H+ZDQRP2zrUCrmwwFvyJg24jq
+         PREEJ8usulGVGZmiKkI4b0i3DQyXTyF0QZ48kik9lXZ2K/vtvzAEnp1NpF0svmgbBehM
+         qQQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1719249934; x=1719854734;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=SMWU+sCpmqhDpv6uX9zzUS1bwUmM/jk4+ODug8YCIOs=;
+        b=Ur8F7Wt8AP4iVU4fzQ7x2H9WXq+c/pKDre4oMjOWNSS2FGLylrrAXf7BRoAlebYIgA
+         MV+iX1SU7r385UVfm9V93pNfarnr0D6XZ/psYL//L7+WFNCYUtsMM99MNrNfcu15XCMT
+         E5AI2jie3c6Ak/Q6cLrQDYg9l8tcc2yl/Qx3YMgotCJRmM5gPzFZerWr2yhixZrGXEm3
+         ZResOfFXAlsb7sLyKBrkSOUxpQQm3UdtpbaDe2qHiBW1UW0NB3c6FE1ECrBMSukQnTYO
+         MjR0MuPOiR8+08py2ERqsb0Ojnbc3FZiWEKBeABHi4195PiGokE4nYD/Dp2AwDsJSddh
+         ptEA==
+X-Gm-Message-State: AOJu0YwDOttcBS9IwqIeA3fpghtroQSkFHqecZ+O5ZLrH/Fr/n6ft6Gs
+	6t2QcM3JIpToxgmYBLRetsytEFhz0ltmyXkOOkBlNqE/owG2ws1bQInZ19xxTOQfIxsuZ5xTCMJ
+	pnGxTkCxb69sqDYoD6quQ+j2/43AFSFbl
+X-Google-Smtp-Source: AGHT+IHhUMK0z2CdZtbdibeVuEsbjSrn70SyViekina4fCAES/PLHrNYVeGLEukrdbCwUdWCL9alcRjD9h3m+DA/LXY=
+X-Received: by 2002:a0c:ac05:0:b0:6b5:403:d3ad with SMTP id
+ 6a1803df08f44-6b53bff8b1emr60028266d6.52.1719249934425; Mon, 24 Jun 2024
+ 10:25:34 -0700 (PDT)
+MIME-Version: 1.0
+References: <52353d01d7424b4b2c7abb250b9ca017@placeholder.email>
+In-Reply-To: <52353d01d7424b4b2c7abb250b9ca017@placeholder.email>
+From: Habtamu Petros <indigojackson@testmail.com>
+Date: Mon, 24 Jun 2024 20:27:08 +0300
+Message-ID: <hayden_smith@testmail.com>
+Subject: Re: Jakarta Company Domicile [#:6679ab719]
+To: contkellylewis@testdomain.io
+Content-Type: multipart/alternative; boundary="0000000000009f26c4061ba61111"
+X-Spam-Status: No, score=-1.8 required=5.0 tests=BAYES_00,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,FREEMAIL_ENVFROM_END_DIGIT,
+	FREEMAIL_FROM,HTML_IMAGE_ONLY_32,HTML_MESSAGE,RCVD_IN_MSPIKE_H2,
+	SPF_HELO_NONE,SPF_PASS autolearn=ham autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+--0000000000009f26c4061ba61111
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Please help me
+
+On Mon, Jun 24, 2024, 8:23 PM contkellylewis@testdomain.io <contkellylewis@testdomain.io> wrote:
+
+> <https://okusiassociates.com/>
+>
+> Thank you for contacting Okusi Associates.
+> Someone will be in touch with you shortly.
+> A copy of your message appears below.
+>
+> Phone: 0932660581
+>
+> Hello how are you?
+>
+> OkusiAssociates.com <https://okusiassociates.com>
+>
+> *Jakarta* +62 21 390 1007 <+62213901007>   +62 21 392 8595 <+62213928595>
+>
+> *Bali* +62 361 769 144 <+62361769144>   *Batam* +62 778 741 5011
+> <+627787415011>
+>
+> *=E2=80=A2* *permanent offices* conveniently located in *Jakarta, Batam, =
+and Bali*
+> .
+>
+> *=E2=80=A2* *comprehensive/integrated*: legal, immigration, accountancy, =
+research.
+>
+> *=E2=80=A2* *in-house*, over 60 full-time direct employees across Indones=
+ia; *no
+> outsourcing*.
+>
+> *=E2=80=A2* *over 3,000 foreign companies*, more than any other firm in I=
+ndonesia.
+>
+> *=E2=80=A2* companies set up *anywhere in Indonesia*.
+>
+> *=E2=80=A2* since *1997*.  27 years of service to Indonesia.
+>
+>
+
+--0000000000009f26c4061ba61111
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<p dir=3D"ltr">Please help me</p>
+<br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Mon=
+, Jun 24, 2024, 8:23 PM <a href=3D"mailto:contkellylewis@testdomain.io">contact@okusi.i=
+d</a> &lt;<a href=3D"mailto:contkellylewis@testdomain.io">contkellylewis@testdomain.io</a>&gt; wrot=
+e:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;bo=
+rder-left:1px #ccc solid;padding-left:1ex"><u></u>		<div><div style=3D"font=
+-family:Arial;background:#eff;border:1px #eee solid;border-radius:5px;color=
+:#002958;margin:0rem auto 1rem auto;text-align:center;width:40rem;padding:1=
+rem 3rem 1rem 3rem">	<div style=3D"width:100%;text-align:center">		<a href=
+=3D"https://okusiassociates.com/" style=3D"color:#002958;text-decoration:no=
+ne" title=3D"Okusi Associates website." target=3D"_blank" rel=3D"noreferrer=
+">			<img style=3D"height:3.8rem">		</a>	</div>	<br>	<div style=3D"font-siz=
+e:1rem">		Thank you for contacting Okusi Associates.<br>		Someone will be i=
+n touch with you shortly.<br>		A copy of your message appears below.	</div>=
+</div><div style=3D"font-family:Arial;background:#eff;border:1px #eee solid=
+;border-radius:5px;color:#002958;margin:0rem auto 1rem auto;text-align:cent=
+er;width:40rem;padding:1rem 3rem 1rem 3rem">	<div style=3D"color:#222;font-=
+size:1rem;margin-bottom:1rem">	<div id=3D"m_-4166040565987948981message" st=
+yle=3D"font-family:Arial;border:1px #eee solid;border-radius:4px;color:#555=
+;width:99%;max-width:40rem;text-align:left;margin:0rem;padding:0rem;font-si=
+ze:12pt"><br>Phone: 0932660581<br><br>Hello how are you?</div>	</div></div>=
+<div style=3D"font-family:Arial;background:#eff;border:1px #eee solid;borde=
+r-radius:5px;color:#002958;margin:0rem auto 1rem auto;text-align:center;wid=
+th:40rem;padding:1rem 3rem 1rem 3rem">	<div style=3D"color:#333;font-size:0=
+.9rem;margin-bottom:1rem">		<p><a href=3D"https://okusiassociates.com" styl=
+e=3D"color:#002958" target=3D"_blank" rel=3D"noreferrer">OkusiAssociates.co=
+m</a></p>		<p><b>Jakarta</b> <a href=3D"tel:+62213901007" style=3D"color:#0=
+02958" target=3D"_blank" rel=3D"noreferrer">+62 21 390 1007</a> =C2=A0 <a h=
+ref=3D"tel:+62213928595" style=3D"color:#002958" target=3D"_blank" rel=3D"n=
+oreferrer">+62 21 392 8595</a></p>		<p><b>Bali</b> <a href=3D"tel:+62361769=
+144" style=3D"color:#002958" target=3D"_blank" rel=3D"noreferrer">+62 361 7=
+69 144</a> =C2=A0	<b>Batam</b> <a href=3D"tel:+627787415011" style=3D"color=
+:#002958" target=3D"_blank" rel=3D"noreferrer">+62 778 741 5011</a></p>	</d=
+iv>	<div style=3D"width:100%;text-align:center;font-size:0.9rem;color:#444;=
+line-height:0.7">		<p><b>=E2=80=A2</b> <b>permanent offices</b> convenientl=
+y located in <b>Jakarta, Batam, and Bali</b>.</p>	  <p><b>=E2=80=A2</b> <b>=
+comprehensive/integrated</b>: legal, immigration, accountancy, research.</p=
+>	  <p><b>=E2=80=A2</b> <b>in-house</b>, over 60 full-time direct employees=
+ across Indonesia; <b>no outsourcing</b>.</p>	  <p><b>=E2=80=A2</b> <b>over=
+ 3,000 foreign companies</b>, more than any other firm in Indonesia.</p>	  =
+<p><b>=E2=80=A2</b> companies set up <b>anywhere in Indonesia</b>.</p>	  <p=
+><b>=E2=80=A2</b> since <b>1997</b>. =C2=A027 years of service to Indonesia=
+.</p>	</div>	<br></div></div></blockquote></div>
+
+--0000000000009f26c4061ba61111--

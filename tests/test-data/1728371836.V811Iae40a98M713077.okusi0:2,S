@@ -1,0 +1,122 @@
+Return-Path: <jordanrodriguez@testdomain.io>
+X-Original-To: drewjones@testmail.net
+Delivered-To: drewjones@testmail.net
+Received: from okusi0 (okusi0 [192.168.1.153])
+	by okusi0.okusi.co.id (Postfix) with ESMTP id 8FC023340204
+	for <drewjones@testmail.net>; Tue,  8 Oct 2024 14:17:16 +0700 (WIB)
+Received: from okusi1 [192.168.1.151]
+	by okusi0 with IMAP (fetchmail-6.4.27)
+	for <drewjones@testmail.net> (single-drop); Tue, 08 Oct 2024 14:17:16 +0700 (WIB)
+Received: from okusi1.okusi.co.id
+	by okusi1 with LMTP
+	id 0DziBl7cBGfjPTIAeHbnHg
+	(envelope-from <jordanrodriguez@testdomain.io>); Tue, 08 Oct 2024 14:16:46 +0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okusi.id; s=mail;
+	t=1728371805; bh=+mSwz5DzFDVlPeYxypx4HhMYGpXCSS7KwigEsvYNXDA=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=pD+VbwWey6sXDXCyvb+Uft4W09syyzCbpAPxBNX9UJlhkycjEsw0TVNpr0if2yyyl
+	 RU2EOTrLtROUPIx5ranxUUTgFGoV7F80E632QyKFSWHZ9iFKqh7JgTiXqDAoC1QPH2
+	 93fs/+mVmwf9wUCQXf0AZaStt96kfJ4qMTFuYSHRIfl+TD/wZnHmC1+gUHaIn4Tffl
+	 WAHONXnBDb5l0IBqMuijTGWpYFCKPNWJbvkaP75WmDkdAuepftK+2w14Q0c8qNZqJM
+	 wz2FRMDNB7o0PhEYKDAjBl4Fs687AttcWo+TNCVyZuh5DO06yNw9Dthx3fh1E5JiKh
+	 NzS+PuZFpE2Lg==
+Received: from [192.168.6.18] (unknown [110.138.86.235])
+	by okusi1.okusi.co.id (Postfix) with ESMTPSA id 7EC522640004;
+	Tue,  8 Oct 2024 14:16:45 +0700 (WIB)
+Content-Type: multipart/alternative;
+ boundary="------------C6WvCTiCQ8pa8Ylmc0UPH6gm"
+Message-ID: <22c9d70e-35a54530-304dc45b-e156981a@testdomain.io>
+Date: Tue, 8 Oct 2024 14:16:26 +0700
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ALERT: DEMONCHY: Nominee Chairman Service
+To: legmorganhill@testdomain.io, sage.perez@example.net, jamieramirez@privatedomain.local
+References: <hayden.brown@samplebiz.org>
+Content-Language: en-US
+From: Nurlia Hasyim Okusi Associates <jordanrodriguez@testdomain.io>
+Organization: Okusi Associates
+In-Reply-To: <hayden.brown@samplebiz.org>
+X-Spam-Status: No, score=-101.2 required=5.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+	DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE,
+	USER_IN_WELCOMELIST,USER_IN_WHITELIST autolearn=unavailable
+	autolearn_force=no version=3.4.6
+X-Spam-Checker-Version: SpamAssassin 3.4.6 (2021-04-09) on okusi1.okusi.co.id
+
+This is a multi-part message in MIME format.
+--------------C6WvCTiCQ8pa8Ylmc0UPH6gm
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Dear Mr. Dirk Pieter de Jong,
+
+Greetings from Okusi Associates.
+
+We would like to inform you that the term for the nominee chairman 
+service in PT De Monchy Natural Products expired on August 24th, 2024, 
+as previously notified by our automated reminder system. Please let us 
+know if you wish to renew this service or change the chairman so that we 
+can proceed accordingly.
+
+Thank you.
+
+Best regards,
+
+Nurlia Hasyim
+
+On 25/7/24 08:16, legmorganhill@testdomain.io wrote:
+> This is an automated alert from Okusi Associates.
+>
+> Reminder for PT De Monchy Natural Products:
+>
+> Nominee Chairman Service for this company is due to expire on 24 Aug 2024
+>
+> Please contact Okusi Associates for information concerning renewal.
+>
+>
+--------------C6WvCTiCQ8pa8Ylmc0UPH6gm
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Dear
+        Mr. Dirk Pieter de Jong,</span></p>
+    <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Greetings
+        from Okusi Associates.</span></p>
+    <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">We
+        would like to inform you that the term for the nominee chairman
+        service in PT De Monchy Natural Products expired on August 24th,
+        2024, as previously notified by our automated reminder system.
+        Please let us know if you wish to renew this service or change
+        the chairman so that we can proceed accordingly.</span></p>
+    <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Thank
+        you.</span></p>
+    <p> </p>
+    <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Best
+        regards,</span></p>
+    <p><span style="font-family:&quot;Trebuchet MS&quot;,sans-serif">Nurlia
+        Hasyim</span></p>
+    <p></p>
+    <div class="moz-cite-prefix">On 25/7/24 08:16, <a class="moz-txt-link-abbreviated" href="mailto:legmorganhill@testdomain.io">legmorganhill@testdomain.io</a> wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:hayden.brown@samplebiz.org">
+      <pre class="moz-quote-pre" wrap="">This is an automated alert from Okusi Associates.
+
+Reminder for PT De Monchy Natural Products:
+
+Nominee Chairman Service for this company is due to expire on 24 Aug 2024
+
+Please contact Okusi Associates for information concerning renewal.
+
+
+</pre>
+    </blockquote>
+  </body>
+</html>
+
+--------------C6WvCTiCQ8pa8Ylmc0UPH6gm--
