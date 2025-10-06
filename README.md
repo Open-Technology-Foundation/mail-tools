@@ -539,7 +539,7 @@ The builtins seamlessly integrate with bash, appearing identical to native comma
 ├── mailheaderclean_headers.h      # Shared header removal list (~207 headers)
 ├── clean-email-headers            # Production batch cleaning script
 ├── mail-tools.sh                  # Profile script for auto-loading
-├── mailgetheaders.sh              # Example bash function
+├── mailgetheaders                # Example bash function
 ├── Makefile                       # Build system
 ├── install.sh                     # Installation script
 ├── benchmark.sh                   # Basic benchmarking
