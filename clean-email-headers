@@ -96,8 +96,15 @@ done
 
 # Try to load mailheaderclean builtin, fallback to binary
 if ! type -t mailheaderclean >/dev/null; then
-  enable -f /usr/local/lib/bash/loadables/mailheaderclean.so mailheaderclean 2>/dev/null || \
-      warn "enable builtin mailheaderclean failed"
+  if [[ -f /etc/profile.d/mail-tools.sh ]]; then
+    source /etc/profile.d/mail-tools.sh
+  else
+    enable -f /usr/local/lib/bash/loadables/mailheaderclean.so mailheaderclean 2>/dev/null
+  fi
+  if ! type -t mailheaderclean >/dev/null; then
+    warn "enable builtin mailheaderclean failed"
+    command -v mailheaderclean || die 1 "mailheaderclean not found!"
+  fi
 fi
 
 info "Processing ${#Files[@]} email files"
