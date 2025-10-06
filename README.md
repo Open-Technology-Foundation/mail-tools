@@ -361,11 +361,12 @@ clean-email-headers -q /path/to/maildir
 Parse headers into associative array:
 ```bash
 #!/bin/bash
-source /usr/local/share/doc/mailheader/mailgetheaders.sh
+source /usr/local/share/doc/mailheader/mailgetheaders
 
 declare -A Headers
-getheader Headers email.eml
+mailgetheaders Headers email.eml
 
+declare -p Headers
 echo "From: ${Headers[From]}"
 echo "Subject: ${Headers[Subject]}"
 echo "Date: ${Headers[Date]}"
