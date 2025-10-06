@@ -3,7 +3,7 @@
 set -euo pipefail
 shopt -s inherit_errexit shift_verbose extglob nullglob
 
-VERSION='1.0.0'
+VERSION='1.0.1'
 SCRIPT_PATH=$(readlink -en -- "$0")
 SCRIPT_NAME=${SCRIPT_PATH##*/}
 readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
@@ -44,7 +44,7 @@ EOT
 }
 
 declare -i VERBOSE=1
-vecho() { ((VERBOSE)) || return 0; >&2 printf '%s\n' "$*"; }
+vecho() { ((VERBOSE)) || return 0; printf '%s\n' "$*"; }
 info() { ((VERBOSE)) || return 0; >&2 printf '%s: info: %s\n' "$SCRIPT_NAME" "$*"; }
 warn() { >&2 printf '%s: warning: %s\n' "$SCRIPT_NAME" "$*"; }
 error() { >&2 printf '%s: error: %s\n' "$SCRIPT_NAME" "$*"; }
@@ -100,6 +100,9 @@ if ! type -t mailheaderclean >/dev/null; then
       warn "enable builtin mailheaderclean failed"
 fi
 
+info "Processing ${#Files[@]} email files"
+((VERBOSE==0)) || >&2 echo
+
 # Process each file in-place
 declare -- file tmpfile
 declare -a error_files=()
@@ -111,17 +114,18 @@ for file in "${Files[@]}"; do
   tmpfile=$(mktemp "${file}.XXXXXX") || die 1 "Failed to create temp file for '$file'"
 
   if mailheaderclean "$file" > "$tmpfile"; then
-    # Preserve timestamps and permissions
-    touch -r "$file" "$tmpfile"
-    chmod --reference="$file" "$tmpfile"
+    # Preserve all file attributes (timestamps, permissions, ownership)
+    cp --attributes-only --preserve=all "$file" "$tmpfile" 2>/dev/null || true
     mv "$tmpfile" "$file"
     filecount+=1
+    ((VERBOSE==0)) || >&2 echo -en "\r$filecount files"
   else
     error_files+=("$file")
     rm -f "$tmpfile"
     warn "Failed to clean headers in '$file'"
   fi
 done
+((VERBOSE==0)) || >&2 echo
 
 # Report
 if ((VERBOSE)); then
