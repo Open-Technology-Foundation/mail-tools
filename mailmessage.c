@@ -36,6 +36,11 @@ static int is_blank_line(const char *line) {
     return 1;
 }
 
+static void usage(const char *progname) {
+    printf("Usage: %s FILE\n", progname);
+    printf("Extract email message body from FILE (after first blank line)\n");
+}
+
 int main(int argc, const char* argv[]) {
     FILE *file;
     char *line = NULL;
@@ -43,9 +48,14 @@ int main(int argc, const char* argv[]) {
     ssize_t line_len;
     int found_blank = 0;
 
+    if (argc == 2 && (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)) {
+        usage(argv[0]);
+        return 0;
+    }
+
     if (argc != 2) {
         fprintf(stderr, "%s: no args\n", argv[0]);
-        return 1;
+        return 2;
     }
 
     file = fopen(argv[1], "r");

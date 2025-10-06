@@ -40,6 +40,11 @@ static int is_continuation_line(const char *line) {
     return (line[0] == ' ' || line[0] == '\t');
 }
 
+static void usage(const char *progname) {
+    printf("Usage: %s FILE\n", progname);
+    printf("Extract email headers from FILE (up to first blank line)\n");
+}
+
 int main(int argc, const char* argv[]) {
     FILE *file;
     char *line = NULL;
@@ -48,9 +53,14 @@ int main(int argc, const char* argv[]) {
     ssize_t line_len, next_line_len;
     int in_headers = 1;
 
+    if (argc == 2 && (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)) {
+        usage(argv[0]);
+        return 0;
+    }
+
     if (argc != 2) {
         fprintf(stderr, "%s: no args\n", argv[0]);
-        return 1;
+        return 2;
     }
 
     file = fopen(argv[1], "r");

@@ -1,0 +1,136 @@
+#!/bin/bash
+# Clean non-essential email headers from files in-place
+set -euo pipefail
+shopt -s inherit_errexit shift_verbose extglob nullglob
+
+VERSION='1.0.0'
+SCRIPT_PATH=$(readlink -en -- "$0")
+SCRIPT_NAME=${SCRIPT_PATH##*/}
+readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
+
+show_help() {
+  cat <<EOT
+$SCRIPT_NAME $VERSION - Clean non-essential email headers
+
+Remove bloat headers (Microsoft Exchange, tracking, etc.) from email files
+in-place while preserving timestamps and essential routing information.
+
+Usage: $SCRIPT_NAME [Options] FILE|DIR [FILE|DIR ...]
+
+Options:
+  -d|--days <n>     Only process files newer than n days (default: all files)
+  -m|--maxdepth <n> When DIR specified, max depth to traverse (default: 1)
+  -v|--verbose      Increase verbosity
+  -q|--quiet        Suppress output
+  -V|--version      Show version
+  -h|--help         Show this help message
+
+Environment Variables:
+  MAILHEADERCLEAN          Replace built-in removal list
+  MAILHEADERCLEAN_PRESERVE Exclude headers from removal
+  MAILHEADERCLEAN_EXTRA    Add headers to removal list
+
+Examples:
+  # Clean single file in-place
+  $SCRIPT_NAME email.eml
+
+  # Clean all files in directory
+  $SCRIPT_NAME /path/to/maildir
+
+  # Clean files modified in last 7 days
+  $SCRIPT_NAME -d 7 /path/to/maildir
+EOT
+  exit "${1:-0}"
+}
+
+declare -i VERBOSE=1
+vecho() { ((VERBOSE)) || return 0; >&2 printf '%s\n' "$*"; }
+info() { ((VERBOSE)) || return 0; >&2 printf '%s: info: %s\n' "$SCRIPT_NAME" "$*"; }
+warn() { >&2 printf '%s: warning: %s\n' "$SCRIPT_NAME" "$*"; }
+error() { >&2 printf '%s: error: %s\n' "$SCRIPT_NAME" "$*"; }
+die() { (($# > 1)) && error "${@:2}"; exit "${1:-0}"; }
+
+noarg() {
+  if (($# < 2)) || [[ ${2:0:1} == '-' ]]; then
+    die 2 "Missing argument for option '$1'"
+  fi
+}
+
+declare -a Paths=()
+declare -a Files=()
+declare -i days=0 maxdepth=1
+
+# Parse arguments
+while (($#)); do case "$1" in
+  -d|--days)      noarg "$@"; shift; days="$1" ;;
+  -m|--maxdepth)  noarg "$@"; shift; maxdepth="$1" ;;
+  -v|--verbose)   VERBOSE+=1 ;;
+  -q|--quiet)     VERBOSE=0 ;;
+  -V|--version)   echo "$SCRIPT_NAME $VERSION"; exit 0 ;;
+  -h|--help)      show_help 0 ;;
+  -[dmvqVh]*) #shellcheck disable=SC2046
+                  set -- '' $(printf -- '-%c ' $(grep -o . <<<"${1:1}")) "${@:2}" ;;
+  -*)             die 22 "Invalid option '$1'" ;;
+  *)              Paths+=("$1") ;;
+esac; shift; done
+
+# If no paths, exit
+((${#Paths[@]})) || die 2 "No files to process"
+
+# Build Files array from paths (files and directories)
+declare -- path
+declare -a find_args=()
+for path in "${Paths[@]}"; do
+  if [[ -f "$path" ]]; then
+    Files+=("$path")
+  elif [[ -d "$path" ]]; then
+    find_args=("$path" -maxdepth "$maxdepth" -type f)
+    ((days > 0)) && find_args+=(-mtime -"$days")
+    readarray -t -O "${#Files[@]}" Files < <(find "${find_args[@]}" 2>/dev/null || true)
+  else
+    die 1 "Not a file or directory: '$path'"
+  fi
+done
+
+((${#Files[@]})) || die 1 'No files to process'
+
+# Try to load mailheaderclean builtin, fallback to binary
+if ! type -t mailheaderclean >/dev/null; then
+  enable -f /usr/local/lib/bash/loadables/mailheaderclean.so mailheaderclean 2>/dev/null || \
+      warn "enable builtin mailheaderclean failed"
+fi
+
+# Process each file in-place
+declare -- file tmpfile
+declare -a error_files=()
+declare -i filecount=0
+for file in "${Files[@]}"; do
+  [[ -r "$file" ]] || { error_files+=("$file"); warn "Cannot read '$file', skipping"; continue; }
+  [[ -w "$file" ]] || { error_files+=("$file"); warn "Cannot write '$file', skipping"; continue; }
+
+  tmpfile=$(mktemp "${file}.XXXXXX") || die 1 "Failed to create temp file for '$file'"
+
+  if mailheaderclean "$file" > "$tmpfile"; then
+    # Preserve timestamps and permissions
+    touch -r "$file" "$tmpfile"
+    chmod --reference="$file" "$tmpfile"
+    mv "$tmpfile" "$file"
+    filecount+=1
+  else
+    error_files+=("$file")
+    rm -f "$tmpfile"
+    warn "Failed to clean headers in '$file'"
+  fi
+done
+
+# Report
+if ((VERBOSE)); then
+  if ((${#error_files[@]})); then
+    info 'There were errors in these files:'
+    for file in "${error_files[@]}"; do vecho "    $file"; done
+    echo
+  fi
+  info "$filecount files processed"
+fi
+
+#fin
