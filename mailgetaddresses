@@ -1,0 +1,316 @@
+#!/bin/bash
+#shellcheck disable=SC1091
+# mailgetaddresses - Extract email addresses from From/To/Cc headers
+set -euo pipefail
+shopt -s inherit_errexit shift_verbose extglob nullglob
+
+VERSION='1.0.0'
+SCRIPT_PATH=$(readlink -en -- "$0")
+SCRIPT_NAME=${SCRIPT_PATH##*/}
+readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
+
+show_help() {
+  cat <<EOT
+$SCRIPT_NAME $VERSION - Extract email addresses from email headers
+
+Extract email addresses from From, To, and Cc headers in email files.
+Accepts multiple files and/or directories as arguments.
+
+Usage: $SCRIPT_NAME [OPTIONS] <email-file|directory> [...]
+
+Options:
+  -n|--names      Include names with email addresses
+  -s|--separate   Separate output by header type (From:/To:/Cc:)
+  -H HEADERS      Comma-separated list of headers (default: from,to,cc)
+  -x|--exclude    Comma-separated directory names to exclude (default: .Junk,.Trash,.Sent)
+                  Use --exclude '' to remove all exclusions
+  -h|--help       Show this help message
+
+Output Formats:
+  Default:        email@example.com (one per line)
+  With -n:        Name <email@example.com>
+  With -s:        From: email@example.com
+                  To: email@example.com
+
+Examples:
+  # Extract from single file
+  $SCRIPT_NAME email.eml
+
+  # Extract with names
+  $SCRIPT_NAME -n email.eml message.eml
+
+  # Process entire directory
+  $SCRIPT_NAME /path/to/maildir/
+
+  # Extract only From and To headers
+  $SCRIPT_NAME -s -H from,to /path/to/maildir
+
+  # Exclude additional directories
+  $SCRIPT_NAME -x .Junk,.Trash,.Sent,.Spam /path/to/maildir
+
+  # Process all subdirectories (no exclusions)
+  $SCRIPT_NAME --exclude '' /path/to/maildir
+
+  # Deduplicate addresses
+  $SCRIPT_NAME /path/to/maildir/ | sort -u
+EOT
+  exit "${1:-0}"
+}
+
+warn() { >&2 printf '%s: warning: %s\n' "$SCRIPT_NAME" "$*"; }
+error() { >&2 printf '%s: error: %s\n' "$SCRIPT_NAME" "$*"; }
+die() { (($# > 1)) && error "${@:2}"; exit "${1:-0}"; }
+
+noarg() {
+  if (($# < 2)) || [[ ${2:0:1} == '-' ]]; then
+    die 2 "Missing argument for option '$1'"
+  fi
+}
+
+# Options
+declare -i opt_names=0        # Include names with emails
+declare -i opt_separate=0     # Separate output by header type
+declare -- opt_headers="from to cc"  # Which headers to extract
+declare -- opt_exclude=".Junk,.Trash,.Sent"  # Directories to exclude
+
+# Parse command line options
+while (($#)); do case "$1" in
+  -n|--names)     opt_names=1 ;;
+  -s|--separate)  opt_separate=1 ;;
+  -H)             noarg "$@"; shift; opt_headers="$1" ;;
+  -x|--exclude)   noarg "$@"; shift; opt_exclude="$1" ;;
+  -h|--help)      show_help 0 ;;
+  -[nsHhx]*) #shellcheck disable=SC2046
+                  set -- '' $(printf -- '-%c ' $(grep -o . <<<"${1:1}")) "${@:2}" ;;
+  -*)             die 22 "Invalid option '$1'" ;;
+  *)              break ;;
+esac; shift; done
+
+# Validate arguments
+(($#)) || die 2 "At least one email file or directory required"
+
+# Try to load mailheader builtin, fallback to binary
+if ! type -t mailheader >/dev/null; then
+  if [[ -f /etc/profile.d/mail-tools.sh ]]; then
+    source /etc/profile.d/mail-tools.sh
+  else
+    enable -f /usr/local/lib/bash/loadables/mailheader.so mailheader 2>/dev/null
+  fi
+  if ! type -t mailheader >/dev/null; then
+    warn "enable builtin mailheader failed"
+    command -v mailheader || die 1 "mailheader not found!"
+  fi
+fi
+
+# Store arguments as array
+declare -a input_paths=("$@")
+
+# Build grep pattern for requested headers (case-insensitive)
+declare -- header_pattern
+header_pattern=$(echo "$opt_headers" | tr ',' '|' | tr '[:lower:]' '[:upper:]')
+
+# Decode RFC 2047 encoded-words (=?charset?encoding?text?=)
+decode_rfc2047() {
+  local -- text="$1"
+
+  # Check if text contains encoded-word
+  if [[ ! "$text" =~ =\?[^?]+\?[QqBb]\?[^?]+\?= ]]; then
+    echo "$text"
+    return
+  fi
+
+  # Try to decode using perl if available (most reliable)
+  if command -v perl >/dev/null 2>&1; then
+    perl -CS -MEncode -ne 'print decode("MIME-Header", $_)' <<< "$text" 2>/dev/null || echo "$text"
+    return
+  fi
+
+  # Fallback: simple Q-encoding decoder for UTF-8
+  local -- decoded="$text"
+  while [[ "$decoded" =~ (.*)(=\?[Uu][Tt][Ff]-8\?[Qq]\?([^?]+)\?=)(.*) ]]; do
+    local -- before="${BASH_REMATCH[1]}"
+    local -- encoded="${BASH_REMATCH[3]}"
+    local -- after="${BASH_REMATCH[4]}"
+
+    # Decode Q-encoding: _ -> space, =XX -> hex char
+    encoded="${encoded//_/ }"
+    #shellcheck disable=SC2001
+    encoded=$(echo -e "$(echo "$encoded" | sed 's/=\([0-9A-Fa-f][0-9A-Fa-f]\)/\\x\1/g')")
+
+    decoded="${before}${encoded}${after}"
+  done
+
+  echo "$decoded"
+}
+
+# Clean up name string
+clean_name() {
+  local -- name="$1"
+
+  # Remove leading/trailing whitespace
+  name="$(echo "$name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+
+  # Remove surrounding double quotes
+  name="${name#\"}"
+  name="${name%\"}"
+
+  # Remove surrounding single quotes
+  name="${name#\'}"
+  name="${name%\'}"
+
+  # Remove parenthetical email notation: "Name (email@example.com)" -> "Name"
+  local -- paren_pattern='^(.+)[[:space:]]*\([^)]+\)[[:space:]]*$'
+  if [[ "$name" =~ $paren_pattern ]]; then
+    name="${BASH_REMATCH[1]}"
+    name="$(echo "$name" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+  fi
+
+  # Decode RFC 2047 encoded-words
+  name=$(decode_rfc2047 "$name")
+
+  echo "$name"
+}
+
+# Extract and parse email addresses
+extract_addresses() {
+  local -n _output_array="$1"
+  local -- header_line="$2"
+  local -- header_type="${3:-}"
+
+  # Remove header label (e.g., "From: ", "To: ", "Cc: ")
+  local -- addresses_part="${header_line#*: }"
+
+  # Split by comma to handle multiple recipients
+  local -- IFS=','
+  local -a addr_list
+  read -ra addr_list <<< "$addresses_part"
+
+  for addr in "${addr_list[@]}"; do
+    # Trim leading/trailing whitespace
+    addr="$(echo "$addr" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+
+    # Extract email from angle brackets if present
+    if [[ "$addr" =~ \<([^>]+)\> ]]; then
+      local -- email="${BASH_REMATCH[1]}"
+      # Trim whitespace from email
+      email="$(echo "$email" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+      local -- name=""
+
+      # Extract name part if -n option is set
+      if [[ $opt_names -eq 1 ]]; then
+        # Get everything before the <email>
+        name="${addr%%<*}"
+        # Remove backslashes
+        name="${name//\\}"
+        # Clean up the name (quotes, encoding, etc.)
+        name=$(clean_name "$name")
+        # If name is identical to email, treat as no name
+        if [[ "$name" == "$email" ]]; then
+          name=""
+        fi
+      fi
+
+      # Format output
+      if [[ $opt_names -eq 1 && -n "$name" ]]; then
+        if [[ $opt_separate -eq 1 ]]; then
+          _output_array+=("$header_type: $name <$email>")
+        else
+          _output_array+=("$name <$email>")
+        fi
+      else
+        if [[ $opt_separate -eq 1 ]]; then
+          _output_array+=("$header_type: $email")
+        else
+          _output_array+=("$email")
+        fi
+      fi
+    elif [[ "$addr" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+      # Plain email without angle brackets
+      if [[ $opt_separate -eq 1 ]]; then
+        _output_array+=("$header_type: $addr")
+      else
+        _output_array+=("$addr")
+      fi
+    fi
+  done
+}
+
+# Process a single email file
+process_file() {
+  local -- email_file="$1"
+  local -a file_results=()
+  local -- header_type
+
+  # Extract headers and process
+  while IFS= read -r line; do
+    # Check if line matches requested headers (case-insensitive)
+    if [[ "$line" =~ ^(From|To|Cc|CC):\ .+ ]]; then
+      # Get header type
+      header_type="${line%%:*}"
+      header_type="$(echo "$header_type" | tr '[:lower:]' '[:upper:]')"
+
+      # Check if this header type is requested
+      if [[ "$header_pattern" =~ $header_type ]]; then
+        extract_addresses file_results "$line" "$header_type"
+      fi
+    fi
+  done < <(mailheader "$email_file")
+
+  # Output results
+  for result in "${file_results[@]}"; do
+    echo "$result"
+  done
+}
+
+# Main processing
+declare -a all_files=()
+
+# Build find exclusion arguments
+declare -a find_exclude_args=()
+if [[ -n "$opt_exclude" ]]; then
+  # Split exclude list by comma
+  declare -- IFS=','
+  declare -a exclude_list
+  read -ra exclude_list <<< "$opt_exclude"
+
+  # Build find prune expression
+  if ((${#exclude_list[@]} > 0)); then
+    find_exclude_args+=('(')
+    for ((i=0; i<${#exclude_list[@]}; i++)); do
+      ((i > 0)) && find_exclude_args+=('-o')
+      find_exclude_args+=('-name' "${exclude_list[i]}")
+    done
+    find_exclude_args+=(')' '-prune' '-o')
+  fi
+fi
+
+# Collect all files to process
+for input_path in "${input_paths[@]}"; do
+  if [[ -f "$input_path" ]]; then
+    # Single file
+    if [[ ! -r "$input_path" ]]; then
+      warn "File not readable, skipping: $input_path"
+      continue
+    fi
+    all_files+=("$input_path")
+  elif [[ -d "$input_path" ]]; then
+    # Directory - find all files, excluding specified directories
+    while IFS= read -r -d '' file; do
+      if [[ -r "$file" ]]; then
+        all_files+=("$file")
+      fi
+    done < <(find "$input_path" "${find_exclude_args[@]}" -type f -print0)
+  else
+    warn "Not a file or directory, skipping: $input_path"
+  fi
+done
+
+# Check if we have files to process
+((${#all_files[@]})) || die 1 "No readable files found"
+
+# Process each file
+for file in "${all_files[@]}"; do
+  process_file "$file"
+done
+
+#fin

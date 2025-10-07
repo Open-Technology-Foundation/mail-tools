@@ -1,0 +1,196 @@
+.TH MAILGETADDRESSES 1 "January 2025" "Mail Tools" "User Commands"
+.SH NAME
+mailgetaddresses \- extract email addresses from email message headers
+.SH SYNOPSIS
+.B mailgetaddresses
+[\fB\-n\fR]
+[\fB\-s\fR]
+[\fB\-h\fR \fIHEADERS\fR]
+[\fB\-\-help\fR]
+.IR email-file | directory
+[\fI...\fR]
+.SH DESCRIPTION
+.B mailgetaddresses
+extracts email addresses from From, To, and Cc headers in email files.
+It accepts multiple email files and/or directories as arguments.
+When given a directory, it processes all files within that directory.
+It uses the
+.BR mailheader (1)
+utility to extract headers and parses them to extract email addresses.
+.PP
+The script handles various email address formats including:
+.IP \(bu 2
+Name with email: John Doe <john@example.com>
+.IP \(bu 2
+Email in angle brackets: <john@example.com>
+.IP \(bu 2
+Quoted names: "John Doe" <john@example.com>
+.IP \(bu 2
+Multiple recipients separated by commas
+.IP \(bu 2
+Plain email addresses (when not in angle brackets)
+.SH OPTIONS
+.TP
+.B \-n ", \-\-names
+Include names with email addresses in the output.
+When this option is used, the output format is "Name <email@example.com>"
+for addresses that include a name part, or just "email@example.com" for
+addresses without names.
+Names are automatically cleaned by removing quotes, decoding RFC 2047 encoded-words
+(e.g., UTF-8 encoded names), removing parenthetical email addresses, and removing
+redundant names that are identical to the email address.
+.TP
+.B \-s ", \-\-separate
+Separate output by header type.
+Each line is prefixed with the header type (FROM:, TO:, or CC:).
+.TP
+.BI \-H " HEADERS"
+Comma-separated list of headers to extract.
+Default is "from,to,cc". Header names are case-insensitive.
+For example: "\-H from,to" will extract only From and To headers.
+.TP
+.BI \-x " DIRECTORIES" ", \-\-exclude " DIRECTORIES
+Comma-separated list of directory names to exclude when processing directories.
+Default is ".Junk,.Trash,.Sent".
+Use "\-\-exclude ''" (empty string) to remove all exclusions and process all subdirectories.
+.TP
+.B \-h ", \-\-help
+Display usage information and exit.
+.SH OUTPUT FORMATS
+.SS Default mode
+One email address per line:
+.PP
+.nf
+.RS
+john@example.com
+jane@example.com
+.RE
+.fi
+.SS With \-n option
+Names included with email addresses:
+.PP
+.nf
+.RS
+John Doe <john@example.com>
+jane@example.com
+.RE
+.fi
+.SS With \-s option
+Output separated by header type:
+.PP
+.nf
+.RS
+FROM: john@example.com
+TO: jane@example.com
+TO: bob@example.com
+CC: alice@example.com
+.RE
+.fi
+.SH EXAMPLES
+.TP
+Extract all email addresses from an email file:
+.nf
+mailgetaddresses email.eml
+.fi
+.TP
+Extract email addresses with names:
+.nf
+mailgetaddresses \-n email.eml
+.fi
+.TP
+Process multiple email files:
+.nf
+mailgetaddresses file1.eml file2.eml file3.eml
+.fi
+.TP
+Process all files in a directory:
+.nf
+mailgetaddresses /path/to/maildir/cur/
+.fi
+.TP
+Combine files and directories:
+.nf
+mailgetaddresses email.eml /path/to/maildir/
+.fi
+.TP
+Extract only From and To headers with separation:
+.nf
+mailgetaddresses \-s \-h from,to email.eml
+.fi
+.TP
+Exclude specific directories:
+.nf
+mailgetaddresses \-x .Junk,.Trash,.Spam /path/to/maildir/
+.fi
+.TP
+Process all subdirectories without exclusions:
+.nf
+mailgetaddresses \-\-exclude '' /path/to/maildir/
+.fi
+.TP
+Extract and deduplicate addresses from entire maildir:
+.nf
+mailgetaddresses /path/to/maildir/ | sort -u
+.fi
+.TP
+Case-insensitive deduplication (recommended):
+.nf
+mailgetaddresses /path/to/maildir/ | sort -fu
+.fi
+.TP
+Extract with names and deduplicate:
+.nf
+mailgetaddresses \-n /path/to/maildir/ | sort -fu > contacts.txt
+.fi
+.SH EXIT STATUS
+.TP
+.B 0
+Success
+.TP
+.B 1
+Error (file not found, not readable, invalid arguments, etc.)
+.SH NOTES
+The script attempts to load the
+.B mailheader
+bash builtin if available for improved performance.
+If the builtin is not available, it falls back to using the standalone
+.B mailheader
+binary.
+.PP
+Email addresses are validated using a basic regex pattern. Very complex
+or malformed email addresses may not be extracted correctly.
+.PP
+The script handles RFC 822 header continuation lines through the
+.BR mailheader (1)
+utility, which joins continuation lines before passing them to this script.
+.SS Name Cleaning
+When using the
+.B \-n
+option, names are automatically cleaned:
+.IP \(bu 2
+RFC 2047 encoded-words are decoded (e.g., =?utf-8?Q?...?= becomes readable text).
+Perl's MIME::Header is used if available, otherwise a fallback decoder handles UTF-8 Q-encoding.
+.IP \(bu 2
+Surrounding quotes (both single and double) are removed.
+.IP \(bu 2
+Parenthetical email addresses are removed (e.g., "John Doe (john@example.com)" becomes "John Doe").
+.IP \(bu 2
+Names identical to the email address are omitted (e.g., "john@example.com <john@example.com>" becomes "john@example.com").
+.SS Deduplication
+The output may contain duplicate email addresses (same address from multiple emails or headers).
+Use
+.B sort -u
+for basic deduplication or
+.B sort -fu
+for case-insensitive deduplication (recommended), as email addresses
+are case-insensitive per RFC 5321.
+.SH SEE ALSO
+.BR mailheader (1),
+.BR mailmessage (1),
+.BR mailheaderclean (1),
+.BR mailgetheaders (3)
+.SH AUTHOR
+Written for the Mail Tools project.
+.SH COPYRIGHT
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.

@@ -72,6 +72,49 @@ mailheaderclean -h                        # Show help
 - `MAILHEADERCLEAN_PRESERVE`: Exclude specific headers from removal (e.g., for Thunderbird features)
 - `MAILHEADERCLEAN_EXTRA`: Add additional headers to the built-in removal list
 
+### mailgetaddresses
+Extracts email addresses from From, To, and Cc headers in email files.
+
+- Handles various email formats (with/without names, quoted strings, etc.)
+- Multiple recipients per header
+- Optional output formatting (with names, separated by header type)
+- Selective header extraction
+- Accepts multiple files and/or directories as arguments
+- Processes all files in given directories
+- Directory exclusions (default: .Junk, .Trash, .Sent) with override support
+- **Name cleaning**: Decodes RFC 2047 encoded names, removes quotes and parenthetical notation
+- Removes redundant names (when name equals email address)
+
+```bash
+mailgetaddresses email.eml                      # Extract from single file
+mailgetaddresses -n email.eml                   # Include names with addresses
+mailgetaddresses -s email.eml                   # Separate by header type
+mailgetaddresses -H from,to email.eml           # Extract only From and To
+mailgetaddresses file1.eml file2.eml file3.eml  # Multiple files
+mailgetaddresses /path/to/maildir/              # Process directory (excludes .Junk,.Trash,.Sent)
+mailgetaddresses -x .spam,.Junk /path/to/mail/  # Custom directory exclusions
+mailgetaddresses --exclude '' /path/to/mail/    # No exclusions (process all subdirs)
+mailgetaddresses email.eml /path/to/maildir/    # Combine files and dirs
+mailgetaddresses /path/to/maildir/ | sort -fu   # Deduplicate (case-insensitive)
+mailgetaddresses -n /path/to/maildir/ | sort -fu > contacts.txt  # Build contact list
+mailgetaddresses --help                         # Show help
+```
+
+**Name Cleaning Examples:**
+```bash
+# Input:  =?utf-8?Q?Undangan_Pelatihan?= <invite@example.com>
+# Output: Undangan Pelatihan <invite@example.com>
+
+# Input:  'John Doe' <john@example.com>
+# Output: John Doe <john@example.com>
+
+# Input:  Jane Smith (jane@example.com) <jane@example.com>
+# Output: Jane Smith <jane@example.com>
+
+# Input:  bob@test.com <bob@test.com>
+# Output: bob@test.com
+```
+
 ### clean-email-headers
 Production script for batch cleaning of email files or directories in-place.
 
