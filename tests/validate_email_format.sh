@@ -12,7 +12,7 @@ for file in test-data/*; do
     filename=$(basename "$file")
 
     # Run mailheaderclean
-    output=$(../mailheaderclean "$file")
+    output=$(../build/bin/mailheaderclean "$file")
 
     # Test 1: Has headers section
     headers_end=$(echo "$output" | grep -n "^$" | head -1 | cut -d: -f1)

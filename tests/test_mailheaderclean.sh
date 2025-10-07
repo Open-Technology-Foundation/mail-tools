@@ -12,7 +12,7 @@ for file in test-data/*; do
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
     # Run mailheaderclean
-    cleaned=$(../mailheaderclean "$file")
+    cleaned=$(../build/bin/mailheaderclean "$file")
 
     # Test 1: Non-empty output
     if [ -z "$cleaned" ]; then

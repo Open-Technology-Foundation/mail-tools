@@ -6,14 +6,14 @@ TEST_FILE="test-data/1749819569.M335292P205326V0000000000000811I000000000AE40A83
 # Function to reload builtin freshly
 reload_builtin() {
     enable -d mailheaderclean 2>/dev/null
-    enable -f ../mailheaderclean.so mailheaderclean 2>/dev/null
+    enable -f ../build/lib/mailheaderclean.so mailheaderclean 2>/dev/null
 }
 
 echo "=== Comparing Standalone vs Builtin Output ==="
 echo
 
 echo "TEST 1: Default behavior"
-../mailheaderclean "$TEST_FILE" > /tmp/standalone_default.txt
+../build/bin/mailheaderclean "$TEST_FILE" > /tmp/standalone_default.txt
 reload_builtin
 builtin mailheaderclean "$TEST_FILE" > /tmp/builtin_default.txt
 if diff -q /tmp/standalone_default.txt /tmp/builtin_default.txt > /dev/null; then
@@ -25,7 +25,7 @@ fi
 echo
 
 echo "TEST 2: With MAILHEADERCLEAN_PRESERVE"
-MAILHEADERCLEAN_PRESERVE="X-Spam-Status,X-Priority" ../mailheaderclean "$TEST_FILE" > /tmp/standalone_preserve.txt
+MAILHEADERCLEAN_PRESERVE="X-Spam-Status,X-Priority" ../build/bin/mailheaderclean "$TEST_FILE" > /tmp/standalone_preserve.txt
 reload_builtin
 export MAILHEADERCLEAN_PRESERVE="X-Spam-Status,X-Priority"
 builtin mailheaderclean "$TEST_FILE" > /tmp/builtin_preserve.txt
@@ -39,7 +39,7 @@ fi
 echo
 
 echo "TEST 3: With MAILHEADERCLEAN"
-MAILHEADERCLEAN="From,To,Subject" ../mailheaderclean "$TEST_FILE" > /tmp/standalone_custom.txt
+MAILHEADERCLEAN="From,To,Subject" ../build/bin/mailheaderclean "$TEST_FILE" > /tmp/standalone_custom.txt
 reload_builtin
 export MAILHEADERCLEAN="From,To,Subject"
 builtin mailheaderclean "$TEST_FILE" > /tmp/builtin_custom.txt
@@ -53,7 +53,7 @@ fi
 echo
 
 echo "TEST 4: With MAILHEADERCLEAN_EXTRA"
-MAILHEADERCLEAN_EXTRA="Reply-To,Message-ID" ../mailheaderclean "$TEST_FILE" > /tmp/standalone_extra.txt
+MAILHEADERCLEAN_EXTRA="Reply-To,Message-ID" ../build/bin/mailheaderclean "$TEST_FILE" > /tmp/standalone_extra.txt
 reload_builtin
 export MAILHEADERCLEAN_EXTRA="Reply-To,Message-ID"
 builtin mailheaderclean "$TEST_FILE" > /tmp/builtin_extra.txt
@@ -68,7 +68,7 @@ echo
 
 echo "TEST 5: Complex combination"
 MAILHEADERCLEAN="From,X-Spam-Status" MAILHEADERCLEAN_PRESERVE="X-Spam-Status" MAILHEADERCLEAN_EXTRA="Reply-To" \
-  ../mailheaderclean "$TEST_FILE" > /tmp/standalone_complex.txt
+  ../build/bin/mailheaderclean "$TEST_FILE" > /tmp/standalone_complex.txt
 reload_builtin
 export MAILHEADERCLEAN="From,X-Spam-Status"
 export MAILHEADERCLEAN_PRESERVE="X-Spam-Status"

@@ -6,14 +6,14 @@ echo
 
 echo "TEST: MAILHEADERCLEAN_PRESERVE preserves X-Spam-Status"
 echo "Default behavior (should be removed):"
-../mailheaderclean "$TEST_FILE" | grep "^X-Spam-Status:" || echo "  X-Spam-Status: NOT FOUND (correct - it's removed)"
+../build/bin/mailheaderclean "$TEST_FILE" | grep "^X-Spam-Status:" || echo "  X-Spam-Status: NOT FOUND (correct - it's removed)"
 echo
 echo "With PRESERVE (should be kept):"
-MAILHEADERCLEAN_PRESERVE="X-Spam-Status" ../mailheaderclean "$TEST_FILE" | grep "^X-Spam-Status:"
+MAILHEADERCLEAN_PRESERVE="X-Spam-Status" ../build/bin/mailheaderclean "$TEST_FILE" | grep "^X-Spam-Status:"
 echo
 echo "✓ PRESERVE works!"
 echo
 
 echo "TEST: MAILHEADERCLEAN replaces built-in list"
 echo "Custom list removes only From, keeps everything else:"
-MAILHEADERCLEAN="From" ../mailheaderclean "$TEST_FILE" | head -20
+MAILHEADERCLEAN="From" ../build/bin/mailheaderclean "$TEST_FILE" | head -20

@@ -1,7 +1,7 @@
 #!/bin/bash
 TEST_FILE="test-data/1749819569.M335292P205326V0000000000000811I000000000AE40A83_10.okusi0,S=5408:2,S"
 
-enable -f ../mailheaderclean.so mailheaderclean 2>/dev/null
+enable -f ../build/lib/mailheaderclean.so mailheaderclean 2>/dev/null
 
 echo "=== Testing with export ==="
 echo
@@ -19,4 +19,4 @@ unset MAILHEADERCLEAN
 echo
 
 echo "Test 3: For comparison, standalone with inline"
-MAILHEADERCLEAN="From" ../mailheaderclean "$TEST_FILE" | grep "^From:" && echo "  From FOUND (BUG)" || echo "  From removed (OK)"
+MAILHEADERCLEAN="From" ../build/bin/mailheaderclean "$TEST_FILE" | grep "^From:" && echo "  From FOUND (BUG)" || echo "  From removed (OK)"

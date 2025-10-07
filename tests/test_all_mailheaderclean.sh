@@ -12,7 +12,7 @@ echo
 # Function to reload builtin freshly
 reload_builtin() {
     enable -d mailheaderclean 2>/dev/null
-    enable -f ../mailheaderclean.so mailheaderclean 2>/dev/null
+    enable -f ../build/lib/mailheaderclean.so mailheaderclean 2>/dev/null
 }
 
 # Test counters
@@ -26,7 +26,7 @@ for email in test-data/*; do
     [ ! -f "$email" ] && continue
 
     # Run standalone version
-    OUTPUT=$(../mailheaderclean "$email" 2>&1)
+    OUTPUT=$(../build/bin/mailheaderclean "$email" 2>&1)
 
     if [ $? -ne 0 ]; then
         echo "  ✗ FAIL: $email - mailheaderclean returned error"
@@ -84,7 +84,7 @@ for email in test-data/*; do
     fi
 
     # Run standalone
-    ../mailheaderclean "$email" > /tmp/standalone_clean.txt 2>&1
+    ../build/bin/mailheaderclean "$email" > /tmp/standalone_clean.txt 2>&1
 
     # Run builtin
     reload_builtin
@@ -123,7 +123,7 @@ for email in test-data/*; do
     # Check if original has X-Spam headers
     if grep -qi '^X-Spam-' "$email"; then
         # Cleaned version should not have them
-        if ../mailheaderclean "$email" | grep -qi '^X-Spam-'; then
+        if ../build/bin/mailheaderclean "$email" | grep -qi '^X-Spam-'; then
             echo "  ✗ FAIL: $email - X-Spam headers not removed"
             ((REMOVE_FAIL++))
             continue
@@ -132,7 +132,7 @@ for email in test-data/*; do
 
     # Check if original has Received headers (should keep only first one)
     ORIG_RECEIVED=$(grep -c '^Received:' "$email" || true)
-    CLEAN_RECEIVED=$(../mailheaderclean "$email" | grep -c '^Received:' || true)
+    CLEAN_RECEIVED=$(../build/bin/mailheaderclean "$email" | grep -c '^Received:' || true)
 
     if [ $ORIG_RECEIVED -gt 1 ] && [ $CLEAN_RECEIVED -ne 1 ]; then
         echo "  ✗ FAIL: $email - should have exactly 1 Received header (has $CLEAN_RECEIVED)"
@@ -164,10 +164,10 @@ for email in test-data/*; do
     fi
 
     # Extract body from original
-    ../mailmessage "$email" > /tmp/orig_body.txt
+    ../build/bin/mailmessage "$email" > /tmp/orig_body.txt
 
     # Extract body from cleaned version
-    ../mailheaderclean "$email" | ../mailmessage /dev/stdin > /tmp/clean_body.txt 2>/dev/null
+    ../build/bin/mailheaderclean "$email" | ../build/bin/mailmessage /dev/stdin > /tmp/clean_body.txt 2>/dev/null
 
     # Compare bodies (should be identical)
     if diff -q /tmp/orig_body.txt /tmp/clean_body.txt > /dev/null 2>&1; then
@@ -190,8 +190,8 @@ echo "--------------------------------------------"
 TEST_EMAIL=$(find test-data -type f | head -1)
 
 # Test MAILHEADERCLEAN_PRESERVE
-../mailheaderclean "$TEST_EMAIL" > /tmp/default.txt
-MAILHEADERCLEAN_PRESERVE="X-Spam-Status" ../mailheaderclean "$TEST_EMAIL" > /tmp/preserve.txt
+../build/bin/mailheaderclean "$TEST_EMAIL" > /tmp/default.txt
+MAILHEADERCLEAN_PRESERVE="X-Spam-Status" ../build/bin/mailheaderclean "$TEST_EMAIL" > /tmp/preserve.txt
 
 # If original had X-Spam-Status, preserved version should have it
 if grep -q '^X-Spam-Status:' "$TEST_EMAIL"; then
@@ -205,7 +205,7 @@ else
 fi
 
 # Test MAILHEADERCLEAN (custom list)
-MAILHEADERCLEAN="From,To" ../mailheaderclean "$TEST_EMAIL" > /tmp/custom.txt
+MAILHEADERCLEAN="From,To" ../build/bin/mailheaderclean "$TEST_EMAIL" > /tmp/custom.txt
 if ! grep -q '^From:' /tmp/custom.txt && ! grep -q '^To:' /tmp/custom.txt; then
     echo "  ✓ MAILHEADERCLEAN works"
 else
@@ -213,7 +213,7 @@ else
 fi
 
 # Test MAILHEADERCLEAN_EXTRA
-MAILHEADERCLEAN_EXTRA="Subject" ../mailheaderclean "$TEST_EMAIL" > /tmp/extra.txt
+MAILHEADERCLEAN_EXTRA="Subject" ../build/bin/mailheaderclean "$TEST_EMAIL" > /tmp/extra.txt
 if ! grep -q '^Subject:' /tmp/extra.txt; then
     echo "  ✓ MAILHEADERCLEAN_EXTRA works"
 else

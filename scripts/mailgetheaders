@@ -1,38 +1,107 @@
 #!/bin/bash
+#shellcheck disable=SC2034
+# mailgetheaders - Parse email headers into bash associative array
+set -euo pipefail
+shopt -s inherit_errexit shift_verbose extglob nullglob
 
+VERSION='1.0.0'
+SCRIPT_PATH=$(readlink -en -- "$0")
+SCRIPT_DIR=${SCRIPT_PATH%/*}
+SCRIPT_NAME=${SCRIPT_PATH##*/}
+readonly -- VERSION SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
+
+# Color definitions (only if terminal supports)
+[[ -t 1 && -t 2 ]] && declare -- RED=$'\033[0;31m' GREEN=$'\033[0;32m' YELLOW=$'\033[0;33m' CYAN=$'\033[0;36m' NC=$'\033[0m' || declare -- RED='' GREEN='' YELLOW='' CYAN='' NC=''
+readonly -- RED GREEN YELLOW CYAN NC
+
+# Core message function
+_msg() {
+  local -- prefix="$SCRIPT_NAME:" msg
+  case "${FUNCNAME[1]}" in
+    success) prefix+=" ${GREEN}✓${NC}" ;;
+    warn)    prefix+=" ${YELLOW}⚡${NC}" ;;
+    info)    prefix+=" ${CYAN}◉${NC}" ;;
+    error)   prefix+=" ${RED}✗${NC}" ;;
+    *)       ;;
+  esac
+  for msg in "$@"; do printf '%s %s\n' "$prefix" "$msg"; done
+}
+
+error() { >&2 _msg "$@"; }
+die() { (($# > 1)) && error "${@:2}"; exit "${1:-0}"; }
+
+show_help() {
+  cat <<EOT
+$SCRIPT_NAME $VERSION - Parse email headers into bash associative array
+
+Extract all headers from an email file and output bash code to populate
+an associative array. Handles RFC 822 continuation lines.
+
+Usage: $SCRIPT_NAME <email-file>
+
+Options:
+  -h|--help         Show this help message
+  -V|--version      Show version
+
+Output:
+  Outputs bash code suitable for eval:
+    declare -A Headers=([From]="sender@example.com" [To]="..." ...)
+
+Examples:
+  # Populate Headers array in current shell
+  declare -A Headers
+  eval "\$($SCRIPT_NAME email.eml)"
+  echo "From: \${Headers[From]}"
+
+  # Use in script
+  declare -A Headers
+  eval "\$($SCRIPT_NAME email.eml)"
+  echo "Subject: \${Headers[Subject]}"
+  echo "File: \${Headers[file]}"
+
+Note: This script can also be sourced to use the mailgetheaders() function.
+EOT
+  exit "${1:-0}"
+}
+
+# Function for use when sourced
 mailgetheaders() {
   local -n headers="$1"
   [[ -f "$2" ]] || return 1
   headers=()
   local -- line
   while read -r line; do
-    #shellcheck disable=SC2034
     headers[${line%%:*}]="${line#*: }"
   done < <(mailheader "$2")
   return 0
 }
+
+# Export function so it's available in subshells
 declare -fx mailgetheaders
 
+# Main execution when run as script
 if [[ ${BASH_SOURCE[0]} == "$0" ]]; then
-  set -euo pipefail
+  # Parse options
+  while (($#)); do case "$1" in
+    -h|--help)    show_help 0 ;;
+    -V|--version) echo "$SCRIPT_NAME $VERSION"; exit 0 ;;
+    -*)           die 22 "Invalid option '$1'" ;;
+    *)            break ;;
+  esac; shift; done
 
+  # Validate arguments
+  [[ -n "${1:-}" ]] || die 2 "Email file required"
+
+  declare -- mdir_file
+  mdir_file=$(readlink -en -- "$1") || die 1 "File '$1' not found"
+
+  # Parse headers into associative array
   declare -A Headers=()
-  
-  declare -- mdir_file="${1:-}"
+  mailgetheaders Headers "$mdir_file" || die $? "Error parsing headers"
+  Headers[file]="$mdir_file"
 
-  mdir_file=$(readlink -en -- "$mdir_file") || {
-    >&2 echo "$(basename -- "$0"): File '$1' not found"
-    exit 1
-  }
-  
-  mailgetheaders Headers "$mdir_file" || { 
-    declare -i err=$?
-    >&2 echo "$(basename -- "$0"): Error $err in mailgetheaders"
-    exit $err
-  }
-  Headers[file]="$mdir_file"  
-
+  # Output bash array declaration
   declare -p Headers
 fi
- 
+
 #fin

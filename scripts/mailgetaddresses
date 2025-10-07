@@ -6,8 +6,42 @@ shopt -s inherit_errexit shift_verbose extglob nullglob
 
 VERSION='1.0.0'
 SCRIPT_PATH=$(readlink -en -- "$0")
+SCRIPT_DIR=${SCRIPT_PATH%/*}
 SCRIPT_NAME=${SCRIPT_PATH##*/}
-readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
+readonly -- VERSION SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
+
+declare -i VERBOSE=1
+
+# Color definitions (only if terminal supports)
+[[ -t 1 && -t 2 ]] && declare -- RED=$'\033[0;31m' GREEN=$'\033[0;32m' YELLOW=$'\033[0;33m' CYAN=$'\033[0;36m' NC=$'\033[0m' || declare -- RED='' GREEN='' YELLOW='' CYAN='' NC=''
+readonly -- RED GREEN YELLOW CYAN NC
+
+# Core message function
+_msg() {
+  local -- prefix="$SCRIPT_NAME:" msg
+  case "${FUNCNAME[1]}" in
+    success) prefix+=" ${GREEN}✓${NC}" ;;
+    warn)    prefix+=" ${YELLOW}⚡${NC}" ;;
+    info)    prefix+=" ${CYAN}◉${NC}" ;;
+    error)   prefix+=" ${RED}✗${NC}" ;;
+    *)       ;;
+  esac
+  for msg in "$@"; do printf '%s %s\n' "$prefix" "$msg"; done
+}
+
+# Messaging functions
+vecho() { ((VERBOSE)) || return 0; _msg "$@"; }
+success() { ((VERBOSE)) || return 0; >&2 _msg "$@"; }
+warn() { ((VERBOSE)) || return 0; >&2 _msg "$@"; }
+info() { ((VERBOSE)) || return 0; >&2 _msg "$@"; }
+error() { >&2 _msg "$@"; }
+die() { (($# > 1)) && error "${@:2}"; exit "${1:-0}"; }
+
+noarg() {
+  if (($# < 2)) || [[ ${2:0:1} == '-' ]]; then
+    die 2 "Missing argument for option '$1'"
+  fi
+}
 
 show_help() {
   cat <<EOT
@@ -56,58 +90,6 @@ Examples:
 EOT
   exit "${1:-0}"
 }
-
-warn() { >&2 printf '%s: warning: %s\n' "$SCRIPT_NAME" "$*"; }
-error() { >&2 printf '%s: error: %s\n' "$SCRIPT_NAME" "$*"; }
-die() { (($# > 1)) && error "${@:2}"; exit "${1:-0}"; }
-
-noarg() {
-  if (($# < 2)) || [[ ${2:0:1} == '-' ]]; then
-    die 2 "Missing argument for option '$1'"
-  fi
-}
-
-# Options
-declare -i opt_names=0        # Include names with emails
-declare -i opt_separate=0     # Separate output by header type
-declare -- opt_headers="from to cc"  # Which headers to extract
-declare -- opt_exclude=".Junk,.Trash,.Sent"  # Directories to exclude
-
-# Parse command line options
-while (($#)); do case "$1" in
-  -n|--names)     opt_names=1 ;;
-  -s|--separate)  opt_separate=1 ;;
-  -H)             noarg "$@"; shift; opt_headers="$1" ;;
-  -x|--exclude)   noarg "$@"; shift; opt_exclude="$1" ;;
-  -h|--help)      show_help 0 ;;
-  -[nsHhx]*) #shellcheck disable=SC2046
-                  set -- '' $(printf -- '-%c ' $(grep -o . <<<"${1:1}")) "${@:2}" ;;
-  -*)             die 22 "Invalid option '$1'" ;;
-  *)              break ;;
-esac; shift; done
-
-# Validate arguments
-(($#)) || die 2 "At least one email file or directory required"
-
-# Try to load mailheader builtin, fallback to binary
-if ! type -t mailheader >/dev/null; then
-  if [[ -f /etc/profile.d/mail-tools.sh ]]; then
-    source /etc/profile.d/mail-tools.sh
-  else
-    enable -f /usr/local/lib/bash/loadables/mailheader.so mailheader 2>/dev/null
-  fi
-  if ! type -t mailheader >/dev/null; then
-    warn "enable builtin mailheader failed"
-    command -v mailheader || die 1 "mailheader not found!"
-  fi
-fi
-
-# Store arguments as array
-declare -a input_paths=("$@")
-
-# Build grep pattern for requested headers (case-insensitive)
-declare -- header_pattern
-header_pattern=$(echo "$opt_headers" | tr ',' '|' | tr '[:lower:]' '[:upper:]')
 
 # Decode RFC 2047 encoded-words (=?charset?encoding?text?=)
 decode_rfc2047() {
@@ -262,55 +244,104 @@ process_file() {
   done
 }
 
-# Main processing
-declare -a all_files=()
+main() {
+  # Options
+  local -i opt_names=0        # Include names with emails
+  local -i opt_separate=0     # Separate output by header type
+  local -- opt_headers="from to cc"  # Which headers to extract
+  local -- opt_exclude=".Junk,.Trash,.Sent"  # Directories to exclude
 
-# Build find exclusion arguments
-declare -a find_exclude_args=()
-if [[ -n "$opt_exclude" ]]; then
-  # Split exclude list by comma
-  declare -- IFS=','
-  declare -a exclude_list
-  read -ra exclude_list <<< "$opt_exclude"
+  # Parse command line options
+  while (($#)); do case "$1" in
+    -n|--names)     opt_names=1 ;;
+    -s|--separate)  opt_separate=1 ;;
+    -H)             noarg "$@"; shift; opt_headers="$1" ;;
+    -x|--exclude)   noarg "$@"; shift; opt_exclude="$1" ;;
+    -h|--help)      show_help 0 ;;
+    -[nsHhx]*) #shellcheck disable=SC2046
+                    set -- '' $(printf -- '-%c ' $(grep -o . <<<"${1:1}")) "${@:2}" ;;
+    -*)             die 22 "Invalid option '$1'" ;;
+    *)              break ;;
+  esac; shift; done
 
-  # Build find prune expression
-  if ((${#exclude_list[@]} > 0)); then
-    find_exclude_args+=('(')
-    for ((i=0; i<${#exclude_list[@]}; i++)); do
-      ((i > 0)) && find_exclude_args+=('-o')
-      find_exclude_args+=('-name' "${exclude_list[i]}")
-    done
-    find_exclude_args+=(')' '-prune' '-o')
-  fi
-fi
+  # Validate arguments
+  (($#)) || die 2 "At least one email file or directory required"
 
-# Collect all files to process
-for input_path in "${input_paths[@]}"; do
-  if [[ -f "$input_path" ]]; then
-    # Single file
-    if [[ ! -r "$input_path" ]]; then
-      warn "File not readable, skipping: $input_path"
-      continue
+  # Try to load mailheader builtin, fallback to binary
+  if ! type -t mailheader >/dev/null; then
+    if [[ -f /etc/profile.d/mail-tools.sh ]]; then
+      source /etc/profile.d/mail-tools.sh
+    else
+      enable -f /usr/local/lib/bash/loadables/mailheader.so mailheader 2>/dev/null
     fi
-    all_files+=("$input_path")
-  elif [[ -d "$input_path" ]]; then
-    # Directory - find all files, excluding specified directories
-    while IFS= read -r -d '' file; do
-      if [[ -r "$file" ]]; then
-        all_files+=("$file")
-      fi
-    done < <(find "$input_path" "${find_exclude_args[@]}" -type f -print0)
-  else
-    warn "Not a file or directory, skipping: $input_path"
+    if ! type -t mailheader >/dev/null; then
+      warn "enable builtin mailheader failed"
+      command -v mailheader || die 1 "mailheader not found!"
+    fi
   fi
-done
 
-# Check if we have files to process
-((${#all_files[@]})) || die 1 "No readable files found"
+  # Store arguments as array
+  local -a input_paths=("$@")
 
-# Process each file
-for file in "${all_files[@]}"; do
-  process_file "$file"
-done
+  # Build grep pattern for requested headers (case-insensitive)
+  local -- header_pattern
+  header_pattern=$(echo "$opt_headers" | tr ',' '|' | tr '[:lower:]' '[:upper:]')
 
+  # Main processing
+  local -a all_files=()
+
+  # Build find exclusion arguments
+  local -a find_exclude_args=()
+  if [[ -n "$opt_exclude" ]]; then
+    # Split exclude list by comma
+    local -- IFS=','
+    local -a exclude_list
+    read -ra exclude_list <<< "$opt_exclude"
+
+    # Build find prune expression
+    if ((${#exclude_list[@]} > 0)); then
+      find_exclude_args+=('(')
+      for ((i=0; i<${#exclude_list[@]}; i++)); do
+        ((i > 0)) && find_exclude_args+=('-o')
+        find_exclude_args+=('-name' "${exclude_list[i]}")
+      done
+      find_exclude_args+=(')' '-prune' '-o')
+    fi
+  fi
+
+  # Collect all files to process
+  local -- input_path
+  for input_path in "${input_paths[@]}"; do
+    if [[ -f "$input_path" ]]; then
+      # Single file
+      if [[ ! -r "$input_path" ]]; then
+        warn "File not readable, skipping: $input_path"
+        continue
+      fi
+      all_files+=("$input_path")
+    elif [[ -d "$input_path" ]]; then
+      # Directory - find all files, excluding specified directories
+      while IFS= read -r -d '' file; do
+        if [[ -r "$file" ]]; then
+          all_files+=("$file")
+        fi
+      done < <(find "$input_path" "${find_exclude_args[@]}" -type f -print0)
+    else
+      warn "Not a file or directory, skipping: $input_path"
+    fi
+  done
+
+  # Check if we have files to process
+  ((${#all_files[@]})) || die 1 "No readable files found"
+
+  # Process each file
+  local -- file
+  for file in "${all_files[@]}"; do
+    process_file "$file"
+  done
+
+  return 0
+}
+
+main "$@"
 #fin

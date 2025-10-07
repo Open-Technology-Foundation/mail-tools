@@ -14,7 +14,7 @@ echo "  ✓ Headers removed by default (both should be 0)"
 echo
 
 echo "TEST 2: MAILHEADERCLEAN_PRESERVE (preserve priority headers)"
-result=$(MAILHEADERCLEAN_PRESERVE="X-Priority,Importance" ../mailheaderclean "$TEST_FILE" | grep "^X-Priority:")
+result=$(MAILHEADERCLEAN_PRESERVE="X-Priority,Importance" ../build/bin/mailheaderclean "$TEST_FILE" | grep "^X-Priority:")
 if [ -n "$result" ]; then
     echo "  ✗ FAIL: X-Priority should NOT be present (it's not in original)"
 else
@@ -23,9 +23,9 @@ fi
 echo
 
 echo "TEST 3: MAILHEADERCLEAN (custom removal list - remove only From and Subject)"
-from_count=$(MAILHEADERCLEAN="From,Subject" ../mailheaderclean "$TEST_FILE" | grep -c "^From:" || echo "0")
-subject_count=$(MAILHEADERCLEAN="From,Subject" ../mailheaderclean "$TEST_FILE" | grep -c "^Subject:" || echo "0")
-date_count=$(MAILHEADERCLEAN="From,Subject" ../mailheaderclean "$TEST_FILE" | grep -c "^Date:")
+from_count=$(MAILHEADERCLEAN="From,Subject" ../build/bin/mailheaderclean "$TEST_FILE" | grep -c "^From:" || echo "0")
+subject_count=$(MAILHEADERCLEAN="From,Subject" ../build/bin/mailheaderclean "$TEST_FILE" | grep -c "^Subject:" || echo "0")
+date_count=$(MAILHEADERCLEAN="From,Subject" ../build/bin/mailheaderclean "$TEST_FILE" | grep -c "^Date:")
 if [ "$from_count" = "0" ] && [ "$subject_count" = "0" ] && [ "$date_count" = "1" ]; then
     echo "  ✓ PASS: Custom removal list works (From/Subject removed, Date kept)"
 else
@@ -35,7 +35,7 @@ echo
 
 echo "TEST 4: MAILHEADERCLEAN_EXTRA (add headers to default list)"
 custom_count=$(./mailheaderclean "$TEST_FILE" | grep -c "^Reply-To:")
-custom_extra_count=$(MAILHEADERCLEAN_EXTRA="Reply-To" ../mailheaderclean "$TEST_FILE" | grep -c "^Reply-To:" || echo "0")
+custom_extra_count=$(MAILHEADERCLEAN_EXTRA="Reply-To" ../build/bin/mailheaderclean "$TEST_FILE" | grep -c "^Reply-To:" || echo "0")
 if [ "$custom_count" = "1" ] && [ "$custom_extra_count" = "0" ]; then
     echo "  ✓ PASS: EXTRA adds headers to removal list"
 else
@@ -47,7 +47,7 @@ echo "TEST 5: Complex combination"
 # MAILHEADERCLEAN="Reply-To" removes only Reply-To
 # MAILHEADERCLEAN_PRESERVE="Reply-To" prevents Reply-To from being removed
 # Result: Reply-To should be kept
-output=$(MAILHEADERCLEAN="Reply-To,From" MAILHEADERCLEAN_PRESERVE="Reply-To" ../mailheaderclean "$TEST_FILE")
+output=$(MAILHEADERCLEAN="Reply-To,From" MAILHEADERCLEAN_PRESERVE="Reply-To" ../build/bin/mailheaderclean "$TEST_FILE")
 reply_count=$(echo "$output" | grep -c "^Reply-To:")
 from_count=$(echo "$output" | grep -c "^From:" || echo "0")
 date_count=$(echo "$output" | grep -c "^Date:")
@@ -70,7 +70,7 @@ else
     echo "  ✗ X-Spam-Status should be removed by default"
 fi
 
-output2=$(MAILHEADERCLEAN_PRESERVE="X-Spam-Status" ../mailheaderclean "$TEST_FILE" | grep "^X-Spam-Status:")
+output2=$(MAILHEADERCLEAN_PRESERVE="X-Spam-Status" ../build/bin/mailheaderclean "$TEST_FILE" | grep "^X-Spam-Status:")
 if [ -n "$output2" ]; then
     echo "  ✓ PASS: PRESERVE keeps X-Spam-Status that would normally be removed"
 else

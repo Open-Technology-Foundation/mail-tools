@@ -5,7 +5,7 @@ TEST_FILE="test-data/1749819569.M335292P205326V0000000000000811I000000000AE40A83
 enable -d mailheaderclean 2>/dev/null
 
 # Load from current directory
-enable -f ../mailheaderclean.so mailheaderclean
+enable -f ../build/lib/mailheaderclean.so mailheaderclean
 
 echo "Builtin loaded from: $(enable -a | grep mailheaderclean)"
 echo

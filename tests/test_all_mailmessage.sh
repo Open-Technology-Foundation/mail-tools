@@ -12,7 +12,7 @@ echo
 # Function to reload builtin freshly
 reload_builtin() {
     enable -d mailmessage 2>/dev/null
-    enable -f ../mailmessage.so mailmessage 2>/dev/null
+    enable -f ../build/lib/mailmessage.so mailmessage 2>/dev/null
 }
 
 # Test counters
@@ -26,7 +26,7 @@ for email in test-data/*; do
     [ ! -f "$email" ] && continue
 
     # Run standalone version
-    OUTPUT=$(../mailmessage "$email" 2>&1)
+    OUTPUT=$(../build/bin/mailmessage "$email" 2>&1)
 
     if [ $? -ne 0 ]; then
         echo "  ✗ FAIL: $email - mailmessage returned error"
@@ -63,7 +63,7 @@ for email in test-data/*; do
     fi
 
     # Run standalone
-    ../mailmessage "$email" > /tmp/standalone_mailmessage.txt 2>&1
+    ../build/bin/mailmessage "$email" > /tmp/standalone_mailmessage.txt 2>&1
 
     # Run builtin
     reload_builtin
@@ -101,9 +101,9 @@ for email in test-data/*; do
     fi
 
     # Extract headers and message
-    ../mailheader "$email" > /tmp/headers.txt
+    ../build/bin/mailheader "$email" > /tmp/headers.txt
     echo "" >> /tmp/headers.txt  # Add blank line separator
-    ../mailmessage "$email" >> /tmp/headers.txt
+    ../build/bin/mailmessage "$email" >> /tmp/headers.txt
 
     # Compare with original (accounting for line ending normalization)
     if diff <(cat "$email" | tr -d '\r') <(cat /tmp/headers.txt | tr -d '\r') > /dev/null 2>&1; then

@@ -12,7 +12,7 @@ echo
 # Function to reload builtin freshly
 reload_builtin() {
     enable -d mailheader 2>/dev/null
-    enable -f ../mailheader.so mailheader 2>/dev/null
+    enable -f ../build/lib/mailheader.so mailheader 2>/dev/null
 }
 
 # Test counters
@@ -26,7 +26,7 @@ for email in test-data/*; do
     [ ! -f "$email" ] && continue
 
     # Run standalone version
-    OUTPUT=$(../mailheader "$email" 2>&1)
+    OUTPUT=$(../build/bin/mailheader "$email" 2>&1)
 
     if [ $? -ne 0 ]; then
         echo "  ✗ FAIL: $email - mailheader returned error"
@@ -77,7 +77,7 @@ for email in test-data/*; do
     fi
 
     # Run standalone
-    ../mailheader "$email" > /tmp/standalone_mailheader.txt 2>&1
+    ../build/bin/mailheader "$email" > /tmp/standalone_mailheader.txt 2>&1
 
     # Run builtin
     reload_builtin
@@ -107,7 +107,7 @@ for email in test-data/*; do
     [ ! -f "$email" ] && continue
 
     # Get header output
-    HEADERS=$(../mailheader "$email")
+    HEADERS=$(../build/bin/mailheader "$email")
 
     # Headers should not contain blank lines (should stop before first blank)
     if echo "$HEADERS" | grep -q '^$'; then

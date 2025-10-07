@@ -21,6 +21,15 @@ BASH_INCLUDE_DIR = /usr/include/bash/include
 SHOBJ_CFLAGS = -fPIC -I$(BASH_INCLUDE) -I$(BASH_BUILTINS) -I$(BASH_INCLUDE_DIR)
 SHOBJ_LDFLAGS = -shared
 
+# Source directories
+SRC_DIR = src
+BUILD_DIR = build
+BIN_DIR = $(BUILD_DIR)/bin
+LIB_DIR = $(BUILD_DIR)/lib
+OBJ_DIR = $(BUILD_DIR)/obj
+SCRIPTS_DIR = scripts
+MAN_SRC_DIR = man
+
 # Installation directories
 PREFIX = /usr/local
 BINDIR = $(PREFIX)/bin
@@ -30,12 +39,12 @@ DOC_DIR = $(PREFIX)/share/doc/mailheader
 MAN_DIR = $(PREFIX)/share/man/man1
 
 # Targets
-MAILHEADER_BIN = mailheader
-MAILHEADER_SO = mailheader.so
-MAILMESSAGE_BIN = mailmessage
-MAILMESSAGE_SO = mailmessage.so
-MAILHEADERCLEAN_BIN = mailheaderclean
-MAILHEADERCLEAN_SO = mailheaderclean.so
+MAILHEADER_BIN = $(BIN_DIR)/mailheader
+MAILHEADER_SO = $(LIB_DIR)/mailheader.so
+MAILMESSAGE_BIN = $(BIN_DIR)/mailmessage
+MAILMESSAGE_SO = $(LIB_DIR)/mailmessage.so
+MAILHEADERCLEAN_BIN = $(BIN_DIR)/mailheaderclean
+MAILHEADERCLEAN_SO = $(LIB_DIR)/mailheaderclean.so
 
 .PHONY: all all-mailheader all-mailmessage all-mailheaderclean standalone loadable clean install install-standalone install-loadable uninstall help
 
@@ -56,37 +65,41 @@ standalone: $(MAILHEADER_BIN) $(MAILMESSAGE_BIN) $(MAILHEADERCLEAN_BIN)
 loadable: $(MAILHEADER_SO) $(MAILMESSAGE_SO) $(MAILHEADERCLEAN_SO)
 
 # Build mailheader standalone
-$(MAILHEADER_BIN): mailheader.c
+$(MAILHEADER_BIN): $(SRC_DIR)/mailheader.c | $(BIN_DIR)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
 
 # Build mailheader loadable
-$(MAILHEADER_SO): mailheader_loadable.o
+$(MAILHEADER_SO): $(OBJ_DIR)/mailheader_loadable.o | $(LIB_DIR)
 	$(CC) $(SHOBJ_LDFLAGS) -o $@ $<
 
-mailheader_loadable.o: mailheader_loadable.c
+$(OBJ_DIR)/mailheader_loadable.o: $(SRC_DIR)/mailheader_loadable.c | $(OBJ_DIR)
 	$(CC) $(SHOBJ_CFLAGS) $(CFLAGS) -c -o $@ $<
 
 # Build mailmessage standalone
-$(MAILMESSAGE_BIN): mailmessage.c
+$(MAILMESSAGE_BIN): $(SRC_DIR)/mailmessage.c | $(BIN_DIR)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
 
 # Build mailmessage loadable
-$(MAILMESSAGE_SO): mailmessage_loadable.o
+$(MAILMESSAGE_SO): $(OBJ_DIR)/mailmessage_loadable.o | $(LIB_DIR)
 	$(CC) $(SHOBJ_LDFLAGS) -o $@ $<
 
-mailmessage_loadable.o: mailmessage_loadable.c
+$(OBJ_DIR)/mailmessage_loadable.o: $(SRC_DIR)/mailmessage_loadable.c | $(OBJ_DIR)
 	$(CC) $(SHOBJ_CFLAGS) $(CFLAGS) -c -o $@ $<
 
 # Build mailheaderclean standalone
-$(MAILHEADERCLEAN_BIN): mailheaderclean.c
+$(MAILHEADERCLEAN_BIN): $(SRC_DIR)/mailheaderclean.c | $(BIN_DIR)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
 
 # Build mailheaderclean loadable
-$(MAILHEADERCLEAN_SO): mailheaderclean_loadable.o
+$(MAILHEADERCLEAN_SO): $(OBJ_DIR)/mailheaderclean_loadable.o | $(LIB_DIR)
 	$(CC) $(SHOBJ_LDFLAGS) -o $@ $<
 
-mailheaderclean_loadable.o: mailheaderclean_loadable.c
+$(OBJ_DIR)/mailheaderclean_loadable.o: $(SRC_DIR)/mailheaderclean_loadable.c | $(OBJ_DIR)
 	$(CC) $(SHOBJ_CFLAGS) $(CFLAGS) -c -o $@ $<
+
+# Create build directories
+$(BIN_DIR) $(LIB_DIR) $(OBJ_DIR):
+	mkdir -p $@
 
 # Install everything (all utilities, both versions)
 install: install-standalone install-loadable
@@ -98,31 +111,36 @@ install: install-standalone install-loadable
 install-standalone: $(MAILHEADER_BIN) $(MAILMESSAGE_BIN) $(MAILHEADERCLEAN_BIN)
 	@echo "Installing standalone binaries..."
 	install -d $(DESTDIR)$(BINDIR)
-	install -m 755 $(MAILHEADER_BIN) $(DESTDIR)$(BINDIR)/
-	install -m 755 $(MAILMESSAGE_BIN) $(DESTDIR)$(BINDIR)/
-	install -m 755 $(MAILHEADERCLEAN_BIN) $(DESTDIR)$(BINDIR)/
-	@if [ -f mailheader.1 ]; then \
+	install -m 755 $(MAILHEADER_BIN) $(DESTDIR)$(BINDIR)/mailheader
+	install -m 755 $(MAILMESSAGE_BIN) $(DESTDIR)$(BINDIR)/mailmessage
+	install -m 755 $(MAILHEADERCLEAN_BIN) $(DESTDIR)$(BINDIR)/mailheaderclean
+	@echo "Installing scripts..."
+	install -m 755 $(SCRIPTS_DIR)/mailgetaddresses $(DESTDIR)$(BINDIR)/
+	@if [ -f $(MAN_SRC_DIR)/mailheader.1 ]; then \
 		echo "Installing manpages..."; \
 		install -d $(DESTDIR)$(MAN_DIR); \
-		install -m 644 mailheader.1 $(DESTDIR)$(MAN_DIR)/; \
+		install -m 644 $(MAN_SRC_DIR)/mailheader.1 $(DESTDIR)$(MAN_DIR)/; \
 	fi
-	@if [ -f mailmessage.1 ]; then \
-		install -m 644 mailmessage.1 $(DESTDIR)$(MAN_DIR)/; \
+	@if [ -f $(MAN_SRC_DIR)/mailmessage.1 ]; then \
+		install -m 644 $(MAN_SRC_DIR)/mailmessage.1 $(DESTDIR)$(MAN_DIR)/; \
 	fi
-	@if [ -f mailheaderclean.1 ]; then \
-		install -m 644 mailheaderclean.1 $(DESTDIR)$(MAN_DIR)/; \
+	@if [ -f $(MAN_SRC_DIR)/mailheaderclean.1 ]; then \
+		install -m 644 $(MAN_SRC_DIR)/mailheaderclean.1 $(DESTDIR)$(MAN_DIR)/; \
+	fi
+	@if [ -f $(MAN_SRC_DIR)/mailgetaddresses.1 ]; then \
+		install -m 644 $(MAN_SRC_DIR)/mailgetaddresses.1 $(DESTDIR)$(MAN_DIR)/; \
 	fi
 
 # Install loadable builtins and configuration
 install-loadable: $(MAILHEADER_SO) $(MAILMESSAGE_SO) $(MAILHEADERCLEAN_SO)
 	@echo "Installing bash loadable builtins..."
 	install -d $(DESTDIR)$(LOADABLE_DIR)
-	install -m 755 $(MAILHEADER_SO) $(DESTDIR)$(LOADABLE_DIR)/
-	install -m 755 $(MAILMESSAGE_SO) $(DESTDIR)$(LOADABLE_DIR)/
-	install -m 755 $(MAILHEADERCLEAN_SO) $(DESTDIR)$(LOADABLE_DIR)/
+	install -m 755 $(MAILHEADER_SO) $(DESTDIR)$(LOADABLE_DIR)/mailheader.so
+	install -m 755 $(MAILMESSAGE_SO) $(DESTDIR)$(LOADABLE_DIR)/mailmessage.so
+	install -m 755 $(MAILHEADERCLEAN_SO) $(DESTDIR)$(LOADABLE_DIR)/mailheaderclean.so
 	@echo "Installing profile configuration..."
 	install -d $(DESTDIR)$(PROFILE_DIR)
-	install -m 644 mail-tools.sh $(DESTDIR)$(PROFILE_DIR)/
+	install -m 644 $(SCRIPTS_DIR)/mail-tools.sh $(DESTDIR)$(PROFILE_DIR)/
 	@if [ -f README.md ]; then \
 		echo "Installing documentation..."; \
 		install -d $(DESTDIR)$(DOC_DIR); \
@@ -132,23 +150,25 @@ install-loadable: $(MAILHEADER_SO) $(MAILMESSAGE_SO) $(MAILHEADERCLEAN_SO)
 # Uninstall everything
 uninstall:
 	@echo "Uninstalling mail tools..."
-	rm -f $(DESTDIR)$(BINDIR)/$(MAILHEADER_BIN)
-	rm -f $(DESTDIR)$(BINDIR)/$(MAILMESSAGE_BIN)
-	rm -f $(DESTDIR)$(BINDIR)/$(MAILHEADERCLEAN_BIN)
-	rm -f $(DESTDIR)$(LOADABLE_DIR)/$(MAILHEADER_SO)
-	rm -f $(DESTDIR)$(LOADABLE_DIR)/$(MAILMESSAGE_SO)
-	rm -f $(DESTDIR)$(LOADABLE_DIR)/$(MAILHEADERCLEAN_SO)
+	rm -f $(DESTDIR)$(BINDIR)/mailheader
+	rm -f $(DESTDIR)$(BINDIR)/mailmessage
+	rm -f $(DESTDIR)$(BINDIR)/mailheaderclean
+	rm -f $(DESTDIR)$(BINDIR)/mailgetaddresses
+	rm -f $(DESTDIR)$(LOADABLE_DIR)/mailheader.so
+	rm -f $(DESTDIR)$(LOADABLE_DIR)/mailmessage.so
+	rm -f $(DESTDIR)$(LOADABLE_DIR)/mailheaderclean.so
 	rm -f $(DESTDIR)$(PROFILE_DIR)/mail-tools.sh
 	rm -f $(DESTDIR)$(PROFILE_DIR)/mailheader.sh
 	rm -f $(DESTDIR)$(MAN_DIR)/mailheader.1
 	rm -f $(DESTDIR)$(MAN_DIR)/mailmessage.1
 	rm -f $(DESTDIR)$(MAN_DIR)/mailheaderclean.1
+	rm -f $(DESTDIR)$(MAN_DIR)/mailgetaddresses.1
 	rm -rf $(DESTDIR)$(DOC_DIR)
 	@echo "Uninstall complete. You may need to restart bash sessions."
 
 # Clean build artifacts
 clean:
-	rm -f $(MAILHEADER_BIN) $(MAILHEADER_SO) $(MAILMESSAGE_BIN) $(MAILMESSAGE_SO) $(MAILHEADERCLEAN_BIN) $(MAILHEADERCLEAN_SO) *.o
+	rm -rf $(BUILD_DIR)
 
 # Help target
 help:
