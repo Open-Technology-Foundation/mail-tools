@@ -1,6 +1,16 @@
 # Mail Tools
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CI](https://github.com/Open-Technology-Foundation/mailheader/workflows/CI/badge.svg)](https://github.com/Open-Technology-Foundation/mailheader/actions)
+[![GitHub Issues](https://img.shields.io/github/issues/Open-Technology-Foundation/mailheader)](https://github.com/Open-Technology-Foundation/mailheader/issues)
+
 Fast email parsing utilities for extracting headers, message bodies, and cleaning bloat headers. Available as both standalone binaries and bash loadable builtins.
+
+**Features:**
+- Professional directory structure (src/, scripts/, man/, examples/, tools/, build/)
+- Clean separation of source code and build artifacts
+- Comprehensive test suite with 632 real-world email files
+- Automated installation with dependency management
 
 ## Purpose and Use Cases
 
@@ -73,7 +83,7 @@ mailheaderclean -h                        # Show help
 - `MAILHEADERCLEAN_EXTRA`: Add additional headers to the built-in removal list
 
 ### mailgetaddresses
-Extracts email addresses from From, To, and Cc headers in email files.
+Bash script that extracts email addresses from From, To, and Cc headers in email files.
 
 - Handles various email formats (with/without names, quoted strings, etc.)
 - Multiple recipients per header
@@ -115,7 +125,62 @@ mailgetaddresses --help                         # Show help
 # Output: bob@test.com
 ```
 
-### clean-email-headers
+**Post-Processing: Filtering with Exclude Patterns:**
+
+For excluding specific domains or patterns from the results, use `grep -v -F -f`:
+
+```bash
+# Create exclude pattern file
+cat > /tmp/exclude-patterns.list <<EOF
+okusi
+hukumonline
+@singularityu.org
+@example.com
+EOF
+
+# Filter results using pattern file (case-sensitive)
+mailgetaddresses -n /path/to/maildir/ | sort -fu | grep -v -F -f /tmp/exclude-patterns.list
+
+# Case-insensitive filtering (recommended - matches okusi, Okusi, OKUSI, etc.)
+mailgetaddresses -n /path/to/maildir/ | sort -fu | grep -v -i -F -f /tmp/exclude-patterns.list
+
+# If patterns are regex (slower, only if needed)
+mailgetaddresses -n /path/to/maildir/ | sort -fu | grep -v -E -f /tmp/exclude-patterns.list
+```
+
+**grep options explained:**
+- `-v` = Invert match (exclude lines that match)
+- `-F` = Fixed strings (not regex) - much faster for literal patterns
+- `-i` = Case-insensitive matching
+- `-E` = Extended regex (only if patterns contain regex syntax)
+- `-f FILE` = Read patterns from file
+
+This approach is highly efficient because `grep` uses optimized C code with Boyer-Moore algorithm for pattern matching.
+
+### mailgetheaders
+Bash script that parses email headers into a bash associative array for easy access in scripts.
+
+- Extracts all headers from an email file
+- Outputs bash code to populate an associative array
+- Handles continuation lines (RFC 822)
+- Ideal for scripting and parsing email metadata
+
+```bash
+mailgetheaders email.eml                    # Output bash array declaration
+eval "$(mailgetheaders email.eml)"          # Populate Headers array in current shell
+
+# Use in scripts:
+declare -A Headers
+eval "$(mailgetheaders email.eml)"
+echo "From: ${Headers[From]}"
+echo "Subject: ${Headers[Subject]}"
+echo "Date: ${Headers[Date]}"
+echo "File: ${Headers[file]}"
+
+mailgetheaders --help                       # Show help
+```
+
+### mailheaderclean-batch (script)
 Production script for batch cleaning of email files or directories in-place.
 
 - Process single files or entire directories
@@ -123,13 +188,17 @@ Production script for batch cleaning of email files or directories in-place.
 - Configurable directory traversal depth
 - Preserves timestamps and permissions
 - Progress reporting and error handling
+- Available as `clean-email-headers` symlink for backwards compatibility
 
 ```bash
-clean-email-headers email.eml              # Clean single file
-clean-email-headers /path/to/maildir       # Clean all files in directory
-clean-email-headers -d 7 /path/to/maildir  # Only files from last 7 days
-clean-email-headers -m 2 /path/to/maildir  # Traverse 2 levels deep
-clean-email-headers -h                     # Show help
+mailheaderclean-batch email.eml              # Clean single file
+mailheaderclean-batch /path/to/maildir       # Clean all files in directory
+mailheaderclean-batch -d 7 /path/to/maildir  # Only files from last 7 days
+mailheaderclean-batch -m 2 /path/to/maildir  # Traverse 2 levels deep
+mailheaderclean-batch -h                     # Show help
+
+# Also available via backwards-compatible symlink:
+clean-email-headers email.eml                # Same as mailheaderclean-batch
 ```
 
 All utilities support:
@@ -217,17 +286,20 @@ sudo make install
 
 This installs:
 - Standalone binaries: `/usr/local/bin/{mailheader,mailmessage,mailheaderclean}`
-- Production script: `/usr/local/bin/clean-email-headers`
+- Bash scripts: `/usr/local/bin/{mailgetaddresses,mailgetheaders,mailheaderclean-batch}` (includes backwards-compatible `clean-email-headers` symlink)
 - Loadable builtins: `/usr/local/lib/bash/loadables/{mailheader,mailmessage,mailheaderclean}.so`
 - Auto-load script: `/etc/profile.d/mail-tools.sh`
-- Manpages: `/usr/local/share/man/man1/{mailheader,mailmessage,mailheaderclean}.1`
+- Manpages: `/usr/local/share/man/man1/{mailheader,mailmessage,mailheaderclean,mailgetaddresses}.1`
 - Documentation: `/usr/local/share/doc/mailheader/`
 
 ### Verify Installation
 
 ```bash
-# Check standalone binaries
-which mailheader mailmessage mailheaderclean clean-email-headers
+# Check all installed programs
+which mailheader mailmessage mailheaderclean mailgetaddresses mailgetheaders
+
+# Verify backwards-compatible symlink works
+which clean-email-headers  # Should point to mailheaderclean
 
 # Check builtins (after opening new shell or sourcing profile)
 enable -a | grep mail
@@ -236,12 +308,14 @@ enable -a | grep mail
 mailheader -h
 mailmessage -h
 mailheaderclean -h
-clean-email-headers -h
+mailgetaddresses --help
+mailgetheaders --help
 
 # View manpages
 man mailheader
 man mailmessage
 man mailheaderclean
+man mailgetaddresses
 
 # Get help for builtins
 help mailheader
@@ -300,7 +374,7 @@ Cron requires explicit setup:
 */15 * * * * /usr/local/bin/mailheader /path/to/email.eml
 
 # Method 4: Use production script
-0 2 * * * /usr/local/bin/clean-email-headers -d 30 /var/mail/archive 2>/var/log/email-clean.log
+0 2 * * * /usr/local/bin/mailheaderclean-batch -d 30 /var/mail/archive 2>/var/log/email-clean.log
 ```
 
 ## Examples
@@ -376,27 +450,27 @@ $ MAILHEADERCLEAN="DKIM-Signature,List-Unsubscribe" \
 
 Clean single file in-place:
 ```bash
-clean-email-headers email.eml
+mailheaderclean-batch email.eml
 ```
 
 Clean entire directory:
 ```bash
-clean-email-headers /path/to/maildir
+mailheaderclean-batch /path/to/maildir
 ```
 
 Clean only recent files (last 7 days):
 ```bash
-clean-email-headers -d 7 /path/to/maildir
+mailheaderclean-batch -d 7 /path/to/maildir
 ```
 
 Clean with custom depth and verbosity:
 ```bash
-clean-email-headers -m 3 -v /path/to/maildir
+mailheaderclean-batch -m 3 -v /path/to/maildir
 ```
 
 Quiet mode for cron:
 ```bash
-clean-email-headers -q /path/to/maildir
+mailheaderclean-batch -q /path/to/maildir
 ```
 
 ### Advanced Examples
@@ -404,15 +478,14 @@ clean-email-headers -q /path/to/maildir
 Parse headers into associative array:
 ```bash
 #!/bin/bash
-source /usr/local/share/doc/mailheader/mailgetheaders
 
 declare -A Headers
-mailgetheaders Headers email.eml
+eval "$(mailgetheaders email.eml)"
 
-declare -p Headers
 echo "From: ${Headers[From]}"
 echo "Subject: ${Headers[Subject]}"
 echo "Date: ${Headers[Date]}"
+echo "File: ${Headers[file]}"
 ```
 
 Bulk email cleaning with progress:
@@ -479,10 +552,10 @@ The project includes comprehensive benchmarking tools to measure performance:
 
 ```bash
 # Basic performance comparison
-./benchmark.sh
+tools/benchmark.sh
 
 # Detailed scaling analysis with multiple file counts
-./benchmark_detailed.sh
+tools/benchmark_detailed.sh
 ```
 
 Both scripts compare builtin vs standalone performance across different file counts. Results typically show:
@@ -513,6 +586,14 @@ The project includes a comprehensive test suite with **632 real email files** fr
 ```bash
 cd tests
 
+# Master test runner (runs all tests)
+./test_master.sh
+
+# Repository structure and build tests
+./test_structure.sh             # Validate directory structure
+./test_build_system.sh          # Test Makefile and build process
+./test_installation.sh          # Test install.sh functionality
+
 # Comprehensive tests (all 632 files)
 ./test_all_mailheader.sh       # Test header extraction
 ./test_all_mailmessage.sh      # Test message body extraction
@@ -522,6 +603,10 @@ cd tests
 ./test_simple.sh                    # Basic functionality
 ./test_builtin_vs_standalone.sh     # Verify identical output
 ./validate_email_format.sh          # RFC 822 compliance
+
+# Script tests
+./test_mailgetaddresses.sh      # Test address extraction
+./test_mailgetheaders.sh        # Test header parsing
 
 # Environment variable tests
 ./test_env_vars.sh
@@ -543,18 +628,25 @@ See `tests/README.md` for detailed test documentation.
 
 ## Build Targets
 
+The build system uses organized directories for clean separation of source and artifacts:
+
 ```bash
-make                      # Build all utilities (both versions)
+make                      # Build all utilities (output to build/)
 make all-mailheader       # Build mailheader only
 make all-mailmessage      # Build mailmessage only
 make all-mailheaderclean  # Build mailheaderclean only
 make standalone           # Build all standalone binaries
 make loadable             # Build all builtins
-make clean                # Remove build artifacts
-sudo make install         # Install all utilities
+make clean                # Remove build/ directory
+sudo make install         # Install all utilities system-wide
 sudo make uninstall       # Remove all installed files
 make help                 # Show all available targets
 ```
+
+Build artifacts are organized in `build/`:
+- `build/bin/` - Standalone executables
+- `build/lib/` - Loadable builtins (.so files)
+- `build/obj/` - Object files
 
 ## How the Builtins Work
 
@@ -573,25 +665,59 @@ The builtins seamlessly integrate with bash, appearing identical to native comma
 
 ```
 .
-├── mailheader.c                   # Standalone binary
-├── mailheader_loadable.c          # Bash builtin
-├── mailmessage.c                  # Standalone binary
-├── mailmessage_loadable.c         # Bash builtin
-├── mailheaderclean.c              # Standalone binary
-├── mailheaderclean_loadable.c     # Bash builtin
-├── mailheaderclean_headers.h      # Shared header removal list (~207 headers)
-├── clean-email-headers            # Production batch cleaning script
-├── mail-tools.sh                  # Profile script for auto-loading
-├── mailgetheaders                # Example bash function
+├── src/                           # Source code
+│   ├── mailheader.c                   # mailheader standalone binary
+│   ├── mailheader_loadable.c          # mailheader bash builtin
+│   ├── mailmessage.c                  # mailmessage standalone binary
+│   ├── mailmessage_loadable.c         # mailmessage bash builtin
+│   ├── mailheaderclean.c              # mailheaderclean standalone binary
+│   ├── mailheaderclean_loadable.c     # mailheaderclean bash builtin
+│   └── mailheaderclean_headers.h      # Shared header removal list (~207 headers)
+├── scripts/                       # Bash scripts
+│   ├── mailgetaddresses               # Address extraction script
+│   ├── mailgetheaders                 # Header parsing script
+│   ├── mailheaderclean-batch          # Production batch cleaning script
+│   └── mail-tools.sh                  # Profile script for auto-loading builtins
+├── man/                           # Manual pages
+│   ├── mailheader.1
+│   ├── mailmessage.1
+│   ├── mailheaderclean.1
+│   └── mailgetaddresses.1
+├── examples/                      # Sample email files
+│   ├── test.eml
+│   └── test-bloat.eml
+├── tools/                         # Benchmarking utilities
+│   ├── benchmark.sh
+│   └── benchmark_detailed.sh
+├── build/                         # Build artifacts (generated)
+│   ├── bin/                           # Compiled binaries
+│   │   ├── mailheader
+│   │   ├── mailmessage
+│   │   └── mailheaderclean
+│   ├── lib/                           # Loadable builtins
+│   │   ├── mailheader.so
+│   │   ├── mailmessage.so
+│   │   └── mailheaderclean.so
+│   └── obj/                           # Object files
+│       ├── mailheader.o
+│       ├── mailmessage.o
+│       └── mailheaderclean.o
+├── tests/                         # Test suite (632 email files)
+│   ├── test_master.sh                 # Master test runner
+│   ├── test_structure.sh              # Repository structure validation
+│   ├── test_build_system.sh           # Build system validation
+│   ├── test_installation.sh           # Installation script testing
+│   ├── test_mailgetheaders.sh         # Header parsing script tests
+│   ├── test_all_mailheader.sh         # Comprehensive header tests
+│   ├── test_all_mailmessage.sh        # Comprehensive message tests
+│   ├── test_all_mailheaderclean.sh    # Comprehensive cleaning tests
+│   ├── test_*.sh                      # Additional functionality tests
+│   └── test-data/                     # 632 real email files
 ├── Makefile                       # Build system
 ├── install.sh                     # Installation script
-├── benchmark.sh                   # Basic benchmarking
-├── benchmark_detailed.sh          # Detailed benchmarking
-├── *.1                            # Man pages
-└── tests/                         # Test suite (632 email files)
-    ├── test_all_*.sh              # Comprehensive tests
-    ├── test_*.sh                  # Functionality tests
-    └── test-data/                 # 632 real email files
+├── README.md                      # User documentation
+├── CLAUDE.md                      # Developer guidance
+└── LICENSE                        # GPL v3.0
 ```
 
 ## FAQ
@@ -606,7 +732,7 @@ A: Yes, these tools work with any RFC 822 compliant email format, including Mail
 A: Use the `MAILHEADERCLEAN_*` environment variables to control header filtering. See examples above.
 
 **Q: Are timestamps preserved when cleaning emails?**
-A: Yes, when using `clean-email-headers` script. For manual operations, use `touch -r` to preserve timestamps.
+A: Yes, when using `mailheaderclean-batch` script (or the backwards-compatible `clean-email-headers` symlink). For manual operations, use `touch -r` to preserve timestamps.
 
 **Q: Can I use this in production?**
 A: Yes, all utilities are production-ready with comprehensive testing and error handling. The test suite validates against 632 real-world emails.

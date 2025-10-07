@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc make bash-builtins shellcheck
+
+    - name: Build all utilities
+      run: make
+
+    - name: Verify build artifacts
+      run: |
+        test -f build/bin/mailheader
+        test -f build/bin/mailmessage
+        test -f build/bin/mailheaderclean
+        test -f build/lib/mailheader.so
+        test -f build/lib/mailmessage.so
+        test -f build/lib/mailheaderclean.so
+
+    - name: Run shellcheck on scripts
+      run: |
+        shellcheck install.sh
+        shellcheck scripts/*.sh scripts/mailgetaddresses scripts/mailgetheaders scripts/mailheaderclean-batch
+        shellcheck tests/*.sh
+
+    - name: Run test suite
+      run: |
+        cd tests
+        ./test_master.sh
+
+    - name: Test installation (dry-run)
+      run: |
+        sudo ./install.sh --dry-run --builtin --non-interactive
+
+  shellcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install shellcheck
+      run: sudo apt-get update && sudo apt-get install -y shellcheck
+
+    - name: Run shellcheck
+      run: |
+        shellcheck install.sh
+        shellcheck scripts/*.sh scripts/mailgetaddresses scripts/mailgetheaders scripts/mailheaderclean-batch || true
+        shellcheck tests/*.sh || true
