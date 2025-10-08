@@ -7,8 +7,9 @@ set -euo pipefail
 shopt -s inherit_errexit shift_verbose extglob nullglob
 
 SCRIPT_PATH=$(readlink -en -- "$0")
+SCRIPT_DIR=${SCRIPT_PATH%/*}
 SCRIPT_NAME=${SCRIPT_PATH##*/}
-readonly -- SCRIPT_PATH SCRIPT_NAME
+readonly -- SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
 
 declare -i VERBOSE=1
 
