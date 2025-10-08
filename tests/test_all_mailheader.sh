@@ -4,8 +4,8 @@
 echo "=== Comprehensive mailheader Tests ==="
 echo
 
-# Count files
-TOTAL_FILES=$(find test-data -type f | wc -l)
+# Count files (exclude hidden directories like .claude)
+TOTAL_FILES=$(find test-data -type f -not -path '*/.*' | wc -l)
 echo "Testing $TOTAL_FILES email files..."
 echo
 
