@@ -6,10 +6,9 @@
 set -euo pipefail
 shopt -s inherit_errexit shift_verbose extglob nullglob
 
-VERSION='1.0.0'
 SCRIPT_PATH=$(readlink -en -- "$0")
 SCRIPT_NAME=${SCRIPT_PATH##*/}
-readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
+readonly -- SCRIPT_PATH SCRIPT_NAME
 
 declare -i VERBOSE=1
 
@@ -54,7 +53,7 @@ declare LOADABLE_DIR="$PREFIX"/lib/bash/loadables
 # integration, regardless of PREFIX. This ensures builtins are available in all
 # user sessions. To override, modify this line or use a custom install method.
 declare PROFILE_DIR=/etc/profile.d
-declare DOC_DIR="$PREFIX"/share/doc/mailheader
+declare DOC_DIR="$PREFIX"/share/doc/mail-tools
 declare MAN_DIR="$PREFIX"/share/man/man1
 
 show_help() {
@@ -78,7 +77,7 @@ Installation Locations (with default prefix):
   Scripts:             /usr/local/bin/mailgetaddresses, mailgetheaders, mailheaderclean-batch
                        (includes clean-email-headers symlink for backwards compatibility)
   Manpages:            /usr/local/share/man/man1/mailheader.1, mailmessage.1, mailheaderclean.1, mailgetaddresses.1
-  Documentation:       /usr/local/share/doc/mailheader/
+  Documentation:       /usr/local/share/doc/mail-tools/
   Builtins (optional): /usr/local/lib/bash/loadables/mailheader.so, mailmessage.so, mailheaderclean.so
   Profile script:      /etc/profile.d/mail-tools.sh (always, regardless of --prefix)
 
@@ -536,7 +535,7 @@ while (($#)); do
       PREFIX="$1"
       BINDIR="$PREFIX"/bin
       LOADABLE_DIR="$PREFIX"/lib/bash/loadables
-      DOC_DIR="$PREFIX"/share/doc/mailheader
+      DOC_DIR="$PREFIX"/share/doc/mail-tools
       MAN_DIR="$PREFIX"/share/man/man1
       # Note: PROFILE_DIR stays at /etc/profile.d for system-wide access
       ;;

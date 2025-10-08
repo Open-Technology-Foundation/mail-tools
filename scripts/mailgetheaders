@@ -1,14 +1,12 @@
 #!/bin/bash
-#shellcheck disable=SC2034
 # mailgetheaders - Parse email headers into bash associative array
 set -euo pipefail
 shopt -s inherit_errexit shift_verbose extglob nullglob
 
 VERSION='1.0.0'
 SCRIPT_PATH=$(readlink -en -- "$0")
-SCRIPT_DIR=${SCRIPT_PATH%/*}
 SCRIPT_NAME=${SCRIPT_PATH##*/}
-readonly -- VERSION SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
+readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
 
 # Color definitions (only if terminal supports)
 [[ -t 1 && -t 2 ]] && declare -- RED=$'\033[0;31m' GREEN=$'\033[0;32m' YELLOW=$'\033[0;33m' CYAN=$'\033[0;36m' NC=$'\033[0m' || declare -- RED='' GREEN='' YELLOW='' CYAN='' NC=''
@@ -71,6 +69,7 @@ mailgetheaders() {
   headers=()
   local -- line
   while read -r line; do
+    #shellcheck disable=SC2034  # headers is a nameref to caller's array
     headers[${line%%:*}]="${line#*: }"
   done < <(mailheader "$2")
   return 0

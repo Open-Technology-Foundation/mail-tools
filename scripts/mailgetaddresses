@@ -52,12 +52,12 @@ Accepts multiple files and/or directories as arguments.
 Usage: $SCRIPT_NAME [OPTIONS] <email-file|directory> [...]
 
 Options:
-  -n|--names      Include names with email addresses
-  -s|--separate   Separate output by header type (From:/To:/Cc:)
-  -H HEADERS      Comma-separated list of headers (default: from,to,cc)
-  -x|--exclude    Comma-separated directory names to exclude (default: .Junk,.Trash,.Sent)
-                  Use --exclude '' to remove all exclusions
-  -h|--help       Show this help message
+  -n|--names          Include names with email addresses
+  -s|--separate       Separate output by header type (From:/To:/Cc:)
+  -H|--header-opts    Comma-separated list of headers (default: from,to,cc)
+  -x|--exclude        Comma-separated directory names to exclude (default: .Junk,.Trash,.Sent)
+                      Use --exclude '' to remove all exclusions
+  -h|--help           Show this help message
 
 Output Formats:
   Default:        email@example.com (one per line)
@@ -76,7 +76,7 @@ Examples:
   $SCRIPT_NAME /path/to/maildir/
 
   # Extract only From and To headers
-  $SCRIPT_NAME -s -H from,to /path/to/maildir
+  $SCRIPT_NAME -s --header-opts from,to /path/to/maildir
 
   # Exclude additional directories
   $SCRIPT_NAME -x .Junk,.Trash,.Sent,.Spam /path/to/maildir
