@@ -8,9 +8,8 @@ shopt -s inherit_errexit shift_verbose extglob nullglob
 
 VERSION='1.0.0'
 SCRIPT_PATH=$(readlink -en -- "$0")
-SCRIPT_DIR=${SCRIPT_PATH%/*}
 SCRIPT_NAME=${SCRIPT_PATH##*/}
-readonly -- VERSION SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
+readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
 
 declare -i VERBOSE=1
 
@@ -40,7 +39,7 @@ error() { >&2 _msg "$@"; }
 die() { (($# > 1)) && error "${@:2}"; exit "${1:-0}"; }
 
 # Default values
-declare PREFIX="/usr/local"
+declare PREFIX=/usr/local
 declare -i INSTALL_BUILTIN=0
 declare -i BUILTIN_EXPLICITLY_REQUESTED=0
 declare -i SKIP_BUILTIN=0
@@ -49,14 +48,14 @@ declare -i UNINSTALL=0
 declare -i DRY_RUN=0
 
 # Derived paths
-declare BINDIR="${PREFIX}/bin"
-declare LOADABLE_DIR="${PREFIX}/lib/bash/loadables"
+declare BINDIR="$PREFIX"/bin
+declare LOADABLE_DIR="$PREFIX"/lib/bash/loadables
 # PROFILE_DIR intentionally hardcoded to /etc/profile.d for system-wide bash profile
 # integration, regardless of PREFIX. This ensures builtins are available in all
 # user sessions. To override, modify this line or use a custom install method.
-declare PROFILE_DIR="/etc/profile.d"
-declare DOC_DIR="${PREFIX}/share/doc/mailheader"
-declare MAN_DIR="${PREFIX}/share/man/man1"
+declare PROFILE_DIR=/etc/profile.d
+declare DOC_DIR="$PREFIX"/share/doc/mailheader
+declare MAN_DIR="$PREFIX"/share/man/man1
 
 show_help() {
   cat << 'EOF'
@@ -91,13 +90,11 @@ Examples:
   ./install.sh --prefix=/opt      # Install to /opt
 
 EOF
-  exit "${1:-0}"
+  return 0
 }
 
 check_root() {
-  if ((EUID != 0)); then
-    die 1 "This script must be run as root or with sudo"
-  fi
+  ((EUID)) && die 1 'This script must be run as root or with sudo' || return 0
 }
 
 check_prerequisites() {
@@ -172,9 +169,7 @@ prompt_builtin_install() {
   read -p "Install bash loadable builtins? [Y/n] " -n 1 -r
   echo ""
 
-  if [[ $REPLY =~ ^[Nn]$ ]]; then
-    return 1
-  fi
+  [[ $REPLY =~ ^[Nn]$ ]] || return 1
   return 0
 }
 
@@ -217,10 +212,7 @@ build_builtin() {
     fi
   fi
 
-  if ((DRY_RUN)); then
-    info "[DRY-RUN] Would build: make loadable"
-    return 0
-  fi
+  ((DRY_RUN==0)) || { info "[DRY-RUN] Would build: make loadable"; return 0; }
 
   cd "$SCRIPT_DIR"
   make loadable || {
@@ -397,7 +389,9 @@ uninstall_files() {
   local -i files_removed=0
 
   if ((DRY_RUN)); then
-    info "[DRY-RUN] Would remove:"
+
+ : <<'EOT'
+     info "[DRY-RUN] Would remove:"
     [[ -f "${BINDIR}/mailheader" ]] && info "  ${BINDIR}/mailheader"
     [[ -f "${BINDIR}/mailmessage" ]] && info "  ${BINDIR}/mailmessage"
     [[ -f "${BINDIR}/mailheaderclean" ]] && info "  ${BINDIR}/mailheaderclean"
@@ -415,6 +409,36 @@ uninstall_files() {
     [[ -f "${PROFILE_DIR}/mail-tools.sh" ]] && info "  ${PROFILE_DIR}/mail-tools.sh"
     [[ -f "${PROFILE_DIR}/mailheader.sh" ]] && info "  ${PROFILE_DIR}/mailheader.sh (legacy)"
     [[ -d "${DOC_DIR}" ]] && info "  ${DOC_DIR}/"
+EOT
+
+    info "[DRY-RUN] Would remove:"
+    for path in \
+      "${BINDIR}/mailheader" \
+      "${BINDIR}/mailmessage" \
+      "${BINDIR}/mailheaderclean" \
+      "${BINDIR}/mailgetaddresses" \
+      "${BINDIR}/mailgetheaders" \
+      "${BINDIR}/mailheaderclean-batch" \
+      "${BINDIR}/clean-email-headers" \
+      "${MAN_DIR}/mailheader.1" \
+      "${MAN_DIR}/mailmessage.1" \
+      "${MAN_DIR}/mailheaderclean.1" \
+      "${MAN_DIR}/mailgetaddresses.1" \
+      "${LOADABLE_DIR}/mailheader.so" \
+      "${LOADABLE_DIR}/mailmessage.so" \
+      "${LOADABLE_DIR}/mailheaderclean.so" \
+      "${PROFILE_DIR}/mail-tools.sh" \
+      "${PROFILE_DIR}/mailheader.sh" \
+      "${DOC_DIR}"; do
+         if [[ -L $path ]]; then
+           info "    $path (symlink)"
+         elif [[ -f $path ]]; then
+           info "    $path"
+         elif [[ -d $path ]]; then
+           info "    $path (directory)"
+         fi
+      done
+
     return 0
   fi
 
@@ -495,7 +519,7 @@ uninstall_files() {
 while (($#)); do
   case $1 in
     --help|-h)
-      show_help 0
+      show_help; exit 0
       ;;
     --builtin)
       INSTALL_BUILTIN=1
@@ -510,10 +534,10 @@ while (($#)); do
     --prefix)
       shift
       PREFIX="$1"
-      BINDIR="${PREFIX}/bin"
-      LOADABLE_DIR="${PREFIX}/lib/bash/loadables"
-      DOC_DIR="${PREFIX}/share/doc/mailheader"
-      MAN_DIR="${PREFIX}/share/man/man1"
+      BINDIR="$PREFIX"/bin
+      LOADABLE_DIR="$PREFIX"/lib/bash/loadables
+      DOC_DIR="$PREFIX"/share/doc/mailheader
+      MAN_DIR="$PREFIX"/share/man/man1
       # Note: PROFILE_DIR stays at /etc/profile.d for system-wide access
       ;;
     --non-interactive)
@@ -522,9 +546,17 @@ while (($#)); do
     --dry-run)
       DRY_RUN=1
       ;;
+    -a|--auto-all)
+      UNINSTALL=0
+      DRY_RUN=0
+      VERBOSE=0
+      NON_INTERACTIVE=1
+      INSTALL_BUILTIN=1
+      BUILTIN_EXPLICITLY_REQUESTED=1
+      ;;
     *)
-      error "Unknown option: $1"
-      echo ""
+      error "Unknown option '$1'"
+      echo
       show_help 1
       ;;
   esac
@@ -535,7 +567,7 @@ done
 main() {
   echo "Mail Tools Installation Script"
   echo "=============================="
-  echo ""
+  echo
 
   check_root
   check_prerequisites
@@ -587,12 +619,12 @@ main() {
   if ((DRY_RUN == 0)); then
     show_completion_message
   else
-    echo ""
+    echo
     info "[DRY-RUN] No changes were made"
   fi
 
   return 0
 }
 
-main
+main "$@"
 #fin
