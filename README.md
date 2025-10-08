@@ -11,6 +11,7 @@ Fast email parsing utilities for extracting headers, message bodies, and cleanin
 - Clean separation of source code and build artifacts
 - Comprehensive test suite with 632 real-world email files
 - Automated installation with dependency management
+- Bash completions for all utilities (tab completion for options and files)
 
 ## Purpose and Use Cases
 
@@ -298,6 +299,7 @@ This installs:
 - Bash scripts: `/usr/local/bin/{mailgetaddresses,mailgetheaders,mailheaderclean-batch}` (includes backwards-compatible `clean-email-headers` symlink)
 - Loadable builtins: `/usr/local/lib/bash/loadables/{mailheader,mailmessage,mailheaderclean}.so`
 - Auto-load script: `/etc/profile.d/mail-tools.sh`
+- Bash completions: `/usr/local/share/bash-completion/completions/mail-tools`
 - Manpages: `/usr/local/share/man/man1/{mailheader,mailmessage,mailheaderclean,mailgetaddresses}.1`
 - Documentation: `/usr/local/share/doc/mail-tools/`
 
@@ -704,6 +706,52 @@ The builtins are automatically available in interactive shells via `/etc/profile
 
 The builtins seamlessly integrate with bash, appearing identical to native commands while providing significant performance benefits.
 
+## Bash Completions
+
+All mail-tools utilities include intelligent bash completions for improved usability. Completions are automatically installed and become available in new bash sessions.
+
+**Features:**
+- Tab completion for command options (e.g., `-h`, `--help`, `-l`, `-n`, `-s`)
+- File and directory path completion
+- Smart option-specific suggestions:
+  - `mailgetaddresses -H <tab>` suggests common header names (from, to, cc, all, etc.)
+  - `mailgetaddresses -x <tab>` suggests common exclusion patterns (.Junk, .Trash, .Sent)
+  - `mailheaderclean <tab>` completes with `-l` and `-h` options
+  - `mailheaderclean-batch <tab>` completes with `-d`, `-m`, `-v`, `-q` options
+
+**Usage:**
+```bash
+# Type command and press TAB to see available options
+mailheaderclean -<TAB>
+# Shows: -l  -h  --help
+
+# Complete header options
+mailgetaddresses -H <TAB>
+# Shows: from to cc bcc reply-to from,to from,to,cc from,cc all
+
+# Complete exclusion patterns
+mailgetaddresses -x <TAB>
+# Shows: .Junk .Trash .Sent .Drafts .Spam .Junk,.Trash .Junk,.Trash,.Sent
+
+# File path completion works for all utilities
+mailheader /path/to/<TAB>
+# Shows available files and directories
+```
+
+**Activation:**
+- **New sessions**: Completions are automatically available after installation
+- **Current session**: Run `source /usr/local/share/bash-completion/completions/mail-tools`
+- **Verify**: Type `mailheaderclean -<TAB>` to test completion
+
+**Supported utilities:**
+- `mailheader` - Options: `-h`, `--help`
+- `mailmessage` - Options: `-h`, `--help`
+- `mailheaderclean` - Options: `-l`, `-h`, `--help`
+- `mailgetaddresses` - Options: `-n`, `-s`, `-H`, `-x`, `-h`, `--help` (with smart suggestions)
+- `mailgetheaders` - Options: `-h`, `--help`, `-V`, `--version`
+- `mailheaderclean-batch` - Options: `-d`, `-m`, `-v`, `-q`, `-V`, `--version`, `-h`, `--help`
+- `clean-email-headers` - Same as mailheaderclean-batch (symlink support)
+
 ## Project Structure
 
 ```
@@ -756,6 +804,7 @@ The builtins seamlessly integrate with bash, appearing identical to native comma
 │   ├── test_all_mailheaderclean.sh    # Comprehensive cleaning tests
 │   ├── test_*.sh                      # Additional functionality tests
 │   └── test-data/                     # 632 real email files
+├── mail-tools.bash_completions    # Bash completion definitions
 ├── Makefile                       # Build system
 ├── install.sh                     # Installation script
 ├── README.md                      # User documentation

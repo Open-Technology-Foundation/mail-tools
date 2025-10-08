@@ -1,0 +1,141 @@
+# bash completion for mail-tools utilities
+# Installation: Copy to /usr/share/bash-completion/completions/mail-tools
+
+# Helper function for file completion
+_mail_tools_files() {
+    local IFS=$'\n'
+    COMPREPLY=($(compgen -f -- "$cur"))
+}
+
+# mailheader completion
+_mailheader() {
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        -h|--help)
+            return
+            ;;
+    esac
+
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W '-h --help' -- "$cur"))
+    else
+        _mail_tools_files
+    fi
+}
+
+# mailmessage completion
+_mailmessage() {
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        -h|--help)
+            return
+            ;;
+    esac
+
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W '-h --help' -- "$cur"))
+    else
+        _mail_tools_files
+    fi
+}
+
+# mailheaderclean completion
+_mailheaderclean() {
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        -h|--help|-l)
+            return
+            ;;
+    esac
+
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W '-l -h --help' -- "$cur"))
+    else
+        _mail_tools_files
+    fi
+}
+
+# mailgetaddresses completion
+_mailgetaddresses() {
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        -h|--help)
+            return
+            ;;
+        -H|--header-opts)
+            # Suggest common header names
+            COMPREPLY=($(compgen -W 'from to cc bcc reply-to from,to from,to,cc from,cc all' -- "$cur"))
+            return
+            ;;
+        -x|--exclude)
+            # Suggest common exclusion patterns
+            COMPREPLY=($(compgen -W '.Junk .Trash .Sent .Drafts .Spam .Junk,.Trash .Junk,.Trash,.Sent' -- "$cur"))
+            return
+            ;;
+    esac
+
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W '-n --names -s --separate -H --header-opts -x --exclude -h --help' -- "$cur"))
+    else
+        # Complete both files and directories
+        _filedir
+    fi
+}
+
+# mailgetheaders completion
+_mailgetheaders() {
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        -h|--help|-V|--version)
+            return
+            ;;
+    esac
+
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W '-h --help -V --version' -- "$cur"))
+    else
+        _mail_tools_files
+    fi
+}
+
+# mailheaderclean-batch completion (also for clean-email-headers)
+_mailheaderclean_batch() {
+    local cur prev words cword
+    _init_completion || return
+
+    case $prev in
+        -h|--help|-V|--version)
+            return
+            ;;
+        -d|--days|-m|--maxdepth)
+            # No completion for numeric arguments
+            return
+            ;;
+    esac
+
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W '-d --days -m --maxdepth -v --verbose -q --quiet -V --version -h --help' -- "$cur"))
+    else
+        # Complete both files and directories
+        _filedir
+    fi
+}
+
+# Register completions for all mail-tools utilities
+complete -F _mailheader mailheader
+complete -F _mailmessage mailmessage
+complete -F _mailheaderclean mailheaderclean
+complete -F _mailgetaddresses mailgetaddresses
+complete -F _mailgetheaders mailgetheaders
+complete -F _mailheaderclean_batch mailheaderclean-batch
+complete -F _mailheaderclean_batch clean-email-headers  # Symlink support

@@ -56,6 +56,7 @@ declare LOADABLE_DIR="$PREFIX"/lib/bash/loadables
 declare PROFILE_DIR=/etc/profile.d
 declare DOC_DIR="$PREFIX"/share/doc/mail-tools
 declare MAN_DIR="$PREFIX"/share/man/man1
+declare COMPLETION_DIR="$PREFIX"/share/bash-completion/completions
 
 show_help() {
   cat << 'EOF'
@@ -79,6 +80,7 @@ Installation Locations (with default prefix):
                        (includes clean-email-headers symlink for backwards compatibility)
   Manpages:            /usr/local/share/man/man1/mailheader.1, mailmessage.1, mailheaderclean.1, mailgetaddresses.1
   Documentation:       /usr/local/share/doc/mail-tools/
+  Bash completions:    /usr/local/share/bash-completion/completions/mail-tools
   Builtins (optional): /usr/local/lib/bash/loadables/mailheader.so, mailmessage.so, mailheaderclean.so
   Profile script:      /etc/profile.d/mail-tools.sh (always, regardless of --prefix)
 
@@ -296,6 +298,25 @@ install_standalone() {
   success "Standalone installation complete"
 }
 
+install_completions() {
+  info "Installing bash completions..."
+
+  if ((DRY_RUN)); then
+    info "[DRY-RUN] Would install:"
+    info "  ${COMPLETION_DIR}/mail-tools"
+    return 0
+  fi
+
+  # Install bash completions
+  if [[ -f "${SCRIPT_DIR}/mail-tools.bash_completions" ]]; then
+    install -d "${COMPLETION_DIR}"
+    install -m 644 "${SCRIPT_DIR}/mail-tools.bash_completions" "${COMPLETION_DIR}/mail-tools" || warning "Failed to install bash completions"
+    success "Bash completions installed"
+  else
+    warning "Bash completions file not found, skipping"
+  fi
+}
+
 install_builtin() {
   info "Installing bash loadable builtins..."
 
@@ -350,6 +371,7 @@ show_completion_message() {
   echo "                         (includes ${BINDIR}/clean-email-headers symlink)"
   echo "  • Manpages:            ${MAN_DIR}/mailheader.1, ${MAN_DIR}/mailmessage.1, ${MAN_DIR}/mailheaderclean.1, ${MAN_DIR}/mailgetaddresses.1"
   echo "  • Documentation:       ${DOC_DIR}/"
+  echo "  • Bash completions:    ${COMPLETION_DIR}/mail-tools"
 
   if ((INSTALL_BUILTIN)); then
     echo "  • Bash builtins:       ${LOADABLE_DIR}/mailheader.so, ${LOADABLE_DIR}/mailmessage.so, ${LOADABLE_DIR}/mailheaderclean.so"
@@ -359,6 +381,11 @@ show_completion_message() {
     echo "To use in your current session, run:"
     echo "  source ${PROFILE_DIR}/mail-tools.sh"
   fi
+
+  echo ""
+  echo "Bash completions will be available in new bash sessions."
+  echo "To use in your current session, run:"
+  echo "  source ${COMPLETION_DIR}/mail-tools"
 
   echo ""
   echo "Verify installation:"
@@ -424,6 +451,7 @@ EOT
       "${MAN_DIR}/mailmessage.1" \
       "${MAN_DIR}/mailheaderclean.1" \
       "${MAN_DIR}/mailgetaddresses.1" \
+      "${COMPLETION_DIR}/mail-tools" \
       "${LOADABLE_DIR}/mailheader.so" \
       "${LOADABLE_DIR}/mailmessage.so" \
       "${LOADABLE_DIR}/mailheaderclean.so" \
@@ -479,6 +507,11 @@ EOT
   fi
   if [[ -f "${MAN_DIR}/mailgetaddresses.1" ]]; then
     rm -f "${MAN_DIR}/mailgetaddresses.1" && ((files_removed+=1))
+  fi
+
+  # Remove bash completions
+  if [[ -f "${COMPLETION_DIR}/mail-tools" ]]; then
+    rm -f "${COMPLETION_DIR}/mail-tools" && ((files_removed+=1))
   fi
 
   # Remove builtins
@@ -538,6 +571,7 @@ while (($#)); do
       LOADABLE_DIR="$PREFIX"/lib/bash/loadables
       DOC_DIR="$PREFIX"/share/doc/mail-tools
       MAN_DIR="$PREFIX"/share/man/man1
+      COMPLETION_DIR="$PREFIX"/share/bash-completion/completions
       # Note: PROFILE_DIR stays at /etc/profile.d for system-wide access
       ;;
     --non-interactive)
@@ -607,6 +641,7 @@ main() {
 
   # Install files
   install_standalone
+  install_completions
 
   if ((INSTALL_BUILTIN)); then
     install_builtin

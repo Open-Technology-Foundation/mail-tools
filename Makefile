@@ -37,6 +37,7 @@ LOADABLE_DIR = $(PREFIX)/lib/bash/loadables
 PROFILE_DIR = /etc/profile.d
 DOC_DIR = $(PREFIX)/share/doc/mail-tools
 MAN_DIR = $(PREFIX)/share/man/man1
+COMPLETION_DIR = $(PREFIX)/share/bash-completion/completions
 
 # Targets
 MAILHEADER_BIN = $(BIN_DIR)/mailheader
@@ -46,7 +47,7 @@ MAILMESSAGE_SO = $(LIB_DIR)/mailmessage.so
 MAILHEADERCLEAN_BIN = $(BIN_DIR)/mailheaderclean
 MAILHEADERCLEAN_SO = $(LIB_DIR)/mailheaderclean.so
 
-.PHONY: all all-mailheader all-mailmessage all-mailheaderclean standalone loadable clean install install-standalone install-loadable uninstall help
+.PHONY: all all-mailheader all-mailmessage all-mailheaderclean standalone loadable clean install install-standalone install-loadable install-completions uninstall help
 
 # Default target: build all utilities
 all: all-mailheader all-mailmessage all-mailheaderclean
@@ -102,10 +103,11 @@ $(BIN_DIR) $(LIB_DIR) $(OBJ_DIR):
 	mkdir -p $@
 
 # Install everything (all utilities, both versions)
-install: install-standalone install-loadable
+install: install-standalone install-loadable install-completions
 	@echo "Installation complete!"
 	@echo "The mailheader, mailmessage, and mailheaderclean builtins will be available in new bash sessions."
 	@echo "For the current session, run: source /etc/profile.d/mail-tools.sh"
+	@echo "Bash completions will be available in new bash sessions."
 
 # Install standalone binaries only
 install-standalone: $(MAILHEADER_BIN) $(MAILMESSAGE_BIN) $(MAILHEADERCLEAN_BIN)
@@ -150,6 +152,16 @@ install-loadable: $(MAILHEADER_SO) $(MAILMESSAGE_SO) $(MAILHEADERCLEAN_SO)
 		install -m 644 README.md $(DESTDIR)$(DOC_DIR)/; \
 	fi
 
+# Install bash completions
+install-completions:
+	@echo "Installing bash completions..."
+	@if [ -f mail-tools.bash_completions ]; then \
+		install -d $(DESTDIR)$(COMPLETION_DIR); \
+		install -m 644 mail-tools.bash_completions $(DESTDIR)$(COMPLETION_DIR)/mail-tools; \
+	else \
+		echo "Warning: mail-tools.bash_completions not found, skipping"; \
+	fi
+
 # Uninstall everything
 uninstall:
 	@echo "Uninstalling mail tools..."
@@ -169,6 +181,7 @@ uninstall:
 	rm -f $(DESTDIR)$(MAN_DIR)/mailmessage.1
 	rm -f $(DESTDIR)$(MAN_DIR)/mailheaderclean.1
 	rm -f $(DESTDIR)$(MAN_DIR)/mailgetaddresses.1
+	rm -f $(DESTDIR)$(COMPLETION_DIR)/mail-tools
 	rm -rf $(DESTDIR)$(DOC_DIR)
 	@echo "Uninstall complete. You may need to restart bash sessions."
 
@@ -191,6 +204,7 @@ help:
 	@echo "  install               - Install all utilities (requires sudo)"
 	@echo "  install-standalone    - Install standalone binaries only (requires sudo)"
 	@echo "  install-loadable      - Install loadable builtins only (requires sudo)"
+	@echo "  install-completions   - Install bash completions only (requires sudo)"
 	@echo "  uninstall             - Remove all installed files (requires sudo)"
 	@echo "  clean                 - Remove build artifacts"
 	@echo "  help                  - Show this help message"
@@ -201,6 +215,7 @@ help:
 	@echo "  Profile script:      $(PROFILE_DIR)"
 	@echo "  Documentation:       $(DOC_DIR)"
 	@echo "  Manpages:            $(MAN_DIR)"
+	@echo "  Bash completions:    $(COMPLETION_DIR)"
 	@echo ""
 	@echo "Usage examples:"
 	@echo "  make                - Build all utilities"
