@@ -35,7 +35,7 @@ PREFIX = /usr/local
 BINDIR = $(PREFIX)/bin
 LOADABLE_DIR = $(PREFIX)/lib/bash/loadables
 PROFILE_DIR = /etc/profile.d
-DOC_DIR = $(PREFIX)/share/doc/mailheader
+DOC_DIR = $(PREFIX)/share/doc/mail-tools
 MAN_DIR = $(PREFIX)/share/man/man1
 
 # Targets
@@ -116,6 +116,9 @@ install-standalone: $(MAILHEADER_BIN) $(MAILMESSAGE_BIN) $(MAILHEADERCLEAN_BIN)
 	install -m 755 $(MAILHEADERCLEAN_BIN) $(DESTDIR)$(BINDIR)/mailheaderclean
 	@echo "Installing scripts..."
 	install -m 755 $(SCRIPTS_DIR)/mailgetaddresses $(DESTDIR)$(BINDIR)/
+	install -m 755 $(SCRIPTS_DIR)/mailgetheaders $(DESTDIR)$(BINDIR)/
+	install -m 755 $(SCRIPTS_DIR)/mailheaderclean-batch $(DESTDIR)$(BINDIR)/
+	ln -sf $(BINDIR)/mailheaderclean-batch $(DESTDIR)$(BINDIR)/clean-email-headers
 	@if [ -f $(MAN_SRC_DIR)/mailheader.1 ]; then \
 		echo "Installing manpages..."; \
 		install -d $(DESTDIR)$(MAN_DIR); \
@@ -154,6 +157,9 @@ uninstall:
 	rm -f $(DESTDIR)$(BINDIR)/mailmessage
 	rm -f $(DESTDIR)$(BINDIR)/mailheaderclean
 	rm -f $(DESTDIR)$(BINDIR)/mailgetaddresses
+	rm -f $(DESTDIR)$(BINDIR)/mailgetheaders
+	rm -f $(DESTDIR)$(BINDIR)/mailheaderclean-batch
+	rm -f $(DESTDIR)$(BINDIR)/clean-email-headers
 	rm -f $(DESTDIR)$(LOADABLE_DIR)/mailheader.so
 	rm -f $(DESTDIR)$(LOADABLE_DIR)/mailmessage.so
 	rm -f $(DESTDIR)$(LOADABLE_DIR)/mailheaderclean.so

@@ -240,8 +240,8 @@ cd mail-tools
 
 ```bash
 # Move to traditional source location (optional)
-sudo mv mailheader /usr/local/src/
-cd /usr/local/src/mailheader
+sudo mv mail-tools /usr/local/src/
+cd /usr/local/src/mail-tools
 ```
 
 **Note**: The source code is not required after installation. You can delete the cloned directory after running `install.sh` and re-clone from GitHub if needed later.
@@ -290,7 +290,7 @@ This installs:
 - Loadable builtins: `/usr/local/lib/bash/loadables/{mailheader,mailmessage,mailheaderclean}.so`
 - Auto-load script: `/etc/profile.d/mail-tools.sh`
 - Manpages: `/usr/local/share/man/man1/{mailheader,mailmessage,mailheaderclean,mailgetaddresses}.1`
-- Documentation: `/usr/local/share/doc/mailheader/`
+- Documentation: `/usr/local/share/doc/mail-tools/`
 
 ### Verify Installation
 
@@ -617,9 +617,9 @@ cd tests
 
 All tests pass with 100% success rate on critical functionality:
 
-- ✓ **632/633** files produce valid header extraction
-- ✓ **632/633** files produce valid message extraction
-- ✓ **632/633** files produce valid cleaned output
+- ✓ **632/632** files produce valid header extraction
+- ✓ **632/632** files produce valid message extraction
+- ✓ **632/632** files produce valid cleaned output
 - ✓ **632/632** files maintain valid RFC 822 format after cleaning
 - ✓ **100%** identical output between standalone and builtin versions
 - ✓ All environment variable combinations work correctly
