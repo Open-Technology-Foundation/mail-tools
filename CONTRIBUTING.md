@@ -16,8 +16,8 @@ Thank you for your interest in contributing to the Mail Tools project! We welcom
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/mailheader.git
-   cd mailheader
+   git clone https://github.com/YOUR-USERNAME/mail-tools.git
+   cd mail-tools
    ```
 
 3. **Create a feature branch**:

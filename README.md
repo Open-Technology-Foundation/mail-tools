@@ -1,8 +1,8 @@
 # Mail Tools
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![CI](https://github.com/Open-Technology-Foundation/mailheader/workflows/CI/badge.svg)](https://github.com/Open-Technology-Foundation/mailheader/actions)
-[![GitHub Issues](https://img.shields.io/github/issues/Open-Technology-Foundation/mailheader)](https://github.com/Open-Technology-Foundation/mailheader/issues)
+[![CI](https://github.com/Open-Technology-Foundation/mail-tools/workflows/CI/badge.svg)](https://github.com/Open-Technology-Foundation/mail-tools/actions)
+[![GitHub Issues](https://img.shields.io/github/issues/Open-Technology-Foundation/mail-tools)](https://github.com/Open-Technology-Foundation/mail-tools/issues)
 
 Fast email parsing utilities for extracting headers, message bodies, and cleaning bloat headers. Available as both standalone binaries and bash loadable builtins.
 
@@ -222,7 +222,7 @@ sudo apt-get install bash-builtins  # Ubuntu/Debian
 Quick installation without keeping the source:
 
 ```bash
-git clone https://github.com/Open-Technology-Foundation/mailheader.git && cd mailheader && sudo ./install.sh --builtin && cd .. && rm -rf mailheader
+git clone https://github.com/Open-Technology-Foundation/mail-tools.git && cd mail-tools && sudo ./install.sh --builtin && cd .. && rm -rf mail-tools
 ```
 
 This will clone, install, and clean up the source in one command.
@@ -232,8 +232,8 @@ This will clone, install, and clean up the source in one command.
 For manual installation or to keep the source:
 
 ```bash
-git clone https://github.com/Open-Technology-Foundation/mailheader.git
-cd mailheader
+git clone https://github.com/Open-Technology-Foundation/mail-tools.git
+cd mail-tools
 ```
 
 **Optional**: Keep a system-wide copy of the source for future updates or rebuilds:
@@ -743,7 +743,7 @@ GNU General Public License v3.0 or later. See LICENSE file for details.
 
 ## Contributing
 
-Issues and pull requests welcome at [github.com/Open-Technology-Foundation/mailheader](https://github.com/Open-Technology-Foundation/mailheader)
+Issues and pull requests welcome at [github.com/Open-Technology-Foundation/mail-tools](https://github.com/Open-Technology-Foundation/mail-tools)
 
 ## Credits
 

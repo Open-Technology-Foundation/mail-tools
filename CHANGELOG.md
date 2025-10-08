@@ -96,5 +96,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Bash builtins provide 10-20x speedup for batch processing
   - Benchmarking utilities included
 
-[Unreleased]: https://github.com/Open-Technology-Foundation/mailheader/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/Open-Technology-Foundation/mailheader/releases/tag/v1.0.0
+[Unreleased]: https://github.com/Open-Technology-Foundation/mail-tools/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Open-Technology-Foundation/mail-tools/releases/tag/v1.0.0
