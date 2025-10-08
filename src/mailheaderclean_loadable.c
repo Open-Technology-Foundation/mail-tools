@@ -26,6 +26,7 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <errno.h>
+#include <fnmatch.h>
 
 #include "builtins.h"
 #include "shell.h"
@@ -84,15 +85,46 @@ static int strcasecmp_custom(const char *s1, const char *s2) {
     return tolower((unsigned char)*s1) - tolower((unsigned char)*s2);
 }
 
-/* Check if header should be removed */
+/* Check if header should be removed
+ * Supports wildcard patterns using shell glob syntax:
+ *   X-*         matches any header starting with X-
+ *   *-Status    matches any header ending with -Status
+ *   X-MS-*      matches any header starting with X-MS-
+ *   X-*-Status  matches X- followed by anything, ending in -Status
+ */
 static int should_remove_header(const char *header, char **removal_list, int removal_count) {
     int i;
 
-    /* Check removal list */
+    /* Check removal list with wildcard support */
     for (i = 0; i < removal_count; i++) {
-        if (strcasecmp_custom(header, removal_list[i]) == 0) {
+        /* Use fnmatch for glob pattern matching (case-insensitive) */
+#ifdef FNM_CASEFOLD
+        /* GNU extension for case-insensitive matching */
+        if (fnmatch(removal_list[i], header, FNM_CASEFOLD) == 0) {
             return 1;
         }
+#else
+        /* Fallback: convert both to lowercase for comparison */
+        char pattern_lower[256], header_lower[256];
+        const char *p_src = removal_list[i];
+        const char *h_src = header;
+        char *p_dst = pattern_lower;
+        char *h_dst = header_lower;
+
+        while (*p_src && p_dst < pattern_lower + 255) {
+            *p_dst++ = tolower((unsigned char)*p_src++);
+        }
+        *p_dst = '\0';
+
+        while (*h_src && h_dst < header_lower + 255) {
+            *h_dst++ = tolower((unsigned char)*h_src++);
+        }
+        *h_dst = '\0';
+
+        if (fnmatch(pattern_lower, header_lower, 0) == 0) {
+            return 1;
+        }
+#endif
     }
 
     return 0;
@@ -417,6 +449,11 @@ char *mailheaderclean_doc[] = {
     "  MAILHEADERCLEAN_EXTRA  Comma-separated list of additional headers to remove",
     " ",
     "Precedence: MAILHEADERCLEAN (or built-in) - PRESERVE + EXTRA",
+    " ",
+    "Wildcard patterns supported (shell glob syntax):",
+    "  X-*         Match any header starting with X-",
+    "  *-Status    Match any header ending with -Status",
+    "  X-MS-*      Match any header starting with X-MS-",
     " ",
     "Exit Status:",
     "Returns success unless the file cannot be opened or read.",

@@ -85,6 +85,12 @@ mailheaderclean -h                        # Show help
 
 **Formula:** `(MAILHEADERCLEAN or built-in) - PRESERVE + EXTRA`
 
+**Wildcard patterns supported** (shell glob syntax):
+- `X-*` - Match any header starting with X-
+- `*-Status` - Match any header ending with -Status
+- `X-MS-*` - Match any header starting with X-MS-
+- `X-*-Status` - Match X- followed by anything, ending in -Status
+
 ### mailgetaddresses
 Bash script that extracts email addresses from From, To, and Cc headers in email files.
 
@@ -465,6 +471,22 @@ $ MAILHEADERCLEAN="DKIM-Signature,List-Unsubscribe" \
   MAILHEADERCLEAN_PRESERVE="List-Unsubscribe" \
   MAILHEADERCLEAN_EXTRA="X-Custom" mailheaderclean email.eml
 # Result: Removes DKIM-Signature and X-Custom, preserves List-Unsubscribe
+```
+
+Use wildcard patterns:
+```bash
+# Remove all X- headers
+$ MAILHEADERCLEAN="X-*" mailheaderclean email.eml
+
+# Remove all Microsoft headers
+$ MAILHEADERCLEAN_EXTRA="X-Microsoft-*,X-MS-*" mailheaderclean email.eml
+
+# Remove all spam and status headers
+$ MAILHEADERCLEAN="X-Spam-*,*-Status" mailheaderclean email.eml
+
+# Complex: remove all X-MS- headers except X-MS-TNEF-Correlator
+$ MAILHEADERCLEAN_EXTRA="X-MS-*" \
+  MAILHEADERCLEAN_PRESERVE="X-MS-TNEF-Correlator" mailheaderclean email.eml
 ```
 
 ### Production Script Examples
