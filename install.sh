@@ -14,7 +14,11 @@ readonly -- SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
 declare -i VERBOSE=1
 
 # Color definitions (only if terminal supports)
-[[ -t 1 && -t 2 ]] && declare -- RED=$'\033[0;31m' GREEN=$'\033[0;32m' YELLOW=$'\033[0;33m' CYAN=$'\033[0;36m' NC=$'\033[0m' || declare -- RED='' GREEN='' YELLOW='' CYAN='' NC=''
+if [[ -t 1 && -t 2 ]]; then
+  declare -- RED=$'\033[0;31m' GREEN=$'\033[0;32m' YELLOW=$'\033[0;33m' CYAN=$'\033[0;36m' NC=$'\033[0m'
+else
+  declare -- RED='' GREEN='' YELLOW='' CYAN='' NC=''
+fi
 readonly -- RED GREEN YELLOW CYAN NC
 
 # Core message function

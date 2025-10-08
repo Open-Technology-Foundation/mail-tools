@@ -808,7 +808,6 @@ mailheader /path/to/<TAB>
 ├── Makefile                       # Build system
 ├── install.sh                     # Installation script
 ├── README.md                      # User documentation
-├── CLAUDE.md                      # Developer guidance
 └── LICENSE                        # GPL v3.0
 ```
 

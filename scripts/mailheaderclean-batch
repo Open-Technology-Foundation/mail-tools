@@ -11,7 +11,11 @@ readonly -- VERSION SCRIPT_PATH SCRIPT_NAME
 declare -i VERBOSE=1
 
 # Color definitions (only if terminal supports)
-[[ -t 1 && -t 2 ]] && declare -- RED=$'\033[0;31m' GREEN=$'\033[0;32m' YELLOW=$'\033[0;33m' CYAN=$'\033[0;36m' NC=$'\033[0m' || declare -- RED='' GREEN='' YELLOW='' CYAN='' NC=''
+if [[ -t 1 && -t 2 ]]; then
+  declare -- RED=$'\033[0;31m' GREEN=$'\033[0;32m' YELLOW=$'\033[0;33m' CYAN=$'\033[0;36m' NC=$'\033[0m'
+else
+  declare -- RED='' GREEN='' YELLOW='' CYAN='' NC=''
+fi
 readonly -- RED GREEN YELLOW CYAN NC
 
 # Core message function
@@ -118,6 +122,7 @@ main() {
   # Try to load mailheaderclean builtin, fallback to binary
   if ! type -t mailheaderclean >/dev/null; then
     if [[ -f /etc/profile.d/mail-tools.sh ]]; then
+      # shellcheck source=/dev/null
       source /etc/profile.d/mail-tools.sh
     else
       enable -f /usr/local/lib/bash/loadables/mailheaderclean.so mailheaderclean 2>/dev/null
