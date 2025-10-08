@@ -111,7 +111,15 @@ static int parse_csv_headers(const char *csv_string, char ***headers) {
     return i;
 }
 
-/* Build the final removal list based on environment variables */
+/* Build the final removal list based on environment variables
+ *
+ * Processing order:
+ *   1. MAILHEADERCLEAN (or built-in hardcoded list if not set) - establishes base
+ *   2. MAILHEADERCLEAN_PRESERVE - removes headers from base (subtract)
+ *   3. MAILHEADERCLEAN_EXTRA - adds headers to final list (add)
+ *
+ * Formula: (MAILHEADERCLEAN or built-in) - PRESERVE + EXTRA
+ */
 static int build_removal_list(char ***removal_list) {
     char **base_list = NULL;
     int base_count = 0;
@@ -122,7 +130,7 @@ static int build_removal_list(char ***removal_list) {
     int i, j, k;
     int found;
 
-    /* Step 1: Get base removal list */
+    /* Step 1: Get base removal list (MAILHEADERCLEAN or hardcoded) */
     char *env_mailheaderclean = getenv("MAILHEADERCLEAN");
     if (env_mailheaderclean && *env_mailheaderclean) {
         /* Use custom removal list from environment */
@@ -140,7 +148,7 @@ static int build_removal_list(char ***removal_list) {
         }
     }
 
-    /* Step 2: Parse preserve list and remove from base */
+    /* Step 2: Parse preserve list and remove from base (MAILHEADERCLEAN_PRESERVE) */
     char *env_preserve = getenv("MAILHEADERCLEAN_PRESERVE");
     if (env_preserve && *env_preserve) {
         preserve_count = parse_csv_headers(env_preserve, &preserve_list);
@@ -162,7 +170,7 @@ static int build_removal_list(char ***removal_list) {
         free(preserve_list);
     }
 
-    /* Step 3: Parse extra list and add to base (if not already present) */
+    /* Step 3: Parse extra list and add to base (MAILHEADERCLEAN_EXTRA) */
     char *env_extra = getenv("MAILHEADERCLEAN_EXTRA");
     if (env_extra && *env_extra) {
         extra_count = parse_csv_headers(env_extra, &extra_list);
@@ -219,8 +227,10 @@ static int build_removal_list(char ***removal_list) {
 }
 
 static void usage(const char *progname) {
-    printf("Usage: %s FILE\n", progname);
+    printf("Usage: %s [-l] FILE\n", progname);
     printf("Filter non-essential email headers from FILE\n");
+    printf("\nOptions:\n");
+    printf("  -l    List currently active header removal list and exit\n");
     printf("\nEnvironment variables:\n");
     printf("  MAILHEADERCLEAN          Replace built-in removal list\n");
     printf("  MAILHEADERCLEAN_PRESERVE Exclude headers from removal\n");
@@ -240,6 +250,22 @@ int main(int argc, const char* argv[]) {
 
     if (argc == 2 && (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)) {
         usage(argv[0]);
+        return 0;
+    }
+
+    /* Handle -l option (list removal headers) */
+    if (argc == 2 && strcmp(argv[1], "-l") == 0) {
+        removal_count = build_removal_list(&removal_list);
+        for (int i = 0; i < removal_count; i++) {
+            printf("%s\n", removal_list[i]);
+        }
+        /* Cleanup */
+        if (removal_list) {
+            for (int i = 0; i < removal_count; i++) {
+                free(removal_list[i]);
+            }
+            free(removal_list);
+        }
         return 0;
     }
 

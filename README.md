@@ -74,13 +74,16 @@ Filters non-essential email headers from complete email files.
 
 ```bash
 mailheaderclean email.eml > cleaned.eml
+mailheaderclean -l                        # List active removal headers
 mailheaderclean -h                        # Show help
 ```
 
-**Environment variables:**
-- `MAILHEADERCLEAN`: Replace entire removal list with custom headers
-- `MAILHEADERCLEAN_PRESERVE`: Exclude specific headers from removal (e.g., for Thunderbird features)
-- `MAILHEADERCLEAN_EXTRA`: Add additional headers to the built-in removal list
+**Environment variables** (processed in this order):
+1. `MAILHEADERCLEAN`: Replace entire removal list with custom headers (or use built-in if not set)
+2. `MAILHEADERCLEAN_PRESERVE`: Exclude specific headers from removal (e.g., for Thunderbird features)
+3. `MAILHEADERCLEAN_EXTRA`: Add additional headers to the removal list
+
+**Formula:** `(MAILHEADERCLEAN or built-in) - PRESERVE + EXTRA`
 
 ### mailgetaddresses
 Bash script that extracts email addresses from From, To, and Cc headers in email files.
@@ -417,6 +420,24 @@ $ cat headers.txt body.txt  # Reconstruct email
 ```
 
 ### Cleaning Bloat Headers
+
+List currently active removal headers:
+```bash
+$ mailheaderclean -l
+x-ms-exchange-antispam-messagedata-0
+x-ms-exchange-antispam-messagedata-chunkcount
+...
+X-Spam-Score
+X-Proofpoint-NotVirusScanned
+
+# With environment variables applied
+$ MAILHEADERCLEAN_PRESERVE="List-Unsubscribe,X-Priority" mailheaderclean -l
+# Shows built-in list minus preserved headers
+
+$ MAILHEADERCLEAN="X-Spam-Status,DKIM-Signature" mailheaderclean -l
+X-Spam-Status
+DKIM-Signature
+```
 
 Clean single file:
 ```bash
