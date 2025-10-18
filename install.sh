@@ -6,12 +6,11 @@
 set -euo pipefail
 shopt -s inherit_errexit shift_verbose extglob nullglob
 
+VERSION='1.0.0'
 SCRIPT_PATH=$(readlink -en -- "$0")
 SCRIPT_DIR=${SCRIPT_PATH%/*}
 SCRIPT_NAME=${SCRIPT_PATH##*/}
-readonly -- SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
-
-declare -i VERBOSE=1
+readonly -- VERSION SCRIPT_PATH SCRIPT_DIR SCRIPT_NAME
 
 # Color definitions (only if terminal supports)
 if [[ -t 1 && -t 2 ]]; then
@@ -25,25 +24,34 @@ readonly -- RED GREEN YELLOW CYAN NC
 _msg() {
   local -- prefix="$SCRIPT_NAME:" msg
   case "${FUNCNAME[1]}" in
-    success) prefix+=" ${GREEN}✓${NC}" ;;
-    warning) prefix+=" ${YELLOW}⚡${NC}" ;;
-    info)    prefix+=" ${CYAN}◉${NC}" ;;
-    error)   prefix+=" ${RED}✗${NC}" ;;
+    success)  prefix+=" ${GREEN}✓${NC}" ;;
+    warn)     prefix+=" ${YELLOW}⚡${NC}" ;;
+    info)     prefix+=" ${CYAN}◉${NC}" ;;
+    error)    prefix+=" ${RED}✗${NC}" ;;
     *)       ;;
   esac
   for msg in "$@"; do printf '%s %s\n' "$prefix" "$msg"; done
 }
 
-# Messaging functions
+# Conditional Messaging functions
+declare -i VERBOSE=1
 vecho() { ((VERBOSE)) || return 0; _msg "$@"; }
 success() { ((VERBOSE)) || return 0; >&2 _msg "$@"; }
-warning() { ((VERBOSE)) || return 0; >&2 _msg "$@"; }
+warn() { ((VERBOSE)) || return 0; >&2 _msg "$@"; }
 info() { ((VERBOSE)) || return 0; >&2 _msg "$@"; }
+# Unconditional messaging functions
 error() { >&2 _msg "$@"; }
 die() { (($# > 1)) && error "${@:2}"; exit "${1:-0}"; }
+# yes/no
+yn() {
+  local -- reply
+  >&2 read -r -n 1 -p "$SCRIPT_NAME: ${YELLOW}$1${NC} y/n " reply
+  >&2 echo
+  [[ ${reply,,} == y ]]
+}
 
 # Default values
-declare PREFIX=/usr/local
+declare -- PREFIX=/usr/local
 declare -i INSTALL_BUILTIN=0
 declare -i BUILTIN_EXPLICITLY_REQUESTED=0
 declare -i SKIP_BUILTIN=0
@@ -52,15 +60,15 @@ declare -i UNINSTALL=0
 declare -i DRY_RUN=0
 
 # Derived paths
-declare BINDIR="$PREFIX"/bin
-declare LOADABLE_DIR="$PREFIX"/lib/bash/loadables
+declare -- BIN_DIR="$PREFIX"/bin
+declare -- LOADABLE_DIR="$PREFIX"/lib/bash/loadables
 # PROFILE_DIR intentionally hardcoded to /etc/profile.d for system-wide bash profile
 # integration, regardless of PREFIX. This ensures builtins are available in all
 # user sessions. To override, modify this line or use a custom install method.
-declare PROFILE_DIR=/etc/profile.d
-declare DOC_DIR="$PREFIX"/share/doc/mail-tools
-declare MAN_DIR="$PREFIX"/share/man/man1
-declare COMPLETION_DIR="$PREFIX"/share/bash-completion/completions
+declare -- PROFILE_DIR=/etc/profile.d
+declare -- DOC_DIR="$PREFIX"/share/doc/mail-tools
+declare -- MAN_DIR="$PREFIX"/share/man/man1
+declare -- COMPLETION_DIR="$PREFIX"/share/bash-completion/completions
 
 show_help() {
   cat << 'EOF'
@@ -70,13 +78,15 @@ Mail Tools Installation Script
 Usage: ./install.sh [OPTIONS]
 
 Options:
-  --help              Show this help message
-  --builtin           Force installation of bash builtins (installs dependencies if needed)
-  --no-builtin        Skip bash builtin installation
-  --uninstall         Uninstall mail tools
-  --prefix DIR        Installation prefix (default: /usr/local)
-  --non-interactive   Don't prompt for user input
-  --dry-run           Show what would be done without making changes
+  -h, --help              Show this help message
+  -V, --version           Show version information
+  --builtin               Force installation of bash builtins (installs dependencies if needed)
+  --no-builtin            Skip bash builtin installation
+  --uninstall             Uninstall mail tools
+  --prefix DIR            Installation prefix (default: /usr/local)
+  -N, --non-interactive   Don't prompt for user input
+  -n, --dry-run           Show what would be done without making changes
+  -a, --auto-all          Non-interactive install with builtins (automation mode)
 
 Installation Locations (with default prefix):
   Standalone binaries: /usr/local/bin/mailheader, mailmessage, mailheaderclean
@@ -92,8 +102,10 @@ Examples:
   ./install.sh                    # Interactive installation
   ./install.sh --builtin          # Install with builtins
   ./install.sh --no-builtin       # Install without builtins
+  ./install.sh -n                 # Dry-run (preview changes)
   ./install.sh --uninstall        # Remove installation
   ./install.sh --prefix=/opt      # Install to /opt
+  ./install.sh -a                 # Automated install with builtins (CI/CD)
 
 EOF
   return 0
@@ -104,19 +116,19 @@ check_root() {
 }
 
 check_prerequisites() {
-  info "Checking prerequisites..."
+  info 'Checking prerequisites...'
 
   # Check for gcc
   if ! command -v gcc &> /dev/null; then
-    die 1 "'gcc' compiler not found. Please install 'build-essential' or 'gcc'."
+    die 1 "'gcc' compiler not found." "Please install 'build-essential' or 'gcc'."
   fi
 
   # Check for make
   if ! command -v make &> /dev/null; then
-    die 1 "'make' not found. Please install 'make'."
+    die 1 "'make' not found." "Please install 'make'."
   fi
 
-  success "Prerequisites check passed"
+  success 'Prerequisites check passed'
 }
 
 check_builtin_support() {
@@ -136,25 +148,25 @@ check_builtin_support() {
 }
 
 install_bash_builtins() {
-  info "Installing bash-builtins package..."
+  info 'Installing bash-builtins package...'
 
   # Check if we're on a Debian/Ubuntu system
   if ! command -v apt-get &> /dev/null; then
-    error "apt-get not found. Please install bash-builtins manually for your distribution."
+    error "'apt-get' not found." 'Please install bash-builtins manually for your distribution.'
     return 1
   fi
 
   if ((DRY_RUN)); then
-    info "[DRY-RUN] Would run: apt-get install -y bash-builtins"
+    info '[DRY-RUN] Would run: apt-get install -y bash-builtins'
     return 0
   fi
 
   # Install bash-builtins
   if apt-get update && apt-get install -y bash-builtins; then
-    success "bash-builtins package installed"
+    success 'bash-builtins package installed'
     return 0
   else
-    error "Failed to install bash-builtins package"
+    error 'Failed to install bash-builtins package'
     return 1
   fi
 }
@@ -168,300 +180,274 @@ prompt_builtin_install() {
     fi
   fi
 
-  echo ""
-  echo "The bash loadable builtins provide 10-20x performance improvement"
-  echo "for scripts that process multiple email files."
-  echo ""
-  read -p "Install bash loadable builtins? [Y/n] " -n 1 -r
-  echo ""
-
-  [[ $REPLY =~ ^[Nn]$ ]] || return 1
-  return 0
+  echo
+  echo 'The bash loadable builtins provide 10-20x performance improvement'
+  echo 'for scripts that process multiple email files.'
+  echo
+  yn 'Install bash loadable builtins?'
 }
 
 build_standalone() {
-  info "Building standalone binaries..."
+  info 'Building standalone binaries...'
 
   if ((DRY_RUN)); then
-    info "[DRY-RUN] Would build: make standalone"
+    info '[DRY-RUN] Would build: make standalone'
     return 0
   fi
 
   cd "$SCRIPT_DIR"
-  make standalone || die 1 "Failed to build standalone binaries"
-  success "Standalone binaries built (mailheader, mailmessage, mailheaderclean)"
+  make standalone || die 1 'Failed to build standalone binaries'
+  success 'Standalone binaries built (mailheader, mailmessage, mailheaderclean)'
 }
 
 build_builtin() {
-  info "Building bash loadable builtins..."
+  info 'Building bash loadable builtins...'
 
   if ! check_builtin_support; then
     # If user explicitly requested --builtin, try to install dependencies
     if ((BUILTIN_EXPLICITLY_REQUESTED)); then
-      warning "bash-builtins package not found, attempting to install..."
+      warn 'bash-builtins package not found, attempting to install...'
       if ! install_bash_builtins; then
-        error "Failed to install bash-builtins package"
-        error "Please install it manually:"
-        error "  sudo apt-get install bash-builtins  # Debian/Ubuntu"
+        error 'Failed to install bash-builtins package' \
+              'Please install it manually:' \
+              '  sudo apt-get install bash-builtins  # Debian/Ubuntu'
         return 1
       fi
       # Verify it was installed successfully
       if ! check_builtin_support; then
-        error "bash-builtins installation did not provide required headers"
+        error 'bash-builtins installation did not provide required headers'
         return 1
       fi
     else
-      error "Bash builtin support not found"
-      error "Please install bash-builtins package:"
-      error "  sudo apt-get install bash-builtins  # Debian/Ubuntu"
+      error 'Bash builtin support not found' \
+            'Please install bash-builtins package:' \
+            '  sudo apt-get install bash-builtins  # Debian/Ubuntu'
       return 1
     fi
   fi
 
-  ((DRY_RUN==0)) || { info "[DRY-RUN] Would build: make loadable"; return 0; }
+  ((DRY_RUN==0)) || { info '[DRY-RUN] Would build: make loadable'; return 0; }
 
   cd "$SCRIPT_DIR"
   make loadable || {
-    error "Failed to build bash builtins"
+    error 'Failed to build bash builtins'
     return 1
   }
-  success "Bash builtins built (mailheader.so, mailmessage.so, mailheaderclean.so)"
+  success 'Bash builtins built (mailheader.so, mailmessage.so, mailheaderclean.so)'
   return 0
 }
 
 install_standalone() {
-  info "Installing standalone binaries and documentation..."
+  info 'Installing standalone binaries and documentation...'
 
   if ((DRY_RUN)); then
-    info "[DRY-RUN] Would install:"
-    info "  ${BINDIR}/mailheader"
-    info "  ${BINDIR}/mailmessage"
-    info "  ${BINDIR}/mailheaderclean"
-    info "  ${BINDIR}/mailgetaddresses"
-    info "  ${BINDIR}/mailgetheaders"
-    info "  ${BINDIR}/mailheaderclean-batch (script)"
-    info "  ${BINDIR}/clean-email-headers -> mailheaderclean-batch (symlink)"
-    info "  ${MAN_DIR}/mailheader.1"
-    info "  ${MAN_DIR}/mailmessage.1"
-    info "  ${MAN_DIR}/mailheaderclean.1"
-    info "  ${MAN_DIR}/mailgetaddresses.1"
-    info "  ${DOC_DIR}/README.md"
-    info "  ${DOC_DIR}/benchmark.sh"
-    info "  ${DOC_DIR}/benchmark_detailed.sh"
+    info "[DRY-RUN] Would install:" \
+         "  $BIN_DIR/mailheader" \
+         "  $BIN_DIR/mailmessage" \
+         "  $BIN_DIR/mailheaderclean" \
+         "  $BIN_DIR/mailgetaddresses" \
+         "  $BIN_DIR/mailgetheaders" \
+         "  $BIN_DIR/mailheaderclean-batch (script)" \
+         "  $BIN_DIR/clean-email-headers -> mailheaderclean-batch (symlink)" \
+         "  $MAN_DIR/mailheader.1" \
+         "  $MAN_DIR/mailmessage.1" \
+         "  $MAN_DIR/mailheaderclean.1" \
+         "  $MAN_DIR/mailgetaddresses.1" \
+         "  $DOC_DIR/README.md" \
+         "  $DOC_DIR/benchmark.sh" \
+         "  $DOC_DIR/benchmark_detailed.sh"
     return 0
   fi
 
   # Install binaries
-  install -d "${BINDIR}"
-  install -m 755 "${SCRIPT_DIR}/build/bin/mailheader" "${BINDIR}/" || die 1 "Failed to install mailheader binary"
-  install -m 755 "${SCRIPT_DIR}/build/bin/mailmessage" "${BINDIR}/" || die 1 "Failed to install mailmessage binary"
-  install -m 755 "${SCRIPT_DIR}/build/bin/mailheaderclean" "${BINDIR}/" || die 1 "Failed to install mailheaderclean binary"
+  install -d "$BIN_DIR"
+  install -m 755 "$SCRIPT_DIR"/build/bin/mailheader "$BIN_DIR"/ || die 1 "Failed to install mailheader binary"
+  install -m 755 "$SCRIPT_DIR"/build/bin/mailmessage "$BIN_DIR"/ || die 1 "Failed to install mailmessage binary"
+  install -m 755 "$SCRIPT_DIR"/build/bin/mailheaderclean "$BIN_DIR"/ || die 1 "Failed to install mailheaderclean binary"
 
   # Install scripts
-  if [[ -f "${SCRIPT_DIR}/scripts/mailgetaddresses" ]]; then
-    install -m 755 "${SCRIPT_DIR}/scripts/mailgetaddresses" "${BINDIR}/" || warning "Failed to install mailgetaddresses script"
+  if [[ -f "$SCRIPT_DIR"/scripts/mailgetaddresses ]]; then
+    install -m 755 "$SCRIPT_DIR"/scripts/mailgetaddresses "$BIN_DIR"/ || warn "Failed to install mailgetaddresses script"
   fi
-  if [[ -f "${SCRIPT_DIR}/scripts/mailgetheaders" ]]; then
-    install -m 755 "${SCRIPT_DIR}/scripts/mailgetheaders" "${BINDIR}/" || warning "Failed to install mailgetheaders script"
+  if [[ -f "$SCRIPT_DIR"/scripts/mailgetheaders ]]; then
+    install -m 755 "$SCRIPT_DIR"/scripts/mailgetheaders "$BIN_DIR"/ || warn "Failed to install mailgetheaders script"
   fi
-  if [[ -f "${SCRIPT_DIR}/scripts/mailheaderclean-batch" ]]; then
-    install -m 755 "${SCRIPT_DIR}/scripts/mailheaderclean-batch" "${BINDIR}/" || warning "Failed to install mailheaderclean-batch script"
+  if [[ -f "$SCRIPT_DIR"/scripts/mailheaderclean-batch ]]; then
+    install -m 755 "$SCRIPT_DIR"/scripts/mailheaderclean-batch "$BIN_DIR"/ || warn "Failed to install mailheaderclean-batch script"
     # Create backwards-compatible symlink
-    ln -sf "${BINDIR}/mailheaderclean-batch" "${BINDIR}/clean-email-headers" || warning "Failed to create clean-email-headers symlink"
+    ln -sf "$BIN_DIR"/mailheaderclean-batch "$BIN_DIR"/clean-email-headers || warn "Failed to create clean-email-headers symlink"
   fi
 
   # Install manpages
-  install -d "${MAN_DIR}"
-  if [[ -f "${SCRIPT_DIR}/man/mailheader.1" ]]; then
-    install -m 644 "${SCRIPT_DIR}/man/mailheader.1" "${MAN_DIR}/" || warning "Failed to install mailheader manpage"
+  install -d "$MAN_DIR"
+  if [[ -f "$SCRIPT_DIR"/man/mailheader.1 ]]; then
+    install -m 644 "$SCRIPT_DIR"/man/mailheader.1 "$MAN_DIR"/ || warn "Failed to install mailheader manpage"
   fi
-  if [[ -f "${SCRIPT_DIR}/man/mailmessage.1" ]]; then
-    install -m 644 "${SCRIPT_DIR}/man/mailmessage.1" "${MAN_DIR}/" || warning "Failed to install mailmessage manpage"
+  if [[ -f "$SCRIPT_DIR"/man/mailmessage.1 ]]; then
+    install -m 644 "$SCRIPT_DIR"/man/mailmessage.1 "$MAN_DIR"/ || warn "Failed to install mailmessage manpage"
   fi
-  if [[ -f "${SCRIPT_DIR}/man/mailheaderclean.1" ]]; then
-    install -m 644 "${SCRIPT_DIR}/man/mailheaderclean.1" "${MAN_DIR}/" || warning "Failed to install mailheaderclean manpage"
+  if [[ -f "$SCRIPT_DIR"/man/mailheaderclean.1 ]]; then
+    install -m 644 "$SCRIPT_DIR"/man/mailheaderclean.1 "$MAN_DIR"/ || warn "Failed to install mailheaderclean manpage"
   fi
-  if [[ -f "${SCRIPT_DIR}/man/mailgetaddresses.1" ]]; then
-    install -m 644 "${SCRIPT_DIR}/man/mailgetaddresses.1" "${MAN_DIR}/" || warning "Failed to install mailgetaddresses manpage"
+  if [[ -f "$SCRIPT_DIR"/man/mailgetaddresses.1 ]]; then
+    install -m 644 "$SCRIPT_DIR"/man/mailgetaddresses.1 "$MAN_DIR"/ || warn "Failed to install mailgetaddresses manpage"
   fi
 
   # Install documentation
-  if [[ -f "${SCRIPT_DIR}/README.md" ]]; then
-    install -d "${DOC_DIR}"
-    install -m 644 "${SCRIPT_DIR}/README.md" "${DOC_DIR}/" || warning "Failed to install README"
+  if [[ -f "$SCRIPT_DIR"/README.md ]]; then
+    install -d "$DOC_DIR"
+    install -m 644 "$SCRIPT_DIR"/README.md "$DOC_DIR"/ || warn "Failed to install README"
   fi
 
   # Install benchmark scripts
-  if [[ -f "${SCRIPT_DIR}/tools/benchmark.sh" ]]; then
-    install -m 755 "${SCRIPT_DIR}/tools/benchmark.sh" "${DOC_DIR}/" || warning "Failed to install benchmark.sh"
+  if [[ -f "$SCRIPT_DIR"/tools/benchmark.sh ]]; then
+    install -m 755 "$SCRIPT_DIR"/tools/benchmark.sh "$DOC_DIR"/ || warn "Failed to install benchmark.sh"
   fi
-  if [[ -f "${SCRIPT_DIR}/tools/benchmark_detailed.sh" ]]; then
-    install -m 755 "${SCRIPT_DIR}/tools/benchmark_detailed.sh" "${DOC_DIR}/" || warning "Failed to install benchmark_detailed.sh"
+  if [[ -f "$SCRIPT_DIR"/tools/benchmark_detailed.sh ]]; then
+    install -m 755 "$SCRIPT_DIR"/tools/benchmark_detailed.sh "$DOC_DIR"/ || warn "Failed to install benchmark_detailed.sh"
   fi
 
-  success "Standalone installation complete"
+  success 'Standalone installation complete'
 }
 
 install_completions() {
-  info "Installing bash completions..."
+  info 'Installing bash completions...'
 
   if ((DRY_RUN)); then
-    info "[DRY-RUN] Would install:"
-    info "  ${COMPLETION_DIR}/mail-tools"
+    info '[DRY-RUN] Would install:'
+    info "  $COMPLETION_DIR/mail-tools"
     return 0
   fi
 
   # Install bash completions
-  if [[ -f "${SCRIPT_DIR}/mail-tools.bash_completions" ]]; then
-    install -d "${COMPLETION_DIR}"
-    install -m 644 "${SCRIPT_DIR}/mail-tools.bash_completions" "${COMPLETION_DIR}/mail-tools" || warning "Failed to install bash completions"
-    success "Bash completions installed"
+  if [[ -f "$SCRIPT_DIR"/mail-tools.bash_completions ]]; then
+    install -d "$COMPLETION_DIR"
+    install -m 644 "$SCRIPT_DIR"/mail-tools.bash_completions "$COMPLETION_DIR"/mail-tools || warn 'Failed to install bash completions'
+    success 'Bash completions installed'
   else
-    warning "Bash completions file not found, skipping"
+    warn 'Bash completions file not found, skipping'
   fi
 }
 
 install_builtin() {
-  info "Installing bash loadable builtins..."
+  info 'Installing bash loadable builtins...'
 
   if ((DRY_RUN)); then
-    info "[DRY-RUN] Would install:"
-    info "  ${LOADABLE_DIR}/mailheader.so"
-    info "  ${LOADABLE_DIR}/mailmessage.so"
-    info "  ${LOADABLE_DIR}/mailheaderclean.so"
-    info "  ${PROFILE_DIR}/mail-tools.sh"
+    info '[DRY-RUN] Would install:' \
+         "  $LOADABLE_DIR/mailheader.so" \
+         "  $LOADABLE_DIR/mailmessage.so" \
+         "  $LOADABLE_DIR/mailheaderclean.so" \
+         "  $PROFILE_DIR/mail-tools.sh"
     return 0
   fi
 
   # Install builtins
-  install -d "${LOADABLE_DIR}"
-  install -m 755 "${SCRIPT_DIR}/build/lib/mailheader.so" "${LOADABLE_DIR}/" || die 1 "Failed to install mailheader builtin"
-  install -m 755 "${SCRIPT_DIR}/build/lib/mailmessage.so" "${LOADABLE_DIR}/" || die 1 "Failed to install mailmessage builtin"
-  install -m 755 "${SCRIPT_DIR}/build/lib/mailheaderclean.so" "${LOADABLE_DIR}/" || die 1 "Failed to install mailheaderclean builtin"
+  install -d "$LOADABLE_DIR"
+  install -m 755 "$SCRIPT_DIR"/build/lib/mailheader.so "$LOADABLE_DIR"/ || die 1 "Failed to install mailheader builtin"
+  install -m 755 "$SCRIPT_DIR"/build/lib/mailmessage.so "$LOADABLE_DIR"/ || die 1 "Failed to install mailmessage builtin"
+  install -m 755 "$SCRIPT_DIR"/build/lib/mailheaderclean.so "$LOADABLE_DIR"/ || die 1 "Failed to install mailheaderclean builtin"
 
   # Install profile script
-  install -d "${PROFILE_DIR}"
-  install -m 644 "${SCRIPT_DIR}/scripts/mail-tools.sh" "${PROFILE_DIR}/" || die 1 "Failed to install profile script"
+  install -d "$PROFILE_DIR"
+  install -m 644 "$SCRIPT_DIR"/scripts/mail-tools.sh "$PROFILE_DIR"/ || die 1 "Failed to install profile script"
 
   # Remove legacy mailheader.sh if it exists
-  if [[ -f "${PROFILE_DIR}/mailheader.sh" ]]; then
-    rm -f "${PROFILE_DIR}/mailheader.sh" || warning "Failed to remove legacy mailheader.sh"
-    info "Removed legacy mailheader.sh profile script"
+  if [[ -f "$PROFILE_DIR"/mailheader.sh ]]; then
+    rm -f "$PROFILE_DIR"/mailheader.sh || warn "Failed to remove legacy mailheader.sh"
+    info 'Removed legacy mailheader.sh profile script'
   fi
 
-  success "Bash builtins installation complete"
+  success 'Bash builtins installation complete'
 }
 
 update_man_database() {
-  info "Updating man database..."
+  info 'Updating man database...'
 
   if ((DRY_RUN)); then
-    info "[DRY-RUN] Would run: mandb -q"
+    info '[DRY-RUN] Would run: mandb -q'
     return 0
   fi
 
   if command -v mandb &> /dev/null; then
-    mandb -q 2>/dev/null || warning "Failed to update man database"
+    mandb -q 2>/dev/null || warn 'Failed to update man database'
   fi
 }
 
 show_completion_message() {
-  echo ""
-  success "Installation complete!"
-  echo ""
-  echo "Installed files:"
-  echo "  • Standalone binaries: ${BINDIR}/mailheader, ${BINDIR}/mailmessage, ${BINDIR}/mailheaderclean"
-  echo "  • Scripts:             ${BINDIR}/mailgetaddresses, ${BINDIR}/mailgetheaders, ${BINDIR}/mailheaderclean-batch"
-  echo "                         (includes ${BINDIR}/clean-email-headers symlink)"
-  echo "  • Manpages:            ${MAN_DIR}/mailheader.1, ${MAN_DIR}/mailmessage.1, ${MAN_DIR}/mailheaderclean.1, ${MAN_DIR}/mailgetaddresses.1"
-  echo "  • Documentation:       ${DOC_DIR}/"
-  echo "  • Bash completions:    ${COMPLETION_DIR}/mail-tools"
+  echo
+  success 'Installation complete!'
+  echo
+  echo 'Installed files:'
+  echo "  • Standalone binaries: $BIN_DIR/mailheader, $BIN_DIR/mailmessage, $BIN_DIR/mailheaderclean"
+  echo "  • Scripts:             $BIN_DIR/mailgetaddresses, $BIN_DIR/mailgetheaders, $BIN_DIR/mailheaderclean-batch"
+  echo "                         (includes $BIN_DIR/clean-email-headers symlink)"
+  echo "  • Manpages:            $MAN_DIR/mailheader.1, $MAN_DIR/mailmessage.1, $MAN_DIR/mailheaderclean.1, $MAN_DIR/mailgetaddresses.1"
+  echo "  • Documentation:       $DOC_DIR/"
+  echo "  • Bash completions:    $COMPLETION_DIR/mail-tools"
 
   if ((INSTALL_BUILTIN)); then
-    echo "  • Bash builtins:       ${LOADABLE_DIR}/mailheader.so, ${LOADABLE_DIR}/mailmessage.so, ${LOADABLE_DIR}/mailheaderclean.so"
-    echo "  • Profile script:      ${PROFILE_DIR}/mail-tools.sh"
-    echo ""
-    echo "The bash builtins will be available in new bash sessions."
-    echo "To use in your current session, run:"
-    echo "  source ${PROFILE_DIR}/mail-tools.sh"
+    echo "  • Bash builtins:       $LOADABLE_DIR/mailheader.so, $LOADABLE_DIR/mailmessage.so, $LOADABLE_DIR/mailheaderclean.so"
+    echo "  • Profile script:      $PROFILE_DIR/mail-tools.sh"
+    echo
+    echo 'The bash builtins will be available in new bash sessions.'
+    echo 'To use in your current session, run:'
+    echo "  source $PROFILE_DIR/mail-tools.sh"
   fi
 
-  echo ""
-  echo "Bash completions will be available in new bash sessions."
-  echo "To use in your current session, run:"
-  echo "  source ${COMPLETION_DIR}/mail-tools"
+  echo
+  echo 'Bash completions will be available in new bash sessions.'
+  echo 'To use in your current session, run:'
+  echo "  source $COMPLETION_DIR/mail-tools"
 
-  echo ""
-  echo "Verify installation:"
-  echo "  which mailheader       # Check binaries"
-  echo "  which mailmessage"
-  echo "  which mailheaderclean"
-  echo "  which mailgetaddresses # Check scripts"
-  echo "  which mailgetheaders"
-  echo "  which mailheaderclean-batch  # Check batch script"
-  echo "  which clean-email-headers  # Check symlink (should point to mailheaderclean-batch)"
-  echo "  man mailheader         # View manpages"
-  echo "  man mailmessage"
-  echo "  man mailheaderclean"
-  echo "  man mailgetaddresses"
+  echo
+  echo 'Verify installation:'
+  echo '  which mailheader       # Check binaries'
+  echo '  which mailmessage'
+  echo '  which mailheaderclean'
+  echo '  which mailgetaddresses # Check scripts'
+  echo '  which mailgetheaders'
+  echo '  which mailheaderclean-batch  # Check batch script'
+  echo '  which clean-email-headers  # Check symlink (should point to mailheaderclean-batch)'
+  echo '  man mailheader         # View manpages'
+  echo '  man mailmessage'
+  echo '  man mailheaderclean'
+  echo '  man mailgetaddresses'
 
   if ((INSTALL_BUILTIN)); then
-    echo "  help mailheader        # View builtin help (after sourcing profile)"
-    echo "  help mailmessage"
-    echo "  help mailheaderclean"
+    echo '  help mailheader        # View builtin help (after sourcing profile)'
+    echo '  help mailmessage'
+    echo '  help mailheaderclean'
   fi
 
-  echo ""
+  echo
 }
 
 uninstall_files() {
-  info "Uninstalling mail tools..."
+  info 'Uninstalling mail tools...'
 
   local -i files_removed=0
 
   if ((DRY_RUN)); then
-
- : <<'EOT'
-     info "[DRY-RUN] Would remove:"
-    [[ -f "${BINDIR}/mailheader" ]] && info "  ${BINDIR}/mailheader"
-    [[ -f "${BINDIR}/mailmessage" ]] && info "  ${BINDIR}/mailmessage"
-    [[ -f "${BINDIR}/mailheaderclean" ]] && info "  ${BINDIR}/mailheaderclean"
-    [[ -f "${BINDIR}/mailgetaddresses" ]] && info "  ${BINDIR}/mailgetaddresses"
-    [[ -f "${BINDIR}/mailgetheaders" ]] && info "  ${BINDIR}/mailgetheaders"
-    [[ -f "${BINDIR}/mailheaderclean-batch" || -L "${BINDIR}/mailheaderclean-batch" ]] && info "  ${BINDIR}/mailheaderclean-batch (script)"
-    [[ -f "${BINDIR}/clean-email-headers" || -L "${BINDIR}/clean-email-headers" ]] && info "  ${BINDIR}/clean-email-headers (symlink)"
-    [[ -f "${MAN_DIR}/mailheader.1" ]] && info "  ${MAN_DIR}/mailheader.1"
-    [[ -f "${MAN_DIR}/mailmessage.1" ]] && info "  ${MAN_DIR}/mailmessage.1"
-    [[ -f "${MAN_DIR}/mailheaderclean.1" ]] && info "  ${MAN_DIR}/mailheaderclean.1"
-    [[ -f "${MAN_DIR}/mailgetaddresses.1" ]] && info "  ${MAN_DIR}/mailgetaddresses.1"
-    [[ -f "${LOADABLE_DIR}/mailheader.so" ]] && info "  ${LOADABLE_DIR}/mailheader.so"
-    [[ -f "${LOADABLE_DIR}/mailmessage.so" ]] && info "  ${LOADABLE_DIR}/mailmessage.so"
-    [[ -f "${LOADABLE_DIR}/mailheaderclean.so" ]] && info "  ${LOADABLE_DIR}/mailheaderclean.so"
-    [[ -f "${PROFILE_DIR}/mail-tools.sh" ]] && info "  ${PROFILE_DIR}/mail-tools.sh"
-    [[ -f "${PROFILE_DIR}/mailheader.sh" ]] && info "  ${PROFILE_DIR}/mailheader.sh (legacy)"
-    [[ -d "${DOC_DIR}" ]] && info "  ${DOC_DIR}/"
-EOT
-
-    info "[DRY-RUN] Would remove:"
+    info '[DRY-RUN] Would remove:'
     for path in \
-      "${BINDIR}/mailheader" \
-      "${BINDIR}/mailmessage" \
-      "${BINDIR}/mailheaderclean" \
-      "${BINDIR}/mailgetaddresses" \
-      "${BINDIR}/mailgetheaders" \
-      "${BINDIR}/mailheaderclean-batch" \
-      "${BINDIR}/clean-email-headers" \
-      "${MAN_DIR}/mailheader.1" \
-      "${MAN_DIR}/mailmessage.1" \
-      "${MAN_DIR}/mailheaderclean.1" \
-      "${MAN_DIR}/mailgetaddresses.1" \
-      "${COMPLETION_DIR}/mail-tools" \
-      "${LOADABLE_DIR}/mailheader.so" \
-      "${LOADABLE_DIR}/mailmessage.so" \
-      "${LOADABLE_DIR}/mailheaderclean.so" \
-      "${PROFILE_DIR}/mail-tools.sh" \
-      "${PROFILE_DIR}/mailheader.sh" \
-      "${DOC_DIR}"; do
+      "$BIN_DIR"/mailheader \
+      "$BIN_DIR"/mailmessage \
+      "$BIN_DIR"/mailheaderclean \
+      "$BIN_DIR"/mailgetaddresses \
+      "$BIN_DIR"/mailgetheaders \
+      "$BIN_DIR"/mailheaderclean-batch \
+      "$BIN_DIR"/clean-email-headers \
+      "$MAN_DIR"/mailheader.1 \
+      "$MAN_DIR"/mailmessage.1 \
+      "$MAN_DIR"/mailheaderclean.1 \
+      "$MAN_DIR"/mailgetaddresses.1 \
+      "$COMPLETION_DIR"/mail-tools \
+      "$LOADABLE_DIR"/mailheader.so \
+      "$LOADABLE_DIR"/mailmessage.so \
+      "$LOADABLE_DIR"/mailheaderclean.so \
+      "$PROFILE_DIR"/mail-tools.sh \
+      "$PROFILE_DIR"/mailheader.sh \
+      "$DOC_DIR"; do
          if [[ -L $path ]]; then
            info "    $path (symlink)"
          elif [[ -f $path ]]; then
@@ -475,136 +461,137 @@ EOT
   fi
 
   # Remove binaries
-  if [[ -f "${BINDIR}/mailheader" ]]; then
-    rm -f "${BINDIR}/mailheader" && ((files_removed+=1))
+  if [[ -f "$BIN_DIR"/mailheader ]]; then
+    rm -f "$BIN_DIR"/mailheader && files_removed+=1
   fi
-  if [[ -f "${BINDIR}/mailmessage" ]]; then
-    rm -f "${BINDIR}/mailmessage" && ((files_removed+=1))
+  if [[ -f "$BIN_DIR"/mailmessage ]]; then
+    rm -f "$BIN_DIR"/mailmessage && files_removed+=1
   fi
-  if [[ -f "${BINDIR}/mailheaderclean" ]]; then
-    rm -f "${BINDIR}/mailheaderclean" && ((files_removed+=1))
+  if [[ -f "$BIN_DIR"/mailheaderclean ]]; then
+    rm -f "$BIN_DIR"/mailheaderclean && files_removed+=1
   fi
-  if [[ -f "${BINDIR}/mailgetaddresses" ]]; then
-    rm -f "${BINDIR}/mailgetaddresses" && ((files_removed+=1))
+  if [[ -f "$BIN_DIR"/mailgetaddresses ]]; then
+    rm -f "$BIN_DIR"/mailgetaddresses && files_removed+=1
   fi
-  if [[ -f "${BINDIR}/mailgetheaders" ]]; then
-    rm -f "${BINDIR}/mailgetheaders" && ((files_removed+=1))
+  if [[ -f "$BIN_DIR"/mailgetheaders ]]; then
+    rm -f "$BIN_DIR"/mailgetheaders && files_removed+=1
   fi
 
   # Remove mailheaderclean-batch script and backwards-compatible symlink
-  if [[ -f "${BINDIR}/mailheaderclean-batch" || -L "${BINDIR}/mailheaderclean-batch" ]]; then
-    rm -f "${BINDIR}/mailheaderclean-batch" && ((files_removed+=1))
+  if [[ -f "$BIN_DIR"/mailheaderclean-batch || -L "$BIN_DIR"/mailheaderclean-batch ]]; then
+    rm -f "$BIN_DIR"/mailheaderclean-batch && files_removed+=1
   fi
-  if [[ -f "${BINDIR}/clean-email-headers" || -L "${BINDIR}/clean-email-headers" ]]; then
-    rm -f "${BINDIR}/clean-email-headers" && ((files_removed+=1))
+  if [[ -f "$BIN_DIR"/clean-email-headers || -L "$BIN_DIR"/clean-email-headers ]]; then
+    rm -f "$BIN_DIR"/clean-email-headers && files_removed+=1
   fi
 
   # Remove manpages
-  if [[ -f "${MAN_DIR}/mailheader.1" ]]; then
-    rm -f "${MAN_DIR}/mailheader.1" && ((files_removed+=1))
+  if [[ -f "$MAN_DIR"/mailheader.1 ]]; then
+    rm -f "$MAN_DIR"/mailheader.1 && files_removed+=1
   fi
-  if [[ -f "${MAN_DIR}/mailmessage.1" ]]; then
-    rm -f "${MAN_DIR}/mailmessage.1" && ((files_removed+=1))
+  if [[ -f "$MAN_DIR"/mailmessage.1 ]]; then
+    rm -f "$MAN_DIR"/mailmessage.1 && files_removed+=1
   fi
-  if [[ -f "${MAN_DIR}/mailheaderclean.1" ]]; then
-    rm -f "${MAN_DIR}/mailheaderclean.1" && ((files_removed+=1))
+  if [[ -f "$MAN_DIR"/mailheaderclean.1 ]]; then
+    rm -f "$MAN_DIR"/mailheaderclean.1 && files_removed+=1
   fi
-  if [[ -f "${MAN_DIR}/mailgetaddresses.1" ]]; then
-    rm -f "${MAN_DIR}/mailgetaddresses.1" && ((files_removed+=1))
+  if [[ -f "$MAN_DIR"/mailgetaddresses.1 ]]; then
+    rm -f "$MAN_DIR"/mailgetaddresses.1 && files_removed+=1
   fi
 
   # Remove bash completions
-  if [[ -f "${COMPLETION_DIR}/mail-tools" ]]; then
-    rm -f "${COMPLETION_DIR}/mail-tools" && ((files_removed+=1))
+  if [[ -f "$COMPLETION_DIR"/mail-tools ]]; then
+    rm -f "$COMPLETION_DIR"/mail-tools && files_removed+=1
   fi
 
   # Remove builtins
-  if [[ -f "${LOADABLE_DIR}/mailheader.so" ]]; then
-    rm -f "${LOADABLE_DIR}/mailheader.so" && ((files_removed+=1))
+  if [[ -f "$LOADABLE_DIR"/mailheader.so ]]; then
+    rm -f "$LOADABLE_DIR"/mailheader.so && files_removed+=1
   fi
-  if [[ -f "${LOADABLE_DIR}/mailmessage.so" ]]; then
-    rm -f "${LOADABLE_DIR}/mailmessage.so" && ((files_removed+=1))
+  if [[ -f "$LOADABLE_DIR"/mailmessage.so ]]; then
+    rm -f "$LOADABLE_DIR"/mailmessage.so && files_removed+=1
   fi
-  if [[ -f "${LOADABLE_DIR}/mailheaderclean.so" ]]; then
-    rm -f "${LOADABLE_DIR}/mailheaderclean.so" && ((files_removed+=1))
+  if [[ -f "$LOADABLE_DIR"/mailheaderclean.so ]]; then
+    rm -f "$LOADABLE_DIR"/mailheaderclean.so && files_removed+=1
   fi
 
   # Remove profile scripts (both new and legacy)
-  if [[ -f "${PROFILE_DIR}/mail-tools.sh" ]]; then
-    rm -f "${PROFILE_DIR}/mail-tools.sh" && ((files_removed+=1))
+  if [[ -f "$PROFILE_DIR"/mail-tools.sh ]]; then
+    rm -f "$PROFILE_DIR"/mail-tools.sh && files_removed+=1
   fi
-  if [[ -f "${PROFILE_DIR}/mailheader.sh" ]]; then
-    rm -f "${PROFILE_DIR}/mailheader.sh" && ((files_removed+=1))
+  if [[ -f "$PROFILE_DIR"/mailheader.sh ]]; then
+    rm -f "$PROFILE_DIR"/mailheader.sh && files_removed+=1
   fi
 
   # Remove documentation directory
-  if [[ -d "${DOC_DIR}" ]]; then
-    rm -rf "${DOC_DIR}" && ((files_removed+=1))
+  if [[ -d "$DOC_DIR" ]]; then
+    rm -rf "$DOC_DIR" && files_removed+=1
   fi
 
   if ((files_removed)); then
     update_man_database
     success "Uninstalled $files_removed file(s)/directory(ies)"
-    echo ""
-    echo "You may need to restart bash sessions for changes to take effect."
+    echo
+    echo 'You may need to restart bash sessions for changes to take effect.'
   else
-    warning "No mail tools installation found"
+    warn 'No mail tools installation found'
   fi
 }
 
-# Parse command-line arguments
-while (($#)); do
-  case $1 in
-    --help|-h)
-      show_help; exit 0
-      ;;
-    --builtin)
-      INSTALL_BUILTIN=1
-      BUILTIN_EXPLICITLY_REQUESTED=1
-      ;;
-    --no-builtin)
-      SKIP_BUILTIN=1
-      ;;
-    --uninstall)
-      UNINSTALL=1
-      ;;
-    --prefix)
-      shift
-      PREFIX="$1"
-      BINDIR="$PREFIX"/bin
-      LOADABLE_DIR="$PREFIX"/lib/bash/loadables
-      DOC_DIR="$PREFIX"/share/doc/mail-tools
-      MAN_DIR="$PREFIX"/share/man/man1
-      COMPLETION_DIR="$PREFIX"/share/bash-completion/completions
-      # Note: PROFILE_DIR stays at /etc/profile.d for system-wide access
-      ;;
-    --non-interactive)
-      NON_INTERACTIVE=1
-      ;;
-    --dry-run)
-      DRY_RUN=1
-      ;;
-    -a|--auto-all)
-      UNINSTALL=0
-      DRY_RUN=0
-      VERBOSE=0
-      NON_INTERACTIVE=1
-      INSTALL_BUILTIN=1
-      BUILTIN_EXPLICITLY_REQUESTED=1
-      ;;
-    *)
-      error "Unknown option '$1'"
-      echo
-      show_help 1
-      ;;
-  esac
-  shift
-done
-
 # Main execution
 main() {
-  echo "Mail Tools Installation Script"
-  echo "=============================="
+  # Parse command-line arguments
+  while (($#)); do
+    case $1 in
+      --builtin)    INSTALL_BUILTIN=1
+                    BUILTIN_EXPLICITLY_REQUESTED=1
+                    ;;
+      --no-builtin) SKIP_BUILTIN=1
+                    ;;
+      --uninstall)  UNINSTALL=1
+                    ;;
+      --prefix)     shift
+                    PREFIX="$1"
+                    BIN_DIR="$PREFIX"/bin
+                    LOADABLE_DIR="$PREFIX"/lib/bash/loadables
+                    DOC_DIR="$PREFIX"/share/doc/mail-tools
+                    MAN_DIR="$PREFIX"/share/man/man1
+                    COMPLETION_DIR="$PREFIX"/share/bash-completion/completions
+                    # Note: PROFILE_DIR stays at /etc/profile.d for system-wide access
+                    ;;
+      -N|--non-interactive)
+                    NON_INTERACTIVE=1
+                    ;;
+      -n|--dry-run) DRY_RUN=1
+                    ;;
+      -a|--auto-all)
+                    UNINSTALL=0
+                    DRY_RUN=0
+                    VERBOSE=0
+                    NON_INTERACTIVE=1
+                    INSTALL_BUILTIN=1
+                    BUILTIN_EXPLICITLY_REQUESTED=1
+                    ;;
+      -V|--version) echo "$SCRIPT_NAME $VERSION"
+                    exit 0
+                    ;;
+      -h|--help)    show_help
+                    exit 0
+                    ;;
+      -[NnaVh]*) #shellcheck disable=SC2046
+                    set -- '' $(printf -- '-%c ' $(grep -o . <<<"${1:1}")) "${@:2}"
+                    ;;
+      -*)           die 22 "Invalid option '$1'"
+                    ;;
+      *)            >&2 show_help
+                    die 2 "Unknown option '$1'"
+                    ;;
+    esac
+    shift
+  done
+
+  echo 'Mail Tools Installation Script'
+  echo '=============================='
   echo
 
   check_root
@@ -616,10 +603,10 @@ main() {
   fi
 
   # Check if binaries are already built
-  if [[ ! -f "${SCRIPT_DIR}/build/bin/mailheader" ]] || [[ ! -f "${SCRIPT_DIR}/build/bin/mailmessage" ]] || [[ ! -f "${SCRIPT_DIR}/build/bin/mailheaderclean" ]]; then
+  if [[ ! -f "$SCRIPT_DIR"/build/bin/mailheader ]] || [[ ! -f "$SCRIPT_DIR"/build/bin/mailmessage ]] || [[ ! -f "$SCRIPT_DIR"/build/bin/mailheaderclean ]]; then
     build_standalone
   else
-    info "Standalone binaries already built"
+    info 'Standalone binaries already built'
   fi
 
   # Determine if we should install builtin
@@ -633,13 +620,13 @@ main() {
 
   # Build builtin if needed
   if ((INSTALL_BUILTIN)); then
-    if [[ ! -f "${SCRIPT_DIR}/build/lib/mailheader.so" ]] || [[ ! -f "${SCRIPT_DIR}/build/lib/mailmessage.so" ]] || [[ ! -f "${SCRIPT_DIR}/build/lib/mailheaderclean.so" ]]; then
+    if [[ ! -f "$SCRIPT_DIR"/build/lib/mailheader.so ]] || [[ ! -f "$SCRIPT_DIR"/build/lib/mailmessage.so ]] || [[ ! -f "$SCRIPT_DIR"/build/lib/mailheaderclean.so ]]; then
       if ! build_builtin; then
-        warning "Skipping builtin installation due to build failure"
+        warn 'Skipping builtin installation due to build failure'
         INSTALL_BUILTIN=0
       fi
     else
-      info "Bash builtins already built"
+      info 'Bash builtins already built'
     fi
   fi
 
@@ -659,11 +646,12 @@ main() {
     show_completion_message
   else
     echo
-    info "[DRY-RUN] No changes were made"
+    info '[DRY-RUN] No changes were made'
   fi
 
   return 0
 }
 
 main "$@"
+
 #fin

@@ -305,6 +305,15 @@ This installs:
 
 ### Verify Installation
 
+**Quick diagnostic script:**
+```bash
+# Run comprehensive installation check
+scripts/check-installation.sh
+```
+
+This diagnostic script checks all installation components (binaries, builtins, man pages, profile script) and provides troubleshooting guidance if anything is missing. It's particularly useful for diagnosing builtin loading issues in non-interactive contexts.
+
+**Manual verification:**
 ```bash
 # Check all installed programs
 which mailheader mailmessage mailheaderclean mailgetaddresses mailgetheaders
@@ -768,7 +777,8 @@ mailheader /path/to/<TAB>
 │   ├── mailgetaddresses               # Address extraction script
 │   ├── mailgetheaders                 # Header parsing script
 │   ├── mailheaderclean-batch          # Production batch cleaning script
-│   └── mail-tools.sh                  # Profile script for auto-loading builtins
+│   ├── mail-tools.sh                  # Profile script for auto-loading builtins
+│   └── check-installation.sh          # Diagnostic script for verifying installation
 ├── man/                           # Manual pages
 │   ├── mailheader.1
 │   ├── mailmessage.1
